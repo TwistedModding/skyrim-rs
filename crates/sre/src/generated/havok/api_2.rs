@@ -12029,6 +12029,15 @@ impl crate::hkbWorld {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn generate_with_scene_modifiers(characters: *mut c_void, modifiers: *mut c_void, count: u32, timestep: f32) { unsafe { function!(59446, (*mut c_void, *mut c_void, u32, f32))(characters, modifiers, count, timestep) } }
+    /// `hkbWorld::dtor`: restores vtable 0x19c1000; called only from the vdtor 0xadb990, which is only in the vtable
+    ///
+    /// Semantic, ik pass, high; ledger layout_inference evidence, name high; id 58482, rva 0xad9310.
+    /// `void (hkbWorld* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn dtor(&self) { unsafe { function!(58482, (*const Self))(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbWorld.field_108", 0x108, u64) } }

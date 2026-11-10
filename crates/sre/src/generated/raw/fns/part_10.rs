@@ -7,6 +7,160 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ForEachElementInBlockList` at 0xabc410 (decompiler, medium); signature (low): `undefined ForEachElementInBlockList(longlong param_1, longlong * param_2, undefined * param_3, undefined4 param_4, undefined8 param_5)`
+pub const ForEachElementInBlockList: u64 = 57955;
+/// `ForEachEntryCallVfunc41` at 0x1059330 (decompiler, medium); signature (low): `undefined ForEachEntryCallVfunc41(longlong param_1, undefined8 param_2)`
+pub const ForEachEntryCallVfunc41: u64 = 78098;
+/// `ForEachEntryWithQualifyingExtraList` at 0x237410 (decompiler, medium); signature (low): `undefined ForEachEntryWithQualifyingExtraList(undefined8 * param_1, longlong * param_2, uint param_3)`
+pub const ForEachEntryWithQualifyingExtraList: u64 = 16097;
+/// `ForEachField60EntryCallVfunc58` at 0x397810 (decompiler, medium); signature (low): `undefined ForEachField60EntryCallVfunc58(longlong param_1, undefined8 param_2)`
+pub const ForEachField60EntryCallVfunc58: u64 = 23824;
+/// `ForEachHashEntryLocked` at 0x2c3060 (decompiler, medium); signature (low): `undefined ForEachHashEntryLocked(longlong param_1, undefined8 param_2)`
+pub const ForEachHashEntryLocked: u64 = 19071;
+/// `ForEachHashMapEntryWhileTrue` at 0x4d1850 (decompiler, medium); signature (low): `undefined ForEachHashMapEntryWhileTrue(longlong param_1, undefined * param_2)`
+pub const ForEachHashMapEntryWhileTrue: u64 = 30513;
+/// `ForEachInventoryItem` at 0x23e550 (decompiler, medium); signature (low): `int ForEachInventoryItem(undefined8 * param_1, undefined * param_2, undefined8 param_3, ulonglong param_4)`
+pub const ForEachInventoryItem: u64 = 16140;
+/// `ForEachListEntry` at 0x5d2ed0 (decompiler, medium); signature (medium): `undefined ForEachListEntry(longlong * param_1, longlong * param_2)`
+pub const ForEachListEntry: u64 = 34540;
+/// `ForEachListNodeCallVfunc8` at 0xd6e480 (decompiler, medium); signature (low): `undefined ForEachListNodeCallVfunc8(longlong param_1)`
+pub const ForEachListNodeCallVfunc8: u64 = 84450;
+/// `ForEachListNodeLocked` at 0xcf9030 (decompiler, medium); signature (low): `undefined ForEachListNodeLocked(longlong param_1, longlong * param_2)`
+pub const ForEachListNodeLocked: u64 = 82191;
+/// `ForEachListNodeWhileContinue` at 0x4a2ff0 (decompiler, medium); signature (low): `undefined ForEachListNodeWhileContinue(longlong * param_1, undefined8 * param_2)`
+pub const ForEachListNodeWhileContinue: u64 = 29789;
+/// `ForEachPoolElement` at 0xabbdd0 (decompiler, medium); signature (low): `undefined ForEachPoolElement(ulonglong * param_1, undefined * param_2, undefined4 param_3, undefined8 param_4)`
+pub const ForEachPoolElement: u64 = 57945;
+/// `ForEachQuadShapeIntersectingPointRadius` at 0x2b2650 (decompiler, medium); signature (low): `undefined ForEachQuadShapeIntersectingPointRadius(longlong param_1, undefined4 * param_2, undefined4 param_3, undefined * param_4, undefined8 param_5)`
+pub const ForEachQuadShapeIntersectingPointRadius: u64 = 18781;
+/// `ForEachQuadShapeIntersectingSphere` at 0x2b27e0 (decompiler, medium); signature (low): `undefined ForEachQuadShapeIntersectingSphere(longlong param_1, float * param_2, undefined * param_3, undefined8 param_4)`
+pub const ForEachQuadShapeIntersectingSphere: u64 = 18782;
+/// `ForEachRefInRadiusUntilMatch` at 0x297570 (decompiler, medium); signature (low): `char ForEachRefInRadiusUntilMatch(longlong param_1, undefined8 * param_2)`
+pub const ForEachRefInRadiusUntilMatch: u64 = 18333;
+/// `ForEachRefOfForm` at 0x2968a0 (decompiler, high); signature (low): `undefined ForEachRefOfForm(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const ForEachRefOfForm: u64 = 18326;
+/// `ForEachRefOfFormType` at 0x296f50 (decompiler, medium); signature (low): `int ForEachRefOfFormType(longlong param_1, uint param_2, longlong param_3, undefined * param_4, undefined8 param_5, uint param_6)`
+pub const ForEachRefOfFormType: u64 = 18331;
+/// `ForEachRefOfFormTypeByType` at 0x296870 (decompiler, high); signature (low): `undefined ForEachRefOfFormTypeByType(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5)`
+pub const ForEachRefOfFormTypeByType: u64 = 18325;
+/// `ForEachResolvedRefHandle` at 0x2bfd50 (decompiler, medium); signature (low): `undefined ForEachResolvedRefHandle(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForEachResolvedRefHandle: u64 = 19031;
+/// `ForEachRigidBodyInTreeRecursive` at 0x107a030 (decompiler, medium); signature (low): `longlong * ForEachRigidBodyInTreeRecursive(longlong * param_1, longlong param_2)`
+pub const ForEachRigidBodyInTreeRecursive: u64 = 78507;
+/// `ForceRefIntoAlias` at 0x3d4fa0 (decompiler, medium); signature (low): `undefined ForceRefIntoAlias(uint * param_1, uint param_2, longlong * * param_3)`
+pub const ForceRefIntoAlias: u64 = 25052;
+/// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (low): `ulonglong GetFormID(longlong param_1, uint param_2)`; semantic: index -> form id through the reverse map, 0 when absent (high); signature `u32 (FormIDIndexMap* map, u32 index)`
+pub const FormIDIndexMap__GetFormID: u64 = 35555;
+/// `FormIDIndexMap::GetFormID` as a function pointer type (high).
+pub type FormIDIndexMap__GetFormID_fn = unsafe extern "C" fn(map: *mut c_void, index: u32) -> u32;
+/// `FormatAndDispatchWideLogMessage` at 0x128c5f0 (decompiler, medium); signature (low): `undefined FormatAndDispatchWideLogMessage(undefined4 param_1, undefined4 param_2, longlong param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatAndDispatchWideLogMessage: u64 = 94344;
+/// `FormatAndLogMessage` at 0x9d55a0 (decompiler, medium); signature (low): `undefined FormatAndLogMessage(undefined8 param_1, char * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
+pub const FormatAndLogMessage: u64 = 53914;
+/// `FormatBoolArgument` at 0xd71020 (decompiler, medium); signature (low): `undefined FormatBoolArgument(longlong param_1)`
+pub const FormatBoolArgument: u64 = 84844;
+/// `FormatBoolToString` at 0xa91400 (decompiler, high); signature (high): `longlong * FormatBoolToString(longlong * param_1, char param_2)`
+pub const FormatBoolToString: u64 = 443336;
+/// `FormatBufferV` at 0x1265d0 (decompiler, medium); signature (medium): `int FormatBufferV(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatBufferV: u64 = 440412;
+/// `FormatBufferV_2` at 0x126660 (decompiler, medium); signature (medium): `int FormatBufferV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatBufferV_2: u64 = 440413;
+/// `FormatBufferWithLocaleV` at 0x126560 (decompiler, medium); signature (medium): `int FormatBufferWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatBufferWithLocaleV: u64 = 440411;
+/// `FormatColorAsRGBAString` at 0xe75140 (decompiler, medium); signature (low): `undefined FormatColorAsRGBAString(byte * param_1, undefined8 param_2)`
+pub const FormatColorAsRGBAString: u64 = 89311;
+/// `FormatColorTransformObjectAsString` at 0xda4090 (decompiler, medium); signature (low): `undefined FormatColorTransformObjectAsString(longlong param_1)`
+pub const FormatColorTransformObjectAsString: u64 = 85848;
+/// `FormatCurrentTimestamp` at 0x629ba0 (decompiler, high); signature (high): `undefined FormatCurrentTimestamp(undefined8 param_1)`
+pub const FormatCurrentTimestamp: u64 = 35788;
+/// `FormatDefaultOrTable369674Label` at 0x3bf4b0 (decompiler, medium); signature (low): `undefined FormatDefaultOrTable369674Label(undefined8 param_1, ulonglong param_2, int param_3, undefined8 param_4, char param_5)`
+pub const FormatDefaultOrTable369674Label: u64 = 24693;
+/// `FormatDigestHexIntoField1A0` at 0x13db5d0 (decompiler, medium); signature (low): `undefined FormatDigestHexIntoField1A0(longlong param_1)`
+pub const FormatDigestHexIntoField1A0: u64 = 101109;
+/// `FormatDoubleArgument` at 0xd71090 (decompiler, medium); signature (low): `undefined FormatDoubleArgument(longlong param_1)`
+pub const FormatDoubleArgument: u64 = 84845;
+/// `FormatDoubleToString` at 0xa91120 (decompiler, high); signature (high): `undefined FormatDoubleToString(longlong * param_1, undefined8 param_2)`
+pub const FormatDoubleToString: u64 = 443333;
+/// `FormatEdgeDebugStrings` at 0x1118e00 (decompiler, medium); signature (low): `undefined FormatEdgeDebugStrings(longlong param_1)`
+pub const FormatEdgeDebugStrings: u64 = 81247;
+/// `FormatErrorAndStopScript` at 0x386df0 (decompiler, medium); signature (low): `undefined FormatErrorAndStopScript(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatErrorAndStopScript: u64 = 23333;
+/// `FormatField40AndSelfNames` at 0x3ecd00 (decompiler, medium); signature (medium): `undefined FormatField40AndSelfNames(longlong * param_1, undefined1 * param_2, uint param_3)`
+pub const FormatField40AndSelfNames: u64 = 25494;
+/// `FormatField68NumberToStringField70` at 0xdb5780 (decompiler, medium); signature (low): `undefined FormatField68NumberToStringField70(longlong param_1, int param_2)`
+pub const FormatField68NumberToStringField70: u64 = 86170;
+/// `FormatFixedString100` at 0x1360b50 (decompiler, high); signature (high): `longlong FormatFixedString100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFixedString100: u64 = 526664;
+/// `FormatFixedString128V` at 0x128dce0 (decompiler, medium); signature (medium): `ulonglong FormatFixedString128V(ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatFixedString128V: u64 = 524779;
+/// `FormatFixedString16` at 0x13d3670 (decompiler, medium); signature (medium): `longlong FormatFixedString16(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFixedString16: u64 = 527106;
+/// `FormatFixedString2048WithPrefixV` at 0x128e190 (decompiler, medium); signature (medium): `ulonglong FormatFixedString2048WithPrefixV(ulonglong * param_1, longlong param_2, longlong param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatFixedString2048WithPrefixV: u64 = 524782;
+/// `FormatFixedString2096V` at 0x128e000 (decompiler, medium); signature (medium): `ulonglong FormatFixedString2096V(ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatFixedString2096V: u64 = 524781;
+/// `FormatFixedString250` at 0x1303900 (decompiler, medium); signature (low): `longlong FormatFixedString250(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFixedString250: u64 = 446944;
+/// `FormatFixedString32` at 0x1355310 (decompiler, high); signature (low): `longlong FormatFixedString32(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFixedString32: u64 = 526531;
+/// `FormatFixedString64V` at 0x128db40 (decompiler, medium); signature (medium): `ulonglong FormatFixedString64V(ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatFixedString64V: u64 = 524778;
+/// `FormatFixedStringV` at 0x13015c0 (decompiler, medium); signature (medium): `ulonglong FormatFixedStringV(ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatFixedStringV: u64 = 525832;
+/// `FormatFixedStringV_2` at 0x139dee0 (decompiler, high); signature (high): `ulonglong FormatFixedStringV_2(ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatFixedStringV_2: u64 = 526913;
+/// `FormatFixedStringV_3` at 0x1476dc0 (decompiler, medium); signature (medium): `int FormatFixedStringV_3(ulonglong * param_1, longlong param_2, undefined8 param_3)`
+pub const FormatFixedStringV_3: u64 = 452555;
+/// `FormatFloatAsString` at 0xcc1ba0 (decompiler, medium); signature (medium): `undefined FormatFloatAsString(float param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFloatAsString: u64 = 67517;
+/// `FormatFloatToString` at 0xcc1b30 (decompiler, medium); signature (low): `undefined FormatFloatToString(float param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatFloatToString: u64 = 67516;
+/// `FormatHexIdentifierString` at 0xec46d0 (decompiler, medium); signature (low): `undefined FormatHexIdentifierString(longlong param_1, longlong param_2)`
+pub const FormatHexIdentifierString: u64 = 69593;
+/// `FormatHexRangesToString` at 0xe19640 (decompiler, medium); signature (low): `undefined FormatHexRangesToString(ulonglong * param_1, longlong * param_2)`
+pub const FormatHexRangesToString: u64 = 88777;
+/// `FormatInt64ToString` at 0xa91220 (decompiler, high); signature (high): `undefined FormatInt64ToString(longlong * param_1, ulonglong param_2)`
+pub const FormatInt64ToString: u64 = 443334;
+/// `FormatIntAndStringAsText` at 0xce8100 (decompiler, medium); signature (low): `undefined FormatIntAndStringAsText(uint * param_1, longlong * param_2)`
+pub const FormatIntAndStringAsText: u64 = 524117;
+/// `FormatIntDecimalAtBufferEnd` at 0xd0af60 (decompiler, medium); signature (medium): `char * FormatIntDecimalAtBufferEnd(uint param_1, longlong param_2, longlong param_3)`
+pub const FormatIntDecimalAtBufferEnd: u64 = 82850;
+/// `FormatIntToString` at 0xa910e0 (decompiler, high); signature (high): `longlong * FormatIntToString(longlong * param_1, int param_2)`
+pub const FormatIntToString: u64 = 443331;
+/// `FormatInteger` at 0xd71240 (decompiler, medium); signature (low): `undefined FormatInteger(longlong param_1)`
+pub const FormatInteger: u64 = 84846;
+/// `FormatIntoFixedBufferString` at 0x385520 (decompiler, medium); signature (medium): `int FormatIntoFixedBufferString(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatIntoFixedBufferString: u64 = 23305;
+/// `FormatIntoFixedString100` at 0x128d8e0 (decompiler, medium); signature (medium): `longlong FormatIntoFixedString100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatIntoFixedString100: u64 = 524774;
+/// `FormatIntoFixedString512` at 0x13a06d0 (decompiler, medium); signature (low): `longlong FormatIntoFixedString512(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatIntoFixedString512: u64 = 449880;
+/// `FormatIntoGrowableString` at 0xaadd40 (decompiler, medium); signature (low): `undefined FormatIntoGrowableString(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatIntoGrowableString: u64 = 57483;
+/// `FormatIntoWideFixedString100` at 0x128d9f0 (decompiler, medium); signature (medium): `longlong FormatIntoWideFixedString100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FormatIntoWideFixedString100: u64 = 94350;
+/// `FormatJsonErrorMessages` at 0xa851a0 (decompiler, medium); signature (low): `undefined FormatJsonErrorMessages(char * param_1, undefined8 * param_2)`
+pub const FormatJsonErrorMessages: u64 = 443138;
+/// `FormatJsonValueAsStyledString` at 0xa8f610 (decompiler, medium); signature (low): `undefined FormatJsonValueAsStyledString(double * param_1, undefined8 * param_2, undefined8 param_3, undefined8 * param_4)`
+pub const FormatJsonValueAsStyledString: u64 = 443322;
+/// `FormatKeyValuePairsToString` at 0xca2490 (decompiler, medium); signature (low): `undefined FormatKeyValuePairsToString(longlong param_1, longlong * param_2)`
+pub const FormatKeyValuePairsToString: u64 = 67161;
+/// `FormatKeyWithSuffixCharOrIndex` at 0x58a840 (decompiler, medium); signature (low): `undefined FormatKeyWithSuffixCharOrIndex(longlong param_1, byte param_2, longlong * param_3, char * param_4)`
+pub const FormatKeyWithSuffixCharOrIndex: u64 = 441815;
+/// `FormatLineColumnLocation` at 0xa85bb0 (decompiler, medium); signature (low): `undefined FormatLineColumnLocation(longlong param_1, longlong * param_2, char * param_3)`
+pub const FormatLineColumnLocation: u64 = 443141;
+/// `FormatLoadingCellIfInGrid` at 0x1a45c0 (decompiler, medium); signature (low): `undefined FormatLoadingCellIfInGrid(longlong param_1, longlong param_2)`
+pub const FormatLoadingCellIfInGrid: u64 = 13332;
+/// `FormatLogMessageWithSeverity` at 0x149b120 (decompiler, medium); signature (low): `undefined FormatLogMessageWithSeverity(char * param_1, int param_2, undefined1 * param_3, ulonglong param_4)`
+pub const FormatLogMessageWithSeverity: u64 = 104446;
+/// `FormatMatrix2x3ToBuffer` at 0xd03780 (decompiler, medium); signature (low): `undefined FormatMatrix2x3ToBuffer(longlong param_1, undefined8 param_2)`
+pub const FormatMatrix2x3ToBuffer: u64 = 82709;
+/// `FormatMatrixObjectAsString` at 0xda0a80 (decompiler, medium); signature (low): `undefined FormatMatrixObjectAsString(longlong param_1)`
+pub const FormatMatrixObjectAsString: u64 = 85803;
+/// `FormatNameWithScale` at 0x2760a0 (decompiler, medium); signature (low): `undefined FormatNameWithScale(longlong param_1, longlong param_2, undefined8 param_3)`
+pub const FormatNameWithScale: u64 = 17649;
+/// `FormatNodeAndIndexToString` at 0xac1d80 (decompiler, medium); signature (low): `undefined FormatNodeAndIndexToString(undefined8 param_1, longlong * param_2)`
+pub const FormatNodeAndIndexToString: u64 = 58112;
 /// `FormatObjectNameOrUnloaded` at 0x633120 (decompiler, medium); signature (low): `undefined FormatObjectNameOrUnloaded(longlong param_1, char * param_2, ulonglong param_3)`
 pub const FormatObjectNameOrUnloaded: u64 = 35934;
 /// `FormatPathWithStrippedExtension` at 0x43d0a0 (decompiler, medium); signature (low): `undefined8 FormatPathWithStrippedExtension(undefined8 param_1, char * param_2)`
@@ -201,6 +355,18 @@ pub const ForwardToNearestSpriteAncestorVfuncE0: u64 = 83458;
 pub const FourCCToString: u64 = 14625;
 /// `Fprintf` at 0x90f160 (decompiler, medium); signature (medium): `undefined Fprintf(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Fprintf: u64 = 51108;
+/// `FrameJobSignalMarker` at 0x60d700 (semantic, high); semantic: 'Player Anim signal' marker: RET 0; becomes a signal only (EDX=1, 0x60f0ab) (high); signature `void (void)`
+pub const FrameJobSignalMarker: u64 = 35399;
+/// `FrameJobSignalMarker` as a function pointer type (high).
+pub type FrameJobSignalMarker_fn = unsafe extern "C" fn();
+/// `FrameJobSignalSyncMarker` at 0x60d720 (semantic, high); semantic: '...signal/sync' entry of the frame job tables: an empty function (RET 0) used as a marker that BuildSegmentJobList turns into a signal + sync pair (a full barrier) (high); signature `void (void)`
+pub const FrameJobSignalSyncMarker: u64 = 35401;
+/// `FrameJobSignalSyncMarker` as a function pointer type (high).
+pub type FrameJobSignalSyncMarker_fn = unsafe extern "C" fn();
+/// `FrameJobSyncMarker` at 0x60d710 (semantic, high); semantic: 'Player Anim sync' marker: RET 0; becomes a sync only (EDX=2, 0x60f0bf) (high); signature `void (void)`
+pub const FrameJobSyncMarker: u64 = 35400;
+/// `FrameJobSyncMarker` as a function pointer type (high).
+pub type FrameJobSyncMarker_fn = unsafe extern "C" fn();
 /// `FrameState::AdvanceJitter` at 0x101e360 (semantic, high); signature (untiered): `undefined AdvanceJitter(longlong param_1)`; semantic: next TAA jitter sample (high); signature `void (FrameState* this)`
 pub const FrameState__AdvanceJitter: u64 = 77518;
 /// `FrameState::AdvanceJitter` as a function pointer type (high).
@@ -8409,175 +8575,3 @@ pub const GameSetting_fIronSightsDOFDistance__init: u64 = 2883;
 pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
 /// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
 pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;
-/// `GameSetting_fIronSightsDOFStrengthCap__atexit` at 0x1767a50 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__atexit(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__atexit: u64 = 168095;
-/// `GameSetting_fIronSightsDOFStrengthCap__init` at 0x4cae0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__init(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__init: u64 = 2885;
-/// `GameSetting_fIronSightsDOFSwitchSeconds__atexit` at 0x1767aa0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__atexit(void)`
-pub const GameSetting_fIronSightsDOFSwitchSeconds__atexit: u64 = 168096;
-/// `GameSetting_fIronSightsDOFSwitchSeconds__init` at 0x4cb60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__init(void)`
-pub const GameSetting_fIronSightsDOFSwitchSeconds__init: u64 = 2886;
-/// `GameSetting_fIronSightsFOVTimeChange__atexit` at 0x1767af0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__atexit(void)`
-pub const GameSetting_fIronSightsFOVTimeChange__atexit: u64 = 168097;
-/// `GameSetting_fIronSightsFOVTimeChange__init` at 0x4cbe0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsFOVTimeChange__init(void)`
-pub const GameSetting_fIronSightsFOVTimeChange__init: u64 = 2887;
-/// `GameSetting_fIronSightsGunMotionBlur__atexit` at 0x1767b40 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__atexit(void)`
-pub const GameSetting_fIronSightsGunMotionBlur__atexit: u64 = 168098;
-/// `GameSetting_fIronSightsGunMotionBlur__init` at 0x4cc60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsGunMotionBlur__init(void)`
-pub const GameSetting_fIronSightsGunMotionBlur__init: u64 = 2888;
-/// `GameSetting_fIronSightsMotionBlur__atexit` at 0x1767b90 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__atexit(void)`
-pub const GameSetting_fIronSightsMotionBlur__atexit: u64 = 168099;
-/// `GameSetting_fIronSightsMotionBlur__init` at 0x4cce0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__init(void)`
-pub const GameSetting_fIronSightsMotionBlur__init: u64 = 2889;
-/// `GameSetting_fItemPointsMult__atexit` at 0x17771d0 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__atexit(void)`
-pub const GameSetting_fItemPointsMult__atexit: u64 = 168887;
-/// `GameSetting_fItemPointsMult__init` at 0x64d00 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__init(void)`
-pub const GameSetting_fItemPointsMult__init: u64 = 3677;
-/// `GameSetting_fItemRepairCostMult__atexit` at 0x1770600 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__atexit(void)`
-pub const GameSetting_fItemRepairCostMult__atexit: u64 = 168542;
-/// `GameSetting_fItemRepairCostMult__init` at 0x5a670 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__init(void)`
-pub const GameSetting_fItemRepairCostMult__init: u64 = 3332;
-/// `GameSetting_fJogInterpolationBetweenWalkAndRun__atexit` at 0x1753910 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__atexit(void)`
-pub const GameSetting_fJogInterpolationBetweenWalkAndRun__atexit: u64 = 167067;
-/// `GameSetting_fJogInterpolationBetweenWalkAndRun__init` at 0x2cdc0 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__init(void)`
-pub const GameSetting_fJogInterpolationBetweenWalkAndRun__init: u64 = 1857;
-/// `GameSetting_fJumpDoubleMult__atexit` at 0x1770650 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__atexit(void)`
-pub const GameSetting_fJumpDoubleMult__atexit: u64 = 168543;
-/// `GameSetting_fJumpDoubleMult__init` at 0x5a6f0 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__init(void)`
-pub const GameSetting_fJumpDoubleMult__init: u64 = 3333;
-/// `GameSetting_fJumpFallHeightExponentNPC__atexit` at 0x17706f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightExponentNPC__atexit: u64 = 168545;
-/// `GameSetting_fJumpFallHeightExponentNPC__init` at 0x5a7f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__init(void)`
-pub const GameSetting_fJumpFallHeightExponentNPC__init: u64 = 3335;
-/// `GameSetting_fJumpFallHeightExponent__atexit` at 0x17706a0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__atexit(void)`
-pub const GameSetting_fJumpFallHeightExponent__atexit: u64 = 168544;
-/// `GameSetting_fJumpFallHeightExponent__init` at 0x5a770 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__init(void)`
-pub const GameSetting_fJumpFallHeightExponent__init: u64 = 3334;
-/// `GameSetting_fJumpFallHeightMinNPC__atexit` at 0x1770790 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightMinNPC__atexit: u64 = 168547;
-/// `GameSetting_fJumpFallHeightMinNPC__init` at 0x5a8f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__init(void)`
-pub const GameSetting_fJumpFallHeightMinNPC__init: u64 = 3337;
-/// `GameSetting_fJumpFallHeightMin__atexit` at 0x1770740 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__atexit(void)`
-pub const GameSetting_fJumpFallHeightMin__atexit: u64 = 168546;
-/// `GameSetting_fJumpFallHeightMin__init` at 0x5a870 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__init(void)`
-pub const GameSetting_fJumpFallHeightMin__init: u64 = 3336;
-/// `GameSetting_fJumpFallHeightMultNPC__atexit` at 0x1770830 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMultNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightMultNPC__atexit: u64 = 168549;
-/// `GameSetting_fJumpFallHeightMultNPC__init` at 0x5a9f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMultNPC__init(void)`
-pub const GameSetting_fJumpFallHeightMultNPC__init: u64 = 3339;
-/// `GameSetting_fJumpFallHeightMult__atexit` at 0x17707e0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMult__atexit(void)`
-pub const GameSetting_fJumpFallHeightMult__atexit: u64 = 168548;
-/// `GameSetting_fJumpFallHeightMult__init` at 0x5a970 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMult__init(void)`
-pub const GameSetting_fJumpFallHeightMult__init: u64 = 3338;
-/// `GameSetting_fJumpFallRiderMult__atexit` at 0x1770880 (crt_init, medium); signature (high): `void GameSetting_fJumpFallRiderMult__atexit(void)`
-pub const GameSetting_fJumpFallRiderMult__atexit: u64 = 168550;
-/// `GameSetting_fJumpFallRiderMult__init` at 0x5aa70 (crt_init, medium); signature (high): `void GameSetting_fJumpFallRiderMult__init(void)`
-pub const GameSetting_fJumpFallRiderMult__init: u64 = 3340;
-/// `GameSetting_fJumpFallSkillBase__atexit` at 0x17708d0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallSkillBase__atexit(void)`
-pub const GameSetting_fJumpFallSkillBase__atexit: u64 = 168551;
-/// `GameSetting_fJumpFallSkillBase__init` at 0x5aaf0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallSkillBase__init(void)`
-pub const GameSetting_fJumpFallSkillBase__init: u64 = 3341;
-/// `GameSetting_fJumpFallSkillMult__atexit` at 0x1770920 (crt_init, medium); signature (high): `void GameSetting_fJumpFallSkillMult__atexit(void)`
-pub const GameSetting_fJumpFallSkillMult__atexit: u64 = 168552;
-/// `GameSetting_fJumpFallSkillMult__init` at 0x5ab70 (crt_init, medium); signature (high): `void GameSetting_fJumpFallSkillMult__init(void)`
-pub const GameSetting_fJumpFallSkillMult__init: u64 = 3342;
-/// `GameSetting_fJumpFallVelocityMin__atexit` at 0x1770970 (crt_init, medium); signature (high): `void GameSetting_fJumpFallVelocityMin__atexit(void)`
-pub const GameSetting_fJumpFallVelocityMin__atexit: u64 = 168553;
-/// `GameSetting_fJumpFallVelocityMin__init` at 0x5abf0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallVelocityMin__init(void)`
-pub const GameSetting_fJumpFallVelocityMin__init: u64 = 3343;
-/// `GameSetting_fJumpHeightMin__atexit` at 0x17709c0 (crt_init, medium); signature (high): `void GameSetting_fJumpHeightMin__atexit(void)`
-pub const GameSetting_fJumpHeightMin__atexit: u64 = 168554;
-/// `GameSetting_fJumpHeightMin__init` at 0x5ac70 (crt_init, medium); signature (high): `void GameSetting_fJumpHeightMin__init(void)`
-pub const GameSetting_fJumpHeightMin__init: u64 = 3344;
-/// `GameSetting_fJumpMoveBase__atexit` at 0x1770a10 (crt_init, medium); signature (high): `void GameSetting_fJumpMoveBase__atexit(void)`
-pub const GameSetting_fJumpMoveBase__atexit: u64 = 168555;
-/// `GameSetting_fJumpMoveBase__init` at 0x5acf0 (crt_init, medium); signature (high): `void GameSetting_fJumpMoveBase__init(void)`
-pub const GameSetting_fJumpMoveBase__init: u64 = 3345;
-/// `GameSetting_fJumpMoveMult__atexit` at 0x1770a60 (crt_init, medium); signature (high): `void GameSetting_fJumpMoveMult__atexit(void)`
-pub const GameSetting_fJumpMoveMult__atexit: u64 = 168556;
-/// `GameSetting_fJumpMoveMult__init` at 0x5ad70 (crt_init, medium); signature (high): `void GameSetting_fJumpMoveMult__init(void)`
-pub const GameSetting_fJumpMoveMult__init: u64 = 3346;
-/// `GameSetting_fJumpSwimmingMult__atexit` at 0x1770ab0 (crt_init, medium); signature (high): `void GameSetting_fJumpSwimmingMult__atexit(void)`
-pub const GameSetting_fJumpSwimmingMult__atexit: u64 = 168557;
-/// `GameSetting_fJumpSwimmingMult__init` at 0x5adf0 (crt_init, medium); signature (high): `void GameSetting_fJumpSwimmingMult__init(void)`
-pub const GameSetting_fJumpSwimmingMult__init: u64 = 3347;
-/// `GameSetting_fKarmaModKillingEvilActor__atexit` at 0x1753960 (crt_init, medium); signature (high): `void GameSetting_fKarmaModKillingEvilActor__atexit(void)`
-pub const GameSetting_fKarmaModKillingEvilActor__atexit: u64 = 167068;
-/// `GameSetting_fKarmaModKillingEvilActor__init` at 0x2ce40 (crt_init, medium); signature (high): `void GameSetting_fKarmaModKillingEvilActor__init(void)`
-pub const GameSetting_fKarmaModKillingEvilActor__init: u64 = 1858;
-/// `GameSetting_fKarmaModMurderingNonEvilCreature__atexit` at 0x17539b0 (crt_init, medium); signature (high): `void GameSetting_fKarmaModMurderingNonEvilCreature__atexit(void)`
-pub const GameSetting_fKarmaModMurderingNonEvilCreature__atexit: u64 = 167069;
-/// `GameSetting_fKarmaModMurderingNonEvilCreature__init` at 0x2cec0 (crt_init, medium); signature (high): `void GameSetting_fKarmaModMurderingNonEvilCreature__init(void)`
-pub const GameSetting_fKarmaModMurderingNonEvilCreature__init: u64 = 1859;
-/// `GameSetting_fKarmaModMurderingNonEvilNPC__atexit` at 0x1753a00 (crt_init, medium); signature (high): `void GameSetting_fKarmaModMurderingNonEvilNPC__atexit(void)`
-pub const GameSetting_fKarmaModMurderingNonEvilNPC__atexit: u64 = 167070;
-/// `GameSetting_fKarmaModMurderingNonEvilNPC__init` at 0x2cf40 (crt_init, medium); signature (high): `void GameSetting_fKarmaModMurderingNonEvilNPC__init(void)`
-pub const GameSetting_fKarmaModMurderingNonEvilNPC__init: u64 = 1860;
-/// `GameSetting_fKarmaModStealing__atexit` at 0x1753a50 (crt_init, medium); signature (high): `void GameSetting_fKarmaModStealing__atexit(void)`
-pub const GameSetting_fKarmaModStealing__atexit: u64 = 167071;
-/// `GameSetting_fKarmaModStealing__init` at 0x2cfc0 (crt_init, medium); signature (high): `void GameSetting_fKarmaModStealing__init(void)`
-pub const GameSetting_fKarmaModStealing__init: u64 = 1861;
-/// `GameSetting_fKillCamBaseOdds__atexit` at 0x1767be0 (crt_init, medium); signature (high): `void GameSetting_fKillCamBaseOdds__atexit(void)`
-pub const GameSetting_fKillCamBaseOdds__atexit: u64 = 168100;
-/// `GameSetting_fKillCamBaseOdds__init` at 0x4cd60 (crt_init, medium); signature (high): `void GameSetting_fKillCamBaseOdds__init(void)`
-pub const GameSetting_fKillCamBaseOdds__init: u64 = 2890;
-/// `GameSetting_fKillCamLevelBias__atexit` at 0x1767c30 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelBias__atexit(void)`
-pub const GameSetting_fKillCamLevelBias__atexit: u64 = 168101;
-/// `GameSetting_fKillCamLevelBias__init` at 0x4cde0 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelBias__init(void)`
-pub const GameSetting_fKillCamLevelBias__init: u64 = 2891;
-/// `GameSetting_fKillCamLevelFactor__atexit` at 0x1767c80 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelFactor__atexit(void)`
-pub const GameSetting_fKillCamLevelFactor__atexit: u64 = 168102;
-/// `GameSetting_fKillCamLevelFactor__init` at 0x4ce60 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelFactor__init(void)`
-pub const GameSetting_fKillCamLevelFactor__init: u64 = 2892;
-/// `GameSetting_fKillCamLevelMaxBias__atexit` at 0x1767cd0 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelMaxBias__atexit(void)`
-pub const GameSetting_fKillCamLevelMaxBias__atexit: u64 = 168103;
-/// `GameSetting_fKillCamLevelMaxBias__init` at 0x4cee0 (crt_init, medium); signature (high): `void GameSetting_fKillCamLevelMaxBias__init(void)`
-pub const GameSetting_fKillCamLevelMaxBias__init: u64 = 2893;
-/// `GameSetting_fKillMoveMaxDuration__atexit` at 0x1767d20 (crt_init, medium); signature (high): `void GameSetting_fKillMoveMaxDuration__atexit(void)`
-pub const GameSetting_fKillMoveMaxDuration__atexit: u64 = 168104;
-/// `GameSetting_fKillMoveMaxDuration__init` at 0x4cf60 (crt_init, medium); signature (high): `void GameSetting_fKillMoveMaxDuration__init(void)`
-pub const GameSetting_fKillMoveMaxDuration__init: u64 = 2894;
-/// `GameSetting_fKillWitnessesTimerSetting__atexit` at 0x1753aa0 (crt_init, medium); signature (high): `void GameSetting_fKillWitnessesTimerSetting__atexit(void)`
-pub const GameSetting_fKillWitnessesTimerSetting__atexit: u64 = 167072;
-/// `GameSetting_fKillWitnessesTimerSetting__init` at 0x2d040 (crt_init, medium); signature (high): `void GameSetting_fKillWitnessesTimerSetting__init(void)`
-pub const GameSetting_fKillWitnessesTimerSetting__init: u64 = 1862;
-/// `GameSetting_fKnockbackAgilBase__atexit` at 0x1767d70 (crt_init, medium); signature (high): `void GameSetting_fKnockbackAgilBase__atexit(void)`
-pub const GameSetting_fKnockbackAgilBase__atexit: u64 = 168105;
-/// `GameSetting_fKnockbackAgilBase__init` at 0x4cfe0 (crt_init, medium); signature (high): `void GameSetting_fKnockbackAgilBase__init(void)`
-pub const GameSetting_fKnockbackAgilBase__init: u64 = 2895;
-/// `GameSetting_fKnockbackAgilMult__atexit` at 0x1767dc0 (crt_init, medium); signature (high): `void GameSetting_fKnockbackAgilMult__atexit(void)`
-pub const GameSetting_fKnockbackAgilMult__atexit: u64 = 168106;
-/// `GameSetting_fKnockbackAgilMult__init` at 0x4d060 (crt_init, medium); signature (high): `void GameSetting_fKnockbackAgilMult__init(void)`
-pub const GameSetting_fKnockbackAgilMult__init: u64 = 2896;
-/// `GameSetting_fKnockbackDamageBase__atexit` at 0x1767e10 (crt_init, medium); signature (high): `void GameSetting_fKnockbackDamageBase__atexit(void)`
-pub const GameSetting_fKnockbackDamageBase__atexit: u64 = 168107;
-/// `GameSetting_fKnockbackDamageBase__init` at 0x4d0e0 (crt_init, medium); signature (high): `void GameSetting_fKnockbackDamageBase__init(void)`
-pub const GameSetting_fKnockbackDamageBase__init: u64 = 2897;
-/// `GameSetting_fKnockbackDamageMult__atexit` at 0x1767e60 (crt_init, medium); signature (high): `void GameSetting_fKnockbackDamageMult__atexit(void)`
-pub const GameSetting_fKnockbackDamageMult__atexit: u64 = 168108;
-/// `GameSetting_fKnockbackDamageMult__init` at 0x4d160 (crt_init, medium); signature (high): `void GameSetting_fKnockbackDamageMult__init(void)`
-pub const GameSetting_fKnockbackDamageMult__init: u64 = 2898;
-/// `GameSetting_fKnockbackForceMax__atexit` at 0x1767eb0 (crt_init, medium); signature (high): `void GameSetting_fKnockbackForceMax__atexit(void)`
-pub const GameSetting_fKnockbackForceMax__atexit: u64 = 168109;
-/// `GameSetting_fKnockbackForceMax__init` at 0x4d1e0 (crt_init, medium); signature (high): `void GameSetting_fKnockbackForceMax__init(void)`
-pub const GameSetting_fKnockbackForceMax__init: u64 = 2899;
-/// `GameSetting_fKnockbackTime__atexit` at 0x1767f00 (crt_init, medium); signature (high): `void GameSetting_fKnockbackTime__atexit(void)`
-pub const GameSetting_fKnockbackTime__atexit: u64 = 168110;
-/// `GameSetting_fKnockbackTime__init` at 0x4d260 (crt_init, medium); signature (high): `void GameSetting_fKnockbackTime__init(void)`
-pub const GameSetting_fKnockbackTime__init: u64 = 2900;
-/// `GameSetting_fKnockdownAgilBase__atexit` at 0x1767f50 (crt_init, medium); signature (high): `void GameSetting_fKnockdownAgilBase__atexit(void)`
-pub const GameSetting_fKnockdownAgilBase__atexit: u64 = 168111;
-/// `GameSetting_fKnockdownAgilBase__init` at 0x4d2e0 (crt_init, medium); signature (high): `void GameSetting_fKnockdownAgilBase__init(void)`
-pub const GameSetting_fKnockdownAgilBase__init: u64 = 2901;
-/// `GameSetting_fKnockdownAgilMult__atexit` at 0x1767fa0 (crt_init, medium); signature (high): `void GameSetting_fKnockdownAgilMult__atexit(void)`
-pub const GameSetting_fKnockdownAgilMult__atexit: u64 = 168112;
-/// `GameSetting_fKnockdownAgilMult__init` at 0x4d360 (crt_init, medium); signature (high): `void GameSetting_fKnockdownAgilMult__init(void)`
-pub const GameSetting_fKnockdownAgilMult__init: u64 = 2902;
-/// `GameSetting_fKnockdownBaseHealthThreshold__atexit` at 0x1767ff0 (crt_init, medium); signature (high): `void GameSetting_fKnockdownBaseHealthThreshold__atexit(void)`
-pub const GameSetting_fKnockdownBaseHealthThreshold__atexit: u64 = 168113;
-/// `GameSetting_fKnockdownBaseHealthThreshold__init` at 0x4d3e0 (crt_init, medium); signature (high): `void GameSetting_fKnockdownBaseHealthThreshold__init(void)`
-pub const GameSetting_fKnockdownBaseHealthThreshold__init: u64 = 2903;
-/// `GameSetting_fKnockdownChance__atexit` at 0x1768040 (crt_init, medium); signature (high): `void GameSetting_fKnockdownChance__atexit(void)`
-pub const GameSetting_fKnockdownChance__atexit: u64 = 168114;
-/// `GameSetting_fKnockdownChance__init` at 0x4d460 (crt_init, medium); signature (high): `void GameSetting_fKnockdownChance__init(void)`
-pub const GameSetting_fKnockdownChance__init: u64 = 2904;

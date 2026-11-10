@@ -103,12 +103,6 @@ impl core::ops::Deref for crate::BGSAttachTechniquesUtil__DetachTechniquesFuncto
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BGSAttackData` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSAttackData {
-    type Target = crate::NiRefObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BGSAttackDataForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSAttackDataForm {
     type Target = crate::BaseFormComponent;
@@ -136,12 +130,6 @@ impl core::ops::Deref for crate::BGSBipedModelList {
 /// `BGSBlockBashData` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSBlockBashData {
     type Target = crate::BaseFormComponent;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `BGSCollisionLayer` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSCollisionLayer {
-    type Target = crate::TESForm;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -2268,25 +2256,6 @@ impl crate::BGSBehaviorGraphModel {
     pub fn model_ptr(&self) -> *mut crate::BSFixedString { Self::__member_model(core::ptr::from_ref(self)) }
 }
 
-impl crate::BGSCollisionLayer {
-    /// The `BaseFormComponent` base at +0x20.
-    #[inline]
-    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    /// The `TESDescription` base at +0x20.
-    #[inline]
-    pub fn as_tes_description(&self) -> &crate::TESDescription { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSCollisionLayer.field_58", 0x58, u32) } }
-    /// `BGSCollisionLayer::field_58`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
-}
-
 impl crate::BGSColorForm {
     /// The `BaseFormComponent` base at +0x20.
     #[inline]
@@ -2953,6 +2922,15 @@ impl crate::BGSMaterialObject {
     pub fn model(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_model(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn model_ptr(&self) -> *mut crate::BSFixedString { Self::__member_model(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSMaterialType {
+    /// `BGSMaterialType::IsStairsById`: LookupMaterialTypeByHavokId(id) and (+0x44 & 1)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 20970, rva 0x3227b0.
+    /// `bool (u32 havokMaterialId)`
+    #[inline]
+    pub fn is_stairs_by_id(havokMaterialId: u32) -> bool { unsafe { function!(20970, (u32) -> bool)(havokMaterialId) } }
 }
 
 impl crate::BGSMenuIcon {

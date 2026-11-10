@@ -7,55 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetOrCreatePathingCell` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30684, rva 0x4db240).
-/// `bool GetOrCreatePathingCell(longlong param_1, ulonglong * param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_pathing_cell(param_1: i64, param_2: *mut u64, param_3: *mut i64) -> u8 { unsafe { function!(30684, (i64, *mut u64, *mut i64) -> u8)(param_1, param_2, param_3) } }
-/// `GetOrCreatePathingCellForLocation` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30683, rva 0x4db170).
-/// `undefined GetOrCreatePathingCellForLocation(longlong param_1, float * param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_pathing_cell_for_location(param_1: i64, param_2: *mut f32, param_3: *mut i64) -> u64 { unsafe { function!(30683, (i64, *mut f32, *mut i64) -> u64)(param_1, param_2, param_3) } }
-/// `GetOrCreatePortalGraph` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 19169, rva 0x2caf40).
-/// `undefined8 GetOrCreatePortalGraph(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_portal_graph(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(19169, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `GetOrCreateQueuedHandles` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 13602, rva 0x1b3120).
-/// `longlong GetOrCreateQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_queued_handles(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> i64 { unsafe { function!(13602, (i64, u64, u64, u64) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `GetOrCreateQueuedHelmet` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 13056, rva 0x195980).
-/// `undefined GetOrCreateQueuedHelmet(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_queued_helmet(param_1: i64, param_2: *mut i64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(13056, (i64, *mut i64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `GetOrCreateQueuedHelmetForSlot` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15698, rva 0x21bca0).
-/// `undefined GetOrCreateQueuedHelmetForSlot(int * param_1, uint param_2, undefined8 param_3, int param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_queued_helmet_for_slot(param_1: *mut i32, param_2: u32, param_3: u64, param_4: i32) -> u64 { unsafe { function!(15698, (*mut i32, u32, u64, i32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `GetOrCreateRegionList` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 18999, rva 0x2bec60).
-/// `TESRegionList * GetOrCreateRegionList(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_region_list(param_1: i64, param_2: c_char, param_3: u64, param_4: u64) -> *mut crate::TESRegionList { unsafe { function!(18999, (i64, c_char, u64, u64) -> *mut crate::TESRegionList)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateThreadLocalBlock668` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 24804, rva 0x3c9480).
 /// `undefined8 * GetOrCreateThreadLocalBlock668(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -6874,13 +6825,6 @@ pub unsafe fn init_terrain_texture_entry(param_1: *mut u64, param_2: *mut i64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_text_formats_from_text_field_def(param_1: *mut i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(85648, (*mut i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `InitThreadLocalMemoryOnce` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 79338, rva 0x10a1030).
-/// `undefined InitThreadLocalMemoryOnce(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_thread_local_memory_once(param_1: i64) -> u64 { unsafe { function!(79338, (i64) -> u64)(param_1) } }
 /// `InitThreeEmptyArrays` (decompiler signature, tier low; ledger decompiler evidence, name high; id 442585, rva 0x62b9d0).
 /// `undefined8 * InitThreeEmptyArrays(undefined8 * param_1)`
 ///
@@ -11431,13 +11375,6 @@ pub unsafe fn invoke_with_dereferenced_args_3(param_1: *mut u64, param_2: *mut u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn invoke_with_dereferenced_args_4(param_1: *mut u64, param_2: *mut u64, param_3: *mut u32, param_4: u64, param_5: *mut u32) -> u64 { unsafe { function!(523162, (*mut u64, *mut u64, *mut u32, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `InvokeWithThreadEventNotifications` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 68445, rva 0xceb1a0).
-/// `ulonglong InvokeWithThreadEventNotifications(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn invoke_with_thread_event_notifications(param_1: *mut i64) -> u64 { unsafe { function!(68445, (*mut i64) -> u64)(param_1) } }
 /// `IsActorMatchedByFormOrList` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 27289, rva 0x447270).
 /// `ulonglong IsActorMatchedByFormOrList(longlong param_1, longlong param_2)`
 ///
@@ -13216,3 +13153,66 @@ pub unsafe fn load_fields_c_to1_a_from_stream(param_1: i64, param_2: i64) -> u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn load_fields_from_pathing_stream(param_1: *mut c_void, param_2: i64) -> u64 { unsafe { function!(44574, (*mut c_void, i64) -> u64)(param_1, param_2) } }
+/// `LoadFirstNifObjectFromTreesPath` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 13073, rva 0x1970b0).
+/// `undefined LoadFirstNifObjectFromTreesPath(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_first_nif_object_from_trees_path(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(13073, (u64, u64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `LoadFixedStringFromStream` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 70354, rva 0xee4af0).
+/// `undefined LoadFixedStringFromStream(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_fixed_string_from_stream(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(70354, (i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `LoadFlaggedPairArray` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 53715, rva 0x9c8790).
+/// `char LoadFlaggedPairArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_flagged_pair_array(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(53715, (i64, *mut i64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `LoadFlaggedPairArray_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 53723, rva 0x9c93a0).
+/// `char LoadFlaggedPairArray_2(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_flagged_pair_array_2(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> c_char { unsafe { function!(53723, (i64, *mut i64, u64, u64) -> c_char)(param_1, param_2, param_3, param_4) } }
+/// `LoadFloatPairAndSharedObjectRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47919, rva 0x885450).
+/// `undefined LoadFloatPairAndSharedObjectRef(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_shared_object_ref(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(47919, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairAndSharedObjectRef_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47923, rva 0x885a90).
+/// `undefined LoadFloatPairAndSharedObjectRef_2(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_shared_object_ref_2(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(47923, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairAndSharedObjectRef_3` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 49242, rva 0x8bc130).
+/// `undefined LoadFloatPairAndSharedObjectRef_3(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_shared_object_ref_3(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(49242, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairAndSharedObjectRef_4` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 49467, rva 0x8c4b70).
+/// `undefined LoadFloatPairAndSharedObjectRef_4(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_shared_object_ref_4(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(49467, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairAndTwoSharedObjectRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 48374, rva 0x898a20).
+/// `undefined LoadFloatPairAndTwoSharedObjectRefs(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_two_shared_object_refs(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(48374, (*mut i64, i64) -> u64)(param_1, param_2) } }

@@ -257,6 +257,13 @@ impl crate::bhkBinaryAction {
 }
 
 impl crate::bhkBipedOrientationController {
+    /// `bhkBipedOrientationController::Update`, vtable slot 8, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 79327, rva 0x10a09c0).
+    /// `undefined Update(bhkBipedOrientationController * this, longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update(&self, param_1: *mut i64) -> u64 { unsafe { virtual_function!(self, 8, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `bhkBipedOrientationController::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 79330, rva 0x10a0b70).
     /// `bhkBipedOrientationController * vdtor(bhkBipedOrientationController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -1557,6 +1564,13 @@ impl crate::bhkPrismaticConstraint {
 }
 
 impl crate::bhkQuadOrientationController {
+    /// `bhkQuadOrientationController::Update`, vtable slot 8, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 80138, rva 0x10ca460).
+    /// `undefined Update(bhkQuadOrientationController * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 8, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `bhkQuadOrientationController::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 80146, rva 0x10ca9c0).
     /// `bhkQuadOrientationController * vdtor(bhkQuadOrientationController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5315,6 +5329,13 @@ impl crate::hkbCharacterControlCommand {
 }
 
 impl crate::hkbCharacterControllerModifier {
+    /// `hkbCharacterControllerModifier::Modify`, vtable slot 23, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 59610, rva 0xb06180).
+    /// `undefined Modify(hkbCharacterControllerModifier * this, longlong * param_1, longlong * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn modify(&self, param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { virtual_function!(self, 23, (*const Self, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `hkbCharacterControllerModifier::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 59606, rva 0xb05ff0).
     /// `hkbCharacterControllerModifier * ctor(hkbCharacterControllerModifier * this, longlong param_1)`
     ///

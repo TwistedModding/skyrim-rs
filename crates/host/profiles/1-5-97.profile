@@ -17174,7 +17174,7 @@ id-unverified 25984
 id 25985 25458
 id-unverified 25986
 id-unverified 25987
-id-unverified 25988
+id 25988 25461
 id 25989 528960
 id-unverified 25990
 id-unverified 25991
@@ -21911,7 +21911,7 @@ id 32155 31447
 id-unverified 32156
 id-unverified 32158
 id-unverified 32159
-id-unverified 32160
+id 32160 31373
 id-unverified 32164
 id-unverified 32165
 id-unverified 32166
@@ -26387,6 +26387,7 @@ id-unverified 38493
 id 38494 37545
 id 38496 37547
 id 38497 37548
+id 38498 37549
 id 38505 37556
 id 38507 37558
 id-unverified 38508
@@ -40742,13 +40743,13 @@ id 55697 55098
 id 55698 55099
 id 55699 55100
 id 55700 530334
-id-unverified 55702
+id 55702 55102
 id 55703 55103
 id 55704 530335
 id 55706 55105
 id 55707 55106
-id-unverified 55708
-id-unverified 55709
+id 55708 55107
+id 55709 55108
 id 55710 55109
 id-unverified 55711
 id-unverified 55712
@@ -72349,6 +72350,7 @@ id-unverified 107069
 id-unverified 107070
 id 107071 100354
 id-unverified 107072
+id 107081 100363
 id-unverified 107082
 id 107083 100365
 id 107084 100366
@@ -92177,6 +92179,7 @@ id 189323 233808
 id 189325 233809
 id 189329 233805
 id 189331 233806
+id 189332 232035
 id 189335 233830
 id 189337 233831
 id 189342 233820
@@ -100314,6 +100317,7 @@ id 370076 502503
 id 370079 502505
 id 370082 502507
 id 370085 502509
+id-unverified 370093
 id 370096 502518
 id 370099 502520
 id 370102 502522
@@ -104848,6 +104852,8 @@ id 389144 512294
 id 389149 512299
 id 389152 512301
 id 389155 512303
+id 389161 512308
+id 389162 512309
 id 389165 512312
 id 389167 512313
 id 389170 512315
@@ -105491,9 +105497,11 @@ id-unverified 403753
 id 403759 517228
 id-unverified 403767
 id-unverified 403901
+id-unverified 403905
 id-unverified 404008
 id-unverified 404009
 id 404014 517485
+id 404075 517486
 id-unverified 404129
 id-unverified 404130
 id-unverified 404131
@@ -105517,6 +105525,8 @@ id 404538 518015
 id 404541 518018
 id 404546 518023
 id 404549 518026
+id-unverified 404598
+id-unverified 404601
 id-unverified 404608
 id-unverified 404610
 id-unverified 404612
@@ -105696,6 +105706,7 @@ id 406751 520221
 id 407374 520856
 id-unverified 407375
 id 407383 520865
+id 407394 520876
 id 407511 520993
 id-unverified 407570
 id-unverified 407578
@@ -105732,6 +105743,7 @@ id-unverified 410198
 id 410199 523660
 id 410200 523661
 id 410201 523662
+id 410209 523670
 id-unverified 410238
 id-unverified 410253
 id 410392 523835
@@ -106025,6 +106037,7 @@ id-unverified 411532
 id-unverified 411533
 id 411534 525058
 id 411537 525061
+id-unverified 411541
 id 411544 525068
 id-unverified 411547
 id-unverified 411550
@@ -107704,7 +107717,6 @@ member-unverified BGSCameraShot.padB2
 member-unverified BGSCameraShot.projectileCutDistance
 member-unverified BGSCameraShot.target
 member-unverified BGSCameraShot.targetTimeMult
-member-unverified BGSCollisionLayer.field_58
 member-unverified BGSDecalNode.extraDataCapacity
 member-unverified BGSDecalNode.flags2
 member-unverified BGSDecalNode.local
@@ -112666,7 +112678,6 @@ member-unverified Character.field_1F0
 member-unverified Character.field_268
 member-unverified Character.field_270
 member-unverified Character.field_274
-member-unverified Character.field_279
 member-unverified Character.field_280
 member-unverified Character.field_288
 member-unverified Character.field_90
@@ -112676,6 +112687,7 @@ member-unverified Character.field_A8
 member-unverified Character.field_B0
 member Character.flags1 c0
 member-unverified Character.flags2
+member-unverified Character.has3DCollision
 member-unverified Character.healthModifiers
 member-unverified Character.magicCasters
 member-unverified Character.magickaModifiers
@@ -113892,6 +113904,8 @@ member-unverified IronSightsState.refCount
 member-unverified ItemList.entryList
 member-unverified ItemList.items
 member-unverified ItemList.view
+member-unverified JobList.activeExecutors
+member-unverified JobList.idleEvent
 member-unverified JournalMenu.field_11
 member-unverified JournalMenu.field_12
 member-unverified JournalMenu.field_BC
@@ -114465,7 +114479,6 @@ member-unverified MessageBoxData.textFlag
 member-unverified MessageBoxMenu.field_11
 member-unverified MessageBoxMenu.field_12
 member-unverified MiddleHighProcessData.animationGraphManagerData
-member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.leftHandEquipType
@@ -115249,7 +115262,6 @@ member-unverified PlayerCharacter.field_1F0
 member-unverified PlayerCharacter.field_268
 member-unverified PlayerCharacter.field_270
 member-unverified PlayerCharacter.field_274
-member-unverified PlayerCharacter.field_279
 member-unverified PlayerCharacter.field_280
 member-unverified PlayerCharacter.field_288
 member-unverified PlayerCharacter.field_3E8
@@ -115461,6 +115473,7 @@ member PlayerCharacter.firstPersonRoot 8f0
 member-unverified PlayerCharacter.firstPersonTorchLight
 member PlayerCharacter.flags1 c0
 member-unverified PlayerCharacter.flags2
+member-unverified PlayerCharacter.has3DCollision
 member PlayerCharacter.healthModifiers 228
 member-unverified PlayerCharacter.m_NiTMapBase_628
 member-unverified PlayerCharacter.m_NiTMap_618
@@ -116581,23 +116594,6 @@ member-unverified TweenMenuCameraState.currentAngles
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TwoJointSolverSetup.cosineMaxHingeAngle
-member-unverified TwoJointSolverSetup.cosineMinHingeAngle
-member-unverified TwoJointSolverSetup.endBoneIndex
-member-unverified TwoJointSolverSetup.endBoneOffsetLS
-member-unverified TwoJointSolverSetup.endBoneRotationOffsetLS
-member-unverified TwoJointSolverSetup.endJointIkGain
-member-unverified TwoJointSolverSetup.endTargetMS
-member-unverified TwoJointSolverSetup.endTargetRotationMS
-member-unverified TwoJointSolverSetup.enforceEndPosition
-member-unverified TwoJointSolverSetup.enforceEndRotation
-member-unverified TwoJointSolverSetup.firstJointIkGain
-member-unverified TwoJointSolverSetup.firstJointIndex
-member-unverified TwoJointSolverSetup.firstJointTwistIndex
-member-unverified TwoJointSolverSetup.hingeAxisLS
-member-unverified TwoJointSolverSetup.secondJointIkGain
-member-unverified TwoJointSolverSetup.secondJointIndex
-member-unverified TwoJointSolverSetup.secondJointTwistIndex
 member-unverified TypeNode.name
 member-unverified UICursor.bounds
 member-unverified UICursor.y
@@ -117646,6 +117642,7 @@ member-unverified bhkCharacterController.m_BSBound_120
 member-unverified bhkCharacterController.m_BSBound_150
 member-unverified bhkCharacterController.shapes
 member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
+member-unverified bhkCharacterController.supportLayer
 member-unverified bhkCharacterControllerCinfo.field_74
 member-unverified bhkCharacterPointCollector.field_228
 member-unverified bhkCharacterState.field_108
@@ -136174,6 +136171,7 @@ size-unverified IronSightsState
 size-unverified IsSpellTargetFunctor
 size-unverified IsSpellTypeTargetFunctor
 size-unverified ItemList
+size-unverified JobList
 size-unverified JobListManager::ServingThread
 size-unverified JournalInputMapping::RemapHandler
 size-unverified JournalMenu
@@ -138137,6 +138135,7 @@ size-unverified hkbCameraShakeEventPayload
 size-unverified hkbCharacter
 size-unverified hkbCharacterAddedInfo
 size-unverified hkbCharacterControlCommand
+size-unverified hkbCharacterControllerControlData
 size-unverified hkbCharacterControllerModifier
 size-unverified hkbCharacterControllerModifierInternalState
 size-unverified hkbCharacterControllerSceneModifier

@@ -7,6 +7,346 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpConvexListAgent::ctor` at 0xc8c8f0 (layout_inference, high); signature (low): `hkpConvexListAgent * ctor(hkpConvexListAgent * this, undefined8 * param_1, undefined8 * param_2, undefined8 * param_3)`
+pub const hkpConvexListAgent__ctor: u64 = 67006;
+/// `hkpConvexListAgent::vdtor` at 0xc8d0a0 (layout_inference, medium); signature (low): `hkpConvexListAgent * vdtor(hkpConvexListAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListAgent__vdtor: u64 = 67014;
+/// `hkpConvexListAgent::vfunc_10` at 0xc8c800 (rtti, medium); signature (low): `undefined vfunc_10(hkpConvexListAgent * this, float param_2, uint param_3, longlong * param_4)`
+pub const hkpConvexListAgent__vfunc_10: u64 = 67001;
+/// `hkpConvexListAgent::vfunc_11` at 0xc8c890 (rtti, medium); signature (low): `undefined vfunc_11(hkpConvexListAgent * this, short param_1)`
+pub const hkpConvexListAgent__vfunc_11: u64 = 67003;
+/// `hkpConvexListAgent::vfunc_12` at 0xc8c8b0 (rtti, medium); signature (low): `undefined vfunc_12(hkpConvexListAgent * this, undefined2 param_1)`
+pub const hkpConvexListAgent__vfunc_12: u64 = 67004;
+/// `hkpConvexListAgent::vfunc_13` at 0xc8c8d0 (rtti, medium); signature (low): `undefined vfunc_13(hkpConvexListAgent * this, short param_1)`
+pub const hkpConvexListAgent__vfunc_13: u64 = 67005;
+/// `hkpConvexListAgent::vfunc_2` at 0xc8c7c0 (rtti, medium); signature (low): `undefined vfunc_2(hkpConvexListAgent * this, longlong * param_1)`
+pub const hkpConvexListAgent__vfunc_2: u64 = 66999;
+/// `hkpConvexListAgent::vfunc_3` at 0xc8c610 (rtti, high); signature (low): `undefined vfunc_3(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_3: u64 = 66996;
+/// `hkpConvexListAgent::vfunc_4` at 0xc8c420 (rtti, high); signature (low): `undefined vfunc_4(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_4: u64 = 66994;
+/// `hkpConvexListAgent::vfunc_5` at 0xc8c2a0 (rtti, medium); signature (low): `undefined vfunc_5(hkpConvexListAgent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_5: u64 = 66992;
+/// `hkpConvexListAgent::vfunc_6` at 0xc8bcd0 (rtti, high); signature (low): `undefined vfunc_6(hkpConvexListAgent * this, longlong * param_1, longlong * param_2, longlong param_3, undefined8 * param_4)`
+pub const hkpConvexListAgent__vfunc_6: u64 = 66991;
+/// `hkpConvexListAgent::vfunc_6_sub0` at 0xc8c9b0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub0(longlong param_1, undefined8 param_2)`
+pub const hkpConvexListAgent__vfunc_6_sub0: u64 = 67007;
+/// `hkpConvexListAgent::vfunc_6_sub1` at 0xc8ca00 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(longlong param_1, undefined8 param_2)`
+pub const hkpConvexListAgent__vfunc_6_sub1: u64 = 67008;
+/// `hkpConvexListAgent::vfunc_7` at 0xc8c820 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexListAgent * this, undefined8 param_1)`
+pub const hkpConvexListAgent__vfunc_7: u64 = 67002;
+/// `hkpConvexListAgent::vfunc_8` at 0xc8c760 (rtti, high); signature (low): `undefined vfunc_8(hkpConvexListAgent * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const hkpConvexListAgent__vfunc_8: u64 = 66998;
+/// `hkpConvexListAgent::vfunc_9` at 0xc8c7e0 (rtti, medium); signature (low): `undefined vfunc_9(hkpConvexListAgent * this, longlong * param_1)`
+pub const hkpConvexListAgent__vfunc_9: u64 = 67000;
+/// `hkpConvexListFilter::vdtor` at 0xb365e0 (layout_inference, medium); signature (low): `hkpConvexListFilter * vdtor(hkpConvexListFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListFilter__vdtor: u64 = 60528;
+/// `hkpConvexListShape::ctor` at 0xb450e0 (layout_inference, medium); signature (low): `hkpConvexListShape * ctor(hkpConvexListShape * this, longlong * param_1, int param_2)`
+pub const hkpConvexListShape__ctor: u64 = 60747;
+/// `hkpConvexListShape::dtor` at 0xb45150 (layout_inference, high); signature (high): `undefined dtor(hkpConvexListShape * this)`
+pub const hkpConvexListShape__dtor: u64 = 60748;
+/// `hkpConvexListShape::hkpShapeContainer_vdtor` at 0xb3db5c (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpConvexListShape * this)`
+pub const hkpConvexListShape__hkpShapeContainer_vdtor: u64 = 60518;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_1` at 0xb45580 (rtti, high); signature (high): `undefined4 hkpShapeContainer_vfunc_1(hkpConvexListShape * this)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_1: u64 = 60756;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_2` at 0xb45590 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_2(void)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_2: u64 = 60757;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_3` at 0xb455a0 (rtti, high); signature (low): `int hkpShapeContainer_vfunc_3(hkpConvexListShape * this, int param_1)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_3: u64 = 60758;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_4` at 0xb455c0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_4(void)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_4: u64 = 60759;
+/// `hkpConvexListShape::hkpShapeContainer_vfunc_5` at 0xb455d0 (rtti, high); signature (low): `undefined8 hkpShapeContainer_vfunc_5(hkpConvexListShape * this, int param_1)`
+pub const hkpConvexListShape__hkpShapeContainer_vfunc_5: u64 = 60760;
+/// `hkpConvexListShape::vdtor` at 0xb3dd30 (slot_propagation, medium); signature (low): `hkpConvexListShape * vdtor(hkpConvexListShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexListShape__vdtor: u64 = 60529;
+/// `hkpConvexListShape::vfunc_11` at 0xb45490 (rtti, high); signature (high): `int vfunc_11(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_11: u64 = 60754;
+/// `hkpConvexListShape::vfunc_12` at 0xb454f0 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexListShape * this, longlong param_1)`
+pub const hkpConvexListShape__vfunc_12: u64 = 60755;
+/// `hkpConvexListShape::vfunc_13` at 0xb45470 (rtti, high); signature (high): `undefined vfunc_13(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_13: u64 = 60753;
+/// `hkpConvexListShape::vfunc_14` at 0xb452e0 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexListShape * this, float * param_1, float * param_2)`
+pub const hkpConvexListShape__vfunc_14: u64 = 60751;
+/// `hkpConvexListShape::vfunc_15` at 0xb453c0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexListShape * this, ushort * param_1, uint param_2, longlong param_3)`
+pub const hkpConvexListShape__vfunc_15: u64 = 60752;
+/// `hkpConvexListShape::vfunc_2` at 0xb459e0 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexListShape * this, longlong * param_1)`
+pub const hkpConvexListShape__vfunc_2: u64 = 60765;
+/// `hkpConvexListShape::vfunc_4` at 0xb459c0 (rtti, high); signature (high): `hkpConvexListShape_vtbl_28 * * vfunc_4(hkpConvexListShape * this)`
+pub const hkpConvexListShape__vfunc_4: u64 = 60764;
+/// `hkpConvexListShape::vfunc_7` at 0xb455f0 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexListShape * this, float * param_1, float param_2, undefined1[16] * param_3)`
+pub const hkpConvexListShape__vfunc_7: u64 = 60761;
+/// `hkpConvexListShape::vfunc_8` at 0xb45750 (rtti, high); signature (low): `undefined8 vfunc_8(hkpConvexListShape * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const hkpConvexListShape__vfunc_8: u64 = 60762;
+/// `hkpConvexListShape::vfunc_9` at 0xb45890 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexListShape * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexListShape__vfunc_9: u64 = 60763;
+/// `hkpConvexPieceStreamData::vdtor` at 0xb8daa0 (slot_propagation, medium); signature (low): `hkpConvexPieceStreamData * vdtor(hkpConvexPieceStreamData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexPieceStreamData__vdtor: u64 = 62382;
+/// `hkpConvexShape::vdtor` at 0xb37580 (layout_inference, medium); signature (low): `hkpConvexShape * vdtor(hkpConvexShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexShape__vdtor: u64 = 60300;
+/// `hkpConvexShape::vfunc_16` at 0xb377d0 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+pub const hkpConvexShape__vfunc_16: u64 = 60306;
+/// `hkpConvexShape::vfunc_17` at 0xb377e0 (rtti, medium); signature (low): `undefined vfunc_17(hkpConvexShape * this, float * param_1)`
+pub const hkpConvexShape__vfunc_17: u64 = 60307;
+/// `hkpConvexShape::vfunc_3` at 0xb376c0 (rtti, medium); signature (low): `float vfunc_3(hkpConvexShape * this, float * param_1)`
+pub const hkpConvexShape__vfunc_3: u64 = 60304;
+/// `hkpConvexShape::vfunc_5` at 0xb376b0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
+pub const hkpConvexShape__vfunc_5: u64 = 60303;
+/// `hkpConvexShape::vfunc_9` at 0xb37720 (rtti, medium); signature (low): `undefined vfunc_9(hkpConvexShape * this, undefined8 param_1, longlong param_2, undefined8 * param_3)`
+pub const hkpConvexShape__vfunc_9: u64 = 60305;
+/// `hkpConvexTransformShape::ctor` at 0xb41880 (layout_inference, high); signature (low): `hkpConvexTransformShape * ctor(hkpConvexTransformShape * this, longlong param_1, undefined8 * param_2, int param_3)`
+pub const hkpConvexTransformShape__ctor: u64 = 60690;
+/// `hkpConvexTransformShape::vdtor` at 0xb3ddb0 (layout_inference, medium); signature (low): `hkpConvexTransformShape * vdtor(hkpConvexTransformShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vdtor: u64 = 60530;
+/// `hkpConvexTransformShape::vfunc_11` at 0xb41b10 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_11: u64 = 60695;
+/// `hkpConvexTransformShape::vfunc_12` at 0xb41b30 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTransformShape * this, longlong param_1)`
+pub const hkpConvexTransformShape__vfunc_12: u64 = 60696;
+/// `hkpConvexTransformShape::vfunc_13` at 0xb41fe0 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_13: u64 = 60700;
+/// `hkpConvexTransformShape::vfunc_14` at 0xb41920 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTransformShape * this, float * param_1, float * param_2)`
+pub const hkpConvexTransformShape__vfunc_14: u64 = 60692;
+/// `hkpConvexTransformShape::vfunc_15` at 0xb419f0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTransformShape * this, undefined8 param_1, int param_2, longlong param_3)`
+pub const hkpConvexTransformShape__vfunc_15: u64 = 60693;
+/// `hkpConvexTransformShape::vfunc_17` at 0xb41ab0 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_17: u64 = 60694;
+/// `hkpConvexTransformShape::vfunc_2` at 0xb42120 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTransformShape * this, longlong * param_1)`
+pub const hkpConvexTransformShape__vfunc_2: u64 = 60702;
+/// `hkpConvexTransformShape::vfunc_3` at 0xb42040 (rtti, high); signature (low): `float vfunc_3(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_3: u64 = 60701;
+/// `hkpConvexTransformShape::vfunc_4` at 0xb42170 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_4: u64 = 60703;
+/// `hkpConvexTransformShape::vfunc_6` at 0xb3e490 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTransformShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTransformShape__vfunc_6: u64 = 60544;
+/// `hkpConvexTransformShape::vfunc_7` at 0xb41c00 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTransformShape * this, float * param_2, undefined4 param_3, undefined8 param_4)`
+pub const hkpConvexTransformShape__vfunc_7: u64 = 60697;
+/// `hkpConvexTransformShape::vfunc_8` at 0xb41c60 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTransformShape * this, char * param_1, float * param_2, float * param_3)`
+pub const hkpConvexTransformShape__vfunc_8: u64 = 60698;
+/// `hkpConvexTransformShape::vfunc_9` at 0xb41e20 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTransformShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vfunc_9: u64 = 60699;
+/// `hkpConvexTransformShapeBase::ctor` at 0xb37830 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * ctor(hkpConvexTransformShapeBase * this, undefined4 param_2, undefined4 param_3, longlong param_4, int param_5)`
+pub const hkpConvexTransformShapeBase__ctor: u64 = 60308;
+/// `hkpConvexTransformShapeBase::vdtor` at 0xb37890 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * vdtor(hkpConvexTransformShapeBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShapeBase__vdtor: u64 = 60309;
+/// `hkpConvexTranslateShape::vdtor` at 0xb3de60 (layout_inference, medium); signature (low): `hkpConvexTranslateShape * vdtor(hkpConvexTranslateShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vdtor: u64 = 60531;
+/// `hkpConvexTranslateShape::vfunc_11` at 0xb42260 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_11: u64 = 60707;
+/// `hkpConvexTranslateShape::vfunc_12` at 0xb42280 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTranslateShape * this, longlong param_1)`
+pub const hkpConvexTranslateShape__vfunc_12: u64 = 60708;
+/// `hkpConvexTranslateShape::vfunc_13` at 0xb42540 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_13: u64 = 60712;
+/// `hkpConvexTranslateShape::vfunc_14` at 0xb42180 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTranslateShape * this, undefined8 param_1, float * param_2)`
+pub const hkpConvexTranslateShape__vfunc_14: u64 = 60704;
+/// `hkpConvexTranslateShape::vfunc_15` at 0xb421c0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTranslateShape * this, undefined8 param_1, int param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_15: u64 = 60705;
+/// `hkpConvexTranslateShape::vfunc_17` at 0xb42220 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_17: u64 = 60706;
+/// `hkpConvexTranslateShape::vfunc_2` at 0xb425e0 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTranslateShape * this, longlong * param_1)`
+pub const hkpConvexTranslateShape__vfunc_2: u64 = 60714;
+/// `hkpConvexTranslateShape::vfunc_3` at 0xb42580 (rtti, high); signature (low): `float vfunc_3(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_3: u64 = 60713;
+/// `hkpConvexTranslateShape::vfunc_4` at 0xb42630 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_4: u64 = 60715;
+/// `hkpConvexTranslateShape::vfunc_6` at 0xb42640 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTranslateShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTranslateShape__vfunc_6: u64 = 60716;
+/// `hkpConvexTranslateShape::vfunc_7` at 0xb422f0 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTranslateShape * this, float * param_1, undefined8 param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_7: u64 = 60709;
+/// `hkpConvexTranslateShape::vfunc_8` at 0xb42370 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTranslateShape * this, char * param_1, float * param_2, longlong param_3)`
+pub const hkpConvexTranslateShape__vfunc_8: u64 = 60710;
+/// `hkpConvexTranslateShape::vfunc_9` at 0xb42470 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTranslateShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vfunc_9: u64 = 60711;
+/// `hkpConvexVerticesConnectivity::vdtor` at 0xb3df10 (slot_propagation, medium); signature (low): `hkpConvexVerticesConnectivity * vdtor(hkpConvexVerticesConnectivity * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesConnectivity__vdtor: u64 = 60532;
+/// `hkpConvexVerticesConnectivity::vfunc_3` at 0xb428b0 (rtti, high); signature (high): `undefined vfunc_3(hkpConvexVerticesConnectivity * this)`
+pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
+/// `hkpConvexVerticesShape::BuildFromPoints` at 0x10ee650 (semantic, high); signature (low): `hkpConvexVerticesShape * BuildFromPoints(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; semantic: builds the convex hull of the points (hkgpConvexHull) and constructs from it: radius = config+4, planes into +0x78, vertices +0x50/+0x60; config byte 0 keeps an hkpConvexVerticesConnectivity (+0x88); config byte 1 with radius > 0 shrinks by the convex radius (floats +0xc/+0x10, byte +2); int +8 > 3 limits the vertex count (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* points, const hkpConvexVerticesShape::BuildConfig* config)`
+pub const hkpConvexVerticesShape__BuildFromPoints: u64 = 80831;
+/// `hkpConvexVerticesShape::BuildFromPoints` as a function pointer type (high).
+pub type hkpConvexVerticesShape__BuildFromPoints_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, points: *const crate::hkStridedVertices, config: *const crate::hkpConvexVerticesShape__BuildConfig) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::GetVertices` at 0xc3abd0 (semantic, high); signature (low): `undefined GetVertices(longlong param_1, longlong * param_2)`; semantic: unpacks the SoA vertex blocks (+0x50, 0x30 bytes per 4 vertices: x[4] +0, y[4] +0x10, z[4] +0x20) into out (count +0x60, w = 0), growing out with hkContainerHeapAllocator (high); signature `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* out)`
+pub const hkpConvexVerticesShape__GetVertices: u64 = 65093;
+/// `hkpConvexVerticesShape::GetVertices` as a function pointer type (high).
+pub type hkpConvexVerticesShape__GetVertices_fn = unsafe extern "C" fn(this: *const crate::hkpConvexVerticesShape, out: *mut c_void);
+/// `hkpConvexVerticesShape::ctor` at 0xc3a870 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined8 * param_2, longlong * param_3, undefined4 param_4)`; semantic: direct constructor: +8 = 0x1ffff, radius +0x20, type +0x18 = 6, copies the planes into +0x78 (hkContainerHeapAllocator), packs the vertices into the SoA array +0x50 and computes the AABB (PackStridedVerticesAndComputeAabb 0xc3b990) (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* vertices, const hkArray<hkVector4>* planeEquations, float radius)`
+pub const hkpConvexVerticesShape__ctor: u64 = 65089;
+/// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
+pub type hkpConvexVerticesShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const crate::hkStridedVertices, planeEquations: *const c_void, radius: f32) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::ctor` at 0xc3a9a0 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined4 param_2)`
+pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
+/// `hkpConvexVerticesShape::ctor` at 0xc3aac0 (layout_inference, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, int param_1)`
+pub const hkpConvexVerticesShape__ctor_3: u64 = 65091;
+/// `hkpConvexVerticesShape::dtor` at 0xc3ab10 (layout_inference, high); signature (high): `undefined dtor(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__dtor: u64 = 65092;
+/// `hkpConvexVerticesShape::vdtor` at 0xc3c180 (slot_propagation, medium); signature (low): `hkpConvexVerticesShape * vdtor(hkpConvexVerticesShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesShape__vdtor: u64 = 65108;
+/// `hkpConvexVerticesShape::vfunc_11` at 0xc3b390 (rtti, medium); signature (high): `undefined4 vfunc_11(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__vfunc_11: u64 = 65100;
+/// `hkpConvexVerticesShape::vfunc_12` at 0xc3b3a0 (rtti, medium); signature (low): `undefined4 * vfunc_12(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_12: u64 = 65101;
+/// `hkpConvexVerticesShape::vfunc_13` at 0xc3b8f0 (rtti, medium); signature (low): `undefined vfunc_13(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_13: u64 = 65104;
+/// `hkpConvexVerticesShape::vfunc_14` at 0xc3b020 (rtti, medium); signature (low): `undefined vfunc_14(hkpConvexVerticesShape * this, float * param_1, undefined4 * param_2)`
+pub const hkpConvexVerticesShape__vfunc_14: u64 = 65097;
+/// `hkpConvexVerticesShape::vfunc_15` at 0xc3b1b0 (rtti, medium); signature (low): `undefined vfunc_15(hkpConvexVerticesShape * this, ushort * param_1, uint param_2, undefined4 * param_3)`
+pub const hkpConvexVerticesShape__vfunc_15: u64 = 65098;
+/// `hkpConvexVerticesShape::vfunc_17` at 0xc3b380 (rtti, medium); signature (low): `undefined vfunc_17(hkpConvexVerticesShape * this, undefined8 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_17: u64 = 65099;
+/// `hkpConvexVerticesShape::vfunc_6` at 0xc3c2f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConvexVerticesShape__vfunc_6: u64 = 65111;
+/// `hkpConvexVerticesShape::vfunc_7` at 0xc3b510 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexVerticesShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpConvexVerticesShape__vfunc_7: u64 = 65102;
+/// `hkpConvexVerticesShape::vfunc_8` at 0xc3b5c0 (rtti, medium); signature (low): `undefined1 * vfunc_8(hkpConvexVerticesShape * this, undefined1 * param_1, float * param_2, float * param_3)`
+pub const hkpConvexVerticesShape__vfunc_8: u64 = 65103;
+/// `hkpCylinderShape::ctor` at 0xb42980 (layout_inference, medium); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, undefined8 * param_1, undefined8 * param_2, float param_3, undefined4 param_4)`
+pub const hkpCylinderShape__ctor: u64 = 60720;
+/// `hkpCylinderShape::ctor` at 0xb43ae0 (layout_inference, high); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, int param_1)`
+pub const hkpCylinderShape__ctor_2: u64 = 60733;
+/// `hkpCylinderShape::vdtor` at 0xb43b70 (layout_inference, medium); signature (low): `hkpCylinderShape * vdtor(hkpCylinderShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpCylinderShape__vdtor: u64 = 60734;
+/// `hkpCylinderShape::vfunc_11` at 0xb42e20 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpCylinderShape__vfunc_11: u64 = 60726;
+/// `hkpCylinderShape::vfunc_12` at 0xb42e30 (rtti, high); signature (low): `longlong vfunc_12(hkpCylinderShape * this, longlong param_1)`
+pub const hkpCylinderShape__vfunc_12: u64 = 60727;
+/// `hkpCylinderShape::vfunc_13` at 0xb438b0 (rtti, high); signature (low): `undefined vfunc_13(hkpCylinderShape * this, undefined8 * param_1)`
+pub const hkpCylinderShape__vfunc_13: u64 = 60730;
+/// `hkpCylinderShape::vfunc_14` at 0xb42a80 (rtti, high); signature (low): `undefined vfunc_14(hkpCylinderShape * this, float * param_1, float * param_2)`
+pub const hkpCylinderShape__vfunc_14: u64 = 60723;
+/// `hkpCylinderShape::vfunc_15` at 0xb42cb0 (rtti, high); signature (low): `undefined vfunc_15(hkpCylinderShape * this, ushort * param_1, int param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_15: u64 = 60724;
+/// `hkpCylinderShape::vfunc_17` at 0xb42df0 (rtti, high); signature (low): `undefined vfunc_17(hkpCylinderShape * this, float * param_1)`
+pub const hkpCylinderShape__vfunc_17: u64 = 60725;
+/// `hkpCylinderShape::vfunc_2` at 0xb438c0 (rtti, high); signature (low): `undefined vfunc_2(hkpCylinderShape * this, undefined8 param_1)`
+pub const hkpCylinderShape__vfunc_2: u64 = 60731;
+/// `hkpCylinderShape::vfunc_6` at 0xb43c00 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpCylinderShape__vfunc_6: u64 = 60735;
+/// `hkpCylinderShape::vfunc_7` at 0xb43000 (rtti, high); signature (low): `undefined vfunc_7(hkpCylinderShape * this, float * param_1, float param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_7: u64 = 60728;
+/// `hkpCylinderShape::vfunc_8` at 0xb43160 (rtti, high); signature (low): `undefined1 * vfunc_8(hkpCylinderShape * this, undefined1 * param_1, float * param_2, float * param_3)`
+pub const hkpCylinderShape__vfunc_8: u64 = 60729;
+/// `hkpDashpotAction::ctor` at 0xb9b170 (layout_inference, high); signature (high): `undefined ctor(hkpDashpotAction * this)`
+pub const hkpDashpotAction__ctor: u64 = 62483;
+/// `hkpDashpotAction::ctor` at 0xba2a60 (layout_inference, high); signature (low): `hkpDashpotAction * ctor(hkpDashpotAction * this, longlong param_1, longlong param_2, undefined8 param_3)`
+pub const hkpDashpotAction__ctor_2: u64 = 62683;
+/// `hkpDashpotAction::vdtor` at 0xb9c040 (slot_propagation, medium); signature (low): `hkpDashpotAction * vdtor(hkpDashpotAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDashpotAction__vdtor: u64 = 62583;
+/// `hkpDashpotAction::vfunc_3` at 0xba2aa0 (rtti, high); signature (low): `undefined vfunc_3(hkpDashpotAction * this, longlong param_1)`
+pub const hkpDashpotAction__vfunc_3: u64 = 62684;
+/// `hkpDashpotAction::vfunc_7` at 0xba2c20 (rtti, high); signature (low): `hkpDashpotAction * vfunc_7(hkpDashpotAction * this, longlong * param_1, longlong param_2)`
+pub const hkpDashpotAction__vfunc_7: u64 = 62685;
+/// `hkpDefaultConvexListFilter::vdtor` at 0xb36670 (layout_inference, medium); signature (low): `hkpDefaultConvexListFilter * vdtor(hkpDefaultConvexListFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultConvexListFilter__vdtor: u64 = 60533;
+/// `hkpDefaultConvexListFilter::vfunc_3` at 0xb3cd80 (rtti, high); signature (low): `uint vfunc_3(hkpDefaultConvexListFilter * this, undefined8 param_1, longlong * param_2, longlong * param_3)`
+pub const hkpDefaultConvexListFilter__vfunc_3: u64 = 60625;
+/// `hkpDefaultToiResourceMgr::ctor` at 0x1107580 (layout_inference, medium); signature (high): `hkpDefaultToiResourceMgr * ctor(hkpDefaultToiResourceMgr * this)`
+pub const hkpDefaultToiResourceMgr__ctor: u64 = 81075;
+/// `hkpDefaultToiResourceMgr::vdtor` at 0x1107750 (slot_propagation, medium); signature (low): `hkpDefaultToiResourceMgr * vdtor(hkpDefaultToiResourceMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultToiResourceMgr__vdtor: u64 = 81084;
+/// `hkpDefaultToiResourceMgr::vfunc_1` at 0x1107870 (rtti, high); signature (low): `undefined * vfunc_1(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_1: u64 = 81087;
+/// `hkpDefaultToiResourceMgr::vfunc_2` at 0x11076f0 (rtti, high); signature (low): `undefined vfunc_2(hkpDefaultToiResourceMgr * this, longlong * param_1)`
+pub const hkpDefaultToiResourceMgr__vfunc_2: u64 = 81081;
+/// `hkpDefaultToiResourceMgr::vfunc_3` at 0x11075d0 (rtti, high); signature (low): `undefined8 vfunc_3(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, undefined4 * param_3)`
+pub const hkpDefaultToiResourceMgr__vfunc_3: u64 = 81077;
+/// `hkpDefaultToiResourceMgr::vfunc_3_sub0` at 0x1107730 (callgraph, medium); signature (untiered): `undefined1 * vfunc_3_sub0(undefined8 param_1, undefined1 * param_2)`
+pub const hkpDefaultToiResourceMgr__vfunc_3_sub0: u64 = 81083;
+/// `hkpDefaultToiResourceMgr::vfunc_4` at 0x1107690 (rtti, high); signature (low): `undefined8 vfunc_4(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_4: u64 = 81078;
+/// `hkpDefaultToiResourceMgr::vfunc_5` at 0x11076a0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
+pub const hkpDefaultToiResourceMgr__vfunc_5: u64 = 81079;
+/// `hkpDefaultToiResourceMgr::vfunc_6` at 0x11076b0 (rtti, high); signature (low): `undefined vfunc_6(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const hkpDefaultToiResourceMgr__vfunc_6: u64 = 81080;
+/// `hkpDefaultToiResourceMgr::vfunc_7` at 0x1107720 (rtti, high); signature (high): `undefined4 vfunc_7(hkpDefaultToiResourceMgr * this)`
+pub const hkpDefaultToiResourceMgr__vfunc_7: u64 = 81082;
+/// `hkpDefaultWorldMaintenanceMgr::ctor` at 0xb80a30 (layout_inference, medium); signature (high): `hkpDefaultWorldMaintenanceMgr * ctor(hkpDefaultWorldMaintenanceMgr * this)`
+pub const hkpDefaultWorldMaintenanceMgr__ctor: u64 = 62217;
+/// `hkpDefaultWorldMaintenanceMgr::vdtor` at 0xb80c40 (layout_inference, medium); signature (low): `hkpDefaultWorldMaintenanceMgr * vdtor(hkpDefaultWorldMaintenanceMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultWorldMaintenanceMgr__vdtor: u64 = 62221;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_3` at 0xb80a60 (rtti, high); signature (low): `undefined vfunc_3(hkpDefaultWorldMaintenanceMgr * this, longlong param_1)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_3: u64 = 62218;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_4` at 0xb80a80 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMaintenanceMgr * this, longlong param_1, float * param_2)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_4: u64 = 62219;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_4_sub0` at 0xb60870 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_4_sub0: u64 = 61512;
+/// `hkpDefaultWorldMaintenanceMgr::vfunc_5` at 0xb80b80 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMaintenanceMgr * this, undefined8 param_1, float * param_2)`
+pub const hkpDefaultWorldMaintenanceMgr__vfunc_5: u64 = 62220;
+/// `hkpDefaultWorldMemoryWatchDog::vdtor` at 0xb51ec0 (layout_inference, medium); signature (low): `hkpDefaultWorldMemoryWatchDog * vdtor(hkpDefaultWorldMemoryWatchDog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDefaultWorldMemoryWatchDog__vdtor: u64 = 61212;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_3` at 0xb7a210 (rtti, high); signature (high): `undefined4 vfunc_3(hkpDefaultWorldMemoryWatchDog * this)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_3: u64 = 62066;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_4` at 0xb7a220 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_4: u64 = 62067;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_4_sub0` at 0xb7a310 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, int param_2, undefined4 param_3, int * param_4)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_4_sub0: u64 = 62069;
+/// `hkpDefaultWorldMemoryWatchDog::vfunc_5` at 0xb7a2e0 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
+pub const hkpDefaultWorldMemoryWatchDog__vfunc_5: u64 = 62068;
+/// `hkpDeferredConstraintOwner::vdtor` at 0x110c3c0 (layout_inference, medium); signature (low): `hkpDeferredConstraintOwner * vdtor(hkpDeferredConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDeferredConstraintOwner__vdtor: u64 = 81113;
+/// `hkpDeferredConstraintOwner::vfunc_3` at 0x110c470 (rtti, high); signature (low): `undefined vfunc_3(hkpDeferredConstraintOwner * this, undefined8 param_1)`
+pub const hkpDeferredConstraintOwner__vfunc_3: u64 = 81115;
+/// `hkpDeferredConstraintOwner::vfunc_4` at 0x110c480 (rtti, high); signature (low): `undefined vfunc_4(hkpDeferredConstraintOwner * this, undefined8 param_1)`
+pub const hkpDeferredConstraintOwner__vfunc_4: u64 = 81116;
+/// `hkpDeferredConstraintOwner::vfunc_5` at 0x110c450 (rtti, high); signature (low): `undefined vfunc_5(hkpDeferredConstraintOwner * this, longlong param_1, uint param_2)`
+pub const hkpDeferredConstraintOwner__vfunc_5: u64 = 81114;
+/// `hkpDisableEntityCollisionFilter::ctor` at 0xba5aa0 (layout_inference, high); signature (high): `hkpDisableEntityCollisionFilter * ctor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__ctor: u64 = 62741;
+/// `hkpDisableEntityCollisionFilter::dtor` at 0xba5b10 (layout_inference, high); signature (high): `undefined dtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__dtor: u64 = 62742;
+/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bc90 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62568;
+/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba5f20 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62747;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vdtor` at 0xb9bcc0 (slot_propagation, medium); signature (low): `undefined hkpEntityListener_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vdtor: u64 = 62572;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2` at 0xba5eb0 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_2(hkpDisableEntityCollisionFilter * this, longlong param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2: u64 = 62745;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2_sub0` at 0xba5e40 (callgraph, medium); signature (untiered): `undefined1 * hkpEntityListener_vfunc_2_sub0(longlong param_1, undefined1 * param_2, longlong param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2_sub0: u64 = 62744;
+/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_5` at 0xba5f10 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_5(void)`
+pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_5: u64 = 62746;
+/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb9bcb4 (slot_propagation, medium); signature (low): `undefined hkpRayCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 62571;
+/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vfunc_1` at 0xba5fa0 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62751;
+/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bca8 (slot_propagation, medium); signature (low): `undefined hkpRayShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62570;
+/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba5f90 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62750;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bc9c (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 62569;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba5f80 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62749;
+/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba5f70 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
+pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62748;
+/// `hkpDisableEntityCollisionFilter::vdtor` at 0xb9c0c0 (slot_propagation, medium); signature (low): `hkpDisableEntityCollisionFilter * vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisableEntityCollisionFilter__vdtor: u64 = 62584;
+/// `hkpDisplayBindingData::PhysicsSystem::vdtor` at 0xb9bd00 (slot_propagation, medium); signature (low): `PhysicsSystem * vdtor(PhysicsSystem * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__PhysicsSystem__vdtor: u64 = 62577;
+/// `hkpDisplayBindingData::RigidBody::vdtor` at 0xb9bd80 (layout_inference, medium); signature (low): `RigidBody * vdtor(RigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__RigidBody__vdtor: u64 = 62578;
+/// `hkpDisplayBindingData::vdtor` at 0xb9c140 (slot_propagation, medium); signature (low): `hkpDisplayBindingData * vdtor(hkpDisplayBindingData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDisplayBindingData__vdtor: u64 = 62585;
+/// `hkpDynamicsContactMgr::vdtor` at 0xb7e000 (layout_inference, medium); signature (low): `hkpDynamicsContactMgr * vdtor(hkpDynamicsContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpDynamicsContactMgr__vdtor: u64 = 62161;
+/// `hkpDynamicsContactMgr::vfunc_10` at 0xb7e290 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+pub const hkpDynamicsContactMgr__vfunc_10: u64 = 62172;
+/// `hkpDynamicsContactMgr::vfunc_11` at 0xb7e280 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+pub const hkpDynamicsContactMgr__vfunc_11: u64 = 62171;
+/// `hkpDynamicsContactMgr::vfunc_12` at 0xb7e1d0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
+pub const hkpDynamicsContactMgr__vfunc_12: u64 = 62167;
+/// `hkpDynamicsContactMgr::vfunc_14` at 0xb7e4f0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
+pub const hkpDynamicsContactMgr__vfunc_14: u64 = 62176;
+/// `hkpDynamicsContactMgr::vfunc_15` at 0xb7e500 (rtti, medium); signature (low): `undefined vfunc_15(void)`
+pub const hkpDynamicsContactMgr__vfunc_15: u64 = 62177;
+/// `hkpDynamicsContactMgr::vfunc_16` at 0xb7e270 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+pub const hkpDynamicsContactMgr__vfunc_16: u64 = 62170;
+/// `hkpDynamicsContactMgr::vfunc_17` at 0xb7e1c0 (rtti, medium); signature (low): `undefined1 * vfunc_17(hkpDynamicsContactMgr * this, undefined1 * param_1)`
+pub const hkpDynamicsContactMgr__vfunc_17: u64 = 62166;
+/// `hkpDynamicsContactMgr::vfunc_18` at 0xb7e1b0 (rtti, high); signature (low): `undefined vfunc_18(void)`
+pub const hkpDynamicsContactMgr__vfunc_18: u64 = 62165;
+/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vdtor` at 0xc41520 (layout_inference, medium); signature (low): `CollectSupportedConstraints * vdtor(CollectSupportedConstraints * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vdtor: u64 = 65193;
+/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vfunc_1` at 0xc41610 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectSupportedConstraints * this, undefined1 * param_1, longlong param_2)`
+pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vfunc_1: u64 = 65196;
 /// `hkpEaseConstraintsAction::ctor` at 0xc40d80 (layout_inference, high); signature (low): `hkpEaseConstraintsAction * ctor(hkpEaseConstraintsAction * this, longlong * param_1)`
 pub const hkpEaseConstraintsAction__ctor: u64 = 65180;
 /// `hkpEaseConstraintsAction::ctor_sub0` at 0xbad3c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, longlong * param_2, longlong * param_3)`

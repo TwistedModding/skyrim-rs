@@ -5024,13 +5024,13 @@ pub struct BSIsActiveModifier_vtable {
     pub slot_2: *const c_void,
     /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
-    /// `BSIsActiveModifier::vfunc_4` at 0xbb8550 (rtti, high); signature (high): `undefined vfunc_4(BSIsActiveModifier * this)`
+    /// `BSIsActiveModifier::Activate` at 0xbb8550 (semantic, high); signature (high): `undefined Activate(BSIsActiveModifier * this)`; `Activate`: bIsActiveN = !bInvertActiveN (high); semantic signature: `void (BSIsActiveModifier* this, const hkbContext* ctx)`
     pub slot_4: *const c_void,
     /// `BSIsActiveModifier::vfunc_5` at 0xbb8590 (rtti, high); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
     /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
     pub slot_6: *const c_void,
-    /// `BSIsActiveModifier::vfunc_7` at 0xbb85a0 (rtti, high); signature (high): `undefined vfunc_7(BSIsActiveModifier * this)`
+    /// `BSIsActiveModifier::Deactivate` at 0xbb85a0 (semantic, high); signature (high): `undefined Deactivate(BSIsActiveModifier * this)`; `Deactivate`: bIsActiveN = bInvertActiveN (high); semantic signature: `void (BSIsActiveModifier* this, const hkbContext* ctx)`
     pub slot_7: *const c_void,
     /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
     pub slot_8: *const c_void,
@@ -5069,14 +5069,30 @@ pub struct BSIsActiveModifier_vtable {
 }
 impl BSIsActiveModifier_vtable {
     pub const ID: u64 = 232695;
+    pub const SLOT_Activate: usize = 4;
+    /// Slot 4 as `BSIsActiveModifier_vtable_Activate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Activate(&self) -> Option<BSIsActiveModifier_vtable_Activate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIsActiveModifier_vtable_Activate>>(self.slot_4) }
+    }
+    pub const SLOT_Deactivate: usize = 7;
+    /// Slot 7 as `BSIsActiveModifier_vtable_Deactivate`, `None` when the slot is null.
+    #[must_use]
+    pub fn Deactivate(&self) -> Option<BSIsActiveModifier_vtable_Deactivate> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSIsActiveModifier_vtable_Deactivate>>(self.slot_7) }
+    }
 }
+/// `BSIsActiveModifier::Activate`, slot 4: bIsActiveN = !bInvertActiveN (high).
+pub type BSIsActiveModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::BSIsActiveModifier, ctx: *const c_void);
+/// `BSIsActiveModifier::Deactivate`, slot 7: bIsActiveN = bInvertActiveN (high).
+pub type BSIsActiveModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::BSIsActiveModifier, ctx: *const c_void);
 
 /// `BSJobs::JobThread::vftable` at 0x1a42620, id 236914 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BSJobs__JobThread_vtable {
     /// `BSJobs::JobThread::vdtor` at 0xebabb0 (slot_propagation, medium); signature (low): `JobThread * vdtor(JobThread * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `BSJobs::JobThread::vfunc_1` at 0xebab10 (rtti, high); signature (low): `undefined8 vfunc_1(JobThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSJobs::JobThread::Run` at 0xebab10 (semantic, high); signature (low): `undefined8 Run(JobThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `BSJobs::JobThread::vfunc_2` at 0xebaaf0 (rtti, high); signature (high): `undefined vfunc_2(JobThread * this)`
     pub slot_2: *const c_void,

@@ -7,6 +7,30 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_18` at 0x4837a0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_18: u64 = 29073;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_19` at 0x483780 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_19: u64 = 29072;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_20` at 0x483760 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_20: u64 = 29071;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_30` at 0x4837e0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_30: u64 = 29075;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_34` at 0x4837c0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_34: u64 = 29074;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vdtor` at 0x485220 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vdtor: u64 = 29099;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_18` at 0x4855f0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_18: u64 = 29111;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_19` at 0x4855d0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_19: u64 = 29110;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_20` at 0x4855b0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_20: u64 = 29109;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_30` at 0x485630 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_30: u64 = 29113;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_34` at 0x485610 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_34: u64 = 29112;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vdtor` at 0x487ac0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vdtor: u64 = 29160;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_18` at 0x487ef0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_18: u64 = 29176;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_19` at 0x487eb0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
@@ -3183,10 +3207,14 @@ pub const BSFixedStringVectorDeletingDtor: u64 = 70441;
 pub const BSFlatQuadConstructor__vfunc_0: u64 = 108227;
 /// `BSFlatQuadConstructor::vfunc_1` at 0x15934b0 (rtti, high); signature (low): `undefined8 vfunc_1(BSFlatQuadConstructor * this, longlong param_1, undefined8 param_2, longlong param_3)`
 pub const BSFlatQuadConstructor__vfunc_1: u64 = 109082;
-/// `BSFlattenedBoneTree::FlattenNiNodeSubtree` at 0xef4390 (semantic, high); signature (untiered): `NiNode * FlattenNiNodeSubtree(NiNode * param_1)`; semantic: replaces a plain NiNode subtree with a BSFlattenedBoneTree: one 0x80-byte entry per descendant NiNode in depth-first order (parents first) with local, world, parent, name; an entry keeps its real NiNode (+0x70) when the node has a controller (+0x18), a collision object (+0x40) or extra data (+0x28 count), has a non-NiNode or kept child, or is an ancestor of a kept node; every other node is detached and only the entry remains (high); signature `BSFlattenedBoneTree* (NiNode* subtreeRoot)`
+/// `BSFlattenedBoneTree::CollectEntriesRecursive` at 0xef59a0 (semantic, high); signature (low): `undefined CollectEntriesRecursive(longlong param_1, uint param_2, longlong param_3)`; semantic: depth-first entry collection: for each child: exact NiNode -> new entry (parent, child count, sibling link), recurse, and if the child is kept for its own reason mark the parent +0x11 and every ancestor +0x12; any other non-null child -> the same marking (high); signature `void (BSScrapArray* entries, i32 parentIndex, NiNode* node)`
+pub const BSFlattenedBoneTree__CollectEntriesRecursive: u64 = 70759;
+/// `BSFlattenedBoneTree::CollectEntriesRecursive` as a function pointer type (high).
+pub type BSFlattenedBoneTree__CollectEntriesRecursive_fn = unsafe extern "C" fn(entries: *mut crate::BSScrapArray, parentIndex: i32, node: *mut crate::NiNode);
+/// `BSFlattenedBoneTree::FlattenNiNodeSubtree` at 0xef4390 (runtime, high); signature (untiered): `NiNode * FlattenNiNodeSubtree(NiNode * param_1)`; semantic: builds the flattened bone tree for an exact NiNode; entries for exact-NiNode descendants; keeps nodes with controller (+0x18), collision object (+0x40) or extra data (count u16 +0x28), with a non-NiNode or self-kept NiNode child, or that are ancestors of one; detaches the others; replaces npcRoot in its parent; builds nothing when every entry is kept (high); signature `NiNode* (NiNode* npcRoot)`
 pub const BSFlattenedBoneTree__FlattenNiNodeSubtree: u64 = 70731;
 /// `BSFlattenedBoneTree::FlattenNiNodeSubtree` as a function pointer type (high).
-pub type BSFlattenedBoneTree__FlattenNiNodeSubtree_fn = unsafe extern "C" fn(subtreeRoot: *mut crate::NiNode) -> *mut crate::BSFlattenedBoneTree;
+pub type BSFlattenedBoneTree__FlattenNiNodeSubtree_fn = unsafe extern "C" fn(npcRoot: *mut crate::NiNode) -> *mut crate::NiNode;
 /// `BSFlattenedBoneTree::GetObjectByName` at 0xef4da0 (semantic, high); signature (low): `NiNode * GetObjectByName(BSFlattenedBoneTree * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFlattenedBoneTree__GetObjectByName: u64 = 70743;
 /// `BSFlattenedBoneTree::UpdateDownwardPass` at 0xef4d10 (semantic, high); signature (low): `undefined UpdateDownwardPass(BSFlattenedBoneTree * this, longlong param_1, uint param_2)`
@@ -3425,8 +3453,10 @@ pub const BSGetTimeStepModifier__vdtor: u64 = 63237;
 pub const BSGetTimeStepModifier__vfunc_12: u64 = 63234;
 /// `BSGetTimeStepModifier::vfunc_5` at 0xbb80d0 (rtti, high); signature (low): `undefined vfunc_5(BSGetTimeStepModifier * this, undefined8 param_2, undefined4 param_3)`
 pub const BSGetTimeStepModifier__vfunc_5: u64 = 63235;
-/// `BSGrabIKNote::Create` at 0xf8b560 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `BSGrabIKNote::Create` at 0xf8b560 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: NIF stream factory creator (0x28 bytes, type 1) (high); signature `NiObject* (void)`
 pub const BSGrabIKNote__Create: u64 = 74040;
+/// `BSGrabIKNote::Create` as a function pointer type (high).
+pub type BSGrabIKNote__Create_fn = unsafe extern "C" fn() -> *mut crate::NiObject;
 /// `BSGrabIKNote::CreateClone` at 0xf8b210 (semantic, medium); signature (low): `NiObject * CreateClone(BSGrabIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSGrabIKNote__CreateClone: u64 = 74034;
 /// `BSGrabIKNote::GetRTTI` at 0xf8b870 (semantic, medium); signature (low): `TypeNode * GetRTTI(void)`
@@ -5031,6 +5061,10 @@ pub const BSInvMarker__vfunc_26: u64 = 76982;
 pub const BSInvMarker__vfunc_27: u64 = 76983;
 /// `BSInvMarker::vfunc_28` at 0xffefd0 (rtti, high); signature (untiered): `ulonglong vfunc_28(BSInvMarker * this, longlong * param_1)`
 pub const BSInvMarker__vfunc_28: u64 = 76984;
+/// `BSIsActiveModifier::Activate` at 0xbb8550 (semantic, high); signature (high): `undefined Activate(BSIsActiveModifier * this)`
+pub const BSIsActiveModifier__Activate: u64 = 63249;
+/// `BSIsActiveModifier::Deactivate` at 0xbb85a0 (semantic, high); signature (high): `undefined Deactivate(BSIsActiveModifier * this)`
+pub const BSIsActiveModifier__Deactivate: u64 = 63251;
 /// `BSIsActiveModifier::ctor` at 0xbb8470 (layout_inference, medium); signature (high): `BSIsActiveModifier * ctor(BSIsActiveModifier * this)`
 pub const BSIsActiveModifier__ctor: u64 = 63247;
 /// `BSIsActiveModifier::ctor` at 0xbb84f0 (layout_inference, high); signature (high): `BSIsActiveModifier * ctor(BSIsActiveModifier * this)`
@@ -5043,18 +5077,16 @@ pub const BSIsActiveModifier__vdtor: u64 = 63255;
 pub const BSIsActiveModifier__vfunc_10: u64 = 63253;
 /// `BSIsActiveModifier::vfunc_12` at 0xbb85d0 (rtti, high); signature (high): `undefined vfunc_12(BSIsActiveModifier * this)`
 pub const BSIsActiveModifier__vfunc_12: u64 = 63252;
-/// `BSIsActiveModifier::vfunc_4` at 0xbb8550 (rtti, high); signature (high): `undefined vfunc_4(BSIsActiveModifier * this)`
-pub const BSIsActiveModifier__vfunc_4: u64 = 63249;
 /// `BSIsActiveModifier::vfunc_5` at 0xbb8590 (rtti, high); signature (low): `undefined vfunc_5(void)`
 pub const BSIsActiveModifier__vfunc_5: u64 = 63250;
-/// `BSIsActiveModifier::vfunc_7` at 0xbb85a0 (rtti, high); signature (high): `undefined vfunc_7(BSIsActiveModifier * this)`
-pub const BSIsActiveModifier__vfunc_7: u64 = 63251;
+/// `BSJobs::JobThread::Run` at 0xebab10 (semantic, high); signature (low): `undefined8 Run(JobThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: Worker body: scrap heap, optional init hook *0x3301898 (never written: only a read xref at 0xebab48), then semaphore wait + RunJobListWorkerLoop until stopped (high); signature `u32 (BSJobs::JobThread* this)`
+pub const BSJobs__JobThread__Run: u64 = 69344;
+/// `BSJobs::JobThread::Run` as a function pointer type (high).
+pub type BSJobs__JobThread__Run_fn = unsafe extern "C" fn(this: *mut crate::BSJobs__JobThread) -> u32;
 /// `BSJobs::JobThread::ctor` at 0xebd020 (layout_inference, high); signature (high): `JobThread * ctor(JobThread * this)`
 pub const BSJobs__JobThread__ctor: u64 = 69384;
 /// `BSJobs::JobThread::vdtor` at 0xebabb0 (slot_propagation, medium); signature (low): `JobThread * vdtor(JobThread * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSJobs__JobThread__vdtor: u64 = 69345;
-/// `BSJobs::JobThread::vfunc_1` at 0xebab10 (rtti, high); signature (low): `undefined8 vfunc_1(JobThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSJobs__JobThread__vfunc_1: u64 = 69344;
 /// `BSJobs::JobThread::vfunc_2` at 0xebaaf0 (rtti, high); signature (high): `undefined vfunc_2(JobThread * this)`
 pub const BSJobs__JobThread__vfunc_2: u64 = 69343;
 /// `BSKeyboardDevice::ctor` at 0xe124d0 (layout_inference, medium); signature (high): `BSKeyboardDevice * ctor(BSKeyboardDevice * this)`
@@ -5757,8 +5789,10 @@ pub const BSLookAtModifier__ctor_3: u64 = 63279;
 pub const BSLookAtModifier__vdtor: u64 = 63281;
 /// `BSLookAtModifier::vfunc_4_sub0` at 0xbb9c00 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
 pub const BSLookAtModifier__vfunc_4_sub0: u64 = 63269;
-/// `BSLookIKNote::Create` at 0xf8be20 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `BSLookIKNote::Create` at 0xf8be20 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: NIF stream factory creator (0x20 bytes, type 2) (high); signature `NiObject* (void)`
 pub const BSLookIKNote__Create: u64 = 74064;
+/// `BSLookIKNote::Create` as a function pointer type (high).
+pub type BSLookIKNote__Create_fn = unsafe extern "C" fn() -> *mut crate::NiObject;
 /// `BSLookIKNote::CreateClone` at 0xf8bae0 (semantic, medium); signature (low): `NiObject * CreateClone(BSLookIKNote * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSLookIKNote__CreateClone: u64 = 74058;
 /// `BSLookIKNote::GetRTTI` at 0xf8c020 (semantic, medium); signature (low): `TypeNode * GetRTTI(void)`
@@ -7943,59 +7977,3 @@ pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_2: u64 = 30021;
 /// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408470 (callgraph, high); signature (untiered): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor: u64 = 26070;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408490 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor_2: u64 = 26071;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vdtor` at 0x408900 (slot_propagation, medium); signature (low): `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * vdtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vdtor: u64 = 26084;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_1` at 0x408fc0 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_1: u64 = 26103;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::vfunc_2` at 0x408f60 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__vfunc_2: u64 = 26101;
-/// `BSPortal::vdtor` at 0x213b70 (layout_inference, medium); signature (low): `BSPortal * vdtor(BSPortal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vdtor: u64 = 15555;
-/// `BSPortal::vfunc_2` at 0x213c50 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortal__vfunc_2: u64 = 15560;
-/// `BSPortal::vfunc_23` at 0xfe9f00 (rtti, high); signature (low): `BSOcclusionPlane * vfunc_23(BSPortal * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortal__vfunc_23: u64 = 76449;
-/// `BSPortalGraph::ctor` at 0xfd9ac0 (layout_inference, high); signature (high): `BSPortalGraph * ctor(BSPortalGraph * this)`
-pub const BSPortalGraph__ctor: u64 = 76125;
-/// `BSPortalGraph::dtor` at 0xfd9c70 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraph * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__dtor: u64 = 76126;
-/// `BSPortalGraph::vdtor` at 0xfdb1b0 (slot_propagation, medium); signature (low): `BSPortalGraph * vdtor(BSPortalGraph * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraph__vdtor: u64 = 76152;
-/// `BSPortalGraphEntry::ctor` at 0xfd92c0 (layout_inference, high); signature (high): `BSPortalGraphEntry * ctor(BSPortalGraphEntry * this)`
-pub const BSPortalGraphEntry__ctor: u64 = 76114;
-/// `BSPortalGraphEntry::ctor_sub0` at 0xfdb0c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1)`
-pub const BSPortalGraphEntry__ctor_sub0: u64 = 76149;
-/// `BSPortalGraphEntry::dtor` at 0xfd9370 (layout_inference, high); signature (low): `undefined dtor(BSPortalGraphEntry * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__dtor: u64 = 76115;
-/// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalGraphEntry__vdtor: u64 = 524235;
-/// `BSPortalSharedNode::ctor` at 0xfe9d10 (layout_inference, high); signature (low): `BSPortalSharedNode * ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor: u64 = 76446;
-/// `BSPortalSharedNode::ctor` at 0xfe9d90 (layout_inference, medium); signature (low): `undefined ctor(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__ctor_2: u64 = 76447;
-/// `BSPortalSharedNode::vdtor` at 0xfea050 (layout_inference, medium); signature (low): `BSPortalSharedNode * vdtor(BSPortalSharedNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vdtor: u64 = 76456;
-/// `BSPortalSharedNode::vfunc_2` at 0xfea100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const BSPortalSharedNode__vfunc_2: u64 = 76457;
-/// `BSPortalSharedNode::vfunc_23` at 0xfe9c20 (rtti, high); signature (low): `NiNode * vfunc_23(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_23: u64 = 76444;
-/// `BSPortalSharedNode::vfunc_52` at 0xfe9e20 (rtti, high); signature (low): `undefined vfunc_52(BSPortalSharedNode * this, BSPortalSharedNode * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPortalSharedNode__vfunc_52: u64 = 76448;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` at 0x11f1fa0 (semantic, high); signature (low): `INavmeshInfoVisitor * vdtor(INavmeshInfoVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: vtable reset, OperatorDelete(this, 8) when flags bit 0 (high); signature `INavmeshInfoVisitor* (INavmeshInfoVisitor* this, u64 flags)`
-pub const BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor: u64 = 91369;
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` as a function pointer type (high).
-pub type BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor__vdtor_fn = unsafe extern "C" fn(this: *mut c_void, flags: u64) -> *mut c_void;
-/// `BSPrecomputedNavmeshInfoSearch::ctor` at 0x11c8a20 (layout_inference, high); signature (high): `BSPrecomputedNavmeshInfoSearch * ctor(BSPrecomputedNavmeshInfoSearch * this)`
-pub const BSPrecomputedNavmeshInfoSearch__ctor: u64 = 90545;
-/// `BSPrecomputedNavmeshInfoSearch::vdtor` at 0x11c95d0 (layout_inference, medium); signature (low): `BSPrecomputedNavmeshInfoSearch * vdtor(BSPrecomputedNavmeshInfoSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPrecomputedNavmeshInfoSearch__vdtor: u64 = 90565;
-/// `BSPrecomputedNavmeshInfoSearch::vfunc_2` at 0x11c8b50 (rtti, high); signature (low): `longlong vfunc_2(BSPrecomputedNavmeshInfoSearch * this, longlong param_1)`
-pub const BSPrecomputedNavmeshInfoSearch__vfunc_2: u64 = 90547;
-/// `BSProceduralLightningController::Create` at 0xffdf50 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningController__Create: u64 = 76939;
-/// `BSProceduralLightningController::ctor` at 0xffcc50 (layout_inference, high); signature (high): `BSProceduralLightningController * ctor(BSProceduralLightningController * this)`
-pub const BSProceduralLightningController__ctor: u64 = 76916;
-/// `BSProceduralLightningController::ctor` at 0xffcd80 (layout_inference, medium); signature (low): `undefined ctor(BSProceduralLightningController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__ctor_2: u64 = 76917;

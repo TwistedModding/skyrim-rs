@@ -3125,16 +3125,6 @@ impl crate::hkbTransitionEffect {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59487, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::hkbWorld {
-    /// `hkbWorld::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 58482, rva 0xad9310).
-    /// `undefined dtor(hkbWorld * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(58482, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::hkgpAbstractMesh_hkgpConvexHullImpl__Edge_hkgpConvexHullImpl__Vertex_hkgpConvexHullImpl__Triangl_bd811a7019fb {
     /// `hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator>::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 80957, rva 0x10f9c20).
     /// `undefined dtor(hkgpAbstractMesh<hkgpConvexHullImpl::Edge,hkgpConvexHullImpl::Vertex,hkgpConvexHullImpl::Triangle,hkContainerHeapAllocator> * this)`

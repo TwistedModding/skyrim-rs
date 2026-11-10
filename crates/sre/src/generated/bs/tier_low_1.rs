@@ -2667,6 +2667,13 @@ impl crate::BSInvMarker {
 }
 
 impl crate::BSJobs__JobThread {
+    /// `BSJobs::JobThread::Run`, vtable slot 1, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 69344, rva 0xebab10).
+    /// `undefined8 Run(JobThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn run(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `BSJobs::JobThread::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 69345, rva 0xebabb0).
     /// `JobThread * vdtor(JobThread * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -12581,16 +12588,6 @@ impl crate::BSTEventSink_LocationDiscovery__Event {
 impl crate::BSTEventSink_LocksPicked__Event {
     /// `BSTEventSink<LocksPicked::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37124, rva 0x66eb30).
     /// `BSTEventSink<LocksPicked::Event> * vdtor(BSTEventSink<LocksPicked::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::BSTEventSink_MenuModeChangeEvent {
-    /// `BSTEventSink<MenuModeChangeEvent>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 35102, rva 0x5e80a0).
-    /// `BSTEventSink<MenuModeChangeEvent> * vdtor(BSTEventSink<MenuModeChangeEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.

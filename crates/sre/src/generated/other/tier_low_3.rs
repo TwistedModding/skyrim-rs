@@ -7,41 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ClearArrayReleasingEntriesToGlobalList` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 52461, rva 0x973680).
-/// `undefined ClearArrayReleasingEntriesToGlobalList(longlong * param_1, longlong param_2, ulonglong param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_entries_to_global_list(param_1: *mut i64, param_2: i64, param_3: u64, param_4: i64) -> u64 { unsafe { function!(52461, (*mut i64, i64, u64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ClearArrayReleasingOwnedObjects` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38117, rva 0x6ba450).
-/// `undefined ClearArrayReleasingOwnedObjects(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_owned_objects(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38117, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ClearArrayReleasingPairValues` (decompiler signature, tier low; ledger decompiler evidence, name high; id 64017, rva 0xbeae10).
-/// `undefined ClearArrayReleasingPairValues(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_pair_values(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(64017, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ClearArrayReleasingPointers` (decompiler signature, tier low; ledger decompiler evidence, name high; id 64020, rva 0xbeafd0).
-/// `undefined ClearArrayReleasingPointers(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_pointers(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(64020, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ClearArrayReleasingRefPairs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 104950, rva 0x14c6890).
-/// `undefined ClearArrayReleasingRefPairs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_ref_pairs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(104950, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ClearArrayReleasingRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38116, rva 0x6ba3b0).
 /// `undefined ClearArrayReleasingRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -12439,3 +12404,38 @@ pub unsafe fn cmd__reload_current_climate_execute(param_1: u64, param_2: u64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__reload_current_weather_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(22976, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::ReloadFXP_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22951, rva 0x376040).
+/// `undefined8 ReloadFXP_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__reload_fxp_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22951, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ReloadProjectedUVTextures_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23109, rva 0x37beb0).
+/// `undefined1 ReloadProjectedUVTextures_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__reload_projected_uv_textures_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(23109, (u64, u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `Cmd::ReloadScript_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23097, rva 0x37ba00).
+/// `ulonglong ReloadScript_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__reload_script_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23097, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::RemoveAllItems_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22005, rva 0x34da30).
+/// `ulonglong RemoveAllItems_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__remove_all_items_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22005, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::RemoveFlames_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22276, rva 0x359340).
+/// `undefined8 RemoveFlames_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, double * param_7)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__remove_flames_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64, param_5: u64, param_6: u64, param_7: *mut f64) -> u64 { unsafe { function!(22276, (u64, u64, *mut i64, u64, u64, u64, *mut f64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }

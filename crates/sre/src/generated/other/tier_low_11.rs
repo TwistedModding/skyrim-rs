@@ -7,76 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SubmitPlatformRequestD2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442136, rva 0x5ab3c0).
-/// `undefined SubmitPlatformRequestD2(longlong param_1, uint param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_platform_request_d2(param_1: i64, param_2: u32, param_3: u64) -> u64 { unsafe { function!(442136, (i64, u32, u64) -> u64)(param_1, param_2, param_3) } }
-/// `SubmitRotatePathingRequestIfNeeded` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 41619, rva 0x790c30).
-/// `undefined8 SubmitRotatePathingRequestIfNeeded(longlong param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_rotate_pathing_request_if_needed(param_1: i64, param_2: f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(41619, (i64, f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SubmitRotatePathingRequestOnRootMount` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37815, rva 0x6a5ec0).
-/// `undefined8 SubmitRotatePathingRequestOnRootMount(longlong * param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_rotate_pathing_request_on_root_mount(param_1: *mut i64, param_2: f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(37815, (*mut i64, f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SubmitSpriteEntryFromStringArgs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 84045, rva 0xd584c0).
-/// `undefined SubmitSpriteEntryFromStringArgs(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_sprite_entry_from_string_args(param_1: i64) -> u64 { unsafe { function!(84045, (i64) -> u64)(param_1) } }
-/// `SubmitSpriteEntryWithGlobal469508` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 84046, rva 0xd58640).
-/// `undefined SubmitSpriteEntryWithGlobal469508(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_sprite_entry_with_global469508(param_1: i64) -> u64 { unsafe { function!(84046, (i64) -> u64)(param_1) } }
-/// `SubmitStreamBufferToVoice` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 68016, rva 0xcda9d0).
-/// `undefined SubmitStreamBufferToVoice(longlong * param_1, uint * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_stream_buffer_to_voice(param_1: *mut i64, param_2: *mut u32) -> u64 { unsafe { function!(68016, (*mut i64, *mut u32) -> u64)(param_1, param_2) } }
-/// `SubmitTelemetryEventRequest` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 525738, rva 0x12f5e40).
-/// `undefined SubmitTelemetryEventRequest(AsyncOperationProxy * param_1, longlong param_2, longlong param_3, longlong param_4, undefined8 param_5, longlong param_6)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_telemetry_event_request(param_1: *mut c_void, param_2: i64, param_3: i64, param_4: i64, param_5: u64, param_6: i64) -> u64 { unsafe { function!(525738, (*mut c_void, i64, i64, i64, u64, i64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
-/// `SubmitTelemetryEventType1` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 525751, rva 0x12f6ff0).
-/// `undefined SubmitTelemetryEventType1(AsyncOperationProxy * param_1, longlong param_2, undefined8 param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_telemetry_event_type1(param_1: *mut c_void, param_2: i64, param_3: u64, param_4: i64) -> u64 { unsafe { function!(525751, (*mut c_void, i64, u64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SubmitTelemetryEventType4` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 525752, rva 0x12f7100).
-/// `undefined SubmitTelemetryEventType4(AsyncOperationProxy * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, longlong param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_telemetry_event_type4(param_1: *mut c_void, param_2: i64, param_3: u64, param_4: u64, param_5: i64) -> u64 { unsafe { function!(525752, (*mut c_void, i64, u64, u64, i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `SubmitUserContentCollectionListMemberFnRequest` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442272, rva 0x5f5b70).
-/// `longlong SubmitUserContentCollectionListMemberFnRequest(longlong param_1, undefined4 param_2, undefined8 * param_3, undefined4 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_user_content_collection_list_member_fn_request(param_1: i64, param_2: u32, param_3: *mut u64, param_4: u32) -> i64 { unsafe { function!(442272, (i64, u32, *mut u64, u32) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `SubmitUserContentListField0D0Request` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442266, rva 0x5f5270).
 /// `longlong SubmitUserContentListField0D0Request(longlong param_1, undefined4 param_2, undefined8 param_3, undefined4 param_4)`
 ///
@@ -1127,13 +1057,6 @@ pub unsafe fn toggle_value_nodes_on3_d(param_1: *mut i64, param_2: c_char) -> u6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn trace_navmesh_line_and_build_end_point(param_1: *mut *mut u64, param_2: *mut *mut u64, param_3: *mut *mut u64, param_4: u64) -> u64 { unsafe { function!(47347, (*mut *mut u64, *mut *mut u64, *mut *mut u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `TraceProjectileTrajectory` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47300, rva 0x8683c0).
-/// `undefined8 TraceProjectileTrajectory(longlong * param_1, longlong param_2, float param_3, float * param_4, float * param_5, float * param_6, undefined8 * param_7, float * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn trace_projectile_trajectory(param_1: *mut i64, param_2: i64, param_3: f32, param_4: *mut f32, param_5: *mut f32, param_6: *mut f32, param_7: *mut u64, param_8: *mut f32) -> u64 { unsafe { function!(47300, (*mut i64, i64, f32, *mut f32, *mut f32, *mut f32, *mut u64, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `TraceSegmentAcrossTriangles` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 90464, rva 0x11c37b0).
 /// `char TraceSegmentAcrossTriangles(longlong * param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`
 ///
@@ -5817,13 +5740,6 @@ pub unsafe fn wait_for_all_job_lists_in_global410363() -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn wait_for_frame_segment(param_1: i64, param_2: u32) -> u64 { unsafe { function!(35411, (i64, u32) -> u64)(param_1, param_2) } }
-/// `WaitForJobListCompletion` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 69353, rva 0xebb1d0).
-/// `undefined WaitForJobListCompletion(undefined8 * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wait_for_job_list_completion(param_1: *mut u64) -> u64 { unsafe { function!(69353, (*mut u64) -> u64)(param_1) } }
 /// `WaitForJobListCompletion_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 69377, rva 0xebc070).
 /// `undefined WaitForJobListCompletion_2(longlong * param_1)`
 ///

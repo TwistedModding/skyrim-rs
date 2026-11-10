@@ -611,6 +611,8 @@ pub const Actor__BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1: u64 = 37998;
 pub const Actor__BeginGetUp: u64 = 40150;
 /// `Actor::BeginGetUp` as a function pointer type (high).
 pub type Actor__BeginGetUp_fn = unsafe extern "C" fn(this: *mut crate::Actor, sendGetUpAction: bool);
+/// `Actor::BeginSynchronizedAnimationControl` at 0x551e40 (semantic, medium); signature (low): `undefined BeginSynchronizedAnimationControl(longlong param_1)`; semantic: boolFlags2 |= 0x800000 (bit 23, synchronized) and controller+0x218 |= 0x20000 (bit 17), then refreshes the controller's collision filter unless sitting (flags1 & 0x3c000) (medium); signature `void (Actor* this)`
+pub const Actor__BeginSynchronizedAnimationControl: u64 = 32847;
 /// `Actor::BuildBumperListShape` at 0x1069be0 (semantic, medium); signature (low): `bhkListShape * BuildBumperListShape(longlong param_1, bhkListShape * param_2, float * param_3, undefined8 param_4)`; semantic: with bAllowCharacterBumper:HAVOK set, wraps the controller body shape in a new bhkListShape whose last child is the bumper capsule (moved into controller space by rewriting the capsule's vertices at +0x30/+0x40, w = radius from +0x20) and disables that last child; a body shape that is already a list contributes its children (medium); signature `bhkListShape* (void* bumperSource, bhkShape* bodyShape, const float* controllerOffset)`
 pub const Actor__BuildBumperListShape: u64 = 78352;
 /// `Actor::CanFlyHere_Impl_sub0` at 0x3121b0 (callgraph, medium); signature (untiered): `bool CanFlyHere_Impl_sub0(longlong param_1)`
@@ -655,6 +657,10 @@ pub const Actor__GetCharController: u64 = 37258;
 pub type Actor__GetCharController_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> *mut crate::bhkCharacterController;
 /// `Actor::GetCombatState` at 0x6c90b0 (runtime, medium); signature (low): `undefined8 GetCombatState(longlong * param_1)`; semantic: 0 none, 1 combat, 2 searching (medium); signature `uint Actor::GetCombatState(Actor* this)`
 pub const Actor__GetCombatState: u64 = 38556;
+/// `Actor::GetControllerFilterInfo` at 0x690be0 (semantic, high); signature (low): `undefined4 * GetControllerFilterInfo(longlong param_1, undefined4 * param_2)`; semantic: *out = the character controller's filter info (controller slot 8) or 0 without a process/controller (high); signature `u32* (Actor* this, u32* out)`
+pub const Actor__GetControllerFilterInfo: u64 = 37560;
+/// `Actor::GetControllerFilterInfo` as a function pointer type (high).
+pub type Actor__GetControllerFilterInfo_fn = unsafe extern "C" fn(this: *mut crate::Actor, out: *mut u32) -> *mut u32;
 /// `Actor::GetCurrentSpeed` at 0x6af0d0 (semantic, high); signature (untiered): `float GetCurrentSpeed(longlong param_1)`; semantic: middleHigh+0x2a8, 0 without process (high); signature `float (Actor* this)`
 pub const Actor__GetCurrentSpeed: u64 = 37957;
 /// `Actor::GetCurrentSpeed` as a function pointer type (high).
@@ -719,6 +725,10 @@ pub type Actor__GetScaledHeight_fn = unsafe extern "C" fn(actor: *const crate::A
 pub const Actor__GetWalkRunInterpolation: u64 = 37457;
 /// `Actor::GetWalkRunInterpolation` as a function pointer type (high).
 pub type Actor__GetWalkRunInterpolation_fn = unsafe extern "C" fn(this: *mut crate::Actor, forceRun: bool, forceWalk: bool) -> f32;
+/// `Actor::HandleReanimateEntryPoint` at 0x6d98f0 (semantic, high); signature (low): `undefined HandleReanimateEntryPoint(longlong * param_1, undefined8 param_2, undefined8 param_3, longlong * param_4)`; semantic: when the process holds a reanimating caster handle: life state 4, clear flags2 bit 4, reset slot nodes, fire perk entry point 0x35 'Apply Reanimate Spell' with the caster, clear the handle (high); signature `void (Actor* this)`
+pub const Actor__HandleReanimateEntryPoint: u64 = 38820;
+/// `Actor::HandleReanimateEntryPoint` as a function pointer type (high).
+pub type Actor__HandleReanimateEntryPoint_fn = unsafe extern "C" fn(this: *mut crate::Actor);
 /// `Actor::HasKeyword` at 0x671bf0 (semantic, high); signature (low): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`; semantic: Actor slot 72: TESObjectREFR::HasKeyword (base object, then the reference's keywords); when false and keyword != null, the race's BGSKeywordForm (+0x70 of TESRace) slot 4 (high); signature `bool (const Actor* this, const BGSKeyword* keyword)`
 pub const Actor__HasKeyword: u64 = 37183;
 /// `Actor::HasKeyword` as a function pointer type (high).
@@ -909,6 +919,10 @@ pub type Actor__SetHeading_fn = unsafe extern "C" fn(this: *mut crate::Actor, he
 pub const Actor__SetLifeState: u64 = 37612;
 /// `Actor::SetLifeState` as a function pointer type (high).
 pub type Actor__SetLifeState_fn = unsafe extern "C" fn(this: *mut crate::Actor, lifeState: u32);
+/// `Actor::SetLifeStateReanimate` at 0x687c00 (semantic, high); signature (untiered): `undefined SetLifeStateReanimate(TESObjectREFR * param_1, byte param_2, undefined8 param_3, undefined8 param_4)`; semantic: SetLifeState(this, set << 2): 4 Reanimate, or 0 (high); signature `void (Actor* this, bool set)`
+pub const Actor__SetLifeStateReanimate: u64 = 37490;
+/// `Actor::SetLifeStateReanimate` as a function pointer type (high).
+pub type Actor__SetLifeStateReanimate_fn = unsafe extern "C" fn(this: *mut crate::Actor, set: bool);
 /// `Actor::SetMiddleHighProcessField150` at 0x692320 (semantic, high); signature (low): `undefined SetMiddleHighProcessField150(Actor * this, undefined8 param_1)`
 pub const Actor__SetMiddleHighProcessField150: u64 = 37587;
 /// `Actor::SetSwimming` at 0x6ae890 (semantic, high); signature (untiered): `ulonglong SetSwimming(longlong param_1, char param_2)`; semantic: sets or clears ActorState flags1 bit 10 (Actor+0xc8 & 0x400); when the bit changes it performs default object 0x2b 'Action Swim State Change' (the player through PlayerControls::PerformActionOnControlledActors(controls, 0x2b, 2), an NPC through ActionInput(type 2) + TESActionData::Perform). No weapon code (high); signature `bool (Actor* this, bool swimming)`
@@ -2251,7 +2265,7 @@ pub const AddQuadLayerVertexWeight: u64 = 18729;
 pub const AddQuadLayerVertexWeightWithNeighbors: u64 = 18730;
 /// `AddQueuedReferencesToCell` at 0x310930 (decompiler, medium); signature (low): `undefined AddQueuedReferencesToCell(longlong param_1, longlong * * param_2, undefined8 param_3, ulonglong param_4)`
 pub const AddQueuedReferencesToCell: u64 = 20532;
-/// `AddRadialVelocityToNodeTreeRigidBodies` at 0x4048e0 (decompiler, medium); signature (medium): `undefined AddRadialVelocityToNodeTreeRigidBodies(longlong * param_1, float * param_2, float param_3, longlong param_4)`
+/// `AddRadialVelocityToNodeTreeRigidBodies` at 0x4048e0 (semantic, medium); signature (medium): `undefined AddRadialVelocityToNodeTreeRigidBodies(longlong * param_1, float * param_2, float param_3, longlong param_4)`; semantic: per rigid body in the node tree: linear velocity += normalize(bodyPos - origin) * force * m[index] (medium); signature `void (NiAVObject* node, const hkVector4* origin, float force, void* hitContext)`
 pub const AddRadialVelocityToNodeTreeRigidBodies: u64 = 26005;
 /// `AddRagdollHandler::Handle` at 0x7ce470 (semantic, medium); signature (low): `undefined8 Handle(AddRagdollHandler * this, longlong * param_1)`; semantic: animation event handler 'AddRagdoll': adds the actor's ragdoll to its cell's bhkWorld (controller filter group from the char controller) (medium); signature `bool (AddRagdollHandler* this, Actor* actor)`
 pub const AddRagdollHandler__Handle: u64 = 42873;
@@ -5229,7 +5243,7 @@ pub const ApplyAIMeleeHandOrWeaponMult: u64 = 26405;
 pub const ApplyActiveFlagsToDataFiles: u64 = 524069;
 /// `ApplyActorValueRegenForElapsedTime` at 0x6c48b0 (decompiler, medium); signature (medium): `undefined ApplyActorValueRegenForElapsedTime(longlong param_1, int param_2, float param_3)`
 pub const ApplyActorValueRegenForElapsedTime: u64 = 38459;
-/// `ApplyArmorAndResistanceToHitDamage` at 0x7f09d0 (decompiler, medium); signature (low): `undefined ApplyArmorAndResistanceToHitDamage(longlong param_1, char param_2, undefined8 param_3, float * param_4)`
+/// `ApplyArmorAndResistanceToHitDamage` at 0x7f09d0 (semantic, medium); signature (low): `undefined ApplyArmorAndResistanceToHitDamage(longlong param_1, char param_2, undefined8 param_3, float * param_4)`; semantic: armour scale, the block (HitData+0x5c and flags bit 0), Mod Percent Blocked, the 0.85 cap, damage *= 1 - blocked (medium); signature `void (HitData* hitData, bool skipBlock, u64 unused3, u64 unused4)`
 pub const ApplyArmorAndResistanceToHitDamage: u64 = 44014;
 /// `ApplyAttackHitFromHandle128Actor` at 0x802f40 (decompiler, medium); signature (medium): `undefined ApplyAttackHitFromHandle128Actor(longlong param_1, TESObjectREFR * param_2)`
 pub const ApplyAttackHitFromHandle128Actor: u64 = 44218;
@@ -5259,7 +5273,7 @@ pub const ApplyCssPropertyToTextFormat: u64 = 89054;
 pub const ApplyCullingParamsToCuller: u64 = 106930;
 /// `ApplyCullingParamsToCuller` as a function pointer type (high).
 pub type ApplyCullingParamsToCuller_fn = unsafe extern "C" fn(flushKind: u32, params: *mut c_void, staticCuller: *mut crate::BSCullingProcess) -> *mut crate::BSCullingProcess;
-/// `ApplyDamageRegenDelayAndDispatch` at 0x6c54c0 (decompiler, medium); signature (low): `undefined ApplyDamageRegenDelayAndDispatch(longlong param_1, int param_2, undefined4 param_3, float param_4, undefined8 param_5)`
+/// `ApplyDamageRegenDelayAndDispatch` at 0x6c54c0 (semantic, medium); signature (low): `undefined ApplyDamageRegenDelayAndDispatch(longlong param_1, int param_2, undefined4 param_3, float param_4, undefined8 param_5)`; semantic: after an actor value change: regen delay for Health/Magicka/Stamina (AV 0x18..0x1a) and the per-AV change callback from the table 0x3243710 (medium); signature `void (Actor* actor, i32 actorValue, float oldValue, float delta, Actor* source)`
 pub const ApplyDamageRegenDelayAndDispatch: u64 = 38470;
 /// `ApplyDamageStageFromExtra55` at 0x1d4cb0 (decompiler, medium); signature (low): `undefined8 ApplyDamageStageFromExtra55(longlong param_1, longlong * param_2, char param_3)`
 pub const ApplyDamageStageFromExtra55: u64 = 14165;
@@ -5347,8 +5361,10 @@ pub const ApplyLookInputSensitivity: u64 = 42354;
 pub type ApplyLookInputSensitivity_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, look: *mut crate::NiPoint2);
 /// `ApplyMagicExplosionImpulseToClutter` at 0x5cccf0 (decompiler, medium); signature (low): `undefined ApplyMagicExplosionImpulseToClutter(undefined8 param_1, longlong param_2, float * param_3, longlong param_4, float param_5)`
 pub const ApplyMagicExplosionImpulseToClutter: u64 = 34415;
-/// `ApplyMagicExplosionPushToActor` at 0x5ccbf0 (decompiler, medium); signature (low): `undefined ApplyMagicExplosionPushToActor(longlong * param_1, longlong * param_2, undefined4 * param_3, longlong param_4)`
+/// `ApplyMagicExplosionPushToActor` at 0x5ccbf0 (semantic, high); signature (low): `undefined ApplyMagicExplosionPushToActor(longlong * param_1, longlong * param_2, undefined4 * param_3, longlong param_4)`; semantic: spell area push: PushActorAway(target, origin, min(effect's MGEF explosion force, fMagicExplosionPowerMax)) when that force > fMagicExplosionPowerMin (0) (high); signature `void (MagicCaster* caster, Actor* target, const NiPoint3* origin, Effect* effectItem)`
 pub const ApplyMagicExplosionPushToActor: u64 = 34414;
+/// `ApplyMagicExplosionPushToActor` as a function pointer type (high).
+pub type ApplyMagicExplosionPushToActor_fn = unsafe extern "C" fn(caster: *mut crate::MagicCaster, target: *mut crate::Actor, origin: *const crate::NiPoint3, effectItem: *mut c_void);
 /// `ApplyMagicToTargetRef` at 0x5cf950 (decompiler, medium); signature (low): `undefined8 ApplyMagicToTargetRef(longlong * param_1, longlong * param_2)`
 pub const ApplyMagicToTargetRef: u64 = 34461;
 /// `ApplyMaskedFieldGroups` at 0xe53ae0 (decompiler, medium); signature (medium): `undefined ApplyMaskedFieldGroups(longlong param_1, undefined4 * param_2)`
@@ -5371,6 +5387,10 @@ pub const ApplyOffsetToField18Vector: u64 = 44390;
 pub const ApplyOnceAndSetFlag8ToHandleListRefs: u64 = 19044;
 /// `ApplyOwnershipDataToExtraList` at 0x156060 (decompiler, medium); signature (low): `undefined ApplyOwnershipDataToExtraList(longlong * param_1, longlong param_2, longlong param_3)`
 pub const ApplyOwnershipDataToExtraList: u64 = 11535;
+/// `ApplyParalysisStateToActor` at 0x723620 (semantic, high); signature (low): `undefined ApplyParalysisStateToActor(longlong param_1, TESObjectREFR * param_2, undefined8 param_3, undefined8 param_4)`; semantic: paralysis: knock state 3 and ragdoll into the world (high); signature `void (AIProcess* process, Actor* actor)`
+pub const ApplyParalysisStateToActor: u64 = 39894;
+/// `ApplyParalysisStateToActor` as a function pointer type (high).
+pub type ApplyParalysisStateToActor_fn = unsafe extern "C" fn(process: *mut crate::AIProcess, actor: *mut crate::Actor);
 /// `ApplyParamsToLightingShadersRecursive` at 0x1517ec0 (decompiler, medium); signature (low): `ulonglong ApplyParamsToLightingShadersRecursive(longlong * param_1, longlong * param_2)`
 pub const ApplyParamsToLightingShadersRecursive: u64 = 106480;
 /// `ApplyPendingMenuControlsHandlerChanges` at 0x9608c0 (decompiler, medium); signature (low): `undefined ApplyPendingMenuControlsHandlerChanges(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
@@ -7309,17 +7329,3 @@ pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff
 pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_B_e94b295a8495: u64 = 45575;
 /// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82fef0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEf_078fed9d4dba: u64 = 46495;
-/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8389d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_BST_ea1c3c507d96: u64 = 45470;
-/// `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f460 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45111;
-/// `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f880 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45129;
-/// `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f5c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45117;
-/// `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f720 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45123;
-/// `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f9e0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45135;
-/// `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x849970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46430;

@@ -749,52 +749,6 @@ pub struct BGSAttachTechniquesUtil__ProcessTechniquesFunctor {
 }
 const _: () = assert!(core::mem::offset_of!(BGSAttachTechniquesUtil__ProcessTechniquesFunctor, __vftable) == 0x0);
 
-/// `BGSAttackData`: size 0x50 (exact, medium); primary base `NiRefObject`.
-/// Evidence: runtime: 0x50 at 1 allocation sites.
-/// Bases: `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BGSAttackData {
-    /// +0x0 `vtbl:BGSAttackData:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSAttackData_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    pub unknown_C: [u8; 12],
-    /// +0x18 `undefined4`, ctor store
-    pub field_18: u32,
-    /// +0x1C `undefined4`, ctor store
-    pub field_1C: u32,
-    /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
-    /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
-    /// +0x30 `float`, ctor store
-    pub field_30: f32,
-    /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    /// +0x48 `undefined4`, ctor store
-    pub field_48: u32,
-    pub unknown_4C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BGSAttackData>() == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_48) == 0x48);
-
 /// `BGSAttackDataForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: lower bound field field_8 meets upper bound next base of TESActorBase at 0x138.
 /// Bases: `BaseFormComponent`@0x0.
@@ -897,61 +851,6 @@ const _: () = assert!(size_of::<BGSBlockBashData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSBlockBashData, field_10) == 0x10);
-
-/// `BGSCollisionLayer`: size 0x60 (exact, medium); primary base `TESForm`.
-/// Evidence: runtime: 0x60 at 1 allocation sites.
-/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESDescription`@0x20, `BaseFormComponent`@0x20.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct BGSCollisionLayer {
-    /// +0x0 `vtbl:BGSCollisionLayer:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSCollisionLayer_vtable,
-    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
-    pub sourceFiles: *mut crate::TESFileArray,
-    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
-    pub formFlags: u32,
-    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
-    pub formID: u32,
-    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
-    pub inGameFlags: u16,
-    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
-    pub formType: u8,
-    unknown_1B: [u8; 5],
-    /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
-    #[doc(hidden)]
-    pub __vftable_20: *const crate::raw::vtables::BGSCollisionLayer_vtable_20,
-    /// +0x28 `undefined4`, base TESDescription
-    pub field_28: u32,
-    unknown_2C: [u8; 4],
-    /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
-    /// +0x34 `undefined8`, ctor store
-    pub field_34: u64,
-    unknown_3C: [u8; 4],
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    unknown_48: [u8; 16],
-    /// +0x58 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_58: [u8; 4],
-    unknown_5C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BGSCollisionLayer>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, sourceFiles) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formFlags) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formID) == 0x14);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, inGameFlags) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __field_58) == 0x58);
 
 /// `BGSColorForm`: size 0x38 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.

@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8389d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_BST_ea1c3c507d96: u64 = 45470;
+/// `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f460 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45111;
+/// `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f880 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45129;
+/// `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f5c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45117;
+/// `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f720 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45123;
+/// `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f9e0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45135;
+/// `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x849970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46430;
 /// `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x847dd0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatMagicCasterBoundItem_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46315;
 /// `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8417c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -2133,6 +2147,14 @@ pub type BGSCameraShot__ctor_fn = unsafe extern "C" fn(this: *mut crate::BGSCame
 pub const BGSCameraShot__dtor: u64 = 20701;
 /// `BGSCameraShot::dtor` as a function pointer type (high).
 pub type BGSCameraShot__dtor_fn = unsafe extern "C" fn(this: *mut crate::BGSCameraShot);
+/// `BGSCollisionLayer::GetCollidesWithMask` at 0x31aa50 (semantic, high); signature (untiered): `ulonglong GetCollidesWithMask(longlong param_1)`; semantic: OR of 1 << other->layerIndex over the collides-with list (high); signature `u64 (BGSCollisionLayer* this)`
+pub const BGSCollisionLayer__GetCollidesWithMask: u64 = 20730;
+/// `BGSCollisionLayer::GetCollidesWithMask` as a function pointer type (high).
+pub type BGSCollisionLayer__GetCollidesWithMask_fn = unsafe extern "C" fn(this: *mut crate::BGSCollisionLayer) -> u64;
+/// `BGSCollisionLayer::InitItemImpl` at 0x31a830 (semantic, high); signature (high): `undefined InitItemImpl(BGSCollisionLayer * this)`
+pub const BGSCollisionLayer__InitItemImpl: u64 = 20727;
+/// `BGSCollisionLayer::Load` at 0x31a420 (semantic, high); signature (low): `undefined8 Load(BGSCollisionLayer * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSCollisionLayer__Load: u64 = 20726;
 /// `BGSCollisionLayer::TESDescription_vdtor` at 0x31ae28 (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(BGSCollisionLayer * this)`
 pub const BGSCollisionLayer__TESDescription_vdtor: u64 = 20739;
 /// `BGSCollisionLayer::ctor` at 0x31a2e0 (layout_inference, high); signature (low): `BGSCollisionLayer * ctor(BGSCollisionLayer * this, undefined8 param_1, uint * param_2, longlong * param_3)`
@@ -2141,8 +2163,6 @@ pub const BGSCollisionLayer__ctor: u64 = 20724;
 pub const BGSCollisionLayer__ctor_2: u64 = 20725;
 /// `BGSCollisionLayer::vdtor` at 0x31ae40 (layout_inference, medium); signature (low): `BGSCollisionLayer * vdtor(BGSCollisionLayer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCollisionLayer__vdtor: u64 = 20740;
-/// `BGSCollisionLayer::vfunc_19` at 0x31a830 (rtti, high); signature (high): `undefined vfunc_19(BGSCollisionLayer * this)`
-pub const BGSCollisionLayer__vfunc_19: u64 = 20727;
 /// `BGSCollisionLayer::vfunc_19_sub0` at 0x31ab10 (callgraph, medium); signature (untiered): `undefined8 vfunc_19_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
 pub const BGSCollisionLayer__vfunc_19_sub0: u64 = 20732;
 /// `BGSCollisionLayer::vfunc_19_sub1` at 0x31acb0 (callgraph, medium); signature (untiered): `undefined vfunc_19_sub1(longlong * param_1)`
@@ -2151,8 +2171,6 @@ pub const BGSCollisionLayer__vfunc_19_sub1: u64 = 20734;
 pub const BGSCollisionLayer__vfunc_35: u64 = 20729;
 /// `BGSCollisionLayer::vfunc_5` at 0x31aa10 (rtti, high); signature (low): `undefined vfunc_5(BGSCollisionLayer * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSCollisionLayer__vfunc_5: u64 = 20728;
-/// `BGSCollisionLayer::vfunc_6` at 0x31a420 (rtti, high); signature (low): `undefined8 vfunc_6(BGSCollisionLayer * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSCollisionLayer__vfunc_6: u64 = 20726;
 /// `BGSColorForm::TESFullName_vdtor` at 0x31b764 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(BGSColorForm * this)`
 pub const BGSColorForm__TESFullName_vdtor: u64 = 20762;
 /// `BGSColorForm::ctor` at 0x31b4c0 (layout_inference, high); signature (low): `BGSColorForm * ctor(BGSColorForm * this, undefined8 param_1, uint * param_2, longlong * param_3)`
@@ -2867,6 +2885,10 @@ pub const BGSMaterialObject__vfunc_6: u64 = 20939;
 pub const BGSMaterialObject__vfunc_6_sub0: u64 = 20944;
 /// `BGSMaterialObject::vfunc_6_sub1` at 0x321be0 (callgraph, medium); signature (untiered): `undefined vfunc_6_sub1(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BGSMaterialObject__vfunc_6_sub1: u64 = 20947;
+/// `BGSMaterialType::IsStairsById` at 0x3227b0 (semantic, high); signature (untiered): `byte IsStairsById(uint param_1)`; semantic: LookupMaterialTypeByHavokId(id) and (+0x44 & 1) (high); signature `bool (u32 havokMaterialId)`
+pub const BGSMaterialType__IsStairsById: u64 = 20970;
+/// `BGSMaterialType::IsStairsById` as a function pointer type (high).
+pub type BGSMaterialType__IsStairsById_fn = unsafe extern "C" fn(havokMaterialId: u32) -> bool;
 /// `BGSMaterialType::ctor` at 0x3220d0 (layout_inference, high); signature (low): `BGSMaterialType * ctor(BGSMaterialType * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const BGSMaterialType__ctor: u64 = 20963;
 /// `BGSMaterialType::dtor` at 0x322130 (layout_inference, high); signature (low): `undefined dtor(BGSMaterialType * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5071,27 +5093,3 @@ pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const_
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_34: u64 = 29049;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vdtor` at 0x483600 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vdtor: u64 = 29065;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_18` at 0x4837a0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_18: u64 = 29073;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_19` at 0x483780 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_19: u64 = 29072;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_20` at 0x483760 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_20: u64 = 29071;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_30` at 0x4837e0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_30: u64 = 29075;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_34` at 0x4837c0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_34: u64 = 29074;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vdtor` at 0x485220 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vdtor: u64 = 29099;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_18` at 0x4855f0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_18: u64 = 29111;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_19` at 0x4855d0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_19: u64 = 29110;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_20` at 0x4855b0 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_20: u64 = 29109;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_30` at 0x485630 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_30: u64 = 29113;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_34` at 0x485610 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_34: u64 = 29112;
-/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vdtor` at 0x487ac0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vdtor: u64 = 29160;

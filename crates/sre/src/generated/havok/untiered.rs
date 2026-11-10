@@ -486,13 +486,6 @@ impl crate::bhkQuadOrientationController {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_6_sub0(param_1: i64, param_2: u32, param_3: u32) -> u64 { unsafe { function!(78284, (i64, u32, u32) -> u64)(param_1, param_2, param_3) } }
-    /// `bhkQuadOrientationController::vfunc_8_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 80142, rva 0x10ca620).
-    /// `float vfunc_8_sub0(longlong param_1, longlong param_2, undefined8 param_3, int param_4, float param_5, float param_6)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_8_sub0(param_1: i64, param_2: i64, param_3: u64, param_4: i32, param_5: f32, param_6: f32) -> f32 { unsafe { function!(80142, (i64, i64, u64, i32, f32, f32) -> f32)(param_1, param_2, param_3, param_4, param_5, param_6) } }
 }
 
 impl crate::bhkRagdollPenetrationUtil {

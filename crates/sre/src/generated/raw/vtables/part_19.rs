@@ -5934,7 +5934,7 @@ pub struct bhkQuadOrientationController_vtable {
     pub slot_6: *const c_void,
     /// `bhkQuadOrientationController::vfunc_7` at 0x10ca420 (rtti, high); signature (low): `longlong vfunc_7(bhkQuadOrientationController * this, longlong param_1, float param_2, float param_3, int param_4, undefined1 * param_5)`
     pub slot_7: *const c_void,
-    /// `bhkQuadOrientationController::vfunc_8` at 0x10ca460 (rtti, high); signature (low): `undefined vfunc_8(bhkQuadOrientationController * this, longlong param_1)`
+    /// `bhkQuadOrientationController::Update` at 0x10ca460 (semantic, high); signature (low): `undefined Update(bhkQuadOrientationController * this, longlong param_1)`
     pub slot_8: *const c_void,
     /// `bhkQuadOrientationController::vfunc_9` at 0x10ca590 (rtti, high); signature (high): `undefined vfunc_9(bhkQuadOrientationController * this)`
     pub slot_9: *const c_void,

@@ -7,55 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `FindClosestTargetInMeleeHitCone` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47272, rva 0x866260).
-/// `longlong * FindClosestTargetInMeleeHitCone(longlong * param_1, float param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_closest_target_in_melee_hit_cone(param_1: *mut i64, param_2: f32, param_3: u64, param_4: u64) -> *mut i64 { unsafe { function!(47272, (*mut i64, f32, u64, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
-/// `FindClosestTriangleAtPoint` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 91119, rva 0x11e2ed0).
-/// `ushort FindClosestTriangleAtPoint(longlong param_1, float * param_2, longlong * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_closest_triangle_at_point(param_1: i64, param_2: *mut f32, param_3: *mut i64) -> u16 { unsafe { function!(91119, (i64, *mut f32, *mut i64) -> u16)(param_1, param_2, param_3) } }
-/// `FindClosestTriangleAtPointWithDistance` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 91120, rva 0x11e3050).
-/// `ushort FindClosestTriangleAtPointWithDistance(longlong param_1, float * param_2, longlong * param_3, float * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_closest_triangle_at_point_with_distance(param_1: i64, param_2: *mut f32, param_3: *mut i64, param_4: *mut f32) -> u16 { unsafe { function!(91120, (i64, *mut f32, *mut i64, *mut f32) -> u16)(param_1, param_2, param_3, param_4) } }
-/// `FindClosestTriangleForPoint` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30357, rva 0x4c2530).
-/// `undefined8 FindClosestTriangleForPoint(longlong * param_1, float * param_2, longlong * param_3, ushort * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_closest_triangle_for_point(param_1: *mut i64, param_2: *mut f32, param_3: *mut i64, param_4: *mut u16) -> u64 { unsafe { function!(30357, (*mut i64, *mut f32, *mut i64, *mut u16) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `FindClosestTriangleForPointDiscardIndex` (decompiler signature, tier low; ledger decompiler evidence, name high; id 30356, rva 0x4c2510).
-/// `undefined FindClosestTriangleForPointDiscardIndex(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_closest_triangle_for_point_discard_index() -> u64 { unsafe { function!(30356, () -> u64)() } }
-/// `FindCollisionObjectNodeDepthLimited` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 78035, rva 0x1055690).
-/// `longlong * FindCollisionObjectNodeDepthLimited(longlong * param_1, longlong param_2, uint param_3, uint param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_collision_object_node_depth_limited(param_1: *mut i64, param_2: i64, param_3: u32, param_4: u32) -> *mut i64 { unsafe { function!(78035, (*mut i64, i64, u32, u32) -> *mut i64)(param_1, param_2, param_3, param_4) } }
-/// `FindCommonAncestor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 71215, rva 0xf0a150).
-/// `longlong FindCommonAncestor(undefined8 param_1, longlong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_common_ancestor(param_1: u64, param_2: i64, param_3: i64) -> i64 { unsafe { function!(71215, (u64, i64, i64) -> i64)(param_1, param_2, param_3) } }
 /// `FindContentByDottedKeyPrefix` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441791, rva 0x588d90).
 /// `undefined8 FindContentByDottedKeyPrefix(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14245,3 +14196,52 @@ pub unsafe fn get_or_create_papyrus_log_file(param_1: i64, param_2: u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_or_create_params_copy_at_c0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(105686, (i64, u64, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreatePathingCell` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30684, rva 0x4db240).
+/// `bool GetOrCreatePathingCell(longlong param_1, ulonglong * param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_pathing_cell(param_1: i64, param_2: *mut u64, param_3: *mut i64) -> u8 { unsafe { function!(30684, (i64, *mut u64, *mut i64) -> u8)(param_1, param_2, param_3) } }
+/// `GetOrCreatePathingCellForLocation` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30683, rva 0x4db170).
+/// `undefined GetOrCreatePathingCellForLocation(longlong param_1, float * param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_pathing_cell_for_location(param_1: i64, param_2: *mut f32, param_3: *mut i64) -> u64 { unsafe { function!(30683, (i64, *mut f32, *mut i64) -> u64)(param_1, param_2, param_3) } }
+/// `GetOrCreatePortalGraph` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 19169, rva 0x2caf40).
+/// `undefined8 GetOrCreatePortalGraph(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_portal_graph(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(19169, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateQueuedHandles` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 13602, rva 0x1b3120).
+/// `longlong GetOrCreateQueuedHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_queued_handles(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> i64 { unsafe { function!(13602, (i64, u64, u64, u64) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateQueuedHelmet` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 13056, rva 0x195980).
+/// `undefined GetOrCreateQueuedHelmet(longlong param_1, longlong * param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_queued_helmet(param_1: i64, param_2: *mut i64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(13056, (i64, *mut i64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateQueuedHelmetForSlot` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15698, rva 0x21bca0).
+/// `undefined GetOrCreateQueuedHelmetForSlot(int * param_1, uint param_2, undefined8 param_3, int param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_queued_helmet_for_slot(param_1: *mut i32, param_2: u32, param_3: u64, param_4: i32) -> u64 { unsafe { function!(15698, (*mut i32, u32, u64, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateRegionList` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 18999, rva 0x2bec60).
+/// `TESRegionList * GetOrCreateRegionList(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_region_list(param_1: i64, param_2: c_char, param_3: u64, param_4: u64) -> *mut crate::TESRegionList { unsafe { function!(18999, (i64, c_char, u64, u64) -> *mut crate::TESRegionList)(param_1, param_2, param_3, param_4) } }

@@ -7,48 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RotateTreeNodeRight_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419726, rva 0x12b40e0).
-/// `undefined RotateTreeNodeRight_2(longlong * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_tree_node_right_2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(419726, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
-/// `RotateVectorAroundZByCellAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19138, rva 0x2c85f0).
-/// `undefined RotateVectorAroundZByCellAngle(longlong param_1, float * param_2, float * param_3, char param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vector_around_z_by_cell_angle(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: c_char) -> u64 { unsafe { function!(19138, (i64, *mut f32, *mut f32, c_char) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RotateVectorArrayByQuaternions` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67232, rva 0xca6640).
-/// `undefined RotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vector_array_by_quaternions(param_1: i64, param_2: i64, param_3: i64, param_4: i32) -> u64 { unsafe { function!(67232, (i64, i64, i64, i32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RotateVectorTowardTargetByFraction` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 58442, rva 0xad6d00).
-/// `undefined RotateVectorTowardTargetByFraction(float param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vector_toward_target_by_fraction(param_1: f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { function!(58442, (f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `RotateVectorsByNiTransform` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71277, rva 0xf0d3f0).
-/// `undefined RotateVectorsByNiTransform(ushort param_1, float * param_2, float * param_3, float * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_vectors_by_ni_transform(param_1: u16, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32) -> u64 { unsafe { function!(71277, (u16, *mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RoundUpToPowerOfTwo` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90284, rva 0x11b38c0).
-/// `uint RoundUpToPowerOfTwo(uint param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn round_up_to_power_of_two(param_1: u32) -> u32 { unsafe { function!(90284, (u32) -> u32)(param_1) } }
 /// `RunCheckSphereVisitor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90425, rva 0x11be010).
 /// `undefined1 RunCheckSphereVisitor(undefined8 param_1, undefined4 * param_2, undefined4 param_3)`
 ///
@@ -2506,13 +2464,6 @@ pub unsafe fn set_field68_and_register_in_owner_array(param_1: i64, param_2: i32
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_field68_from_min_extent(param_1: i64, param_2: u64, param_3: *mut f32) -> u64 { unsafe { function!(60922, (i64, u64, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `SetField70AndFilterLayerMask` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 25988, rva 0x404350).
-/// `undefined SetField70AndFilterLayerMask(longlong param_1, int param_2, uint * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_field70_and_filter_layer_mask(param_1: i64, param_2: i32, param_3: *mut u32) -> u64 { unsafe { function!(25988, (i64, i32, *mut u32) -> u64)(param_1, param_2, param_3) } }
 /// `SetField78UnlessNearParentField214` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19003, rva 0x2bf160).
 /// `undefined SetField78UnlessNearParentField214(longlong param_1, float param_2)`
 ///
@@ -4074,13 +4025,6 @@ pub unsafe fn skip_stream_bytes(param_1: i64, param_2: i32) -> u64 { unsafe { fu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn skip_to_comment_end(param_1: i64) -> u64 { unsafe { function!(88518, (i64) -> u64)(param_1) } }
-/// `SlerpQuaternion` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 57103, rva 0xaa4ee0).
-/// `undefined SlerpQuaternion(float * param_1, float * param_2, float * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn slerp_quaternion(param_1: *mut f32, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { function!(57103, (*mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3) } }
 /// `SlotListC0Contains` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 25319, rva 0x3e6c80).
 /// `bool SlotListC0Contains(longlong param_1, int param_2, longlong param_3)`
 ///

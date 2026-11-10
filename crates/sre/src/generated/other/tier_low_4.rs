@@ -7,41 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Cmd::ReloadFXP_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22951, rva 0x376040).
-/// `undefined8 ReloadFXP_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__reload_fxp_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22951, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::ReloadProjectedUVTextures_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23109, rva 0x37beb0).
-/// `undefined1 ReloadProjectedUVTextures_Execute(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__reload_projected_uv_textures_execute(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(23109, (u64, u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `Cmd::ReloadScript_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23097, rva 0x37ba00).
-/// `ulonglong ReloadScript_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__reload_script_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23097, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::RemoveAllItems_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22005, rva 0x34da30).
-/// `ulonglong RemoveAllItems_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__remove_all_items_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22005, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::RemoveFlames_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22276, rva 0x359340).
-/// `undefined8 RemoveFlames_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, double * param_7)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__remove_flames_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64, param_5: u64, param_6: u64, param_7: *mut f64) -> u64 { unsafe { function!(22276, (u64, u64, *mut i64, u64, u64, u64, *mut f64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
 /// `Cmd::RemoveFromAllFactions_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22578, rva 0x3659e0).
 /// `undefined8 RemoveFromAllFactions_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -10542,13 +10507,6 @@ pub unsafe fn copy_emitter_with_fields78_and7_c(param_1: i64, param_2: i64) -> u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn copy_entries_and_fill_validity_mask(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(63771, (*mut i64, i64) -> u64)(param_1, param_2) } }
-/// `CopyEntriesAndZeroRest` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 60057, rva 0xb27910).
-/// `undefined CopyEntriesAndZeroRest(longlong param_1, longlong param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn copy_entries_and_zero_rest(param_1: i64, param_2: i64, param_3: i32) -> u64 { unsafe { function!(60057, (i64, i64, i32) -> u64)(param_1, param_2, param_3) } }
 /// `CopyEntriesIntoBytePairTable` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 48420, rva 0x89c090).
 /// `undefined CopyEntriesIntoBytePairTable(longlong param_1, longlong * param_2)`
 ///
@@ -12558,3 +12516,45 @@ pub unsafe fn count_type1_e_contacts(param_1: *mut i64) -> u64 { unsafe { functi
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn create_active_effect(param_1: u64, param_2: u32, param_3: u64, param_4: i64, param_5: u64, param_6: c_char) -> i64 { unsafe { function!(34501, (u64, u32, u64, i64, u64, c_char) -> i64)(param_1, param_2, param_3, param_4, param_5, param_6) } }
+/// `CreateActorPackageDataByType` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38976, rva 0x6e1210).
+/// `SandBoxActorPackageData * CreateActorPackageDataByType(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_actor_package_data_by_type(param_1: u32, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::SandBoxActorPackageData { unsafe { function!(38976, (u32, u64, u64, u64) -> *mut crate::SandBoxActorPackageData)(param_1, param_2, param_3, param_4) } }
+/// `CreateActorPackageDataForPackage` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38975, rva 0x6e1000).
+/// `SandBoxActorPackageData * CreateActorPackageDataForPackage(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_actor_package_data_for_package(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::SandBoxActorPackageData { unsafe { function!(38975, (i64, u64, u64, u64) -> *mut crate::SandBoxActorPackageData)(param_1, param_2, param_3, param_4) } }
+/// `CreateAndAppendDecalNode` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15209, rva 0x1ff7e0).
+/// `BGSDecalNode * CreateAndAppendDecalNode(longlong param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_and_append_decal_node(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> *mut crate::BGSDecalNode { unsafe { function!(15209, (i64, *mut i64, u64, u64) -> *mut crate::BGSDecalNode)(param_1, param_2, param_3, param_4) } }
+/// `CreateAndAppendMagicItemData` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 52082, rva 0x9567f0).
+/// `undefined8 CreateAndAppendMagicItemData(longlong param_1, undefined8 param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_and_append_magic_item_data(param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52082, (i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
+/// `CreateAndAppendNamedChild` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 89120, rva 0xe5aac0).
+/// `undefined8 * CreateAndAppendNamedChild(longlong param_1, undefined4 param_2, void * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_and_append_named_child(param_1: i64, param_2: u32, param_3: *mut c_void) -> *mut u64 { unsafe { function!(89120, (i64, u32, *mut c_void) -> *mut u64)(param_1, param_2, param_3) } }
+/// `CreateAndAppendNamedChildWithValue` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 89121, rva 0xe5abb0).
+/// `undefined8 * CreateAndAppendNamedChildWithValue(longlong param_1, undefined4 param_2, void * param_3, undefined4 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_and_append_named_child_with_value(param_1: i64, param_2: u32, param_3: *mut c_void, param_4: u32) -> *mut u64 { unsafe { function!(89121, (i64, u32, *mut c_void, u32) -> *mut u64)(param_1, param_2, param_3, param_4) } }

@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AccumulateShaderFlagBitsRecursive` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 106482, rva 0x1518110).
-/// `ulonglong AccumulateShaderFlagBitsRecursive(longlong * param_1, byte * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn accumulate_shader_flag_bits_recursive(param_1: *mut i64, param_2: *mut u8) -> u64 { unsafe { function!(106482, (*mut i64, *mut u8) -> u64)(param_1, param_2) } }
 /// `AccumulateUserContentAndProcessRequest25` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441915, rva 0x5934c0).
 /// `undefined8 AccumulateUserContentAndProcessRequest25(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -7224,13 +7217,6 @@ pub unsafe fn apply_ai_melee_hand_or_weapon_mult(param_1: f32, param_2: u64, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn apply_active_flags_to_data_files(param_1: i64, param_2: *mut *mut c_void, param_3: u64, param_4: u64) -> u64 { unsafe { function!(524069, (i64, *mut *mut c_void, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ApplyArmorAndResistanceToHitDamage` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 44014, rva 0x7f09d0).
-/// `undefined ApplyArmorAndResistanceToHitDamage(longlong param_1, char param_2, undefined8 param_3, float * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn apply_armor_and_resistance_to_hit_damage(param_1: i64, param_2: c_char, param_3: u64, param_4: *mut f32) -> u64 { unsafe { function!(44014, (i64, c_char, u64, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ApplyCallbackToMembersRecursively` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 64479, rva 0xc01760).
 /// `undefined ApplyCallbackToMembersRecursively(ulonglong param_1, longlong * param_2, uint param_3, undefined * param_4)`
 ///
@@ -7266,13 +7252,6 @@ pub unsafe fn apply_comma_separated_tokens_from_field28(param_1: i64, param_2: i
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn apply_css_property_to_text_format(param_1: i64, param_2: *mut u64, param_3: *mut c_char) -> u64 { unsafe { function!(89054, (i64, *mut u64, *mut c_char) -> u64)(param_1, param_2, param_3) } }
-/// `ApplyDamageRegenDelayAndDispatch` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38470, rva 0x6c54c0).
-/// `undefined ApplyDamageRegenDelayAndDispatch(longlong param_1, int param_2, undefined4 param_3, float param_4, undefined8 param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn apply_damage_regen_delay_and_dispatch(param_1: i64, param_2: i32, param_3: u32, param_4: f32, param_5: u64) -> u64 { unsafe { function!(38470, (i64, i32, u32, f32, u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
 /// `ApplyDamageStageFromExtra55` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 14165, rva 0x1d4cb0).
 /// `undefined8 ApplyDamageStageFromExtra55(longlong param_1, longlong * param_2, char param_3)`
 ///
@@ -7469,13 +7448,6 @@ pub unsafe fn apply_layout_params_to_field58(param_1: i64, param_2: *mut u32) ->
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn apply_magic_explosion_impulse_to_clutter(param_1: u64, param_2: i64, param_3: *mut f32, param_4: i64, param_5: f32) -> u64 { unsafe { function!(34415, (u64, i64, *mut f32, i64, f32) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `ApplyMagicExplosionPushToActor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 34414, rva 0x5ccbf0).
-/// `undefined ApplyMagicExplosionPushToActor(longlong * param_1, longlong * param_2, undefined4 * param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn apply_magic_explosion_push_to_actor(param_1: *mut i64, param_2: *mut i64, param_3: *mut u32, param_4: i64) -> u64 { unsafe { function!(34414, (*mut i64, *mut i64, *mut u32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ApplyMagicToTargetRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 34461, rva 0x5cf950).
 /// `undefined8 ApplyMagicToTargetRef(longlong * param_1, longlong * param_2)`
 ///
@@ -11872,13 +11844,6 @@ pub unsafe fn cast_linear_from_point_along_direction(param_1: *mut i64, param_2:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cast_player_spell_and_notify_spell_attack(param_1: i64, param_2: *mut i64, param_3: c_char) -> u64 { unsafe { function!(42417, (i64, *mut i64, c_char) -> u64)(param_1, param_2, param_3) } }
-/// `CastRayAgainstCollectedBodies` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 78009, rva 0x10542d0).
-/// `bool CastRayAgainstCollectedBodies(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cast_ray_against_collected_bodies(param_1: i64, param_2: *mut f32) -> u8 { unsafe { function!(78009, (i64, *mut f32) -> u8)(param_1, param_2) } }
 /// `CastRayAgainstHullPlanes` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 80925, rva 0x10f4bb0).
 /// `undefined1 * CastRayAgainstHullPlanes(longlong param_1, undefined1 * param_2, float * param_3, float * param_4, float * param_5, int * param_6)`
 ///
@@ -13342,3 +13307,38 @@ pub unsafe fn clear_array_optional_free(param_1: *mut i64, param_2: u64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clear_array_releasing_elements(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(104959, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingEntriesToGlobalList` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 52461, rva 0x973680).
+/// `undefined ClearArrayReleasingEntriesToGlobalList(longlong * param_1, longlong param_2, ulonglong param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_entries_to_global_list(param_1: *mut i64, param_2: i64, param_3: u64, param_4: i64) -> u64 { unsafe { function!(52461, (*mut i64, i64, u64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingOwnedObjects` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38117, rva 0x6ba450).
+/// `undefined ClearArrayReleasingOwnedObjects(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_owned_objects(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38117, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingPairValues` (decompiler signature, tier low; ledger decompiler evidence, name high; id 64017, rva 0xbeae10).
+/// `undefined ClearArrayReleasingPairValues(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_pair_values(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(64017, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingPointers` (decompiler signature, tier low; ledger decompiler evidence, name high; id 64020, rva 0xbeafd0).
+/// `undefined ClearArrayReleasingPointers(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_pointers(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(64020, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingRefPairs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 104950, rva 0x14c6890).
+/// `undefined ClearArrayReleasingRefPairs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_ref_pairs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(104950, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -2531,19 +2531,6 @@ pub struct _anon_865AF130__GetVMConditionalVariableValueFunc {
 }
 const _: () = assert!(core::mem::offset_of!(_anon_865AF130__GetVMConditionalVariableValueFunc, __vftable) == 0x0);
 
-/// `_anon_8B4A4C54::DeferredUpdate`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`@0x0, `BSTCommonMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>_>`@0x0, `BSTMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>_>`@0x0, `BSTSingletonSDM<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer>`@0x420, `BSTSingletonSDMBase<BSTSDMTraits<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>_>_>`@0x420, `BSTSDMTraits<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>_>`@0x420, `BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>`@0x421.
-#[repr(C)]
-pub struct _anon_8B4A4C54__DeferredUpdate {
-    /// +0x0 `vtbl:_anon_8B4A4C54::DeferredUpdate:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::_anon_8B4A4C54__DeferredUpdate_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, __vftable) == 0x0);
-
 /// `_anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathing::CheckLineOfSightFilter`.
 /// Evidence: vptr at 0x0.
 /// Bases: `BSPathing::CheckLineOfSightFilter`@0x0.

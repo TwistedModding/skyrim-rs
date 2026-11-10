@@ -170,13 +170,6 @@ impl crate::NiSkinPartition {
 }
 
 impl crate::hkbBehaviorGraph {
-    /// `hkbBehaviorGraph::vfunc_5_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 59311, rva 0xaef170).
-    /// `undefined vfunc_5_sub0(longlong * param_1, longlong * param_2, undefined4 param_3, longlong param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_5_sub0(param_1: *mut i64, param_2: *mut i64, param_3: u32, param_4: i64) -> u64 { unsafe { function!(59311, (*mut i64, *mut i64, u32, i64) -> u64)(param_1, param_2, param_3, param_4) } }
     /// `hkbBehaviorGraph::vfunc_7_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 58371, rva 0xaceb10).
     /// `undefined vfunc_7_sub0(longlong param_1, short param_2)`
     ///

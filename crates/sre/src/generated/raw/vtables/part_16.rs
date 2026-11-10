@@ -8535,7 +8535,7 @@ impl RagdollFurnitureListener_vtable_8 {
 pub struct RagdollStartHandler_vtable {
     /// `RagdollStartHandler::vdtor` at 0x7d4570 (layout_inference, medium); signature (low): `RagdollStartHandler * vdtor(RagdollStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `RagdollStartHandler::Handle` at 0x7ce940 (semantic, low); signature (low): `undefined8 Handle(RagdollStartHandler * this, longlong param_1)`
+    /// `RagdollStartHandler::Handle` at 0x7ce940 (semantic, medium); signature (low): `undefined8 Handle(RagdollStartHandler * this, longlong param_1)`
     pub slot_1: *const c_void,
 }
 impl RagdollStartHandler_vtable {

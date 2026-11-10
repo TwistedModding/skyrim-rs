@@ -9306,6 +9306,13 @@ impl crate::RagdollFurnitureListener {
 }
 
 impl crate::RagdollStartHandler {
+    /// `RagdollStartHandler::Handle`, vtable slot 1, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name medium; id 42878, rva 0x7ce940).
+    /// `undefined8 Handle(RagdollStartHandler * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn handle(&self, param_1: i64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `RagdollStartHandler::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 43359, rva 0x7d4570).
     /// `RagdollStartHandler * vdtor(RagdollStartHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -9956,13 +9963,6 @@ impl crate::SpawnHazardEffect {
 }
 
 impl crate::SpecificItemCollector {
-    /// `SpecificItemCollector::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 25986, rva 0x404230).
-    /// `SpecificItemCollector * ctor(SpecificItemCollector * this, int param_1, longlong param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: i32, param_2: i64) -> *mut Self { unsafe { function!(25986, (*const Self, i32, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `SpecificItemCollector::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 25990, rva 0x4043a0).
     /// `SpecificItemCollector * vdtor(SpecificItemCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -12913,16 +12913,6 @@ impl crate::_anon_860CB2AF__InternedStringRefCounted {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::_anon_8B4A4C54__DeferredUpdate {
-    /// `_anon_8B4A4C54::DeferredUpdate::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 63412, rva 0xbc3c70).
-    /// `DeferredUpdate * vdtor(DeferredUpdate * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(63412, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::_anon_9196AC74__CheckLineOfSightTriangleFlagFiltersAdapter {
     /// `_anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 91745, rva 0x1209ff0).
     /// `CheckLineOfSightTriangleFlagFiltersAdapter * vdtor(CheckLineOfSightTriangleFlagFiltersAdapter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -13810,3 +13800,10 @@ pub unsafe fn accumulate_scope_and_table10_counters(param_1: i64, param_2: i64) 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn accumulate_scope_stats_and_optionally_clear(param_1: i64, param_2: i64, param_3: c_char) -> u64 { unsafe { function!(87189, (i64, i64, c_char) -> u64)(param_1, param_2, param_3) } }
+/// `AccumulateShaderFlagBitsRecursive` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 106482, rva 0x1518110).
+/// `ulonglong AccumulateShaderFlagBitsRecursive(longlong * param_1, byte * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn accumulate_shader_flag_bits_recursive(param_1: *mut i64, param_2: *mut u8) -> u64 { unsafe { function!(106482, (*mut i64, *mut u8) -> u64)(param_1, param_2) } }

@@ -7,6 +7,115 @@
 
 use core::ffi::c_void;
 
+/// `BGSAttackData`: size 0x50 (exact, medium); primary base `NiRefObject`.
+/// Meaning: race/NPC attack data (ATKD): the 11 dwords of ATKD read into +0x18..+0x48 by ReadAttackDataChunkFields 0x449bb0 (medium, ik pass).
+/// Evidence: runtime: 0x50 at 1 allocation sites.
+/// Bases: `NiRefObject`@0x0.
+#[repr(C)]
+pub struct BGSAttackData {
+    /// +0x0 `vtbl:BGSAttackData:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSAttackData_vtable,
+    /// +0x8 `undefined4`, ctor store
+    pub field_8: u32,
+    pub unknown_C: [u8; 12],
+    /// +0x18 `float`, semantic; hit damage multiplier (1.0 default) (medium)
+    pub damageMult: f32,
+    /// +0x1C `undefined4`, ctor store
+    pub field_1C: u32,
+    /// +0x20 `undefined8`, ctor store
+    pub field_20: u64,
+    /// +0x28 `u32`, semantic; bit 2 -> HitData flags bit 16 (power attack) (medium)
+    pub flags: u32,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `float`, ctor store
+    pub field_30: f32,
+    /// +0x34 `undefined4`, ctor store
+    pub field_34: u32,
+    /// +0x38 `undefined8`, ctor store
+    pub field_38: u64,
+    /// +0x40 `float`, semantic; > 0: a hit with this attack data calls PushActorAway on the target with this force (ATKD chunk offset 36) (high)
+    pub pushForce: f32,
+    pub unknown_44: [u8; 4],
+    /// +0x48 `undefined4`, ctor store
+    pub field_48: u32,
+    pub unknown_4C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSAttackData>() == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, damageMult) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, flags) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, pushForce) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSAttackData, field_48) == 0x48);
+
+/// `BGSCollisionLayer`: size 0x60 (exact, medium); primary base `TESForm`.
+/// Meaning: COLL form (form type 0x84): one collision layer; its collides-with list builds the filter row (high, ik pass).
+/// Evidence: runtime: 0x60 at 1 allocation sites.
+/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESDescription`@0x20, `BaseFormComponent`@0x20.
+#[repr(C)]
+pub struct BGSCollisionLayer {
+    /// +0x0 `vtbl:BGSCollisionLayer:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSCollisionLayer_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
+    #[doc(hidden)]
+    pub __vftable_20: *const crate::raw::vtables::BGSCollisionLayer_vtable_20,
+    /// +0x28 `undefined4`, base TESDescription
+    pub field_28: u32,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `u32`, semantic; BNAM: the layer index (row number) (high)
+    pub layerIndex: u32,
+    /// +0x34 `u32`, semantic; FNAM (medium)
+    pub debugColor: u32,
+    /// +0x38 `u32`, semantic; GNAM flags; bit 0 -> filter+0x3d0, bit 1 -> filter+0x3d8 (high)
+    pub flags: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `BSFixedString`, semantic; MNAM (high)
+    pub name: [u8; 8],
+    /// +0x48 `pointer`, semantic; array of collides-with layers (CNAM form IDs at load, resolved to forms by InitItem) (high)
+    pub collidesWith: *mut c_void,
+    pub unknown_50: [u8; 8],
+    /// +0x58 `u32`, semantic; count of +0x48 (high)
+    pub collidesWithCount: u32,
+    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSCollisionLayer>() == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __vftable_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, layerIndex) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, debugColor) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, flags) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, name) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, collidesWith) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, collidesWithCount) == 0x58);
+
 /// `BGSFootIkRaycastInterfaceDB`: size 0x58 (exact, high); primary base `BSIFootIkRaycastInterfaceDB`.
 /// Meaning: the game's foot IK raycast provider: hkbCharacter* -> CachedRaycastData per actor (high, ik pass).
 /// Evidence: ik pass (semantic): Singleton object 0x32047e0, built by 0x54a6e0 (from the TESInitThread start-up) which also stores it in g_FootIkRaycastInterfaceDB 0x31df418 and in 0x325bb88 (the pointer the Havok-side code uses: Run 0xad2426, SetupLegs 0xad42ca, 0xad5637, hkbFootIkModifier 0xb0b692/0xb0d379). Recursive spin lock 0x32047d8 (owner tid) / 0x32047dc (count) around every member. Registration: holder slot 13 0x2fd630 (graph manager attached/detached) -> 0x54a420 / 0x54a2a0 walk the manager's graphs under its lock +0xa0 and add/remove (character -> actor handle) in each graph's map; Actor slots 133 0x68f2e0 and 167 0x676e30 call 0x54a560 (refresh); FindEntryByRefHandle 0x54abe0 answers 'is this actor's record flagged' for Actor::ApplyFootIkFeedback 0x7dd0f0, Actor slot 200 0x689370 (placement) and the bhkCharacterMoveFinishEvent sink 0x7dd840.; size: vdtor 0x54c250 frees 0x58.
@@ -296,7 +405,7 @@ const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, node) ==
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree__Entry, __name) == 0x78);
 
 /// `BSGrabIKNote`: size 0x28 (exact, high); primary base `BSAnimNote`.
-/// Meaning: animation note (BSAnimNote type 1) that drives the grab IK of RagdollAnimation (UpdateGrabIk 0x1072160 -> TwoJointSolve) (high, ik pass).
+/// Meaning: animation note 'GrabIK'; created only by the NIF stream factory; no shipped file contains one (high, ik pass).
 /// Evidence: ik pass (semantic): ctors 0xf8b310 (float time, u32, float, u32), 0xf8b380, 0xf8b3d0; Create 0xf8b560, CreateBSGrabIKNote 0xf8b150.; size: vdtor 0xf8b820 frees 0x28.
 /// Bases: `BSAnimNote`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -307,7 +416,7 @@ pub struct BSGrabIKNote {
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `u32`, semantic; 1 = grab IK (high)
+    /// +0x10 `u32`, semantic; 1 = grab IK (BSAnimNote type tag) (high)
     pub noteType: u32,
     /// +0x14 `float`, semantic (medium)
     pub time: f32,
@@ -373,7 +482,7 @@ const _: () = assert!(size_of::<BSIRagdollDriver>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSIRagdollDriver, __vftable) == 0x0);
 
 /// `BSIsActiveModifier`: size 0x60 (exact, high); primary base `hkbModifier`.
-/// Meaning: writes bIsActive0..4 (FLAG_OUTPUT) while its state is active; bInvertActiveN inverts; the graphs' foot IK switches are written this way (high, ik pass).
+/// Meaning: writes 'is this modifier active' into up to five bool members, which output bindings copy into graph variables (high, ik pass).
 /// Evidence: ik pass (semantic): Layout from the exe's own reflection: member array 0x19fba70 (10 members), defaults 0x19fc0c0, parent hkbModifier. Member names keep the reflected spelling.; size: hkClass static initializer 0xdd212 passes objectSize 0x60 to the hkClass constructor 0xab1660 (r9d); hkClass object 0x3266d30.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
 #[repr(C, align(8))]
@@ -784,7 +893,7 @@ const _: () = assert!(core::mem::offset_of!(BSLookAtModifierBoneData, __enabled)
 const _: () = assert!(core::mem::offset_of!(BSLookAtModifierBoneData, __currentFwdAxisLS) == 0x30);
 
 /// `BSLookIKNote`: size 0x20 (exact, high); primary base `BSAnimNote`.
-/// Meaning: animation note (BSAnimNote type 2) for look IK (high, ik pass).
+/// Meaning: animation note 'LookIK'; created only by the NIF stream factory; no shipped file contains one (high, ik pass).
 /// Evidence: ik pass (semantic): ctors 0xf8bbe0 (float, float, u32), 0xf8bc50, 0xf8bca0; Create 0xf8be20, CreateBSLookIKNote 0xf8ba20.; size: vdtor 0xf8bfe0 frees 0x20.
 /// Bases: `BSAnimNote`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
 #[repr(C)]
@@ -984,6 +1093,65 @@ const _: () = assert!(size_of::<ExtraHeadTrackingWeight>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraHeadTrackingWeight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ExtraHeadTrackingWeight, __weight) == 0x10);
 
+/// `JobList`: size 0xD8 (exact).
+/// Meaning: A named job list run by the BSJobs worker threads: an array of {function, argument} entries split into groups by signal/sync marker entries (medium, ik pass).
+/// Evidence: A named job list run by the BSJobs worker threads: an array of {function, argument} entries split into groups by signal/sync marker entries; IK track H (static-H). Layout from BuildSegmentJobList 0x60ef30, the marker appender ID_69375 0xebbc60, the starter ID_69376 0xebbe30, the executor ExecuteJobListJobs 0xebc170 and WaitForJobListCompletion 0xebb1d0. Name descriptive (no RTTI).; size: CreateAndRegisterInGlobalList 0xebac00 allocates 0xd8 and calls ConstructJobList.
+#[repr(C, align(8))]
+pub struct JobList {
+    /// +0x0 `pointer`, semantic; array of 0x10-byte entries {code* fn, void* arg}; markers have fn = ID_69397 and arg = &ID_410353 (signal), &ID_410354 (sync) or &ID_410355 (end) (high)
+    pub entries: *mut c_void,
+    unknown_8: [u8; 8],
+    /// +0x10 `u32`, semantic; number of entries (high)
+    pub entryCount: u32,
+    unknown_14: [u8; 4],
+    /// +0x18 `pointer`, semantic; i64 per group: entries of that group still to finish; the signal marker stores (entryCount - countAtLastSignal), the starter adds the last group (high)
+    pub groupCounters: *mut c_void,
+    unknown_20: [u8; 8],
+    /// +0x28 `u32`, semantic; number of groups (high)
+    pub groupCount: u32,
+    unknown_2C: [u8; 28],
+    /// +0x48 `pointer`, semantic; u32 per sync marker: waiter count, bit 31 = released (medium)
+    pub syncStates: *mut c_void,
+    unknown_50: [u8; 24],
+    /// +0x68 `pointer`, semantic; event set when the active-executor count +0x98 drops to 0 (medium)
+    #[doc(hidden)]
+    pub __idleEvent: [u8; 8],
+    unknown_70: [u8; 32],
+    /// +0x90 `u32`, semantic; next entry index to claim (CAS); a worker runs an entry only when it claims this index (high)
+    pub nextEntry: u32,
+    unknown_94: [u8; 4],
+    /// +0x98 `i64`, semantic; threads currently inside ExecuteJobListJobs for this list (medium)
+    #[doc(hidden)]
+    pub __activeExecutors: [u8; 8],
+    /// +0xA0 `u32`, semantic; run generation; an executor whose generation differs returns at once (medium)
+    pub generation: u32,
+    unknown_A4: [u8; 12],
+    /// +0xB0 `pointer`, semantic; pointer to the owner's completion event (the segment's event at owner+8); set when the last group's counter reaches 0 (high)
+    pub doneEvent: *mut c_void,
+    unknown_B8: [u8; 12],
+    /// +0xC4 `u32`, semantic; entryCount when the last signal marker was appended (high)
+    pub countAtLastSignal: u32,
+    unknown_C8: [u8; 8],
+    /// +0xD0 `u32`, semantic; bit 1 = completed/waited, bit 2 = signal pending (a sync is only appended after a signal), bit 3 = end marker appended, bit 4 = copy counters (medium)
+    pub flags: u32,
+    unknown_D4: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<JobList>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(JobList, entries) == 0x0);
+const _: () = assert!(core::mem::offset_of!(JobList, entryCount) == 0x10);
+const _: () = assert!(core::mem::offset_of!(JobList, groupCounters) == 0x18);
+const _: () = assert!(core::mem::offset_of!(JobList, groupCount) == 0x28);
+const _: () = assert!(core::mem::offset_of!(JobList, syncStates) == 0x48);
+const _: () = assert!(core::mem::offset_of!(JobList, __idleEvent) == 0x68);
+const _: () = assert!(core::mem::offset_of!(JobList, nextEntry) == 0x90);
+const _: () = assert!(core::mem::offset_of!(JobList, __activeExecutors) == 0x98);
+const _: () = assert!(core::mem::offset_of!(JobList, generation) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(JobList, doneEvent) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(JobList, countAtLastSignal) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(JobList, flags) == 0xD0);
+
 /// `NiLookAtController`: size 0x58 (exact, high); primary base `NiTimeController`.
 /// Meaning: Gamebryo time controller that turns a node toward a target node (NIF data) (high, ik pass).
 /// Evidence: ik pass (semantic): Create 0xf7fb60, CreateNiLookAtController 0xf7f540; overridden slots 2, 23-29, 39, 41, 46.; size: vdtor 0xf7fc20 frees 0x58.
@@ -1097,85 +1265,101 @@ const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_58) == 0
 const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_60) == 0x60);
 
 /// `TwoJointSolverSetup`: size 0x88 (exact).
-/// Meaning: setup of the two-joint (hip-knee / shoulder-elbow) IK solver 0xaa0a10 (no RTTI; descriptive names; they match names I recall for this solver, noted per the brief) (medium, ik pass).
-/// Evidence: setup of the two-joint (hip-knee / shoulder-elbow) IK solver 0xaa0a10 (no RTTI; descriptive names; they match names I recall for this solver, noted per the brief); Offsets from TwoJointSolve's reads of param_2 (short*): [0] [1] [2] [3] [4], +0x10 vector, +0x20/+0x24 clamp of the hinge cosine (line 499), +0x28/+0x2c/+0x30 gains (SetQuaternionFromAxisAngle angle * +0x30), +0x40/+0x50/+0x60/+0x70 vectors, +0x80/+0x81 bytes (returns at once when both are 0).; size: TwoJointSolve 0xaa0a10 reads up to +0x81.
-#[repr(C, align(4))]
+/// Meaning: input of the analytic two-bone solver TwoJointSolve 0xaa0a10 (no RTTI, no reflection: names are descriptive except where noted) (high, ik pass).
+/// Evidence: input of the analytic two-bone solver TwoJointSolve 0xaa0a10 (no RTTI, no reflection: names are descriptive except where noted); IK track I (static-I). Every field from the solver's own reads (0xaa0a10 decompile and the disassembly at 0xaa191e) and the four builders: hkaFootPlacementIkSolver::Solve 0xa9ddf0 (0xa9e1b4..0xa9e219), ComputeHandIkTargetForIndex 0xafadb0, HandIkSolveArm 0xb12700, UpdateGrabIk 0x1072160. Corrects track A, whose +0x28/+0x2c/+0x30 gains were shifted by one: +0x28 is a hinge-change limit in degrees, the gains are +0x2c/+0x30/+0x34. The binary has no reflection for this struct; 'enforceEndPosition'/'enforceEndRotation' are reflected only as hkbHandIkDriverInfoHand +0x52/+0x53 (strings 0x19d9ed8/0x19d9ef0), which the hand IK builder copies into +0x80/+0x81 with one u16 store.; size: TwoJointSolve 0xaa0a10 reads up to +0x81; Solve 0xa9ddf0 builds it at local_168..local_e8 (+0x80 is a u16 store), so at least 0x82; 0x88 kept from track A.
+#[repr(C)]
 pub struct TwoJointSolverSetup {
-    /// +0x0 `i16`, semantic; hip / shoulder (medium)
-    #[doc(hidden)]
-    pub __firstJointIndex: [u8; 2],
-    /// +0x2 `i16`, semantic; knee / elbow (hinge) (medium)
-    #[doc(hidden)]
-    pub __secondJointIndex: [u8; 2],
-    /// +0x4 `i16`, semantic; ankle / wrist (medium)
-    #[doc(hidden)]
-    pub __endBoneIndex: [u8; 2],
-    /// +0x6 `i16`, semantic; optional (-1) (low)
-    #[doc(hidden)]
-    pub __firstJointTwistIndex: [u8; 2],
-    /// +0x8 `i16`, semantic; optional (-1) (low)
-    #[doc(hidden)]
-    pub __secondJointTwistIndex: [u8; 2],
-    unknown_A: [u8; 6],
-    /// +0x10 `class:hkVector4`, semantic (medium)
-    #[doc(hidden)]
-    pub __hingeAxisLS: [u8; 16],
-    /// +0x20 `float`, semantic (medium)
-    #[doc(hidden)]
-    pub __cosineMaxHingeAngle: [u8; 4],
-    /// +0x24 `float`, semantic (medium)
-    #[doc(hidden)]
-    pub __cosineMinHingeAngle: [u8; 4],
-    /// +0x28 `float`, semantic (low)
-    #[doc(hidden)]
-    pub __firstJointIkGain: [u8; 4],
-    /// +0x2C `float`, semantic (low)
-    #[doc(hidden)]
-    pub __secondJointIkGain: [u8; 4],
-    /// +0x30 `float`, semantic (low)
-    #[doc(hidden)]
-    pub __endJointIkGain: [u8; 4],
-    unknown_34: [u8; 12],
-    /// +0x40 `class:hkVector4`, semantic (medium)
-    #[doc(hidden)]
-    pub __endTargetMS: [u8; 16],
-    /// +0x50 `class:hkQuaternion`, semantic (medium)
-    #[doc(hidden)]
-    pub __endTargetRotationMS: [u8; 16],
-    /// +0x60 `class:hkVector4`, semantic (medium)
-    #[doc(hidden)]
-    pub __endBoneOffsetLS: [u8; 16],
-    /// +0x70 `class:hkQuaternion`, semantic (medium)
-    #[doc(hidden)]
-    pub __endBoneRotationOffsetLS: [u8; 16],
-    /// +0x80 `u8`, semantic (medium)
-    #[doc(hidden)]
-    pub __enforceEndPosition: [u8; 1],
-    /// +0x81 `u8`, semantic (medium)
-    #[doc(hidden)]
-    pub __enforceEndRotation: [u8; 1],
-    unknown_82: [u8; 6],
+    /// +0x0 `i16`, semantic; hip / shoulder bone (the aimed joint) (high)
+    pub firstJointIndex: u16,
+    /// +0x2 `i16`, semantic; knee / elbow (the hinge) (high)
+    pub secondJointIndex: u16,
+    /// +0x4 `i16`, semantic; ankle / wrist (high)
+    pub endBoneIndex: u16,
+    /// +0x6 `i16`, semantic; optional bone kept rigid relative to the first joint (-1 none) (high)
+    pub firstJointTwistIndex: u16,
+    /// +0x8 `i16`, semantic; optional bone kept rigid relative to the second joint (-1 none) (high)
+    pub secondJointTwistIndex: u16,
+    pub unknown_A: [u8; 6],
+    /// +0x10 `class:hkVector4`, semantic; hinge axis in the second joint's local frame (high)
+    pub hingeAxisLS: crate::hkVector4,
+    /// +0x20 `float`, semantic; lower clamp of the desired hinge cosine (high)
+    pub cosineMaxHingeAngle: f32,
+    /// +0x24 `float`, semantic; upper clamp of the desired hinge cosine (high)
+    pub cosineMinHingeAngle: f32,
+    /// +0x28 `float`, semantic; per-solve limit of the hinge correction, degrees; 0 = unlimited (high)
+    pub maxHingeAngleChangeDegrees: f32,
+    /// +0x2C `float`, semantic; fraction of the first joint's aim rotation (high)
+    pub firstJointGain: f32,
+    /// +0x30 `float`, semantic; fraction of the hinge correction (high)
+    pub secondJointGain: f32,
+    /// +0x34 `float`, semantic; slerp weight toward the end target rotation (only with enforceEndRotation) (high)
+    pub endRotationGain: f32,
+    pub unknown_38: [u8; 8],
+    /// +0x40 `class:hkVector4`, semantic; end effector target position, model space (high)
+    pub endTargetMS: crate::hkVector4,
+    /// +0x50 `class:hkQuaternion`, semantic; end target rotation, model space (high)
+    pub endTargetRotationMS: crate::hkQuaternion,
+    /// +0x60 `class:hkVector4`, semantic; effector point in the end bone's local space (high)
+    pub endBoneOffsetLS: crate::hkVector4,
+    /// +0x70 `class:hkQuaternion`, semantic; rotation offset of the end bone (high)
+    pub endBoneRotationOffsetLS: crate::hkQuaternion,
+    /// +0x80 `u8`, semantic; run the position (FIXLENGTH + FIXDIRECTION) stages (high)
+    pub enforceEndPosition: u8,
+    /// +0x81 `u8`, semantic; orient the end bone to +0x50 and compensate the offset (high)
+    pub enforceEndRotation: u8,
+    pub unknown_82: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TwoJointSolverSetup>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __firstJointIndex) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __secondJointIndex) == 0x2);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endBoneIndex) == 0x4);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __firstJointTwistIndex) == 0x6);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __secondJointTwistIndex) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __hingeAxisLS) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __cosineMaxHingeAngle) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __cosineMinHingeAngle) == 0x24);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __firstJointIkGain) == 0x28);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __secondJointIkGain) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endJointIkGain) == 0x30);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endTargetMS) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endTargetRotationMS) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endBoneOffsetLS) == 0x60);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __endBoneRotationOffsetLS) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __enforceEndPosition) == 0x80);
-const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, __enforceEndRotation) == 0x81);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, firstJointIndex) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, secondJointIndex) == 0x2);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endBoneIndex) == 0x4);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, firstJointTwistIndex) == 0x6);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, secondJointTwistIndex) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, hingeAxisLS) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, cosineMaxHingeAngle) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, cosineMinHingeAngle) == 0x24);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, maxHingeAngleChangeDegrees) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, firstJointGain) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, secondJointGain) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endRotationGain) == 0x34);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endTargetMS) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endTargetRotationMS) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endBoneOffsetLS) == 0x60);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, endBoneRotationOffsetLS) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, enforceEndPosition) == 0x80);
+const _: () = assert!(core::mem::offset_of!(TwoJointSolverSetup, enforceEndRotation) == 0x81);
+
+/// `_anon_8B4A4C54::DeferredUpdate`: size 0x438 (exact, high); primary base `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`.
+/// Meaning: The deferred animation update queue (BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager>,128>): dead in the shipped exe (high, ik pass).
+/// Evidence: ik pass (semantic): IK track H (static-H). Created by Str_TESInitThread_sub0_sub3 0xbc1950 (g_AnimationDeferredUpdateQueue 0x3267470 = &0x3267480, semaphore = CreateSemaphoreA(0, 0x80), +0x430 = 0); destroyed by 0xbc19d0. The only references to the queue object, the global, the semaphore and the flag are that initialiser, the destructor and BSAnimationGraphManager::Update's two reads (0xbc089d, 0xbc08c7). Nothing pops it and nothing waits on its semaphore.; size: static object 0x3267480; semaphore +0x428 (0x32678a8) and flag +0x430 (0x32678b0) written by its initialiser 0xbc1950.
+/// Bases: `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`@0x0, `BSTCommonMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>_>`@0x0, `BSTMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>_>`@0x0, `BSTSingletonSDM<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer>`@0x420, `BSTSingletonSDMBase<BSTSDMTraits<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>_>_>`@0x420, `BSTSDMTraits<_anon_8B4A4C54::DeferredUpdate,BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>_>`@0x420, `BSTSingletonSDMOpStaticBuffer<_anon_8B4A4C54::DeferredUpdate>`@0x421.
+#[repr(C)]
+pub struct _anon_8B4A4C54__DeferredUpdate {
+    /// +0x0 `vtbl:_anon_8B4A4C54::DeferredUpdate:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_8B4A4C54__DeferredUpdate_vtable,
+    pub unknown_8: [u8; 8],
+    /// +0x10 `pointer`, semantic; 128 BSTSmartPointer<BSAnimationGraphManager> (high)
+    pub slots: [u8; 1024],
+    /// +0x410 `u32`, semantic; queued entries (high)
+    pub count: u32,
+    pub unknown_414: [u8; 20],
+    /// +0x428 `pointer`, semantic; released once per push by BSAnimationGraphManager::Update; no waiter in the exe (high)
+    pub semaphore: *mut c_void,
+    /// +0x430 `u8`, semantic; deferred-update switch read by BSAnimationGraphManager::Update; only ever written 0 (0xbc19ba) (high)
+    pub enabled: u8,
+    pub unknown_431: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<_anon_8B4A4C54__DeferredUpdate>() == 0x438);
+const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, slots) == 0x10);
+const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, count) == 0x410);
+const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, semaphore) == 0x428);
+const _: () = assert!(core::mem::offset_of!(_anon_8B4A4C54__DeferredUpdate, enabled) == 0x430);
 
 /// `bhkRagdollController`: size 0x3A0 (exact, high); primary base `hkaRaycastInterface`.
 /// Meaning: the 'RagdollAnim' controller (foot/grab/look IK, pose matching, feedback on a ragdoll), dead code in 1.7.104: never constructed (high, ik pass).
@@ -2016,6 +2200,31 @@ const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpShapeCollec
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpRayShapeCollectionFilter_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, m_hkpRayCollidableFilter_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(hkbBoneWeightArray, boneWeights) == 0x30);
+
+/// `hkbCharacterControllerControlData`: size 0x20 (exact).
+/// Meaning: the payload of generator output track 12 (character controller controls) (high, ik pass).
+/// Evidence: the payload of generator output track 12 (character controller controls); IK track I (static-I). Names from the binary's reflection (member table 0x19cf800..0x19cf8c8; strings 0x19dc378 desiredVelocity, 0x19dc3b8 verticalGain, 0x19dc3e8 horizontalCatchUpGain, 0x19dc438 maxVerticalSeparation, 0x19dc470 maxHorizontalSeparation). hkbCharacterControllerModifier::Modify 0xb06180 copies 0x20 bytes from the modifier's +0x50 into track 12 (0xb06590..) and sets its on fraction (+0xd8) to 1.0.; size: hkClassMember table 0x19cf800 (5 members, last at +0x1c, f32).
+#[repr(C)]
+pub struct hkbCharacterControllerControlData {
+    /// +0x0 `class:hkVector4`, semantic; reflected (high)
+    pub desiredVelocity: crate::hkVector4,
+    /// +0x10 `float`, semantic; reflected (high)
+    pub verticalGain: f32,
+    /// +0x14 `float`, semantic; reflected (high)
+    pub horizontalCatchUpGain: f32,
+    /// +0x18 `float`, semantic; reflected (high)
+    pub maxVerticalSeparation: f32,
+    /// +0x1C `float`, semantic; reflected (high)
+    pub maxHorizontalSeparation: f32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<hkbCharacterControllerControlData>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterControllerControlData, desiredVelocity) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterControllerControlData, verticalGain) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterControllerControlData, horizontalCatchUpGain) == 0x14);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterControllerControlData, maxVerticalSeparation) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkbCharacterControllerControlData, maxHorizontalSeparation) == 0x1C);
 
 /// `hkbCharacterData`: size 0xB0 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: character data: model axes, foot/hand IK driver infos, scale (high, ik pass).
@@ -4146,8 +4355,8 @@ pub enum ActorLifeState {
     Dead = 2,
     /// `Unconscious`
     Unconscious = 3,
-    /// `State4`
-    State4 = 4,
+    /// `Reanimate`
+    Reanimate = 4,
     /// `Resetting`
     Resetting = 5,
     /// `Restrained`
@@ -4168,12 +4377,39 @@ impl ActorLifeState {
             1 => Some(Self::Dying),
             2 => Some(Self::Dead),
             3 => Some(Self::Unconscious),
-            4 => Some(Self::State4),
+            4 => Some(Self::Reanimate),
             5 => Some(Self::Resetting),
             6 => Some(Self::Restrained),
             7 => Some(Self::Bleedout),
             8 => Some(Self::BleedoutRecovering),
             9 => Some(Self::DontMove),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/explosionknockdownmodes.json (ik pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ExplosionKnockdownMode {
+    /// `Never`
+    Never = 0,
+    /// `Always`
+    Always = 1,
+    /// `ByFormula`
+    ByFormula = 2,
+    /// `AllButPlayer`
+    AllButPlayer = 3,
+}
+
+impl ExplosionKnockdownMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Never),
+            1 => Some(Self::Always),
+            2 => Some(Self::ByFormula),
+            3 => Some(Self::AllButPlayer),
             _ => None,
         }
     }

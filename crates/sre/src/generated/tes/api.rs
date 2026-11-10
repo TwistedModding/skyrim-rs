@@ -3150,6 +3150,12 @@ impl crate::TESTrapListener {
     /// The `hkpPhantomListener` base at +0x28.
     #[inline]
     pub fn as_hkp_phantom_listener(&self) -> &crate::hkpPhantomListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
+    /// `TESTrapListener::PhantomAdded`: creates a TriggerEntry for a phantom whose layer is in filter+0x3d0
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 26066, rva 0x407fc0.
+    /// `void (TESTrapListener* this, hkpPhantom* phantom)`
+    #[inline]
+    pub fn phantom_added(&self, phantom: &crate::hkpPhantom) { unsafe { function!(26066, (*const Self, *const crate::hkpPhantom))(core::ptr::from_ref(self).byte_add(0x28), core::ptr::from_ref(phantom)) } }
 }
 
 impl crate::TESWaterForm {

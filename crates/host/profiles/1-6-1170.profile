@@ -1839,6 +1839,9 @@ id-unverified 35053
 id-unverified 35054
 id-unverified 35252
 id-unverified 35376
+id-unverified 35399
+id-unverified 35400
+id-unverified 35401
 id-unverified 35488
 id-unverified 35537
 id-unverified 35566
@@ -25994,7 +25997,6 @@ member-unverified MenuOpenHandler.tweenMenuAllowed
 member-unverified MenuTableEntry.create
 member-unverified MessageBoxData.buttons
 member-unverified MessageBoxData.isVertical
-member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
@@ -26838,23 +26840,6 @@ member-unverified TransitionState.toPosition
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TwoJointSolverSetup.cosineMaxHingeAngle
-member-unverified TwoJointSolverSetup.cosineMinHingeAngle
-member-unverified TwoJointSolverSetup.endBoneIndex
-member-unverified TwoJointSolverSetup.endBoneOffsetLS
-member-unverified TwoJointSolverSetup.endBoneRotationOffsetLS
-member-unverified TwoJointSolverSetup.endJointIkGain
-member-unverified TwoJointSolverSetup.endTargetMS
-member-unverified TwoJointSolverSetup.endTargetRotationMS
-member-unverified TwoJointSolverSetup.enforceEndPosition
-member-unverified TwoJointSolverSetup.enforceEndRotation
-member-unverified TwoJointSolverSetup.firstJointIkGain
-member-unverified TwoJointSolverSetup.firstJointIndex
-member-unverified TwoJointSolverSetup.firstJointTwistIndex
-member-unverified TwoJointSolverSetup.hingeAxisLS
-member-unverified TwoJointSolverSetup.secondJointIkGain
-member-unverified TwoJointSolverSetup.secondJointIndex
-member-unverified TwoJointSolverSetup.secondJointTwistIndex
 member-unverified UICursor.y
 member-unverified UIMessage.isStatic
 member-unverified UIMessage.menuName
@@ -26999,6 +26984,7 @@ member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkCharacterController.shapes
 member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
+member-unverified bhkCharacterController.supportLayer
 member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2
 member-unverified bhkPickData.closestCollector
@@ -35921,6 +35907,7 @@ size-unverified hkbCameraShakeEventPayload
 size-unverified hkbCharacter
 size-unverified hkbCharacterAddedInfo
 size-unverified hkbCharacterControlCommand
+size-unverified hkbCharacterControllerControlData
 size-unverified hkbCharacterControllerModifier
 size-unverified hkbCharacterControllerModifierInternalState
 size-unverified hkbCharacterControllerSceneModifier

@@ -3141,6 +3141,9 @@ id-unverified 35334
 id-unverified 35335
 id-unverified 35363
 id-unverified 35376
+id-unverified 35399
+id-unverified 35400
+id-unverified 35401
 id-unverified 35427
 id-unverified 35428
 id-unverified 35429
@@ -42569,7 +42572,6 @@ member-unverified Character.field_1F0
 member-unverified Character.field_268
 member-unverified Character.field_270
 member-unverified Character.field_274
-member-unverified Character.field_279
 member-unverified Character.field_280
 member-unverified Character.field_288
 member Character.field_90 88
@@ -42579,6 +42581,7 @@ member-unverified Character.field_A8
 member-unverified Character.field_B0
 member Character.flags1 c0
 member-unverified Character.flags2
+member-unverified Character.has3DCollision
 member-unverified Character.healthModifiers
 member-unverified Character.magicCasters
 member-unverified Character.magickaModifiers
@@ -43777,7 +43780,6 @@ member-unverified MenuOpenHandler.tweenMenuAllowed
 member-unverified MenuTableEntry.create
 member-unverified MessageBoxData.buttons
 member-unverified MessageBoxData.isVertical
-member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
@@ -44155,7 +44157,6 @@ member-unverified PlayerCharacter.field_1F0
 member-unverified PlayerCharacter.field_268
 member-unverified PlayerCharacter.field_270
 member-unverified PlayerCharacter.field_274
-member-unverified PlayerCharacter.field_279
 member-unverified PlayerCharacter.field_280
 member-unverified PlayerCharacter.field_288
 member-unverified PlayerCharacter.field_3E8
@@ -44367,6 +44368,7 @@ member PlayerCharacter.firstPersonRoot 8f0
 member-unverified PlayerCharacter.firstPersonTorchLight
 member PlayerCharacter.flags1 c0
 member-unverified PlayerCharacter.flags2
+member-unverified PlayerCharacter.has3DCollision
 member PlayerCharacter.healthModifiers 228
 member-unverified PlayerCharacter.m_NiTMapBase_628
 member-unverified PlayerCharacter.m_NiTMap_618
@@ -45039,23 +45041,6 @@ member-unverified TransitionState.toPosition
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TwoJointSolverSetup.cosineMaxHingeAngle
-member-unverified TwoJointSolverSetup.cosineMinHingeAngle
-member-unverified TwoJointSolverSetup.endBoneIndex
-member-unverified TwoJointSolverSetup.endBoneOffsetLS
-member-unverified TwoJointSolverSetup.endBoneRotationOffsetLS
-member-unverified TwoJointSolverSetup.endJointIkGain
-member-unverified TwoJointSolverSetup.endTargetMS
-member-unverified TwoJointSolverSetup.endTargetRotationMS
-member-unverified TwoJointSolverSetup.enforceEndPosition
-member-unverified TwoJointSolverSetup.enforceEndRotation
-member-unverified TwoJointSolverSetup.firstJointIkGain
-member-unverified TwoJointSolverSetup.firstJointIndex
-member-unverified TwoJointSolverSetup.firstJointTwistIndex
-member-unverified TwoJointSolverSetup.hingeAxisLS
-member-unverified TwoJointSolverSetup.secondJointIkGain
-member-unverified TwoJointSolverSetup.secondJointIndex
-member-unverified TwoJointSolverSetup.secondJointTwistIndex
 member-unverified UICursor.y
 member-unverified UIMessage.isStatic
 member-unverified UIMessage.menuName
@@ -45884,6 +45869,7 @@ member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkCharacterController.shapes
 member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
+member-unverified bhkCharacterController.supportLayer
 member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2
 member-unverified bhkPickData.closestCollector
@@ -59049,6 +59035,7 @@ size-unverified hkbCameraShakeEventPayload
 size-unverified hkbCharacter
 size-unverified hkbCharacterAddedInfo
 size-unverified hkbCharacterControlCommand
+size-unverified hkbCharacterControllerControlData
 size-unverified hkbCharacterControllerModifier
 size-unverified hkbCharacterControllerModifierInternalState
 size-unverified hkbCharacterControllerSceneModifier

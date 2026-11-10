@@ -6244,8 +6244,8 @@ pub struct bhkCharacterController {
     pub field_F0: [u8; 16],
     /// +0x100 `undefined1[16]`, ctor store
     pub field_100: [u8; 16],
-    /// +0x110 `undefined1[16]`, ctor store
-    pub field_110: [u8; 16],
+    /// +0x110 `class:hkVector4`, semantic; support surface normal used by the biped orientation controller (medium)
+    pub supportNormal: crate::hkVector4,
     /// +0x120 `undefined8`, member ctor BSBound
     #[doc(hidden)]
     pub __m_BSBound_120: [u8; 8],
@@ -6261,8 +6261,8 @@ pub struct bhkCharacterController {
     /// +0x188 `float`, ctor store
     pub field_188: f32,
     unknown_18C: [u8; 4],
-    /// +0x190 `undefined8`, ctor store
-    pub field_190: u64,
+    /// +0x190 `ptr:bhkICharOrientationController`, semantic; eases the controller's pitch +0x24c / roll +0x250 toward the support normal (flags bits 25/26) or back to 0 at rate +0x254 (high)
+    pub orientationController: *mut crate::bhkICharOrientationController,
     unknown_198: [u8; 8],
     /// +0x1A0 `undefined4`, ctor store
     pub field_1A0: u32,
@@ -6283,12 +6283,14 @@ pub struct bhkCharacterController {
     #[doc(hidden)]
     pub __characterState: [u8; 4],
     unknown_204: [u8; 20],
-    /// +0x218 `undefined8`, ctor store
-    pub field_218: u64,
+    /// +0x218 `u32`, semantic; controller flags; bit 24 (byte +0x21b bit 0) = support surface is a stairs material; see the flag rows (high)
+    pub flags: u32,
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
-    /// +0x228 `undefined8`, ctor store
-    pub field_228: u64,
+    unknown_228: [u8; 4],
+    /// +0x22C `float`, semantic; seconds left in which the orientation controller runs; set to 5.0, counts down by the step's dt (medium)
+    pub orientationTimer: f32,
     /// +0x230 `undefined4`, ctor store
     pub field_230: u32,
     /// +0x234 `float`, ctor store
@@ -6297,12 +6299,13 @@ pub struct bhkCharacterController {
     pub field_238: u64,
     /// +0x240 `undefined8`, ctor store
     pub field_240: u64,
-    /// +0x248 `undefined8`, ctor store
-    pub field_248: u64,
-    /// +0x250 `undefined4`, ctor store
-    pub field_250: u32,
-    /// +0x254 `undefined4`, ctor store
-    pub field_254: u32,
+    unknown_248: [u8; 4],
+    /// +0x24C `float`, semantic; controller pitch (radians) (medium)
+    pub pitch: f32,
+    /// +0x250 `float`, semantic; controller roll (radians) (medium)
+    pub roll: f32,
+    /// +0x254 `float`, semantic; blend fraction used by the orientation controllers for pitch/roll; ctor 1.0 (medium)
+    pub orientationBlendRate: f32,
     /// +0x258 `undefined8`, ctor store
     pub field_258: u64,
     /// +0x260 `float`, ctor store
@@ -6353,16 +6356,20 @@ pub struct bhkCharacterController {
     pub field_2F8: u64,
     /// +0x300 `float`, ctor store
     pub field_300: f32,
-    /// +0x304 `undefined8`, ctor store
-    pub field_304: u64,
+    /// +0x304 `u32`, semantic; Havok material id (CRC32 of the BGSMaterialType MNAM name) of the first surface contact processed this step; 0 = not yet set (high)
+    pub supportMaterialId: u32,
+    /// +0x308 `u32`, semantic; collision layer (filterInfo & 0x7f) of the support surface's root collidable (high)
+    #[doc(hidden)]
+    pub __supportLayer: [u8; 4],
     /// +0x30C `float`, ctor store
     pub field_30C: f32,
     /// +0x310 `float`, ctor store
     pub field_310: f32,
     /// +0x314 `undefined8`, ctor store
     pub field_314: u64,
-    /// +0x31C `undefined4`, ctor store
-    pub field_31C: u32,
+    unknown_31C: [u8; 3],
+    /// +0x31F `u8`, semantic; 1: Msg_TtupdateCharacterState runs orientationController slot 8 after the state update (when +0x22c > 0 and flags bits 25/26 or pitch/roll are non-zero); 0: skipped (medium)
+    pub allowOrientationController: u8,
     /// +0x320 `u8`, semantic; current bumper state (high)
     pub bumperEnabled: u8,
     /// +0x321 `u8`, semantic; the active list carries CharacterBumper children (from cinfo+0xa3) (high)
@@ -6385,13 +6392,13 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_C0) ==
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, supportNormal) == 0x110);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __m_BSBound_120) == 0x120);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __m_BSBound_150) == 0x150);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_180) == 0x180);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_184) == 0x184);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, orientationController) == 0x190);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1A0) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1C0) == 0x1C0);
@@ -6399,16 +6406,16 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1D0) =
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_1D4) == 0x1D4);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, m_hkpCharacterContext_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __characterState) == 0x200);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, flags) == 0x218);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, orientationTimer) == 0x22C);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_230) == 0x230);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_234) == 0x234);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_240) == 0x240);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_248) == 0x248);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_250) == 0x250);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_254) == 0x254);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, pitch) == 0x24C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, roll) == 0x250);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, orientationBlendRate) == 0x254);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_258) == 0x258);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_260) == 0x260);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_264) == 0x264);
@@ -6431,11 +6438,12 @@ const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2E4) =
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2E8) == 0x2E8);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_2F8) == 0x2F8);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_300) == 0x300);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_304) == 0x304);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, supportMaterialId) == 0x304);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __supportLayer) == 0x308);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_30C) == 0x30C);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_310) == 0x310);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_314) == 0x314);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_31C) == 0x31C);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, allowOrientationController) == 0x31F);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, bumperEnabled) == 0x320);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __hasBumper) == 0x321);
 
@@ -8342,8 +8350,16 @@ pub struct TESRace_dataFlags(pub u32);
 impl TESRace_dataFlags {
     /// alwaysAnimateVisible (medium)
     pub const ALWAYS_ANIMATE_VISIBLE: Self = Self(0x80);
+    /// neverPushed (medium)
+    pub const NEVER_PUSHED: Self = Self(0x200);
+    /// noHitKnockback (medium)
+    pub const NO_HIT_KNOCKBACK: Self = Self(0x400);
     /// headTrackingRace (medium)
     pub const HEAD_TRACKING_RACE: Self = Self(0x8000);
+    /// footIkCastAgainstWorld (medium)
+    pub const FOOT_IK_CAST_AGAINST_WORLD: Self = Self(0x20000);
+    /// staggerInsteadOfPush (medium)
+    pub const STAGGER_INSTEAD_OF_PUSH: Self = Self(0x400000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {
@@ -8373,6 +8389,32 @@ impl TESWeather_dataFlags {
 
     #[must_use]
     pub const fn bits(self) -> u8 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `bhkCharacterController.flags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct bhkCharacterController_flags(pub u32);
+
+impl bhkCharacterController_flags {
+    /// externallyPositioned (medium)
+    pub const EXTERNALLY_POSITIONED: Self = Self(0x20000);
+    /// onStairsMaterial (high)
+    pub const ON_STAIRS_MATERIAL: Self = Self(0x1000000);
+    /// orientPitchEnabled (medium)
+    pub const ORIENT_PITCH_ENABLED: Self = Self(0x2000000);
+    /// orientRollEnabled (medium)
+    pub const ORIENT_ROLL_ENABLED: Self = Self(0x4000000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
         self.0
     }
 

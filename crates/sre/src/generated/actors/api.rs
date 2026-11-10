@@ -591,6 +591,15 @@ impl crate::Actor {
     /// `void (Actor* this, bool sendGetUpAction)`
     #[inline]
     pub fn begin_get_up(&self, sendGetUpAction: bool) { unsafe { function!(40150, (*const Self, bool))(core::ptr::from_ref(self), sendGetUpAction) } }
+    /// `Actor::BeginSynchronizedAnimationControl`: boolFlags2 |= 0x800000 (bit 23, synchronized) and controller+0x218 |= 0x20000 (bit 17), then refreshes the controller's collision filter unless sitting (flags1 & 0x3c000)
+    ///
+    /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 32847, rva 0x551e40.
+    /// `void (Actor* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn begin_synchronized_animation_control(&self) { unsafe { function!(32847, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::BuildBumperListShape`: with bAllowCharacterBumper:HAVOK set, wraps the controller body shape in a new bhkListShape whose last child is the bumper capsule (moved into controller space by rewriting the capsule's vertices at +0x30/+0x40, w = radius from +0x20) and disables that last child; a body shape that is already a list contributes its children
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 78352, rva 0x1069be0.
@@ -656,6 +665,15 @@ impl crate::Actor {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_combat_state(&self) -> u32 { unsafe { function!(38556, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `Actor::GetControllerFilterInfo`: *out = the character controller's filter info (controller slot 8) or 0 without a process/controller
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37560, rva 0x690be0.
+    /// `u32* (Actor* this, u32* out)`
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn get_controller_filter_info(&self, out: *mut u32) -> *mut u32 { unsafe { function!(37560, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), out) } }
     /// `Actor::GetCurrentSpeed`: middleHigh+0x2a8, 0 without process
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 37957, rva 0x6af0d0.
@@ -753,6 +771,12 @@ impl crate::Actor {
     /// `float (Actor* this, bool forceRun, bool forceWalk)`
     #[inline]
     pub fn get_walk_run_interpolation(&self, forceRun: bool, forceWalk: bool) -> f32 { unsafe { function!(37457, (*const Self, bool, bool) -> f32)(core::ptr::from_ref(self), forceRun, forceWalk) } }
+    /// `Actor::HandleReanimateEntryPoint`: when the process holds a reanimating caster handle: life state 4, clear flags2 bit 4, reset slot nodes, fire perk entry point 0x35 'Apply Reanimate Spell' with the caster, clear the handle
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 38820, rva 0x6d98f0.
+    /// `void (Actor* this)`
+    #[inline]
+    pub fn handle_reanimate_entry_point(&self) { unsafe { function!(38820, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Actor::HasKeyword`: Actor slot 72: TESObjectREFR::HasKeyword (base object, then the reference's keywords); when false and keyword != null, the race's BGSKeywordForm (+0x70 of TESRace) slot 4
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37183, rva 0x671bf0.
@@ -972,6 +996,12 @@ impl crate::Actor {
     /// `void (Actor* this, u32 lifeState)`
     #[inline]
     pub fn set_life_state(&self, lifeState: u32) { unsafe { function!(37612, (*const Self, u32))(core::ptr::from_ref(self), lifeState) } }
+    /// `Actor::SetLifeStateReanimate`: SetLifeState(this, set << 2): 4 Reanimate, or 0
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37490, rva 0x687c00.
+    /// `void (Actor* this, bool set)`
+    #[inline]
+    pub fn set_life_state_reanimate(&self, set: bool) { unsafe { function!(37490, (*const Self, bool))(core::ptr::from_ref(self), set) } }
     /// `Actor::SetSwimming`: sets or clears ActorState flags1 bit 10 (Actor+0xc8 & 0x400); when the bit changes it performs default object 0x2b 'Action Swim State Change' (the player through PlayerControls::PerformActionOnControlledActors(controls, 0x2b, 2), an NPC through ActionInput(type 2) + TESActionData::Perform). No weapon code
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37946, rva 0x6ae890.
@@ -2146,16 +2176,6 @@ impl crate::Character {
     pub fn field_274_ptr(&self) -> *mut u32 { Self::__member_field_274(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_field_279(this: *const Self) -> *mut u16 { unsafe { member!(this, "Character.field_279", 0x279, u16) } }
-    /// `Character::field_279`, at +0x279 on 1.7.104.
-    #[inline]
-    pub fn field_279(&self) -> u16 { unsafe { Self::__member_field_279(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_279(&mut self, value: u16) { unsafe { Self::__member_field_279(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_279_ptr(&self) -> *mut u16 { Self::__member_field_279(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_field_280(this: *const Self) -> *mut u64 { unsafe { member!(this, "Character.field_280", 0x280, u64) } }
     /// `Character::field_280`, at +0x280 on 1.7.104.
     #[inline]
@@ -2244,6 +2264,16 @@ impl crate::Character {
     pub fn set_flags2(&mut self, value: u32) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flags2_ptr(&self) -> *mut u32 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_has3DCollision(this: *const Self) -> *mut u8 { unsafe { member!(this, "Character.has3DCollision", 0x27A, u8) } }
+    /// `Character::has3DCollision`, at +0x27A on 1.7.104.
+    #[inline]
+    pub fn has3DCollision(&self) -> u8 { unsafe { Self::__member_has3DCollision(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_has3DCollision(&mut self, value: u8) { unsafe { Self::__member_has3DCollision(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn has3DCollision_ptr(&self) -> *mut u8 { Self::__member_has3DCollision(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_healthModifiers(this: *const Self) -> *mut [u8; 12] { unsafe { member!(this, "Character.healthModifiers", 0x230, [u8; 12]) } }
@@ -2474,7 +2504,7 @@ impl crate::MiddleHighProcessData {
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn char_controller(&self) -> Option<&crate::bhkCharacterController> { unsafe { Self::__member_charController(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn char_controller(&self) -> Option<&crate::bhkCharacterController> { unsafe { { self.charController }.as_ref() } }
     /// `MiddleHighProcessData::leftHandEntry` at +0x220: inventory entry equipped in the left hand
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.
@@ -2495,16 +2525,6 @@ impl crate::MiddleHighProcessData {
     pub fn set_animationGraphManagerData(&mut self, value: *mut c_void) { unsafe { Self::__member_animationGraphManagerData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn animationGraphManagerData_ptr(&self) -> *mut *mut c_void { Self::__member_animationGraphManagerData(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_charController(this: *const Self) -> *mut *mut crate::bhkCharacterController { unsafe { member!(this, "MiddleHighProcessData.charController", 0x250, *mut crate::bhkCharacterController) } }
-    /// `MiddleHighProcessData::charController`, at +0x250 on 1.7.104.
-    #[inline]
-    pub fn charController(&self) -> *mut crate::bhkCharacterController { unsafe { Self::__member_charController(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_charController(&mut self, value: *mut crate::bhkCharacterController) { unsafe { Self::__member_charController(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn charController_ptr(&self) -> *mut *mut crate::bhkCharacterController { Self::__member_charController(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_headTrackingEnabled(this: *const Self) -> *mut u8 { unsafe { member!(this, "MiddleHighProcessData.headTrackingEnabled", 0x326, u8) } }
@@ -3353,16 +3373,6 @@ impl crate::PlayerCharacter {
     pub fn set_field_274(&mut self, value: u32) { unsafe { Self::__member_field_274(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_274_ptr(&self) -> *mut u32 { Self::__member_field_274(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_279(this: *const Self) -> *mut u16 { unsafe { member!(this, "PlayerCharacter.field_279", 0x279, u16) } }
-    /// `PlayerCharacter::field_279`, at +0x279 on 1.7.104.
-    #[inline]
-    pub fn field_279(&self) -> u16 { unsafe { Self::__member_field_279(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_279(&mut self, value: u16) { unsafe { Self::__member_field_279(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_279_ptr(&self) -> *mut u16 { Self::__member_field_279(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_280(this: *const Self) -> *mut u64 { unsafe { member!(this, "PlayerCharacter.field_280", 0x280, u64) } }
@@ -5473,6 +5483,16 @@ impl crate::PlayerCharacter {
     pub fn set_flags2(&mut self, value: u32) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flags2_ptr(&self) -> *mut u32 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_has3DCollision(this: *const Self) -> *mut u8 { unsafe { member!(this, "PlayerCharacter.has3DCollision", 0x27A, u8) } }
+    /// `PlayerCharacter::has3DCollision`, at +0x27A on 1.7.104.
+    #[inline]
+    pub fn has3DCollision(&self) -> u8 { unsafe { Self::__member_has3DCollision(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_has3DCollision(&mut self, value: u8) { unsafe { Self::__member_has3DCollision(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn has3DCollision_ptr(&self) -> *mut u8 { Self::__member_has3DCollision(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_healthModifiers(this: *const Self) -> *mut [u8; 12] { unsafe { member!(this, "PlayerCharacter.healthModifiers", 0x230, [u8; 12]) } }

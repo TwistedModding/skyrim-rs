@@ -7071,18 +7071,6 @@ impl crate::RagdollFurnitureListener {
     pub fn as_hkp_entity_listener(&self) -> &crate::hkpEntityListener { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
-impl crate::RagdollStartHandler {
-    /// `RagdollStartHandler::Handle`: under the manager lock walks the graphs, clears actor+0x204 bit 29 and resets the controller
-    ///
-    /// Semantic, ik pass, low; ledger semantic evidence, name low; id 42878, rva 0x7ce940.
-    /// `bool (RagdollStartHandler* this, Actor* actor)`
-    ///
-    /// # Safety
-    /// The pass rates the signature low.
-    #[inline]
-    pub unsafe fn handle(&self, actor: *mut crate::Actor) -> bool { unsafe { function!(42878, (*const Self, *mut crate::Actor) -> bool)(core::ptr::from_ref(self), actor) } }
-}
-
 impl crate::RunActionAnimationLoadedCallback {
     #[doc(hidden)]
     #[inline]
@@ -8548,6 +8536,27 @@ impl crate::SleepWaitMenu {
     pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::SpecificItemCollector {
+    /// `SpecificItemCollector::InitInPlace`: same row store as the ctor with a given filter info: row[layer >= 0x27 ? layer : 0x2b] = 0x22757 | 1 << (fi & 0x7f)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 25988, rva 0x404350.
+    /// `void (SpecificItemCollector* this, i32 layer, const u32* targetFilterInfo)`
+    ///
+    /// # Safety
+    /// `targetFilterInfo` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn init_in_place(&self, layer: i32, targetFilterInfo: *const u32) { unsafe { function!(25988, (*const Self, i32, *const u32))(core::ptr::from_ref(self), layer, targetFilterInfo) } }
+    /// `SpecificItemCollector::ctor`: initialises the collector and STORES the whole matrix row: L = layer if layer >= 0x27 else 0x2b; row[L] = 0x22757 | 1 << (target controller filterInfo & 0x7f)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 25986, rva 0x404230.
+    /// `SpecificItemCollector* (SpecificItemCollector* this, i32 layer, Actor* target)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, layer: i32, target: *mut crate::Actor) -> *mut Self { unsafe { function!(25986, (*const Self, i32, *mut crate::Actor) -> *mut Self)(core::ptr::from_ref(self), layer, target) } }
 }
 
 impl crate::SpectatorPackage {

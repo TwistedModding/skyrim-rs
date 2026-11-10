@@ -304,16 +304,6 @@ impl crate::BGSBlockBashData {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14123, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BGSCollisionLayer {
-    /// `BGSCollisionLayer::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20739, rva 0x31ae28).
-    /// `undefined TESDescription_vdtor(BGSCollisionLayer * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(20739, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
-}
-
 impl crate::BGSColorForm {
     /// `BGSColorForm::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20762, rva 0x31b764).
     /// `undefined TESFullName_vdtor(BGSColorForm * this)`

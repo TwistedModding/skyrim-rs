@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::ActiveMagicEffect::GetCasterActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54577, rva 0x9fbb50).
-/// `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
-/// `Papyrus::ActiveMagicEffect::GetTargetActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54578, rva 0x9fbbc0).
-/// `Actor * GetTargetActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
-/// `Papyrus::ActiveMagicEffect::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54579, rva 0x9fbbe0).
-/// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESObjectREFR * a0, BSFixedString * a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(54579, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54580, rva 0x9fbcc0).
 /// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
@@ -3605,13 +3584,6 @@ pub unsafe fn papyrus__object_reference__play_terrain_effect(vm: *mut c_void, st
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__object_reference__process_trap_hit(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESObjectREFR, a1: f32, a2: f32, a3: f32, a4: f32, a5: f32, a6: f32, a7: f32, a8: f32, a9: i32, a10: f32) { unsafe { function!(56212, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, f32, f32, f32, f32, f32, f32, f32, f32, i32, f32))(vm, stackId, self_, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10) } }
-/// `Papyrus::ObjectReference::PushActorAway` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56213, rva 0xa47fa0).
-/// `void PushActorAway(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, Actor * a0, float a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__object_reference__push_actor_away(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::Actor, a1: f32) { unsafe { function!(56213, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor, f32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ObjectReference::RemoveAllInventoryEventFilters` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56214, rva 0xa48080).
 /// `void RemoveAllInventoryEventFilters(IVirtualMachine * vm, uint stackId, TESObjectREFR * self)`
 ///
@@ -13503,3 +13475,38 @@ pub unsafe fn rotate_tree_node_left(param_1: *mut i64, param_2: i64) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn rotate_tree_node_right(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(441867, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `RotateTreeNodeRight_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419726, rva 0x12b40e0).
+/// `undefined RotateTreeNodeRight_2(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_tree_node_right_2(param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(419726, (*mut i64, *mut i64) -> u64)(param_1, param_2) } }
+/// `RotateVectorAroundZByCellAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19138, rva 0x2c85f0).
+/// `undefined RotateVectorAroundZByCellAngle(longlong param_1, float * param_2, float * param_3, char param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_vector_around_z_by_cell_angle(param_1: i64, param_2: *mut f32, param_3: *mut f32, param_4: c_char) -> u64 { unsafe { function!(19138, (i64, *mut f32, *mut f32, c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RotateVectorArrayByQuaternions` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 67232, rva 0xca6640).
+/// `undefined RotateVectorArrayByQuaternions(longlong param_1, longlong param_2, longlong param_3, int param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_vector_array_by_quaternions(param_1: i64, param_2: i64, param_3: i64, param_4: i32) -> u64 { unsafe { function!(67232, (i64, i64, i64, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RotateVectorsByNiTransform` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 71277, rva 0xf0d3f0).
+/// `undefined RotateVectorsByNiTransform(ushort param_1, float * param_2, float * param_3, float * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_vectors_by_ni_transform(param_1: u16, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32) -> u64 { unsafe { function!(71277, (u16, *mut f32, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RoundUpToPowerOfTwo` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90284, rva 0x11b38c0).
+/// `uint RoundUpToPowerOfTwo(uint param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn round_up_to_power_of_two(param_1: u32) -> u32 { unsafe { function!(90284, (u32) -> u32)(param_1) } }

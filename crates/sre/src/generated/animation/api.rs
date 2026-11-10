@@ -810,6 +810,15 @@ impl crate::BShkbAnimationGraph {
     /// `flag` must point to what the engine expects.
     #[inline]
     pub unsafe fn write_pose_to_nodes(&self, flag: *mut bool) { unsafe { function!(63589, (*const Self, *mut bool))(core::ptr::from_ref(self), flag) } }
+    /// `BShkbAnimationGraph::ctor`: the only writer of graph+0x247 (0xbc9ca2 MOV [R14+0x247],BPL from the third argument)
+    ///
+    /// Semantic, ik pass, high; ledger layout_inference evidence, name high; id 63555, rva 0xbc9aa0.
+    /// `BShkbAnimationGraph* (BShkbAnimationGraph* this, IAnimationGraphManagerHolder* owner, bool boneLODEnabled)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, owner: *mut crate::IAnimationGraphManagerHolder, boneLODEnabled: bool) -> *mut Self { unsafe { function!(63555, (*const Self, *mut crate::IAnimationGraphManagerHolder, bool) -> *mut Self)(core::ptr::from_ref(self), owner, boneLODEnabled) } }
     /// `BShkbAnimationGraph::behaviorGraph` at +0x208: this graph's cloned hkbBehaviorGraph: +0xd8 hkbVariableValueSet (values +0x10, count +0x18), +0x12c active byte, vtable+0x30 handleEvent
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
@@ -1413,6 +1422,15 @@ impl crate::hkbBehaviorGraph {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_variable_value_set(&self) -> *mut crate::hkbVariableValueSet { unsafe { function!(63851, (*const Self) -> *mut crate::hkbVariableValueSet)(core::ptr::from_ref(self)) } }
+    /// `hkbBehaviorGraph::UpdateModifierNode`: per-modifier update: copy inputs; enable false -> deactivate (+ copy outputs if it was enabled before the copy); else activate if needed, Update, copy outputs
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 59311, rva 0xaef170.
+    /// `void (hkbContext* ctx, hkbModifier* node, float timestep, NodeInfo* info)`
+    ///
+    /// # Safety
+    /// `ctx`, `info` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn update_modifier_node(ctx: *mut c_void, node: *mut crate::hkbModifier, timestep: f32, info: *mut c_void) { unsafe { function!(59311, (*mut c_void, *mut crate::hkbModifier, f32, *mut c_void))(ctx, node, timestep, info) } }
     /// `hkbBehaviorGraph::generate`: preGenerate, generateInternal (0xacf480), postGenerate (0xacdd80)
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 58343, rva 0xacd1d0.
@@ -1887,9 +1905,9 @@ pub unsafe fn build_animation_graph_manager(holder: *mut crate::IAnimationGraphM
 /// Retyped: JobList* (out, const JobEntry* first, const char* name, u8, u32) -> JobList* (void* context, const JobEntry* entries, const char* name, u8 listByteD4, u32 workerLimit): rcx is never read (overwritten by MOV RCX,RDX at 0x60ef62; the 7 callers in BuildFrameJobLists pass &frame+0x80) and nothing is written through it, so the earlier 'out' was wrong: the list is returned in rax (the 0x18 object allocated here: +0 the 0xd8 list from CreateAndRegisterInGlobalList 0xebac00, +8 a CreateEventA event, +0x10 the JobListEnd entry); rdx walks {fn, name} 0x10 entries; r8 is the name (BSFixedString ctor); r9b (0x87 at every caller) is stored by ConstructJobList 0xebcdc0 at list+0xd4; the 5th argument (dword 0x20b5238 = 6) is clamped to 32 and stored at list+0xcc, and below 7 leaves list flag 0x40 clear. The last two names come from those stores only.
 ///
 /// # Safety
-/// `context`, `entries`, `name` must point to what the engine expects, and the result is an untyped pointer.
+/// `context`, `entries`, `name` must point to what the engine expects.
 #[inline]
-pub unsafe fn build_segment_job_list(context: *mut c_void, entries: *const c_void, name: *const c_char, listByteD4: u8, workerLimit: u32) -> *mut c_void { unsafe { function!(35419, (*mut c_void, *const c_void, *const c_char, u8, u32) -> *mut c_void)(context, entries, name, listByteD4, workerLimit) } }
+pub unsafe fn build_segment_job_list(context: *mut c_void, entries: *const c_void, name: *const c_char, listByteD4: u8, workerLimit: u32) -> *mut crate::JobList { unsafe { function!(35419, (*mut c_void, *const c_void, *const c_char, u8, u32) -> *mut crate::JobList)(context, entries, name, listByteD4, workerLimit) } }
 /// `Cmd::RecvAnimEvent_Send`: console RecvAnimEvent: builds {tag, holder, payload} and notifies every graph's +0x68 without the behaviour graph
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 22789, rva 0x36d9e0.
@@ -1970,7 +1988,7 @@ pub fn kick_serving_thread_frame() { unsafe { function!(35408, ())() } }
 /// # Safety
 /// `list` must point to what the engine expects.
 #[inline]
-pub unsafe fn queue_face_morph_jobs(list: *mut c_void) { unsafe { function!(26996, (*mut c_void))(list) } }
+pub unsafe fn queue_face_morph_jobs(list: *mut crate::JobList) { unsafe { function!(26996, (*mut crate::JobList))(list) } }
 /// `SignalFramePhase`: SetEvent(phase) in the calling thread's event set (TLS +0x880 index into 0x3220a98+8)
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 69514, rva 0xec1d30.

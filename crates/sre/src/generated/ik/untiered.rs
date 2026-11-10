@@ -7,6 +7,23 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BGSCollisionLayer {
+    /// `BGSCollisionLayer::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20732, rva 0x31ab10).
+    /// `undefined8 vfunc_19_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u64 { unsafe { function!(20732, (i64, *mut u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
+    /// `BGSCollisionLayer::vfunc_19_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20734, rva 0x31acb0).
+    /// `undefined vfunc_19_sub1(longlong * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub1(param_1: *mut i64) -> u64 { unsafe { function!(20734, (*mut i64) -> u64)(param_1) } }
+}
+
 impl crate::BSDirectAtModifier {
     /// `BSDirectAtModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63345, rva 0xbbdc20).
     /// `undefined vfunc_23_sub0(longlong param_1, longlong param_2, undefined1[16] * param_3, float * param_4, longlong * param_5)`
@@ -69,16 +86,6 @@ impl crate::hkbExtractRagdollPoseModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_23_sub0() -> u64 { unsafe { function!(58289, () -> u64)() } }
-}
-
-impl crate::hkbFootIkControlsModifier {
-    /// `hkbFootIkControlsModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 60056, rva 0xb27890).
-    /// `undefined vfunc_23_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined4 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u32) -> u64 { unsafe { function!(60056, (i64, *mut i64, u64, u32) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
 impl crate::hkbFootIkModifier {

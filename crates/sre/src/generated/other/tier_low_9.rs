@@ -7,83 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ReleaseArrayBuffer_3` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 16955, rva 0x25fec0).
-/// `undefined ReleaseArrayBuffer_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_3(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(16955, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayBuffer_4` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 23641, rva 0x390cf0).
-/// `undefined ReleaseArrayBuffer_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_4(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(23641, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayBuffer_5` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 18407, rva 0x29c790).
-/// `undefined ReleaseArrayBuffer_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_5(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(18407, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayBuffer_6` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 18408, rva 0x29c7f0).
-/// `undefined ReleaseArrayBuffer_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_6(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(18408, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayBuffer_7` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 35158, rva 0x5eaa90).
-/// `undefined ReleaseArrayBuffer_7(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_7(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(35158, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayBuffer_8` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15389, rva 0x20aa40).
-/// `undefined ReleaseArrayBuffer_8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_buffer_8(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(15389, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayEntrySharedRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 439825, rva 0x10bff0).
-/// `undefined ReleaseArrayEntrySharedRefs(longlong * param_1, undefined8 param_2, uint param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_entry_shared_refs(param_1: *mut i64, param_2: u64, param_3: u32) -> u64 { unsafe { function!(439825, (*mut i64, u64, u32) -> u64)(param_1, param_2, param_3) } }
-/// `ReleaseArrayOf0x50Entries` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 91833, rva 0x1211450).
-/// `undefined ReleaseArrayOf0x50Entries(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_of0x50_entries(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(91833, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayOfArrays` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 65218, rva 0xc42d70).
-/// `undefined ReleaseArrayOfArrays(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_of_arrays(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(65218, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayOfArraysRange` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 65222, rva 0xc42f50).
-/// `undefined ReleaseArrayOfArraysRange(longlong * param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_of_arrays_range(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(65222, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReleaseArrayStorage` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 19242, rva 0x2d0ca0).
-/// `undefined ReleaseArrayStorage(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_storage(param_1: *mut i64) -> u64 { unsafe { function!(19242, (*mut i64) -> u64)(param_1) } }
 /// `ReleaseArrayStorage_10` (decompiler signature, tier low; ledger decompiler evidence, name high; id 50205, rva 0x8e7300).
 /// `undefined ReleaseArrayStorage_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14742,3 +14665,80 @@ pub unsafe fn resize_heap_array_of8_byte_elements_2(param_1: *mut i64, param_2: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_heap_array_of8_byte_elements_3(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(91656, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResizeHeapArrayStorage16` (decompiler signature, tier low; ledger decompiler evidence, name high; id 523009, rva 0x10f4d0).
+/// `undefined ResizeHeapArrayStorage16(longlong param_1, uint param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_heap_array_storage16(param_1: i64, param_2: u32) -> u64 { unsafe { function!(523009, (i64, u32) -> u64)(param_1, param_2) } }
+/// `ResizeHeapStringArray` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 523008, rva 0x10f390).
+/// `bool ResizeHeapStringArray(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_heap_string_array(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(523008, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResizeInPlace` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 84792, rva 0x11853b0).
+/// `undefined8 ResizeInPlace(longlong * param_1, longlong param_2, longlong param_3, longlong param_4, ulonglong param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_in_place(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64, param_5: u64) -> u64 { unsafe { function!(84792, (*mut i64, i64, i64, i64, u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `ResizeIntHashMap` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66634, rva 0xc78c20).
+/// `undefined ResizeIntHashMap(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_int_hash_map(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66634, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeIntHashMap32` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66635, rva 0xc78d10).
+/// `undefined ResizeIntHashMap32(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_int_hash_map32(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66635, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizeLockedArray20AndSetFlag28` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 36217, rva 0x6436a0).
+/// `DWORD ResizeLockedArray20AndSetFlag28(longlong * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_locked_array20_and_set_flag28(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u32 { unsafe { function!(36217, (*mut i64, u32, u64, u64) -> u32)(param_1, param_2, param_3, param_4) } }
+/// `ResizeNestedArray` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 65223, rva 0xc42f90).
+/// `bool ResizeNestedArray(longlong * param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_nested_array(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u8 { unsafe { function!(65223, (*mut i64, u64, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
+/// `ResizePaddedFloatMatrixIfChanged` (decompiler signature, tier low; ledger decompiler evidence, name high; id 64190, rva 0xbf6b10).
+/// `undefined ResizePaddedFloatMatrixIfChanged(longlong * param_1, int param_2, uint param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_padded_float_matrix_if_changed(param_1: *mut i64, param_2: i32, param_3: u32) -> u64 { unsafe { function!(64190, (*mut i64, i32, u32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizePairKeyHashMap` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66389, rva 0xc6c360).
+/// `undefined ResizePairKeyHashMap(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_pair_key_hash_map(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66389, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizePairKeyHashMap0x18` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66312, rva 0xc67ce0).
+/// `undefined ResizePairKeyHashMap0x18(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_pair_key_hash_map0x18(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66312, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizePairKeyHashMap0x20` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66313, rva 0xc67de0).
+/// `undefined ResizePairKeyHashMap0x20(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_pair_key_hash_map0x20(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66313, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }

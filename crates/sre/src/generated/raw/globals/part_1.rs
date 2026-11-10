@@ -10739,8 +10739,12 @@ pub const g_ActiveRegisterFn: u64 = 414714;
 pub const g_ActiveRenderFn: u64 = 414715;
 /// `g_ActiveShadowLightCount` at 0x3436300 (runtime, high); lights given maps this frame including the sun (high); type `u32`
 pub const g_ActiveShadowLightCount: u64 = 415035;
+/// `g_ActorHandlerFactoryManager` at 0x3250858 (semantic, medium); Handler name -> creator map (object 0x3250850, map +8) (medium); type `BSTCreateFactoryManager<BSFixedStringCI,IHandlerFunctor<Actor,BSFixedStringCI>,256>`
+pub const g_ActorHandlerFactoryManager: u64 = 404601;
 /// `g_ActorMediator_ptr` at 0x3230a38 (semantic, high); pointer to `ActorMediator`: the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph; the single BSTEventSink<BSAnimationGraphEvent> registered on every actor graph (high); type `ptr:ActorMediator`
 pub const g_ActorMediator_ptr: u64 = 403567;
+/// `g_ActorValueChangeCallbacks` at 0x3243710 (semantic, high); per actor value change callback, called by ApplyDamageRegenDelayAndDispatch with (actor, av, old, delta, source) (high); type `pointer[...]`
+pub const g_ActorValueChangeCallbacks: u64 = 403905;
 /// `g_ActorValueList_ptr` at 0x219dec8 (runtime, high); pointer to `ActorValueList`: pointer to the actor value list singleton; pointer to the actor value list singleton (high); type `ptr:ActorValueList`
 pub const g_ActorValueList_ptr: u64 = 400267;
 /// `g_ActorValueStorageLock` at 0x3243f88 (semantic, high); lock of every actor's ActorValueStorage (high); type `class:BSReadWriteLock`
@@ -11657,6 +11661,8 @@ pub const g_BSTObjectDictionary_BSTSmartPointer_BSResponse_BSFixedStringCI_Actor
 pub const g_BSTObjectDictionary_BSTSmartPointer_IHandlerFunctor_Actor_BSFixedStringCI_BSTSmartPointerIntru_4bb21cf3e7fd: u64 = 404811;
 /// `g_BSTStaticFreeList_ActorMovementMessageMap_16_RawMessageHandlerWrapperType_16_ptr` at 0x3243328 (xref_inference, medium)
 pub const g_BSTStaticFreeList_ActorMovementMessageMap_16_RawMessageHandlerWrapperType_16_ptr: u64 = 403901;
+/// `g_BSThreadEventSource` at 0x3275698 (semantic, high); BSTEventSource<BSThreadEvent::ThreadEvent> holder (+8 = the source) notified by every BSThread at start and end (high); type `pointer`
+pub const g_BSThreadEventSource: u64 = 410209;
 /// `g_BSThreadEvent__anon_939FB6BB_Source` at 0x32756a0 (layout_inference, medium)
 pub const g_BSThreadEvent__anon_939FB6BB_Source: u64 = 410210;
 /// `g_BSWin32GamerProfile` at 0x32764f0 (layout_inference, medium)
@@ -11723,6 +11729,8 @@ pub const g_CharacterCollisionHandler_ptr: u64 = 403563;
 pub const g_CharacterCollisionMessagePlayerAdapter: u64 = 381081;
 /// `g_Character_ptr` at 0x31e05a0 (xref_inference, medium)
 pub const g_Character_ptr: u64 = 401440;
+/// `g_CollisionLayerFormsByIndex` at 0x207bf08 (semantic, medium); map layer index -> BGSCollisionLayer*, filled by BGSCollisionLayer::InitItemImpl 0x31a830 (0x31a9b4) (medium); type `pointer`
+pub const g_CollisionLayerFormsByIndex: u64 = 360624;
 /// `g_CollisionLayerNames` at 0x20d1f80 (semantic, high); const char*[47]: collision layer names by layer index (enum CollisionLayer); entry 47 is null (high); type `pointer`
 pub const g_CollisionLayerNames: u64 = 389332;
 /// `g_CollisionsDisabled` at 0x219e5f4 (semantic, high); 1 after console 'tcl' without a reference or Debug.ToggleCollisions: physics collisions off for the player (and the world flag +0xc701) (high); type `u8`
@@ -12375,10 +12383,14 @@ pub const g_InterfaceId_IMovementMotionDrivenControl: u64 = 404489;
 pub const g_InvalidRefHandle: u64 = 400312;
 /// `g_Inventory3DManager_ptr` at 0x32309f8 (xref_inference, medium)
 pub const g_Inventory3DManager_ptr: u64 = 403559;
+/// `g_IsStairsMaterialCallback` at 0x3337660 (semantic, high); bool (*)(u32 havokMaterialId); set once at startup to BGSMaterialType::IsStairsById 0x3227b0 (high); type `pointer`
+pub const g_IsStairsMaterialCallback: u64 = 411541;
 /// `g_JobEntry_PollControls` at 0x20b5130 (runtime, high); {thunk 0x6e6030, 'Poll controls'} in the 'Main render end' table 0x20b50e0 (high); type `undefined16`
 pub const g_JobEntry_PollControls: u64 = 380582;
 /// `g_JobListServingThread` at 0x3220aa0 (semantic, high); the game update thread object; 0x3220a90 points at it (high); type `class:JobListManager::ServingThread`
 pub const g_JobListServingThread: u64 = 403109;
+/// `g_JobThreadInitHook` at 0x3301898 (semantic, high); Optional per-worker init callback called at JobThread start; never written in the exe (one read xref 0xebab48) (high); type `pointer`
+pub const g_JobThreadInitHook: u64 = 410358;
 /// `g_JournalInputMapping_RemapHandler` at 0x20bc728 (semantic, high); the remap sink object (vtable 0x1988ce8) (high); type `pointer`
 pub const g_JournalInputMapping_RemapHandler: u64 = 383628;
 /// `g_LastMessageBoxType` at 0x20bb3f8 (semantic, medium); type of the last answered box (medium); type `u32`
@@ -12413,6 +12425,8 @@ pub const g_MainCullers: u64 = 415022;
 pub const g_MainCullingCamera: u64 = 403552;
 /// `g_MainLoopSteps` at 0x20b4f00 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium); type `struct {fn, const char* name}[]`
 pub const g_MainLoopSteps: u64 = 380514;
+/// `g_MaterialTypesByHavokId` at 0x207e298 (semantic, high); hash map havokMaterialId -> BGSMaterialType* (entries 0x207e2b8, size 0x207e29c, sentinel 0x207e2a8) (high); type `pointer`
+pub const g_MaterialTypesByHavokId: u64 = 361011;
 /// `g_MaxFocusShadows` at 0x20d6814 (semantic, high); iNumFocusShadow copied by InitShaders 0x14eaaba (image default 4) (high); type `u32`
 pub const g_MaxFocusShadows: u64 = 414621;
 /// `g_MaxPickTime` at 0x20d1758 (semantic, low); pick time budget (0.001 in the image; 0x20d175c = 0.03 while VATS flag 0x333652a is set) (low); type `float`
@@ -12515,6 +12529,8 @@ pub const g_PendingAudioLoads: u64 = 410105;
 pub const g_PendingConsoleLines: u64 = 504100;
 /// `g_PerFrameConstantBuffer` at 0x3331f08 (semantic, high); ID3D11Buffer* bound to VS and PS constant slot 12 at every frame start (high); type `undefined8`
 pub const g_PerFrameConstantBuffer: u64 = 411384;
+/// `g_PerkEntryPointTable` at 0x20994f0 (semantic, high); perk entry point descriptors, 0x20 each; index 0x35 'Apply Reanimate Spell' (0x2099b90) (high); type `struct {const char* name; u32 id/flags; u64 kind; u64}[]`
+pub const g_PerkEntryPointTable: u64 = 368994;
 /// `g_PhysicsTimeThisFrame` at 0x20d1748 (semantic, medium); physics time to step this frame (medium); type `float`
 pub const g_PhysicsTimeThisFrame: u64 = 389089;
 /// `g_PickBudgetDisabled` at 0x3336528 (semantic, medium); when set PickObject never refuses a pick for time; set and cleared by FindAutoAimTarget through SetGlobalByte411521 0x104df40 (medium); type `undefined1`
@@ -12575,6 +12591,8 @@ pub const g_RaceMenuCameraInterpDone: u64 = 383182;
 pub const g_RaceMenuFaceCameraTarget: u64 = 406397;
 /// `g_RaceMenuHeadLookYaw` at 0x3258580 (semantic, medium); race menu head-look horizontal input in [-1, 1]; 0x3258584 the vertical one (medium); type `float`
 pub const g_RaceMenuHeadLookYaw: u64 = 406418;
+/// `g_RadialPushVelocityScale` at 0x209e3b0 (semantic, medium); per-body multiplier of the push velocity indexed by (collidable +0x2c >> 8) & 0x1f (medium); type `float[32]`
+pub const g_RadialPushVelocityScale: u64 = 370093;
 /// `g_RagdollFurnitureListener` at 0x209e320 (layout_inference, medium)
 pub const g_RagdollFurnitureListener: u64 = 370090;
 /// `g_RecentHUDMessages` at 0x3258b80 (semantic, high); repeat-suppression table of ShowHUDMessage (high); type `struct{u32 crc; u32 time;}[8]`
@@ -12593,6 +12611,8 @@ pub const g_RenderTargets: u64 = 411451;
 pub const g_Renderer: u64 = 411393;
 /// `g_RendererData_ptr` at 0x3330188 (runtime, high); points at g_Renderer+0x10; code through it uses offsets 0x10 lower (its +0x30 is Renderer+0x40) (high); type `undefined8`
 pub const g_RendererData_ptr: u64 = 411347;
+/// `g_ResponseTableDirectory` at 0x3250838 (semantic, high); 'Meshes/Responses/' (literal 0x19379a8, static init 0xac19b) (high); type `BSFixedString`
+pub const g_ResponseTableDirectory: u64 = 404598;
 /// `g_SaveFormatVersion` at 0x1908e3c (semantic, high); save format version written as the byte after the header and in every change form: 0x4e (high); type `undefined4`
 pub const g_SaveFormatVersion: u64 = 206557;
 /// `g_SaveHeaderVersion` at 0x1908e34 (semantic, high); header version field: 12 (high); type `undefined4`
@@ -13125,41 +13145,3 @@ pub const g_TypeNode_NiBSplineTransformInterpolator: u64 = 410976;
 pub const g_TypeNode_NiBackToFrontAccumulator: u64 = 410604;
 /// `g_TypeNode_NiBillboardNode` at 0x331d828 (string, high)
 pub const g_TypeNode_NiBillboardNode: u64 = 410539;
-/// `g_TypeNode_NiBinaryExtraData` at 0x331da68 (string, high)
-pub const g_TypeNode_NiBinaryExtraData: u64 = 410571;
-/// `g_TypeNode_NiBlendAccumTransformInterpolator` at 0x331ec68 (string, high)
-pub const g_TypeNode_NiBlendAccumTransformInterpolator: u64 = 410933;
-/// `g_TypeNode_NiBlendBoolInterpolator` at 0x331ed58 (string, high)
-pub const g_TypeNode_NiBlendBoolInterpolator: u64 = 410960;
-/// `g_TypeNode_NiBlendColorInterpolator` at 0x331ed68 (string, high)
-pub const g_TypeNode_NiBlendColorInterpolator: u64 = 410961;
-/// `g_TypeNode_NiBlendFloatInterpolator` at 0x331ec38 (string, high)
-pub const g_TypeNode_NiBlendFloatInterpolator: u64 = 410930;
-/// `g_TypeNode_NiBlendInterpolator` at 0x331dda8 (string, high)
-pub const g_TypeNode_NiBlendInterpolator: u64 = 410641;
-/// `g_TypeNode_NiBlendPoint3Interpolator` at 0x331ed78 (string, high)
-pub const g_TypeNode_NiBlendPoint3Interpolator: u64 = 410962;
-/// `g_TypeNode_NiBlendQuaternionInterpolator` at 0x331ed88 (string, high)
-pub const g_TypeNode_NiBlendQuaternionInterpolator: u64 = 410963;
-/// `g_TypeNode_NiBlendTransformInterpolator` at 0x331ec28 (string, high)
-pub const g_TypeNode_NiBlendTransformInterpolator: u64 = 410929;
-/// `g_TypeNode_NiBoolData` at 0x331ed98 (string, high)
-pub const g_TypeNode_NiBoolData: u64 = 410964;
-/// `g_TypeNode_NiBoolInterpController` at 0x331f108 (string, high)
-pub const g_TypeNode_NiBoolInterpController: u64 = 411044;
-/// `g_TypeNode_NiBoolInterpolator` at 0x331eda8 (string, high)
-pub const g_TypeNode_NiBoolInterpolator: u64 = 410965;
-/// `g_TypeNode_NiBoolTimelineInterpolator` at 0x331edb8 (string, high)
-pub const g_TypeNode_NiBoolTimelineInterpolator: u64 = 410966;
-/// `g_TypeNode_NiBooleanExtraData` at 0x331da78 (string, high)
-pub const g_TypeNode_NiBooleanExtraData: u64 = 410572;
-/// `g_TypeNode_NiCamera` at 0x331c690 (string, high)
-pub const g_TypeNode_NiCamera: u64 = 410506;
-/// `g_TypeNode_NiCollisionData` at 0x331dcc0 (string, high)
-pub const g_TypeNode_NiCollisionData: u64 = 410614;
-/// `g_TypeNode_NiCollisionObject` at 0x3698b78 (string, high)
-pub const g_TypeNode_NiCollisionObject: u64 = 415305;
-/// `g_TypeNode_NiColorData` at 0x331ebc8 (string, high)
-pub const g_TypeNode_NiColorData: u64 = 410921;
-/// `g_TypeNode_NiColorExtraData` at 0x331da98 (string, high)
-pub const g_TypeNode_NiColorExtraData: u64 = 410574;

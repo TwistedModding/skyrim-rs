@@ -5831,6 +5831,15 @@ impl crate::bhkMoppBvTreeShape {
     pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
 }
 
+impl crate::bhkQuadOrientationController {
+    /// `bhkQuadOrientationController::ComputeQuadTiltTarget`: target = clamp(atan((h[b] - h[a]) / (controller+0x294 - 2 * controller+0x290)), -47 deg, +47 deg); returns current + (target - current) * rate
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 80142, rva 0x10ca620.
+    /// `float (bhkQuadOrientationController* this, bhkCharacterController* controller, i32 indexA, i32 indexB, float current, float rate)`
+    #[inline]
+    pub fn compute_quad_tilt_target(&self, controller: &crate::bhkCharacterController, indexA: i32, indexB: i32, current: f32, rate: f32) -> f32 { unsafe { function!(80142, (*const Self, *const crate::bhkCharacterController, i32, i32, f32, f32) -> f32)(core::ptr::from_ref(self), core::ptr::from_ref(controller), indexA, indexB, current, rate) } }
+}
+
 impl crate::bhkThreadMemorySource {
     /// The `IMemoryHeap` base at +0x8.
     #[inline]

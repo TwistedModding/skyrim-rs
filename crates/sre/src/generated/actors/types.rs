@@ -590,8 +590,7 @@ const _: () = assert!(core::mem::offset_of!(BaseExtraList, __lock) == 0x18);
 /// Meaning: NPC actor (ACHR); adds nothing to Actor (high, actors pass).
 /// Evidence: runtime: 0x2B8 at 4 allocation sites; agrees with the static allocation sites.
 /// Bases: `Actor`@0x0, `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38, `MagicTarget`@0xA0, `ActorValueOwner`@0xB8, `ActorState`@0xC0, `IMovementState`@0xC0, `IMovementInterface`@0xC0, `BSTEventSink<BSTransformDeltaEvent>`@0xD0, `BSTEventSink<bhkCharacterMoveFinishEvent>`@0xD8, `IPostAnimationChannelUpdateFunctor`@0xE0.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
+#[repr(C, align(8))]
 pub struct Character {
     /// +0x0 `vtbl:Character:0`, rtti
     #[doc(hidden)]
@@ -771,10 +770,10 @@ pub struct Character {
     /// +0x274 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_274: [u8; 4],
-    unknown_278: [u8; 1],
-    /// +0x279 `undefined2`, ctor store
+    unknown_278: [u8; 2],
+    /// +0x27A `u8`, semantic; 1 when the loaded 3D (or one of its first children, 3 levels) has a collision object; PushActorAway ragdolls only such actors, the others get a controller knockback (medium)
     #[doc(hidden)]
-    pub __field_279: [u8; 2],
+    pub __has3DCollision: [u8; 1],
     unknown_27B: [u8; 1],
     /// +0x27C `u32`, base Actor, semantic; bits 0-3 written each frame by the actor pre-cull: bit 0 tested against the portal graph, bit 1 not rejected by it, bit 2 fade amount >= 1e-5 (medium)
     #[doc(hidden)]
@@ -852,7 +851,7 @@ const _: () = assert!(core::mem::offset_of!(Character, __voicePointsModifiers) =
 const _: () = assert!(core::mem::offset_of!(Character, __field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(Character, __field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(Character, __field_274) == 0x274);
-const _: () = assert!(core::mem::offset_of!(Character, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(Character, __has3DCollision) == 0x27A);
 const _: () = assert!(core::mem::offset_of!(Character, __preCullState) == 0x27C);
 const _: () = assert!(core::mem::offset_of!(Character, __field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(Character, __field_288) == 0x288);
@@ -936,7 +935,12 @@ pub struct HighProcessData {
     pub headTrackCurrentHandle: u32,
     /// +0x17C `u32`, semantic; ObjectRefHandle of SetLookAt's pathing look-at target; cleared by ClearLookAt and StopLook (high)
     pub pathingLookAtHandle: u32,
-    pub unknown_180: [u8; 728],
+    pub unknown_180: [u8; 336],
+    /// +0x2D0 `pointer`, semantic; pointer stored together with +0x2d8; every store writes null (high)
+    pub field_2d0: *mut c_void,
+    /// +0x2D8 `i16`, semantic; vestigial state index; every store in 1.7.104 writes -1, so the tests against 2..7, 4, 7 and 9 are never true (medium)
+    pub field_2d8: u16,
+    pub unknown_2DA: [u8; 382],
     /// +0x458 `u8`, semantic; the actor is in dialogue with the player (high)
     pub inDialogueWithPlayer: u8,
     pub unknown_459: [u8; 31],
@@ -950,6 +954,8 @@ const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackHoldTimer)
 const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackTargetPosition) == 0x164);
 const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackCurrentHandle) == 0x178);
 const _: () = assert!(core::mem::offset_of!(HighProcessData, pathingLookAtHandle) == 0x17C);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, field_2d0) == 0x2D0);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, field_2d8) == 0x2D8);
 const _: () = assert!(core::mem::offset_of!(HighProcessData, inDialogueWithPlayer) == 0x458);
 
 /// `InventoryChanges`: size 0x20 (exact).
@@ -1046,8 +1052,7 @@ pub struct MiddleHighProcessData {
     pub leftHandEntry: *mut crate::InventoryEntry,
     unknown_228: [u8; 40],
     /// +0x250 `ptr:bhkCharacterController`, semantic; the actor's character controller (high)
-    #[doc(hidden)]
-    pub __charController: [u8; 8],
+    pub charController: *mut crate::bhkCharacterController,
     unknown_258: [u8; 8],
     /// +0x260 `ptr:InventoryEntry`, semantic; inventory entry equipped in the right hand (high)
     pub rightHandEntry: *mut crate::InventoryEntry,
@@ -1091,7 +1096,7 @@ const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGrap
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __animationGraphManagerData) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lock) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __charController) == 0x250);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, charController) == 0x250);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lastIdlePlayed) == 0x280);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __speed) == 0x2A8);
@@ -1289,10 +1294,10 @@ pub struct PlayerCharacter {
     /// +0x274 `undefined4`, base Character
     #[doc(hidden)]
     pub __field_274: [u8; 4],
-    unknown_278: [u8; 1],
-    /// +0x279 `undefined2`, base Character
+    unknown_278: [u8; 2],
+    /// +0x27A `u8`, base Character, semantic; 1 when the loaded 3D (or one of its first children, 3 levels) has a collision object; PushActorAway ragdolls only such actors, the others get a controller knockback (medium)
     #[doc(hidden)]
-    pub __field_279: [u8; 2],
+    pub __has3DCollision: [u8; 1],
     unknown_27B: [u8; 1],
     /// +0x27C `u32`, base Actor, semantic; bits 0-3 written each frame by the actor pre-cull: bit 0 tested against the portal graph, bit 1 not rejected by it, bit 2 fade amount >= 1e-5 (medium)
     #[doc(hidden)]
@@ -2072,7 +2077,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __voicePointsModifi
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_274) == 0x274);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __has3DCollision) == 0x27A);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __preCullState) == 0x27C);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_280) == 0x280);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_288) == 0x288);
@@ -3232,10 +3237,14 @@ impl Actor_boolFlags {
     pub const AI_ENABLED: Self = Self(0x2);
     /// AnimationUpdateEnabled (low)
     pub const ANIMATION_UPDATE_ENABLED: Self = Self(0x100);
+    /// inWater (high)
+    pub const IN_WATER: Self = Self(0x40000);
     /// PendingAnimationGraphInit (low)
     pub const PENDING_ANIMATION_GRAPH_INIT: Self = Self(0x2000000);
     /// current follower of the player (high)
     pub const PLAYER_TEAMMATE: Self = Self(0x4000000);
+    /// isParalyzed (high)
+    pub const IS_PARALYZED: Self = Self(0x80000000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

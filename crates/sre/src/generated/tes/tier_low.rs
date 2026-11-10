@@ -2204,13 +2204,6 @@ impl crate::TESTrapListener {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26048, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `TESTrapListener::hkpPhantomListener_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 26066, rva 0x407fc0).
-    /// `undefined hkpPhantomListener_vfunc_1(TESTrapListener * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn hkp_phantom_listener_vfunc_1(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26066, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x28), param_1, param_2, param_3) } }
     /// `TESTrapListener::hkpPhantomListener_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name high; id 26065, rva 0x407f10).
     /// `undefined hkpPhantomListener_vfunc_2(TESTrapListener * this, longlong param_1)`
     ///

@@ -5125,7 +5125,7 @@ pub struct BGSCollisionLayer_vtable {
     pub slot_4: *const c_void,
     /// `BGSCollisionLayer::vfunc_5` at 0x31aa10 (rtti, high); signature (low): `undefined vfunc_5(BGSCollisionLayer * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `BGSCollisionLayer::vfunc_6` at 0x31a420 (rtti, high); signature (low): `undefined8 vfunc_6(BGSCollisionLayer * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BGSCollisionLayer::Load` at 0x31a420 (semantic, high); signature (low): `undefined8 Load(BGSCollisionLayer * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `Load`: reads the COLL subrecords (high); semantic signature: `bool (BGSCollisionLayer* this, TESFile* file)`
     pub slot_6: *const c_void,
     /// `TESForm::vfunc_7` at 0x1469b0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
@@ -5151,7 +5151,7 @@ pub struct BGSCollisionLayer_vtable {
     pub slot_17: *const c_void,
     /// `TESForm::vfunc_18` at 0x1e5850 (rtti, medium); signature (low): `undefined vfunc_18(void)`
     pub slot_18: *const c_void,
-    /// `BGSCollisionLayer::vfunc_19` at 0x31a830 (rtti, high); signature (high): `undefined vfunc_19(BGSCollisionLayer * this)`
+    /// `BGSCollisionLayer::InitItemImpl` at 0x31a830 (semantic, high); signature (high): `undefined InitItemImpl(BGSCollisionLayer * this)`; `InitItemImpl`: resolves CNAM to forms and registers the form in the index map 0x207bf08 by +0x30 (high); semantic signature: `void (BGSCollisionLayer* this)`
     pub slot_19: *const c_void,
     /// `TESForm::GetLastFile` at 0x1466f0 (semantic, medium); signature (high): `undefined GetLastFile(TESForm * this)`
     pub slot_20: *const c_void,
@@ -5234,7 +5234,23 @@ pub struct BGSCollisionLayer_vtable {
 }
 impl BGSCollisionLayer_vtable {
     pub const ID: u64 = 190500;
+    pub const SLOT_Load: usize = 6;
+    /// Slot 6 as `BGSCollisionLayer_vtable_Load`, `None` when the slot is null.
+    #[must_use]
+    pub fn Load(&self) -> Option<BGSCollisionLayer_vtable_Load> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSCollisionLayer_vtable_Load>>(self.slot_6) }
+    }
+    pub const SLOT_InitItemImpl: usize = 19;
+    /// Slot 19 as `BGSCollisionLayer_vtable_InitItemImpl`, `None` when the slot is null.
+    #[must_use]
+    pub fn InitItemImpl(&self) -> Option<BGSCollisionLayer_vtable_InitItemImpl> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BGSCollisionLayer_vtable_InitItemImpl>>(self.slot_19) }
+    }
 }
+/// `BGSCollisionLayer::Load`, slot 6: reads the COLL subrecords (high).
+pub type BGSCollisionLayer_vtable_Load = unsafe extern "C" fn(this: *mut crate::BGSCollisionLayer, file: *mut crate::TESFile) -> bool;
+/// `BGSCollisionLayer::InitItemImpl`, slot 19: resolves CNAM to forms and registers the form in the index map 0x207bf08 by +0x30 (high).
+pub type BGSCollisionLayer_vtable_InitItemImpl = unsafe extern "C" fn(this: *mut crate::BGSCollisionLayer);
 
 /// `BGSCollisionLayer::vftable_20` at 0x182daf8, id 190502 (rtti, high); 4 slots.
 #[repr(C)]

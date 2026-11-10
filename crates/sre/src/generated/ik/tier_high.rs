@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BGSCollisionLayer {
+    /// `BGSCollisionLayer::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 20739, rva 0x31ae28).
+    /// `undefined TESDescription_vdtor(BGSCollisionLayer * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(20739, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
+}
+
 impl crate::BSDirectAtModifier {
     /// `BSDirectAtModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 63189, rva 0xbb6570).
     /// `BSDirectAtModifier * ctor(BSDirectAtModifier * this)`
@@ -411,16 +421,6 @@ impl crate::hkbPoweredRagdollControlsModifier {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self) -> *mut Self { unsafe { function!(59856, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkbRagdollSceneModifier {
-    /// `hkbRagdollSceneModifier::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 59454, rva 0xafea40).
-    /// `hkbRagdollSceneModifier * ctor(hkbRagdollSceneModifier * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59454, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbRigidBodyRagdollControlsModifier {

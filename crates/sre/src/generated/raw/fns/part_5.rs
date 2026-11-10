@@ -7,6 +7,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_2` at 0x476930 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_2: u64 = 28823;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vdtor` at 0x4587e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vdtor: u64 = 27985;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vfunc_1` at 0x459c40 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vfunc_1: u64 = 28058;
+/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a870 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOnExecState_IProcedureTreeExecState__vfunc_2: u64 = 28098;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vdtor` at 0x4778a0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureLock,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vdtor: u64 = 28860;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vfunc_1` at 0x477a30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vfunc_1: u64 = 28865;
+/// `BSTDerivedCreator<BGSProcedureLock,IProcedure>::vfunc_2` at 0x477b30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureLock,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureLock_IProcedure__vfunc_2: u64 = 28867;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vdtor` at 0x458810 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vdtor: u64 = 27986;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vfunc_1` at 0x459cb0 (rtti, medium); signature (low): `BGSProcedureLockUnlockExecState * vfunc_1(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vfunc_1: u64 = 28059;
+/// `BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a890 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureLockUnlockExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureLockUnlockExecState_IProcedureTreeExecState__vfunc_2: u64 = 28099;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vdtor` at 0x479030 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vdtor: u64 = 28905;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vfunc_1` at 0x479170 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vfunc_1: u64 = 28908;
+/// `BSTDerivedCreator<BGSProcedureOrbit,IProcedure>::vfunc_2` at 0x4791f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureOrbit,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureOrbit_IProcedure__vfunc_2: u64 = 28909;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vdtor` at 0x458840 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vdtor: u64 = 27987;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d10 (rtti, medium); signature (low): `BGSProcedureOrbitExecState * vfunc_1(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vfunc_1: u64 = 28060;
+/// `BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8b0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureOrbitExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__vfunc_2: u64 = 28100;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vdtor` at 0x47c940 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vdtor: u64 = 28955;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_1` at 0x47cb30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_1: u64 = 28959;
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_2` at 0x47cbb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_2: u64 = 28960;
 /// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vdtor` at 0x458870 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vdtor: u64 = 27988;
 /// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d70 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -3893,6 +3931,10 @@ pub const BSTextureSet__vfunc_26: u64 = 107160;
 pub const BSTextureSet__vfunc_27: u64 = 107161;
 /// `BSTextureSet::vfunc_28` at 0x153b1a0 (rtti, medium); signature (untiered): `ulonglong vfunc_28(BSTextureSet * this, longlong * param_1)`
 pub const BSTextureSet__vfunc_28: u64 = 107162;
+/// `BSThread::ThreadMain` at 0xceb1a0 (semantic, high); signature (low): `ulonglong ThreadMain(longlong * param_1)`; semantic: Every BSThread's body (CreateThread start routine 0xce4290 jumps here): Notify(BSThreadEvent{thread, 0 start}); thread->vtbl[1] (Run); Notify({thread, 1 end}) (high); signature `u32 (BSThread* thread)`
+pub const BSThread__ThreadMain: u64 = 68445;
+/// `BSThread::ThreadMain` as a function pointer type (high).
+pub type BSThread__ThreadMain_fn = unsafe extern "C" fn(thread: *mut crate::BSThread) -> u32;
 /// `BSThread::ctor` at 0xce3fa0 (layout_inference, medium); signature (high): `BSThread * ctor(BSThread * this)`
 pub const BSThread__ctor: u64 = 68259;
 /// `BSThread::dtor` at 0x660a50 (callgraph, high); signature (untiered): `undefined dtor(BSThread * this)`
@@ -4709,8 +4751,10 @@ pub type BShkbAnimationGraph__Update_fn = unsafe extern "C" fn(this: *mut crate:
 pub const BShkbAnimationGraph__WritePoseToNodes: u64 = 63589;
 /// `BShkbAnimationGraph::WritePoseToNodes` as a function pointer type (high).
 pub type BShkbAnimationGraph__WritePoseToNodes_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, flag: *mut bool);
-/// `BShkbAnimationGraph::ctor` at 0xbc9aa0 (layout_inference, high); signature (low): `BShkbAnimationGraph * ctor(BShkbAnimationGraph * this, undefined8 param_1, undefined1 param_2)`
+/// `BShkbAnimationGraph::ctor` at 0xbc9aa0 (layout_inference, high); signature (low): `BShkbAnimationGraph * ctor(BShkbAnimationGraph * this, undefined8 param_1, undefined1 param_2)`; semantic: the only writer of graph+0x247 (0xbc9ca2 MOV [R14+0x247],BPL from the third argument) (high); signature `BShkbAnimationGraph* (BShkbAnimationGraph* this, IAnimationGraphManagerHolder* owner, bool boneLODEnabled)`
 pub const BShkbAnimationGraph__ctor: u64 = 63555;
+/// `BShkbAnimationGraph::ctor` as a function pointer type (high).
+pub type BShkbAnimationGraph__ctor_fn = unsafe extern "C" fn(this: *mut crate::BShkbAnimationGraph, owner: *mut crate::IAnimationGraphManagerHolder, boneLODEnabled: bool) -> *mut crate::BShkbAnimationGraph;
 /// `BShkbAnimationGraph::ctor_sub0` at 0xbd7830 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BShkbAnimationGraph__ctor_sub0: u64 = 63678;
 /// `BShkbAnimationGraph::ctor_sub1` at 0xbd7890 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -5513,6 +5557,8 @@ pub const BuildAabbTreeQ16: u64 = 81559;
 pub const BuildAabbTreeQ32: u64 = 81560;
 /// `BuildAndDispatchEventToHandlers` at 0x3d8ee0 (decompiler, medium); signature (low): `undefined1 BuildAndDispatchEventToHandlers(longlong param_1, int param_2, undefined4 param_3, longlong param_4, longlong param_5, longlong * param_6, undefined1 param_7, undefined8 param_8, ulonglong param_9)`
 pub const BuildAndDispatchEventToHandlers: u64 = 25081;
+/// `BuildAndMergeSymbolIdMaps` at 0xb2ace0 (semantic, medium); signature (low): `undefined BuildAndMergeSymbolIdMaps(longlong * param_1, longlong param_2, longlong param_3, longlong param_4, longlong param_5)`; semantic: links every referenced behaviour graph's variables, events, attributes and character properties to the root graph by name (medium); signature `void (hkArray<hkbBehaviorGraph*>* graphs, void* attributeNameMap, void* variableNameMap, void* eventNameMap, void* characterPropertyNameMap)`
+pub const BuildAndMergeSymbolIdMaps: u64 = 60090;
 /// `BuildAngularJacobianSchema` at 0xc23a40 (decompiler, medium); signature (low): `undefined BuildAngularJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
 pub const BuildAngularJacobianSchema: u64 = 64779;
 /// `BuildAngularJacobianSchemas` at 0xc23d10 (decompiler, medium); signature (low): `undefined BuildAngularJacobianSchemas(undefined8 * param_1, longlong param_2, undefined8 * param_3)`
@@ -5525,71 +5571,3 @@ pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut crate
 pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
 /// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (low): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
 pub const BuildAnimationGraphManagerOnce: u64 = 32919;
-/// `BuildAudioCommandNode` at 0xcd0040 (decompiler, medium); signature (low): `undefined4 * BuildAudioCommandNode(undefined8 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined8 param_5, longlong * param_6, undefined4 * param_7)`
-pub const BuildAudioCommandNode: u64 = 67733;
-/// `BuildBucketSortedIndices` at 0xc127c0 (decompiler, medium); signature (low): `undefined BuildBucketSortedIndices(undefined8 * param_1, longlong * param_2, longlong * param_3)`
-pub const BuildBucketSortedIndices: u64 = 64732;
-/// `BuildCandidatePackageListExcludingCurrent` at 0x689050 (decompiler, medium); signature (low): `undefined BuildCandidatePackageListExcludingCurrent(longlong param_1, longlong param_2)`
-pub const BuildCandidatePackageListExcludingCurrent: u64 = 37505;
-/// `BuildCatalogItemFulfillmentQueryParams` at 0x1443cb0 (decompiler, medium); signature (low): `undefined BuildCatalogItemFulfillmentQueryParams(undefined8 param_1, undefined8 * param_2, undefined8 * param_3, undefined8 param_4)`
-pub const BuildCatalogItemFulfillmentQueryParams: u64 = 452499;
-/// `BuildCatalogItemQueryParams` at 0x143fc80 (decompiler, medium); signature (low): `undefined BuildCatalogItemQueryParams(undefined8 * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildCatalogItemQueryParams: u64 = 452418;
-/// `BuildCatalogQueryParams` at 0x1440bf0 (decompiler, medium); signature (low): `undefined BuildCatalogQueryParams(undefined8 * param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildCatalogQueryParams: u64 = 452442;
-/// `BuildChainTailArrayAndLinkToSelf` at 0x875400 (decompiler, medium); signature (low): `undefined BuildChainTailArrayAndLinkToSelf(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildChainTailArrayAndLinkToSelf: u64 = 47549;
-/// `BuildCircleShapesAtSegmentEnds` at 0x1247b20 (decompiler, medium); signature (low): `undefined BuildCircleShapesAtSegmentEnds(float * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BuildCircleShapesAtSegmentEnds: u64 = 93247;
-/// `BuildClosedLoopSegmentIndexPairsFromFlags` at 0x1019680 (decompiler, medium); signature (medium): `uint BuildClosedLoopSegmentIndexPairsFromFlags(uint param_1, char * param_2, longlong param_3)`
-pub const BuildClosedLoopSegmentIndexPairsFromFlags: u64 = 77481;
-/// `BuildCompressedMeshShapeFromGeometries` at 0x10a9540 (decompiler, medium); signature (low): `undefined BuildCompressedMeshShapeFromGeometries(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildCompressedMeshShapeFromGeometries: u64 = 79436;
-/// `BuildContentSearchQuery` at 0x1367a70 (decompiler, medium); signature (low): `undefined BuildContentSearchQuery(ulonglong * param_1, undefined4 * param_2, undefined8 param_3, ulonglong param_4)`
-pub const BuildContentSearchQuery: u64 = 526739;
-/// `BuildControllerSequenceFromControllers` at 0xf55b20 (decompiler, medium); signature (low): `undefined BuildControllerSequenceFromControllers(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildControllerSequenceFromControllers: u64 = 72438;
-/// `BuildConvexHullFromFloat3Points` at 0x10ec130 (decompiler, medium); signature (low): `undefined BuildConvexHullFromFloat3Points(ulonglong param_1, uint param_2, longlong * param_3, undefined8 * param_4, undefined8 param_5, undefined8 param_6, char param_7)`
-pub const BuildConvexHullFromFloat3Points: u64 = 80774;
-/// `BuildConvexHullFromPlanes` at 0x10f1410 (decompiler, medium); signature (low): `undefined4 BuildConvexHullFromPlanes(longlong param_1, float * param_2, int param_3, undefined4 * param_4)`
-pub const BuildConvexHullFromPlanes: u64 = 80860;
-/// `BuildConvexHullGeometry` at 0x11132b0 (decompiler, medium); signature (low): `undefined BuildConvexHullGeometry(ulonglong * param_1, longlong * param_2)`
-pub const BuildConvexHullGeometry: u64 = 81174;
-/// `BuildConvexHullGeometryFromPlanes` at 0x11133d0 (decompiler, medium); signature (low): `undefined BuildConvexHullGeometryFromPlanes(undefined8 param_1, longlong * param_2)`
-pub const BuildConvexHullGeometryFromPlanes: u64 = 81177;
-/// `BuildConvexHullOfVertices` at 0x1143b80 (decompiler, medium); signature (low): `undefined8 BuildConvexHullOfVertices(longlong param_1)`
-pub const BuildConvexHullOfVertices: u64 = 81761;
-/// `BuildConvexPieceGeometry` at 0x10e9210 (decompiler, medium); signature (low): `undefined BuildConvexPieceGeometry(longlong param_1, uint param_2, longlong * param_3)`
-pub const BuildConvexPieceGeometry: u64 = 80738;
-/// `BuildCraftedEnchantment` at 0x9272d0 (decompiler, medium); signature (low): `undefined BuildCraftedEnchantment(longlong * param_1, undefined8 param_2, undefined8 param_3, BaseExtraList * param_4)`
-pub const BuildCraftedEnchantment: u64 = 51449;
-/// `BuildCrossProductMatrix` at 0xaaab20 (decompiler, medium); signature (medium): `undefined BuildCrossProductMatrix(undefined1[16] * param_1, uint * param_2)`
-pub const BuildCrossProductMatrix: u64 = 57375;
-/// `BuildCrossedQuadTriShape` at 0x50c410 (decompiler, medium); signature (low): `undefined BuildCrossedQuadTriShape(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildCrossedQuadTriShape: u64 = 31664;
-/// `BuildCurveSamplesWithArcLength` at 0x15743c0 (decompiler, medium); signature (low): `undefined BuildCurveSamplesWithArcLength(longlong * param_1, undefined8 param_2, undefined4 param_3)`
-pub const BuildCurveSamplesWithArcLength: u64 = 108236;
-/// `BuildDdsPathWithoutLetterSuffix` at 0x1f2e20 (decompiler, medium); signature (medium): `undefined1 * BuildDdsPathWithoutLetterSuffix(longlong * param_1, char * param_2)`
-pub const BuildDdsPathWithoutLetterSuffix: u64 = 14962;
-/// `BuildDecalTrianglesFromObjectGeometry` at 0x4b31d0 (decompiler, medium); signature (low): `undefined BuildDecalTrianglesFromObjectGeometry(undefined8 param_1, longlong * param_2)`
-pub const BuildDecalTrianglesFromObjectGeometry: u64 = 30113;
-/// `BuildDialogMessageControls` at 0x15f8ca0 (decompiler, medium); signature (low): `undefined BuildDialogMessageControls(UI_Text2 * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
-pub const BuildDialogMessageControls: u64 = 454717;
-/// `BuildDownloadCCDialogControls` at 0x160fea0 (decompiler, medium); signature (low): `undefined BuildDownloadCCDialogControls(UI_Text2 * param_1, float * param_2, void * param_3, undefined8 param_4)`
-pub const BuildDownloadCCDialogControls: u64 = 454505;
-/// `BuildEntryChainsByField10` at 0x923da0 (decompiler, medium); signature (low): `undefined BuildEntryChainsByField10(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildEntryChainsByField10: u64 = 51392;
-/// `BuildEntryPathFromNamePair` at 0xec6520 (decompiler, medium); signature (low): `char * BuildEntryPathFromNamePair(longlong param_1, char * param_2, ulonglong param_3)`
-pub const BuildEntryPathFromNamePair: u64 = 69633;
-/// `BuildField88IfMissing` at 0x10eed80 (decompiler, medium); signature (low): `undefined4 BuildField88IfMissing(longlong param_1)`
-pub const BuildField88IfMissing: u64 = 80836;
-/// `BuildFilteredListFromGlobalList433121` at 0x14ca20 (decompiler, medium); signature (low): `longlong * BuildFilteredListFromGlobalList433121(longlong param_1, byte param_2, ulonglong param_3, undefined8 param_4)`
-pub const BuildFilteredListFromGlobalList433121: u64 = 11148;
-/// `BuildFocusShadowList` at 0x65a400 (runtime, high); signature (untiered): `undefined BuildFocusShadowList(void)`; semantic: rebuilds g_FocusShadowNodes each frame: the player's third-person root if its flag bit 0 is clear, then nearby actors' 3D sorted by distance^2 - radius^2 while < fMaxFocusShadowMapDistance^2 and count < g_MaxFocusShadows (high); signature `void (void)`
-pub const BuildFocusShadowList: u64 = 36589;
-/// `BuildFocusShadowList` as a function pointer type (high).
-pub type BuildFocusShadowList_fn = unsafe extern "C" fn();
-/// `BuildFollowToProcedureData` at 0x49f9a0 (decompiler, medium); signature (low): `undefined BuildFollowToProcedureData(longlong param_1, longlong param_2, longlong * param_3, undefined4 param_4, undefined4 param_5, char param_6, undefined1 param_7)`
-pub const BuildFollowToProcedureData: u64 = 29670;
-/// `BuildFourPartPathWithExtension` at 0x3ed3d0 (decompiler, high); signature (high): `undefined1 BuildFourPartPathWithExtension(undefined8 param_1, char * param_2, char * param_3, char * param_4, char * param_5, char * param_6, char * param_7)`
-pub const BuildFourPartPathWithExtension: u64 = 25503;

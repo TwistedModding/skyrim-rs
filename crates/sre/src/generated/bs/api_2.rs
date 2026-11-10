@@ -5883,6 +5883,15 @@ impl crate::BSTextureDB__QueuedHandles {
     pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
 }
 
+impl crate::BSThread {
+    /// `BSThread::ThreadMain`: Every BSThread's body (CreateThread start routine 0xce4290 jumps here): Notify(BSThreadEvent{thread, 0 start}); thread->vtbl[1] (Run); Notify({thread, 1 end})
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 68445, rva 0xceb1a0.
+    /// `u32 (BSThread* thread)`
+    #[inline]
+    pub fn thread_main(&self) -> u32 { unsafe { function!(68445, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSThreadEvent___anon_939FB6BB__Source {
     #[doc(hidden)]
     #[inline]

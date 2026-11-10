@@ -7,6 +7,47 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BGSAttackData {
+    /// `BGSAttackData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 27397, rva 0x449d80).
+    /// `BGSAttackData * ctor(BGSAttackData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27397, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BGSAttackData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 27418, rva 0x44afe0).
+    /// `BGSAttackData * vdtor(BGSAttackData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(27418, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BGSCollisionLayer {
+    /// `BGSCollisionLayer::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20724, rva 0x31a2e0).
+    /// `BGSCollisionLayer * ctor(BGSCollisionLayer * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(20724, (*const Self, u64, *mut u32, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BGSCollisionLayer::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 20725, rva 0x31a370).
+    /// `undefined ctor(BGSCollisionLayer * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(20725, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BGSCollisionLayer::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 20740, rva 0x31ae40).
+    /// `BGSCollisionLayer * vdtor(BGSCollisionLayer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(20740, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BGSFootIkRaycastInterfaceDB {
     /// `BGSFootIkRaycastInterfaceDB::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 32732, rva 0x54a170).
     /// `BGSFootIkRaycastInterfaceDB * ctor(BGSFootIkRaycastInterfaceDB * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -49,13 +90,6 @@ impl crate::BSGrabIKNote {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSGrabIKNote::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74040, rva 0xf8b560).
-    /// `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiObject { unsafe { function!(74040, (u64, u64, u64, u64) -> *mut crate::NiObject)(param_1, param_2, param_3, param_4) } }
     /// `BSGrabIKNote::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 74036, rva 0xf8b310).
     /// `BSGrabIKNote * ctor(BSGrabIKNote * this, float param_1, undefined4 param_2, float param_3, undefined4 param_4)`
     ///
@@ -120,13 +154,6 @@ impl crate::BSLookIKNote {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn parse_text(&self, param_1: *mut u32) -> u64 { unsafe { virtual_function!(self, 37, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `BSLookIKNote::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74064, rva 0xf8be20).
-    /// `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiObject { unsafe { function!(74064, (u64, u64, u64, u64) -> *mut crate::NiObject)(param_1, param_2, param_3, param_4) } }
     /// `BSLookIKNote::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 74060, rva 0xf8bbe0).
     /// `BSLookIKNote * ctor(BSLookIKNote * this, float param_1, float param_2, undefined4 param_3)`
     ///
@@ -202,6 +229,16 @@ impl crate::NiLookAtInterpolator {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(73728, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::_anon_8B4A4C54__DeferredUpdate {
+    /// `_anon_8B4A4C54::DeferredUpdate::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 63412, rva 0xbc3c70).
+    /// `DeferredUpdate * vdtor(DeferredUpdate * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { function!(63412, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bhkRagdollController {

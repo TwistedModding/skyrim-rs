@@ -4753,12 +4753,6 @@ impl core::ops::Deref for crate::_anon_865AF130__GetVMConditionalVariableValueFu
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `_anon_8B4A4C54::DeferredUpdate` is laid out from its primary base `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::_anon_8B4A4C54__DeferredUpdate {
-    type Target = crate::BSTCommonStaticMessageQueue_BSTSmartPointer_BSAnimationGraphManager_BSTSmartPointerIntrusiveRefCount_128;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `_anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter` is laid out from its primary base `BSPathing::CheckLineOfSightFilter`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::_anon_9196AC74__CheckLineOfSightTriangleFlagFiltersAdapter {
     type Target = crate::BSPathing__CheckLineOfSightFilter;

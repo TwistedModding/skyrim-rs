@@ -9095,7 +9095,7 @@ pub struct hkbCharacterControllerModifier_vtable {
     pub slot_21: *const c_void,
     /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
     pub slot_22: *const c_void,
-    /// `hkbCharacterControllerModifier::vfunc_23` at 0xb06180 (rtti, high); signature (low): `undefined vfunc_23(hkbCharacterControllerModifier * this, longlong * param_1, longlong * param_2)`
+    /// `hkbCharacterControllerModifier::Modify` at 0xb06180 (semantic, high); signature (low): `undefined Modify(hkbCharacterControllerModifier * this, longlong * param_1, longlong * param_2)`
     pub slot_23: *const c_void,
     /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
     pub slot_24: *const c_void,

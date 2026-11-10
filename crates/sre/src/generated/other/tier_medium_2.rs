@@ -7,27 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DetachResultSetField90_15` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447829, rva 0x13618a0).
-/// `undefined8 * DetachResultSetField90_15(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_15(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447829, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_16` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 526748, rva 0x1368030).
-/// `undefined8 * DetachResultSetField90_16(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_16(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(526748, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_17` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447689, rva 0x136a860).
-/// `undefined8 * DetachResultSetField90_17(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_17(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447689, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_18` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447993, rva 0x136b7b0).
 /// `undefined8 * DetachResultSetField90_18(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -10619,13 +10598,6 @@ pub unsafe fn invoke_field8_callback_and_clear_field0_6(param_1: *mut u64) -> u6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn invoke_field8_callback_and_clear_field0_7(param_1: *mut u64) -> u64 { unsafe { function!(525464, (*mut u64) -> u64)(param_1) } }
-/// `InvokeGlobalCallbackIfSet` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 78008, rva 0x10542b0).
-/// `undefined InvokeGlobalCallbackIfSet(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn invoke_global_callback_if_set() -> u64 { unsafe { function!(78008, () -> u64)() } }
 /// `InvokePendingOnVKBTextEntered` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52165, rva 0x95dfe0).
 /// `undefined InvokePendingOnVKBTextEntered(void)`
 ///
@@ -14140,3 +14112,24 @@ pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__active_magic_effect__get_base_object(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::EffectSetting { unsafe { function!(54615, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::EffectSetting)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::GetCasterActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54577, rva 0x9fbb50).
+/// `Actor * GetCasterActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_caster_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54577, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::GetTargetActor` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54578, rva 0x9fbbc0).
+/// `Actor * GetTargetActor(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect) -> *mut crate::Actor { unsafe { function!(54578, (*mut c_void, u32, *mut crate::ActiveEffect) -> *mut crate::Actor)(vm, stackId, self_) } }
+/// `Papyrus::ActiveMagicEffect::RegisterForAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54579, rva 0x9fbbe0).
+/// `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESObjectREFR * a0, BSFixedString * a1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(54579, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }

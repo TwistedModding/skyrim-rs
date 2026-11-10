@@ -38,23 +38,6 @@ impl crate::BGSAnimSoundStateManager {
     pub unsafe fn vfunc_1_sub2(param_1: i64, param_2: *mut u64, param_3: *mut u64) -> u8 { unsafe { function!(15022, (i64, *mut u64, *mut u64) -> u8)(param_1, param_2, param_3) } }
 }
 
-impl crate::BGSCollisionLayer {
-    /// `BGSCollisionLayer::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20732, rva 0x31ab10).
-    /// `undefined8 vfunc_19_sub0(longlong param_1, uint * param_2, undefined8 * param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: *mut u32, param_3: *mut u64) -> u64 { unsafe { function!(20732, (i64, *mut u32, *mut u64) -> u64)(param_1, param_2, param_3) } }
-    /// `BGSCollisionLayer::vfunc_19_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20734, rva 0x31acb0).
-    /// `undefined vfunc_19_sub1(longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_19_sub1(param_1: *mut i64) -> u64 { unsafe { function!(20734, (*mut i64) -> u64)(param_1) } }
-}
-
 impl crate::BGSEntryPointPerkEntry {
     /// `BGSEntryPointPerkEntry::vfunc_10_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 37699, rva 0x69f950).
     /// `undefined vfunc_10_sub0(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`

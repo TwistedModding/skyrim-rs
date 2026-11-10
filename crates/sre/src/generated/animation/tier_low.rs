@@ -146,13 +146,6 @@ impl crate::BSFaceGenNiNode {
 }
 
 impl crate::BShkbAnimationGraph {
-    /// `BShkbAnimationGraph::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63555, rva 0xbc9aa0).
-    /// `BShkbAnimationGraph * ctor(BShkbAnimationGraph * this, undefined8 param_1, undefined1 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u8) -> *mut Self { unsafe { function!(63555, (*const Self, u64, u8) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BShkbAnimationGraph::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 63556, rva 0xbc9cf0).
     /// `undefined dtor(BShkbAnimationGraph * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
     ///

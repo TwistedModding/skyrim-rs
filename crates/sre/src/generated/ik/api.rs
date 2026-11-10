@@ -7,6 +7,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSAttackData` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSAttackData {
+    type Target = crate::NiRefObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BGSCollisionLayer` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSCollisionLayer {
+    type Target = crate::TESForm;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BGSFootIkRaycastInterfaceDB` is laid out from its primary base `BSIFootIkRaycastInterfaceDB`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSFootIkRaycastInterfaceDB {
     type Target = crate::BSIFootIkRaycastInterfaceDB;
@@ -52,6 +64,12 @@ impl core::ops::Deref for crate::NiLookAtController {
 /// `NiLookAtInterpolator` is laid out from its primary base `NiInterpolator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiLookAtInterpolator {
     type Target = crate::NiInterpolator;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `_anon_8B4A4C54::DeferredUpdate` is laid out from its primary base `BSTCommonStaticMessageQueue<BSTSmartPointer<BSAnimationGraphManager,BSTSmartPointerIntrusiveRefCount>,128>`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::_anon_8B4A4C54__DeferredUpdate {
+    type Target = crate::BSTCommonStaticMessageQueue_BSTSmartPointer_BSAnimationGraphManager_BSTSmartPointerIntrusiveRefCount_128;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -139,6 +157,37 @@ impl core::ops::Deref for crate::hkbVariableBindingSet {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::BGSCollisionLayer {
+    /// The `BaseFormComponent` base at +0x20.
+    #[inline]
+    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// The `TESDescription` base at +0x20.
+    #[inline]
+    pub fn as_tes_description(&self) -> &crate::TESDescription { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    /// `BGSCollisionLayer::InitItemImpl`, vtable slot 19: resolves CNAM to forms and registers the form in the index map 0x207bf08 by +0x30
+    ///
+    /// Semantic, ik pass, high; called through the object's vtable.
+    /// `void (BGSCollisionLayer* this)`
+    #[inline]
+    pub fn init_item_impl(&self) { unsafe { virtual_function!(self, 19, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `BGSCollisionLayer::Load`, vtable slot 6: reads the COLL subrecords
+    ///
+    /// Semantic, ik pass, high; called through the object's vtable.
+    /// `bool (BGSCollisionLayer* this, TESFile* file)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `file` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn load(&self, file: *mut crate::TESFile) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::TESFile) -> bool)(core::ptr::from_ref(self), file) } }
+    /// `BGSCollisionLayer::GetCollidesWithMask`: OR of 1 << other->layerIndex over the collides-with list
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 20730, rva 0x31aa50.
+    /// `u64 (BGSCollisionLayer* this)`
+    #[inline]
+    pub fn get_collides_with_mask(&self) -> u64 { unsafe { function!(20730, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BGSFootIkRaycastInterfaceDB {
     /// `BGSFootIkRaycastInterfaceDB::GetRaycastInterface`, vtable slot 1: 0x54ac90: key = the hkbCharacter* (Run passes ctx->character); returns the CachedRaycastData record for it, creating one on a miss
     ///
@@ -440,6 +489,12 @@ impl crate::BSGrabIKNote {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut c_void)(core::ptr::from_ref(self), flags) } }
+    /// `BSGrabIKNote::Create`: NIF stream factory creator (0x28 bytes, type 1)
+    ///
+    /// Semantic, ik pass, high; ledger string evidence, name high; id 74040, rva 0xf8b560.
+    /// `NiObject* (void)`
+    #[inline]
+    pub fn create() -> Option<&'static crate::NiObject> { unsafe { function!(74040, () -> Option<&'static crate::NiObject>)() } }
 }
 
 impl crate::BSIFootIkRaycastInterfaceDB {
@@ -479,6 +534,24 @@ impl crate::BSIRagdollDriver {
 }
 
 impl crate::BSIsActiveModifier {
+    /// `BSIsActiveModifier::Activate`, vtable slot 4: bIsActiveN = !bInvertActiveN
+    ///
+    /// Semantic, ik pass, high; called through the object's vtable.
+    /// `void (BSIsActiveModifier* this, const hkbContext* ctx)`
+    ///
+    /// # Safety
+    /// `ctx` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn activate(&self, ctx: *const c_void) { unsafe { virtual_function!(self, 4, (*const Self, *const c_void))(core::ptr::from_ref(self), ctx) } }
+    /// `BSIsActiveModifier::Deactivate`, vtable slot 7: bIsActiveN = bInvertActiveN
+    ///
+    /// Semantic, ik pass, high; called through the object's vtable.
+    /// `void (BSIsActiveModifier* this, const hkbContext* ctx)`
+    ///
+    /// # Safety
+    /// `ctx` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn deactivate(&self, ctx: *const c_void) { unsafe { virtual_function!(self, 7, (*const Self, *const c_void))(core::ptr::from_ref(self), ctx) } }
     /// `BSIsActiveModifier::variableBindingSet` at +0x10
     ///
     /// Semantic field, ik pass, high; `None` while the pointer is null.
@@ -967,6 +1040,12 @@ impl crate::BSLookIKNote {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut c_void)(core::ptr::from_ref(self), flags) } }
+    /// `BSLookIKNote::Create`: NIF stream factory creator (0x20 bytes, type 2)
+    ///
+    /// Semantic, ik pass, high; ledger string evidence, name high; id 74064, rva 0xf8be20.
+    /// `NiObject* (void)`
+    #[inline]
+    pub fn create() -> Option<&'static crate::NiObject> { unsafe { function!(74064, () -> Option<&'static crate::NiObject>)() } }
 }
 
 impl crate::BSRagdollContactListenerModifier {
@@ -1118,6 +1197,35 @@ impl crate::ExtraHeadTrackingWeight {
     pub fn weight_ptr(&self) -> *mut f32 { Self::__member_weight(core::ptr::from_ref(self)) }
 }
 
+impl crate::JobList {
+    /// `JobList::AppendMarker`: kind 1 = signal: closes the current group (records its entry count in groupCounters) and appends a signal marker (only when the group is non-empty); kind 2 = sync: appends a sync marker only when a signal is pending (flags bit 2)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 69375, rva 0xebbc60.
+    /// `void (JobList* list, i32 kind)`
+    #[inline]
+    pub fn append_marker(&self, kind: i32) { unsafe { function!(69375, (*const Self, i32))(core::ptr::from_ref(self), kind) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_activeExecutors(this: *const Self) -> *mut u64 { unsafe { member!(this, "JobList.activeExecutors", 0x98, u64) } }
+    /// `JobList::activeExecutors`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn activeExecutors(&self) -> u64 { unsafe { Self::__member_activeExecutors(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_activeExecutors(&mut self, value: u64) { unsafe { Self::__member_activeExecutors(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn activeExecutors_ptr(&self) -> *mut u64 { Self::__member_activeExecutors(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_idleEvent(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "JobList.idleEvent", 0x68, *mut c_void) } }
+    /// `JobList::idleEvent`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn idleEvent(&self) -> *mut c_void { unsafe { Self::__member_idleEvent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_idleEvent(&mut self, value: *mut c_void) { unsafe { Self::__member_idleEvent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn idleEvent_ptr(&self) -> *mut *mut c_void { Self::__member_idleEvent(core::ptr::from_ref(self)) }
+}
+
 impl crate::NiLookAtController {
     /// `NiLookAtController::CreateClone`, vtable slot 23: 0xf7f1e0 writes the vtable on a new object
     ///
@@ -1216,169 +1324,6 @@ impl crate::NiLookAtInterpolator {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut c_void)(core::ptr::from_ref(self), flags) } }
-}
-
-impl crate::TwoJointSolverSetup {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_cosineMaxHingeAngle(this: *const Self) -> *mut f32 { unsafe { member!(this, "TwoJointSolverSetup.cosineMaxHingeAngle", 0x20, f32) } }
-    /// `TwoJointSolverSetup::cosineMaxHingeAngle`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn cosineMaxHingeAngle(&self) -> f32 { unsafe { Self::__member_cosineMaxHingeAngle(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_cosineMaxHingeAngle(&mut self, value: f32) { unsafe { Self::__member_cosineMaxHingeAngle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn cosineMaxHingeAngle_ptr(&self) -> *mut f32 { Self::__member_cosineMaxHingeAngle(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_cosineMinHingeAngle(this: *const Self) -> *mut f32 { unsafe { member!(this, "TwoJointSolverSetup.cosineMinHingeAngle", 0x24, f32) } }
-    /// `TwoJointSolverSetup::cosineMinHingeAngle`, at +0x24 on 1.7.104.
-    #[inline]
-    pub fn cosineMinHingeAngle(&self) -> f32 { unsafe { Self::__member_cosineMinHingeAngle(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_cosineMinHingeAngle(&mut self, value: f32) { unsafe { Self::__member_cosineMinHingeAngle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn cosineMinHingeAngle_ptr(&self) -> *mut f32 { Self::__member_cosineMinHingeAngle(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endBoneIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "TwoJointSolverSetup.endBoneIndex", 0x4, u16) } }
-    /// `TwoJointSolverSetup::endBoneIndex`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn endBoneIndex(&self) -> u16 { unsafe { Self::__member_endBoneIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_endBoneIndex(&mut self, value: u16) { unsafe { Self::__member_endBoneIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn endBoneIndex_ptr(&self) -> *mut u16 { Self::__member_endBoneIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endBoneOffsetLS(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "TwoJointSolverSetup.endBoneOffsetLS", 0x60, crate::hkVector4) } }
-    /// `TwoJointSolverSetup::endBoneOffsetLS`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn endBoneOffsetLS(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_endBoneOffsetLS(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn endBoneOffsetLS_ptr(&self) -> *mut crate::hkVector4 { Self::__member_endBoneOffsetLS(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endBoneRotationOffsetLS(this: *const Self) -> *mut crate::hkQuaternion { unsafe { member!(this, "TwoJointSolverSetup.endBoneRotationOffsetLS", 0x70, crate::hkQuaternion) } }
-    /// `TwoJointSolverSetup::endBoneRotationOffsetLS`, at +0x70 on 1.7.104.
-    #[inline]
-    pub fn endBoneRotationOffsetLS(&self) -> &crate::hkQuaternion { unsafe { &*Self::__member_endBoneRotationOffsetLS(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn endBoneRotationOffsetLS_ptr(&self) -> *mut crate::hkQuaternion { Self::__member_endBoneRotationOffsetLS(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endJointIkGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "TwoJointSolverSetup.endJointIkGain", 0x30, f32) } }
-    /// `TwoJointSolverSetup::endJointIkGain`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn endJointIkGain(&self) -> f32 { unsafe { Self::__member_endJointIkGain(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_endJointIkGain(&mut self, value: f32) { unsafe { Self::__member_endJointIkGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn endJointIkGain_ptr(&self) -> *mut f32 { Self::__member_endJointIkGain(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endTargetMS(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "TwoJointSolverSetup.endTargetMS", 0x40, crate::hkVector4) } }
-    /// `TwoJointSolverSetup::endTargetMS`, at +0x40 on 1.7.104.
-    #[inline]
-    pub fn endTargetMS(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_endTargetMS(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn endTargetMS_ptr(&self) -> *mut crate::hkVector4 { Self::__member_endTargetMS(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_endTargetRotationMS(this: *const Self) -> *mut crate::hkQuaternion { unsafe { member!(this, "TwoJointSolverSetup.endTargetRotationMS", 0x50, crate::hkQuaternion) } }
-    /// `TwoJointSolverSetup::endTargetRotationMS`, at +0x50 on 1.7.104.
-    #[inline]
-    pub fn endTargetRotationMS(&self) -> &crate::hkQuaternion { unsafe { &*Self::__member_endTargetRotationMS(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn endTargetRotationMS_ptr(&self) -> *mut crate::hkQuaternion { Self::__member_endTargetRotationMS(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_enforceEndPosition(this: *const Self) -> *mut u8 { unsafe { member!(this, "TwoJointSolverSetup.enforceEndPosition", 0x80, u8) } }
-    /// `TwoJointSolverSetup::enforceEndPosition`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn enforceEndPosition(&self) -> u8 { unsafe { Self::__member_enforceEndPosition(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_enforceEndPosition(&mut self, value: u8) { unsafe { Self::__member_enforceEndPosition(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn enforceEndPosition_ptr(&self) -> *mut u8 { Self::__member_enforceEndPosition(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_enforceEndRotation(this: *const Self) -> *mut u8 { unsafe { member!(this, "TwoJointSolverSetup.enforceEndRotation", 0x81, u8) } }
-    /// `TwoJointSolverSetup::enforceEndRotation`, at +0x81 on 1.7.104.
-    #[inline]
-    pub fn enforceEndRotation(&self) -> u8 { unsafe { Self::__member_enforceEndRotation(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_enforceEndRotation(&mut self, value: u8) { unsafe { Self::__member_enforceEndRotation(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn enforceEndRotation_ptr(&self) -> *mut u8 { Self::__member_enforceEndRotation(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_firstJointIkGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "TwoJointSolverSetup.firstJointIkGain", 0x28, f32) } }
-    /// `TwoJointSolverSetup::firstJointIkGain`, at +0x28 on 1.7.104.
-    #[inline]
-    pub fn firstJointIkGain(&self) -> f32 { unsafe { Self::__member_firstJointIkGain(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_firstJointIkGain(&mut self, value: f32) { unsafe { Self::__member_firstJointIkGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn firstJointIkGain_ptr(&self) -> *mut f32 { Self::__member_firstJointIkGain(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_firstJointIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "TwoJointSolverSetup.firstJointIndex", 0x0, u16) } }
-    /// `TwoJointSolverSetup::firstJointIndex`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn firstJointIndex(&self) -> u16 { unsafe { Self::__member_firstJointIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_firstJointIndex(&mut self, value: u16) { unsafe { Self::__member_firstJointIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn firstJointIndex_ptr(&self) -> *mut u16 { Self::__member_firstJointIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_firstJointTwistIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "TwoJointSolverSetup.firstJointTwistIndex", 0x6, u16) } }
-    /// `TwoJointSolverSetup::firstJointTwistIndex`, at +0x6 on 1.7.104.
-    #[inline]
-    pub fn firstJointTwistIndex(&self) -> u16 { unsafe { Self::__member_firstJointTwistIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_firstJointTwistIndex(&mut self, value: u16) { unsafe { Self::__member_firstJointTwistIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn firstJointTwistIndex_ptr(&self) -> *mut u16 { Self::__member_firstJointTwistIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_hingeAxisLS(this: *const Self) -> *mut crate::hkVector4 { unsafe { member!(this, "TwoJointSolverSetup.hingeAxisLS", 0x10, crate::hkVector4) } }
-    /// `TwoJointSolverSetup::hingeAxisLS`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn hingeAxisLS(&self) -> &crate::hkVector4 { unsafe { &*Self::__member_hingeAxisLS(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn hingeAxisLS_ptr(&self) -> *mut crate::hkVector4 { Self::__member_hingeAxisLS(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_secondJointIkGain(this: *const Self) -> *mut f32 { unsafe { member!(this, "TwoJointSolverSetup.secondJointIkGain", 0x2C, f32) } }
-    /// `TwoJointSolverSetup::secondJointIkGain`, at +0x2C on 1.7.104.
-    #[inline]
-    pub fn secondJointIkGain(&self) -> f32 { unsafe { Self::__member_secondJointIkGain(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_secondJointIkGain(&mut self, value: f32) { unsafe { Self::__member_secondJointIkGain(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn secondJointIkGain_ptr(&self) -> *mut f32 { Self::__member_secondJointIkGain(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_secondJointIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "TwoJointSolverSetup.secondJointIndex", 0x2, u16) } }
-    /// `TwoJointSolverSetup::secondJointIndex`, at +0x2 on 1.7.104.
-    #[inline]
-    pub fn secondJointIndex(&self) -> u16 { unsafe { Self::__member_secondJointIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_secondJointIndex(&mut self, value: u16) { unsafe { Self::__member_secondJointIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn secondJointIndex_ptr(&self) -> *mut u16 { Self::__member_secondJointIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_secondJointTwistIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "TwoJointSolverSetup.secondJointTwistIndex", 0x8, u16) } }
-    /// `TwoJointSolverSetup::secondJointTwistIndex`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn secondJointTwistIndex(&self) -> u16 { unsafe { Self::__member_secondJointTwistIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_secondJointTwistIndex(&mut self, value: u16) { unsafe { Self::__member_secondJointTwistIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn secondJointTwistIndex_ptr(&self) -> *mut u16 { Self::__member_secondJointTwistIndex(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkRagdollController {
@@ -2575,6 +2520,24 @@ impl crate::hkbFootIkControlsModifier {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
+    /// `CopyDriverLegsToControlsLegs`: for each of the modifier's own legs (this+0x80, count +0x88): groundPosition <- driver leg +0, verticalError <- +0x28, hitSomething <- +0x2c, isPlantedMS <- +0x2d; legs beyond the driver's count zeroed; ungroundedEvent untouched
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 60057, rva 0xb27910.
+    /// `void (hkbFootIkControlsModifier* this, const InternalLeg* driverLegs, int numDriverLegs)`
+    ///
+    /// # Safety
+    /// `driverLegs` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn copy_driver_legs_to_controls_legs(&self, driverLegs: *const c_void, numDriverLegs: i32) { unsafe { function!(60057, (*const Self, *const c_void, i32))(core::ptr::from_ref(self), driverLegs, numDriverLegs) } }
+    /// `hkbFootIkControlsModifier::WriteGainsTrackAndCopyLegs`: writes track 11 (12 gain floats, on fraction 1.0) and copies the driver's legs
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 60056, rva 0xb27890.
+    /// `void (hkbFootIkControlsModifier* this, hkbGeneratorOutput* output, const InternalLeg* driverLegs, int numDriverLegs)`
+    ///
+    /// # Safety
+    /// `output`, `driverLegs` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn write_gains_track_and_copy_legs(&self, output: *mut crate::hkbGeneratorOutput, driverLegs: *const c_void, numDriverLegs: i32) { unsafe { function!(60056, (*const Self, *mut crate::hkbGeneratorOutput, *const c_void, i32))(core::ptr::from_ref(self), output, driverLegs, numDriverLegs) } }
     /// `hkbFootIkControlsModifier::variableBindingSet` at +0x10
     ///
     /// Semantic field, ik pass, high; `None` while the pointer is null.
@@ -2641,6 +2604,33 @@ impl crate::hkbFootIkDriver {
     /// `ctx`, `output` must point to what the engine expects.
     #[inline]
     pub unsafe fn align_world_from_model(&self, ctx: *mut c_void, upWS: *const crate::hkVector4, output: *mut crate::hkbGeneratorOutput, gains: *const crate::hkbFootIkGains) { unsafe { function!(58434, (*const Self, *mut c_void, *const crate::hkVector4, *mut crate::hkbGeneratorOutput, *const crate::hkbFootIkGains))(core::ptr::from_ref(self), ctx, upWS, output, gains) } }
+    /// `hkbFootIkDriver::ApplyAlignFractions`: limits a target up by forwardAlignFraction (pitch) and sidewaysAlignFraction (roll)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58437, rva 0xad5ac0.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, const hkQsTransform* worldFromModel, hkVector4* targetUpInOut)`
+    ///
+    /// # Safety
+    /// `ctx` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn apply_align_fractions(&self, ctx: *mut c_void, worldFromModel: *const crate::hkQsTransform, targetUpInOut: *mut crate::hkVector4) { unsafe { function!(58437, (*const Self, *mut c_void, *const crate::hkQsTransform, *mut crate::hkVector4))(core::ptr::from_ref(self), ctx, worldFromModel, targetUpInOut) } }
+    /// `hkbFootIkDriver::ComputeAlignTargetUp`: chooses the ground up estimate by leg count and isQuadrupedNarrow
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58435, rva 0xad4da0.
+    /// `void (hkbFootIkDriver* this, hkbContext* ctx, const hkQsTransform* worldFromModel, const hkVector4* upWS, hkVector4* targetUpOut)`
+    ///
+    /// # Safety
+    /// `ctx` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn compute_align_target_up(&self, ctx: *mut c_void, worldFromModel: *const crate::hkQsTransform, upWS: *const crate::hkVector4, targetUpOut: *mut crate::hkVector4) { unsafe { function!(58435, (*const Self, *mut c_void, *const crate::hkQsTransform, *const crate::hkVector4, *mut crate::hkVector4))(core::ptr::from_ref(self), ctx, worldFromModel, upWS, targetUpOut) } }
+    /// `hkbFootIkDriver::ComputeQuadrupedNarrowTargetUp`: isQuadrupedNarrow alignment: pitch from a line fit of the ground points along the body, roll from either the summed leg normals or two sideways ground rays
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58436, rva 0xad5030.
+    /// `void (hkbFootIkDriver* this, hkVector4* groundPoints, int numPoints, hkbContext* ctx, const hkQsTransform* worldFromModel, const hkVector4* upWS, hkVector4* targetUpOut)`
+    ///
+    /// # Safety
+    /// `ctx` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn compute_quadruped_narrow_target_up(&self, groundPoints: *mut crate::hkVector4, numPoints: i32, ctx: *mut c_void, worldFromModel: *const crate::hkQsTransform, upWS: *const crate::hkVector4, targetUpOut: *mut crate::hkVector4) { unsafe { function!(58436, (*const Self, *mut crate::hkVector4, i32, *mut c_void, *const crate::hkQsTransform, *const crate::hkVector4, *mut crate::hkVector4))(core::ptr::from_ref(self), groundPoints, numPoints, ctx, worldFromModel, upWS, targetUpOut) } }
     /// `hkbFootIkDriver::ComputeVerticalError`: (1 - bias) * max(leg.groundHeight) + bias * min(leg.groundHeight) over the internal legs (+0x28)
     ///
     /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58441, rva 0xad6c00.
@@ -2810,6 +2800,15 @@ impl crate::hkbFootIkModifier {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
+    /// `hkbFootIkModifier::SetupLegs`: the modifier's leg setup: distances scaled by the DB scale only (1.0), not by the actor scale
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 59745, rva 0xb0d360.
+    /// `void (hkbFootIkModifier* this, hkbContext* ctx, void* skeleton)`
+    ///
+    /// # Safety
+    /// `ctx`, `skeleton` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn setup_legs(&self, ctx: *mut c_void, skeleton: *mut c_void) { unsafe { function!(59745, (*const Self, *mut c_void, *mut c_void))(core::ptr::from_ref(self), ctx, skeleton) } }
     /// `hkbFootIkModifier::variableBindingSet` at +0x10
     ///
     /// Semantic field, ik pass, high; `None` while the pointer is null.
@@ -4269,6 +4268,15 @@ impl crate::hkbRagdollSceneModifier {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
+    /// `hkbRagdollSceneModifier::ctor`: installs vtable 0x19e40f8; called only from hkbWorld::ctor's chunk at 0xad914e
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 59454, rva 0xafea40.
+    /// `hkbRagdollSceneModifier* (hkbRagdollSceneModifier* this)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(59454, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkbRigidBodyRagdollControlData {
@@ -4625,18 +4633,120 @@ impl crate::hkbWorldFromModelModeData {
 /// `bool (Actor* actor)`
 #[inline]
 pub fn actor_look_at_channel__get_value(actor: &crate::Actor) -> bool { unsafe { function!(37964, (*const crate::Actor) -> bool)(core::ptr::from_ref(actor)) } }
+/// `AddRadialVelocityToNodeTreeRigidBodies`: per rigid body in the node tree: linear velocity += normalize(bodyPos - origin) * force * m[index]
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 26005, rva 0x4048e0.
+/// `void (NiAVObject* node, const hkVector4* origin, float force, void* hitContext)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn add_radial_velocity_to_node_tree_rigid_bodies(node: *mut crate::NiAVObject, origin: *const crate::hkVector4, force: f32, hitContext: *mut c_void) { unsafe { function!(26005, (*mut crate::NiAVObject, *const crate::hkVector4, f32, *mut c_void))(node, origin, force, hitContext) } }
+/// `ApplyArmorAndResistanceToHitDamage`: armour scale, the block (HitData+0x5c and flags bit 0), Mod Percent Blocked, the 0.85 cap, damage *= 1 - blocked
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 44014, rva 0x7f09d0.
+/// `void (HitData* hitData, bool skipBlock, u64 unused3, u64 unused4)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn apply_armor_and_resistance_to_hit_damage(hitData: *mut c_void, skipBlock: bool, unused3: u64, unused4: u64) { unsafe { function!(44014, (*mut c_void, bool, u64, u64))(hitData, skipBlock, unused3, unused4) } }
 /// `ApplyCharacterPoseToBoneNodes`: small helper that applies poseLocal to the bone nodes (call 0xbcbf4f to 0xbdfa20)
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 63572, rva 0xbcbf20.
 /// `void (BShkbAnimationGraph* graph)`
 #[inline]
 pub fn apply_character_pose_to_bone_nodes(graph: &crate::BShkbAnimationGraph) { unsafe { function!(63572, (*const crate::BShkbAnimationGraph))(core::ptr::from_ref(graph)) } }
+/// `ApplyDamageRegenDelayAndDispatch`: after an actor value change: regen delay for Health/Magicka/Stamina (AV 0x18..0x1a) and the per-AV change callback from the table 0x3243710
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 38470, rva 0x6c54c0.
+/// `void (Actor* actor, i32 actorValue, float oldValue, float delta, Actor* source)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn apply_damage_regen_delay_and_dispatch(actor: *mut crate::Actor, actorValue: i32, oldValue: f32, delta: f32, source: *mut crate::Actor) { unsafe { function!(38470, (*mut crate::Actor, i32, f32, f32, *mut crate::Actor))(actor, actorValue, oldValue, delta, source) } }
+/// `ApplyMagicExplosionPushToActor`: spell area push: PushActorAway(target, origin, min(effect's MGEF explosion force, fMagicExplosionPowerMax)) when that force > fMagicExplosionPowerMin (0)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 34414, rva 0x5ccbf0.
+/// `void (MagicCaster* caster, Actor* target, const NiPoint3* origin, Effect* effectItem)`
+///
+/// # Safety
+/// `effectItem` must point to what the engine expects.
+#[inline]
+pub unsafe fn apply_magic_explosion_push_to_actor(caster: *mut crate::MagicCaster, target: *mut crate::Actor, origin: *const crate::NiPoint3, effectItem: *mut c_void) { unsafe { function!(34414, (*mut crate::MagicCaster, *mut crate::Actor, *const crate::NiPoint3, *mut c_void))(caster, target, origin, effectItem) } }
+/// `ApplyParalysisStateToActor`: paralysis: knock state 3 and ragdoll into the world
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 39894, rva 0x723620.
+/// `void (AIProcess* process, Actor* actor)`
+///
+/// # Safety
+/// `process` must point to what the engine expects.
+#[inline]
+pub unsafe fn apply_paralysis_state_to_actor(process: *mut crate::AIProcess, actor: *mut crate::Actor) { unsafe { function!(39894, (*mut crate::AIProcess, *mut crate::Actor))(process, actor) } }
+/// `BuildAndMergeSymbolIdMaps`: links every referenced behaviour graph's variables, events, attributes and character properties to the root graph by name
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 60090, rva 0xb2ace0.
+/// `void (hkArray<hkbBehaviorGraph*>* graphs, void* attributeNameMap, void* variableNameMap, void* eventNameMap, void* characterPropertyNameMap)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn build_and_merge_symbol_id_maps(graphs: *mut c_void, attributeNameMap: *mut c_void, variableNameMap: *mut c_void, eventNameMap: *mut c_void, characterPropertyNameMap: *mut c_void) { unsafe { function!(60090, (*mut c_void, *mut c_void, *mut c_void, *mut c_void, *mut c_void))(graphs, attributeNameMap, variableNameMap, eventNameMap, characterPropertyNameMap) } }
+/// `CanBePushedAway`: push gate
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 37485, rva 0x687a40.
+/// `bool (Actor* actor)`
+#[inline]
+pub fn can_be_pushed_away(actor: &crate::Actor) -> bool { unsafe { function!(37485, (*const crate::Actor) -> bool)(core::ptr::from_ref(actor)) } }
+/// `CastRayAgainstCollectedBodies`: the foot IK cast's collected-bodies branch: under the world read lock copies the body list into an hkArray and sorts it (0xc03870), then for each body tests bhkCollisionFilter::IsCollisionEnabled 0x107c870 and makes a per-body virtual cast (vtable +0x40): cost linear in the number of collected bodies
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 78009, rva 0x10542d0.
+/// `void (void* collectedBodies, void* castInput, void* output)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn cast_ray_against_collected_bodies(collectedBodies: *mut c_void, castInput: *mut c_void, output: *mut c_void) { unsafe { function!(78009, (*mut c_void, *mut c_void, *mut c_void))(collectedBodies, castInput, output) } }
 /// `Cmd::DisplayGraphVariable_Execute`: console 'dgv': stub, returns 0
 ///
 /// Semantic, ik pass, high; ledger console_cmd evidence, name high; id 23039, rva 0x379b30.
 /// `bool (void)`
 #[inline]
 pub fn cmd__display_graph_variable_execute() -> bool { unsafe { function!(23039, () -> bool)() } }
+/// `ComputeAverageVector4`: mean of count vectors
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 58440, rva 0xad6ba0.
+/// `void (void* unused, const hkVector4* v, int count, hkVector4* out)`
+///
+/// # Safety
+/// `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn compute_average_vector4(unused: *mut c_void, v: *const crate::hkVector4, count: i32, out: *mut crate::hkVector4) { unsafe { function!(58440, (*mut c_void, *const crate::hkVector4, i32, *mut crate::hkVector4))(unused, v, count, out) } }
+/// `ComputeBlockFactor`: blocked fraction before perks and the cap
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 26425, rva 0x41f4d0.
+/// `float (float blockerRating, float av9, float av42, bool weaponFlag, bool exempt, bool powerAttack)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn compute_block_factor(blockerRating: f32, av9: f32, av42: f32, weaponFlag: bool, exempt: bool, powerAttack: bool) -> f32 { unsafe { function!(26425, (f32, f32, f32, bool, bool, bool) -> f32)(blockerRating, av9, av42, weaponFlag, exempt, powerAttack) } }
+/// `ComputeBlockStaminaDamage`: stamina a block costs: +0x5c * +0x54 * fStaminaBlockDmgMult + fStaminaBlockStaggerMult * +0x68 + fStaminaBlockBase
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 26430, rva 0x41f850.
+/// `float (HitData* hitData)`
+///
+/// # Safety
+/// `hitData` must point to what the engine expects.
+#[inline]
+pub unsafe fn compute_block_stamina_damage(hitData: *mut c_void) -> f32 { unsafe { function!(26430, (*mut c_void) -> f32)(hitData) } }
+/// `ComputePartialRotationBetweenDirections`: rotation taking 'from' toward 'to' by the fraction gain (half-angle form, perpendicular axis for opposite vectors, identity when parallel)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 57009, rva 0xaa2540.
+/// `void (hkQuaternion* out, float gain, const hkVector4* from, const hkVector4* to)`
+#[inline]
+pub fn compute_partial_rotation_between_directions(out: &mut crate::hkQuaternion, gain: f32, from: &crate::hkVector4, to: &crate::hkVector4) { unsafe { function!(57009, (*mut crate::hkQuaternion, f32, *const crate::hkVector4, *const crate::hkVector4))(core::ptr::from_mut(out), gain, core::ptr::from_ref(from), core::ptr::from_ref(to)) } }
 /// `ComputeRotationQuaternionBetweenVectors`: shortest-arc rotation
 ///
 /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 25781, rva 0x3fa250.
@@ -4655,12 +4765,60 @@ pub unsafe fn compute_rotation_quaternion_between_vectors(out: *mut crate::hkQua
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn copy_leg_cast_flags_to_raycast_records(manager: *mut crate::BSAnimationGraphManager, ctx: *mut *mut c_void) { unsafe { function!(32749, (*mut crate::BSAnimationGraphManager, *mut *mut c_void))(manager, ctx) } }
+/// `CopyNodeBindings`: dir 0: variables -> node members (input bindings), returns whether the node has output bindings; dir 1: members -> variables
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 58522, rva 0xadba30.
+/// `bool (hkbBindable* node, hkbContext* ctx, bool toVariables)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn copy_node_bindings(node: *mut crate::hkbBindable, ctx: *mut c_void, toVariables: bool) -> bool { unsafe { function!(58522, (*mut crate::hkbBindable, *mut c_void, bool) -> bool)(node, ctx, toVariables) } }
+/// `CreateActorHandlerByName`: Looks the handler name up in the factory map (CRC32 of the BSFixedString pointer) and creates the handler (creator slot 1)
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 42789, rva 0x7c7210.
+/// `bool (void* unused, const BSFixedStringCI* handlerName, BSTSmartPointer<IHandlerFunctor<Actor,BSFixedStringCI>>* out)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn create_actor_handler_by_name(unused: *mut c_void, handlerName: *const c_void, out: *mut c_void) -> bool { unsafe { function!(42789, (*mut c_void, *const c_void, *mut c_void) -> bool)(unused, handlerName, out) } }
+/// `CreateJobThreads`: Creates the 'JobThread%u' BSJobs::JobThread objects (0x3302300 + i*0xa78), pre-registers a Havok thread-memory entry per thread object (0x10953d0, lifo 0x32000, deferred) and starts them
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 69362, rva 0xebb450.
+/// `void (const JobThreadSpec* specs, u32 specCount, u32 maxThreads)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn create_job_threads(specs: *const c_void, specCount: u32, maxThreads: u32) { unsafe { function!(69362, (*const c_void, u32, u32))(specs, specCount, maxThreads) } }
 /// `DisableRagdollAnimIkAtStartup`: startup: applies INI iSimType:HAVOK (sub0), then stores 0 into bFootIK:RagdollAnim, bGrabIK:RagdollAnim and bPoseMatching:RagdollAnim
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 25860, rva 0x3fd7f0.
 /// `void (void)`
 #[inline]
 pub fn disable_ragdoll_anim_ik_at_startup() { unsafe { function!(25860, ())() } }
+/// `Err_ThisApplicationCannotBeRunFrom`: startup order relevant to item 6: INI loads at 0x6531d3..0x653378, plugin INIs 0x6533d5..0x6533fa, archives 0x6535eb, then DisableRagdollAnimIkAtStartup 0x6535f4
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 36547, rva 0x652ab0.
+/// `u64 (void)`
+#[inline]
+pub fn err_this_application_cannot_be_run_from() -> u64 { unsafe { function!(36547, () -> u64)() } }
+/// `ExecuteJobListJobs`: Runs entries of a list on the calling thread: claims entries in index order (CAS on +0x90), runs fn(arg), then decrements the counter of the cursor's group; a signal marker advances the cursor's group; a sync marker returns (flag 4) while the previous group's counter is non-zero; the end marker returns flag 2; the last group reaching 0 sets the done event
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 69378, rva 0xebc170.
+/// `u32 (JobList* list, u32 workerSlot, JobListCursor* cursor, bool limited)`
+///
+/// # Safety
+/// `list`, `cursor` must point to what the engine expects.
+#[inline]
+pub unsafe fn execute_job_list_jobs(list: *mut crate::JobList, workerSlot: u32, cursor: *mut c_void, limited: bool) -> u32 { unsafe { function!(69378, (*mut crate::JobList, u32, *mut c_void, bool) -> u32)(list, workerSlot, cursor, limited) } }
+/// `ExplosionKnockdownByFormula`: explosion knockdown mode 2
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 26431, rva 0x41f890.
+/// `bool (ActorValueOwner* target, i32 damage)`
+#[inline]
+pub fn explosion_knockdown_by_formula(target: &crate::ActorValueOwner, damage: i32) -> bool { unsafe { function!(26431, (*const crate::ActorValueOwner, i32) -> bool)(core::ptr::from_ref(target), damage) } }
 /// `FindBoneNodeOrFlatEntry`: out = {node, -1} for a real node with the name, or {tree, index} for a node-less entry of a BSFlattenedBoneTree
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 70732, rva 0xef4930.
@@ -4670,6 +4828,42 @@ pub fn disable_ragdoll_anim_ik_at_startup() { unsafe { function!(25860, ())() } 
 /// `out` must point to what the engine expects.
 #[inline]
 pub unsafe fn find_bone_node_or_flat_entry(root: *mut crate::NiAVObject, name: *const crate::BSFixedString, out: *mut crate::BoneNodeEntry) -> bool { unsafe { function!(70732, (*mut crate::NiAVObject, *const crate::BSFixedString, *mut crate::BoneNodeEntry) -> bool)(root, name, out) } }
+/// `FitGroundPlaneNormal`: least-squares plane through the points (height along up against two tangents), normal oriented toward up
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 58438, rva 0xad6220.
+/// `bool (void* unused, const hkVector4* points, int count, const hkVector4* upWS, hkVector4* normalOut)`
+///
+/// # Safety
+/// `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn fit_ground_plane_normal(unused: *mut c_void, points: *const crate::hkVector4, count: i32, upWS: *const crate::hkVector4, normalOut: *mut crate::hkVector4) -> bool { unsafe { function!(58438, (*mut c_void, *const crate::hkVector4, i32, *const crate::hkVector4, *mut crate::hkVector4) -> bool)(unused, points, count, upWS, normalOut) } }
+/// `FitSlopeDirectionAlongAxis`: least-squares line of (p.up) against (p.axis) over the centred points; out = normalise(axis + slope * up), flipped to agree with axis
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 58439, rva 0xad68f0.
+/// `bool (void* unused, const hkVector4* points, int count, const hkVector4* axis, const hkVector4* up, hkVector4* directionOut)`
+///
+/// # Safety
+/// `unused` must point to what the engine expects.
+#[inline]
+pub unsafe fn fit_slope_direction_along_axis(unused: *mut c_void, points: *const crate::hkVector4, count: i32, axis: *const crate::hkVector4, up: *const crate::hkVector4, directionOut: *mut crate::hkVector4) -> bool { unsafe { function!(58439, (*mut c_void, *const crate::hkVector4, i32, *const crate::hkVector4, *const crate::hkVector4, *mut crate::hkVector4) -> bool)(unused, points, count, axis, up, directionOut) } }
+/// `FrameJobSignalMarker`: 'Player Anim signal' marker: RET 0; becomes a signal only (EDX=1, 0x60f0ab)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 35399, rva 0x60d700.
+/// `void (void)`
+#[inline]
+pub fn frame_job_signal_marker() { unsafe { function!(35399, ())() } }
+/// `FrameJobSignalSyncMarker`: '...signal/sync' entry of the frame job tables: an empty function (RET 0) used as a marker that BuildSegmentJobList turns into a signal + sync pair (a full barrier)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 35401, rva 0x60d720.
+/// `void (void)`
+#[inline]
+pub fn frame_job_signal_sync_marker() { unsafe { function!(35401, ())() } }
+/// `FrameJobSyncMarker`: 'Player Anim sync' marker: RET 0; becomes a sync only (EDX=2, 0x60f0bf)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 35400, rva 0x60d710.
+/// `void (void)`
+#[inline]
+pub fn frame_job_sync_marker() { unsafe { function!(35400, ())() } }
 /// `GetCharacterRaycastInterface`: character+0x70, else (character+0x78)+0x148
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58463, rva 0xad7f70.
@@ -4724,6 +4918,12 @@ pub unsafe fn graph_physics_step_listener__pre_step(this: *mut c_void, a: f32, b
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn graph_physics_step_listener__should_drive_ragdoll(data: *mut *mut c_void, boneCount: i32) -> bool { unsafe { function!(63776, (*mut *mut c_void, i32) -> bool)(data, boneCount) } }
+/// `InitCollisionMatrixFromLayerForms`: for every BGSCollisionLayer in TESDataHandler (array +0xc70, count +0xc80): filter row[index] = GetCollidesWithMask(form) (index < 0x40), name, FNAM; then filter+0x3d0/+0x3d8 = masks of GNAM bits 0/1
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 25861, rva 0x3fd820.
+/// `void (void)`
+#[inline]
+pub fn init_collision_matrix_from_layer_forms() { unsafe { function!(25861, ())() } }
 /// `InitFootIkInputDefaults`: input defaults: footIkOn 1, no raycast interface, onOffGain 0.2, other gains 1, filter 0, useFilter 0
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 56975, rva 0xa9dce0.
@@ -4757,33 +4957,114 @@ pub fn init_foot_ik_raycast_interface_db() { unsafe { function!(32736, ())() } }
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn init_pose_from_generator_output(output: *mut crate::hkbGeneratorOutput, skeleton: *const crate::hkaSkeleton, buffer: *mut c_void) { unsafe { function!(58478, (*mut crate::hkbGeneratorOutput, *const crate::hkaSkeleton, *mut c_void))(output, skeleton, buffer) } }
+/// `InitThreadLocalMemoryOnce`: On the calling thread, once (entry+0x250): waits for Havok init (ID_411664), registers the entry's lifo allocator with the memory system, SetTlsValueAndInitThread(entry+0x1c0)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 79338, rva 0x10a1030.
+/// `void (hkThreadMemoryEntry* entry)`
+///
+/// # Safety
+/// `entry` must point to what the engine expects.
+#[inline]
+pub unsafe fn init_thread_local_memory_once(entry: *mut c_void) { unsafe { function!(79338, (*mut c_void))(entry) } }
+/// `IsStairsMaterial`: tail-jumps to the callback *0x3337660 (false when unset)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 78008, rva 0x10542b0.
+/// `bool (u32 havokMaterialId)`
+#[inline]
+pub fn is_stairs_material(havokMaterialId: u32) -> bool { unsafe { function!(78008, (u32) -> bool)(havokMaterialId) } }
 /// `IsWithinHeadTrackDistanceOfPlayer`: distance^2 to the player <= (race+0x128 == 3 ? fAIMaxLargeCreatureHeadTrackDistance : fAIMaxHeadTrackDistanceFromPC)^2
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 37261, rva 0x675360.
 /// `bool (Actor* actor)`
 #[inline]
 pub fn is_within_head_track_distance_of_player(actor: &crate::Actor) -> bool { unsafe { function!(37261, (*const crate::Actor) -> bool)(core::ptr::from_ref(actor)) } }
-/// `Job_CellAnimations`: frame job 'Cell animations' (job table entry 0x20b4f70, name 0x1905ec0): registers the thread's bit, runs TES::UpdateHavokWorlds 0x1a1500 with g_TES_ptr and the frame time, then signals frame phase 0xe
+/// `Job_CellAnimations`: Frame job 'Cell animations': marks the thread in the update mask, TES::UpdateHavokWorlds(g_TES, frameTime 0x3230524), signals job phase 0xe
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 39067, rva 0x6e54d0.
-/// `void ()`
+/// `void (void)`
 #[inline]
 pub fn job_cell_animations() { unsafe { function!(39067, ())() } }
-/// `Job_RagdollPostPhysics`: frame job 'Ragdoll post physics': waits for frame phase 0xd (the step), runs a per-actor job list built from the process lists (list 8), then signals phase 0xf
+/// `Job_CombatAndMagic`: frame job 'Combat and magic' (table 0x20b4ea0): one job per combat-group member running Actor slot 228 (combat update), waits for them, then signals phases 10/11
 ///
-/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 39068, rva 0x6e55a0.
-/// `void ()`
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 39065, rva 0x6e5420.
+/// `void (void)`
+#[inline]
+pub fn job_combat_and_magic() { unsafe { function!(39065, ())() } }
+/// `Job_RagdollAnimation`: Frame job 'Ragdoll animation': ID_41373 0x783ae0 over a ProcessLists handle list (+0x30, count +0x40) of ragdolled actors (penetration detection and ragdoll state updates, no graph update), then signals job phase 9
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 39064, rva 0x6e53f0.
+/// `void (void)`
 ///
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn job_ragdoll_post_physics() { unsafe { function!(39068, ())() } }
+pub unsafe fn job_ragdoll_animation() { unsafe { function!(39064, ())() } }
+/// `Job_RagdollPostPhysics`: Frame job 'Ragdoll post physics': WaitFramePhase(0, 0xd) (signalled by StepExteriorWorld / the interior step after bhkWorld::Step), runs dynamic list 8 (RagdollsPostphysics, the per-actor feedback jobs), expires Havok-hit entries (ID_43667 0x7dbe30), signals 0xf
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 39068, rva 0x6e55a0.
+/// `void (void)`
+#[inline]
+pub fn job_ragdoll_post_physics() { unsafe { function!(39068, ())() } }
+/// `LoadResponseTableFromFile`: Loads 'Meshes/Responses/<tableName>.txt': one 'EventName : HandlerName' per line; 'BackupResponse : <table>' chains a fallback table (GetOrLoadResponseTableLocked 0x7c8730); other lines map the event name to a handler created by name (FindOrLoadCachedEntry 0x7c8800 -> 0x7c7210)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 42790, rva 0x7c7370.
+/// `bool (const BSFixedString* tableName, void* cache, void* out)`
+///
+/// # Safety
+/// `cache`, `out` must point to what the engine expects.
+#[inline]
+pub unsafe fn load_response_table_from_file(tableName: *const crate::BSFixedString, cache: *mut c_void, out: *mut c_void) -> bool { unsafe { function!(42790, (*const crate::BSFixedString, *mut c_void, *mut c_void) -> bool)(tableName, cache, out) } }
+/// `LookupMaterialTypeByHavokId`: hash lookup in g_MaterialTypesByHavokId 0x207e298 (CRC32 bucket hash)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 20968, rva 0x3226f0.
+/// `BGSMaterialType* (u32 havokMaterialId)`
+#[inline]
+pub fn lookup_material_type_by_havok_id(havokMaterialId: u32) -> Option<&'static crate::BGSMaterialType> { unsafe { function!(20968, (u32) -> Option<&'static crate::BGSMaterialType>)(havokMaterialId) } }
+/// `MoveActorAndMountToCell`: Executes a pending player move (player+0x650..0x692, armed by +0x692): fast travel, door teleport, coc; steps the Havok worlds through TES::UpdateHavokWorlds at 0x7439a6 when bit 7 of an actor byte (read as `param_1[1].vfunc_85 + 4` in the decompile; offset not computed) is set, and through MovePlayerToCellAndPosition
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 40438, rva 0x743090.
+/// `bool (Actor* actor)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn move_actor_and_mount_to_cell(actor: *mut crate::Actor) -> bool { unsafe { function!(40438, (*mut crate::Actor) -> bool)(actor) } }
+/// `Msg_CriticalStrikeOn`: applies one hit to a living actor: events, crits, damage, stagger, the hit's push (knockdown) and blood
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 38586, rva 0x6ca640.
+/// `void (Actor* target, HitData* hitData, u64 passThrough3, u64 passThrough4)`
+///
+/// # Safety
+/// `hitData` must point to what the engine expects.
+#[inline]
+pub unsafe fn msg_critical_strike_on(target: *mut crate::Actor, hitData: *mut c_void, passThrough3: u64, passThrough4: u64) { unsafe { function!(38586, (*mut crate::Actor, *mut c_void, u64, u64))(target, hitData, passThrough3, passThrough4) } }
+/// `MultiplyQuaternionByConjugate`: out = a * conj(b)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 57008, rva 0xaa24b0.
+/// `void (hkQuaternion* out, const hkQuaternion* a, const hkQuaternion* b)`
+#[inline]
+pub fn multiply_quaternion_by_conjugate(out: &mut crate::hkQuaternion, a: &crate::hkQuaternion, b: &crate::hkQuaternion) { unsafe { function!(57008, (*mut crate::hkQuaternion, *const crate::hkQuaternion, *const crate::hkQuaternion))(core::ptr::from_mut(out), core::ptr::from_ref(a), core::ptr::from_ref(b)) } }
 /// `NormalizeQuaternionPositiveW`: normalises and flips the sign so w >= 0
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 58446, rva 0xad7160.
 /// `void (const hkQuaternion* q, hkQuaternion* out)`
 #[inline]
 pub fn normalize_quaternion_positive_w(q: &crate::hkQuaternion, out: &mut crate::hkQuaternion) { unsafe { function!(58446, (*const crate::hkQuaternion, *mut crate::hkQuaternion))(core::ptr::from_ref(q), core::ptr::from_mut(out)) } }
+/// `OnParalysisActorValueChanged`: actor value 53 (Paralysis) change callback: sets Actor boolFlags (+0xe8) bit 31 when the value leaves 0 and clears it when it returns to 0
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 38498, rva 0x6c6dd0.
+/// `void (Actor* actor, i32 actorValue, float oldValue, float delta, Actor* source)`
+#[inline]
+pub fn on_paralysis_actor_value_changed(actor: &crate::Actor, actorValue: i32, oldValue: f32, delta: f32, source: &crate::Actor) { unsafe { function!(38498, (*const crate::Actor, i32, f32, f32, *const crate::Actor))(core::ptr::from_ref(actor), actorValue, oldValue, delta, core::ptr::from_ref(source)) } }
+/// `Papyrus::ObjectReference::PushActorAway`: PushActorAway(actor->process, actor, &self->pos, force); no force test
+///
+/// Semantic, ik pass, high; ledger papyrus_native evidence, name high; id 56213, rva 0xa47fa0.
+/// `void (IVirtualMachine* vm, u32 stackId, TESObjectREFR* self, Actor* actor, float force)`
+///
+/// # Safety
+/// `vm` must point to what the engine expects.
+#[inline]
+pub unsafe fn papyrus__object_reference__push_actor_away(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, actor: *mut crate::Actor, force: f32) { unsafe { function!(56213, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::Actor, f32))(vm, stackId, self_, actor, force) } }
 /// `RagdollAnimation::SetupFootIkLegs`: builds one hkaFootPlacementIkSolver per leg (0xd0-byte entries at +0x2d0) from named nodes of the ragdoll's 3D
 ///
 /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 78435, rva 0x106fcc0.
@@ -4793,6 +5074,12 @@ pub fn normalize_quaternion_positive_w(q: &crate::hkQuaternion, out: &mut crate:
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn ragdoll_animation__setup_foot_ik_legs(this: *mut c_void, boneNames: *const crate::BSFixedString) { unsafe { function!(78435, (*mut c_void, *const crate::BSFixedString))(this, boneNames) } }
+/// `RegisterActorAnimationEventHandlers`: Static initialiser registering every IHandlerFunctor<Actor,BSFixedStringCI> creator in the factory manager 0x3250858 under a BSFixedStringCI literal that is the handler name, not an event name
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 42809, rva 0x7c89f0.
+/// `void (void)`
+#[inline]
+pub fn register_actor_animation_event_handlers() { unsafe { function!(42809, ())() } }
 /// `ResolveNameListIntoArray`: C2: nodes[i] = node named skeleton->bones[i].name under root
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 63854, rva 0xbdf620.
@@ -4802,6 +5089,21 @@ pub unsafe fn ragdoll_animation__setup_foot_ik_legs(this: *mut c_void, boneNames
 /// `nodes`, `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn resolve_name_list_into_array(skeleton: *const crate::hkaSkeleton, root: *mut crate::NiAVObject, nodes: *mut c_void, unused: *mut c_void) { unsafe { function!(63854, (*const crate::hkaSkeleton, *mut crate::NiAVObject, *mut c_void, *mut c_void))(skeleton, root, nodes, unused) } }
+/// `RotateVectorTowardTargetByFraction`: when fraction < 1: target = normalise(rotate(from, fraction * angle(from -> target))); target unchanged when fraction >= 1; target = from when the angle is 0
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 58442, rva 0xad6d00.
+/// `void (float fraction, const hkVector4* from, hkVector4* targetInOut)`
+#[inline]
+pub fn rotate_vector_toward_target_by_fraction(fraction: f32, from: &crate::hkVector4, targetInOut: &mut crate::hkVector4) { unsafe { function!(58442, (f32, *const crate::hkVector4, *mut crate::hkVector4))(fraction, core::ptr::from_ref(from), core::ptr::from_mut(targetInOut)) } }
+/// `RunJobListWorkerLoop`: Worker scheduling loop: takes lists from the worker ring, runs ExecuteJobListJobs, requeues a list whose sync released waiters (flag 0x10)
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 69380, rva 0xebc4b0.
+/// `void (BSJobs::JobThread* worker, JobList* only)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn run_job_list_worker_loop(worker: *mut crate::BSJobs__JobThread, only: *mut crate::JobList) { unsafe { function!(69380, (*mut crate::BSJobs__JobThread, *mut crate::JobList))(worker, only) } }
 /// `ScaleGainByFrameTime`: clamp(gain * dt * 30, 0, 1)
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 59325, rva 0xaf0820.
@@ -4832,6 +5134,48 @@ pub fn set_extra_head_tracking_weight(list: &crate::BaseExtraList, weight: f32) 
 /// `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn set_ragdoll_anim_disabled(unused: *mut c_void, disabled: bool) { unsafe { function!(13376, (*mut c_void, bool))(unused, disabled) } }
+/// `SetRagdollWorldFunctor`: Graph visitor: graph->BSIRagdollDriver slot 4 SetWorld(f->world) (0xbd3b40), f->done = 1; the only code path found to SetWorld
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 32954, rva 0x556020.
+/// `bool (SetWorldFunctor* f, BShkbAnimationGraph** graph)`
+///
+/// # Safety
+/// `f`, `graph` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_ragdoll_world_functor(f: *mut c_void, graph: *mut *mut crate::BShkbAnimationGraph) -> bool { unsafe { function!(32954, (*mut c_void, *mut *mut crate::BShkbAnimationGraph) -> bool)(f, graph) } }
+/// `SetRagdollWorldOnAllGraphs`: Takes the holder's manager, its lock +0xa0, and SetWorld(f->world) on every graph
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 38087, rva 0x6b7e60.
+/// `void (IAnimationGraphManagerHolder* holder, SetWorldFunctor* f)`
+///
+/// # Safety
+/// `f` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_ragdoll_world_on_all_graphs(holder: *mut crate::IAnimationGraphManagerHolder, f: *mut c_void) { unsafe { function!(38087, (*mut crate::IAnimationGraphManagerHolder, *mut c_void))(holder, f) } }
+/// `SetStairsMaterialCallback`: *0x3337660 = cb
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 78007, rva 0x10542a0.
+/// `void (bool (*cb)(u32))`
+///
+/// # Safety
+/// `cb` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_stairs_material_callback(cb: *const c_void) { unsafe { function!(78007, (*const c_void))(cb) } }
+/// `SetTlsValueAndInitThread`: TlsSetValue(g_hkMemoryRouterTlsIndex 0x325a844, router) (0xaa38d0) then CreateThreadLocalBufferState 0xaa8880: allocates 0x28 bytes from the router and TlsSetValue(monitor TLS index 0x325a8e0)
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 57711, rva 0xab3a20.
+/// `u32 (void* router)`
+///
+/// # Safety
+/// `router` must point to what the engine expects.
+#[inline]
+pub unsafe fn set_tls_value_and_init_thread(router: *mut c_void) -> u32 { unsafe { function!(57711, (*mut c_void) -> u32)(router) } }
+/// `SlerpQuaternion`: shortest-arc slerp from a (t = 0) to b (t = 1), lerp near parallel, normalised result
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 57103, rva 0xaa4ee0.
+/// `void (hkQuaternion* out, const hkQuaternion* a, const hkQuaternion* b, float t)`
+#[inline]
+pub fn slerp_quaternion(out: &mut crate::hkQuaternion, a: &crate::hkQuaternion, b: &crate::hkQuaternion, t: f32) { unsafe { function!(57103, (*mut crate::hkQuaternion, *const crate::hkQuaternion, *const crate::hkQuaternion, f32))(core::ptr::from_mut(out), core::ptr::from_ref(a), core::ptr::from_ref(b), t) } }
 /// `StaticInit_hkbFootIkDriverInfoLegClass`: static initializer: hkClass for hkbFootIkDriverInfoLeg (object 0x325c460, 13 members at 0x19c74b0, size 0x60)
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 8284, rva 0xd01a0.
@@ -4847,13 +5191,31 @@ pub fn static_init_hkb_foot_ik_driver_info_leg_class() { unsafe { function!(8284
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn static_init_hkb_foot_ik_driver_info_type_info() { unsafe { function!(8285, ())() } }
-/// `StepExteriorWorld`: job body: bhkWorld::Step(*g_ExteriorWorldHolder, 0) through vtable +0x190, then signals frame phase 0xd when the thread's dword +0x880 is 0
+/// `StepExteriorWorld`: Steps the exterior bhkWorld (vtable +0x190 = bhkWorld::Step) and signals job phase 0xd when the calling thread's phase set is 0
 ///
 /// Semantic, ik pass, high; ledger semantic evidence, name high; id 18870, rva 0x2b79a0.
-/// `void ()`
+/// `void (void)`
 #[inline]
 pub fn step_exterior_world() { unsafe { function!(18870, ())() } }
-/// `TwoJointSolve`: analytic two-bone IK (hinge joint with cosine limits, optional end rotation) on an hkaPose
+/// `TraceProjectileTrajectory`: writes row 0x2b directly: row[0x2b] = row[proj layer (default PROJECTILE 6)] & (0xffffffffde3fafff, or 0xffffffffca3fafff unless the projectile passes 0x266140), then steps a ballistic path with CastProjectileRayOrSphere 0x868130 using filter info (shooter group << 16) | 0x2b
+///
+/// Semantic, ik pass, high; ledger runtime evidence, name high; id 47300, rva 0x8683c0.
+/// `bool (Actor* shooter, Projectile* proj, float speed, const NiPoint3* from, const NiPoint3* to, float* outPitch, TESObjectREFR** outHit, float* outFraction)`
+///
+/// # Safety
+/// `outPitch`, `outHit`, `outFraction` must point to what the engine expects.
+#[inline]
+pub unsafe fn trace_projectile_trajectory(shooter: *mut crate::Actor, proj: *mut crate::Projectile, speed: f32, from: *const crate::NiPoint3, to: *const crate::NiPoint3, outPitch: *mut f32, outHit: *mut *mut crate::TESObjectREFR, outFraction: *mut f32) -> bool { unsafe { function!(47300, (*mut crate::Actor, *mut crate::Projectile, f32, *const crate::NiPoint3, *const crate::NiPoint3, *mut f32, *mut *mut crate::TESObjectREFR, *mut f32) -> bool)(shooter, proj, speed, from, to, outPitch, outHit, outFraction) } }
+/// `TryStartHavokHit`: On a hit, when bEnableHavokHit:Animation (image default 0) is set: a living actor not ragdolled/down and not in furniture whose graph has a ragdoll gets AddRagdollToWorld (0x7dc49c) and a timed table entry; ID_43667 0x7dbe30 (Ragdoll post physics) removes it when it expires (ID_43675 0x7dc760)
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 43668, rva 0x7dc2e0.
+/// `bool (HavokHitTable* table, const u32* actorHandle, void* hit)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn try_start_havok_hit(table: *mut c_void, actorHandle: *const u32, hit: *mut c_void) -> bool { unsafe { function!(43668, (*mut c_void, *const u32, *mut c_void) -> bool)(table, actorHandle, hit) } }
+/// `TwoJointSolve`: analytic two-bone IK; always writes *result = 1
 ///
 /// Semantic, ik pass, high; ledger runtime evidence, name high; id 57005, rva 0xaa0a10.
 /// `bool* (bool* result, const TwoJointSolverSetup* setup, hkaPose* pose)`
@@ -4871,6 +5233,24 @@ pub unsafe fn two_joint_solve(result: *mut bool, setup: *const crate::TwoJointSo
 /// `errorString` must point to what the engine expects.
 #[inline]
 pub unsafe fn validate_foot_ik_info(info: *const crate::hkbFootIkDriverInfo, skeleton: *const crate::hkaSkeleton, errorString: *mut c_void) -> bool { unsafe { function!(59414, (*const crate::hkbFootIkDriverInfo, *const crate::hkaSkeleton, *mut c_void) -> bool)(info, skeleton, errorString) } }
+/// `WaitForJobListCompletion`: Waits until the last group counter is 0; a JobThread helps run that list (bJoblistActiveWait), other threads SwitchToThread; then waits the idle event and resets the list
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 69353, rva 0xebb1d0.
+/// `void (JobList** list)`
+///
+/// # Safety
+/// `list` must point to what the engine expects.
+#[inline]
+pub unsafe fn wait_for_job_list_completion(list: *mut *mut crate::JobList) { unsafe { function!(69353, (*mut *mut crate::JobList))(list) } }
+/// `WillEffectKillTarget`: true when the target's active effects from this effect item that damage Health (archetype value AV 0x18, flags bit 2 set, bit 1 clear) sum to at least its current health
+///
+/// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 34416, rva 0x5ccf00.
+/// `bool (MagicCaster* caster, TESObjectREFR* target, Effect* effectItem)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn will_effect_kill_target(caster: *mut crate::MagicCaster, target: *mut crate::TESObjectREFR, effectItem: *mut c_void) -> bool { unsafe { function!(34416, (*mut crate::MagicCaster, *mut crate::TESObjectREFR, *mut c_void) -> bool)(caster, target, effectItem) } }
 /// `GameSetting_fAIActorPackTargetHeadTrackMod` at 0x209ff90, id 370887 (semantic, high); fAIActorPackTargetHeadTrackMod: no reader (high, ik pass), type `undefined1`
 #[inline]
 pub fn game_setting_f_ai_actor_pack_target_head_track_mod() -> *mut u8 { address!(370887) as *mut u8 }
@@ -5252,6 +5632,18 @@ pub fn ini_setting_u_max_num_physics_steps_per_update_havok_value() -> *mut u32 
 /// `INISetting_uiFeedbackTimeout_RagdollFeedback` at 0x20d1ed0, id 389313 (semantic, high); uiFeedbackTimeout:RagdollFeedback: no reader (high, ik pass), type `undefined1`
 #[inline]
 pub fn ini_setting_ui_feedback_timeout_ragdoll_feedback() -> *mut u8 { address!(389313) as *mut u8 }
+/// `g_ActorHandlerFactoryManager` at 0x3250858, id 404601 (semantic, medium); Handler name -> creator map (object 0x3250850, map +8) (medium, ik pass), type `BSTCreateFactoryManager<BSFixedStringCI,IHandlerFunctor<Actor,BSFixedStringCI>,256>`
+#[inline]
+pub fn g_actor_handler_factory_manager() -> *mut c_void { address!(404601) as *mut c_void }
+/// `g_ActorValueChangeCallbacks` at 0x3243710, id 403905 (semantic, high); per actor value change callback, called by ApplyDamageRegenDelayAndDispatch with (actor, av, old, delta, source) (high, ik pass), type `pointer[...]`
+#[inline]
+pub fn g_actor_value_change_callbacks() -> *mut c_void { address!(403905) as *mut c_void }
+/// `g_BSThreadEventSource` at 0x3275698, id 410209 (semantic, high); BSTEventSource<BSThreadEvent::ThreadEvent> holder (+8 = the source) notified by every BSThread at start and end (high, ik pass), type `pointer`
+#[inline]
+pub fn g_bs_thread_event_source() -> *mut *mut c_void { address!(410209) as *mut *mut c_void }
+/// `g_CollisionLayerFormsByIndex` at 0x207bf08, id 360624 (semantic, medium); map layer index -> BGSCollisionLayer*, filled by BGSCollisionLayer::InitItemImpl 0x31a830 (0x31a9b4) (medium, ik pass), type `pointer`
+#[inline]
+pub fn g_collision_layer_forms_by_index() -> *mut *mut c_void { address!(360624) as *mut *mut c_void }
 /// `g_FootIkDefaultGains` at 0x19c0f50, id 220338 (semantic, high); the driver's fallback gains before track 11 is copied over: +0x20 group (0,0,0,0.5) at 0x19c0f50, +0x10 group (1,1,0,1) at 0x19c0f70, +0 group (0.2,1,1,1) at 0x19c0f80 (high, ik pass), type `float[12]`
 #[inline]
 pub fn g_foot_ik_default_gains() -> *mut c_void { address!(220338) as *mut c_void }
@@ -5264,15 +5656,45 @@ pub fn g_gain_frame_rate() -> *mut f32 { address!(470032) as *mut f32 }
 /// `g_GraphPhysicsStepListener` at 0x20c5b40, id 385965 (semantic, high); the single step listener every ragdoll-in-world graph registers with (high, ik pass), type `undefined1`
 #[inline]
 pub fn g_graph_physics_step_listener() -> *mut u8 { address!(385965) as *mut u8 }
+/// `g_IsStairsMaterialCallback` at 0x3337660, id 411541 (semantic, high); bool (*)(u32 havokMaterialId); set once at startup to BGSMaterialType::IsStairsById 0x3227b0 (high, ik pass), type `pointer`
+#[inline]
+pub fn g_is_stairs_material_callback() -> *mut *mut c_void { address!(411541) as *mut *mut c_void }
+/// `g_JobThreadInitHook` at 0x3301898, id 410358 (semantic, high); Optional per-worker init callback called at JobThread start; never written in the exe (one read xref 0xebab48) (high, ik pass), type `pointer`
+#[inline]
+pub fn g_job_thread_init_hook() -> *mut *mut c_void { address!(410358) as *mut *mut c_void }
+/// `g_MaterialTypesByHavokId` at 0x207e298, id 361011 (semantic, high); hash map havokMaterialId -> BGSMaterialType* (entries 0x207e2b8, size 0x207e29c, sentinel 0x207e2a8) (high, ik pass), type `pointer`
+#[inline]
+pub fn g_material_types_by_havok_id() -> *mut *mut c_void { address!(361011) as *mut *mut c_void }
+/// `g_PerkEntryPointTable` at 0x20994f0, id 368994 (semantic, high); perk entry point descriptors, 0x20 each; index 0x35 'Apply Reanimate Spell' (0x2099b90) (high, ik pass), type `struct {const char* name; u32 id/flags; u64 kind; u64}[]`
+#[inline]
+pub fn g_perk_entry_point_table() -> *mut c_void { address!(368994) as *mut c_void }
 /// `g_PhysicsTimeThisFrame` at 0x20d1748, id 389089 (semantic, medium); physics time to step this frame (medium, ik pass), type `float`
 #[inline]
 pub fn g_physics_time_this_frame() -> *mut f32 { address!(389089) as *mut f32 }
+/// `g_RadialPushVelocityScale` at 0x209e3b0, id 370093 (semantic, medium); per-body multiplier of the push velocity indexed by (collidable +0x2c >> 8) & 0x1f (medium, ik pass), type `float[32]`
+#[inline]
+pub fn g_radial_push_velocity_scale() -> *mut c_void { address!(370093) as *mut c_void }
+/// `g_ResponseTableDirectory` at 0x3250838, id 404598 (semantic, high); 'Meshes/Responses/' (literal 0x19379a8, static init 0xac19b) (high, ik pass), type `BSFixedString`
+#[inline]
+pub fn g_response_table_directory() -> &'static crate::BSFixedString { unsafe { &*(address!(404598) as *const crate::BSFixedString) } }
+/// `g_UpdatePhaseThreadMask` at 0x3244170, id 404075 (semantic, medium); One bit per thread currently in an update-phase frame job (bit per thread from TLS+0x688, assigned from the counter 0x20b6ec0) (medium, ik pass), type `u32`
+#[inline]
+pub fn g_update_phase_thread_mask() -> *mut u32 { address!(404075) as *mut u32 }
 /// `g_bhkWorldStepRunning` at 0x333652b, id 411524 (semantic, high); 1 while a bhkWorld::Step runs (process-wide) (high, ik pass), type `u8`
 #[inline]
 pub fn g_bhk_world_step_running() -> *mut u8 { address!(411524) as *mut u8 }
+/// `g_fMaxCharacterTiltDegrees` at 0x20d1984, id 389161 (semantic, high); 47.0: the orientation targets' clamp in degrees (multiplied by kDegToRad 0x18121c8) (high, ik pass), type `float`
+#[inline]
+pub fn g_f_max_character_tilt_degrees() -> *mut f32 { address!(389161) as *mut f32 }
+/// `g_fOrientationTimerSeconds` at 0x20d1988, id 389162 (semantic, medium); 5.0: value given to controller +0x22c (medium, ik pass), type `float`
+#[inline]
+pub fn g_f_orientation_timer_seconds() -> *mut f32 { address!(389162) as *mut f32 }
 /// `g_hkClassMemberTypeItems` at 0x1a16700, id 235009 (semantic, high); items of the hkClassMember Type enum (TYPE_VOID 0 .. TYPE_MAX 34) (high, ik pass), type `undefined1`
 #[inline]
 pub fn g_hk_class_member_type_items() -> *mut u8 { address!(235009) as *mut u8 }
+/// `g_hkMonitorTlsIndex` at 0x325a8e0, id 407394 (semantic, high); TLS index of the per-thread Havok monitor/timer buffer (TlsAlloc in StaticInit_8019 0xcb050, write 0xcb061) (high, ik pass), type `u32`
+#[inline]
+pub fn g_hk_monitor_tls_index() -> *mut u32 { address!(407394) as *mut u32 }
 /// `g_strBSBoneLOD` at 0x332fe80, id 411327 (semantic, high); 'BSBoneLOD', the extra data name BuildBoneLODTable looks up (high, ik pass), type `class:BSFixedString`
 #[inline]
 pub fn g_str_bs_bone_lod() -> &'static crate::BSFixedString { unsafe { &*(address!(411327) as *const crate::BSFixedString) } }
@@ -5342,3 +5764,6 @@ pub fn hk_class_hkb_foot_ik_modifier_leg() -> &'static crate::hkClass { unsafe {
 /// `hkClass_hkbHandIkDriverInfo` at 0x325c580, id 407631 (semantic, high); reflection record of hkbHandIkDriverInfo (.bss, built at startup) (high, ik pass), type `class:hkClass`
 #[inline]
 pub fn hk_class_hkb_hand_ik_driver_info() -> &'static crate::hkClass { unsafe { &*(address!(407631) as *const crate::hkClass) } }
+/// `kDegToRad` at 0x18121c8, id 189332 (semantic, high); 0.0174533 (high, ik pass), type `float`
+#[inline]
+pub fn k_deg_to_rad() -> *mut f32 { address!(189332) as *mut f32 }

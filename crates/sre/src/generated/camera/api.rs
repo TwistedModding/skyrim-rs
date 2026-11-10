@@ -1280,12 +1280,21 @@ impl crate::BSFaceGenKeyframeMultiple {
 }
 
 impl crate::BSFlattenedBoneTree {
-    /// `BSFlattenedBoneTree::FlattenNiNodeSubtree`: replaces a plain NiNode subtree with a BSFlattenedBoneTree: one 0x80-byte entry per descendant NiNode in depth-first order (parents first) with local, world, parent, name; an entry keeps its real NiNode (+0x70) when the node has a controller (+0x18), a collision object (+0x40) or extra data (+0x28 count), has a non-NiNode or kept child, or is an ancestor of a kept node; every other node is detached and only the entry remains
+    /// `BSFlattenedBoneTree::CollectEntriesRecursive`: depth-first entry collection: for each child: exact NiNode -> new entry (parent, child count, sibling link), recurse, and if the child is kept for its own reason mark the parent +0x11 and every ancestor +0x12; any other non-null child -> the same marking
     ///
-    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 70731, rva 0xef4390.
-    /// `BSFlattenedBoneTree* (NiNode* subtreeRoot)`
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 70759, rva 0xef59a0.
+    /// `void (BSScrapArray* entries, i32 parentIndex, NiNode* node)`
+    ///
+    /// # Safety
+    /// `entries` must point to what the engine expects.
     #[inline]
-    pub fn flatten_ni_node_subtree(subtreeRoot: &crate::NiNode) -> Option<&'static Self> { unsafe { function!(70731, (*const crate::NiNode) -> Option<&'static Self>)(core::ptr::from_ref(subtreeRoot)) } }
+    pub unsafe fn collect_entries_recursive(entries: *mut crate::BSScrapArray, parentIndex: i32, node: *mut crate::NiNode) { unsafe { function!(70759, (*mut crate::BSScrapArray, i32, *mut crate::NiNode))(entries, parentIndex, node) } }
+    /// `BSFlattenedBoneTree::FlattenNiNodeSubtree`: builds the flattened bone tree for an exact NiNode; entries for exact-NiNode descendants; keeps nodes with controller (+0x18), collision object (+0x40) or extra data (count u16 +0x28), with a non-NiNode or self-kept NiNode child, or that are ancestors of one; detaches the others; replaces npcRoot in its parent; builds nothing when every entry is kept
+    ///
+    /// Semantic, ik pass, high; ledger runtime evidence, name high; id 70731, rva 0xef4390.
+    /// `NiNode* (NiNode* npcRoot)`
+    #[inline]
+    pub fn flatten_ni_node_subtree(npcRoot: &crate::NiNode) -> Option<&'static crate::NiNode> { unsafe { function!(70731, (*const crate::NiNode) -> Option<&'static crate::NiNode>)(core::ptr::from_ref(npcRoot)) } }
     /// `BSFlattenedBoneTree::bones` at +0x130: array of 0x80-byte entries: +0x00 local NiTransform, +0x34 world NiTransform, +0x68 i16 parent index (<0: the tree node), +0x70 NiNode* materialised for the bone or null, +0x78 BSFixedString name
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -6095,7 +6104,7 @@ impl crate::ProcessLists {
     /// # Safety
     /// `list` must point to what the engine expects.
     #[inline]
-    pub unsafe fn queue_actor_animation_jobs(&self, list: *mut c_void) { unsafe { function!(41370, (*const Self, *mut c_void))(core::ptr::from_ref(self), list) } }
+    pub unsafe fn queue_actor_animation_jobs(&self, list: *mut crate::JobList) { unsafe { function!(41370, (*const Self, *mut crate::JobList))(core::ptr::from_ref(self), list) } }
     /// `ProcessLists::RefreshAllActors`: engine loop over all four lists through the +0x90 pointer table (4 iterations, data +0, size +0x10 of each array)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41308, rva 0x77cd80.
@@ -9054,6 +9063,20 @@ impl crate::bhkCharacterController {
     /// `void (bhkCharacterController* this, bhkCharacterControllerCinfo* cinfo)`
     #[inline]
     pub fn update_shapes_from_cinfo(&self, cinfo: &crate::bhkCharacterControllerCinfo) { unsafe { function!(78306, (*const Self, *const crate::bhkCharacterControllerCinfo))(core::ptr::from_ref(self), core::ptr::from_ref(cinfo)) } }
+    /// `bhkCharacterController::UpdateSupportSurfaceMaterial`: first surface contact of the step: +0x308 = layer, +0x100 = the surface body's 16 bytes at +0x230 (or a default), +0x304 = Havok material id, flags bit 24 = IsStairsMaterial(id)
+    ///
+    /// Semantic, ik pass, high; ledger semantic evidence, name high; id 78309, rva 0x1067d50.
+    /// `void (bhkCharacterController* this, const ContactPoint* contact)`
+    ///
+    /// # Safety
+    /// `contact` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn update_support_surface_material(&self, contact: *const c_void) { unsafe { function!(78309, (*const Self, *const c_void))(core::ptr::from_ref(self), contact) } }
+    /// `bhkCharacterController::orientationController` at +0x190: eases the controller's pitch +0x24c / roll +0x250 toward the support normal (flags bits 25/26) or back to 0 at rate +0x254
+    ///
+    /// Semantic field, camera pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn orientation_controller(&self) -> Option<&crate::bhkICharOrientationController> { unsafe { { self.orientationController }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_characterState(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkCharacterController.characterState", 0x200, u32) } }
@@ -9112,6 +9135,16 @@ impl crate::bhkCharacterController {
     pub fn source_bhkCharacterMoveFinishEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn source_bhkCharacterMoveFinishEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_supportLayer(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkCharacterController.supportLayer", 0x308, u32) } }
+    /// `bhkCharacterController::supportLayer`, at +0x308 on 1.7.104.
+    #[inline]
+    pub fn supportLayer(&self) -> u32 { unsafe { Self::__member_supportLayer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_supportLayer(&mut self, value: u32) { unsafe { Self::__member_supportLayer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn supportLayer_ptr(&self) -> *mut u32 { Self::__member_supportLayer(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkPickData {
@@ -11261,7 +11294,7 @@ pub unsafe fn ui3_d_scene_manager__set_camera_local_translate(this: *mut c_void,
 /// `this`, `data` must point to what the engine expects.
 #[inline]
 pub unsafe fn ui3_d_scene_manager__update_current_mode_root(this: *mut c_void, data: *mut crate::NiUpdateData) { unsafe { function!(52732, (*mut c_void, *mut crate::NiUpdateData))(this, data) } }
-/// `UpdateActiveGraphFootIkSwitch`: re-checked for IC8 B: reads the graph bool 'bHumanoidFootIKDisable' with BShkbAnimationGraph::GetGraphVariableBool 0xbd3350 (the same variable value set every SetGraphVariableBool writes) and calls hkbFootIkDriver::SetDisabled(graph+0x100, disable || (SpeedSampled >= 200 && !IsAttacking) || (out+0x23 && SpeedSampled != 0)); when the variable is missing from the behaviour it changes nothing
+/// `UpdateActiveGraphFootIkSwitch`: re-checked for IC8 B: reads the graph bool 'bHumanoidFootIKDisable' with BShkbAnimationGraph::GetGraphVariableBool 0xbd3350 (the same variable value set every SetGraphVariableBool writes) and calls hkbFootIkDriver::SetDisabled(graph+0x100, disable || (SpeedSampled >= 200 && !IsAttacking) || (out+0x23 && SpeedSampled != 0)), out+0x23 being the controller's stairs-material bit; when the variable is missing from the behaviour it changes nothing
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 43693, rva 0x7dda40.
 /// `u64 (FootIkFeedback* out, BShkbAnimationGraph* graph)`

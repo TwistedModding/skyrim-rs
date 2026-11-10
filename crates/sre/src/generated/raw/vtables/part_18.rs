@@ -2006,7 +2006,7 @@ impl TESTrapListener_vtable_10 {
 pub struct TESTrapListener_vtable_28 {
     /// `TESTrapListener::hkpPhantomListener_vdtor` at 0x408874 (slot_propagation, medium); signature (high): `undefined hkpPhantomListener_vdtor(TESTrapListener * this)`
     pub slot_0: *const c_void,
-    /// `TESTrapListener::hkpPhantomListener_vfunc_1` at 0x407fc0 (rtti, high); signature (low): `undefined hkpPhantomListener_vfunc_1(TESTrapListener * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    /// `TESTrapListener::PhantomAdded` at 0x407fc0 (semantic, high); signature (low): `undefined PhantomAdded(TESTrapListener * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `TESTrapListener::hkpPhantomListener_vfunc_2` at 0x407f10 (rtti, high); signature (low): `undefined hkpPhantomListener_vfunc_2(TESTrapListener * this, longlong param_1)`
     pub slot_2: *const c_void,
@@ -13193,7 +13193,7 @@ pub struct bhkBipedOrientationController_vtable {
     pub slot_6: *const c_void,
     /// `bhkBipedOrientationController::vfunc_7` at 0x10a09b0 (rtti, high); signature (low): `undefined1 vfunc_7(void)`
     pub slot_7: *const c_void,
-    /// `bhkBipedOrientationController::vfunc_8` at 0x10a09c0 (rtti, high); signature (low): `undefined vfunc_8(bhkBipedOrientationController * this, longlong * param_1)`
+    /// `bhkBipedOrientationController::Update` at 0x10a09c0 (semantic, high); signature (low): `undefined Update(bhkBipedOrientationController * this, longlong * param_1)`
     pub slot_8: *const c_void,
     /// `bhkBipedOrientationController::vfunc_9` at 0x10a0b50 (rtti, high); signature (low): `undefined vfunc_9(void)`
     pub slot_9: *const c_void,

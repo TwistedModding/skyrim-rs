@@ -2049,16 +2049,16 @@ BGSAttachTechniquesUtil::AttachTechniquesFunctor.__vftable	0
 BGSAttachTechniquesUtil::DetachTechniquesFunctor.__vftable	0
 BGSAttachTechniquesUtil::ProcessTechniquesFunctor.__vftable	0
 BGSAttackData.__vftable	0
-BGSAttackData.field_18	18
+BGSAttackData.damageMult	18
 BGSAttackData.field_1C	1c
 BGSAttackData.field_20	20
-BGSAttackData.field_28	28
 BGSAttackData.field_30	30
 BGSAttackData.field_34	34
 BGSAttackData.field_38	38
-BGSAttackData.field_40	40
 BGSAttackData.field_48	48
 BGSAttackData.field_8	8
+BGSAttackData.flags	28
+BGSAttackData.pushForce	40
 BGSAttackDataForm.__vftable	0
 BGSAttackDataForm.field_8	8
 BGSAttackDataMap.__vftable	0
@@ -2141,15 +2141,17 @@ BGSCameraShot.targetPercent	7c
 BGSCameraShot.targetTimeMult	6c
 BGSCollisionLayer.__vftable	0
 BGSCollisionLayer.__vftable_20	20
+BGSCollisionLayer.collidesWith	48
+BGSCollisionLayer.collidesWithCount	58
+BGSCollisionLayer.debugColor	34
 BGSCollisionLayer.field_28	28
-BGSCollisionLayer.field_30	30
-BGSCollisionLayer.field_34	34
-BGSCollisionLayer.field_40	40
-BGSCollisionLayer.field_58	58
+BGSCollisionLayer.flags	38
 BGSCollisionLayer.formFlags	10
 BGSCollisionLayer.formID	14
 BGSCollisionLayer.formType	1a
 BGSCollisionLayer.inGameFlags	18
+BGSCollisionLayer.layerIndex	30
+BGSCollisionLayer.name	40
 BGSCollisionLayer.sourceFiles	8
 BGSColorForm.__vftable	0
 BGSColorForm.__vftable_20	20
@@ -23499,7 +23501,6 @@ Character.field_1F0	1f0
 Character.field_268	268
 Character.field_270	270
 Character.field_274	274
-Character.field_279	279
 Character.field_280	280
 Character.field_288	288
 Character.field_90	90
@@ -23512,6 +23513,7 @@ Character.flags2	cc
 Character.formFlags	10
 Character.formID	14
 Character.formType	1a
+Character.has3DCollision	27a
 Character.healthModifiers	230
 Character.inGameFlags	18
 Character.loadedData	68
@@ -31318,6 +31320,8 @@ HighActorCuller.field_140	140
 HighActorCuller.field_148	148
 HighActorCuller.field_8	8
 HighActorCuller.m_BSFadeNodeCuller_10	10
+HighProcessData.field_2d0	2d0
+HighProcessData.field_2d8	2d8
 HighProcessData.headTrackActive	158
 HighProcessData.headTrackCurrentHandle	178
 HighProcessData.headTrackHandles	140
@@ -32280,6 +32284,18 @@ ItemList.items	38
 ItemList.root	8
 ItemList.stale	50
 ItemList.view	0
+JobList.activeExecutors	98
+JobList.countAtLastSignal	c4
+JobList.doneEvent	b0
+JobList.entries	0
+JobList.entryCount	10
+JobList.flags	d0
+JobList.generation	a0
+JobList.groupCount	28
+JobList.groupCounters	18
+JobList.idleEvent	68
+JobList.nextEntry	90
+JobList.syncStates	48
 JobListManager::ServingThread.__vftable	0
 JobListManager::ServingThread.field_30	30
 JobListManager::ServingThread.field_38	38
@@ -38880,7 +38896,6 @@ PlayerCharacter.field_1F0	1f0
 PlayerCharacter.field_268	268
 PlayerCharacter.field_270	270
 PlayerCharacter.field_274	274
-PlayerCharacter.field_279	279
 PlayerCharacter.field_280	280
 PlayerCharacter.field_288	288
 PlayerCharacter.field_3E8	3e8
@@ -39095,6 +39110,7 @@ PlayerCharacter.flags2	cc
 PlayerCharacter.formFlags	10
 PlayerCharacter.formID	14
 PlayerCharacter.formType	1a
+PlayerCharacter.has3DCollision	27a
 PlayerCharacter.healthModifiers	230
 PlayerCharacter.inGameFlags	18
 PlayerCharacter.loadedData	68
@@ -43561,16 +43577,17 @@ TwoJointSolverSetup.cosineMinHingeAngle	24
 TwoJointSolverSetup.endBoneIndex	4
 TwoJointSolverSetup.endBoneOffsetLS	60
 TwoJointSolverSetup.endBoneRotationOffsetLS	70
-TwoJointSolverSetup.endJointIkGain	30
+TwoJointSolverSetup.endRotationGain	34
 TwoJointSolverSetup.endTargetMS	40
 TwoJointSolverSetup.endTargetRotationMS	50
 TwoJointSolverSetup.enforceEndPosition	80
 TwoJointSolverSetup.enforceEndRotation	81
-TwoJointSolverSetup.firstJointIkGain	28
+TwoJointSolverSetup.firstJointGain	2c
 TwoJointSolverSetup.firstJointIndex	0
 TwoJointSolverSetup.firstJointTwistIndex	6
 TwoJointSolverSetup.hingeAxisLS	10
-TwoJointSolverSetup.secondJointIkGain	2c
+TwoJointSolverSetup.maxHingeAngleChangeDegrees	28
+TwoJointSolverSetup.secondJointGain	30
 TwoJointSolverSetup.secondJointIndex	2
 TwoJointSolverSetup.secondJointTwistIndex	8
 TypeNode.name	0
@@ -45345,6 +45362,10 @@ _anon_860CB2AF::InternedStringRefCounted.m_hkpRayShapeCollectionFilter_20	20
 _anon_860CB2AF::InternedStringRefCounted.m_hkpShapeCollectionFilter_18	18
 _anon_865AF130::GetVMConditionalVariableValueFunc.__vftable	0
 _anon_8B4A4C54::DeferredUpdate.__vftable	0
+_anon_8B4A4C54::DeferredUpdate.count	410
+_anon_8B4A4C54::DeferredUpdate.enabled	430
+_anon_8B4A4C54::DeferredUpdate.semaphore	428
+_anon_8B4A4C54::DeferredUpdate.slots	10
 _anon_9196AC74::CheckLineOfSightTriangleFlagFiltersAdapter.__vftable	0
 _anon_92F68B4D::FadeThenLoadCallback.__vftable	0
 _anon_9334B8D7::bhkConstraintDisabler.__vftable	0
@@ -46185,29 +46206,23 @@ bhkCharRigidBodyControllerCinfo.m_bhkCharacterRigidBodyCinfo_B0	b0
 bhkCharacterCollisionHandler.__vftable	0
 bhkCharacterController.__vftable	0
 bhkCharacterController.activeShapeIndex	278
+bhkCharacterController.allowOrientationController	31f
 bhkCharacterController.bumperEnabled	320
 bhkCharacterController.characterState	200
 bhkCharacterController.field_100	100
-bhkCharacterController.field_110	110
 bhkCharacterController.field_180	180
 bhkCharacterController.field_184	184
 bhkCharacterController.field_188	188
-bhkCharacterController.field_190	190
 bhkCharacterController.field_1A0	1a0
 bhkCharacterController.field_1B0	1b0
 bhkCharacterController.field_1C0	1c0
 bhkCharacterController.field_1D0	1d0
 bhkCharacterController.field_1D4	1d4
-bhkCharacterController.field_218	218
 bhkCharacterController.field_220	220
-bhkCharacterController.field_228	228
 bhkCharacterController.field_230	230
 bhkCharacterController.field_234	234
 bhkCharacterController.field_238	238
 bhkCharacterController.field_240	240
-bhkCharacterController.field_248	248
-bhkCharacterController.field_250	250
-bhkCharacterController.field_254	254
 bhkCharacterController.field_258	258
 bhkCharacterController.field_260	260
 bhkCharacterController.field_264	264
@@ -46228,11 +46243,9 @@ bhkCharacterController.field_2E4	2e4
 bhkCharacterController.field_2E8	2e8
 bhkCharacterController.field_2F8	2f8
 bhkCharacterController.field_300	300
-bhkCharacterController.field_304	304
 bhkCharacterController.field_30C	30c
 bhkCharacterController.field_310	310
 bhkCharacterController.field_314	314
-bhkCharacterController.field_31C	31c
 bhkCharacterController.field_70	70
 bhkCharacterController.field_8	8
 bhkCharacterController.field_88	88
@@ -46242,12 +46255,21 @@ bhkCharacterController.field_B0	b0
 bhkCharacterController.field_C0	c0
 bhkCharacterController.field_E0	e0
 bhkCharacterController.field_F0	f0
+bhkCharacterController.flags	218
 bhkCharacterController.hasBumper	321
 bhkCharacterController.m_BSBound_120	120
 bhkCharacterController.m_BSBound_150	150
 bhkCharacterController.m_hkpCharacterContext_1E0	1e0
+bhkCharacterController.orientationBlendRate	254
+bhkCharacterController.orientationController	190
+bhkCharacterController.orientationTimer	22c
+bhkCharacterController.pitch	24c
+bhkCharacterController.roll	250
 bhkCharacterController.shapes	280
 bhkCharacterController.source_bhkCharacterMoveFinishEvent	10
+bhkCharacterController.supportLayer	308
+bhkCharacterController.supportMaterialId	304
+bhkCharacterController.supportNormal	110
 bhkCharacterControllerCinfo.__vftable	0
 bhkCharacterControllerCinfo.field_10	10
 bhkCharacterControllerCinfo.field_18	18
@@ -54151,6 +54173,11 @@ hkbCharacterControlCommand.m_hkpCollidableCollidableFilter_10	10
 hkbCharacterControlCommand.m_hkpRayCollidableFilter_28	28
 hkbCharacterControlCommand.m_hkpRayShapeCollectionFilter_20	20
 hkbCharacterControlCommand.m_hkpShapeCollectionFilter_18	18
+hkbCharacterControllerControlData.desiredVelocity	0
+hkbCharacterControllerControlData.horizontalCatchUpGain	14
+hkbCharacterControllerControlData.maxHorizontalSeparation	1c
+hkbCharacterControllerControlData.maxVerticalSeparation	18
+hkbCharacterControllerControlData.verticalGain	10
 hkbCharacterControllerModifier.__vftable	0
 hkbCharacterControllerModifier.field_108	108
 hkbCharacterControllerModifier.field_110	110
@@ -93660,6 +93687,7 @@ IronSightsState
 IsSpellTargetFunctor	
 IsSpellTypeTargetFunctor	
 ItemList	
+JobList	
 JobListManager::ServingThread	
 JournalInputMapping::RemapHandler	
 JournalMenu	
@@ -95868,6 +95896,7 @@ hkbCameraShakeEventPayload
 hkbCharacter	
 hkbCharacterAddedInfo	
 hkbCharacterControlCommand	
+hkbCharacterControllerControlData	
 hkbCharacterControllerModifier	
 hkbCharacterControllerModifierInternalState	
 hkbCharacterControllerSceneModifier	

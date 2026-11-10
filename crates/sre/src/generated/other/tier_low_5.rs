@@ -7,48 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `CreateActorPackageDataByType` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38976, rva 0x6e1210).
-/// `SandBoxActorPackageData * CreateActorPackageDataByType(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_actor_package_data_by_type(param_1: u32, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::SandBoxActorPackageData { unsafe { function!(38976, (u32, u64, u64, u64) -> *mut crate::SandBoxActorPackageData)(param_1, param_2, param_3, param_4) } }
-/// `CreateActorPackageDataForPackage` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38975, rva 0x6e1000).
-/// `SandBoxActorPackageData * CreateActorPackageDataForPackage(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_actor_package_data_for_package(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::SandBoxActorPackageData { unsafe { function!(38975, (i64, u64, u64, u64) -> *mut crate::SandBoxActorPackageData)(param_1, param_2, param_3, param_4) } }
-/// `CreateAndAppendDecalNode` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 15209, rva 0x1ff7e0).
-/// `BGSDecalNode * CreateAndAppendDecalNode(longlong param_1, longlong * param_2, ulonglong param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_and_append_decal_node(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> *mut crate::BGSDecalNode { unsafe { function!(15209, (i64, *mut i64, u64, u64) -> *mut crate::BGSDecalNode)(param_1, param_2, param_3, param_4) } }
-/// `CreateAndAppendMagicItemData` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 52082, rva 0x9567f0).
-/// `undefined8 CreateAndAppendMagicItemData(longlong param_1, undefined8 param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_and_append_magic_item_data(param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(52082, (i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `CreateAndAppendNamedChild` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 89120, rva 0xe5aac0).
-/// `undefined8 * CreateAndAppendNamedChild(longlong param_1, undefined4 param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_and_append_named_child(param_1: i64, param_2: u32, param_3: *mut c_void) -> *mut u64 { unsafe { function!(89120, (i64, u32, *mut c_void) -> *mut u64)(param_1, param_2, param_3) } }
-/// `CreateAndAppendNamedChildWithValue` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 89121, rva 0xe5abb0).
-/// `undefined8 * CreateAndAppendNamedChildWithValue(longlong param_1, undefined4 param_2, void * param_3, undefined4 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_and_append_named_child_with_value(param_1: i64, param_2: u32, param_3: *mut c_void, param_4: u32) -> *mut u64 { unsafe { function!(89121, (i64, u32, *mut c_void, u32) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `CreateAndAssignPackageTargetingPlayer` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37556, rva 0x690780).
 /// `undefined CreateAndAssignPackageTargetingPlayer(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -11837,13 +11795,6 @@ pub unsafe fn evaluate_player_mount_package(param_1: u64, param_2: u64, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn evaluate_torch_light_level(param_1: i64) -> u64 { unsafe { function!(37567, (i64) -> u64)(param_1) } }
-/// `ExecuteJobListJobs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 69378, rva 0xebc170).
-/// `uint ExecuteJobListJobs(longlong * param_1, undefined8 param_2, longlong param_3, char param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn execute_job_list_jobs(param_1: *mut i64, param_2: u64, param_3: i64, param_4: c_char) -> u32 { unsafe { function!(69378, (*mut i64, u64, i64, c_char) -> u32)(param_1, param_2, param_3, param_4) } }
 /// `ExecutePendingWorldOperations` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 62204, rva 0xb7f9c0).
 /// `undefined ExecutePendingWorldOperations(undefined8 * param_1)`
 ///
@@ -12845,3 +12796,52 @@ pub unsafe fn find_closest_ref_in_map(param_1: i64, param_2: *mut u64) -> u64 { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_closest_ref_in_map_locked(param_1: i64, param_2: u64) -> u32 { unsafe { function!(20568, (i64, u64) -> u32)(param_1, param_2) } }
+/// `FindClosestTargetInMeleeHitCone` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47272, rva 0x866260).
+/// `longlong * FindClosestTargetInMeleeHitCone(longlong * param_1, float param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_closest_target_in_melee_hit_cone(param_1: *mut i64, param_2: f32, param_3: u64, param_4: u64) -> *mut i64 { unsafe { function!(47272, (*mut i64, f32, u64, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
+/// `FindClosestTriangleAtPoint` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 91119, rva 0x11e2ed0).
+/// `ushort FindClosestTriangleAtPoint(longlong param_1, float * param_2, longlong * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_closest_triangle_at_point(param_1: i64, param_2: *mut f32, param_3: *mut i64) -> u16 { unsafe { function!(91119, (i64, *mut f32, *mut i64) -> u16)(param_1, param_2, param_3) } }
+/// `FindClosestTriangleAtPointWithDistance` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 91120, rva 0x11e3050).
+/// `ushort FindClosestTriangleAtPointWithDistance(longlong param_1, float * param_2, longlong * param_3, float * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_closest_triangle_at_point_with_distance(param_1: i64, param_2: *mut f32, param_3: *mut i64, param_4: *mut f32) -> u16 { unsafe { function!(91120, (i64, *mut f32, *mut i64, *mut f32) -> u16)(param_1, param_2, param_3, param_4) } }
+/// `FindClosestTriangleForPoint` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 30357, rva 0x4c2530).
+/// `undefined8 FindClosestTriangleForPoint(longlong * param_1, float * param_2, longlong * param_3, ushort * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_closest_triangle_for_point(param_1: *mut i64, param_2: *mut f32, param_3: *mut i64, param_4: *mut u16) -> u64 { unsafe { function!(30357, (*mut i64, *mut f32, *mut i64, *mut u16) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `FindClosestTriangleForPointDiscardIndex` (decompiler signature, tier low; ledger decompiler evidence, name high; id 30356, rva 0x4c2510).
+/// `undefined FindClosestTriangleForPointDiscardIndex(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_closest_triangle_for_point_discard_index() -> u64 { unsafe { function!(30356, () -> u64)() } }
+/// `FindCollisionObjectNodeDepthLimited` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 78035, rva 0x1055690).
+/// `longlong * FindCollisionObjectNodeDepthLimited(longlong * param_1, longlong param_2, uint param_3, uint param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_collision_object_node_depth_limited(param_1: *mut i64, param_2: i64, param_3: u32, param_4: u32) -> *mut i64 { unsafe { function!(78035, (*mut i64, i64, u32, u32) -> *mut i64)(param_1, param_2, param_3, param_4) } }
+/// `FindCommonAncestor` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 71215, rva 0xf0a150).
+/// `longlong FindCommonAncestor(undefined8 param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_common_ancestor(param_1: u64, param_2: i64, param_3: i64) -> i64 { unsafe { function!(71215, (u64, i64, i64) -> i64)(param_1, param_2, param_3) } }
