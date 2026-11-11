@@ -7,6 +7,32 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `IntersectMatchingFieldsFlags42` at 0xdff1d0 (decompiler, medium); signature (low): `undefined4 * IntersectMatchingFieldsFlags42(longlong param_1, undefined4 * param_2, longlong param_3)`
+pub const IntersectMatchingFieldsFlags42: u64 = 87442;
+/// `IntersectRayTriangle` at 0xf25230 (decompiler, medium); signature (medium): `undefined8 IntersectRayTriangle(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, char param_6, float * param_7, float * param_8, float * param_9, float * param_10)`
+pub const IntersectRayTriangle: u64 = 71983;
+/// `IntersectRayWithCircle2D` at 0x11fcfc0 (decompiler, medium); signature (medium): `undefined8 IntersectRayWithCircle2D(float * param_1, float * param_2, float * param_3, float param_4, float * param_5, float * param_6)`
+pub const IntersectRayWithCircle2D: u64 = 91555;
+/// `IntersectRayWithOrientedBox` at 0xf4e6a0 (decompiler, medium); signature (low): `undefined8 IntersectRayWithOrientedBox(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectRayWithOrientedBox: u64 = 72334;
+/// `IntersectRayWithTriangle` at 0xb3e720 (decompiler, medium); signature (low): `undefined1 * IntersectRayWithTriangle(undefined1 * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, float * param_8, float * param_9, char param_10)`
+pub const IntersectRayWithTriangle: u64 = 60577;
+/// `IntersectRectangleObject` at 0xda68b0 (decompiler, medium); signature (low): `undefined IntersectRectangleObject(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const IntersectRectangleObject: u64 = 85885;
+/// `IntersectSegmentWithLineXY` at 0x11fb1a0 (decompiler, medium); signature (medium): `undefined8 IntersectSegmentWithLineXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectSegmentWithLineXY: u64 = 91522;
+/// `IntersectSegmentWithPlane` at 0x11fa760 (decompiler, medium); signature (low): `undefined8 IntersectSegmentWithPlane(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectSegmentWithPlane: u64 = 91515;
+/// `IntersectSegmentWithPolyline2D` at 0x1247310 (decompiler, medium); signature (medium): `int IntersectSegmentWithPolyline2D(longlong param_1, float * param_2, float * param_3, char param_4, float * param_5)`
+pub const IntersectSegmentWithPolyline2D: u64 = 93238;
+/// `IntersectSegmentWithRect` at 0xfccc30 (decompiler, medium); signature (medium): `ulonglong IntersectSegmentWithRect(int * param_1, float * param_2, float * param_3, float * param_4)`
+pub const IntersectSegmentWithRect: u64 = 75857;
+/// `IntersectSegmentWithSphere` at 0x5666c0 (decompiler, medium); signature (medium): `undefined1 IntersectSegmentWithSphere(float * param_1, longlong param_2, float * param_3, float * param_4)`
+pub const IntersectSegmentWithSphere: u64 = 33324;
+/// `IntersectSegments2D` at 0x11fb320 (decompiler, medium); signature (medium): `undefined8 IntersectSegments2D(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectSegments2D: u64 = 91524;
+/// `IntersectSegments2DWithTolerance` at 0x11fbb50 (decompiler, medium); signature (medium): `undefined8 IntersectSegments2DWithTolerance(float * param_1, float * param_2, float * param_3, float * param_4, float param_5, float * param_6, char * param_7, undefined1 * param_8)`
+pub const IntersectSegments2DWithTolerance: u64 = 91528;
 /// `IntersectSegmentsXY` at 0x11faaf0 (decompiler, medium); signature (medium): `undefined8 IntersectSegmentsXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
 pub const IntersectSegmentsXY: u64 = 91517;
 /// `IntersectSphereWithCapsule` at 0x1088ce0 (decompiler, medium); signature (medium): `undefined8 IntersectSphereWithCapsule(longlong param_1, float * param_2, float * param_3, float * param_4)`
@@ -7993,8 +8019,6 @@ pub const MoviePlayer__dtor: u64 = 90262;
 pub const MoviePlayer__vdtor: u64 = 90281;
 /// `MoviePlayer::vfunc_13` at 0x11b2870 (rtti, high); signature (high): `bool vfunc_13(MoviePlayer * this)`
 pub const MoviePlayer__vfunc_13: u64 = 90273;
-/// `Msg_ClearLists_sub0_sub1_sub5` at 0x5282a0 (semantic, high); signature (untiered): `ulonglong Msg_ClearLists_sub0_sub1_sub5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: water cube-map camera: copies only the main camera's far (GetMainCamera +0x164) into its own frustum; near unaffected (high); signature `bool (void* water, ...)`
-pub const Msg_ClearLists_sub0_sub1_sub5: u64 = 32160;
 /// `Msg_CriticalStrikeOn` at 0x6ca640 (semantic, high); signature (low): `undefined Msg_CriticalStrikeOn(Actor * param_1, Actor * param_2, undefined8 param_3, undefined8 param_4)`; semantic: applies one hit to a living actor: events, crits, damage, stagger, the hit's push (knockdown) and blood (high); signature `void (Actor* target, HitData* hitData, u64 passThrough3, u64 passThrough4)`
 pub const Msg_CriticalStrikeOn: u64 = 38586;
 /// `Msg_CriticalStrikeOn` as a function pointer type (high).
@@ -8451,35 +8475,3 @@ pub const NiAdditionalGeometryData__vfunc_26: u64 = 71721;
 pub const NiAdditionalGeometryData__vfunc_27: u64 = 71722;
 /// `NiAdditionalGeometryData::vfunc_27_sub0` at 0xf1ce40 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2, longlong param_3, uint param_4, ushort param_5)`
 pub const NiAdditionalGeometryData__vfunc_27_sub0: u64 = 71758;
-/// `NiAdditionalGeometryData::vfunc_28` at 0xf1bf50 (rtti, high); signature (low): `ulonglong vfunc_28(NiAdditionalGeometryData * this, longlong * param_1)`
-pub const NiAdditionalGeometryData__vfunc_28: u64 = 71723;
-/// `NiAllocator::vdtor` at 0xeae960 (layout_inference, medium); signature (low): `NiAllocator * vdtor(NiAllocator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAllocator__vdtor: u64 = 69055;
-/// `NiAlphaAccumulator::Create` at 0xf0f2b0 (string, high); signature (low): `NiBackToFrontAccumulator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiAlphaAccumulator__Create: u64 = 71319;
-/// `NiAlphaAccumulator::ctor` at 0xf0f370 (layout_inference, high); signature (high): `NiAlphaAccumulator * ctor(NiAlphaAccumulator * this)`
-pub const NiAlphaAccumulator__ctor: u64 = 71320;
-/// `NiAlphaAccumulator::dtor` at 0xf0f3b0 (layout_inference, high); signature (high): `undefined dtor(NiAlphaAccumulator * this)`
-pub const NiAlphaAccumulator__dtor: u64 = 71321;
-/// `NiAlphaAccumulator::vdtor` at 0xf0f4a0 (layout_inference, medium); signature (low): `NiAlphaAccumulator * vdtor(NiAlphaAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAlphaAccumulator__vdtor: u64 = 71324;
-/// `NiAlphaAccumulator::vfunc_2` at 0xf0f4e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiAlphaAccumulator__vfunc_2: u64 = 71325;
-/// `NiAlphaAccumulator::vfunc_23` at 0xf0f120 (rtti, medium); signature (low): `NiBackToFrontAccumulator * vfunc_23(NiAlphaAccumulator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAlphaAccumulator__vfunc_23: u64 = 71312;
-/// `NiAlphaAccumulator::vfunc_24` at 0xf0f250 (rtti, medium); signature (untiered): `undefined vfunc_24(void)`
-pub const NiAlphaAccumulator__vfunc_24: u64 = 71314;
-/// `NiAlphaAccumulator::vfunc_25` at 0xf0f260 (rtti, medium); signature (untiered): `undefined vfunc_25(void)`
-pub const NiAlphaAccumulator__vfunc_25: u64 = 71315;
-/// `NiAlphaAccumulator::vfunc_26` at 0xf0f270 (rtti, medium); signature (untiered): `undefined vfunc_26(NiAlphaAccumulator * this, longlong * param_1)`
-pub const NiAlphaAccumulator__vfunc_26: u64 = 71316;
-/// `NiAlphaAccumulator::vfunc_27` at 0xf0f280 (rtti, medium); signature (untiered): `undefined vfunc_27(void)`
-pub const NiAlphaAccumulator__vfunc_27: u64 = 71317;
-/// `NiAlphaAccumulator::vfunc_28` at 0xf0f290 (rtti, medium); signature (low): `bool vfunc_28(void)`
-pub const NiAlphaAccumulator__vfunc_28: u64 = 71318;
-/// `NiAlphaProperty::Create` at 0xef2a20 (string, high); signature (low): `NiObjectNET * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiAlphaProperty__Create: u64 = 70684;
-/// `NiAlphaProperty::vdtor` at 0x20b3d0 (slot_propagation, medium); signature (low): `NiAlphaProperty * vdtor(NiAlphaProperty * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAlphaProperty__vdtor: u64 = 15411;
-/// `NiAlphaProperty::vfunc_2` at 0x20bea0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiAlphaProperty__vfunc_2: u64 = 15431;

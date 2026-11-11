@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::ActionInput {
+    /// `ActionInput::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 14990, rva 0x1f3900).
+    /// `undefined dtor(ActionInput * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::Actor {
     /// `Actor::GetFaceGenAnimationData`, vtable slot 99, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 37655, rva 0x69bba0).
     /// `longlong GetFaceGenAnimationData(Actor * this)`
@@ -222,6 +232,37 @@ impl crate::ActorValueOwner {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(24848, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BGSActionData {
+    /// `BGSActionData::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41558, rva 0x78db90).
+    /// `BGSActionData * ctor(BGSActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41558, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 16166, rva 0x2401f0).
+    /// `undefined dtor(BGSActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 16176, rva 0x2402e0).
+    /// `undefined dtor(BGSActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33154, rva 0x55ec90).
+    /// `undefined dtor(BGSActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(33154, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSExtraData {
     /// `BSExtraData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 11559, rva 0x1563f0).
     /// `undefined dtor(BSExtraData * this)`
@@ -365,6 +406,16 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn update_alpha(&self) -> u64 { unsafe { function!(40453, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::TESActionData {
+    /// `TESActionData::Perform`, vtable slot 5, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 41557, rva 0x78db80).
+    /// `undefined Perform(TESActionData * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn perform(&self) -> u64 { unsafe { virtual_function!(self, 5, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESActorBaseData {

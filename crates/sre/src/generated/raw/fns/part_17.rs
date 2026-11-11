@@ -7,6 +7,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseRefCountAt18` at 0xe2b2b0 (decompiler, high); signature (high): `undefined ReleaseRefCountAt18(undefined8 * param_1)`
+pub const ReleaseRefCountAt18: u64 = 88276;
+/// `ReleaseRefCountField14AndDelete` at 0x441f30 (decompiler, medium); signature (medium): `undefined ReleaseRefCountField14AndDelete(longlong param_1)`
+pub const ReleaseRefCountField14AndDelete: u64 = 418626;
+/// `ReleaseRefCountField14Ptr` at 0x666d10 (decompiler, high); signature (high): `undefined ReleaseRefCountField14Ptr(longlong * param_1)`
+pub const ReleaseRefCountField14Ptr: u64 = 36883;
+/// `ReleaseRefCounted16AndClear` at 0xc47320 (decompiler, high); signature (low): `undefined ReleaseRefCounted16AndClear(undefined8 * param_1)`
+pub const ReleaseRefCounted16AndClear: u64 = 65364;
+/// `ReleaseRefCounted16ArrayAndClearGlobal401100` at 0x54f700 (decompiler, medium); signature (low): `undefined ReleaseRefCounted16ArrayAndClearGlobal401100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted16ArrayAndClearGlobal401100: u64 = 32800;
+/// `ReleaseRefCounted16PtrAndClear` at 0x17bce0 (decompiler, high); signature (high): `undefined ReleaseRefCounted16PtrAndClear(undefined8 * param_1)`
+pub const ReleaseRefCounted16PtrAndClear: u64 = 12175;
+/// `ReleaseRefCounted16PtrAndClear_2` at 0x527970 (decompiler, high); signature (low): `undefined ReleaseRefCounted16PtrAndClear_2(undefined8 * param_1)`
+pub const ReleaseRefCounted16PtrAndClear_2: u64 = 32135;
+/// `ReleaseRefCounted16PtrArray` at 0x5513f0 (decompiler, medium); signature (low): `undefined ReleaseRefCounted16PtrArray(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted16PtrArray: u64 = 32823;
+/// `ReleaseRefCounted18` at 0x9ecda0 (decompiler, high); signature (low): `undefined ReleaseRefCounted18(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted18: u64 = 54184;
+/// `ReleaseRefCounted2F8ElementRange` at 0x1212de0 (decompiler, medium); signature (low): `undefined ReleaseRefCounted2F8ElementRange(longlong * param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
+pub const ReleaseRefCounted2F8ElementRange: u64 = 91870;
+/// `ReleaseRefCounted2F8ElementsAndClear` at 0x1212d30 (decompiler, medium); signature (low): `undefined ReleaseRefCounted2F8ElementsAndClear(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted2F8ElementsAndClear: u64 = 91869;
+/// `ReleaseRefCountedArray20` at 0x4ee980 (decompiler, medium); signature (low): `undefined ReleaseRefCountedArray20(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArray20: u64 = 31124;
+/// `ReleaseRefCountedArrayAt` at 0x502970 (decompiler, high); signature (low): `undefined ReleaseRefCountedArrayAt(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayAt: u64 = 31536;
+/// `ReleaseRefCountedArrayAt0` at 0x11cc130 (decompiler, high); signature (low): `undefined ReleaseRefCountedArrayAt0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayAt0: u64 = 90657;
 /// `ReleaseRefCountedArrayField28` at 0xc56d20 (decompiler, medium); signature (low): `undefined ReleaseRefCountedArrayField28(longlong param_1)`
 pub const ReleaseRefCountedArrayField28: u64 = 65714;
 /// `ReleaseRefCountedArrayHolder` at 0x9cb040 (decompiler, medium); signature (low): `undefined ReleaseRefCountedArrayHolder(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -9147,33 +9175,3 @@ pub const SetByteCAAndGetField90: u64 = 58287;
 pub const SetByteField10: u64 = 14744;
 /// `SetByteField108` at 0x1149910 (decompiler, high); signature (high): `undefined SetByteField108(longlong param_1)`
 pub const SetByteField108: u64 = 81813;
-/// `SetByteField108_2` at 0x1149920 (decompiler, high); signature (high): `undefined SetByteField108_2(longlong param_1)`
-pub const SetByteField108_2: u64 = 81814;
-/// `SetByteField108_3` at 0x1149930 (decompiler, high); signature (high): `undefined SetByteField108_3(longlong param_1)`
-pub const SetByteField108_3: u64 = 81815;
-/// `SetByteField108_4` at 0x1149940 (decompiler, high); signature (high): `undefined SetByteField108_4(longlong param_1)`
-pub const SetByteField108_4: u64 = 81816;
-/// `SetByteField14AndPropagate` at 0x257c70 (decompiler, medium); signature (medium): `undefined1 SetByteField14AndPropagate(longlong param_1, byte param_2)`
-pub const SetByteField14AndPropagate: u64 = 16669;
-/// `SetByteField2953` at 0xb349c0 (decompiler, high); signature (high): `undefined SetByteField2953(longlong param_1, undefined1 param_2)`
-pub const SetByteField2953: u64 = 64594;
-/// `SetByteField690UnderLock` at 0x9daee0 (decompiler, high); signature (high): `DWORD SetByteField690UnderLock(longlong param_1, undefined1 param_2)`
-pub const SetByteField690UnderLock: u64 = 53956;
-/// `SetByteFieldDA5` at 0x1c2290 (decompiler, high); signature (high): `undefined SetByteFieldDA5(longlong param_1, undefined1 param_2)`
-pub const SetByteFieldDA5: u64 = 441533;
-/// `SetByteOfMatchingArrayEntry` at 0x185a00 (decompiler, medium); signature (medium): `bool SetByteOfMatchingArrayEntry(longlong param_1, longlong param_2, undefined1 param_3)`
-pub const SetByteOfMatchingArrayEntry: u64 = 12647;
-/// `SetCameraFrustumFromFOV` at 0x98b1d0 (runtime, high); signature (medium): `undefined SetCameraFrustumFromFOV(longlong param_1, float param_2)`; semantic: UI 3D camera (scene+0x20): maxFarNearRatio = fUICameraFarDistance / fUICameraNearDistance (20480 / 15); frustum right = 0.75 * tan(fov * pi/1200), top = right * height/width, near/far from the settings, perspective (high); signature `void (UI3DSceneManager* scene, float fovDegrees)`
-pub const SetCameraFrustumFromFOV: u64 = 52742;
-/// `SetCameraFrustumFromFOV` as a function pointer type (high).
-pub type SetCameraFrustumFromFOV_fn = unsafe extern "C" fn(scene: *mut c_void, fovDegrees: f32);
-/// `SetCameraShakeState` at 0x558c50 (runtime, high); signature (untiered): `undefined SetCameraShakeState(undefined4 param_1, undefined4 param_2)`; semantic: restores g_CameraShakeStrength and g_CameraShakeTimeRemaining from a save (high); signature `void (float strength, float timeRemaining)`
-pub const SetCameraShakeState: u64 = 33016;
-/// `SetCameraShakeState` as a function pointer type (high).
-pub type SetCameraShakeState_fn = unsafe extern "C" fn(strength: f32, timeRemaining: f32);
-/// `SetCannotFindCreateFunctionError` at 0xee7a20 (decompiler, medium); signature (low): `undefined SetCannotFindCreateFunctionError(longlong param_1, char * param_2)`
-pub const SetCannotFindCreateFunctionError: u64 = 70397;
-/// `SetCapacity16ByteArrayTag143` at 0xd175c0 (decompiler, medium); signature (low): `undefined SetCapacity16ByteArrayTag143(longlong * param_1, undefined8 param_2, longlong param_3)`
-pub const SetCapacity16ByteArrayTag143: u64 = 83114;
-/// `SetCapacity16ByteArrayTag143_2` at 0xd2d8c0 (decompiler, medium); signature (low): `undefined SetCapacity16ByteArrayTag143_2(longlong * param_1, undefined8 param_2, longlong param_3)`
-pub const SetCapacity16ByteArrayTag143_2: u64 = 83360;

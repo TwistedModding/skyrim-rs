@@ -139,23 +139,6 @@ impl crate::ActionActivateDoneHandler {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(43283, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::ActionInput {
-    /// `ActionInput::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 14994, rva 0x1f3a60).
-    /// `ActionInput * vdtor(ActionInput * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `ActionInput::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 14993, rva 0x1f3a20).
-    /// `ActionInput * ctor(ActionInput * this, undefined4 param_1, longlong param_2, undefined8 param_3, longlong param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u32, param_2: i64, param_3: u64, param_4: i64) -> *mut Self { unsafe { function!(14993, (*const Self, u32, i64, u64, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
-}
-
 impl crate::ActiveEffect__ForEachHitEffectVisitor {
     /// `ActiveEffect::ForEachHitEffectVisitor::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 34123, rva 0x5beca0).
     /// `ForEachHitEffectVisitor * vdtor(ForEachHitEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -13807,3 +13790,17 @@ pub unsafe fn accumulate_scope_stats_and_optionally_clear(param_1: i64, param_2:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn accumulate_shader_flag_bits_recursive(param_1: *mut i64, param_2: *mut u8) -> u64 { unsafe { function!(106482, (*mut i64, *mut u8) -> u64)(param_1, param_2) } }
+/// `AccumulateUserContentAndProcessRequest25` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441915, rva 0x5934c0).
+/// `undefined8 AccumulateUserContentAndProcessRequest25(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn accumulate_user_content_and_process_request25(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441915, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `AccumulateUserContentAndProcessRequest26` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441917, rva 0x593820).
+/// `undefined8 AccumulateUserContentAndProcessRequest26(longlong param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn accumulate_user_content_and_process_request26(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(441917, (i64, *mut i64) -> u64)(param_1, param_2) } }

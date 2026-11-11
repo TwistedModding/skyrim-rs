@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `LoadFloatPairAndTwoSharedRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 49815, rva 0x8d46d0).
-/// `undefined LoadFloatPairAndTwoSharedRefs(longlong * param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn load_float_pair_and_two_shared_refs(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(49815, (*mut i64, i64) -> u64)(param_1, param_2) } }
 /// `LoadFloatPairsAndSharedObjectRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47911, rva 0x8842c0).
 /// `undefined LoadFloatPairsAndSharedObjectRef(longlong * param_1, longlong param_2)`
 ///
@@ -13083,3 +13076,10 @@ pub unsafe fn release_array_of_arrays_range(param_1: *mut i64, param_2: u64, par
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_array_storage(param_1: *mut i64) -> u64 { unsafe { function!(19242, (*mut i64) -> u64)(param_1) } }
+/// `ReleaseArrayStorage_10` (decompiler signature, tier low; ledger decompiler evidence, name high; id 50205, rva 0x8e7300).
+/// `undefined ReleaseArrayStorage_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_array_storage_10(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(50205, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

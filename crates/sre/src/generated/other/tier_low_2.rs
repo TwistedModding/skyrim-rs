@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AccumulateUserContentAndProcessRequest25` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441915, rva 0x5934c0).
-/// `undefined8 AccumulateUserContentAndProcessRequest25(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn accumulate_user_content_and_process_request25(param_1: i64, param_2: *mut i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441915, (i64, *mut i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `AccumulateUserContentAndProcessRequest26` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441917, rva 0x593820).
-/// `undefined8 AccumulateUserContentAndProcessRequest26(longlong param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn accumulate_user_content_and_process_request26(param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(441917, (i64, *mut i64) -> u64)(param_1, param_2) } }
 /// `AccumulateWeightedTrackData` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 59286, rva 0xaeba90).
 /// `undefined AccumulateWeightedTrackData(longlong * param_1, float param_2, longlong * param_3, longlong param_4, longlong param_5)`
 ///
@@ -13342,3 +13328,17 @@ pub unsafe fn clear_array_releasing_pointers(param_1: *mut i64, param_2: u64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clear_array_releasing_ref_pairs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(104950, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38116, rva 0x6ba3b0).
+/// `undefined ClearArrayReleasingRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_refs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38116, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ClearArrayReleasingSharedRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 439824, rva 0x10bf90).
+/// `undefined ClearArrayReleasingSharedRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn clear_array_releasing_shared_refs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(439824, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

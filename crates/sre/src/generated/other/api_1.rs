@@ -11812,6 +11812,15 @@ impl crate::GRefCountImplCore {
     pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
 }
 
+impl crate::GarbageCollector {
+    /// `GarbageCollector::UnregisterAndQueueReference`: retires a reference: takes it out of the process lists, its parent cell, the form maps and the handle table, sends TESFormDeleteEvent, zeroes its form id and queues a handle to it on the collector's pending array, which the collector drains later
+    ///
+    /// Semantic, actors pass, high; ledger semantic evidence, name high; id 36459, rva 0x64dab0.
+    /// `void (GarbageCollector* this, TESObjectREFR* ref, bool removeFromCell)`
+    #[inline]
+    pub fn unregister_and_queue_reference(&self, ref_: &crate::TESObjectREFR, removeFromCell: bool) { unsafe { function!(36459, (*const Self, *const crate::TESObjectREFR, bool))(core::ptr::from_ref(self), core::ptr::from_ref(ref_), removeFromCell) } }
+}
+
 impl crate::GiftMenu {
     #[doc(hidden)]
     #[inline]

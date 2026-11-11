@@ -8,6 +8,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x5816d0, id: 523606, confidence: Confidence::Medium, name: "ClearGlobalStringVector564238_2" },
+    Function { rva: 0x581740, id: 523607, confidence: Confidence::Medium, name: "PlayAndClearGlobalSoundIdVector564238" },
+    Function { rva: 0x581800, id: 523608, confidence: Confidence::Medium, name: "AddUniqueStringToGlobalVector564238" },
+    Function { rva: 0x581960, id: 523609, confidence: Confidence::Medium, name: "AddUniqueStringToGlobalVector564238OnEvent3" },
+    Function { rva: 0x581b00, id: 441738, confidence: Confidence::Medium, name: "DispatchEventWithSingleValue" },
+    Function { rva: 0x581ba0, id: 441739, confidence: Confidence::Medium, name: "HandleCreationsMenuSettingRequest" },
     Function { rva: 0x581c10, id: 441740, confidence: Confidence::Medium, name: "CopyFixedStringArray" },
     Function { rva: 0x581e50, id: 441742, confidence: Confidence::Medium, name: "MarketplaceMenu::InputHandler::vfunc_7_sub0" },
     Function { rva: 0x581fb0, id: 523611, confidence: Confidence::Medium, name: "EmplaceReallocateStringVector" },
@@ -2751,7 +2757,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x64d720, id: 36456, confidence: Confidence::Medium, name: "ApplyEnchantmentToEquippedWeapons" },
     Function { rva: 0x64d900, id: 36457, confidence: Confidence::Medium, name: "GarbageCollector::ctor" },
     Function { rva: 0x64da50, id: 36458, confidence: Confidence::High, name: "GarbageCollector::dtor" },
-    Function { rva: 0x64dab0, id: 36459, confidence: Confidence::Medium, name: "UnregisterReference" },
+    Function { rva: 0x64dab0, id: 36459, confidence: Confidence::High, name: "GarbageCollector::UnregisterAndQueueReference" },
     Function { rva: 0x64e070, id: 36461, confidence: Confidence::Medium, name: "AppendRefCountedToArray8Locked" },
     Function { rva: 0x64e180, id: 36462, confidence: Confidence::Medium, name: "AppendRefCountedToArray50Locked" },
     Function { rva: 0x64e290, id: 36463, confidence: Confidence::Medium, name: "AppendUniqueRefToDeferredArrayLocked" },
@@ -7892,9 +7898,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x7dc2e0, id: 43668, confidence: Confidence::Medium, name: "TryStartHavokHit" },
     Function { rva: 0x7dc700, id: 43671, confidence: Confidence::High, name: "BSTArrayBase::IAllocatorFunctor::dtor" },
     Function { rva: 0x7dc720, id: 43673, confidence: Confidence::Medium, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vdtor" },
-    Function { rva: 0x7dc750, id: 43674, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_0" },
-    Function { rva: 0x7dc8f0, id: 43676, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_2" },
-    Function { rva: 0x7dc900, id: 43677, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_1" },
-    Function { rva: 0x7dc930, id: 43678, confidence: Confidence::High, name: "BSRagdollContactListenerModifierInterface::ctor" },
-    Function { rva: 0x7dcc30, id: 43681, confidence: Confidence::High, name: "BSRagdollContactListenerModifierInterface::vfunc_1" },
 ];

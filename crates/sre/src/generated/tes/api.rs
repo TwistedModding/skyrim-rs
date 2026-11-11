@@ -25,12 +25,6 @@ impl core::ops::Deref for crate::TESAIForm {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `TESActionData` is laid out from its primary base `BGSActionData`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESActionData {
-    type Target = crate::BGSActionData;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `TESActorBase` is laid out from its primary base `TESBoundAnimObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESActorBase {
     type Target = crate::TESBoundAnimObject;
@@ -3319,6 +3313,15 @@ impl crate::TESWaterForm {
     pub fn m_TESTexture_78(&self) -> &crate::TESTexture { unsafe { &*Self::__member_m_TESTexture_78(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn m_TESTexture_78_ptr(&self) -> *mut crate::TESTexture { Self::__member_m_TESTexture_78(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESWaterReflections {
+    /// `TESWaterReflections::UpdateCubeMap`: updates a water reflection's cube map: on its refresh timer (fCubeMapRefreshRate:Water) creates the BSCubeMapCamera at +0x28 if missing, moves it to the player (or, with flag bit 12, to the scene graph's camera object), copies the frame camera's far (GetMainCamera +0x164) into its frustum (SetFrustum then raises its near to far / 10000, request RZ), lists the LOD land, objects, trees and sky by the bReflect* settings (BSCubeMapCamera::AddSceneNode) and renders two faces per call, six while the menu named at UIStrings+0x110 is open (BSCubeMapCamera::RenderFaces); returns +0x80, whether it rendered
+    ///
+    /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 32160, rva 0x5282a0.
+    /// `bool (TESWaterReflections* this)`
+    #[inline]
+    pub fn update_cube_map(&self) -> bool { unsafe { function!(32160, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESWordOfPower {

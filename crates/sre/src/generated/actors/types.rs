@@ -37,6 +37,33 @@ const _: () = assert!(core::mem::offset_of!(AIProcess, equippedLeft) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(AIProcess, equippedRight) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(AIProcess, __flags) == 0x136);
 
+/// `ActionInput`: size 0x28 (exact, high).
+/// Meaning: what an action request is built from: the source actor (+0x8) and the target reference (+0x10), both counted, the action form (+0x18) and a kind word (+0x20) (high, actors pass).
+/// Evidence: actors pass (semantic): request NM, layout: the deleting destructor ActionInput::vdtor 0x1f3a60 (slot 0) frees 0x28 (mov edx,0x28 at 0x1f3a79), and BGSActionData's next base, ActionOutput, sits at +0x28 (RTTI). ActionInput::ctor 0x1f3a20 stores the vftable, the qwords +0x8, +0x10 and +0x18 and the dword +0x20. The 0x70 the allocation-site inference had is not a size: the immediates in ecx before the ActionInput::ctor calls are default-object indices passed to GetDefaultObjectByIndex 0x154440 (0x40, 0x50, 0x70).
+#[repr(C)]
+pub struct ActionInput {
+    /// +0x0 `vtbl:ActionInput:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::ActionInput_vtable,
+    /// +0x8 `undefined8`, ctor store
+    pub field_8: u64,
+    /// +0x10 `undefined8`, ctor store
+    pub field_10: u64,
+    /// +0x18 `undefined8`, ctor store
+    pub field_18: u64,
+    /// +0x20 `undefined4`, ctor store
+    pub field_20: u32,
+    pub unknown_24: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<ActionInput>() == 0x28);
+const _: () = assert!(core::mem::offset_of!(ActionInput, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ActionInput, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ActionInput, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ActionInput, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ActionInput, field_20) == 0x20);
+
 /// `Actor`: size 0x2B8 (exact, medium); primary base `TESObjectREFR`.
 /// Meaning: reference with AI, actor values, inventory and state; Character and PlayerCharacter derive from it (high, actors pass).
 /// Evidence: lower bound Character (size 0x2B8 at 0x0) adds no fields or bases meets upper bound derived Character size 0x2B8 at 0x0.
@@ -523,6 +550,52 @@ pub struct ActorValueStorage {
 const _: () = assert!(size_of::<ActorValueStorage>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierKeys) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ActorValueStorage, modifierValues) == 0x18);
+
+/// `BGSActionData`: size 0x60 (exact, high); primary base `ActionInput`.
+/// Meaning: an action request with its result: ActionInput, the ActionOutput base at +0x28 (two strings at +0x28 and +0x30, fields to +0x50) and one dword of its own at +0x58 (high, actors pass).
+/// Evidence: actors pass (semantic): request NM, layout: the deleting destructor BGSActionData::vdtor 0x240510 (slot 0) frees 0x60 (mov edx,0x60 at 0x24054e) and the clone BGSActionData::vfunc_4 0x240e50 allocates 0x60 (lea edx,[r9+0x60] at 0x240e8e, r9 zero). +0x58 is this class's own member, not ActionOutput's and not TESActionData's: the clone runs ActionInput::ctor, builds the ActionOutput base at +0x28 out of line (0x23fea0), stores BGSActionData::vftable 0x18058c0 and only then zeroes the dword +0x58; BGSActionData::ctor 0x78db90 keeps that order with the ActionOutput members inline.
+/// Bases: `ActionInput`@0x0, `ActionOutput`@0x28.
+#[repr(C)]
+pub struct BGSActionData {
+    /// +0x0 `vtbl:BGSActionData:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSActionData_vtable,
+    /// +0x8 `undefined8`, base ActionInput
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base ActionInput
+    pub field_10: u64,
+    /// +0x18 `undefined8`, base ActionInput
+    pub field_18: u64,
+    /// +0x20 `undefined4`, base ActionInput
+    pub field_20: u32,
+    pub unknown_24: [u8; 20],
+    /// +0x38 `undefined4`, ctor store
+    pub field_38: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined8`, ctor store
+    pub field_40: u64,
+    /// +0x48 `undefined8`, ctor store
+    pub field_48: u64,
+    /// +0x50 `undefined4`, ctor store
+    pub field_50: u32,
+    pub unknown_54: [u8; 4],
+    /// +0x58 `undefined4`, ctor store
+    pub field_58: u32,
+    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSActionData>() == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 
 /// `BSExtraData`: size 0x10 (exact, high).
 /// Meaning: base of every extra data node (high, actors pass).
@@ -2300,6 +2373,52 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BE9) == 0xB
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __aiDriveFlags) == 0xBEA);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __viewFlags) == 0xBEB);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BEC) == 0xBEC);
+
+/// `TESActionData`: size 0x60 (exact, high); primary base `BGSActionData`.
+/// Meaning: BGSActionData whose Perform (slot 5) goes to the actor mediator; no members of its own (high, actors pass).
+/// Evidence: actors pass (semantic): request NM, layout: the deleting destructor TESActionData::vdtor 0x240770 (slot 0) frees 0x60 (mov edx,0x60 at 0x2407ae) and the clone TESActionData::vfunc_4 0x78da40 allocates 0x60 (lea edx,[r9+0x60] at 0x78da7e, r9 zero), runs BGSActionData::ctor 0x78db90 on it and stores TESActionData::vftable 0x18058f8: the class adds no member to BGSActionData. The members the layout inference had at +0x60, +0x68, +0x70 and +0x80 came from 0x80df60, 0x80e020 and 0x80e0f0, which build a larger stack object whose first 0x60 bytes are a TESActionData (TESActionDataEx::ctor_*).
+/// Bases: `BGSActionData`@0x0, `ActionInput`@0x0, `ActionOutput`@0x28.
+#[repr(C)]
+pub struct TESActionData {
+    /// +0x0 `vtbl:TESActionData:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESActionData_vtable,
+    /// +0x8 `undefined8`, base ActionInput
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base ActionInput
+    pub field_10: u64,
+    /// +0x18 `undefined8`, base ActionInput
+    pub field_18: u64,
+    /// +0x20 `undefined4`, base ActionInput
+    pub field_20: u32,
+    pub unknown_24: [u8; 20],
+    /// +0x38 `undefined4`, base BGSActionData
+    pub field_38: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `undefined8`, base BGSActionData
+    pub field_40: u64,
+    /// +0x48 `undefined8`, base BGSActionData
+    pub field_48: u64,
+    /// +0x50 `undefined4`, base BGSActionData
+    pub field_50: u32,
+    pub unknown_54: [u8; 4],
+    /// +0x58 `undefined4`, base BGSActionData
+    pub field_58: u32,
+    pub unknown_5C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESActionData>() == 0x60);
+const _: () = assert!(core::mem::offset_of!(TESActionData, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESActionData, field_58) == 0x58);
 
 /// `TESActorBaseData`: size 0x58 (exact, high); primary base `BaseFormComponent`.
 /// Meaning: actor base data component: flags, level, voice type (high, actors pass).

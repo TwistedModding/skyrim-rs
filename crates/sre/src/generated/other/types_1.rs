@@ -660,32 +660,6 @@ pub struct ActionActivateDoneHandler {
 const _: () = assert!(size_of::<ActionActivateDoneHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ActionActivateDoneHandler, __vftable) == 0x0);
 
-/// `ActionInput`: size 0x70 (exact, low).
-/// Evidence: conflict, allocation size kept: allocation size 0x70 above upper bound 0x28 (next base of BGSActionData at 0x28).
-#[repr(C)]
-pub struct ActionInput {
-    /// +0x0 `vtbl:ActionInput:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::ActionInput_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
-    pub unknown_24: [u8; 76],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<ActionInput>() == 0x70);
-const _: () = assert!(core::mem::offset_of!(ActionInput, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ActionInput, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ActionInput, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ActionInput, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ActionInput, field_20) == 0x20);
-
 /// `ActiveEffect::ForEachHitEffectVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
 #[repr(C)]

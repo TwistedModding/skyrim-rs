@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateObjectResourceFromGlobal408436` at 0xc65e60 (decompiler, medium); signature (low): `undefined CreateObjectResourceFromGlobal408436(undefined8 param_1)`
+pub const CreateObjectResourceFromGlobal408436: u64 = 66244;
+/// `CreateObjectVtable242329` at 0xd121c0 (decompiler, medium); signature (low): `undefined CreateObjectVtable242329(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable242329: u64 = 82991;
+/// `CreateObjectVtable243445` at 0xd907d0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable243445(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable243445: u64 = 85610;
+/// `CreateObjectVtable244620` at 0xdde9f0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244620(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244620: u64 = 86992;
+/// `CreateObjectVtable244638` at 0xde0840 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244638(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244638: u64 = 87023;
 /// `CreateObjectVtable244650` at 0xde2200 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244650(undefined8 param_1, longlong param_2)`
 pub const CreateObjectVtable244650: u64 = 87054;
 /// `CreateObjectVtable244662` at 0xde3520 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244662(undefined8 param_1, longlong param_2)`
@@ -7705,6 +7715,10 @@ pub const FindLastNonZeroInField190: u64 = 90002;
 pub const FindLastPathSeparator: u64 = 69492;
 /// `FindLeafObjectByNameRecursive` at 0x275fa0 (decompiler, medium); signature (medium): `longlong * FindLeafObjectByNameRecursive(longlong * param_1, char * param_2)`
 pub const FindLeafObjectByNameRecursive: u64 = 17647;
+/// `FindLightInNodeTree` at 0x2757e0 (semantic, high); signature (untiered): `longlong * FindLightInNodeTree(longlong param_1)`; semantic: depth-first search of node's children (+0x118 array, u16 count +0x122) for the first object whose type chain reaches g_TypeNode_NiLight 0x331c660; recurses into children that are nodes (slot 3 non-null) (high); signature `NiLight* (NiNode* node)`
+pub const FindLightInNodeTree: u64 = 17627;
+/// `FindLightInNodeTree` as a function pointer type (high).
+pub type FindLightInNodeTree_fn = unsafe extern "C" fn(node: *mut crate::NiNode) -> *mut crate::NiLight;
 /// `FindLightingShaderPropertyInChildren` at 0x15199b0 (decompiler, medium); signature (low): `longlong * FindLightingShaderPropertyInChildren(longlong param_1)`
 pub const FindLightingShaderPropertyInChildren: u64 = 106511;
 /// `FindLightingShaderPropertyInSubtree` at 0x1519a90 (decompiler, medium); signature (low): `longlong * FindLightingShaderPropertyInSubtree(longlong param_1)`
@@ -8777,14 +8791,6 @@ pub const FlushRingBufferToFile: u64 = 76859;
 pub const FlushStreamWriteBuffer: u64 = 57428;
 /// `FmtExtraType88QuestAliasPackageList` at 0x172b40 (decompiler, medium); signature (low): `undefined FmtExtraType88QuestAliasPackageList(longlong param_1, undefined8 param_2)`
 pub const FmtExtraType88QuestAliasPackageList: u64 = 12049;
-/// `Fmt_PtLight` at 0x274390 (semantic, high); signature (low): `NiPointLight * Fmt_PtLight(longlong * param_1, longlong * param_2, longlong * param_3, undefined8 param_4, char param_5, char param_6)`; semantic: creates (or reuses the '%s PtLight' child of) the reference's NiPointLight from the LIGH data, files it with ShadowSceneNode::CreateLight and sets the attenuation and fade (high); signature `NiPointLight* (TESObjectLIGH* light, TESObjectREFR* ref, NiNode* root, bool param4, bool keepRadius, bool noRefList)`
-pub const Fmt_PtLight: u64 = 17610;
-/// `Fmt_PtLight` as a function pointer type (high).
-pub type Fmt_PtLight_fn = unsafe extern "C" fn(light: *mut crate::TESObjectLIGH, ref_: *mut crate::TESObjectREFR, root: *mut crate::NiNode, param4: bool, keepRadius: bool, noRefList: bool) -> *mut crate::NiPointLight;
-/// `Fmt_PtLight_sub1` at 0x2757e0 (semantic, high); signature (untiered): `longlong * Fmt_PtLight_sub1(longlong param_1)`; semantic: depth-first search of node's children (+0x118 array, u16 count +0x122) for the first object whose type chain reaches g_TypeNode_NiLight 0x331c660; recurses into children that are nodes (slot 3 non-null) (high); signature `NiLight* (NiNode* node)`
-pub const Fmt_PtLight_sub1: u64 = 17627;
-/// `Fmt_PtLight_sub1` as a function pointer type (high).
-pub type Fmt_PtLight_sub1_fn = unsafe extern "C" fn(node: *mut crate::NiNode) -> *mut crate::NiLight;
 /// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (low): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
 pub const FocusListAndSelectIndex: u64 = 454102;
 /// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (low): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8803,5 +8809,3 @@ pub const ForEachArrayEmitterInTree: u64 = 15054;
 pub const ForEachArrayEntryLocked: u64 = 52423;
 /// `ForEachCommaSeparatedToken` at 0xecfec0 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedToken(char * param_1, undefined8 * param_2)`
 pub const ForEachCommaSeparatedToken: u64 = 69870;
-/// `ForEachCommaSeparatedTokenWithContext` at 0xecf510 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedTokenWithContext(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const ForEachCommaSeparatedTokenWithContext: u64 = 69853;

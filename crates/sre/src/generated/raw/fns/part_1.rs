@@ -5349,7 +5349,7 @@ pub const ApplyKeyTypeFunctionsToKeyArrays: u64 = 74986;
 pub const ApplyLODFadeOutMultSettings: u64 = 13418;
 /// `ApplyLayoutParamsToField58` at 0xe70760 (decompiler, medium); signature (low): `undefined ApplyLayoutParamsToField58(longlong param_1, uint * param_2)`
 pub const ApplyLayoutParamsToField58: u64 = 88069;
-/// `ApplyLightAttenuationSettings` at 0x275600 (semantic, high); signature (medium): `undefined ApplyLightAttenuationSettings(longlong * param_1, uint param_2)`; semantic: if the light is a NiPointLight (TypeNode walk): +0x140 = fConstantValue:LightAttenuation (when the attenuation mode word 0x31a5498 bit 0), +0x144 = linear term, +0x148 = quadratic term from radius and the [LightAttenuation] INI settings; same code as the tail of Fmt_PtLight (high); signature `void (NiLight* light, uint radius)`
+/// `ApplyLightAttenuationSettings` at 0x275600 (semantic, high); signature (medium): `undefined ApplyLightAttenuationSettings(longlong * param_1, uint param_2)`; semantic: if the light is a NiPointLight (TypeNode walk): +0x140 = fConstantValue:LightAttenuation (when the attenuation mode word 0x31a5498 bit 0), +0x144 = linear term, +0x148 = quadratic term from radius and the [LightAttenuation] INI settings; same code as the tail of TESObjectLIGH::CreateOrReusePointLight (high); signature `void (NiLight* light, uint radius)`
 pub const ApplyLightAttenuationSettings: u64 = 17626;
 /// `ApplyLightAttenuationSettings` as a function pointer type (high).
 pub type ApplyLightAttenuationSettings_fn = unsafe extern "C" fn(light: *mut crate::NiLight, radius: u32);

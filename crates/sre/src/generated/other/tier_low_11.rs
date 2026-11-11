@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SubmitUserContentListField0D0Request` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442266, rva 0x5f5270).
-/// `longlong SubmitUserContentListField0D0Request(longlong param_1, undefined4 param_2, undefined8 param_3, undefined4 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_user_content_list_field0_d0_request(param_1: i64, param_2: u32, param_3: u64, param_4: u32) -> i64 { unsafe { function!(442266, (i64, u32, u64, u32) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `SubmitUserContentListMemberFnRequest` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442264, rva 0x5f50c0).
 /// `longlong SubmitUserContentListMemberFnRequest(longlong param_1, undefined4 param_2, undefined8 * param_3, undefined4 param_4)`
 ///
@@ -3143,13 +3136,6 @@ pub unsafe fn unregister_from_arrays30_and40(param_1: i64) -> u64 { unsafe { fun
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn unregister_from_global_map(param_1: *mut u32, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(14054, (*mut u32, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnregisterReference` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 36459, rva 0x64dab0).
-/// `undefined UnregisterReference(longlong param_1, longlong * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unregister_reference(param_1: i64, param_2: *mut i64, param_3: u64) -> u64 { unsafe { function!(36459, (i64, *mut i64, u64) -> u64)(param_1, param_2, param_3) } }
 /// `UnregisterSink` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 17974, rva 0x2861e0).
 /// `undefined8 * UnregisterSink(longlong * param_1, longlong param_2)`
 ///

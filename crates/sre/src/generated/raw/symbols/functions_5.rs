@@ -8,6 +8,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7dc750, id: 43674, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_0" },
+    Function { rva: 0x7dc8f0, id: 43676, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_2" },
+    Function { rva: 0x7dc900, id: 43677, confidence: Confidence::High, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<160>_>::vfunc_1" },
+    Function { rva: 0x7dc930, id: 43678, confidence: Confidence::High, name: "BSRagdollContactListenerModifierInterface::ctor" },
+    Function { rva: 0x7dcc30, id: 43681, confidence: Confidence::High, name: "BSRagdollContactListenerModifierInterface::vfunc_1" },
     Function { rva: 0x7dcf20, id: 43682, confidence: Confidence::High, name: "BSTArrayBase::IAllocatorFunctor::dtor" },
     Function { rva: 0x7dcf30, id: 43683, confidence: Confidence::Medium, name: "BSRagdollContactListenerModifierInterface::vfunc_1_sub0" },
     Function { rva: 0x7dcf60, id: 43684, confidence: Confidence::Medium, name: "BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<2080>_>::vdtor" },
@@ -567,9 +572,9 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x80dc80, id: 44433, confidence: Confidence::High, name: "Nop_148" },
     Function { rva: 0x80dc90, id: 44434, confidence: Confidence::Medium, name: "GetLazyInitHashMap404878" },
     Function { rva: 0x80dd40, id: 44435, confidence: Confidence::Medium, name: "RehashCrc32InlineBucketHashMap" },
-    Function { rva: 0x80df60, id: 44436, confidence: Confidence::High, name: "TESActionData::ctor" },
-    Function { rva: 0x80e020, id: 44437, confidence: Confidence::High, name: "TESActionData::ctor" },
-    Function { rva: 0x80e0f0, id: 44438, confidence: Confidence::High, name: "TESActionData::ctor" },
+    Function { rva: 0x80df60, id: 44436, confidence: Confidence::High, name: "TESActionDataEx::ctor_FromActionIndex" },
+    Function { rva: 0x80e020, id: 44437, confidence: Confidence::High, name: "TESActionDataEx::ctor_FromActionIndexAndTarget" },
+    Function { rva: 0x80e0f0, id: 44438, confidence: Confidence::High, name: "TESActionDataEx::ctor_FromAction" },
     Function { rva: 0x80e1a0, id: 44439, confidence: Confidence::Medium, name: "SetField58AndCallVfunc28" },
     Function { rva: 0x80e1c0, id: 44440, confidence: Confidence::Medium, name: "CallVfunc28" },
     Function { rva: 0x80e4c0, id: 44446, confidence: Confidence::Medium, name: "PerformDefaultObjectAction_4" },
@@ -6434,11 +6439,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x90fc00, id: 51123, confidence: Confidence::Medium, name: "ItemsPickpocketed::UnregisterSink" },
     Function { rva: 0x90fc30, id: 51124, confidence: Confidence::High, name: "ContainerMenu::ctor" },
     Function { rva: 0x90fdd0, id: 51125, confidence: Confidence::Medium, name: "ContainerMenu::ctor" },
-    Function { rva: 0x90ff70, id: 51126, confidence: Confidence::High, name: "ContainerMenu::vfunc_4" },
-    Function { rva: 0x910e50, id: 51127, confidence: Confidence::High, name: "ContainerMenu::vfunc_6" },
-    Function { rva: 0x910e90, id: 51128, confidence: Confidence::High, name: "ContainerMenu::vfunc_1" },
-    Function { rva: 0x9112b0, id: 51129, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb0" },
-    Function { rva: 0x911310, id: 51130, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb1" },
-    Function { rva: 0x9116b0, id: 51132, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb2" },
-    Function { rva: 0x911810, id: 51133, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb3" },
 ];

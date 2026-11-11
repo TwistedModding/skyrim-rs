@@ -77,16 +77,6 @@ impl crate::AbstractHeap {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(68481, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::ActionInput {
-    /// `ActionInput::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 14990, rva 0x1f3900).
-    /// `undefined dtor(ActionInput * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14990, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::ActiveEffect__ForEachHitEffectVisitor {
     /// `ActiveEffect::ForEachHitEffectVisitor::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 34110, rva 0x5be420).
     /// `undefined dtor(ForEachHitEffectVisitor * this)`
@@ -15299,3 +15289,10 @@ pub unsafe fn get_channel_byte_ptr_2(param_1: i64, param_2: i64) -> i64 { unsafe
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_check_for_missing_content_on_startup() -> u8 { unsafe { function!(442573, () -> u8)() } }
+/// `GetClientOrServerString` (decompiler signature, tier high; ledger decompiler evidence, name high; id 449894, rva 0x13d2940).
+/// `char * GetClientOrServerString(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_client_or_server_string(param_1: i64) -> *mut c_char { unsafe { function!(449894, (i64) -> *mut c_char)(param_1) } }

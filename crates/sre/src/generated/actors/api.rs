@@ -25,6 +25,12 @@ impl core::ops::Deref for crate::ActorValueInfo {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGSActionData` is laid out from its primary base `ActionInput`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSActionData {
+    type Target = crate::ActionInput;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSHandleRefObject` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSHandleRefObject {
     type Target = crate::NiRefObject;
@@ -46,6 +52,12 @@ impl core::ops::Deref for crate::ExtraContainerChanges {
 /// `PlayerCharacter` is laid out from its primary base `Character`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::PlayerCharacter {
     type Target = crate::Character;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `TESActionData` is laid out from its primary base `BGSActionData`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::TESActionData {
+    type Target = crate::BGSActionData;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -6100,6 +6112,33 @@ pub unsafe fn resolve_ref_handle_const(handle: *const u32, out: *mut c_void) -> 
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn resolve_ref_handle_2(handle: *mut u32, out: *mut c_void) -> bool { unsafe { function!(12922, (*mut u32, *mut c_void) -> bool)(handle, out) } }
+/// `TESActionDataEx::ctor_FromAction`: as ctor_FromActionIndex, with the action (+0x18) passed in and no target
+///
+/// Semantic, actors pass, high; ledger semantic evidence, name high; id 44438, rva 0x80e0f0.
+/// `TESActionDataEx* (TESActionDataEx* this, Actor* actor, BGSAction* action)`
+///
+/// # Safety
+/// `this` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn tes_action_data_ex__ctor_from_action(this: *mut c_void, actor: *mut crate::Actor, action: *mut crate::BGSAction) -> *mut c_void { unsafe { function!(44438, (*mut c_void, *mut crate::Actor, *mut crate::BGSAction) -> *mut c_void)(this, actor, action) } }
+/// `TESActionDataEx::ctor_FromActionIndex`: builds a TESActionData (kind 2, source actor, no target) followed by a zeroed 0x28-byte result block, and sets its action (+0x18) from the default-object table 0x20b96b8 by index
+///
+/// Semantic, actors pass, high; ledger semantic evidence, name high; id 44436, rva 0x80df60.
+/// `TESActionDataEx* (TESActionDataEx* this, Actor* actor, i32 actionIndex)`
+///
+/// # Safety
+/// `this` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn tes_action_data_ex__ctor_from_action_index(this: *mut c_void, actor: *mut crate::Actor, actionIndex: i32) -> *mut c_void { unsafe { function!(44436, (*mut c_void, *mut crate::Actor, i32) -> *mut c_void)(this, actor, actionIndex) } }
+/// `TESActionDataEx::ctor_FromActionIndexAndTarget`: as ctor_FromActionIndex, with a target reference (+0x10)
+///
+/// Semantic, actors pass, high; ledger semantic evidence, name high; id 44437, rva 0x80e020.
+/// `TESActionDataEx* (TESActionDataEx* this, Actor* actor, TESObjectREFR* target, i32 actionIndex)`
+///
+/// # Safety
+/// `this` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn tes_action_data_ex__ctor_from_action_index_and_target(this: *mut c_void, actor: *mut crate::Actor, target: *mut crate::TESObjectREFR, actionIndex: i32) -> *mut c_void { unsafe { function!(44437, (*mut c_void, *mut crate::Actor, *mut crate::TESObjectREFR, i32) -> *mut c_void)(this, actor, target, actionIndex) } }
 /// `g_ActorValueStorageLock` at 0x3243f88, id 404014 (semantic, high); lock of every actor's ActorValueStorage (high, actors pass), type `class:BSReadWriteLock`
 #[inline]
 pub fn g_actor_value_storage_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(404014) as *const crate::BSReadWriteLock) } }

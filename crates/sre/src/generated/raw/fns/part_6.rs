@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildAnimationGraphManager` at 0x5537e0 (semantic, high); signature (low): `undefined8 BuildAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: per project: slot 5 create, 0xbcd240 load (flag slot 6), slot 7 variables, slot 8 sinks (slot 9 on failure); then BSAnimationGraphManager (0xb8, cache size slot 15), slot 10 channels, slot 11, install 0x554060, activate 0xbc0480 (high); signature `bool (IAnimationGraphManagerHolder* holder, BSScrapArray<ProjectPath>& projects)`
+pub const BuildAnimationGraphManager: u64 = 32893;
+/// `BuildAnimationGraphManager` as a function pointer type (high).
+pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut crate::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool;
+/// `BuildAnimationGraphManagerFromPath` at 0x553620 (decompiler, medium); signature (low): `undefined1 BuildAnimationGraphManagerFromPath(undefined8 param_1, undefined1 * param_2)`
+pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
+/// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (low): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
+pub const BuildAnimationGraphManagerOnce: u64 = 32919;
 /// `BuildAudioCommandNode` at 0xcd0040 (decompiler, medium); signature (low): `undefined4 * BuildAudioCommandNode(undefined8 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined8 param_5, longlong * param_6, undefined4 * param_7)`
 pub const BuildAudioCommandNode: u64 = 67733;
 /// `BuildBucketSortedIndices` at 0xc127c0 (decompiler, medium); signature (low): `undefined BuildBucketSortedIndices(undefined8 * param_1, longlong * param_2, longlong * param_3)`
@@ -1933,6 +1941,8 @@ pub const ClearDecalGroup: u64 = 19574;
 pub const ClearDeleterPairVector: u64 = 95931;
 /// `ClearDeque40` at 0xa7f880 (decompiler, medium); signature (low): `undefined ClearDeque40(longlong param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
 pub const ClearDeque40: u64 = 443057;
+/// `ClearEmitColorInTree` at 0x274ae0 (semantic, medium); signature (untiered): `undefined ClearEmitColorInTree(longlong param_1)`; semantic: walks a node's children (+0x118, count +0x122): recurses into nodes (slot 3), and for a geometry (slot 7) whose shader property (+0x128) is a BSLightingShaderProperty sets its emit colour (*(+0xf0)) to the zero colour ID_410515 (medium); signature `void (NiNode* node)`
+pub const ClearEmitColorInTree: u64 = 17611;
 /// `ClearEntries0CRange` at 0x4f8890 (decompiler, high); signature (high): `undefined ClearEntries0CRange(longlong * param_1, ulonglong param_2, uint param_3)`
 pub const ClearEntries0CRange: u64 = 523584;
 /// `ClearEntries38Range` at 0x878ec0 (decompiler, high); signature (high): `undefined ClearEntries38Range(longlong * param_1, ulonglong param_2, uint param_3)`
@@ -8019,7 +8029,3 @@ pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehav
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2ac6eeb2ea1f: u64 = 47691;
 /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c7e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_db2191c4793e: u64 = 47726;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_8` at 0x87daa0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_f63897c763bf: u64 = 47791;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_9` at 0x87cd80 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_82ad657b99bd: u64 = 47747;

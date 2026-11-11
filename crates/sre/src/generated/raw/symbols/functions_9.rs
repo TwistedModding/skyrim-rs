@@ -8,6 +8,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x11582c0, id: 81935, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vfunc_3" },
+    Function { rva: 0x11582e0, id: 81936, confidence: Confidence::Medium, name: "ResetAndCreateBoundingTriangles" },
+    Function { rva: 0x1158720, id: 81937, confidence: Confidence::High, name: "hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vfunc_1" },
+    Function { rva: 0x1159890, id: 81943, confidence: Confidence::Medium, name: "WriteObjectGraph" },
+    Function { rva: 0x1159e80, id: 81946, confidence: Confidence::Medium, name: "hkRemoteObjectProcess::hkProcess_vfunc_4_sub0" },
     Function { rva: 0x115a210, id: 81948, confidence: Confidence::Medium, name: "WriteObjectBlockToArchive" },
     Function { rva: 0x115a430, id: 81949, confidence: Confidence::Medium, name: "hkProcessFactory::ctor" },
     Function { rva: 0x115a4c0, id: 81950, confidence: Confidence::High, name: "hkProcessFactory::dtor" },
@@ -6646,10 +6651,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13a90b0, id: 450395, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_8" },
     Function { rva: 0x13a90e0, id: 450396, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_9" },
     Function { rva: 0x13a9110, id: 450397, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_10" },
-    Function { rva: 0x13a91c0, id: 450399, confidence: Confidence::High, name: "AppendBytesToFixedString2000" },
-    Function { rva: 0x13aa010, id: 450413, confidence: Confidence::Medium, name: "IsReadyWithField1C8ClearAndField198Null" },
-    Function { rva: 0x13aa4f0, id: 450423, confidence: Confidence::Medium, name: "GetField28ClampedToGlobal188204Locked" },
-    Function { rva: 0x13aa580, id: 450424, confidence: Confidence::Medium, name: "GetField28ClampedToGlobal196511" },
-    Function { rva: 0x13aa5e0, id: 450426, confidence: Confidence::Medium, name: "HasSharedPtrViaField158" },
-    Function { rva: 0x13ab230, id: 450443, confidence: Confidence::Medium, name: "OnCompletion_2" },
 ];

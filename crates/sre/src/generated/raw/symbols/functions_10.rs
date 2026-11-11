@@ -8,6 +8,12 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13a91c0, id: 450399, confidence: Confidence::High, name: "AppendBytesToFixedString2000" },
+    Function { rva: 0x13aa010, id: 450413, confidence: Confidence::Medium, name: "IsReadyWithField1C8ClearAndField198Null" },
+    Function { rva: 0x13aa4f0, id: 450423, confidence: Confidence::Medium, name: "GetField28ClampedToGlobal188204Locked" },
+    Function { rva: 0x13aa580, id: 450424, confidence: Confidence::Medium, name: "GetField28ClampedToGlobal196511" },
+    Function { rva: 0x13aa5e0, id: 450426, confidence: Confidence::Medium, name: "HasSharedPtrViaField158" },
+    Function { rva: 0x13ab230, id: 450443, confidence: Confidence::Medium, name: "OnCompletion_2" },
     Function { rva: 0x13abed0, id: 450460, confidence: Confidence::Medium, name: "CallVfunc0WithZeroIfNonNull_2" },
     Function { rva: 0x13abee0, id: 450462, confidence: Confidence::Medium, name: "CallVfunc0WithZeroIfNonNull_3" },
     Function { rva: 0x13abef0, id: 450464, confidence: Confidence::Medium, name: "ForwardHandleIfSharedPtrViaField158" },
@@ -8217,10 +8223,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x176e670, id: 168441, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeTime__atexit" },
     Function { rva: 0x176e6c0, id: 168442, confidence: Confidence::Medium, name: "GameSetting_fChaseDetectionTimerSetting__atexit" },
     Function { rva: 0x176e710, id: 168443, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorBase__atexit" },
-    Function { rva: 0x176e760, id: 168444, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorScale__atexit" },
-    Function { rva: 0x176e7b0, id: 168445, confidence: Confidence::Medium, name: "GameSetting_fClothingBase__atexit" },
-    Function { rva: 0x176e800, id: 168446, confidence: Confidence::Medium, name: "GameSetting_fClothingClassScale__atexit" },
-    Function { rva: 0x176e850, id: 168447, confidence: Confidence::Medium, name: "GameSetting_fClothingJewelryBase__atexit" },
-    Function { rva: 0x176e8a0, id: 168448, confidence: Confidence::Medium, name: "GameSetting_fClothingJewelryScale__atexit" },
-    Function { rva: 0x176e8f0, id: 168449, confidence: Confidence::Medium, name: "GameSetting_fCommentOnPlayerActionsTimer__atexit" },
 ];

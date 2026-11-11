@@ -58,16 +58,6 @@ impl crate::TESAIForm {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(14444, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::TESActionData {
-    /// `TESActionData::Perform`, vtable slot 5, through the object's vtable (decompiler signature, tier high; ledger semantic evidence, name high; id 41557, rva 0x78db80).
-    /// `undefined Perform(TESActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn perform(&self) -> u64 { unsafe { virtual_function!(self, 5, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::TESActorBase {
     /// `TESActorBase::ActorValueOwner_GetBaseActorValue` (decompiler signature, tier high; ledger slot_propagation evidence, name high; id 24904, rva 0x3cc640).
     /// `undefined ActorValueOwner_GetBaseActorValue(TESActorBase * this)`

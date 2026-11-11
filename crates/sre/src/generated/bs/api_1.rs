@@ -6383,6 +6383,15 @@ impl crate::BSComputeShader {
 }
 
 impl crate::BSCubeMapCamera {
+    /// `BSCubeMapCamera::AddSceneNode`: appends a counted pointer to the array at +0x188 (capacity +0x190, count +0x198): the scene objects TESWaterReflections::UpdateCubeMap lists for the cube map (the LOD land, objects and trees roots and the sky root)
+    ///
+    /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 32258, rva 0x52f310.
+    /// `void (BSCubeMapCamera* this, NiAVObject* node)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn add_scene_node(&self, node: *mut crate::NiAVObject) { unsafe { function!(32258, (*const Self, *mut crate::NiAVObject))(core::ptr::from_ref(self), node) } }
     /// `BSCubeMapCamera::Destroy`: dtor body then free 0x1c8
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 107565, rva 0x155a2c0.

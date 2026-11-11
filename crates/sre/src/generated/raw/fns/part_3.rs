@@ -2207,6 +2207,8 @@ pub const BSCounterStorage__vfunc_3: u64 = 69502;
 pub const BSCounterStorage__vfunc_4: u64 = 69503;
 /// `BSCounterStorage::vfunc_5` at 0xec18f0 (rtti, high); signature (low): `undefined8 vfunc_5(BSCounterStorage * this, int param_1)`
 pub const BSCounterStorage__vfunc_5: u64 = 69504;
+/// `BSCubeMapCamera::AddSceneNode` at 0x52f310 (semantic, medium); signature (untiered): `undefined AddSceneNode(longlong param_1, longlong param_2)`; semantic: appends a counted pointer to the array at +0x188 (capacity +0x190, count +0x198): the scene objects TESWaterReflections::UpdateCubeMap lists for the cube map (the LOD land, objects and trees roots and the sky root) (medium); signature `void (BSCubeMapCamera* this, NiAVObject* node)`
+pub const BSCubeMapCamera__AddSceneNode: u64 = 32258;
 /// `BSCubeMapCamera::Destroy` at 0x155a2c0 (semantic, high); signature (low): `BSCubeMapCamera * Destroy(BSCubeMapCamera * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; semantic: dtor body then free 0x1c8 (high); signature `BSCubeMapCamera* (BSCubeMapCamera* this, u32 flags)`
 pub const BSCubeMapCamera__Destroy: u64 = 107565;
 /// `BSCubeMapCamera::Destroy` as a function pointer type (high).
@@ -7973,7 +7975,3 @@ pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;
 /// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_2: u64 = 30021;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408470 (callgraph, high); signature (untiered): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor: u64 = 26070;

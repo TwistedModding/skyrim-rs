@@ -5032,8 +5032,7 @@ pub struct TESObjectLIGH {
     /// +0xE4 `u32`, semantic; light radius (integer) (high)
     pub radius: u32,
     /// +0xE8 `undefined4`, semantic; colour r +0xe8, g +0xe9, b +0xea (0-255) (high)
-    #[doc(hidden)]
-    pub __color: [u8; 4],
+    pub color: u32,
     /// +0xEC `u32`, semantic; light flags (see flags rows); see the flag rows (high)
     pub flags: u32,
     /// +0xF0 `float`, semantic; 1.0 when 0 at load; passed to LightParams+0xc for shadow lights (medium)
@@ -5056,7 +5055,8 @@ pub struct TESObjectLIGH {
     pub __fade: [u8; 4],
     unknown_10C: [u8; 4],
     /// +0x110 `ptr:BGSSoundDescriptorForm`, semantic; SNAM sound (medium)
-    pub sound: *mut crate::BGSSoundDescriptorForm,
+    #[doc(hidden)]
+    pub __sound: [u8; 8],
     unknown_118: [u8; 16],
     /// +0x128 `ptr:BGSLensFlare`, semantic; LNAM lens flare (high)
     pub lensFlare: *mut crate::BGSLensFlare,
@@ -5094,7 +5094,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_D0) == 0xD0
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_e0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, radius) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __color) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, color) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flags) == 0xEC);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, falloffExponent) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, fov) == 0xF4);
@@ -5103,7 +5103,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerPeriod) == 0
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerIntensityAmplitude) == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerMovementAmplitude) == 0x104);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __fade) == 0x108);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, sound) == 0x110);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __sound) == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, lensFlare) == 0x128);
 
 /// `TESObjectWEAP`: size 0x220 (exact, high); primary base `TESBoundObject`.

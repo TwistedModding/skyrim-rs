@@ -229,51 +229,6 @@ const _: () = assert!(core::mem::offset_of!(BGSAction, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSAction, keyword) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSAction, field_28) == 0x28);
 
-/// `BGSActionData`: size 0x60 (exact, low); primary base `ActionInput`.
-/// Evidence: lower bound field field_58 meets upper bound first own field of TESActionData at 0x60 (soft).
-/// Bases: `ActionInput`@0x0, `ActionOutput`@0x28.
-#[repr(C)]
-pub struct BGSActionData {
-    /// +0x0 `vtbl:BGSActionData:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSActionData_vtable,
-    /// +0x8 `undefined8`, base ActionInput
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base ActionInput
-    pub field_10: u64,
-    /// +0x18 `undefined8`, base ActionInput
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base ActionInput
-    pub field_20: u32,
-    pub unknown_24: [u8; 20],
-    /// +0x38 `undefined4`, ctor store
-    pub field_38: u32,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
-    pub unknown_54: [u8; 4],
-    /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
-    pub unknown_5C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BGSActionData>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
-
 /// `BGSAddonNode`: size 0x80 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: runtime: 0x80 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.

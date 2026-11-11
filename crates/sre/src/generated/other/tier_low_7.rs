@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetOrCreateThreadLocalBlock668` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 24804, rva 0x3c9480).
-/// `undefined8 * GetOrCreateThreadLocalBlock668(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_thread_local_block668(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(24804, (u64, u64, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateThreadUpdateTracker` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 71036, rva 0xf02360).
 /// `longlong * GetOrCreateThreadUpdateTracker(undefined8 param_1, undefined8 param_2, size_t param_3, undefined8 param_4)`
 ///
@@ -13216,3 +13209,10 @@ pub unsafe fn load_float_pair_and_shared_object_ref_4(param_1: *mut i64, param_2
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn load_float_pair_and_two_shared_object_refs(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(48374, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairAndTwoSharedRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 49815, rva 0x8d46d0).
+/// `undefined LoadFloatPairAndTwoSharedRefs(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pair_and_two_shared_refs(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(49815, (*mut i64, i64) -> u64)(param_1, param_2) } }

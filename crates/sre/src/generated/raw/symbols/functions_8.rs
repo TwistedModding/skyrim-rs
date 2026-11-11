@@ -8,6 +8,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xedcba0, id: 70197, confidence: Confidence::Medium, name: "NiObject::vfunc_35" },
+    Function { rva: 0xedcbb0, id: 70198, confidence: Confidence::Medium, name: "NiObject::vfunc_36" },
+    Function { rva: 0xedcbc0, id: 70199, confidence: Confidence::High, name: "NiObject::ctor" },
+    Function { rva: 0xedcbf0, id: 70200, confidence: Confidence::Medium, name: "NiStream::vfunc_13_sub1" },
+    Function { rva: 0xedcc30, id: 76145, confidence: Confidence::Medium, name: "InsertOrAssignQwordByQwordKey_2" },
+    Function { rva: 0xedcf80, id: 70204, confidence: Confidence::High, name: "NiStream::dtor" },
+    Function { rva: 0xedcf90, id: 70205, confidence: Confidence::Medium, name: "RefPtrVectorDeletingDtor_2" },
     Function { rva: 0xedd040, id: 70206, confidence: Confidence::High, name: "_anon_71CE6E17::DeepCopyStream::vfunc_0" },
     Function { rva: 0xedd080, id: 70207, confidence: Confidence::Medium, name: "NiObject::vdtor" },
     Function { rva: 0xedd0c0, id: 70208, confidence: Confidence::High, name: "_anon_71CE6E17::DeepCopyStream::vfunc_13" },
@@ -8705,9 +8712,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1158160, id: 81932, confidence: Confidence::Medium, name: "hkContainerHeapAllocator::Allocator::vfunc_2_caller_18" },
     Function { rva: 0x11581f0, id: 81933, confidence: Confidence::Medium, name: "hkContainerHeapAllocator::Allocator::vfunc_2_caller_19" },
     Function { rva: 0x11582a0, id: 81934, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vfunc_3" },
-    Function { rva: 0x11582c0, id: 81935, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vfunc_3" },
-    Function { rva: 0x11582e0, id: 81936, confidence: Confidence::Medium, name: "ResetAndCreateBoundingTriangles" },
-    Function { rva: 0x1158720, id: 81937, confidence: Confidence::High, name: "hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vfunc_1" },
-    Function { rva: 0x1159890, id: 81943, confidence: Confidence::Medium, name: "WriteObjectGraph" },
-    Function { rva: 0x1159e80, id: 81946, confidence: Confidence::Medium, name: "hkRemoteObjectProcess::hkProcess_vfunc_4_sub0" },
 ];

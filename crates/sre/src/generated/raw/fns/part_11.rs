@@ -7,6 +7,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fIronSightsDOFRange__atexit` at 0x1767a00 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__atexit(void)`
+pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
+/// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
+pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;
 /// `GameSetting_fIronSightsDOFStrengthCap__atexit` at 0x1767a50 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__atexit(void)`
 pub const GameSetting_fIronSightsDOFStrengthCap__atexit: u64 = 168095;
 /// `GameSetting_fIronSightsDOFStrengthCap__init` at 0x4cae0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__init(void)`
@@ -8913,6 +8917,10 @@ pub const GameSetting_ssCreationsEnableMissingCreationCheck__init: u64 = 439347;
 pub const GameSetting_uiMuteMusicPauseTime__atexit: u64 = 169800;
 /// `GameSetting_uiMuteMusicPauseTime__init` at 0x7e9f0 (crt_init, medium); signature (high): `void GameSetting_uiMuteMusicPauseTime__init(void)`
 pub const GameSetting_uiMuteMusicPauseTime__init: u64 = 4590;
+/// `GarbageCollector::UnregisterAndQueueReference` at 0x64dab0 (semantic, high); signature (low): `undefined UnregisterAndQueueReference(longlong param_1, longlong * param_2, undefined8 param_3)`; semantic: retires a reference: takes it out of the process lists, its parent cell, the form maps and the handle table, sends TESFormDeleteEvent, zeroes its form id and queues a handle to it on the collector's pending array, which the collector drains later (high); signature `void (GarbageCollector* this, TESObjectREFR* ref, bool removeFromCell)`
+pub const GarbageCollector__UnregisterAndQueueReference: u64 = 36459;
+/// `GarbageCollector::UnregisterAndQueueReference` as a function pointer type (high).
+pub type GarbageCollector__UnregisterAndQueueReference_fn = unsafe extern "C" fn(this: *mut crate::GarbageCollector, ref_: *mut crate::TESObjectREFR, removeFromCell: bool);
 /// `GarbageCollector::ctor` at 0x64d900 (layout_inference, medium); signature (low): `GarbageCollector * ctor(GarbageCollector * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const GarbageCollector__ctor: u64 = 36457;
 /// `GarbageCollector::dtor` at 0x64da50 (layout_inference, high); signature (low): `undefined dtor(GarbageCollector * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -9439,15 +9447,3 @@ pub const GetCombatPathingRequestGenericFindCoverStandardHash: u64 = 49891;
 pub const GetCombatPathingRequestGenericFindHideCoverStandardHash: u64 = 48748;
 /// `GetCombatPathingRequestGenericFindTargetLocationStandardHash` at 0x860ff0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindTargetLocationStandardHash(void)`
 pub const GetCombatPathingRequestGenericFindTargetLocationStandardHash: u64 = 47156;
-/// `GetCombatPathingRequestGenericFlankDistantStandardHash` at 0x89d6f0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankDistantStandardHash(void)`
-pub const GetCombatPathingRequestGenericFlankDistantStandardHash: u64 = 48480;
-/// `GetCombatPathingRequestGenericFlankFlankHash` at 0x89d640 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankFlankHash(void)`
-pub const GetCombatPathingRequestGenericFlankFlankHash: u64 = 48479;
-/// `GetCombatPathingRequestGenericFleeStandardHash` at 0x8a7c10 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFleeStandardHash(void)`
-pub const GetCombatPathingRequestGenericFleeStandardHash: u64 = 48749;
-/// `GetCombatPathingRequestGenericRetreatStandardHash` at 0x8f0700 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericRetreatStandardHash(void)`
-pub const GetCombatPathingRequestGenericRetreatStandardHash: u64 = 50600;
-/// `GetCombatPathingRequestGenericReturnToCombatAreaStandardHash` at 0x8c2100 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericReturnToCombatAreaStandardHash(void)`
-pub const GetCombatPathingRequestGenericReturnToCombatAreaStandardHash: u64 = 49417;
-/// `GetCombatPathingRequestGenericSearchStandardHash` at 0x8cf910 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchStandardHash(void)`
-pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;

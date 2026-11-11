@@ -7,6 +7,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ForEachCommaSeparatedTokenWithContext` at 0xecf510 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedTokenWithContext(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const ForEachCommaSeparatedTokenWithContext: u64 = 69853;
 /// `ForEachElementInBlockList` at 0xabc410 (decompiler, medium); signature (low): `undefined ForEachElementInBlockList(longlong param_1, longlong * param_2, undefined * param_3, undefined4 param_4, undefined8 param_5)`
 pub const ForEachElementInBlockList: u64 = 57955;
 /// `ForEachEntryCallVfunc41` at 0x1059330 (decompiler, medium); signature (low): `undefined ForEachEntryCallVfunc41(longlong param_1, undefined8 param_2)`
@@ -8571,7 +8573,3 @@ pub const GameSetting_fInvisibilityMinRefraction__init: u64 = 148;
 pub const GameSetting_fIronSightsDOFDistance__atexit: u64 = 168093;
 /// `GameSetting_fIronSightsDOFDistance__init` at 0x4c9e0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__init(void)`
 pub const GameSetting_fIronSightsDOFDistance__init: u64 = 2883;
-/// `GameSetting_fIronSightsDOFRange__atexit` at 0x1767a00 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__atexit(void)`
-pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
-/// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
-pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;

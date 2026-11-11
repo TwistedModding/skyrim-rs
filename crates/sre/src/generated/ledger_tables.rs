@@ -41363,11 +41363,7 @@ TESActionData.field_40	40
 TESActionData.field_48	48
 TESActionData.field_50	50
 TESActionData.field_58	58
-TESActionData.field_60	60
-TESActionData.field_68	68
-TESActionData.field_70	70
 TESActionData.field_8	8
-TESActionData.field_80	80
 TESActivateEvent.actionRef	8
 TESActivateEvent.objectActivated	0
 TESActiveEffectApplyRemoveEvent.activeEffectUniqueID	10

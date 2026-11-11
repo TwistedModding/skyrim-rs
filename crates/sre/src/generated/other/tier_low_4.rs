@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Cmd::RemoveFromAllFactions_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22578, rva 0x3659e0).
-/// `undefined8 RemoveFromAllFactions_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__remove_from_all_factions_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(22578, (u64, u64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `Cmd::RemoveFromFaction_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22457, rva 0x3606c0).
 /// `ulonglong RemoveFromFaction_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 ///
@@ -12558,3 +12551,10 @@ pub unsafe fn create_and_append_named_child(param_1: i64, param_2: u32, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn create_and_append_named_child_with_value(param_1: i64, param_2: u32, param_3: *mut c_void, param_4: u32) -> *mut u64 { unsafe { function!(89121, (i64, u32, *mut c_void, u32) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `CreateAndAssignPackageTargetingPlayer` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37556, rva 0x690780).
+/// `undefined CreateAndAssignPackageTargetingPlayer(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn create_and_assign_package_targeting_player(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(37556, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

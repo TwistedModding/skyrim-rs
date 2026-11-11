@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `CreateAndAssignPackageTargetingPlayer` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37556, rva 0x690780).
-/// `undefined CreateAndAssignPackageTargetingPlayer(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_and_assign_package_targeting_player(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(37556, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `CreateAndAssignPackageType0AtSelf` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 37568, rva 0x691220).
 /// `undefined CreateAndAssignPackageType0AtSelf(longlong * param_1, undefined8 param_2, undefined8 param_3)`
 ///
@@ -12845,3 +12838,10 @@ pub unsafe fn find_collision_object_node_depth_limited(param_1: *mut i64, param_
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_common_ancestor(param_1: u64, param_2: i64, param_3: i64) -> i64 { unsafe { function!(71215, (u64, i64, i64) -> i64)(param_1, param_2, param_3) } }
+/// `FindContentByDottedKeyPrefix` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441791, rva 0x588d90).
+/// `undefined8 FindContentByDottedKeyPrefix(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn find_content_by_dotted_key_prefix(param_1: *mut c_char, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441791, (*mut c_char, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `FindContentByDottedKeyPrefix` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441791, rva 0x588d90).
-/// `undefined8 FindContentByDottedKeyPrefix(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_content_by_dotted_key_prefix(param_1: *mut c_char, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(441791, (*mut c_char, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `FindContentByKeyName` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 441777, rva 0x5869a0).
 /// `undefined8 FindContentByKeyName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14245,3 +14238,10 @@ pub unsafe fn get_or_create_queued_helmet_for_slot(param_1: *mut i32, param_2: u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_or_create_region_list(param_1: i64, param_2: c_char, param_3: u64, param_4: u64) -> *mut crate::TESRegionList { unsafe { function!(18999, (i64, c_char, u64, u64) -> *mut crate::TESRegionList)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateThreadLocalBlock668` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 24804, rva 0x3c9480).
+/// `undefined8 * GetOrCreateThreadLocalBlock668(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_thread_local_block668(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(24804, (u64, u64, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }

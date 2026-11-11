@@ -8,6 +8,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb518a8, id: 61195, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpRayCollidableFilter_vdtor" },
+    Function { rva: 0xb518b4, id: 61196, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpConstraintListener_vdtor" },
+    Function { rva: 0xb518c0, id: 61197, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpCollidableCollidableFilter_vdtor" },
+    Function { rva: 0xb518cc, id: 61198, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpShapeCollectionFilter_vdtor" },
+    Function { rva: 0xb518d8, id: 61199, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpRayShapeCollectionFilter_vdtor" },
     Function { rva: 0xb518e4, id: 61200, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpRayCollidableFilter_vdtor" },
     Function { rva: 0xb518f0, id: 61201, confidence: Confidence::Medium, name: "hkWorldMemoryAvailableWatchDog::vdtor" },
     Function { rva: 0xb51980, id: 61202, confidence: Confidence::Medium, name: "hkpBallAndSocketConstraintData::vdtor" },
@@ -8899,11 +8904,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xedcb70, id: 70194, confidence: Confidence::Medium, name: "NiObject::vfunc_32" },
     Function { rva: 0xedcb80, id: 70195, confidence: Confidence::Medium, name: "NiObject::vfunc_33" },
     Function { rva: 0xedcb90, id: 70196, confidence: Confidence::Medium, name: "NiObject::vfunc_34" },
-    Function { rva: 0xedcba0, id: 70197, confidence: Confidence::Medium, name: "NiObject::vfunc_35" },
-    Function { rva: 0xedcbb0, id: 70198, confidence: Confidence::Medium, name: "NiObject::vfunc_36" },
-    Function { rva: 0xedcbc0, id: 70199, confidence: Confidence::High, name: "NiObject::ctor" },
-    Function { rva: 0xedcbf0, id: 70200, confidence: Confidence::Medium, name: "NiStream::vfunc_13_sub1" },
-    Function { rva: 0xedcc30, id: 76145, confidence: Confidence::Medium, name: "InsertOrAssignQwordByQwordKey_2" },
-    Function { rva: 0xedcf80, id: 70204, confidence: Confidence::High, name: "NiStream::dtor" },
-    Function { rva: 0xedcf90, id: 70205, confidence: Confidence::Medium, name: "RefPtrVectorDeletingDtor_2" },
 ];

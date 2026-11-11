@@ -65,37 +65,6 @@ impl crate::TESAIForm {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(14476, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::TESActionData {
-    /// `TESActionData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 44436, rva 0x80df60).
-    /// `TESActionData * ctor(TESActionData * this, longlong param_1, int param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: i64, param_2: i32) -> *mut Self { unsafe { function!(44436, (*const Self, i64, i32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
-    /// `TESActionData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 44437, rva 0x80e020).
-    /// `TESActionData * ctor(TESActionData * this, longlong param_1, longlong param_2, int param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64, param_2: i64, param_3: i32) -> *mut Self { unsafe { function!(44437, (*const Self, i64, i64, i32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `TESActionData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 44438, rva 0x80e0f0).
-    /// `TESActionData * ctor(TESActionData * this, longlong param_1, undefined8 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_3(&self, param_1: i64, param_2: u64) -> *mut Self { unsafe { function!(44438, (*const Self, i64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2) } }
-    /// `TESActionData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 16192, rva 0x240770).
-    /// `TESActionData * vdtor(TESActionData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(16192, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::TESActorBase {
     /// `TESActorBase::ActorValueOwner_AddBaseActorValue` (decompiler signature, tier low; ledger slot_propagation evidence, name high; id 24382, rva 0x3b0350).
     /// `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`

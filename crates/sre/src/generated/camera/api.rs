@@ -7522,21 +7522,18 @@ impl crate::TESObjectLIGH {
     /// The `TESWeightForm` base at +0xA0.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
+    /// `TESObjectLIGH::CreateOrReusePointLight`: creates (or reuses the '%s PtLight' child of) the reference's NiPointLight from the LIGH data, files it with ShadowSceneNode::CreateLight and sets the attenuation and fade
+    ///
+    /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 17610, rva 0x274390.
+    /// `NiPointLight* (TESObjectLIGH* light, TESObjectREFR* ref, NiNode* root, bool param4, bool keepRadius, bool noRefList)`
+    /// May be null: `ref_`, `root`.
+    #[inline]
+    pub fn create_or_reuse_point_light(&self, ref_: Option<&crate::TESObjectREFR>, root: Option<&crate::NiNode>, param4: bool, keepRadius: bool, noRefList: bool) -> Option<&'static crate::NiPointLight> { unsafe { function!(17610, (*const Self, *const crate::TESObjectREFR, *const crate::NiNode, bool, bool, bool) -> Option<&'static crate::NiPointLight>)(core::ptr::from_ref(self), ref_.map_or(core::ptr::null(), core::ptr::from_ref), root.map_or(core::ptr::null(), core::ptr::from_ref), param4, keepRadius, noRefList) } }
     /// `TESObjectLIGH::lensFlare` at +0x128: LNAM lens flare
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn lens_flare(&self) -> Option<&crate::BGSLensFlare> { unsafe { { self.lensFlare }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_color(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectLIGH.color", 0xE8, u32) } }
-    /// `TESObjectLIGH::color`, at +0xE8 on 1.7.104.
-    #[inline]
-    pub fn color(&self) -> u32 { unsafe { Self::__member_color(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_color(&mut self, value: u32) { unsafe { Self::__member_color(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn color_ptr(&self) -> *mut u32 { Self::__member_color(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_fade(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESObjectLIGH.fade", 0x108, f32) } }
@@ -7657,6 +7654,16 @@ impl crate::TESObjectLIGH {
     pub fn set_flickerPeriod(&mut self, value: f32) { unsafe { Self::__member_flickerPeriod(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flickerPeriod_ptr(&self) -> *mut f32 { Self::__member_flickerPeriod(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sound(this: *const Self) -> *mut *mut crate::BGSSoundDescriptorForm { unsafe { member!(this, "TESObjectLIGH.sound", 0x110, *mut crate::BGSSoundDescriptorForm) } }
+    /// `TESObjectLIGH::sound`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn sound(&self) -> *mut crate::BGSSoundDescriptorForm { unsafe { Self::__member_sound(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sound(&mut self, value: *mut crate::BGSSoundDescriptorForm) { unsafe { Self::__member_sound(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sound_ptr(&self) -> *mut *mut crate::BGSSoundDescriptorForm { Self::__member_sound(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectWEAP {
@@ -9721,7 +9728,7 @@ pub fn apply_clamped_pitch_delta(actor: &crate::Actor, pitchDelta: f32) { unsafe
 /// `data` must point to what the engine expects.
 #[inline]
 pub unsafe fn apply_effect_shader_data(shader: *mut crate::TESEffectShader, root: *mut crate::NiAVObject, data: *mut crate::BSEffectShaderData, onlyFlagged: bool) -> i32 { unsafe { function!(17330, (*mut crate::TESEffectShader, *mut crate::NiAVObject, *mut crate::BSEffectShaderData, bool) -> i32)(shader, root, data, onlyFlagged) } }
-/// `ApplyLightAttenuationSettings`: if the light is a NiPointLight (TypeNode walk): +0x140 = fConstantValue:LightAttenuation (when the attenuation mode word 0x31a5498 bit 0), +0x144 = linear term, +0x148 = quadratic term from radius and the [LightAttenuation] INI settings; same code as the tail of Fmt_PtLight
+/// `ApplyLightAttenuationSettings`: if the light is a NiPointLight (TypeNode walk): +0x140 = fConstantValue:LightAttenuation (when the attenuation mode word 0x31a5498 bit 0), +0x144 = linear term, +0x148 = quadratic term from radius and the [LightAttenuation] INI settings; same code as the tail of TESObjectLIGH::CreateOrReusePointLight
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 17626, rva 0x275600.
 /// `void (NiLight* light, uint radius)`
@@ -10229,6 +10236,12 @@ pub fn find_first_camera_in_tree(root: Option<&crate::NiAVObject>) -> Option<&'s
 /// `NiTimeController* (NiAVObject* root)`
 #[inline]
 pub fn find_first_time_controller_in_tree(root: &crate::NiAVObject) -> Option<&'static crate::NiTimeController> { unsafe { function!(15890, (*const crate::NiAVObject) -> Option<&'static crate::NiTimeController>)(core::ptr::from_ref(root)) } }
+/// `FindLightInNodeTree`: depth-first search of node's children (+0x118 array, u16 count +0x122) for the first object whose type chain reaches g_TypeNode_NiLight 0x331c660; recurses into children that are nodes (slot 3 non-null)
+///
+/// Semantic, camera pass, high; ledger semantic evidence, name high; id 17627, rva 0x2757e0.
+/// `NiLight* (NiNode* node)`
+#[inline]
+pub fn find_light_in_node_tree(node: &crate::NiNode) -> Option<&'static crate::NiLight> { unsafe { function!(17627, (*const crate::NiNode) -> Option<&'static crate::NiLight>)(core::ptr::from_ref(node)) } }
 /// `FindMatchingCameraPathRecursive`: null when formFlags bit 5 or the conditions fail; otherwise the first matching child's result, else path itself when it has shots or pathFlags bit 7, else null
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20648, rva 0x317050.
@@ -10272,12 +10285,6 @@ pub fn fire_weapon(weapon: &crate::TESObjectWEAP, shooter: Option<&crate::TESObj
 /// It constructs or destroys an object in place.
 #[inline]
 pub unsafe fn first_person_camera__static_dtor() { unsafe { function!(174562, ())() } }
-/// `Fmt_PtLight_sub1`: depth-first search of node's children (+0x118 array, u16 count +0x122) for the first object whose type chain reaches g_TypeNode_NiLight 0x331c660; recurses into children that are nodes (slot 3 non-null)
-///
-/// Semantic, camera pass, high; ledger semantic evidence, name high; id 17627, rva 0x2757e0.
-/// `NiLight* (NiNode* node)`
-#[inline]
-pub fn fmt_pt_light_sub1(node: &crate::NiNode) -> Option<&'static crate::NiLight> { unsafe { function!(17627, (*const crate::NiNode) -> Option<&'static crate::NiLight>)(core::ptr::from_ref(node)) } }
 /// `GameSetting_fPlayerDeathReloadTime__init`: static init: registers the Setting object 0x20a0548 with GameSettingCollection (collection slot 1)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 1901, rva 0x2e3c0.
@@ -10827,7 +10834,7 @@ pub unsafe fn papyrus__game__shake_camera(vm: *mut crate::BSScript__IVirtualMach
 /// `vm`, `unused` must point to what the engine expects.
 #[inline]
 pub unsafe fn papyrus__game__show_first_person_geometry(vm: *mut c_void, stackId: u32, unused: *mut c_void, show: bool) { unsafe { function!(55464, (*mut c_void, u32, *mut c_void, bool))(vm, stackId, unused, show) } }
-/// `Papyrus::ObjectReference::Delete`: refuses the player; SetDelete(true) (slot 35); unloads the 3D (TryLockedCallVfunc360, or SendRefMessageType18 when another thread is in its update phase); for created refs sets inGameFlags (+0x18) bit 0 (and clears 0x40) and queues DeleteFunctor, whose Run 0xa42da0 calls UnregisterReference(g_GarbageCollector, ref, true) 0x64dab0
+/// `Papyrus::ObjectReference::Delete`: refuses the player; SetDelete(true) (slot 35); unloads the 3D (TryLockedCallVfunc360, or SendRefMessageType18 when another thread is in its update phase); for created refs sets inGameFlags (+0x18) bit 0 (and clears 0x40) and queues DeleteFunctor, whose Run 0xa42da0 calls GarbageCollector::UnregisterAndQueueReference(g_GarbageCollector, ref, true) 0x64dab0
 ///
 /// Semantic, camera pass, high; ledger papyrus_native evidence, name high; id 56154, rva 0xa45360.
 /// `bool (IVirtualMachine* vm, u32 stackId, TESObjectREFR* self)`

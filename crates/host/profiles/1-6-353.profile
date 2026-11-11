@@ -44929,6 +44929,7 @@ member-unverified TESObjectDOOR.field_50
 member-unverified TESObjectLIGH.field_50
 member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
+member-unverified TESObjectLIGH.sound
 member-unverified TESObjectMISC.field_50
 member TESObjectREFR.field_90 88
 member TESObjectREFR.field_9A 92

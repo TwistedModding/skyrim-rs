@@ -47,37 +47,6 @@ impl crate::BGSAcousticSpace {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(20619, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BGSActionData {
-    /// `BGSActionData::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 41558, rva 0x78db90).
-    /// `BGSActionData * ctor(BGSActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41558, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 16166, rva 0x2401f0).
-    /// `undefined dtor(BGSActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(16166, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 16176, rva 0x2402e0).
-    /// `undefined dtor(BGSActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33154, rva 0x55ec90).
-    /// `undefined dtor(BGSActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(33154, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BGSAddonNode {
     /// `BGSAddonNode::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 16834, rva 0x25c0d4).
     /// `undefined TESModelTextureSwap_vdtor(BGSAddonNode * this)`

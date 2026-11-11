@@ -7,6 +7,23 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::ActionInput {
+    /// `ActionInput::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 14994, rva 0x1f3a60).
+    /// `ActionInput * vdtor(ActionInput * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `ActionInput::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 14993, rva 0x1f3a20).
+    /// `ActionInput * ctor(ActionInput * this, undefined4 param_1, longlong param_2, undefined8 param_3, longlong param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self, param_1: u32, param_2: i64, param_3: u64, param_4: i64) -> *mut Self { unsafe { function!(14993, (*const Self, u32, i64, u64, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
+}
+
 impl crate::Actor {
     /// `Actor::AttachWeapon3D`, vtable slot 180, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name medium; id 37374, rva 0x67e830).
     /// `undefined AttachWeapon3D(Actor * this, ulonglong * param_1, byte param_2, char param_3)`
@@ -306,6 +323,16 @@ impl crate::ActorValueOwner {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::BGSActionData {
+    /// `BGSActionData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 16181, rva 0x240510).
+    /// `BGSActionData * vdtor(BGSActionData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(16181, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BSExtraData {
     /// `BSExtraData::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 11560, rva 0x156400).
     /// `BSExtraData * vdtor(BSExtraData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -574,6 +601,16 @@ impl crate::PlayerCharacter {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(40946, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::TESActionData {
+    /// `TESActionData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 16192, rva 0x240770).
+    /// `TESActionData * vdtor(TESActionData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(16192, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::TESActorBaseData {

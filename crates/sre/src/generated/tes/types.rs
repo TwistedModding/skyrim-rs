@@ -247,64 +247,6 @@ const _: () = assert!(core::mem::offset_of!(TESAIForm, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESAIForm, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(TESAIForm, field_10) == 0x10);
 
-/// `TESActionData`: size >= 0x88 (lower bound); partial, the struct stops at the lower bound; primary base `BGSActionData`.
-/// Evidence: field field_80.
-/// Bases: `BGSActionData`@0x0, `ActionInput`@0x0, `ActionOutput`@0x28.
-#[repr(C)]
-pub struct TESActionData {
-    /// +0x0 `vtbl:TESActionData:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::TESActionData_vtable,
-    /// +0x8 `undefined8`, base ActionInput
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base ActionInput
-    pub field_10: u64,
-    /// +0x18 `undefined8`, base ActionInput
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base ActionInput
-    pub field_20: u32,
-    pub unknown_24: [u8; 20],
-    /// +0x38 `undefined4`, base BGSActionData
-    pub field_38: u32,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `undefined8`, base BGSActionData
-    pub field_40: u64,
-    /// +0x48 `undefined8`, base BGSActionData
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BGSActionData
-    pub field_50: u32,
-    pub unknown_54: [u8; 4],
-    /// +0x58 `undefined4`, base BGSActionData
-    pub field_58: u32,
-    pub unknown_5C: [u8; 4],
-    /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
-    /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
-    /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
-    pub unknown_74: [u8; 12],
-    /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
-    pub unknown_84: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(TESActionData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TESActionData, field_80) == 0x80);
-
 /// `TESActorBase`: size 0x150 (exact, medium); primary base `TESBoundAnimObject`.
 /// Evidence: lower bound base BGSPerkRankArray at 0x138 meets upper bound next base of TESNPC at 0x150.
 /// Bases: `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESActorBaseData`@0x30, `BaseFormComponent`@0x30, `TESContainer`@0x88, `BaseFormComponent`@0x88, `TESSpellList`@0xA0, `BaseFormComponent`@0xA0, `TESAIForm`@0xB0, `BaseFormComponent`@0xB0, `TESFullName`@0xD8, `BaseFormComponent`@0xD8, `ActorValueOwner`@0xE8, `BGSDestructibleObjectForm`@0xF0, `BaseFormComponent`@0xF0, `BGSSkinForm`@0x100, `BaseFormComponent`@0x100, `BGSKeywordForm`@0x110, `BaseFormComponent`@0x110, `BGSAttackDataForm`@0x128, `BaseFormComponent`@0x128, `BGSPerkRankArray`@0x138, `BaseFormComponent`@0x138.

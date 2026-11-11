@@ -7,6 +7,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetCombatPathingRequestGenericFlankDistantStandardHash` at 0x89d6f0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankDistantStandardHash(void)`
+pub const GetCombatPathingRequestGenericFlankDistantStandardHash: u64 = 48480;
+/// `GetCombatPathingRequestGenericFlankFlankHash` at 0x89d640 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankFlankHash(void)`
+pub const GetCombatPathingRequestGenericFlankFlankHash: u64 = 48479;
+/// `GetCombatPathingRequestGenericFleeStandardHash` at 0x8a7c10 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFleeStandardHash(void)`
+pub const GetCombatPathingRequestGenericFleeStandardHash: u64 = 48749;
+/// `GetCombatPathingRequestGenericRetreatStandardHash` at 0x8f0700 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericRetreatStandardHash(void)`
+pub const GetCombatPathingRequestGenericRetreatStandardHash: u64 = 50600;
+/// `GetCombatPathingRequestGenericReturnToCombatAreaStandardHash` at 0x8c2100 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericReturnToCombatAreaStandardHash(void)`
+pub const GetCombatPathingRequestGenericReturnToCombatAreaStandardHash: u64 = 49417;
+/// `GetCombatPathingRequestGenericSearchStandardHash` at 0x8cf910 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchStandardHash(void)`
+pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;
 /// `GetCombatPathingRequestGenericSearchWanderStandardHash` at 0x8cf9c0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchWanderStandardHash(void)`
 pub const GetCombatPathingRequestGenericSearchWanderStandardHash: u64 = 49714;
 /// `GetCombatPathingRequestMultiGoalHash` at 0x8e7c60 (decompiler, high); signature (high): `undefined4 GetCombatPathingRequestMultiGoalHash(void)`
@@ -625,10 +637,18 @@ pub const GetExtraType8Field10: u64 = 11964;
 pub const GetExtraType8Field10IfFlag40Bit0: u64 = 19007;
 /// `GetExtraType91Byte20` at 0x16cb90 (decompiler, high); signature (high): `undefined1 GetExtraType91Byte20(longlong param_1)`
 pub const GetExtraType91Byte20: u64 = 11885;
+/// `GetExtraType91Field10` at 0x16c4a0 (semantic, high); signature (untiered): `undefined4 GetExtraType91Field10(longlong param_1)`; semantic: the +0x10 dword of the list's extra data of type 0x91 (ExtraLightData), 0 without it (high); signature `float (BaseExtraList* list)`
+pub const GetExtraType91Field10: u64 = 11877;
+/// `GetExtraType91Field10` as a function pointer type (high).
+pub type GetExtraType91Field10_fn = unsafe extern "C" fn(list: *mut crate::BaseExtraList) -> f32;
 /// `GetExtraType91Field14` at 0x16c640 (decompiler, high); signature (high): `undefined4 GetExtraType91Field14(longlong param_1)`
 pub const GetExtraType91Field14: u64 = 11879;
 /// `GetExtraType91Field18` at 0x16c800 (decompiler, high); signature (high): `undefined4 GetExtraType91Field18(longlong param_1)`
 pub const GetExtraType91Field18: u64 = 11881;
+/// `GetExtraType91Field1C` at 0x16c9c0 (semantic, high); signature (untiered): `undefined4 GetExtraType91Field1C(longlong param_1)`; semantic: the +0x1c dword of the list's extra data of type 0x91 (ExtraLightData), 1.0 (ID_186482) without it (high); signature `float (BaseExtraList* list)`
+pub const GetExtraType91Field1C: u64 = 11883;
+/// `GetExtraType91Field1C` as a function pointer type (high).
+pub type GetExtraType91Field1C_fn = unsafe extern "C" fn(list: *mut crate::BaseExtraList) -> f32;
 /// `GetExtraType97Field10` at 0x171e60 (decompiler, high); signature (high): `undefined4 GetExtraType97Field10(longlong param_1)`
 pub const GetExtraType97Field10: u64 = 12029;
 /// `GetExtraType9AField10` at 0x172690 (decompiler, high); signature (high): `undefined1 GetExtraType9AField10(longlong param_1)`
@@ -3033,6 +3053,12 @@ pub const GetRefHandleMapSingleton: u64 = 20044;
 pub const GetRefHealth: u64 = 20170;
 /// `GetRefItemCount` at 0x2e8630 (decompiler, high); signature (low): `undefined GetRefItemCount(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const GetRefItemCount: u64 = 19701;
+/// `GetRefLightDataField1C` at 0x300250 (semantic, medium); signature (untiered): `undefined8 GetRefLightDataField1C(longlong param_1)`; semantic: 0 unless the reference's base form (+0x40) is a light (type 0x1f); else the reference's ExtraLightData +0x1c (GetExtraType91Field1C), which 0x274390 passes as LightParams +0x14 (medium); signature `float (TESObjectREFR* ref)`
+pub const GetRefLightDataField1C: u64 = 20188;
+/// `GetRefLightFOV` at 0x2fff70 (semantic, high); signature (untiered): `float GetRefLightFOV(longlong param_1)`; semantic: 0 unless the reference's base form (+0x40) is a light (type 0x1f); else LIGH+0xf4 plus the reference's ExtraLightData +0x10 (GetExtraType91Field10) (high); signature `float (TESObjectREFR* ref)`
+pub const GetRefLightFOV: u64 = 20175;
+/// `GetRefLightFOV` as a function pointer type (high).
+pub type GetRefLightFOV_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR) -> f32;
 /// `GetRefPairForHandle` at 0xd93e90 (decompiler, medium); signature (low): `longlong * GetRefPairForHandle(longlong param_1, longlong * param_2, int * param_3)`
 pub const GetRefPairForHandle: u64 = 85659;
 /// `GetReferenceEffectPosition` at 0x5dbc40 (decompiler, medium); signature (medium): `undefined GetReferenceEffectPosition(longlong * param_1, undefined4 * param_2)`
@@ -9117,33 +9143,3 @@ pub const INISetting_fAnkleOffset_FootIK__atexit: u64 = 173890;
 pub const INISetting_fAnkleOffset_FootIK__init: u64 = 9637;
 /// `INISetting_fArchiveInitBufferMB_Papyrus__atexit` at 0x1794830 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__atexit(void)`
 pub const INISetting_fArchiveInitBufferMB_Papyrus__atexit: u64 = 170831;
-/// `INISetting_fArchiveInitBufferMB_Papyrus__init` at 0x9b210 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__init(void)`
-pub const INISetting_fArchiveInitBufferMB_Papyrus__init: u64 = 5657;
-/// `INISetting_fAudioRumbleBigDeadZone_audio__atexit` at 0x17903e0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigDeadZone_audio__atexit: u64 = 170537;
-/// `INISetting_fAudioRumbleBigDeadZone_audio__init` at 0x90610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__init(void)`
-pub const INISetting_fAudioRumbleBigDeadZone_audio__init: u64 = 5305;
-/// `INISetting_fAudioRumbleBigExponent_audio__atexit` at 0x1790430 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigExponent_audio__atexit: u64 = 170538;
-/// `INISetting_fAudioRumbleBigExponent_audio__init` at 0x90690 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__init(void)`
-pub const INISetting_fAudioRumbleBigExponent_audio__init: u64 = 5306;
-/// `INISetting_fAudioRumbleBigLerpMax_audio__atexit` at 0x1790480 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;
-/// `INISetting_fAudioRumbleBigLerpMax_audio__init` at 0x90710 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__init(void)`
-pub const INISetting_fAudioRumbleBigLerpMax_audio__init: u64 = 5307;
-/// `INISetting_fAudioRumbleBigLerpMin_audio__atexit` at 0x17904d0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigLerpMin_audio__atexit: u64 = 170540;
-/// `INISetting_fAudioRumbleBigLerpMin_audio__init` at 0x90790 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__init(void)`
-pub const INISetting_fAudioRumbleBigLerpMin_audio__init: u64 = 5308;
-/// `INISetting_fAudioRumblePowerAttackAdj_audio__atexit` at 0x1790520 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__atexit(void)`
-pub const INISetting_fAudioRumblePowerAttackAdj_audio__atexit: u64 = 170541;
-/// `INISetting_fAudioRumblePowerAttackAdj_audio__init` at 0x90810 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__init(void)`
-pub const INISetting_fAudioRumblePowerAttackAdj_audio__init: u64 = 5309;
-/// `INISetting_fAudioRumbleSmallDeadZone_audio__atexit` at 0x1790570 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallDeadZone_audio__atexit: u64 = 170542;
-/// `INISetting_fAudioRumbleSmallDeadZone_audio__init` at 0x90890 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallDeadZone_audio__init: u64 = 5310;
-/// `INISetting_fAudioRumbleSmallExponent_audio__atexit` at 0x17905c0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallExponent_audio__atexit: u64 = 170543;
-/// `INISetting_fAudioRumbleSmallExponent_audio__init` at 0x90910 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallExponent_audio__init: u64 = 5311;

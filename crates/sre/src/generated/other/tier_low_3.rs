@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ClearArrayReleasingRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38116, rva 0x6ba3b0).
-/// `undefined ClearArrayReleasingRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_refs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38116, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ClearArrayReleasingSharedRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 439824, rva 0x10bf90).
-/// `undefined ClearArrayReleasingSharedRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn clear_array_releasing_shared_refs(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(439824, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ClearArrayReleasingVirtualRefs` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 38118, rva 0x6ba500).
 /// `undefined ClearArrayReleasingVirtualRefs(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -12439,3 +12425,10 @@ pub unsafe fn cmd__remove_all_items_execute(param_1: i64, param_2: i64, param_3:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__remove_flames_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64, param_5: u64, param_6: u64, param_7: *mut f64) -> u64 { unsafe { function!(22276, (u64, u64, *mut i64, u64, u64, u64, *mut f64) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7) } }
+/// `Cmd::RemoveFromAllFactions_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22578, rva 0x3659e0).
+/// `undefined8 RemoveFromAllFactions_Execute(undefined8 param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__remove_from_all_factions_execute(param_1: u64, param_2: u64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(22578, (u64, u64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -8,6 +8,11 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x368000, id: 22625, confidence: Confidence::High, name: "Cmd::PayCrimeGold_Execute" },
+    Function { rva: 0x3680e0, id: 22626, confidence: Confidence::High, name: "Cmd::GoToJail_Execute" },
+    Function { rva: 0x3681c0, id: 22627, confidence: Confidence::High, name: "Cmd::CanPayCrimeGold_Execute" },
+    Function { rva: 0x368250, id: 22628, confidence: Confidence::High, name: "Cmd::ServeTime_Execute" },
+    Function { rva: 0x368280, id: 22629, confidence: Confidence::High, name: "Cmd::GetCrimeGoldViolent_Execute" },
     Function { rva: 0x368300, id: 22630, confidence: Confidence::High, name: "Cmd::GetCrimeGoldNonviolent_Execute" },
     Function { rva: 0x368380, id: 22631, confidence: Confidence::High, name: "Cmd::GetMovementSpeed_Execute" },
     Function { rva: 0x3683e0, id: 22632, confidence: Confidence::High, name: "Cmd::GetPathingTargetOffset_Execute" },
@@ -7160,7 +7165,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x527f10, id: 32157, confidence: Confidence::Medium, name: "SetField1CAndPropagateToWaterShader" },
     Function { rva: 0x527fe0, id: 32158, confidence: Confidence::High, name: "TESWaterReflections::ctor" },
     Function { rva: 0x5281e0, id: 32159, confidence: Confidence::High, name: "TESWaterReflections::dtor" },
-    Function { rva: 0x5282a0, id: 32160, confidence: Confidence::High, name: "Msg_ClearLists_sub0_sub1_sub5" },
+    Function { rva: 0x5282a0, id: 32160, confidence: Confidence::High, name: "TESWaterReflections::UpdateCubeMap" },
     Function { rva: 0x528900, id: 32164, confidence: Confidence::High, name: "TESWaterDisplacement::ctor" },
     Function { rva: 0x5289d0, id: 32165, confidence: Confidence::High, name: "TESWaterDisplacement::dtor" },
     Function { rva: 0x528a80, id: 32166, confidence: Confidence::Medium, name: "SetField18AndPropagateToWaterShader" },
@@ -7203,6 +7208,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x52eff0, id: 32254, confidence: Confidence::Medium, name: "TESWaterNormals::vdtor" },
     Function { rva: 0x52f0b0, id: 32255, confidence: Confidence::Medium, name: "TESWaterObject::vdtor" },
     Function { rva: 0x52f1b0, id: 32256, confidence: Confidence::Medium, name: "TESWaterReflections::vdtor" },
+    Function { rva: 0x52f310, id: 32258, confidence: Confidence::Medium, name: "BSCubeMapCamera::AddSceneNode" },
     Function { rva: 0x52f380, id: 32259, confidence: Confidence::High, name: "ReserveHeapArraySlotSize8_12" },
     Function { rva: 0x52f3c0, id: 32260, confidence: Confidence::High, name: "ReserveHeapArraySlotSize8_13" },
     Function { rva: 0x52f400, id: 32261, confidence: Confidence::High, name: "ReserveHeapArraySlotSize8_14" },
@@ -8130,10 +8136,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x5815f0, id: 441735, confidence: Confidence::High, name: "SendMenuNavTelemetryEventForGlobal502044" },
     Function { rva: 0x581620, id: 441736, confidence: Confidence::High, name: "SendMenuNavTelemetryEventForGlobal502044_2" },
     Function { rva: 0x581660, id: 523605, confidence: Confidence::Medium, name: "ClearGlobalStringVector564238" },
-    Function { rva: 0x5816d0, id: 523606, confidence: Confidence::Medium, name: "ClearGlobalStringVector564238_2" },
-    Function { rva: 0x581740, id: 523607, confidence: Confidence::Medium, name: "PlayAndClearGlobalSoundIdVector564238" },
-    Function { rva: 0x581800, id: 523608, confidence: Confidence::Medium, name: "AddUniqueStringToGlobalVector564238" },
-    Function { rva: 0x581960, id: 523609, confidence: Confidence::Medium, name: "AddUniqueStringToGlobalVector564238OnEvent3" },
-    Function { rva: 0x581b00, id: 441738, confidence: Confidence::Medium, name: "DispatchEventWithSingleValue" },
-    Function { rva: 0x581ba0, id: 441739, confidence: Confidence::Medium, name: "HandleCreationsMenuSettingRequest" },
 ];

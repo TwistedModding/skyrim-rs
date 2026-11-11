@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResizePairKeyHashMap0x28` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66314, rva 0xc67ee0).
-/// `undefined ResizePairKeyHashMap0x28(longlong * param_1, longlong * param_2, int param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resize_pair_key_hash_map0x28(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66314, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
 /// `ResizePairKeyHashMap_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66482, rva 0xc717b0).
 /// `undefined ResizePairKeyHashMap_2(longlong * param_1, longlong * param_2, int param_3)`
 ///
@@ -13727,3 +13720,10 @@ pub unsafe fn submit_telemetry_event_type4(param_1: *mut c_void, param_2: i64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn submit_user_content_collection_list_member_fn_request(param_1: i64, param_2: u32, param_3: *mut u64, param_4: u32) -> i64 { unsafe { function!(442272, (i64, u32, *mut u64, u32) -> i64)(param_1, param_2, param_3, param_4) } }
+/// `SubmitUserContentListField0D0Request` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442266, rva 0x5f5270).
+/// `longlong SubmitUserContentListField0D0Request(longlong param_1, undefined4 param_2, undefined8 param_3, undefined4 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn submit_user_content_list_field0_d0_request(param_1: i64, param_2: u32, param_3: u64, param_4: u32) -> i64 { unsafe { function!(442266, (i64, u32, u64, u32) -> i64)(param_1, param_2, param_3, param_4) } }

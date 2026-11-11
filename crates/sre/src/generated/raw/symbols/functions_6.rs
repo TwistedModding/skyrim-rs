@@ -8,6 +8,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x90ff70, id: 51126, confidence: Confidence::High, name: "ContainerMenu::vfunc_4" },
+    Function { rva: 0x910e50, id: 51127, confidence: Confidence::High, name: "ContainerMenu::vfunc_6" },
+    Function { rva: 0x910e90, id: 51128, confidence: Confidence::High, name: "ContainerMenu::vfunc_1" },
+    Function { rva: 0x9112b0, id: 51129, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb0" },
+    Function { rva: 0x911310, id: 51130, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb1" },
+    Function { rva: 0x9116b0, id: 51132, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb2" },
+    Function { rva: 0x911810, id: 51133, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb3" },
     Function { rva: 0x9119d0, id: 51134, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb4" },
     Function { rva: 0x911ac0, id: 51138, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb5" },
     Function { rva: 0x911cb0, id: 51139, confidence: Confidence::Medium, name: "ContainerMenu::vfunc_1_cb6" },
@@ -7994,9 +8001,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb51884, id: 61192, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpCollidableCollidableFilter_vdtor" },
     Function { rva: 0xb51890, id: 61193, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpShapeCollectionFilter_vdtor" },
     Function { rva: 0xb5189c, id: 61194, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpRayShapeCollectionFilter_vdtor" },
-    Function { rva: 0xb518a8, id: 61195, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpRayCollidableFilter_vdtor" },
-    Function { rva: 0xb518b4, id: 61196, confidence: Confidence::Medium, name: "hkpConstraintCollisionFilter::hkpConstraintListener_vdtor" },
-    Function { rva: 0xb518c0, id: 61197, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpCollidableCollidableFilter_vdtor" },
-    Function { rva: 0xb518cc, id: 61198, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpShapeCollectionFilter_vdtor" },
-    Function { rva: 0xb518d8, id: 61199, confidence: Confidence::Medium, name: "hkpPairCollisionFilter::hkpRayShapeCollectionFilter_vdtor" },
 ];

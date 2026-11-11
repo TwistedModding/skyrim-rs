@@ -204,6 +204,15 @@ pub unsafe fn build_volumetric_lighting_volume(params: *mut crate::VolumetricLig
 /// `void (void)`
 #[inline]
 pub fn cache_shadow_map_resolution() { unsafe { function!(107596, ())() } }
+/// `ClearEmitColorInTree`: walks a node's children (+0x118, count +0x122): recurses into nodes (slot 3), and for a geometry (slot 7) whose shader property (+0x128) is a BSLightingShaderProperty sets its emit colour (*(+0xf0)) to the zero colour ID_410515
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 17611, rva 0x274ae0.
+/// `void (NiNode* node)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn clear_emit_color_in_tree(node: *mut crate::NiNode) { unsafe { function!(17611, (*mut crate::NiNode))(node) } }
 /// `Cmd::DynamicResolution_Execute`: console 'DynamicResolution [w|h <ratio>|toggle]'
 ///
 /// Semantic, graphics pass, high; ledger console_cmd evidence, name high; id 23220, rva 0x380ee0.
@@ -292,13 +301,6 @@ pub unsafe fn fill_volumetric_repartition_table(params: *mut crate::VolumetricLi
 /// `void (void)`
 #[inline]
 pub fn flush_first_person_accumulator() { unsafe { function!(107128, ())() } }
-/// `Fmt_PtLight`: creates (or reuses the '%s PtLight' child of) the reference's NiPointLight from the LIGH data, files it with ShadowSceneNode::CreateLight and sets the attenuation and fade
-///
-/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 17610, rva 0x274390.
-/// `NiPointLight* (TESObjectLIGH* light, TESObjectREFR* ref, NiNode* root, bool param4, bool keepRadius, bool noRefList)`
-/// May be null: `ref_`, `root`.
-#[inline]
-pub fn fmt_pt_light(light: &crate::TESObjectLIGH, ref_: Option<&crate::TESObjectREFR>, root: Option<&crate::NiNode>, param4: bool, keepRadius: bool, noRefList: bool) -> Option<&'static crate::NiPointLight> { unsafe { function!(17610, (*const crate::TESObjectLIGH, *const crate::TESObjectREFR, *const crate::NiNode, bool, bool, bool) -> Option<&'static crate::NiPointLight>)(core::ptr::from_ref(light), ref_.map_or(core::ptr::null(), core::ptr::from_ref), root.map_or(core::ptr::null(), core::ptr::from_ref), param4, keepRadius, noRefList) } }
 /// `GetCurrentAccumulator`: returns 0x33d3da8 (set by RenderAccumulator / BeginAccumulatorDraw)
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 105651, rva 0x14ecb90.
@@ -308,6 +310,33 @@ pub fn fmt_pt_light(light: &crate::TESObjectLIGH, ref_: Option<&crate::TESObject
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn get_current_accumulator() -> *mut crate::BSShaderAccumulator { unsafe { function!(105651, () -> *mut crate::BSShaderAccumulator)() } }
+/// `GetExtraType91Field10`: the +0x10 dword of the list's extra data of type 0x91 (ExtraLightData), 0 without it
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 11877, rva 0x16c4a0.
+/// `float (BaseExtraList* list)`
+#[inline]
+pub fn get_extra_type91_field10(list: &crate::BaseExtraList) -> f32 { unsafe { function!(11877, (*const crate::BaseExtraList) -> f32)(core::ptr::from_ref(list)) } }
+/// `GetExtraType91Field1C`: the +0x1c dword of the list's extra data of type 0x91 (ExtraLightData), 1.0 (ID_186482) without it
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 11883, rva 0x16c9c0.
+/// `float (BaseExtraList* list)`
+#[inline]
+pub fn get_extra_type91_field1_c(list: &crate::BaseExtraList) -> f32 { unsafe { function!(11883, (*const crate::BaseExtraList) -> f32)(core::ptr::from_ref(list)) } }
+/// `GetRefLightDataField1C`: 0 unless the reference's base form (+0x40) is a light (type 0x1f); else the reference's ExtraLightData +0x1c (GetExtraType91Field1C), which 0x274390 passes as LightParams +0x14
+///
+/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 20188, rva 0x300250.
+/// `float (TESObjectREFR* ref)`
+///
+/// # Safety
+/// The pass rates the signature medium.
+#[inline]
+pub unsafe fn get_ref_light_data_field1_c(ref_: *mut crate::TESObjectREFR) -> f32 { unsafe { function!(20188, (*mut crate::TESObjectREFR) -> f32)(ref_) } }
+/// `GetRefLightFOV`: 0 unless the reference's base form (+0x40) is a light (type 0x1f); else LIGH+0xf4 plus the reference's ExtraLightData +0x10 (GetExtraType91Field10)
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 20175, rva 0x2fff70.
+/// `float (TESObjectREFR* ref)`
+#[inline]
+pub fn get_ref_light_fov(ref_: &crate::TESObjectREFR) -> f32 { unsafe { function!(20175, (*const crate::TESObjectREFR) -> f32)(core::ptr::from_ref(ref_)) } }
 /// `ImageSpaceManager::RenderEffect`: runs effect effectId from colour target sourceTarget into destTarget (effect input slot 1 = source, output slot 0 = dest)
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 105676, rva 0x14ee060.

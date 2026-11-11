@@ -7,6 +7,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_3` at 0x12b0c90 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8d921c1e7433: u64 = 445640;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_0` at 0x12adbb0 (rtti, high); signature (low): `CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * vfunc_0(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6d15e4dedc14: u64 = 445541;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_2` at 0x12af260 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f69ea3e30185: u64 = 445594;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_3` at 0x12b0db0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_466faaab06c6: u64 = 445639;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12adee0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7fc8fd499713: u64 = 445554;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12ae060 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a231831214b: u64 = 445562;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_0` at 0x12d1f90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92cef95232f3: u64 = 446540;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_1` at 0x12d32f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b81f952624fb: u64 = 446582;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_0` at 0x12d2280 (rtti, high); signature (low): `CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * vfunc_0(CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4425a0d212a7: u64 = 446551;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>::vfunc_2` at 0x12d3040 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
@@ -8077,55 +8093,3 @@ pub const hkpContactListener__dtor: u64 = 25828;
 pub const hkpContactListener__vdtor: u64 = 25832;
 /// `hkpContactListener::vfunc_0` at 0x3fcb50 (rtti, medium); signature (low): `undefined vfunc_0(void)`
 pub const hkpContactListener__vfunc_0: u64 = 25841;
-/// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const hkpContactListener__vfunc_1: u64 = 25838;
-/// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const hkpContactListener__vfunc_2: u64 = 25839;
-/// `hkpContactListener::vfunc_4` at 0x3fcb40 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-pub const hkpContactListener__vfunc_4: u64 = 25840;
-/// `hkpContactListener::vfunc_5` at 0x3fcb60 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-pub const hkpContactListener__vfunc_5: u64 = 25842;
-/// `hkpContactListener::vfunc_6` at 0x3fcb70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-pub const hkpContactListener__vfunc_6: u64 = 25843;
-/// `hkpContactMgr::vdtor` at 0xb5c9a0 (layout_inference, medium); signature (low): `hkpContactMgr * vdtor(hkpContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpContactMgr__vdtor: u64 = 61450;
-/// `hkpContactMgr::vfunc_9` at 0xb5cf00 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-pub const hkpContactMgr__vfunc_9: u64 = 61463;
-/// `hkpContactMgrFactory::vdtor` at 0xb5ca30 (layout_inference, medium); signature (low): `hkpContactMgrFactory * vdtor(hkpContactMgrFactory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpContactMgrFactory__vdtor: u64 = 61451;
-/// `hkpContactMgrFactory::vfunc_2` at 0xb5ced0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContactMgrFactory * this, longlong * param_1)`
-pub const hkpContactMgrFactory__vfunc_2: u64 = 61462;
-/// `hkpContinuousSimulation::ctor` at 0x10d4140 (layout_inference, high); signature (low): `hkpContinuousSimulation * ctor(hkpContinuousSimulation * this, longlong param_1)`
-pub const hkpContinuousSimulation__ctor: u64 = 80426;
-/// `hkpContinuousSimulation::ctor` at 0x10d4220 (layout_inference, medium); signature (high): `undefined ctor(hkpContinuousSimulation * this)`
-pub const hkpContinuousSimulation__ctor_2: u64 = 80427;
-/// `hkpContinuousSimulation::ctor_caller` at 0x10d42c0 (callgraph, medium); signature (untiered): `undefined ctor_caller(undefined8 param_1)`
-pub const hkpContinuousSimulation__ctor_caller: u64 = 80428;
-/// `hkpContinuousSimulation::vdtor` at 0x10d9ee0 (slot_propagation, medium); signature (low): `hkpContinuousSimulation * vdtor(hkpContinuousSimulation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpContinuousSimulation__vdtor: u64 = 80471;
-/// `hkpContinuousSimulation::vfunc_12` at 0x10d4650 (rtti, medium); signature (low): `undefined vfunc_12(hkpContinuousSimulation * this, longlong * param_1, int param_2, undefined8 param_3, byte param_4)`
-pub const hkpContinuousSimulation__vfunc_12: u64 = 80432;
-/// `hkpContinuousSimulation::vfunc_13` at 0x10d46c0 (rtti, high); signature (low): `undefined vfunc_13(void)`
-pub const hkpContinuousSimulation__vfunc_13: u64 = 80433;
-/// `hkpContinuousSimulation::vfunc_14` at 0x10d46d0 (rtti, medium); signature (low): `undefined vfunc_14(hkpContinuousSimulation * this, longlong param_1)`
-pub const hkpContinuousSimulation__vfunc_14: u64 = 80434;
-/// `hkpContinuousSimulation::vfunc_15` at 0x10d4780 (rtti, high); signature (low): `undefined vfunc_15(void)`
-pub const hkpContinuousSimulation__vfunc_15: u64 = 80435;
-/// `hkpContinuousSimulation::vfunc_16` at 0x10d4420 (rtti, medium); signature (low): `undefined vfunc_16(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong param_3, uint param_4)`
-pub const hkpContinuousSimulation__vfunc_16: u64 = 80430;
-/// `hkpContinuousSimulation::vfunc_17` at 0x10d5600 (rtti, medium); signature (low): `undefined vfunc_17(hkpContinuousSimulation * this, undefined8 * param_1)`
-pub const hkpContinuousSimulation__vfunc_17: u64 = 80441;
-/// `hkpContinuousSimulation::vfunc_18` at 0x10d4610 (rtti, medium); signature (medium): `undefined vfunc_18(hkpContinuousSimulation * this, float param_1)`
-pub const hkpContinuousSimulation__vfunc_18: u64 = 80431;
-/// `hkpContinuousSimulation::vfunc_19` at 0x10d63d0 (rtti, high); signature (low): `undefined vfunc_19(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong * param_3, longlong * param_4)`
-pub const hkpContinuousSimulation__vfunc_19: u64 = 80447;
-/// `hkpContinuousSimulation::vfunc_2` at 0x10d6ca0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContinuousSimulation * this, longlong * param_1)`
-pub const hkpContinuousSimulation__vfunc_2: u64 = 80449;
-/// `hkpContinuousSimulation::vfunc_20` at 0x10d6810 (rtti, high); signature (low): `undefined vfunc_20(hkpContinuousSimulation * this, longlong * param_1, longlong * param_2)`
-pub const hkpContinuousSimulation__vfunc_20: u64 = 80448;
-/// `hkpContinuousSimulation::vfunc_21` at 0x10d70c0 (rtti, medium); signature (low): `undefined vfunc_21(hkpContinuousSimulation * this, longlong param_1, float * param_2, float param_3, undefined4 param_4)`
-pub const hkpContinuousSimulation__vfunc_21: u64 = 80451;
-/// `hkpContinuousSimulation::vfunc_6` at 0x10d4310 (rtti, medium); signature (high): `undefined4 vfunc_6(hkpContinuousSimulation * this)`
-pub const hkpContinuousSimulation__vfunc_6: u64 = 80429;
-/// `hkpContinuousSimulation::vfunc_6_sub0` at 0x10d59b0 (callgraph, medium); signature (untiered): `int vfunc_6_sub0(longlong * param_1)`
-pub const hkpContinuousSimulation__vfunc_6_sub0: u64 = 80442;

@@ -116332,7 +116332,6 @@ member-unverified TESObjectDOOR.field_26
 member-unverified TESObjectDOOR.field_28
 member-unverified TESObjectDOOR.field_2A
 member-unverified TESObjectDOOR.field_50
-member-unverified TESObjectLIGH.color
 member-unverified TESObjectLIGH.fade
 member-unverified TESObjectLIGH.field_20
 member-unverified TESObjectLIGH.field_22
@@ -116345,6 +116344,7 @@ member-unverified TESObjectLIGH.field_e0
 member-unverified TESObjectLIGH.flickerIntensityAmplitude
 member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
+member-unverified TESObjectLIGH.sound
 member-unverified TESObjectMISC.field_28
 member-unverified TESObjectMISC.field_2A
 member-unverified TESObjectMISC.field_50
