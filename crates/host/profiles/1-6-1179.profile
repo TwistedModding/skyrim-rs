@@ -32272,7 +32272,6 @@ size-unverified BSScrapMap<int,TEX_SWAP*___ptr64>
 size-unverified BSScrapMap<unsigned_int,CombatBehaviorThread*___ptr64>
 size-unverified BSScrapMap<unsigned_int,bool>
 size-unverified BSScrapMap<unsigned_int,unsigned_int>
-size-unverified BSScript::Array
 size-unverified BSScript::ByteCode::PackedInstructionStream::InstructionFunctor
 size-unverified BSScript::CompiledScriptLoader
 size-unverified BSScript::ErrorLogger
@@ -32305,7 +32304,6 @@ size-unverified BSScript::Internal::StackMapEntry
 size-unverified BSScript::Internal::SuspendedStack
 size-unverified BSScript::Internal::_anon_16AAB8A9::OneVariableArgument
 size-unverified BSScript::Internal::_anon_16AAB8A9::ZeroArguments
-size-unverified BSScript::NF_util::ParamInfo
 size-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,void>
@@ -32535,7 +32533,6 @@ size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor
-size-unverified BSScript::Variable
 size-unverified BSScript::ZeroFunctionArguments
 size-unverified BSScript::_anon_5199D9EE::VMTypeResolveFunctor
 size-unverified BSScript::_anon_D7688862::LinkerConvertTypeFunctor
@@ -34238,7 +34235,6 @@ size-unverified GFxLogBase<GFxLog>
 size-unverified GFxMovieView
 size-unverified GFxState
 size-unverified GFxTranslator
-size-unverified GFxValue
 size-unverified GFxValue::DisplayInfo
 size-unverified GFxViewport
 size-unverified GFxZlibSupport

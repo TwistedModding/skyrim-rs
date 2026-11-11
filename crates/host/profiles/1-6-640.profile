@@ -2087,7 +2087,6 @@ id-unverified 35715
 id-unverified 35721
 id-unverified 35722
 id-unverified 35724
-id-unverified 35727
 id-unverified 35731
 id-unverified 35734
 id-unverified 35744
@@ -2098,7 +2097,6 @@ id-unverified 35767
 id-unverified 35768
 id-unverified 35769
 id-unverified 35770
-id-unverified 35772
 id-unverified 35773
 id-unverified 35775
 id-unverified 35787
@@ -2910,7 +2908,7 @@ id-unverified 52110
 id-unverified 52111
 id-unverified 52113
 id-unverified 52114
-id-unverified 52118
+id-address 52118
 id-unverified 52129
 id-unverified 52137
 id-unverified 52138
@@ -40111,7 +40109,7 @@ member-unverified PlayerCharacter.__vftable_2D8
 member-unverified PlayerCharacter.aiDriveFlags
 member-unverified PlayerCharacter.avStorage
 member-unverified PlayerCharacter.criticalSection
-member-unverified PlayerCharacter.currentLocation
+member PlayerCharacter.currentLocation ad0
 member-unverified PlayerCharacter.favorActorHandle
 member-unverified PlayerCharacter.field_148
 member-unverified PlayerCharacter.field_3E8
@@ -40320,7 +40318,7 @@ member-unverified PlayerCharacter.m_NiTMapBase_628
 member-unverified PlayerCharacter.m_NiTMap_618
 member-unverified PlayerCharacter.magickaModifiers
 member-unverified PlayerCharacter.preCullState
-member-unverified PlayerCharacter.source_BGSActorCellEvent
+member PlayerCharacter.source_BGSActorCellEvent 2d8
 member-unverified PlayerCharacter.source_BGSActorDeathEvent
 member-unverified PlayerCharacter.source_PositionPlayerEvent
 member-unverified PlayerCharacter.staminaModifiers
@@ -50671,7 +50669,6 @@ size-unverified BSScrapMap<int,TEX_SWAP*___ptr64>
 size-unverified BSScrapMap<unsigned_int,CombatBehaviorThread*___ptr64>
 size-unverified BSScrapMap<unsigned_int,bool>
 size-unverified BSScrapMap<unsigned_int,unsigned_int>
-size-unverified BSScript::Array
 size-unverified BSScript::ByteCode::PackedInstructionStream::InstructionFunctor
 size-unverified BSScript::CompiledScriptLoader
 size-unverified BSScript::ErrorLogger
@@ -50704,7 +50701,6 @@ size-unverified BSScript::Internal::StackMapEntry
 size-unverified BSScript::Internal::SuspendedStack
 size-unverified BSScript::Internal::_anon_16AAB8A9::OneVariableArgument
 size-unverified BSScript::Internal::_anon_16AAB8A9::ZeroArguments
-size-unverified BSScript::NF_util::ParamInfo
 size-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,void>
@@ -50934,7 +50930,6 @@ size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor
-size-unverified BSScript::Variable
 size-unverified BSScript::ZeroFunctionArguments
 size-unverified BSScript::_anon_5199D9EE::VMTypeResolveFunctor
 size-unverified BSScript::_anon_D7688862::LinkerConvertTypeFunctor
@@ -52639,7 +52634,6 @@ size-unverified GFxLogBase<GFxLog>
 size-unverified GFxMovieView
 size-unverified GFxState
 size-unverified GFxTranslator
-size-unverified GFxValue
 size-unverified GFxValue::DisplayInfo
 size-unverified GFxViewport
 size-unverified GFxZlibSupport
