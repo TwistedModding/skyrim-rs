@@ -7,22 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetByteField108_2` at 0x1149920 (decompiler, high); signature (high): `undefined SetByteField108_2(longlong param_1)`
-pub const SetByteField108_2: u64 = 81814;
-/// `SetByteField108_3` at 0x1149930 (decompiler, high); signature (high): `undefined SetByteField108_3(longlong param_1)`
-pub const SetByteField108_3: u64 = 81815;
-/// `SetByteField108_4` at 0x1149940 (decompiler, high); signature (high): `undefined SetByteField108_4(longlong param_1)`
-pub const SetByteField108_4: u64 = 81816;
-/// `SetByteField14AndPropagate` at 0x257c70 (decompiler, medium); signature (medium): `undefined1 SetByteField14AndPropagate(longlong param_1, byte param_2)`
-pub const SetByteField14AndPropagate: u64 = 16669;
-/// `SetByteField2953` at 0xb349c0 (decompiler, high); signature (high): `undefined SetByteField2953(longlong param_1, undefined1 param_2)`
-pub const SetByteField2953: u64 = 64594;
-/// `SetByteField690UnderLock` at 0x9daee0 (decompiler, high); signature (high): `DWORD SetByteField690UnderLock(longlong param_1, undefined1 param_2)`
-pub const SetByteField690UnderLock: u64 = 53956;
-/// `SetByteFieldDA5` at 0x1c2290 (decompiler, high); signature (high): `undefined SetByteFieldDA5(longlong param_1, undefined1 param_2)`
-pub const SetByteFieldDA5: u64 = 441533;
-/// `SetByteOfMatchingArrayEntry` at 0x185a00 (decompiler, medium); signature (medium): `bool SetByteOfMatchingArrayEntry(longlong param_1, longlong param_2, undefined1 param_3)`
-pub const SetByteOfMatchingArrayEntry: u64 = 12647;
 /// `SetCameraFrustumFromFOV` at 0x98b1d0 (runtime, high); signature (medium): `undefined SetCameraFrustumFromFOV(longlong param_1, float param_2)`; semantic: UI 3D camera (scene+0x20): maxFarNearRatio = fUICameraFarDistance / fUICameraNearDistance (20480 / 15); frustum right = 0.75 * tan(fov * pi/1200), top = right * height/width, near/far from the settings, perspective (high); signature `void (UI3DSceneManager* scene, float fovDegrees)`
 pub const SetCameraFrustumFromFOV: u64 = 52742;
 /// `SetCameraFrustumFromFOV` as a function pointer type (high).
@@ -7769,6 +7753,10 @@ pub type TESActionDataEx__ctor_FromActionIndex_fn = unsafe extern "C" fn(this: *
 pub const TESActionDataEx__ctor_FromActionIndexAndTarget: u64 = 44437;
 /// `TESActionDataEx::ctor_FromActionIndexAndTarget` as a function pointer type (high).
 pub type TESActionDataEx__ctor_FromActionIndexAndTarget_fn = unsafe extern "C" fn(this: *mut c_void, actor: *mut crate::Actor, target: *mut crate::TESObjectREFR, actionIndex: i32) -> *mut c_void;
+/// `TESActionDataEx::dtor` at 0x55ec90 (semantic, high); signature (untiered): `undefined dtor(void * this)`; semantic: destroys the larger object the TESActionDataEx constructors build: the result block at +0x60, then the TESActionData at +0; reached only when an exception unwinds a function that holds one on its stack (high); signature `void (TESActionDataEx* this)`
+pub const TESActionDataEx__dtor: u64 = 33154;
+/// `TESActionDataEx::dtor` as a function pointer type (high).
+pub type TESActionDataEx__dtor_fn = unsafe extern "C" fn(this: *mut c_void);
 /// `TESActorBase::ActorValueOwner_AddBaseActorValue` at 0x3b0350 (slot_propagation, high); signature (low): `undefined ActorValueOwner_AddBaseActorValue(TESActorBase * this, undefined4 param_1, float param_2)`
 pub const TESActorBase__ActorValueOwner_AddBaseActorValue: u64 = 24382;
 /// `TESActorBase::ActorValueOwner_GetActorValue` at 0x3b00c0 (slot_propagation, high); signature (low): `undefined ActorValueOwner_GetActorValue(TESActorBase * this, undefined4 param_1)`
@@ -8143,3 +8131,11 @@ pub const TESCustomPackageData__ctor: u64 = 29654;
 pub const TESCustomPackageData__ctor_2: u64 = 29655;
 /// `TESCustomPackageData::dtor` at 0x49ee70 (layout_inference, high); signature (low): `undefined dtor(TESCustomPackageData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESCustomPackageData__dtor: u64 = 29656;
+/// `TESCustomPackageData::vdtor` at 0x49fec0 (layout_inference, medium); signature (low): `TESCustomPackageData * vdtor(TESCustomPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCustomPackageData__vdtor: u64 = 29676;
+/// `TESCustomPackageData::vfunc_1` at 0x49ef00 (rtti, high); signature (low): `undefined vfunc_1(TESCustomPackageData * this, longlong param_1, longlong param_2)`
+pub const TESCustomPackageData__vfunc_1: u64 = 29657;
+/// `TESCustomPackageData::vfunc_1_sub0` at 0x44cc70 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong param_2)`
+pub const TESCustomPackageData__vfunc_1_sub0: u64 = 27450;
+/// `TESCustomPackageData::vfunc_1_sub1` at 0x49fe00 (callgraph, medium); signature (untiered): `undefined8 * vfunc_1_sub1(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESCustomPackageData__vfunc_1_sub1: u64 = 29674;

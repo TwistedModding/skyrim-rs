@@ -7,10 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vfunc_7` at 0x8c0970 (rtti, high); signature (low): `char vfunc_7(CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard> * this, longlong * param_1)`
-pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard__vfunc_7: u64 = 49361;
-/// `CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::vdtor` at 0x8cd5f0 (slot_propagation, medium); signature (low): `CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard> * vdtor(CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard__vdtor: u64 = 49634;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::vfunc_1` at 0x8cd560 (rtti, high); signature (untiered): `uint vfunc_1(void)`
 pub const CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard__vfunc_1: u64 = 49631;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::vfunc_10` at 0x8cd500 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 * * param_2, undefined8 param_3, undefined8 param_4)`
@@ -7841,3 +7837,13 @@ pub const CreateObject1AB7728: u64 = 84951;
 pub const CreateObject70WithCachedEntry9: u64 = 86872;
 /// `CreateObjectFromColonSeparatedSpec` at 0xbdcdb0 (decompiler, medium); signature (low): `longlong * CreateObjectFromColonSeparatedSpec(ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
 pub const CreateObjectFromColonSeparatedSpec: u64 = 63816;
+/// `CreateObjectResourceFromGlobal408436` at 0xc65e60 (decompiler, medium); signature (low): `undefined CreateObjectResourceFromGlobal408436(undefined8 param_1)`
+pub const CreateObjectResourceFromGlobal408436: u64 = 66244;
+/// `CreateObjectVtable242329` at 0xd121c0 (decompiler, medium); signature (low): `undefined CreateObjectVtable242329(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable242329: u64 = 82991;
+/// `CreateObjectVtable243445` at 0xd907d0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable243445(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable243445: u64 = 85610;
+/// `CreateObjectVtable244620` at 0xdde9f0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244620(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244620: u64 = 86992;
+/// `CreateObjectVtable244638` at 0xde0840 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244638(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244638: u64 = 87023;

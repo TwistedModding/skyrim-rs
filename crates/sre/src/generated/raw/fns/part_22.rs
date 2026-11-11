@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const hkpContactListener__vfunc_1: u64 = 25838;
-/// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const hkpContactListener__vfunc_2: u64 = 25839;
-/// `hkpContactListener::vfunc_4` at 0x3fcb40 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-pub const hkpContactListener__vfunc_4: u64 = 25840;
-/// `hkpContactListener::vfunc_5` at 0x3fcb60 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-pub const hkpContactListener__vfunc_5: u64 = 25842;
-/// `hkpContactListener::vfunc_6` at 0x3fcb70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-pub const hkpContactListener__vfunc_6: u64 = 25843;
-/// `hkpContactMgr::vdtor` at 0xb5c9a0 (layout_inference, medium); signature (low): `hkpContactMgr * vdtor(hkpContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpContactMgr__vdtor: u64 = 61450;
-/// `hkpContactMgr::vfunc_9` at 0xb5cf00 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-pub const hkpContactMgr__vfunc_9: u64 = 61463;
 /// `hkpContactMgrFactory::vdtor` at 0xb5ca30 (layout_inference, medium); signature (low): `hkpContactMgrFactory * vdtor(hkpContactMgrFactory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpContactMgrFactory__vdtor: u64 = 61451;
 /// `hkpContactMgrFactory::vfunc_2` at 0xb5ced0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContactMgrFactory * this, longlong * param_1)`

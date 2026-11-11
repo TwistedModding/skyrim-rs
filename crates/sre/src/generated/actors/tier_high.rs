@@ -254,13 +254,6 @@ impl crate::BGSActionData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BGSActionData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 33154, rva 0x55ec90).
-    /// `undefined dtor(BGSActionData * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(33154, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSExtraData {

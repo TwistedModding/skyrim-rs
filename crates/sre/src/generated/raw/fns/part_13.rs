@@ -7,18 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `INISetting_fArchiveInitBufferMB_Papyrus__init` at 0x9b210 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__init(void)`
-pub const INISetting_fArchiveInitBufferMB_Papyrus__init: u64 = 5657;
-/// `INISetting_fAudioRumbleBigDeadZone_audio__atexit` at 0x17903e0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigDeadZone_audio__atexit: u64 = 170537;
-/// `INISetting_fAudioRumbleBigDeadZone_audio__init` at 0x90610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__init(void)`
-pub const INISetting_fAudioRumbleBigDeadZone_audio__init: u64 = 5305;
-/// `INISetting_fAudioRumbleBigExponent_audio__atexit` at 0x1790430 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigExponent_audio__atexit: u64 = 170538;
-/// `INISetting_fAudioRumbleBigExponent_audio__init` at 0x90690 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__init(void)`
-pub const INISetting_fAudioRumbleBigExponent_audio__init: u64 = 5306;
-/// `INISetting_fAudioRumbleBigLerpMax_audio__atexit` at 0x1790480 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__atexit(void)`
-pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;
 /// `INISetting_fAudioRumbleBigLerpMax_audio__init` at 0x90710 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__init(void)`
 pub const INISetting_fAudioRumbleBigLerpMax_audio__init: u64 = 5307;
 /// `INISetting_fAudioRumbleBigLerpMin_audio__atexit` at 0x17904d0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__atexit(void)`
@@ -8427,3 +8415,13 @@ pub const IntersectLineWithSegmentOrNearestEndpointXY: u64 = 91520;
 pub const IntersectLineWithSegmentXY: u64 = 91521;
 /// `IntersectMatchingFieldsFlags1A` at 0xdff6f0 (decompiler, medium); signature (low): `undefined4 * IntersectMatchingFieldsFlags1A(longlong param_1, undefined4 * param_2, longlong param_3)`
 pub const IntersectMatchingFieldsFlags1A: u64 = 87443;
+/// `IntersectMatchingFieldsFlags42` at 0xdff1d0 (decompiler, medium); signature (low): `undefined4 * IntersectMatchingFieldsFlags42(longlong param_1, undefined4 * param_2, longlong param_3)`
+pub const IntersectMatchingFieldsFlags42: u64 = 87442;
+/// `IntersectRayTriangle` at 0xf25230 (decompiler, medium); signature (medium): `undefined8 IntersectRayTriangle(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, char param_6, float * param_7, float * param_8, float * param_9, float * param_10)`
+pub const IntersectRayTriangle: u64 = 71983;
+/// `IntersectRayWithCircle2D` at 0x11fcfc0 (decompiler, medium); signature (medium): `undefined8 IntersectRayWithCircle2D(float * param_1, float * param_2, float * param_3, float param_4, float * param_5, float * param_6)`
+pub const IntersectRayWithCircle2D: u64 = 91555;
+/// `IntersectRayWithOrientedBox` at 0xf4e6a0 (decompiler, medium); signature (low): `undefined8 IntersectRayWithOrientedBox(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectRayWithOrientedBox: u64 = 72334;
+/// `IntersectRayWithTriangle` at 0xb3e720 (decompiler, medium); signature (low): `undefined1 * IntersectRayWithTriangle(undefined1 * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, float * param_8, float * param_9, char param_10)`
+pub const IntersectRayWithTriangle: u64 = 60577;

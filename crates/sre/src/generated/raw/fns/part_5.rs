@@ -7,10 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vdtor` at 0x476840 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vdtor: u64 = 28820;
-/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_1` at 0x4768b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_1: u64 = 28822;
 /// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_2` at 0x476930 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 * param_1)`
 pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_2: u64 = 28823;
 /// `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState>::vdtor` at 0x4587e0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOnExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5567,3 +5563,11 @@ pub const BuildAndMergeSymbolIdMaps: u64 = 60090;
 pub const BuildAngularJacobianSchema: u64 = 64779;
 /// `BuildAngularJacobianSchemas` at 0xc23d10 (decompiler, medium); signature (low): `undefined BuildAngularJacobianSchemas(undefined8 * param_1, longlong param_2, undefined8 * param_3)`
 pub const BuildAngularJacobianSchemas: u64 = 64781;
+/// `BuildAnimationGraphManager` at 0x5537e0 (semantic, high); signature (low): `undefined8 BuildAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: per project: slot 5 create, 0xbcd240 load (flag slot 6), slot 7 variables, slot 8 sinks (slot 9 on failure); then BSAnimationGraphManager (0xb8, cache size slot 15), slot 10 channels, slot 11, install 0x554060, activate 0xbc0480 (high); signature `bool (IAnimationGraphManagerHolder* holder, BSScrapArray<ProjectPath>& projects)`
+pub const BuildAnimationGraphManager: u64 = 32893;
+/// `BuildAnimationGraphManager` as a function pointer type (high).
+pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut crate::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool;
+/// `BuildAnimationGraphManagerFromPath` at 0x553620 (decompiler, medium); signature (low): `undefined1 BuildAnimationGraphManagerFromPath(undefined8 param_1, undefined1 * param_2)`
+pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
+/// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (low): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
+pub const BuildAnimationGraphManagerOnce: u64 = 32919;

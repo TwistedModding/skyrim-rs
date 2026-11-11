@@ -7,16 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetCombatPathingRequestGenericFlankDistantStandardHash` at 0x89d6f0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankDistantStandardHash(void)`
-pub const GetCombatPathingRequestGenericFlankDistantStandardHash: u64 = 48480;
-/// `GetCombatPathingRequestGenericFlankFlankHash` at 0x89d640 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFlankFlankHash(void)`
-pub const GetCombatPathingRequestGenericFlankFlankHash: u64 = 48479;
-/// `GetCombatPathingRequestGenericFleeStandardHash` at 0x8a7c10 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFleeStandardHash(void)`
-pub const GetCombatPathingRequestGenericFleeStandardHash: u64 = 48749;
-/// `GetCombatPathingRequestGenericRetreatStandardHash` at 0x8f0700 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericRetreatStandardHash(void)`
-pub const GetCombatPathingRequestGenericRetreatStandardHash: u64 = 50600;
-/// `GetCombatPathingRequestGenericReturnToCombatAreaStandardHash` at 0x8c2100 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericReturnToCombatAreaStandardHash(void)`
-pub const GetCombatPathingRequestGenericReturnToCombatAreaStandardHash: u64 = 49417;
 /// `GetCombatPathingRequestGenericSearchStandardHash` at 0x8cf910 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchStandardHash(void)`
 pub const GetCombatPathingRequestGenericSearchStandardHash: u64 = 49713;
 /// `GetCombatPathingRequestGenericSearchWanderStandardHash` at 0x8cf9c0 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericSearchWanderStandardHash(void)`
@@ -9143,3 +9133,15 @@ pub const INISetting_fAnkleOffset_FootIK__atexit: u64 = 173890;
 pub const INISetting_fAnkleOffset_FootIK__init: u64 = 9637;
 /// `INISetting_fArchiveInitBufferMB_Papyrus__atexit` at 0x1794830 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__atexit(void)`
 pub const INISetting_fArchiveInitBufferMB_Papyrus__atexit: u64 = 170831;
+/// `INISetting_fArchiveInitBufferMB_Papyrus__init` at 0x9b210 (crt_init, medium); signature (high): `void INISetting_fArchiveInitBufferMB_Papyrus__init(void)`
+pub const INISetting_fArchiveInitBufferMB_Papyrus__init: u64 = 5657;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__atexit` at 0x17903e0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__atexit: u64 = 170537;
+/// `INISetting_fAudioRumbleBigDeadZone_audio__init` at 0x90610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigDeadZone_audio__init(void)`
+pub const INISetting_fAudioRumbleBigDeadZone_audio__init: u64 = 5305;
+/// `INISetting_fAudioRumbleBigExponent_audio__atexit` at 0x1790430 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__atexit: u64 = 170538;
+/// `INISetting_fAudioRumbleBigExponent_audio__init` at 0x90690 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigExponent_audio__init(void)`
+pub const INISetting_fAudioRumbleBigExponent_audio__init: u64 = 5306;
+/// `INISetting_fAudioRumbleBigLerpMax_audio__atexit` at 0x1790480 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMax_audio__atexit(void)`
+pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;

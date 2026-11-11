@@ -6139,6 +6139,15 @@ pub unsafe fn tes_action_data_ex__ctor_from_action_index(this: *mut c_void, acto
 /// `this` must point to what the engine expects, and the result is an untyped pointer.
 #[inline]
 pub unsafe fn tes_action_data_ex__ctor_from_action_index_and_target(this: *mut c_void, actor: *mut crate::Actor, target: *mut crate::TESObjectREFR, actionIndex: i32) -> *mut c_void { unsafe { function!(44437, (*mut c_void, *mut crate::Actor, *mut crate::TESObjectREFR, i32) -> *mut c_void)(this, actor, target, actionIndex) } }
+/// `TESActionDataEx::dtor`: destroys the larger object the TESActionDataEx constructors build: the result block at +0x60, then the TESActionData at +0; reached only when an exception unwinds a function that holds one on its stack
+///
+/// Semantic, actors pass, high; ledger semantic evidence, name high; id 33154, rva 0x55ec90.
+/// `void (TESActionDataEx* this)`
+///
+/// # Safety
+/// It constructs or destroys an object in place.
+#[inline]
+pub unsafe fn tes_action_data_ex__dtor(this: *mut c_void) { unsafe { function!(33154, (*mut c_void))(this) } }
 /// `g_ActorValueStorageLock` at 0x3243f88, id 404014 (semantic, high); lock of every actor's ActorValueStorage (high, actors pass), type `class:BSReadWriteLock`
 #[inline]
 pub fn g_actor_value_storage_lock() -> &'static crate::BSReadWriteLock { unsafe { &*(address!(404014) as *const crate::BSReadWriteLock) } }

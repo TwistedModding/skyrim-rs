@@ -7821,7 +7821,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x55ebd0, id: 33151, confidence: Confidence::Medium, name: "AppendBytes16ToGrowableBuffer" },
     Function { rva: 0x55ec20, id: 33152, confidence: Confidence::High, name: "ReleaseRefCountedPtr_55" },
     Function { rva: 0x55ec50, id: 33153, confidence: Confidence::Medium, name: "ReleaseRefCount28Ptr" },
-    Function { rva: 0x55ec90, id: 33154, confidence: Confidence::High, name: "BGSActionData::dtor" },
+    Function { rva: 0x55ec90, id: 33154, confidence: Confidence::High, name: "TESActionDataEx::dtor" },
     Function { rva: 0x55ed40, id: 33155, confidence: Confidence::High, name: "FreeArrayBufferAndResetCount_5" },
     Function { rva: 0x55ed90, id: 33156, confidence: Confidence::Medium, name: "CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorFunc1<bool_(__cdecl*)(float),CombatBehaviorExpression<CombatBehaviorFunc1<float_(__cdecl*)(Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker>_>_>_>_>::vdtor" },
     Function { rva: 0x55edd0, id: 33157, confidence: Confidence::Medium, name: "CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor" },

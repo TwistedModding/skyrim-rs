@@ -522,6 +522,7 @@ pub(super) const ROWS: &[(u32, &str)] = &[
     (0x55d3d0, "destructor body: vtables to ThirdPersonState's, releases animatedNodeName (BSFixedString) and animatedNode (NiPointer), then handler vtable = PlayerInputHandler::vftable, vtable = TESCameraState::vftable (high, camera pass)"),
     (0x55d444, "slot 0 adjustor thunk: rcx -= 0x20, jump to DragonCameraState::vdtor 0x55d460 (high, camera pass)"),
     (0x55d450, "slot 0 adjustor thunk: rcx -= 0x20, jump to ThirdPersonState::Destroy 0x55d4e0 (high, camera pass)"),
+    (0x55ec90, "destroys the larger object the TESActionDataEx constructors build: the result block at +0x60, then the TESActionData at +0; reached only when an exception unwinds a function that holds one on its stack (high, actors pass)"),
     (0x564b70, "flushes pendingRegisters into sinks, calls ProcessEvent(event, this) on every sink not queued for unregistration until one returns Stop (1), then applies pendingUnregisters; the whole walk holds lock and sets notifying (high, events pass)"),
     (0x575960, "engine-side value destructor body (high, ui pass)"),
     (0x5759c0, "copy-assign with AddRef/Release (high, ui pass)"),

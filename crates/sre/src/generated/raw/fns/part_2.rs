@@ -1847,8 +1847,6 @@ pub const BGSActionData__ctor: u64 = 41558;
 pub const BGSActionData__dtor: u64 = 16166;
 /// `BGSActionData::dtor` at 0x2402e0 (layout_inference, high); signature (high): `undefined dtor(BGSActionData * this)`
 pub const BGSActionData__dtor_2: u64 = 16176;
-/// `BGSActionData::dtor` at 0x55ec90 (layout_inference, high); signature (high): `undefined dtor(BGSActionData * this)`
-pub const BGSActionData__dtor_3: u64 = 33154;
 /// `BGSActionData::vdtor` at 0x240510 (layout_inference, medium); signature (low): `BGSActionData * vdtor(BGSActionData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSActionData__vdtor: u64 = 16181;
 /// `BGSActionData::vfunc_4` at 0x240e50 (rtti, high); signature (low): `ActionInput * vfunc_4(BGSActionData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5093,3 +5091,5 @@ pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const_
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSandboxParamTypes__vfunc_34: u64 = 29049;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vdtor` at 0x483600 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vdtor: u64 = 29065;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>::vfunc_18` at 0x4837a0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSayParamTypes__vfunc_18: u64 = 29073;
