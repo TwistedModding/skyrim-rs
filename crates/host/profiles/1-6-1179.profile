@@ -35089,7 +35089,6 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
-size-unverified ShadowMapData
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-unverified SimpleAnimationGraphManagerHolder
