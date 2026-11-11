@@ -272,8 +272,7 @@ pub struct BSScript__Internal__VirtualMachine {
     pub __field_258: [u8; 8],
     unknown_260: [u8; 32704],
     /// +0x8220 `undefined40`, semantic; the function-message queue object (its vtable here; slot 1 push, slot 4 pop) (medium)
-    #[doc(hidden)]
-    pub __functionMessageQueue: [u8; 40],
+    pub functionMessageQueue: [u8; 40],
     /// +0x8248 `undefined24`, semantic; BSTArray<FunctionMessage> used when the queue is full: data +0, capacity +8, size +0x10; 0x18 per message (high)
     #[doc(hidden)]
     pub __functionMessageOverflow: [u8; 24],
@@ -350,8 +349,7 @@ pub struct BSScript__Internal__VirtualMachine {
     pub field_93C0: u64,
     unknown_93C8: [u8; 8],
     /// +0x93D0 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_93D0: [u8; 8],
+    pub field_93D0: u64,
     /// +0x93D8 `undefined4`, ctor store
     pub field_93D8: u32,
     unknown_93DC: [u8; 28],
@@ -421,7 +419,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, 
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_218) == 0x218);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_258) == 0x258);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __functionMessageQueue) == 0x8220);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, functionMessageQueue) == 0x8220);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __functionMessageOverflow) == 0x8248);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __pendingTasklets) == 0x8260);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __queuedMessageCount) == 0x8278);
@@ -451,7 +449,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, 
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93B4) == 0x93B4);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93BC) == 0x93BC);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93C0) == 0x93C0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, __field_93D0) == 0x93D0);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93D0) == 0x93D0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93D8) == 0x93D8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_93F8) == 0x93F8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__VirtualMachine, field_9400) == 0x9400);

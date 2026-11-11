@@ -1631,25 +1631,24 @@ const _: () = assert!(core::mem::offset_of!(MenuControls, __ignoreInput) == 0x83
 /// Meaning: an input handler of MenuControls (also embedded in menus: CursorMenu +0x30, FavoritesMenu +0x30, StatsMenu +0x30, RaceSexMenu +0x30, ...); derives BSIntrusiveRefCounted (high, ui pass).
 /// Evidence: ui pass (semantic): MenuControls::ProcessEvent 0x95f020 calls slot 1 then the per-type slot (see slots); AddHandler/RemoveHandler 0x95f4b0/0x95f580 write +0xc; size: MenuEventHandler::vdtor 0x582480 OperatorDelete(this, 0x10); MenuControls::CreateHandlers 0x960440 allocates 0x10 for ClickHandler, ConsoleOpenHandler, QuickSaveLoadHandler, FavoritesHandler.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct MenuEventHandler {
     /// +0x0 `vtbl:MenuEventHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MenuEventHandler_vtable,
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (medium)
-    #[doc(hidden)]
-    pub __refCount: [u8; 4],
+    pub refCount: u32,
     /// +0xC `undefined1`, semantic; the handler receives events only when non-zero (high)
     pub enabled: u8,
     /// +0xD `undefined1`, semantic; the handler still receives events while a modal menu is open (UI+0x17c != 0) (high)
     pub processWhileModal: u8,
-    unknown_E: [u8; 2],
+    pub unknown_E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuEventHandler>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MenuEventHandler, __refCount) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MenuEventHandler, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, enabled) == 0xC);
 const _: () = assert!(core::mem::offset_of!(MenuEventHandler, processWhileModal) == 0xD);
 

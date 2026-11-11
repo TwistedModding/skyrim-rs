@@ -2665,22 +2665,23 @@ const _: () = assert!(core::mem::offset_of!(LocalMapCamera__DefaultState, __padd
 /// `MagicTarget`: size 0x18 (exact, medium).
 /// Meaning: the effect-target interface (Actor+0xa0) (medium, camera pass).
 /// Evidence: camera pass (semantic): IC3 G (static-Q).; size: Actor's MagicTarget subobject at +0xa0 is followed by its ActorValueOwner subobject at +0xb8 (rtti.json cols), and UpdateActiveEffectList uses +0x8 and +0x10; layouts.json's 8 (low) was the vtable alone.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MagicTarget {
     /// +0x0 `vtbl:MagicTarget:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MagicTarget_vtable,
     /// +0x8 `pointer`, semantic; queued list changes applied after a walk (low)
-    pub pendingChanges: *mut c_void,
+    #[doc(hidden)]
+    pub __pendingChanges: [u8; 8],
     /// +0x10 `u8`, semantic; bit 0 set while UpdateActiveEffectList walks the list (medium)
     pub walkFlags: u8,
-    pub unknown_11: [u8; 7],
+    unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MagicTarget>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MagicTarget, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MagicTarget, pendingChanges) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MagicTarget, __pendingChanges) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicTarget, walkFlags) == 0x10);
 
 /// `MapCamera`: size 0x90 (exact, high); primary base `TESCamera`.
@@ -5055,8 +5056,7 @@ pub struct TESObjectLIGH {
     pub __fade: [u8; 4],
     unknown_10C: [u8; 4],
     /// +0x110 `ptr:BGSSoundDescriptorForm`, semantic; SNAM sound (medium)
-    #[doc(hidden)]
-    pub __sound: [u8; 8],
+    pub sound: *mut crate::BGSSoundDescriptorForm,
     unknown_118: [u8; 16],
     /// +0x128 `ptr:BGSLensFlare`, semantic; LNAM lens flare (high)
     pub lensFlare: *mut crate::BGSLensFlare,
@@ -5103,7 +5103,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerPeriod) == 0
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerIntensityAmplitude) == 0x100);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flickerMovementAmplitude) == 0x104);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __fade) == 0x108);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __sound) == 0x110);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, sound) == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, lensFlare) == 0x128);
 
 /// `TESObjectWEAP`: size 0x220 (exact, high); primary base `TESBoundObject`.
@@ -6220,8 +6220,7 @@ pub struct bhkCharacterController {
     pub field_8: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<bhkCharacterMoveFinishEvent>
-    #[doc(hidden)]
-    pub __source_bhkCharacterMoveFinishEvent: [u8; 88],
+    pub source_bhkCharacterMoveFinishEvent: crate::BSTEventSource,
     unknown_68: [u8; 8],
     /// +0x70 `undefined1[16]`, ctor store
     pub field_70: [u8; 16],
@@ -6382,7 +6381,7 @@ pub struct bhkCharacterController {
 const _: () = assert!(size_of::<bhkCharacterController>() == 0x330);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterController, __source_bhkCharacterMoveFinishEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterController, source_bhkCharacterMoveFinishEvent) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterController, field_90) == 0x90);

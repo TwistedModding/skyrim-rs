@@ -19,7 +19,8 @@ pub struct BSAnimationGraphManager {
     pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSTArray`, semantic; BSTArray<BSTSmartPointer<BSAnimationGraphChannel>> (data +0x10, capacity +0x18, size +0x20) pushed into every graph each update (high)
-    pub channels: crate::BSTArray,
+    #[doc(hidden)]
+    pub __channels: [u8; 24],
     /// +0x28 `class:BSTArray`, semantic; array searched by channel name before each channel update (low)
     #[doc(hidden)]
     pub __channelOverrides: [u8; 24],
@@ -47,7 +48,7 @@ pub struct BSAnimationGraphManager {
 const _: () = assert!(size_of::<BSAnimationGraphManager>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, channels) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __channels) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __channelOverrides) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, graphs) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphManager, __dependentManagers) == 0x58);

@@ -23844,7 +23844,6 @@ member-unverified BSParticleShaderSnowEmitter.field_FD8
 member-unverified BSParticleSystemManager.extraDataCapacity
 member-unverified BSParticleSystemManager.flags2
 member-unverified BSParticleSystemManager.previousWorldFrame
-member-unverified BSPathEventManager.source_BSPathEvent
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_100
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_108
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_120
@@ -26399,7 +26398,6 @@ member-unverified MarketplaceMenu.field_7A
 member-unverified MenuControls.ignoreInput
 member-unverified MenuControls.pendingHandlerChanges
 member-unverified MenuControls.remapMode
-member-unverified MenuEventHandler.refCount
 member-unverified MenuOpenHandler.tweenMenuAllowed
 member-unverified MenuTableEntry.create
 member-unverified MessageBoxData.buttons
@@ -26434,6 +26432,9 @@ member-unverified MovementHandlerArbiter.field_78
 member-unverified MovementPathManagerAgentStaticAvoider.field_B8
 member-unverified MovementTweenerArbiter.field_15C
 member-unverified MovementTweenerArbiter.field_180
+member-unverified MovementTweenerArbiter.field_4C
+member-unverified MovementTweenerArbiter.field_54
+member-unverified MovementTweenerArbiter.field_80
 member-unverified MovementTweenerArbiter.field_B4
 member-unverified MovementTweenerArbiter.field_BC
 member-unverified NavMeshSearchClosePoint.field_180
@@ -27268,6 +27269,7 @@ member-unverified UI_bannerEntry.field_158
 member-unverified UI_bannerEntry.field_160
 member-unverified UI_bannerEntry.field_168
 member-unverified UI_bannerEntry.field_170
+member-unverified UI_bannerEntry.field_68
 member-unverified UI_bannerEntry.field_70
 member-unverified UI_bannerEntry.field_88
 member-unverified UI_bannerEntry.field_8C
@@ -27316,6 +27318,7 @@ member-unverified UI_listEntry.field_130
 member-unverified UI_listEntry.field_134
 member-unverified UI_listEntry.field_138
 member-unverified UI_listEntry.field_13C
+member-unverified UI_listEntry.field_68
 member-unverified UI_listEntry.field_70
 member-unverified UI_listEntry.field_88
 member-unverified UI_listEntry.field_8C
@@ -27386,7 +27389,6 @@ member-unverified bhkCharProxyController.pointCollector
 member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkCharacterController.shapes
-member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
 member-unverified bhkCharacterController.supportLayer
 member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2

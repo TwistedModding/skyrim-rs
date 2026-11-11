@@ -173,6 +173,14 @@ impl crate::BSAnimationGraphManager {
     pub fn channelOverrides_ptr(&self) -> *mut crate::BSTArray { Self::__member_channelOverrides(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_channels(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BSAnimationGraphManager.channels", 0x10, crate::BSTArray) } }
+    /// `BSAnimationGraphManager::channels`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn channels(&self) -> &crate::BSTArray { unsafe { &*Self::__member_channels(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn channels_ptr(&self) -> *mut crate::BSTArray { Self::__member_channels(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_dependentManagers(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BSAnimationGraphManager.dependentManagers", 0x58, crate::BSTArray) } }
     /// `BSAnimationGraphManager::dependentManagers`, at +0x58 on 1.7.104.
     #[inline]

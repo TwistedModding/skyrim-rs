@@ -6844,20 +6844,15 @@ pub struct NavMeshSearchClosePoint {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchClosePoint_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -6920,11 +6915,11 @@ pub struct NavMeshSearchClosePoint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchClosePoint, field_4C) == 0x4C);
@@ -6957,20 +6952,15 @@ pub struct NavMeshSearchFitSphere {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchFitSphere_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,void*___ptr64,3>
@@ -7020,11 +7010,11 @@ pub struct NavMeshSearchFitSphere {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFitSphere, field_4C) == 0x4C);
@@ -7054,20 +7044,15 @@ pub struct NavMeshSearchFlee {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchFlee_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7128,11 +7113,11 @@ pub struct NavMeshSearchFlee {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchFlee, field_4C) == 0x4C);
@@ -7164,20 +7149,15 @@ pub struct NavMeshSearchHide {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchHide_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7262,11 +7242,11 @@ pub struct NavMeshSearchHide {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchHide, field_4C) == 0x4C);
@@ -7305,20 +7285,15 @@ pub struct NavMeshSearchLOS {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchLOS_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7392,11 +7367,11 @@ pub struct NavMeshSearchLOS {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchLOS, field_4C) == 0x4C);
@@ -7432,20 +7407,15 @@ pub struct NavMeshSearchMaxCost {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchMaxCost_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7511,11 +7481,11 @@ pub struct NavMeshSearchMaxCost {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMaxCost, field_4C) == 0x4C);
@@ -7550,20 +7520,15 @@ pub struct NavMeshSearchMultipleGoals {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchMultipleGoals_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7631,11 +7596,11 @@ pub struct NavMeshSearchMultipleGoals {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchMultipleGoals, field_4C) == 0x4C);
@@ -7670,20 +7635,15 @@ pub struct NavMeshSearchSLPoint {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NavMeshSearchSLPoint_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -7764,11 +7724,11 @@ pub struct NavMeshSearchSLPoint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NavMeshSearchSLPoint, field_4C) == 0x4C);
@@ -13293,7 +13253,7 @@ const _: () = assert!(core::mem::offset_of!(StaggeredStopHandler, __vftable) == 
 /// `Stars`: size 0x20 (exact, medium); primary base `SkyObject`.
 /// Evidence: runtime: 0x20 at 1 allocation sites.
 /// Bases: `SkyObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct Stars {
     /// +0x0 `vtbl:Stars:0`, rtti
     #[doc(hidden)]
@@ -13303,8 +13263,9 @@ pub struct Stars {
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
-    pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
+    unknown_1C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13312,7 +13273,7 @@ const _: () = assert!(size_of::<Stars>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(Stars, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Stars, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(Stars, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Stars, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Stars, __field_18) == 0x18);
 
 /// `StartSpellHelpers::DoneEffectGatherFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `StartSpellHelpers::EffectGatherFunctor`.
 /// Evidence: vptr at 0x0.
@@ -14408,37 +14369,32 @@ pub struct TeleportDoorSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TeleportDoorSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
@@ -14447,19 +14403,19 @@ pub struct TeleportDoorSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_130: u32,
-    unknown_134: [u8; 20],
+    pub unknown_134: [u8; 20],
     /// +0x148 `undefined1`, base AStarSearch<ParentSpaceNode,TeleportLink,1>
     pub field_148: u8,
-    unknown_149: [u8; 7],
+    pub unknown_149: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TeleportDoorSearch, field_4C) == 0x4C);

@@ -16,37 +16,32 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3_vtable,
     /// +0x8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -55,20 +50,20 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    unknown_134: [u8; 36],
+    pub unknown_134: [u8; 36],
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
-    unknown_159: [u8; 7],
+    pub unknown_159: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3>() == 0x160);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3, field_4C) == 0x4C);
@@ -91,37 +86,32 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3_vtable,
     /// +0x8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -130,20 +120,20 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    unknown_134: [u8; 36],
+    pub unknown_134: [u8; 36],
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
-    unknown_159: [u8; 7],
+    pub unknown_159: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3>() == 0x160);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3, field_4C) == 0x4C);
@@ -166,37 +156,32 @@ pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoo
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22_vtable,
     /// +0x8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -205,20 +190,20 @@ pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoo
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    unknown_134: [u8; 188],
+    pub unknown_134: [u8; 188],
     /// +0x1F0 `undefined1`, ctor store
     pub field_1F0: u8,
-    unknown_1F1: [u8; 7],
+    pub unknown_1F1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22>() == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoor_BSTSmartPointerIntrusiveRefCount_22, field_4C) == 0x4C);
@@ -241,37 +226,32 @@ pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12_vtable,
     /// +0x8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -280,20 +260,20 @@ pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    unknown_134: [u8; 108],
+    pub unknown_134: [u8; 108],
     /// +0x1A0 `undefined1`, ctor store
     pub field_1A0: u8,
-    unknown_1A1: [u8; 7],
+    pub unknown_1A1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12>() == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12, field_4C) == 0x4C);
@@ -316,37 +296,32 @@ pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::AStarSearch_ParentSpaceNode_TeleportLink_1_vtable,
     /// +0x8 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -355,19 +330,19 @@ pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    unknown_134: [u8; 20],
+    pub unknown_134: [u8; 20],
     /// +0x148 `undefined1`, ctor store
     pub field_148: u8,
-    unknown_149: [u8; 7],
+    pub unknown_149: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(AStarSearch_ParentSpaceNode_TeleportLink_1, field_4C) == 0x4C);
@@ -9801,26 +9776,31 @@ pub struct EffectSetting {
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
-    pub field_78: u64,
+    #[doc(hidden)]
+    pub __field_78: [u8; 8],
     /// +0x80 `undefined2`, ctor store
-    pub field_80: u16,
+    #[doc(hidden)]
+    pub __field_80: [u8; 2],
     unknown_82: [u8; 6],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined4`, ctor store
-    pub field_90: u32,
+    #[doc(hidden)]
+    pub __field_90: [u8; 4],
     unknown_94: [u8; 4],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
     /// +0xB8 `undefined8`, ctor store
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined4`, ctor store
@@ -9830,7 +9810,8 @@ pub struct EffectSetting {
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
     /// +0xD8 `undefined4`, ctor store
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
@@ -9838,7 +9819,8 @@ pub struct EffectSetting {
     pub field_E0: u32,
     unknown_E4: [u8; 4],
     /// +0xE8 `undefined8`, ctor store
-    pub field_E8: u64,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 8],
     /// +0xF0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 8],
@@ -9911,23 +9893,23 @@ const _: () = assert!(core::mem::offset_of!(EffectSetting, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_DC) == 0xDC);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(EffectSetting, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(EffectSetting, __field_100) == 0x100);

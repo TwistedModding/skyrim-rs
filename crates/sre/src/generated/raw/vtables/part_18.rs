@@ -10663,7 +10663,8 @@ pub struct _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterReanim
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate>::vdtor` at 0x830b90 (slot_propagation, medium); signature (low): `AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate> * vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
     pub slot_2: *const c_void,
 }
@@ -11112,7 +11113,8 @@ pub struct _anon_CE40B4D9__AutoRegisterCombatMagicCaster_CombatMagicCasterTarget
     /// `_anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterTargetEffect>::AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect_vdtor` at 0x832578 (slot_propagation, medium); signature (low): `undefined AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect_vdtor(AutoRegisterCombatMagicCaster<CombatMagicCasterTargetEffect> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
     pub slot_2: *const c_void,
 }

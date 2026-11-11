@@ -550,16 +550,6 @@ impl crate::BSScript__Internal__VirtualMachine {
     pub fn field_827C_ptr(&self) -> *mut u16 { Self::__member_field_827C(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_field_93D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_93D0", 0x93D0, u64) } }
-    /// `BSScript::Internal::VirtualMachine::field_93D0`, at +0x93D0 on 1.7.104.
-    #[inline]
-    pub fn field_93D0(&self) -> u64 { unsafe { Self::__member_field_93D0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_93D0(&mut self, value: u64) { unsafe { Self::__member_field_93D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_93D0_ptr(&self) -> *mut u64 { Self::__member_field_93D0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_field_9490(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_9490", 0x9490, u64) } }
     /// `BSScript::Internal::VirtualMachine::field_9490`, at +0x9490 on 1.7.104.
     #[inline]
@@ -598,16 +588,6 @@ impl crate::BSScript__Internal__VirtualMachine {
     pub fn set_functionMessageOverflow(&mut self, value: [u8; 24]) { unsafe { Self::__member_functionMessageOverflow(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn functionMessageOverflow_ptr(&self) -> *mut [u8; 24] { Self::__member_functionMessageOverflow(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_functionMessageQueue(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.functionMessageQueue", 0x8220, [u8; 40]) } }
-    /// `BSScript::Internal::VirtualMachine::functionMessageQueue`, at +0x8220 on 1.7.104.
-    #[inline]
-    pub fn functionMessageQueue(&self) -> [u8; 40] { unsafe { Self::__member_functionMessageQueue(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_functionMessageQueue(&mut self, value: [u8; 40]) { unsafe { Self::__member_functionMessageQueue(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn functionMessageQueue_ptr(&self) -> *mut [u8; 40] { Self::__member_functionMessageQueue(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_latentWaits(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.latentWaits", 0x9358, [u8; 40]) } }

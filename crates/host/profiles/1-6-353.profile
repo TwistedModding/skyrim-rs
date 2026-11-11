@@ -40101,7 +40101,6 @@ member-unverified BSParticleShaderSnowEmitter.field_FD8
 member-unverified BSParticleSystemManager.extraDataCapacity
 member-unverified BSParticleSystemManager.flags2
 member-unverified BSParticleSystemManager.previousWorldFrame
-member-unverified BSPathEventManager.source_BSPathEvent
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_100
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_108
 member-unverified BSPathfindingTemporary<PathingRequestCover>.field_120
@@ -43897,6 +43896,9 @@ member-unverified MovementHandlerArbiter.field_70
 member-unverified MovementHandlerArbiter.field_78
 member-unverified MovementTweenerArbiter.field_15C
 member-unverified MovementTweenerArbiter.field_180
+member-unverified MovementTweenerArbiter.field_4C
+member-unverified MovementTweenerArbiter.field_54
+member-unverified MovementTweenerArbiter.field_80
 member-unverified MovementTweenerArbiter.field_B4
 member-unverified MovementTweenerArbiter.field_BC
 member-unverified NavMeshSearchClosePoint.field_180
@@ -44929,7 +44931,6 @@ member-unverified TESObjectDOOR.field_50
 member-unverified TESObjectLIGH.field_50
 member-unverified TESObjectLIGH.flickerMovementAmplitude
 member-unverified TESObjectLIGH.flickerPeriod
-member-unverified TESObjectLIGH.sound
 member-unverified TESObjectMISC.field_50
 member TESObjectREFR.field_90 88
 member TESObjectREFR.field_9A 92
@@ -45869,7 +45870,6 @@ member-unverified bhkCharProxyController.pointCollector
 member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkCharacterController.shapes
-member-unverified bhkCharacterController.source_bhkCharacterMoveFinishEvent
 member-unverified bhkCharacterController.supportLayer
 member-unverified bhkPickData.allHitsCollector
 member-unverified bhkPickData.allHitsCollector2

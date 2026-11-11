@@ -307,7 +307,8 @@ pub struct BSScript__Internal__RawFuncCallQuery {
     pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     #[doc(hidden)]
@@ -327,7 +328,7 @@ pub struct BSScript__Internal__RawFuncCallQuery {
 const _: () = assert!(size_of::<BSScript__Internal__RawFuncCallQuery>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__RawFuncCallQuery, __field_30) == 0x30);

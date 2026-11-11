@@ -1381,11 +1381,9 @@ pub struct bhkRagdollController {
     pub __field_10: [u8; 4],
     unknown_14: [u8; 12],
     /// +0x20 `undefined1[16]`, ctor store
-    #[doc(hidden)]
-    pub __field_20: [u8; 16],
+    pub field_20: [u8; 16],
     /// +0x30 `undefined1[16]`, ctor store
-    #[doc(hidden)]
-    pub __field_30: [u8; 16],
+    pub field_30: [u8; 16],
     /// +0x40 `undefined1[16]`, ctor store
     pub field_40: [u8; 16],
     /// +0x50 `undefined8`, ctor store
@@ -1574,8 +1572,8 @@ const _: () = assert!(core::mem::offset_of!(bhkRagdollController, __vftable) == 
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollController, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollController, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollController, field_58) == 0x58);

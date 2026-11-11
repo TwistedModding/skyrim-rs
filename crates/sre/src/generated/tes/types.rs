@@ -5549,11 +5549,13 @@ pub struct TESWorldSpace {
     #[doc(hidden)]
     pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
+    #[doc(hidden)]
+    pub __field_98: [u8; 8],
     /// +0xA0 `undefined1`, ctor store
     pub field_A0: u8,
     unknown_A1: [u8; 1],
@@ -5694,9 +5696,9 @@ const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESWorldSpace, __field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_A2) == 0xA2);
 const _: () = assert!(core::mem::offset_of!(TESWorldSpace, field_A4) == 0xA4);

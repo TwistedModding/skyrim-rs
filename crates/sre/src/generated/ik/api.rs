@@ -1508,26 +1508,6 @@ impl crate::bhkRagdollController {
     pub fn field_18C_ptr(&self) -> *mut u16 { Self::__member_field_18C(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_field_20(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_20", 0x20, [u8; 16]) } }
-    /// `bhkRagdollController::field_20`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn field_20(&self) -> [u8; 16] { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_20(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_20_ptr(&self) -> *mut [u8; 16] { Self::__member_field_20(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_30(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "bhkRagdollController.field_30", 0x30, [u8; 16]) } }
-    /// `bhkRagdollController::field_30`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn field_30(&self) -> [u8; 16] { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_30(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_30_ptr(&self) -> *mut [u8; 16] { Self::__member_field_30(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_field_320(this: *const Self) -> *mut u64 { unsafe { member!(this, "bhkRagdollController.field_320", 0x320, u64) } }
     /// `bhkRagdollController::field_320`, at +0x320 on 1.7.104.
     #[inline]

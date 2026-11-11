@@ -7,34 +7,6 @@
 
 use core::ffi::c_void;
 
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
-/// Evidence: allocation sites (high): {'216': 2}.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
 /// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
 /// Evidence: allocation sites (high): {'216': 2}.
 /// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
@@ -2884,7 +2856,7 @@ pub struct CombatProjectileAimController {
     pub __vftable: *const crate::raw::vtables::CombatProjectileAimController_vtable,
     /// +0x8 `undefined4`, base CombatAimController
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatAimController
     pub field_10: u64,
     /// +0x18 `float`, base CombatAimController
@@ -2893,7 +2865,7 @@ pub struct CombatProjectileAimController {
     pub field_1C: f32,
     /// +0x20 `float`, base CombatAimController
     pub field_20: f32,
-    unknown_24: [u8; 4],
+    pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base CombatAimController
     pub field_28: u64,
     /// +0x30 `undefined4`, base CombatAimController
@@ -2912,7 +2884,7 @@ pub struct CombatProjectileAimController {
     pub field_50: f32,
     /// +0x54 `float`, ctor store
     pub field_54: f32,
-    unknown_58: [u8; 4],
+    pub unknown_58: [u8; 4],
     /// +0x5C `float`, ctor store
     pub field_5C: f32,
     /// +0x60 `float`, ctor store
@@ -2949,7 +2921,7 @@ pub struct CombatProjectileAimController {
     pub field_9C: f32,
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    unknown_A4: [u8; 4],
+    pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined4`, ctor store
@@ -2957,13 +2929,12 @@ pub struct CombatProjectileAimController {
     /// +0xB4 `float`, ctor store
     pub field_B4: f32,
     /// +0xB8 `float`, ctor store
-    #[doc(hidden)]
-    pub __field_B8: [u8; 4],
+    pub field_B8: f32,
     /// +0xBC `float`, ctor store
     pub field_BC: f32,
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
-    unknown_C4: [u8; 4],
+    pub unknown_C4: [u8; 4],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
     #[doc(hidden)]
@@ -3006,7 +2977,7 @@ const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_BC) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(CombatProjectileAimController, field_C8) == 0xC8);

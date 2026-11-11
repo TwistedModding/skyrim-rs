@@ -1470,20 +1470,15 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPrecomputedNavmeshInfoSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
@@ -1545,11 +1540,11 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_4C) == 0x4C);
@@ -15195,7 +15190,8 @@ pub struct BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrappe
     pub __field_8: [u8; 4],
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     unknown_18: [u8; 24],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
@@ -15282,7 +15278,7 @@ pub struct BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrappe
 }
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_70) == 0x70);
@@ -15714,27 +15710,23 @@ pub struct BSTempEffectGeometryDecal {
     #[doc(hidden)]
     pub __field_60: [u8; 8],
     /// +0x68 `float`, ctor store
-    #[doc(hidden)]
-    pub __field_68: [u8; 4],
+    pub field_68: f32,
     /// +0x6C `float`, ctor store
     pub field_6C: f32,
     /// +0x70 `float`, ctor store
-    #[doc(hidden)]
-    pub __field_70: [u8; 4],
+    pub field_70: f32,
     /// +0x74 `float`, ctor store
     pub field_74: f32,
     /// +0x78 `float`, ctor store
     pub field_78: f32,
     /// +0x7C `float`, ctor store
-    #[doc(hidden)]
-    pub __field_7C: [u8; 4],
+    pub field_7C: f32,
     /// +0x80 `float`, ctor store
     pub field_80: f32,
     /// +0x84 `float`, ctor store
     pub field_84: f32,
     /// +0x88 `float`, ctor store
-    #[doc(hidden)]
-    pub __field_88: [u8; 4],
+    pub field_88: f32,
     /// +0x8C `float`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_8C: [u8; 4],
@@ -15776,15 +15768,15 @@ const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_48)
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_7C) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_94) == 0x94);

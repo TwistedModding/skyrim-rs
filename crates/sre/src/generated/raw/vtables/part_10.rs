@@ -1327,7 +1327,8 @@ impl BSTDerivedCreator_MovementMessageBlocked_MovementMessage_vtable {
 #[repr(C)]
 pub struct BSTDerivedCreator_MovementMessageFreezeDirection_MovementMessage_vtable {
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vdtor` at 0x121ac60 (layout_inference, medium); signature (low): `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * vdtor(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_1` at 0x121abd0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_2` at 0x121ac40 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 * param_1)`

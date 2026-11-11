@@ -124,10 +124,10 @@ fn nothing_becomes_an_accessor_without_a_differing_file() {
     let canonical = generated(&inp, &[same]);
     let unchanged = generated(&inp, &[runtime(&file("1.6.1170", "versionlib-1-6-1170-0.bin", "AE", "{}"))]);
     assert_eq!(none, canonical, "1.7.104's own file is not compared");
-    assert_eq!(none.replace("for 1.5.97, 1.6.353, 1.6.1170", "for 1.5.97, 1.6.353"), unchanged, "an all-same file changes only the provisional line");
+    assert_eq!(none.replace("1.6.1170, ", ""), unchanged, "an all-same file changes only the provisional line");
     assert!(none.contains("pub health: f32,"));
     assert!(!none.contains("member!(") && !none.contains("slot_at!(") && !none.contains("base_at!("));
-    assert!(none.contains("provisional: no difference file yet for 1.5.97, 1.6.353, 1.6.1170"));
+    assert!(none.contains("provisional: no difference file yet for 1.5.97, 1.6.353, 1.6.640, 1.6.1170, 1.6.1179"));
 }
 
 #[test]

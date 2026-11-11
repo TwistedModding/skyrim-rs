@@ -3489,6 +3489,26 @@ impl crate::TESWorldSpace {
     pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_88(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_88", 0x88, u64) } }
+    /// `TESWorldSpace::field_88`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn field_88(&self) -> u64 { unsafe { Self::__member_field_88(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_88(&mut self, value: u64) { unsafe { Self::__member_field_88(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_88_ptr(&self) -> *mut u64 { Self::__member_field_88(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_98(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_98", 0x98, u64) } }
+    /// `TESWorldSpace::field_98`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn field_98(&self) -> u64 { unsafe { Self::__member_field_98(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_98(&mut self, value: u64) { unsafe { Self::__member_field_98(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_98_ptr(&self) -> *mut u64 { Self::__member_field_98(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_m_TESTexture_230(this: *const Self) -> *mut crate::TESTexture { unsafe { member!(this, "TESWorldSpace.m_TESTexture_230", 0x230, crate::TESTexture) } }
     /// `TESWorldSpace::m_TESTexture_230`, at +0x230 on 1.7.104.
     #[inline]

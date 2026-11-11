@@ -11,6 +11,7 @@ Skyrim Runtime Extender is a plugin loader for Skyrim Special Edition. `skyrim_r
   | 1.7.104 | 2.3.1 | `versionlib-1-7-104-0.bin` |
   | 1.6.1170 | 2.2.6 | `versionlib-1-6-1170-0.bin` |
   | 1.6.1179 (GOG) | 2.2.6 (GOG) | `versionlib-1-6-1179-0.bin` |
+  | 1.6.640 | 2.2.3 | `versionlib-1-6-640-0.bin` |
   | 1.6.353 | 2.1.5 | `versionlib-1-6-353-0.bin` |
   | 1.5.97 | 2.0.19 | `version-1-5-97-0.bin` |
 

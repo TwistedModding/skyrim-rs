@@ -4536,6 +4536,16 @@ impl crate::MagicTarget {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn has_magic_effect_with_keyword(&self, keyword: *mut crate::BGSKeyword, outFound: *mut *mut crate::ActiveEffect) -> bool { unsafe { function!(34518, (*const Self, *mut crate::BGSKeyword, *mut *mut crate::ActiveEffect) -> bool)(core::ptr::from_ref(self), keyword, outFound) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingChanges(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "MagicTarget.pendingChanges", 0x8, *mut c_void) } }
+    /// `MagicTarget::pendingChanges`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn pendingChanges(&self) -> *mut c_void { unsafe { Self::__member_pendingChanges(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pendingChanges(&mut self, value: *mut c_void) { unsafe { Self::__member_pendingChanges(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pendingChanges_ptr(&self) -> *mut *mut c_void { Self::__member_pendingChanges(core::ptr::from_ref(self)) }
 }
 
 impl crate::MapCamera {
@@ -7654,16 +7664,6 @@ impl crate::TESObjectLIGH {
     pub fn set_flickerPeriod(&mut self, value: f32) { unsafe { Self::__member_flickerPeriod(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flickerPeriod_ptr(&self) -> *mut f32 { Self::__member_flickerPeriod(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_sound(this: *const Self) -> *mut *mut crate::BGSSoundDescriptorForm { unsafe { member!(this, "TESObjectLIGH.sound", 0x110, *mut crate::BGSSoundDescriptorForm) } }
-    /// `TESObjectLIGH::sound`, at +0x110 on 1.7.104.
-    #[inline]
-    pub fn sound(&self) -> *mut crate::BGSSoundDescriptorForm { unsafe { Self::__member_sound(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_sound(&mut self, value: *mut crate::BGSSoundDescriptorForm) { unsafe { Self::__member_sound(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn sound_ptr(&self) -> *mut *mut crate::BGSSoundDescriptorForm { Self::__member_sound(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectWEAP {
@@ -9134,14 +9134,6 @@ impl crate::bhkCharacterController {
     pub fn set_shapes(&mut self, value: [u8; 16]) { unsafe { Self::__member_shapes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn shapes_ptr(&self) -> *mut [u8; 16] { Self::__member_shapes(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_source_bhkCharacterMoveFinishEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "bhkCharacterController.source_bhkCharacterMoveFinishEvent", 0x10, crate::BSTEventSource) } }
-    /// `bhkCharacterController::source_bhkCharacterMoveFinishEvent`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn source_bhkCharacterMoveFinishEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn source_bhkCharacterMoveFinishEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_bhkCharacterMoveFinishEvent(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_supportLayer(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkCharacterController.supportLayer", 0x308, u32) } }

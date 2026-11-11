@@ -1200,19 +1200,6 @@ impl crate::MovementMessageJump {
     pub fn as_i_path_follower_action(&self) -> &crate::IPathFollowerAction { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
 }
 
-impl crate::MovementMessageMovementTypeChange {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementMessageMovementTypeChange.field_8", 0x8, u32) } }
-    /// `MovementMessageMovementTypeChange::field_8`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
-}
-
 impl crate::MovementPathManagerAgent {
     /// The `IMovementPathManagerAgent` base at +0x18.
     #[inline]
@@ -1414,26 +1401,6 @@ impl crate::MovementPlannerAgentNavmeshBounds {
     /// The `IPipelineStageInterface` base at +0x20.
     #[inline]
     pub fn as_i_pipeline_stage_interface_2(&self) -> &crate::IPipelineStageInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_308(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementPlannerAgentNavmeshBounds.field_308", 0x308, u64) } }
-    /// `MovementPlannerAgentNavmeshBounds::field_308`, at +0x308 on 1.7.104.
-    #[inline]
-    pub fn field_308(&self) -> u64 { unsafe { Self::__member_field_308(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_308(&mut self, value: u64) { unsafe { Self::__member_field_308(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_308_ptr(&self) -> *mut u64 { Self::__member_field_308(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPlannerAgentNavmeshBounds.field_58", 0x58, u32) } }
-    /// `MovementPlannerAgentNavmeshBounds::field_58`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementPlannerAgentNavmeshBounds.field_8", 0x8, u32) } }
@@ -1746,6 +1713,16 @@ impl crate::MovementTweenerArbiter {
     pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "MovementTweenerArbiter.field_80", 0x80, u64) } }
+    /// `MovementTweenerArbiter::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_88(this: *const Self) -> *mut u32 { unsafe { member!(this, "MovementTweenerArbiter.field_88", 0x88, u32) } }
     /// `MovementTweenerArbiter::field_88`, at +0x88 on 1.7.104.
     #[inline]
@@ -1814,19 +1791,6 @@ impl crate::MovementTweenerArbiter {
     pub fn set_field_D0(&mut self, value: u32) { unsafe { Self::__member_field_D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_D0_ptr(&self) -> *mut u32 { Self::__member_field_D0(core::ptr::from_ref(self)) }
-}
-
-impl crate::PathFollowerStateTurnToAngle {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "PathFollowerStateTurnToAngle.field_8", 0x8, u32) } }
-    /// `PathFollowerStateTurnToAngle::field_8`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
 }
 
 impl crate::PathManagerPositionPlayerAdapter {

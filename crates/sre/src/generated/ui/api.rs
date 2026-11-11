@@ -2148,16 +2148,6 @@ impl crate::MenuEventHandler {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn vdtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "MenuEventHandler.refCount", 0x8, u32) } }
-    /// `MenuEventHandler::refCount`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
 }
 
 impl crate::MenuOpenHandler {

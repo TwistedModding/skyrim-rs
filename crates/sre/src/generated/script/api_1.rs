@@ -2825,6 +2825,16 @@ impl crate::BSScript__ErrorLogger {
 impl crate::BSScript__Internal__RawFuncCallQuery {
     #[doc(hidden)]
     #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::RawFuncCallQuery.field_10", 0x10, u32) } }
+    /// `BSScript::Internal::RawFuncCallQuery::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::RawFuncCallQuery.field_18", 0x18, u64) } }
     /// `BSScript::Internal::RawFuncCallQuery::field_18`, at +0x18 on 1.7.104.
     #[inline]

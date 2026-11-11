@@ -12230,20 +12230,15 @@ pub struct BSNavmeshInfoSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNavmeshInfoSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
@@ -12305,11 +12300,11 @@ pub struct BSNavmeshInfoSearch {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshInfoSearch, field_4C) == 0x4C);
@@ -12448,20 +12443,15 @@ pub struct BSNavmeshSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNavmeshSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12517,11 +12507,11 @@ pub struct BSNavmeshSearch {
 }
 const _: () = assert!(size_of::<BSNavmeshSearch>() == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSNavmeshSearch, field_4C) == 0x4C);
@@ -15795,37 +15785,32 @@ pub struct BSPathSmootherPOVSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPathSmootherPOVSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
-    #[doc(hidden)]
-    pub __field_8: [u8; 8],
+    pub field_8: u64,
     /// +0x10 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
-    #[doc(hidden)]
-    pub __field_10: [u8; 8],
+    pub field_10: u64,
     /// +0x18 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
-    #[doc(hidden)]
-    pub __field_18: [u8; 8],
+    pub field_18: u64,
     /// +0x20 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
-    #[doc(hidden)]
-    pub __field_20: [u8; 8],
+    pub field_20: u64,
     /// +0x28 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
-    #[doc(hidden)]
-    pub __field_28: [u8; 8],
+    pub field_28: u64,
     /// +0x30 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_38: u32,
-    unknown_3C: [u8; 16],
+    pub unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_58: u64,
-    unknown_60: [u8; 8],
+    pub unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_70: u32,
-    unknown_74: [u8; 164],
+    pub unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
@@ -15834,36 +15819,36 @@ pub struct BSPathSmootherPOVSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_130: u32,
-    unknown_134: [u8; 108],
+    pub unknown_134: [u8; 108],
     /// +0x1A0 `undefined1`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_1A0: u8,
-    unknown_1A1: [u8; 7],
+    pub unknown_1A1: [u8; 7],
     /// +0x1A8 `undefined8`, ctor store
     pub field_1A8: u64,
     /// +0x1B0 `undefined8`, ctor store
     pub field_1B0: u64,
     /// +0x1B8 `undefined2`, ctor store
     pub field_1B8: u16,
-    unknown_1BA: [u8; 6],
+    pub unknown_1BA: [u8; 6],
     /// +0x1C0 `float`, ctor store
     pub field_1C0: f32,
     /// +0x1C4 `float`, ctor store
     pub field_1C4: f32,
     /// +0x1C8 `float`, ctor store
     pub field_1C8: f32,
-    unknown_1CC: [u8; 4],
+    pub unknown_1CC: [u8; 4],
     /// +0x1D0 `undefined8`, ctor store
     pub field_1D0: u64,
     /// +0x1D8 `undefined2`, ctor store
     pub field_1D8: u16,
-    unknown_1DA: [u8; 6],
+    pub unknown_1DA: [u8; 6],
     /// +0x1E0 `float`, ctor store
     pub field_1E0: f32,
     /// +0x1E4 `float`, ctor store
     pub field_1E4: f32,
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
-    unknown_1EC: [u8; 4],
+    pub unknown_1EC: [u8; 4],
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined8`, ctor store
@@ -15882,42 +15867,42 @@ pub struct BSPathSmootherPOVSearch {
     pub field_228: u64,
     /// +0x230 `undefined4`, ctor store
     pub field_230: u32,
-    unknown_234: [u8; 12],
+    pub unknown_234: [u8; 12],
     /// +0x240 `undefined8`, ctor store
     pub field_240: u64,
     /// +0x248 `undefined8`, ctor store
     pub field_248: u64,
     /// +0x250 `undefined4`, ctor store
     pub field_250: u32,
-    unknown_254: [u8; 12],
+    pub unknown_254: [u8; 12],
     /// +0x260 `undefined8`, ctor store
     pub field_260: u64,
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
     /// +0x270 `undefined4`, ctor store
     pub field_270: u32,
-    unknown_274: [u8; 12],
+    pub unknown_274: [u8; 12],
     /// +0x280 `undefined8`, ctor store
     pub field_280: u64,
     /// +0x288 `undefined8`, ctor store
     pub field_288: u64,
     /// +0x290 `undefined4`, ctor store
     pub field_290: u32,
-    unknown_294: [u8; 12],
+    pub unknown_294: [u8; 12],
     /// +0x2A0 `undefined8`, ctor store
     pub field_2A0: u64,
     /// +0x2A8 `undefined8`, ctor store
     pub field_2A8: u64,
     /// +0x2B0 `undefined4`, ctor store
     pub field_2B0: u32,
-    unknown_2B4: [u8; 12],
+    pub unknown_2B4: [u8; 12],
     /// +0x2C0 `undefined8`, ctor store
     pub field_2C0: u64,
     /// +0x2C8 `undefined8`, ctor store
     pub field_2C8: u64,
     /// +0x2D0 `undefined4`, ctor store
     pub field_2D0: u32,
-    unknown_2D4: [u8; 12],
+    pub unknown_2D4: [u8; 12],
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
     /// +0x2E8 `undefined8`, ctor store
@@ -15928,11 +15913,11 @@ pub struct BSPathSmootherPOVSearch {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPathSmootherPOVSearch, field_4C) == 0x4C);

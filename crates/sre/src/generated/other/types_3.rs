@@ -1430,7 +1430,8 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_705FD51E__MagicMenuAddActiveEffectVisitor_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined2`, ctor store (widths [2, 4])
     #[doc(hidden)]
     pub __field_10: [u8; 2],
@@ -1453,7 +1454,8 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     pub __field_38: [u8; 8],
     unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     unknown_50: [u8; 12],
     /// +0x5C `undefined8`, ctor store
     #[doc(hidden)]
@@ -1475,14 +1477,14 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(_anon_705FD51E__MagicMenuAddActiveEffectVisitor, __field_68) == 0x68);

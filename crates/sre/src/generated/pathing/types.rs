@@ -1423,21 +1423,20 @@ const _: () = assert!(core::mem::offset_of!(MovementMessageJump, field_18) == 0x
 /// `MovementMessageMovementTypeChange`: size 0x90 (exact, medium); primary base `MovementMessage`.
 /// Evidence: runtime: 0x90 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `MovementMessage`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct MovementMessageMovementTypeChange {
     /// +0x0 `vtbl:MovementMessageMovementTypeChange:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MovementMessageMovementTypeChange_vtable,
     /// +0x8 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 4],
-    unknown_C: [u8; 132],
+    pub field_8: u32,
+    pub unknown_C: [u8; 132],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MovementMessageMovementTypeChange>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(MovementMessageMovementTypeChange, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MovementMessageMovementTypeChange, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(MovementMessageMovementTypeChange, field_8) == 0x8);
 
 /// `MovementMessageNewPath`: size 0x18 (exact, medium); primary base `MovementMessagePathEvent`.
 /// Evidence: runtime: 0x18 at 1 allocation sites.
@@ -2118,12 +2117,10 @@ pub struct MovementPlannerAgentNavmeshBounds {
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_58: [u8; 4],
+    pub field_58: u32,
     unknown_5C: [u8; 684],
     /// +0x308 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_308: [u8; 8],
+    pub field_308: u64,
     /// +0x310 `undefined4`, ctor store
     pub field_310: u32,
     unknown_314: [u8; 4],
@@ -2142,8 +2139,8 @@ const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, f
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, __field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, __field_308) == 0x308);
+const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_308) == 0x308);
 const _: () = assert!(core::mem::offset_of!(MovementPlannerAgentNavmeshBounds, field_310) == 0x310);
 
 /// `MovementPlannerAgentWarp`: size 0xC0 (exact, medium); primary base `MovementPlannerAgent`.
@@ -2660,7 +2657,8 @@ pub struct MovementTweenerArbiter {
     pub __field_54: [u8; 4],
     unknown_58: [u8; 40],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 4],
@@ -2705,7 +2703,7 @@ const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable_18
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(MovementTweenerArbiter, __field_BC) == 0xBC);
@@ -2791,14 +2789,13 @@ const _: () = assert!(core::mem::offset_of!(PathFollowerStatePlayIdle, field_10)
 /// `PathFollowerStateTurnToAngle`: size >= 0x20 (lower bound); partial, the struct stops at the lower bound; primary base `IPathFollowerState`.
 /// Evidence: field field_1C.
 /// Bases: `IPathFollowerState`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct PathFollowerStateTurnToAngle {
     /// +0x0 `vtbl:PathFollowerStateTurnToAngle:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PathFollowerStateTurnToAngle_vtable,
     /// +0x8 `undefined4`, ctor store
-    #[doc(hidden)]
-    pub __field_8: [u8; 4],
+    pub field_8: u32,
     /// +0xC `float`, ctor store
     pub field_C: f32,
     /// +0x10 `float`, ctor store
@@ -2813,7 +2810,7 @@ pub struct PathFollowerStateTurnToAngle {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(PathFollowerStateTurnToAngle, field_14) == 0x14);
