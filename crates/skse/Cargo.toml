@@ -8,5 +8,8 @@ license.workspace = true
 [dependencies]
 windows-sys = { workspace = true, features = ["Win32_Foundation", "Win32_Storage_FileSystem", "Win32_UI_Shell", "Win32_System_Com", "Win32_System_Diagnostics_Debug", "Win32_System_LibraryLoader", "Win32_System_SystemInformation", "Win32_System_Threading"] }
 
+[dev-dependencies]
+windows-sys = { workspace = true, features = ["Win32_System_Kernel"] }
+
 [lints]
 workspace = true
