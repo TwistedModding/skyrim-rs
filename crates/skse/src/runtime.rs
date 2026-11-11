@@ -120,6 +120,7 @@ pub struct Runtime {
 pub const RUNTIMES: &[Runtime] = &[
     Runtime { file_version: [1, 5, 97, 0], packed: pack(1, 5, 97, 0), name: "SE 1.5.97", versionlib: "version-1-5-97-0.bin", v5: false },
     Runtime { file_version: [1, 6, 353, 0], packed: pack(1, 6, 353, 0), name: "AE 1.6.353", versionlib: "versionlib-1-6-353-0.bin", v5: false },
+    Runtime { file_version: [1, 6, 640, 0], packed: pack(1, 6, 640, 0), name: "AE 1.6.640", versionlib: "versionlib-1-6-640-0.bin", v5: false },
     Runtime { file_version: [1, 6, 1170, 0], packed: pack(1, 6, 1170, 0), name: "AE 1.6.1170", versionlib: "versionlib-1-6-1170-0.bin", v5: false },
     Runtime { file_version: [1, 6, 1179, 0], packed: pack(1, 6, 1179, 1), name: "AE 1.6.1179 GOG", versionlib: "versionlib-1-6-1179-0.bin", v5: false },
     Runtime { file_version: [1, 7, 99, 0], packed: pack(1, 7, 99, 0), name: "AE 1.7.99", versionlib: "versionlib-1-7-99-0.bin", v5: true },
@@ -140,6 +141,7 @@ mod tests {
         assert_eq!(pack(1, 5, 97, 0), 0x0105_0610);
         assert_eq!(pack(1, 7, 104, 0), 0x0107_0680);
         assert_eq!(unpack(0x0106_4920), [1, 6, 1170, 0]);
+        assert_eq!(pack(1, 6, 640, 0), 0x0106_2800);
         assert_eq!(pack(1, 6, 1179, 1), 0x0106_49B1);
         assert!(is_gog(0x0106_49B1) && !is_gog(0x0106_4920));
     }

@@ -11,6 +11,7 @@ param(
 $Installs = @{
     "1.7.104"  = @{ dir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition"; skse = "2.3.1" }
     "1.6.1170" = @{ dir = "C:\Skyrim 1.6.1170"; skse = "2.2.6" }
+    "1.6.640"  = @{ dir = "C:\Skyrim 1.6.640"; skse = "2.2.3" }
     "1.6.353"  = @{ dir = "C:\Skyrim 1.6.353"; skse = "2.1.5" }
     "1.5.97"   = @{ dir = "C:\Skyrim 1.5.97"; skse = "2.0.19" }
 }
