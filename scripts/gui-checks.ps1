@@ -6,7 +6,7 @@
 # by verify.ps1. The host runs the example mod (first in load order, so its Before on Actor::ModActorValueImpl is
 # subscription #1; its tab "Example mod" has the sections Damage and About) and the hooks suite's plugins a and b, which
 # add no tab. Part 1: "SkyrimRs gui" opens the overlay on its first page and lists the pages (the example's two sections,
-# Plugins, Legacy plugins, Settings), the framework plugins and the SKSE plugins; "SkyrimRs capture 0" writes that frame,
+# Plugins, Legacy plugins, Settings, Debug), the framework plugins and the SKSE plugins; "SkyrimRs capture 0" writes that frame,
 # W is held for 2 s with nothing focused (focus capture: the player moves), then pages 1 to 4 are shown and captured in
 # turn, page 1 (About) is selected again and F11 closes the overlay. "SkyrimRs hooks" lists the sites, the example's
 # native sets the damage scale to 1.5, then three damages of 10 with health read back: with #1 on (100 -> 84: 15, a +1,
@@ -87,7 +87,7 @@ $refusedLine = HostLines '^keys: F11 for skyrim-rs-example\.open-tab refused: F1
 $hostWritten = HostLines '^settings written to .*\\skyrim-runtime-extender\.settings\.json$'
 $reported = @($malformedLog | Where-Object { $_ -match "^skyrim-runtime-extender: settings not read, .*\\skyrim-runtime-extender\.settings\.json: malformed at line 3, column 3: expected ','; renamed to .*\\skyrim-runtime-extender\.settings\.json\.bad, the defaults are used$" })
 $pages = @($gui1 -split ' \| ' | Where-Object { $_ -match '^page \d+: ' })
-$expectedPages = @("page 0: Example mod / Damage, shown", "page 1: Example mod / About", "page 2: Plugins", "page 3: Legacy plugins", "page 4: Settings")
+$expectedPages = @("page 0: Example mod / Damage, shown", "page 1: Example mod / About", "page 2: Plugins", "page 3: Legacy plugins", "page 4: Settings", "page 5: Debug")
 $shownPages = @(17, 21, 25, 29 | ForEach-Object { Captured (Lines $_) '(page \d+: [^|,]*), shown' })
 
 $rows = @(
@@ -138,7 +138,7 @@ $rows = @(
     @{ name = "host file"; plugin = "(host log) $($hostWritten.Count) writes of skyrim-runtime-extender.settings.json"; devbench = ($hostFile -replace '\s+', ' ');
        ok = ($hostWritten.Count -ge 1 -and $hostFile -match '"key\.skyrim-runtime-extender\.toggle": "F11"' -and $hostFile -match '"key\.skyrim-runtime-extender\.close": "Escape"' -and $hostFile -match '"overlay\.capture": "focus"' -and $hostFile -notmatch '"window\.') }
     @{ name = "rebind by file"; plugin = "(rebind host log) $(@($rebindLog | Where-Object { $_ -match '^overlay installed' }) -join ' | '); on disk: $($rebindFile -replace '\s+', ' ')"; devbench = "F11: $(LinesOf $rebind 7); F10: $(LinesOf $rebind 11); F10: $(LinesOf $rebind 14); the game's sink saw F10: $(Seen $rebindSeen 0 '0x44')";
-       ok = (@($rebindLog | Where-Object { $_ -match '^overlay installed, toggled with F10, closed with Escape$' }).Count -eq 1 -and (LinesOf $rebind 7) -match 'overlay closed' -and (LinesOf $rebind 7) -match 'key 0 skyrim-runtime-extender\.toggle: F10 ' -and (LinesOf $rebind 11) -match 'overlay open' -and (LinesOf $rebind 14) -match 'overlay closed' -and (Seen $rebindSeen 0 '0x44') -eq 'not seen' -and $rebindFile -match '"key\.skyrim-runtime-extender\.toggle": "F10"' -and $rebindFile -match '"by\.hand": "kept"') }
+       ok = (@($rebindLog | Where-Object { $_ -match '^overlay installed( on [^,]+)?, toggled with F10, closed with Escape$' }).Count -eq 1 -and (LinesOf $rebind 7) -match 'overlay closed' -and (LinesOf $rebind 7) -match 'key 0 skyrim-runtime-extender\.toggle: F10 ' -and (LinesOf $rebind 11) -match 'overlay open' -and (LinesOf $rebind 14) -match 'overlay closed' -and (Seen $rebindSeen 0 '0x44') -eq 'not seen' -and $rebindFile -match '"key\.skyrim-runtime-extender\.toggle": "F10"' -and $rebindFile -match '"by\.hand": "kept"') }
     @{ name = "malformed"; plugin = "(malformed host log) $($reported -join ' | ')"; devbench = ".bad holds what was written: $($badFile -match '^\{\n  "key\.skyrim-runtime-extender\.toggle": "F10"\n  "overlay'); new file: $($malformedFile -replace '\s+', ' '); $(LinesOf $malformed 4); F11: $(LinesOf $malformed 7); F11: $(LinesOf $malformed 10)";
        ok = ($reported.Count -eq 1 -and $badFile -match '^\{\n  "key\.skyrim-runtime-extender\.toggle": "F10"\n  "overlay' -and $malformedFile -match '"key\.skyrim-runtime-extender\.toggle": "F11"' -and $malformedFile -notmatch 'F10|by\.hand' -and (LinesOf $malformed 4) -match 'key 0 skyrim-runtime-extender\.toggle: F11 ' -and (LinesOf $malformed 7) -match 'overlay open' -and (LinesOf $malformed 10) -match 'overlay closed') }
 )
