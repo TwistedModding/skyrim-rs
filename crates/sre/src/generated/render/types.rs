@@ -225,9 +225,9 @@ pub struct BSDynamicTriShape {
     /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
     pub vertexCount: u16,
     unknown_15C: [u8; 4],
-    /// +0x160 `ptr`, semantic; the dynamic vertex block (high)
+    /// +0x160 `ptr`, semantic; the dynamic vertex block; vertex stream 1 of the draw (float4 positions when the descriptor has bit 54), uploaded per frame by DrawGeometryByPrimitiveKind (high)
     pub dynamicVertices: [u8; 8],
-    /// +0x168 `u64`, semantic; BSSpinLock guarding the dynamic block (high)
+    /// +0x168 `u64`, semantic; BSSpinLock guarding the dynamic block; recursive (owner thread +0x168, count +0x16c): read +0x160 between LockAndGetField160 0xefd6e0 and the release 0xefd710, as the draw does (high)
     pub dynamicVerticesLock: u64,
     /// +0x170 `u32`, semantic; byte size of the dynamic block (high)
     pub dynamicVerticesSize: u32,
