@@ -26537,9 +26537,6 @@ member-unverified ShadowSceneNode.pendingGeometryDetach
 member-unverified ShadowSceneNode.pendingGeometryRelight
 member-unverified ShadowSceneNode.pendingGeometryRelightActive
 member-unverified ShadowSceneNode.previousWorldFrame
-member-unverified SharedVertexBuffer.buffer
-member-unverified SharedVertexBuffer.data
-member-unverified SharedVertexBuffer.size
 member-missing SixaxisEvent.__vftable
 member-missing SixaxisEvent.field_10
 member-missing SixaxisEvent.field_18
@@ -26561,12 +26558,6 @@ member-missing SixaxisEvent.field_7C
 member-missing SixaxisEvent.field_8
 member-missing SixaxisEvent.field_C
 member-missing SixaxisEvent.orientation
-member-unverified SkinPartitionBuffers.indexBuffer
-member-unverified SkinPartitionBuffers.indexData
-member-unverified SkinPartitionBuffers.refCount
-member-unverified SkinPartitionBuffers.vertexBuffer
-member-unverified SkinPartitionBuffers.vertexData
-member-unverified SkinPartitionBuffers.vertexDesc
 member-unverified SkyrimScript::HandlePolicy.lock
 member-unverified SkyrimScript::Logger.source_BSScript_LogEvent
 member-unverified SkyrimScript::_anon_0B1D96E2::ScriptMessageBoxCallback.stackId
@@ -34631,13 +34622,11 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
-size-unverified SharedVertexBuffer
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-unverified SimpleAnimationGraphManagerHolder
 size-missing SixaxisEvent
 size-unverified Sizing::mpSizer
-size-unverified SkinPartitionBuffers
 size-unverified SkyEffectController
 size-unverified SkyObject
 size-unverified SkyStaticFindFunctor

@@ -105298,6 +105298,8 @@ id 391881 513820
 id 391884 513822
 id-unverified 391914
 id-unverified 391915
+id 400188 514110
+id 400190 514112
 id-unverified 400191
 id 400267 514139
 id 400269 514141
@@ -115591,9 +115593,6 @@ member-unverified ShadowSceneNode.pendingGeometryRelight
 member-unverified ShadowSceneNode.pendingGeometryRelightActive
 member-unverified ShadowSceneNode.pendingLightAdds
 member-unverified ShadowSceneNode.previousWorldFrame
-member-unverified SharedVertexBuffer.buffer
-member-unverified SharedVertexBuffer.data
-member-unverified SharedVertexBuffer.size
 member-missing SideBar.__vftable
 member-missing SideBar.field_10
 member-missing SideBar.field_14
@@ -115679,12 +115678,6 @@ member-missing Sizing::mpSizer.field_8
 member-missing Sizing::mpSizer.field_9
 member-missing Sizing::mpSizer.field_A
 member-missing Sizing::mpSizer.field_C
-member-unverified SkinPartitionBuffers.indexBuffer
-member-unverified SkinPartitionBuffers.indexData
-member-unverified SkinPartitionBuffers.refCount
-member-unverified SkinPartitionBuffers.vertexBuffer
-member-unverified SkinPartitionBuffers.vertexData
-member-unverified SkinPartitionBuffers.vertexDesc
 member-unverified Sky.defaultWeather
 member-unverified Sky.field_104
 member-unverified Sky.field_108
@@ -136662,7 +136655,6 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
-size-unverified SharedVertexBuffer
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-missing SideBar
@@ -136670,7 +136662,6 @@ size-unverified SimpleAnimationGraphManagerHolder
 size-missing SixaxisEvent
 size-missing Sizing::mpBoxSizer
 size-missing Sizing::mpSizer
-size-unverified SkinPartitionBuffers
 size-unverified SkyEffectController
 size-unverified SkyObject
 size-unverified SkyStaticFindFunctor

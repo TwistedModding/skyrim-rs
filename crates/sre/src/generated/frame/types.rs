@@ -2840,9 +2840,9 @@ impl RenderStateCache_dirty {
     pub const DEPTH_BIAS: Self = Self(0x40);
     /// blend state (+0xa8..+0xb8) (high)
     pub const BLEND: Self = Self(0x80);
-    /// not determined (the 0x300 block) (low)
+    /// the byte at +0xb4 changed (the 0x300 block) (medium)
     pub const STATE100: Self = Self(0x100);
-    /// the member at +0xb4 (the 0x300 block) (low)
+    /// the float at +0xb8 changed (the 0x300 block; the name is older than the reading) (medium)
     pub const STATE_B4: Self = Self(0x200);
     /// input layout (+0x358) (high)
     pub const INPUT_LAYOUT: Self = Self(0x400);

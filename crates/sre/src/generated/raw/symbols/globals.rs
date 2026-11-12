@@ -7009,5 +7009,7 @@ pub(super) const ROWS: &[Global] = &[
     Global { rva: 0x3699448, id: 415501, name: "g_CCallbackImpl_8" },
     Global { rva: 0x3699470, id: 415503, name: "g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t" },
     Global { rva: 0x3699c20, id: 415512, name: "g_BSWin32SaveDataSystemUtility" },
+    Global { rva: 0x369a810, id: 400188, name: "g_MemoryManager" },
+    Global { rva: 0x369ac98, id: 400190, name: "g_MemoryManagerState" },
     Global { rva: 0x369b060, id: 402775, name: "g_BSScaleformManager_ptr" },
 ];

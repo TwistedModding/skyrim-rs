@@ -3913,6 +3913,12 @@ pub fn g_lighting_shader() -> Option<&'static crate::BSLightingShader> { unsafe 
 /// `g_LightingShaderInstance` at 0x3436400, id 415094 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high, frame pass), type `ptr:BSLightingShader`
 #[inline]
 pub fn g_lighting_shader_instance() -> Option<&'static crate::BSLightingShader> { unsafe { *(address!(415094) as *const Option<&'static crate::BSLightingShader>) } }
+/// `g_MemoryManager` at 0x369a810, id 400188 (semantic, high); the global memory manager object (high, frame pass), type `undefined1`
+#[inline]
+pub fn g_memory_manager() -> *mut u8 { address!(400188) as *mut u8 }
+/// `g_MemoryManagerState` at 0x369ac98, id 400190 (semantic, high); the manager's init state (2 once initialised) (high, frame pass), type `u32`
+#[inline]
+pub fn g_memory_manager_state() -> *mut u32 { address!(400190) as *mut u32 }
 /// `g_Mode10Accumulator` at 0x3436238, id 415010 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0x10, decals off; used only by Msg_LODTrees in the references found; renderMode 0x10, decals off; used only by Msg_LODTrees in the references found (high, frame pass), type `ptr:BSShaderAccumulator`
 #[inline]
 pub fn g_mode10_accumulator() -> Option<&'static crate::BSShaderAccumulator> { unsafe { *(address!(415010) as *const Option<&'static crate::BSShaderAccumulator>) } }

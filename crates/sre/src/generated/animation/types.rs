@@ -698,60 +698,51 @@ const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangle
 /// `SharedVertexBuffer`: size 0x18 (exact).
 /// Meaning: the renderer record of a skin's shared vertex block (high, animation pass).
 /// Evidence: the renderer record of a skin's shared vertex block; request PE1b: no RTTI, descriptive name. CreateVertexBufferRecord 0x100d6f0 (BSShaderResourceManager slot 30, called by NiSkinPartition::LoadBinary 0xf06bd0 with the shared vertex block) allocates 0x18 bytes, creates the D3D buffer into +0x0, copies the data into a global-heap block at +0x8 and stores the size at +0x10.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct SharedVertexBuffer {
     /// +0x0 `ptr`, semantic; ID3D11Buffer of the vertex block (high)
-    #[doc(hidden)]
-    pub __buffer: [u8; 8],
+    pub buffer: [u8; 8],
     /// +0x8 `ptr`, semantic; CPU copy of the vertex block (high)
-    #[doc(hidden)]
-    pub __data: [u8; 8],
+    pub data: [u8; 8],
     /// +0x10 `u32`, semantic; byte size of the vertex block (high)
-    #[doc(hidden)]
-    pub __size: [u8; 4],
-    unknown_14: [u8; 4],
+    pub size: u32,
+    pub unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SharedVertexBuffer>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __buffer) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __data) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __size) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, buffer) == 0x0);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, data) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, size) == 0x10);
 
 /// `SkinPartitionBuffers`: size 0x30 (exact).
 /// Meaning: the renderer record of one skin partition: the shared vertex buffer, its own index buffer and CPU copies of both (high, animation pass).
 /// Evidence: the renderer record of one skin partition: the shared vertex buffer, its own index buffer and CPU copies of both; request PE1b: no RTTI, descriptive name. CreateIndexBufferRecord 0x100bac0 (BSShaderResourceManager slot 3, called by NiSkinPartition's partition loader 0xf075f0 with the shared record) allocates 0x30 bytes; run-pe1 captured its descriptors (0x7b0008765040b and others) with float positions in the copies.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct SkinPartitionBuffers {
     /// +0x0 `ptr`, semantic; the shared ID3D11Buffer of vertices (high)
-    #[doc(hidden)]
-    pub __vertexBuffer: [u8; 8],
+    pub vertexBuffer: [u8; 8],
     /// +0x8 `ptr`, semantic; the partition's ID3D11Buffer of u16 indices (high)
-    #[doc(hidden)]
-    pub __indexBuffer: [u8; 8],
+    pub indexBuffer: [u8; 8],
     /// +0x10 `u64`, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (high)
-    #[doc(hidden)]
-    pub __vertexDesc: [u8; 8],
+    pub vertexDesc: u64,
     /// +0x18 `u32`, semantic; reference count (high)
-    #[doc(hidden)]
-    pub __refCount: [u8; 4],
-    unknown_1C: [u8; 4],
+    pub refCount: u32,
+    pub unknown_1C: [u8; 4],
     /// +0x20 `ptr`, semantic; CPU copy of the whole shared vertex block (NiSkinPartition.vertexCount vertices of the descriptor's stride) (high)
-    #[doc(hidden)]
-    pub __vertexData: [u8; 8],
+    pub vertexData: [u8; 8],
     /// +0x28 `ptr`, semantic; CPU copy of the partition's u16 indices, three per triangle, into the shared vertex block (high)
-    #[doc(hidden)]
-    pub __indexData: [u8; 8],
+    pub indexData: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SkinPartitionBuffers>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexBuffer) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __indexBuffer) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexDesc) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __refCount) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexData) == 0x20);
-const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __indexData) == 0x28);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, vertexBuffer) == 0x0);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, indexBuffer) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, vertexDesc) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, refCount) == 0x18);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, vertexData) == 0x20);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, indexData) == 0x28);
 
 /// `hkaSkeleton`: size 0x78 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: Havok skeleton: parent indices, bones (name + lock-translation flag), reference pose (high, animation pass).

@@ -12431,6 +12431,10 @@ pub const g_MaterialTypesByHavokId: u64 = 361011;
 pub const g_MaxFocusShadows: u64 = 414621;
 /// `g_MaxPickTime` at 0x20d1758 (semantic, low); pick time budget (0.001 in the image; 0x20d175c = 0.03 while VATS flag 0x333652a is set) (low); type `float`
 pub const g_MaxPickTime: u64 = 389093;
+/// `g_MemoryManager` at 0x369a810 (semantic, high); the global memory manager object (high); type `undefined1`
+pub const g_MemoryManager: u64 = 400188;
+/// `g_MemoryManagerState` at 0x369ac98 (semantic, high); the manager's init state (2 once initialised) (high); type `u32`
+pub const g_MemoryManagerState: u64 = 400190;
 /// `g_MenuControls` at 0x323a670 (runtime, high); static storage of MenuControls (0x88, ends at ConsoleLog 0x323a700) (high); type `class:MenuControls`
 pub const g_MenuControls: u64 = 403634;
 /// `g_MenuControlsCurrentEvent` at 0x32583b8 (semantic, high); pointer to `InputEvent`: the event being dispatched; the event being dispatched (high); type `ptr:InputEvent`
@@ -13139,9 +13143,3 @@ pub const g_TypeNode_NiBSplineFloatInterpolator: u64 = 410974;
 pub const g_TypeNode_NiBSplineInterpolator: u64 = 411040;
 /// `g_TypeNode_NiBSplinePoint3Interpolator` at 0x331ee48 (string, high)
 pub const g_TypeNode_NiBSplinePoint3Interpolator: u64 = 410975;
-/// `g_TypeNode_NiBSplineTransformInterpolator` at 0x331ee58 (string, high)
-pub const g_TypeNode_NiBSplineTransformInterpolator: u64 = 410976;
-/// `g_TypeNode_NiBackToFrontAccumulator` at 0x331dc50 (string, high)
-pub const g_TypeNode_NiBackToFrontAccumulator: u64 = 410604;
-/// `g_TypeNode_NiBillboardNode` at 0x331d828 (string, high)
-pub const g_TypeNode_NiBillboardNode: u64 = 410539;
