@@ -7,6 +7,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseRefAtField8_2` at 0x3de910 (decompiler, medium); signature (medium): `undefined ReleaseRefAtField8_2(longlong param_1)`
+pub const ReleaseRefAtField8_2: u64 = 25158;
+/// `ReleaseRefAtField8_3` at 0x2d1ac0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_3(longlong param_1)`
+pub const ReleaseRefAtField8_3: u64 = 19273;
+/// `ReleaseRefAtField8_4` at 0xbeb0f0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefAtField8_4: u64 = 64026;
+/// `ReleaseRefCount28` at 0x18eb20 (decompiler, medium); signature (low): `undefined ReleaseRefCount28(longlong * param_1)`
+pub const ReleaseRefCount28: u64 = 12875;
+/// `ReleaseRefCount28Ptr` at 0x55ec50 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr(longlong * param_1)`
+pub const ReleaseRefCount28Ptr: u64 = 33153;
+/// `ReleaseRefCount28Ptr_2` at 0x6baf70 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr_2(longlong * param_1)`
+pub const ReleaseRefCount28Ptr_2: u64 = 38160;
+/// `ReleaseRefCount28_2` at 0x18e990 (decompiler, medium); signature (low): `undefined ReleaseRefCount28_2(longlong * param_1)`
+pub const ReleaseRefCount28_2: u64 = 12871;
+/// `ReleaseRefCount8` at 0xcf3270 (decompiler, high); signature (high): `undefined ReleaseRefCount8(undefined8 * param_1)`
+pub const ReleaseRefCount8: u64 = 82198;
+/// `ReleaseRefCountAt08` at 0x12f9750 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt08(longlong param_1)`
+pub const ReleaseRefCountAt08: u64 = 446743;
+/// `ReleaseRefCountAt10` at 0x12f9bf0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt10(longlong param_1)`
+pub const ReleaseRefCountAt10: u64 = 446758;
+/// `ReleaseRefCountAt18` at 0xe2b2b0 (decompiler, high); signature (high): `undefined ReleaseRefCountAt18(undefined8 * param_1)`
+pub const ReleaseRefCountAt18: u64 = 88276;
 /// `ReleaseRefCountField14AndDelete` at 0x441f30 (decompiler, medium); signature (medium): `undefined ReleaseRefCountField14AndDelete(longlong param_1)`
 pub const ReleaseRefCountField14AndDelete: u64 = 418626;
 /// `ReleaseRefCountField14Ptr` at 0x666d10 (decompiler, high); signature (high): `undefined ReleaseRefCountField14Ptr(longlong * param_1)`
@@ -9155,25 +9177,3 @@ pub const SetByte46DOfField0xF8Sub10: u64 = 37934;
 pub const SetByte46FOfField10: u64 = 39564;
 /// `SetByte49` at 0x57f9f0 (decompiler, high); signature (high): `undefined SetByte49(longlong param_1)`
 pub const SetByte49: u64 = 441717;
-/// `SetByte59ClearByte58Locked` at 0x9bc300 (decompiler, medium); signature (low): `undefined8 * SetByte59ClearByte58Locked(longlong param_1)`
-pub const SetByte59ClearByte58Locked: u64 = 53558;
-/// `SetByte84AndRetargetFloat70` at 0x15c40a0 (decompiler, medium); signature (medium): `undefined SetByte84AndRetargetFloat70(longlong param_1, byte param_2)`
-pub const SetByte84AndRetargetFloat70: u64 = 454323;
-/// `SetByte9True` at 0x4c9e40 (decompiler, high); signature (high): `undefined SetByte9True(longlong param_1)`
-pub const SetByte9True: u64 = 30449;
-/// `SetByteArray40Element` at 0xe8e180 (decompiler, medium); signature (medium): `undefined SetByteArray40Element(longlong param_1, uint param_2, undefined1 param_3)`
-pub const SetByteArray40Element: u64 = 89971;
-/// `SetByteArrayCapacity` at 0xe67eb0 (decompiler, medium); signature (low): `undefined SetByteArrayCapacity(longlong * param_1, undefined8 param_2, longlong param_3)`
-pub const SetByteArrayCapacity: u64 = 89267;
-/// `SetByteArrayCapacityRoundedTo4` at 0xd653a0 (decompiler, high); signature (high): `undefined SetByteArrayCapacityRoundedTo4(longlong * param_1, undefined8 param_2, longlong param_3)`
-pub const SetByteArrayCapacityRoundedTo4: u64 = 84283;
-/// `SetByteCAAndGetField90` at 0xac6cc0 (decompiler, high); signature (low): `undefined8 SetByteCAAndGetField90(longlong param_1)`
-pub const SetByteCAAndGetField90: u64 = 58287;
-/// `SetByteField10` at 0x1e88a0 (decompiler, high); signature (high): `undefined SetByteField10(longlong param_1, undefined1 param_2)`
-pub const SetByteField10: u64 = 14744;
-/// `SetByteField108` at 0x1149910 (decompiler, high); signature (high): `undefined SetByteField108(longlong param_1)`
-pub const SetByteField108: u64 = 81813;
-/// `SetByteField108_2` at 0x1149920 (decompiler, high); signature (high): `undefined SetByteField108_2(longlong param_1)`
-pub const SetByteField108_2: u64 = 81814;
-/// `SetByteField108_3` at 0x1149930 (decompiler, high); signature (high): `undefined SetByteField108_3(longlong param_1)`
-pub const SetByteField108_3: u64 = 81815;

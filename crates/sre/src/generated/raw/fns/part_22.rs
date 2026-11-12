@@ -7,6 +7,38 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpConstraintListener::vfunc_2` at 0xb52c00 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const hkpConstraintListener__vfunc_2: u64 = 61241;
+/// `hkpConstraintListener::vfunc_3` at 0xb52bf0 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintListener__vfunc_3: u64 = 61240;
+/// `hkpConstraintListener::vfunc_4` at 0xb52c20 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintListener__vfunc_4: u64 = 61243;
+/// `hkpConstraintListener::vfunc_5` at 0xb52be0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintListener__vfunc_5: u64 = 61239;
+/// `hkpConstraintListener::vfunc_6` at 0xb52c10 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintListener__vfunc_6: u64 = 61242;
+/// `hkpConstraintMotor::vdtor` at 0xb51e30 (layout_inference, medium); signature (low): `hkpConstraintMotor * vdtor(hkpConstraintMotor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintMotor__vdtor: u64 = 61211;
+/// `hkpConstraintOwner::vdtor` at 0xb66eb0 (layout_inference, medium); signature (low): `hkpConstraintOwner * vdtor(hkpConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintOwner__vdtor: u64 = 61674;
+/// `hkpConstraintOwner::vfunc_3` at 0xb66f50 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintOwner__vfunc_3: u64 = 61676;
+/// `hkpConstraintOwner::vfunc_4` at 0xb66f70 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintOwner__vfunc_4: u64 = 61678;
+/// `hkpConstraintOwner::vfunc_5` at 0xb66f40 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintOwner__vfunc_5: u64 = 61675;
+/// `hkpConstraintOwner::vfunc_6` at 0xb66f60 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintOwner__vfunc_6: u64 = 61677;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vdtor` at 0xc414f0 (layout_inference, medium); signature (low): `CollectConstraintsFilter * vdtor(CollectConstraintsFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vdtor: u64 = 65192;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vfunc_1` at 0xc41600 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectConstraintsFilter * this, undefined1 * param_1)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vfunc_1: u64 = 65195;
+/// `hkpContactListener::dtor` at 0x3fc740 (layout_inference, high); signature (high): `undefined dtor(hkpContactListener * this)`
+pub const hkpContactListener__dtor: u64 = 25828;
+/// `hkpContactListener::vdtor` at 0x3fc8d0 (layout_inference, medium); signature (low): `hkpContactListener * vdtor(hkpContactListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactListener__vdtor: u64 = 25832;
+/// `hkpContactListener::vfunc_0` at 0x3fcb50 (rtti, medium); signature (low): `undefined vfunc_0(void)`
+pub const hkpContactListener__vfunc_0: u64 = 25841;
 /// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
 pub const hkpContactListener__vfunc_1: u64 = 25838;
 /// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`

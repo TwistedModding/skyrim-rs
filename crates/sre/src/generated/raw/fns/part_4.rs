@@ -4241,6 +4241,18 @@ pub const BSScript__ObjectBindPolicy__vfunc_0: u64 = 54381;
 pub const BSScript__ObjectTypeInfo__BindNativeFunction: u64 = 104325;
 /// `BSScript::ObjectTypeInfo::BindNativeFunction` as a function pointer type (high).
 pub type BSScript__ObjectTypeInfo__BindNativeFunction_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, function: *mut crate::BSScript__IFunction, logger: *mut crate::BSScript__ErrorLogger) -> bool;
+/// `BSScript::ObjectTypeInfo::FindGlobalFunction` at 0x14967d0 (semantic, high); signature (untiered): `IFunction * * FindGlobalFunction(void * this, char * name)`; semantic: the global (static) function of that name on a linked type, or null; the table offset from the packed counts at +0x20/+0x24/+0x28 (see BSScript::ObjectTypeInfo.data) (high); signature `BSTSmartPointer<BSScript::IFunction>* (BSScript::ObjectTypeInfo* this, const char* name)`
+pub const BSScript__ObjectTypeInfo__FindGlobalFunction: u64 = 104355;
+/// `BSScript::ObjectTypeInfo::FindGlobalFunction` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__FindGlobalFunction_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, name: *const c_char) -> *mut c_void;
+/// `BSScript::ObjectTypeInfo::FindMemberFunction` at 0x1496580 (semantic, high); signature (untiered): `IFunction * * FindMemberFunction(void * this, char * name)`; semantic: the empty state's member function of that name on a linked type, or null; the table offset from the packed counts at +0x20/+0x24/+0x28 (see BSScript::ObjectTypeInfo.data) (high); signature `BSTSmartPointer<BSScript::IFunction>* (BSScript::ObjectTypeInfo* this, const char* name)`
+pub const BSScript__ObjectTypeInfo__FindMemberFunction: u64 = 104352;
+/// `BSScript::ObjectTypeInfo::FindMemberFunction` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__FindMemberFunction_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, name: *const c_char) -> *mut c_void;
+/// `BSScript::ObjectTypeInfo::FindState` at 0x14966d0 (semantic, high); signature (untiered): `void * FindState(void * this, char * name)`; semantic: the state record of that name (+0 the name, +8 packed: bits 0-8 the state's function count, bits 9 and up a byte offset from the record to its function table), or null (high); signature `void* (BSScript::ObjectTypeInfo* this, const char* name)`
+pub const BSScript__ObjectTypeInfo__FindState: u64 = 104354;
+/// `BSScript::ObjectTypeInfo::FindState` as a function pointer type (high).
+pub type BSScript__ObjectTypeInfo__FindState_fn = unsafe extern "C" fn(this: *mut crate::BSScript__ObjectTypeInfo, name: *const c_char) -> *mut c_void;
 /// `BSScript::ObjectTypeInfo::GetFunction` at 0x1492470 (semantic, high); signature (low): `undefined8 GetFunction(longlong param_1, longlong * param_2, longlong * param_3, char param_4)`; semantic: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded (high); signature `bool (BSScript::ObjectTypeInfo* this, const BSFixedString* name, BSTSmartPointer<BSScript::IFunction>* out, bool linkedOnly)`
 pub const BSScript__ObjectTypeInfo__GetFunction: u64 = 104311;
 /// `BSScript::ObjectTypeInfo::GetFunction` as a function pointer type (high).
@@ -6331,15 +6343,3 @@ pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExec
 pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vdtor: u64 = 28793;
 /// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_1` at 0x475c30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_1: u64 = 28796;
-/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_2` at 0x475cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_2: u64 = 28797;
-/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vdtor` at 0x4587b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vdtor: u64 = 27984;
-/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vfunc_1` at 0x459be0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vfunc_1: u64 = 28057;
-/// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a850 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureHoverExecState_IProcedureTreeExecState__vfunc_2: u64 = 28097;
-/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vdtor` at 0x476840 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vdtor: u64 = 28820;
-/// `BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure>::vfunc_1` at 0x4768b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureKeepAnEyeOn,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureKeepAnEyeOn_IProcedure__vfunc_1: u64 = 28822;

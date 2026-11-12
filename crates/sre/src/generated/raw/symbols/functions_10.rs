@@ -1574,9 +1574,10 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1496410, id: 104349, confidence: Confidence::Medium, name: "AssignRefPtr" },
     Function { rva: 0x1496460, id: 104350, confidence: Confidence::High, name: "AssignRefPtr_2" },
     Function { rva: 0x14964b0, id: 104351, confidence: Confidence::Medium, name: "CopyAssignEntryWithStrings" },
-    Function { rva: 0x1496580, id: 104352, confidence: Confidence::Medium, name: "FindField28EntryByNameCaseless" },
+    Function { rva: 0x1496580, id: 104352, confidence: Confidence::High, name: "BSScript::ObjectTypeInfo::FindMemberFunction" },
     Function { rva: 0x1496600, id: 104353, confidence: Confidence::Medium, name: "FindField24EntryByNameCaseless" },
-    Function { rva: 0x14966d0, id: 104354, confidence: Confidence::Medium, name: "FindEntryByNameCaseInsensitive" },
+    Function { rva: 0x14966d0, id: 104354, confidence: Confidence::High, name: "BSScript::ObjectTypeInfo::FindState" },
+    Function { rva: 0x14967d0, id: 104355, confidence: Confidence::High, name: "BSScript::ObjectTypeInfo::FindGlobalFunction" },
     Function { rva: 0x1496840, id: 104356, confidence: Confidence::Medium, name: "FindEntryByNameCaseInsensitive_2" },
     Function { rva: 0x14968b0, id: 104357, confidence: Confidence::Medium, name: "FindNamedEntryCaseInsensitive" },
     Function { rva: 0x1496960, id: 104358, confidence: Confidence::Medium, name: "GrowHashMapWithHeapAllocator" },
@@ -8222,5 +8223,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x176e620, id: 168440, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeMultMin__atexit" },
     Function { rva: 0x176e670, id: 168441, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeTime__atexit" },
     Function { rva: 0x176e6c0, id: 168442, confidence: Confidence::Medium, name: "GameSetting_fChaseDetectionTimerSetting__atexit" },
-    Function { rva: 0x176e710, id: 168443, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorBase__atexit" },
 ];

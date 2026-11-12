@@ -17,6 +17,23 @@ impl crate::BGSBaseAlias {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(23708, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BSScript__IFunction {
+    /// `BSScript::IFunction::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104656, rva 0x14aa390).
+    /// `undefined dtor(IFunction * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105424, rva 0x14e36c0).
+    /// `undefined dtor(IFunction * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSScript__IFunctionArguments {
     /// `BSScript::IFunctionArguments::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104360, rva 0x1496cd0).
     /// `undefined dtor(IFunctionArguments * this)`
@@ -101,6 +118,69 @@ impl crate::BSScript__Internal__VirtualMachine {
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
+    /// `BSScript::NF_util::NativeFunctionBase::GetDocString` (decompiler signature, tier high; ledger semantic evidence, name high; id 104644, rva 0x14a9ad0).
+    /// `undefined1 * GetDocString(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_doc_string(&self) -> *mut u8 { unsafe { function!(104644, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName` (decompiler signature, tier high; ledger semantic evidence, name high; id 104632, rva 0x14a99b0).
+    /// `undefined1 * GetFunctionName(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_function_name(&self) -> *mut u8 { unsafe { function!(104632, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet` (decompiler signature, tier high; ledger semantic evidence, name high; id 104649, rva 0x14a9bf0).
+    /// `undefined1 GetIsCallableFromTasklet(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_callable_from_tasklet(&self) -> u8 { unsafe { function!(104649, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic` (decompiler signature, tier high; ledger semantic evidence, name high; id 104640, rva 0x14a9a90).
+    /// `undefined1 GetIsStatic(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_static(&self) -> u8 { unsafe { function!(104640, (*const Self) -> u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName` (decompiler signature, tier high; ledger semantic evidence, name high; id 104633, rva 0x14a99c0).
+    /// `undefined1 * GetObjectTypeName(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_object_type_name(&self) -> *mut u8 { unsafe { function!(104633, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount` (decompiler signature, tier high; ledger semantic evidence, name high; id 104636, rva 0x14a9a00).
+    /// `undefined2 GetParamCount(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_param_count(&self) -> u16 { unsafe { function!(104636, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize` (decompiler signature, tier high; ledger semantic evidence, name high; id 104638, rva 0x14a9a70).
+    /// `undefined2 GetStackFrameSize(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_stack_frame_size(&self) -> u16 { unsafe { function!(104638, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetStateName` (decompiler signature, tier high; ledger semantic evidence, name high; id 104634, rva 0x14a99d0).
+    /// `undefined1 * GetStateName(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_state_name(&self) -> *mut u8 { unsafe { function!(104634, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
+    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags` (decompiler signature, tier high; ledger semantic evidence, name high; id 104643, rva 0x14a9ac0).
+    /// `undefined4 GetUserFlags(NativeFunctionBase * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_user_flags(&self) -> u32 { unsafe { function!(104643, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104655, rva 0x14aa340).
     /// `undefined dtor(NativeFunctionBase * this)`
     ///

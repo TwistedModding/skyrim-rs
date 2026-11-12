@@ -525,13 +525,6 @@ pub unsafe fn find_field18_entry_by_name(param_1: i64, param_2: i64) -> *mut u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_field28_element_by_name(param_1: i64, param_2: i64) -> *mut u64 { unsafe { function!(57642, (i64, i64) -> *mut u64)(param_1, param_2) } }
-/// `FindField28EntryByNameCaseless` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 104352, rva 0x1496580).
-/// `undefined FindField28EntryByNameCaseless(longlong param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_field28_entry_by_name_caseless(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(104352, (i64, *mut c_char) -> u64)(param_1, param_2) } }
 /// `FindField50EntryByByte7F` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 23474, rva 0x38b740).
 /// `longlong FindField50EntryByByte7F(longlong param_1, int param_2)`
 ///
@@ -14245,3 +14238,10 @@ pub unsafe fn get_or_create_region_list(param_1: i64, param_2: c_char, param_3: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_or_create_thread_local_block668(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(24804, (u64, u64, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `GetOrCreateThreadUpdateTracker` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 71036, rva 0xf02360).
+/// `longlong * GetOrCreateThreadUpdateTracker(undefined8 param_1, undefined8 param_2, size_t param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_or_create_thread_update_tracker(param_1: u64, param_2: u64, param_3: usize, param_4: u64) -> *mut i64 { unsafe { function!(71036, (u64, u64, usize, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }

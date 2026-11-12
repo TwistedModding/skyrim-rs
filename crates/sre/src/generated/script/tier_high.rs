@@ -54,23 +54,6 @@ impl crate::BSScript__IFreezeQuery {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104364, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSScript__IFunction {
-    /// `BSScript::IFunction::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 104656, rva 0x14aa390).
-    /// `undefined dtor(IFunction * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(104656, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-    /// `BSScript::IFunction::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 105424, rva 0x14e36c0).
-    /// `undefined dtor(IFunction * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(105424, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSScript__ILoader {
     /// `BSScript::ILoader::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 54204, rva 0x9ed270).
     /// `undefined dtor(ILoader * this)`

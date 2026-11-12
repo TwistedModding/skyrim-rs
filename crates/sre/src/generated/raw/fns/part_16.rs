@@ -7,6 +7,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Cell::SetPublic` at 0xa3ffb0 (papyrus_native, high); signature (medium): `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
+pub const Papyrus__Cell__SetPublic: u64 = 56060;
+/// `Papyrus::Debug::CenterOnCell` at 0xa1eee0 (papyrus_native, high); signature (medium): `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CenterOnCell: u64 = 55367;
+/// `Papyrus::Debug::CenterOnCellAndWait` at 0xa1ef60 (papyrus_native, high); signature (medium): `bool CenterOnCellAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CenterOnCellAndWait: u64 = 55368;
+/// `Papyrus::Debug::CloseUserLog` at 0xa1f0a0 (papyrus_native, high); signature (medium): `void CloseUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Debug__CloseUserLog: u64 = 55370;
+/// `Papyrus::Debug::CloseUserLog_sub0` at 0x9d8b30 (callgraph, medium); signature (untiered): `ulonglong * CloseUserLog_sub0(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Debug__CloseUserLog_sub0: u64 = 53932;
+/// `Papyrus::Debug::DebugChannelNotify` at 0xa1f0f0 (papyrus_native, high); signature (medium): `void DebugChannelNotify(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
+pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
+/// `Papyrus::Debug::DumpAliasData` at 0xa1f110 (papyrus_native, high); signature (medium): `void DumpAliasData(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESQuest * a0)`
+pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
+/// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
+pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
 /// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (medium): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); signature `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
 pub const Papyrus__Debug__GetConfigName: u64 = 55373;
 /// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
@@ -8297,25 +8313,3 @@ pub const ReleaseRefAt28OfField18: u64 = 44278;
 pub const ReleaseRefAtField20: u64 = 25157;
 /// `ReleaseRefAtField8` at 0x227dc0 (decompiler, medium); signature (low): `undefined ReleaseRefAtField8(longlong param_1)`
 pub const ReleaseRefAtField8: u64 = 15977;
-/// `ReleaseRefAtField8_2` at 0x3de910 (decompiler, medium); signature (medium): `undefined ReleaseRefAtField8_2(longlong param_1)`
-pub const ReleaseRefAtField8_2: u64 = 25158;
-/// `ReleaseRefAtField8_3` at 0x2d1ac0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_3(longlong param_1)`
-pub const ReleaseRefAtField8_3: u64 = 19273;
-/// `ReleaseRefAtField8_4` at 0xbeb0f0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefAtField8_4: u64 = 64026;
-/// `ReleaseRefCount28` at 0x18eb20 (decompiler, medium); signature (low): `undefined ReleaseRefCount28(longlong * param_1)`
-pub const ReleaseRefCount28: u64 = 12875;
-/// `ReleaseRefCount28Ptr` at 0x55ec50 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr(longlong * param_1)`
-pub const ReleaseRefCount28Ptr: u64 = 33153;
-/// `ReleaseRefCount28Ptr_2` at 0x6baf70 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr_2(longlong * param_1)`
-pub const ReleaseRefCount28Ptr_2: u64 = 38160;
-/// `ReleaseRefCount28_2` at 0x18e990 (decompiler, medium); signature (low): `undefined ReleaseRefCount28_2(longlong * param_1)`
-pub const ReleaseRefCount28_2: u64 = 12871;
-/// `ReleaseRefCount8` at 0xcf3270 (decompiler, high); signature (high): `undefined ReleaseRefCount8(undefined8 * param_1)`
-pub const ReleaseRefCount8: u64 = 82198;
-/// `ReleaseRefCountAt08` at 0x12f9750 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt08(longlong param_1)`
-pub const ReleaseRefCountAt08: u64 = 446743;
-/// `ReleaseRefCountAt10` at 0x12f9bf0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt10(longlong param_1)`
-pub const ReleaseRefCountAt10: u64 = 446758;
-/// `ReleaseRefCountAt18` at 0xe2b2b0 (decompiler, high); signature (high): `undefined ReleaseRefCountAt18(undefined8 * param_1)`
-pub const ReleaseRefCountAt18: u64 = 88276;

@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x176e710, id: 168443, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorBase__atexit" },
     Function { rva: 0x176e760, id: 168444, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorScale__atexit" },
     Function { rva: 0x176e7b0, id: 168445, confidence: Confidence::Medium, name: "GameSetting_fClothingBase__atexit" },
     Function { rva: 0x176e800, id: 168446, confidence: Confidence::Medium, name: "GameSetting_fClothingClassScale__atexit" },

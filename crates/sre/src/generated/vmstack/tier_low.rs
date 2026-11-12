@@ -18,6 +18,20 @@ impl crate::BSScript__CompiledScriptLoader {
 }
 
 impl crate::BSScript__Internal__AutoPropGetFunction {
+    /// `BSScript::Internal::AutoPropGetFunction::GetIsNative` (decompiler signature, tier low; ledger semantic evidence, name high; id 105241, rva 0x14d6af0).
+    /// `undefined1 GetIsNative(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_native() -> u8 { unsafe { function!(105241, () -> u8)() } }
+    /// `BSScript::Internal::AutoPropGetFunction::GetLineForIP` (decompiler signature, tier low; ledger semantic evidence, name high; id 105250, rva 0x14d6d50).
+    /// `undefined1 GetLineForIP(AutoPropGetFunction * this, undefined8 param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, param_1: u64, param_2: *mut u32) -> u8 { unsafe { function!(105250, (*const Self, u64, *mut u32) -> u8)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::Internal::AutoPropGetFunction::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105274, rva 0x14d7190).
     /// `AutoPropGetFunction * vdtor(AutoPropGetFunction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -38,6 +52,20 @@ impl crate::BSScript__Internal__AutoPropSetFunction {
 }
 
 impl crate::BSScript__Internal__NativeFunctionStub {
+    /// `BSScript::Internal::NativeFunctionStub::GetIsNative` (decompiler signature, tier low; ledger semantic evidence, name high; id 104708, rva 0x14acd00).
+    /// `undefined1 GetIsNative(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_native() -> u8 { unsafe { function!(104708, () -> u8)() } }
+    /// `BSScript::Internal::NativeFunctionStub::GetLineForIP` (decompiler signature, tier low; ledger semantic evidence, name high; id 104717, rva 0x14acf20).
+    /// `undefined1 GetLineForIP(NativeFunctionStub * this, undefined8 param_1, undefined4 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, param_1: u64, param_2: *mut u32) -> u8 { unsafe { function!(104717, (*const Self, u64, *mut u32) -> u8)(core::ptr::from_ref(self), param_1, param_2) } }
     /// `BSScript::Internal::NativeFunctionStub::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 105346, rva 0x14dc930).
     /// `NativeFunctionStub * vdtor(NativeFunctionStub * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -48,6 +76,62 @@ impl crate::BSScript__Internal__NativeFunctionStub {
 }
 
 impl crate::BSScript__Internal__ScriptFunction {
+    /// `BSScript::Internal::ScriptFunction::Call` (decompiler signature, tier low; ledger semantic evidence, name high; id 105466, rva 0x14e5520).
+    /// `int Call(ScriptFunction * this, longlong * param_1, undefined8 param_2, longlong param_3, char param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn call(&self, param_1: *mut i64, param_2: u64, param_3: i64, param_4: c_char) -> i32 { unsafe { function!(105466, (*const Self, *mut i64, u64, i64, c_char) -> i32)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
+    /// `BSScript::Internal::ScriptFunction::CopyReturnType` (decompiler signature, tier low; ledger semantic evidence, name high; id 105455, rva 0x14e5340).
+    /// `undefined8 * CopyReturnType(ScriptFunction * this, undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn copy_return_type(&self, param_1: *mut u64) -> *mut u64 { unsafe { function!(105455, (*const Self, *mut u64) -> *mut u64)(core::ptr::from_ref(self), param_1) } }
+    /// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet` (decompiler signature, tier low; ledger semantic evidence, name high; id 105470, rva 0x14e56e0).
+    /// `undefined1 GetIsCallableFromTasklet(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_callable_from_tasklet() -> u8 { unsafe { function!(105470, () -> u8)() } }
+    /// `BSScript::Internal::ScriptFunction::GetIsNative` (decompiler signature, tier low; ledger semantic evidence, name high; id 105459, rva 0x14e5400).
+    /// `undefined1 GetIsNative(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_is_native() -> u8 { unsafe { function!(105459, () -> u8)() } }
+    /// `BSScript::Internal::ScriptFunction::GetLineForIP` (decompiler signature, tier low; ledger semantic evidence, name high; id 105468, rva 0x14e5590).
+    /// `undefined4 GetLineForIP(ScriptFunction * this, uint param_1, uint * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, param_1: u32, param_2: *mut u32) -> u32 { unsafe { function!(105468, (*const Self, u32, *mut u32) -> u32)(core::ptr::from_ref(self), param_1, param_2) } }
+    /// `BSScript::Internal::ScriptFunction::GetParamNameAndType` (decompiler signature, tier low; ledger semantic evidence, name high; id 105457, rva 0x14e5370).
+    /// `undefined GetParamNameAndType(ScriptFunction * this, ulonglong param_1, longlong * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_param_name_and_type(&self, param_1: u64, param_2: *mut i64, param_3: *mut i64) -> u64 { unsafe { function!(105457, (*const Self, u64, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSScript::Internal::ScriptFunction::InsertLocals` (decompiler signature, tier low; ledger semantic evidence, name high; id 105465, rva 0x14e5460).
+    /// `undefined InsertLocals(ScriptFunction * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn insert_locals(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(105465, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet` (decompiler signature, tier low; ledger semantic evidence, name high; id 105471, rva 0x14e56f0).
+    /// `undefined SetIsCallableFromTasklet(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_is_callable_from_tasklet() -> u64 { unsafe { function!(105471, () -> u64)() } }
     /// `BSScript::Internal::ScriptFunction::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 105451, rva 0x14e5250).
     /// `undefined dtor(ScriptFunction * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

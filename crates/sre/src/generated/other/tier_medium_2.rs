@@ -1484,13 +1484,6 @@ pub unsafe fn find_entry_by_int_key(param_1: i64, param_2: i32) -> *mut i32 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_entry_by_key_at4_in_field18(param_1: i64, param_2: i32) -> i64 { unsafe { function!(85623, (i64, i32) -> i64)(param_1, param_2) } }
-/// `FindEntryByNameCaseInsensitive` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 104354, rva 0x14966d0).
-/// `undefined8 * FindEntryByNameCaseInsensitive(longlong param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_entry_by_name_case_insensitive(param_1: i64, param_2: *mut c_char) -> *mut u64 { unsafe { function!(104354, (i64, *mut c_char) -> *mut u64)(param_1, param_2) } }
 /// `FindEntryByNameCaseInsensitive_3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 523653, rva 0x583f40).
 /// `longlong * FindEntryByNameCaseInsensitive_3(longlong param_1, char * param_2)`
 ///
@@ -14133,3 +14126,10 @@ pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__active_magic_effect__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54580, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
+/// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54581, rva 0x9fbd50).
+/// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54581, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }

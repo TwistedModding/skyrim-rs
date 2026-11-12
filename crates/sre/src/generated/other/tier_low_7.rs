@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetOrCreateThreadUpdateTracker` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 71036, rva 0xf02360).
-/// `longlong * GetOrCreateThreadUpdateTracker(undefined8 param_1, undefined8 param_2, size_t param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_or_create_thread_update_tracker(param_1: u64, param_2: u64, param_3: usize, param_4: u64) -> *mut i64 { unsafe { function!(71036, (u64, u64, usize, u64) -> *mut i64)(param_1, param_2, param_3, param_4) } }
 /// `GetOrCreateU32NestedMapRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 53453, rva 0x9b5c20).
 /// `undefined GetOrCreateU32NestedMapRef(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
 ///
@@ -13216,3 +13209,10 @@ pub unsafe fn load_float_pair_and_two_shared_object_refs(param_1: *mut i64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn load_float_pair_and_two_shared_refs(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(49815, (*mut i64, i64) -> u64)(param_1, param_2) } }
+/// `LoadFloatPairsAndSharedObjectRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47911, rva 0x8842c0).
+/// `undefined LoadFloatPairsAndSharedObjectRef(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn load_float_pairs_and_shared_object_ref(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(47911, (*mut i64, i64) -> u64)(param_1, param_2) } }

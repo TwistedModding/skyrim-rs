@@ -7,6 +7,308 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vftable` at 0x1aefdd0, id 537465 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_0` at 0x1338aa0 (rtti, high); signature (low): `CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * vfunc_0(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_1` at 0x133a5f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_2` at 0x1339db0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_3` at 0x133b5c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce_vtable {
+    pub const ID: u64 = 537465;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vftable` at 0x1af00f0, id 537487 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_0` at 0x1338b00 (rtti, high); signature (low): `CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * vfunc_0(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_1` at 0x133a660 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_2` at 0x1339e70 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_3` at 0x133b680 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a_vtable {
+    pub const ID: u64 = 537487;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1aef638, id 537424 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338d00 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378_vtable {
+    pub const ID: u64 = 537424;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1aef650, id 537427 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338dc0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461_vtable {
+    pub const ID: u64 = 537427;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vftable` at 0x1ae0d90, id 467080 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_0` at 0x12cdde0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_1` at 0x12ce510 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f_vtable {
+    pub const ID: u64 = 467080;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vftable` at 0x1ae0db8, id 467082 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_0` at 0x12cdf10 (rtti, high); signature (low): `CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * vfunc_0(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_1` at 0x12ce510 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_2` at 0x12ce2c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_3` at 0x12ce720 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb_vtable {
+    pub const ID: u64 = 467082;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1ae0ca8, id 467065 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12cdf40 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409_vtable {
+    pub const ID: u64 = 467065;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ae0cc0, id 467068 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12cdf70 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c_vtable {
+    pub const ID: u64 = 467068;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vftable` at 0x1af01b8, id 468073 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_0` at 0x1337f30 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_1` at 0x133a6d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4_vtable {
+    pub const ID: u64 = 468073;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vftable` at 0x1af01e0, id 468075 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_0` at 0x1338a10 (rtti, high); signature (low): `CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * vfunc_0(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_1` at 0x133a6d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_2` at 0x1339c90 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_3` at 0x133b4a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba_vtable {
+    pub const ID: u64 = 468075;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1aef8e0, id 467977 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338d30 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49_vtable {
+    pub const ID: u64 = 467977;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1aef8f8, id 467980 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338df0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0_vtable {
+    pub const ID: u64 = 467980;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vftable` at 0x1ad1c10, id 507101 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vfunc_0` at 0x1282a90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vfunc_1` at 0x12842c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224_vtable {
+    pub const ID: u64 = 507101;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vftable` at 0x1aefd08, id 468024 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vfunc_0` at 0x1337f60 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vfunc_1` at 0x133a700 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51_vtable {
+    pub const ID: u64 = 468024;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vftable` at 0x1aeff38, id 468040 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vfunc_0` at 0x1337f90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vfunc_1` at 0x133a7a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818_vtable {
+    pub const ID: u64 = 468040;
+}
+
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vftable` at 0x1aefc68, id 468013 (rtti, high); 4 slots.
+#[repr(C)]
+pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928_vtable {
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vfunc_0` at 0x1337fd0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
+    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vfunc_1` at 0x133a830 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
+}
+impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928_vtable {
+    pub const ID: u64 = 468013;
+}
+
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>::vftable` at 0x1aefdf8, id 468032 (rtti, high); 4 slots.
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c_vtable {
@@ -11028,533 +11330,4 @@ pub struct hkbGetUpModifierInternalState_vtable {
 impl hkbGetUpModifierInternalState_vtable {
     pub const ID: u64 = 226504;
 }
-
-/// `hkbGetWorldFromModelModifier::vftable` at 0x19e0990, id 226508 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbGetWorldFromModelModifier_vtable {
-    /// `hkbGetWorldFromModelModifier::vdtor` at 0xae3b90 (slot_propagation, medium); signature (low): `hkbGetWorldFromModelModifier * vdtor(hkbGetWorldFromModelModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbNode::vfunc_4` at 0xad20d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbNode::vfunc_10` at 0xadbdc0 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_12` at 0xb10790 (rtti, high); signature (high): `undefined vfunc_12(hkbGetWorldFromModelModifier * this)`
-    pub slot_12: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_13` at 0xb10810 (rtti, high); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_14` at 0xb10850 (rtti, high); signature (low): `undefined vfunc_14(hkbGetWorldFromModelModifier * this, longlong param_1)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_16` at 0xb10870 (rtti, high); signature (low): `undefined vfunc_16(hkbGetWorldFromModelModifier * this, longlong param_1)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbGetWorldFromModelModifier::vfunc_23` at 0xb107e0 (rtti, high); signature (low): `undefined vfunc_23(hkbGetWorldFromModelModifier * this, undefined8 param_1, longlong * param_2)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbGetWorldFromModelModifier_vtable {
-    pub const ID: u64 = 226508;
-}
-
-/// `hkbGetWorldFromModelModifierInternalState::vftable` at 0x19e0aa0, id 226512 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbGetWorldFromModelModifierInternalState_vtable {
-    /// `hkbGetWorldFromModelModifierInternalState::vdtor` at 0xae3c20 (layout_inference, medium); signature (low): `hkbGetWorldFromModelModifierInternalState * vdtor(hkbGetWorldFromModelModifierInternalState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbGetWorldFromModelModifierInternalState_vtable {
-    pub const ID: u64 = 226512;
-}
-
-/// `hkbHandIkControlsModifier::vftable` at 0x19e0b58, id 226519 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbHandIkControlsModifier_vtable {
-    /// `hkbHandIkControlsModifier::vdtor` at 0xae3cb0 (semantic, high); signature (low): `hkbHandIkControlsModifier * vdtor(hkbHandIkControlsModifier * this, uint param_1, ulonglong param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkControlsModifier* (hkbHandIkControlsModifier* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbNode::vfunc_4` at 0xad20d0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbHandIkControlsModifier::Deactivate` at 0xb11030 (semantic, high); signature (high): `undefined Deactivate(hkbHandIkControlsModifier * this)`; `Deactivate`: releases runtime state (high); semantic signature: `void (hkbHandIkControlsModifier* this, const hkbContext* ctx)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbHandIkControlsModifier::IsValid` at 0xb110a0 (semantic, high); signature (low): `ulonglong IsValid(hkbHandIkControlsModifier * this, ulonglong * param_1)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbHandIkControlsModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbHandIkControlsModifier::CloneNode` at 0xb111f0 (semantic, high); signature (high): `hkbHandIkControlsModifier * CloneNode(hkbHandIkControlsModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbHandIkControlsModifier* (hkbHandIkControlsModifier* this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbHandIkControlsModifier::Modify` at 0xb11260 (semantic, high); signature (low): `undefined Modify(hkbHandIkControlsModifier * this, undefined8 param_1, undefined8 param_2)`; `Modify`: 0xb11260: 8-byte body (returns) (high); semantic signature: `void (hkbHandIkControlsModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbHandIkControlsModifier_vtable {
-    pub const ID: u64 = 226519;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkControlsModifier_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkControlsModifier_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkControlsModifier_vtable_vdtor>>(self.slot_0) }
-    }
-    pub const SLOT_Deactivate: usize = 7;
-    /// Slot 7 as `hkbHandIkControlsModifier_vtable_Deactivate`, `None` when the slot is null.
-    #[must_use]
-    pub fn Deactivate(&self) -> Option<hkbHandIkControlsModifier_vtable_Deactivate> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkControlsModifier_vtable_Deactivate>>(self.slot_7) }
-    }
-    pub const SLOT_IsValid: usize = 10;
-    /// Slot 10 as `hkbHandIkControlsModifier_vtable_IsValid`, `None` when the slot is null.
-    #[must_use]
-    pub fn IsValid(&self) -> Option<hkbHandIkControlsModifier_vtable_IsValid> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkControlsModifier_vtable_IsValid>>(self.slot_10) }
-    }
-    pub const SLOT_CloneNode: usize = 12;
-    /// Slot 12 as `hkbHandIkControlsModifier_vtable_CloneNode`, `None` when the slot is null.
-    #[must_use]
-    pub fn CloneNode(&self) -> Option<hkbHandIkControlsModifier_vtable_CloneNode> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkControlsModifier_vtable_CloneNode>>(self.slot_12) }
-    }
-    pub const SLOT_Modify: usize = 23;
-    /// Slot 23 as `hkbHandIkControlsModifier_vtable_Modify`, `None` when the slot is null.
-    #[must_use]
-    pub fn Modify(&self) -> Option<hkbHandIkControlsModifier_vtable_Modify> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkControlsModifier_vtable_Modify>>(self.slot_23) }
-    }
-}
-/// `hkbHandIkControlsModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkControlsModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, flags: u32) -> *mut crate::hkbHandIkControlsModifier;
-/// `hkbHandIkControlsModifier::Deactivate`, slot 7: releases runtime state (high).
-pub type hkbHandIkControlsModifier_vtable_Deactivate = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, ctx: *const c_void);
-/// `hkbHandIkControlsModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
-pub type hkbHandIkControlsModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
-/// `hkbHandIkControlsModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
-pub type hkbHandIkControlsModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier) -> *mut crate::hkbHandIkControlsModifier;
-/// `hkbHandIkControlsModifier::Modify`, slot 23: 0xb11260: 8-byte body (returns) (high).
-pub type hkbHandIkControlsModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkControlsModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
-
-/// `hkbHandIkDriver::vftable` at 0x19e3f78, id 226847 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandIkDriver_vtable {
-    /// `hkbHandIkDriver::vdtor` at 0xafbe30 (semantic, high); signature (low): `hkbHandIkDriver * vdtor(hkbHandIkDriver * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkDriver* (hkbHandIkDriver* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandIkDriver_vtable {
-    pub const ID: u64 = 226847;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkDriver_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkDriver_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkDriver_vtable_vdtor>>(self.slot_0) }
-    }
-}
-/// `hkbHandIkDriver::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkDriver_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkDriver, flags: u32) -> *mut crate::hkbHandIkDriver;
-
-/// `hkbHandIkDriverInfo::vftable` at 0x19dda08, id 226205 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandIkDriverInfo_vtable {
-    /// `hkbHandIkDriverInfo::vdtor` at 0xae3d80 (semantic, high); signature (low): `hkbHandIkDriverInfo * vdtor(hkbHandIkDriverInfo * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkDriverInfo* (hkbHandIkDriverInfo* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandIkDriverInfo_vtable {
-    pub const ID: u64 = 226205;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkDriverInfo_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkDriverInfo_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkDriverInfo_vtable_vdtor>>(self.slot_0) }
-    }
-}
-/// `hkbHandIkDriverInfo::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkDriverInfo_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkDriverInfo, flags: u32) -> *mut crate::hkbHandIkDriverInfo;
-
-/// `hkbHandIkFixupSceneModifier::vftable` at 0x19c1098, id 220359 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbHandIkFixupSceneModifier_vtable {
-    /// `hkbHandIkFixupSceneModifier::vdtor` at 0xadb7e0 (semantic, high); signature (low): `hkbHandIkFixupSceneModifier * vdtor(hkbHandIkFixupSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkFixupSceneModifier* (hkbHandIkFixupSceneModifier* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbHandIkFixupSceneModifier::Modify` at 0xafefa0 (semantic, high); signature (low): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`; `Modify`: runs the hand IK driver 0xaf9bc0 with fixup = true (high); semantic signature: `void (hkbHandIkFixupSceneModifier* this, hkbSceneCharacters* characters, float timestep)`
-    pub slot_3: *const c_void,
-}
-impl hkbHandIkFixupSceneModifier_vtable {
-    pub const ID: u64 = 220359;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkFixupSceneModifier_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkFixupSceneModifier_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkFixupSceneModifier_vtable_vdtor>>(self.slot_0) }
-    }
-    pub const SLOT_Modify: usize = 3;
-    /// Slot 3 as `hkbHandIkFixupSceneModifier_vtable_Modify`, `None` when the slot is null.
-    #[must_use]
-    pub fn Modify(&self) -> Option<hkbHandIkFixupSceneModifier_vtable_Modify> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkFixupSceneModifier_vtable_Modify>>(self.slot_3) }
-    }
-}
-/// `hkbHandIkFixupSceneModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkFixupSceneModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkFixupSceneModifier, flags: u32) -> *mut crate::hkbHandIkFixupSceneModifier;
-/// `hkbHandIkFixupSceneModifier::Modify`, slot 3: runs the hand IK driver 0xaf9bc0 with fixup = true (high).
-pub type hkbHandIkFixupSceneModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkFixupSceneModifier, characters: *mut c_void, timestep: f32);
-
-/// `hkbHandIkModifier::vftable` at 0x19e0cb0, id 226525 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbHandIkModifier_vtable {
-    /// `hkbHandIkModifier::vdtor` at 0xae3e00 (semantic, high); signature (low): `hkbHandIkModifier * vdtor(hkbHandIkModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkModifier* (hkbHandIkModifier* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkbHandIkModifier::VisitMembers` at 0xb12620 (semantic, low); signature (low): `undefined VisitMembers(hkbHandIkModifier * this, longlong * param_1)`; `VisitMembers`: hkReferencedObject default 0xaa2c40 walks the members along the class chain; overridden where the object owns extra references (low); semantic signature: `void (hkbHandIkModifier* this, void* visitor, const hkClass* cls)`
-    pub slot_2: *const c_void,
-    /// `hkbBindable::vfunc_3` at 0xadba10 (rtti, medium); signature (low): `undefined vfunc_3(hkbBindable * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
-    /// `hkbHandIkModifier::Activate` at 0xb11580 (semantic, high); signature (low): `undefined Activate(hkbHandIkModifier * this, ulonglong * param_1)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (hkbHandIkModifier* this, const hkbContext* ctx)`
-    pub slot_4: *const c_void,
-    /// `hkbHandIkModifier::Update` at 0xb11720 (semantic, high); signature (low): `undefined Update(hkbHandIkModifier * this, undefined8 param_1, float param_2)`; `Update`: per-frame update before generate (high); semantic signature: `void (hkbHandIkModifier* this, const hkbContext* ctx, float timestep)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbHandIkModifier::IsValid` at 0xb11830 (semantic, high); signature (low): `undefined8 IsValid(hkbHandIkModifier * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbHandIkModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbHandIkModifier::CloneNode` at 0xb11ab0 (semantic, high); signature (high): `undefined CloneNode(hkbHandIkModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbHandIkModifier* (hkbHandIkModifier* this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbHandIkModifier::Modify` at 0xb11b00 (semantic, high); signature (low): `undefined Modify(hkbHandIkModifier * this, longlong * param_1, ulonglong * param_2)`; `Modify`: 0xb11b00 'TtHandIkModifier': per hand computes the target and solves the arm with HandIkSolveArm 0xb12700 -> TwoJointSolve 0xaa0a10 (high); semantic signature: `void (hkbHandIkModifier* this, const hkbContext* ctx, hkbGeneratorOutput* inOut)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbHandIkModifier_vtable {
-    pub const ID: u64 = 226525;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkModifier_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkModifier_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_vdtor>>(self.slot_0) }
-    }
-    pub const SLOT_VisitMembers: usize = 2;
-    pub const SLOT_Activate: usize = 4;
-    /// Slot 4 as `hkbHandIkModifier_vtable_Activate`, `None` when the slot is null.
-    #[must_use]
-    pub fn Activate(&self) -> Option<hkbHandIkModifier_vtable_Activate> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_Activate>>(self.slot_4) }
-    }
-    pub const SLOT_Update: usize = 5;
-    /// Slot 5 as `hkbHandIkModifier_vtable_Update`, `None` when the slot is null.
-    #[must_use]
-    pub fn Update(&self) -> Option<hkbHandIkModifier_vtable_Update> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_Update>>(self.slot_5) }
-    }
-    pub const SLOT_IsValid: usize = 10;
-    /// Slot 10 as `hkbHandIkModifier_vtable_IsValid`, `None` when the slot is null.
-    #[must_use]
-    pub fn IsValid(&self) -> Option<hkbHandIkModifier_vtable_IsValid> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_IsValid>>(self.slot_10) }
-    }
-    pub const SLOT_CloneNode: usize = 12;
-    /// Slot 12 as `hkbHandIkModifier_vtable_CloneNode`, `None` when the slot is null.
-    #[must_use]
-    pub fn CloneNode(&self) -> Option<hkbHandIkModifier_vtable_CloneNode> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_CloneNode>>(self.slot_12) }
-    }
-    pub const SLOT_Modify: usize = 23;
-    /// Slot 23 as `hkbHandIkModifier_vtable_Modify`, `None` when the slot is null.
-    #[must_use]
-    pub fn Modify(&self) -> Option<hkbHandIkModifier_vtable_Modify> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkModifier_vtable_Modify>>(self.slot_23) }
-    }
-}
-/// `hkbHandIkModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, flags: u32) -> *mut crate::hkbHandIkModifier;
-/// `hkbHandIkModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
-pub type hkbHandIkModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, ctx: *const c_void);
-/// `hkbHandIkModifier::Update`, slot 5: per-frame update before generate (high).
-pub type hkbHandIkModifier_vtable_Update = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, ctx: *const c_void, timestep: f32);
-/// `hkbHandIkModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
-pub type hkbHandIkModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
-/// `hkbHandIkModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
-pub type hkbHandIkModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier) -> *mut crate::hkbHandIkModifier;
-/// `hkbHandIkModifier::Modify`, slot 23: 0xb11b00 'TtHandIkModifier': per hand computes the target and solves the arm with HandIkSolveArm 0xb12700 -> TwoJointSolve 0xaa0a10 (high).
-pub type hkbHandIkModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkModifier, ctx: *const c_void, inOut: *mut crate::hkbGeneratorOutput);
-
-/// `hkbHandIkSceneModifier::vftable` at 0x19c1070, id 220357 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbHandIkSceneModifier_vtable {
-    /// `hkbHandIkSceneModifier::vdtor` at 0xadb870 (semantic, high); signature (low): `hkbHandIkSceneModifier * vdtor(hkbHandIkSceneModifier * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbHandIkSceneModifier* (hkbHandIkSceneModifier* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbHandIkSceneModifier::Modify` at 0xafeed0 (semantic, high); signature (low): `undefined Modify(undefined8 param_1, longlong * param_2, undefined4 param_3)`; `Modify`: runs the hand IK driver (character+0x48) 0xaf9bc0 with fixup = false (high); semantic signature: `void (hkbHandIkSceneModifier* this, hkbSceneCharacters* characters, float timestep)`
-    pub slot_3: *const c_void,
-}
-impl hkbHandIkSceneModifier_vtable {
-    pub const ID: u64 = 220357;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbHandIkSceneModifier_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbHandIkSceneModifier_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkSceneModifier_vtable_vdtor>>(self.slot_0) }
-    }
-    pub const SLOT_Modify: usize = 3;
-    /// Slot 3 as `hkbHandIkSceneModifier_vtable_Modify`, `None` when the slot is null.
-    #[must_use]
-    pub fn Modify(&self) -> Option<hkbHandIkSceneModifier_vtable_Modify> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbHandIkSceneModifier_vtable_Modify>>(self.slot_3) }
-    }
-}
-/// `hkbHandIkSceneModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbHandIkSceneModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbHandIkSceneModifier, flags: u32) -> *mut crate::hkbHandIkSceneModifier;
-/// `hkbHandIkSceneModifier::Modify`, slot 3: runs the hand IK driver (character+0x48) 0xaf9bc0 with fixup = false (high).
-pub type hkbHandIkSceneModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbHandIkSceneModifier, characters: *mut c_void, timestep: f32);
-
-/// `hkbHandle::vftable` at 0x19dd4b8, id 226152 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbHandle_vtable {
-    /// `hkbHandle::vdtor` at 0xae3e80 (layout_inference, medium); signature (low): `hkbHandle * vdtor(hkbHandle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbHandle_vtable {
-    pub const ID: u64 = 226152;
-}
-
-/// `hkbIntEventPayload::vftable` at 0x19dd3b8, id 226136 (rtti, high); 3 slots.
-#[repr(C)]
-pub struct hkbIntEventPayload_vtable {
-    /// `hkbIntEventPayload::vdtor` at 0xae3f10 (layout_inference, medium); signature (low): `hkbIntEventPayload * vdtor(hkbIntEventPayload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-}
-impl hkbIntEventPayload_vtable {
-    pub const ID: u64 = 226136;
-}
-
-/// `hkbIntVariableSequencedData::vftable` at 0x19e2638, id 226678 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct hkbIntVariableSequencedData_vtable {
-    /// `hkbIntVariableSequencedData::vdtor` at 0xae3fa0 (layout_inference, medium); signature (low): `hkbIntVariableSequencedData * vdtor(hkbIntVariableSequencedData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkReferencedObject::vfunc_2` at 0xaa2c40 (rtti, medium); signature (low): `undefined vfunc_2(hkReferencedObject * this, undefined8 param_1, undefined * param_2)`
-    pub slot_2: *const c_void,
-    /// `hkbIntVariableSequencedData::vfunc_3` at 0xb1b4e0 (rtti, high); signature (low): `undefined vfunc_3(hkbIntVariableSequencedData * this, undefined8 param_1, longlong * param_2, float param_3, undefined8 param_4, longlong param_5, int * param_6)`
-    pub slot_3: *const c_void,
-}
-impl hkbIntVariableSequencedData_vtable {
-    pub const ID: u64 = 226678;
-}
-
-/// `hkbKeyframeBonesModifier::vftable` at 0x19e1648, id 226578 (rtti, high); 25 slots.
-#[repr(C)]
-pub struct hkbKeyframeBonesModifier_vtable {
-    /// `hkbKeyframeBonesModifier::vdtor` at 0xae4070 (semantic, high); signature (low): `hkbKeyframeBonesModifier * vdtor(hkbKeyframeBonesModifier * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `vdtor`: scalar deleting destructor; frees through the Havok memory router with the object size (high); semantic signature: `hkbKeyframeBonesModifier* (hkbKeyframeBonesModifier* this, u32 flags)`
-    pub slot_0: *const c_void,
-    /// `hkReferencedObject::vfunc_1` at 0xaa2c30 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
-    pub slot_1: *const c_void,
-    /// `hkbKeyframeBonesModifier::VisitMembers` at 0xb160c0 (semantic, low); signature (low): `undefined VisitMembers(hkbKeyframeBonesModifier * this, longlong * param_1, undefined * param_2)`; `VisitMembers`: hkReferencedObject default 0xaa2c40 walks the members along the class chain; overridden where the object owns extra references (low); semantic signature: `void (hkbKeyframeBonesModifier* this, void* visitor, const hkClass* cls)`
-    pub slot_2: *const c_void,
-    /// `hkbKeyframeBonesModifier::CollectBindables` at 0xb16110 (semantic, medium); signature (low): `undefined CollectBindables(hkbKeyframeBonesModifier * this, undefined8 * param_1)`; `CollectBindables`: hkbBindable default 0xadba10 calls collector->vtbl[0](collector, this); overridden by classes holding hkbBoneIndexArray/hkbBoneWeightArray pointers (bindable children) (medium); semantic signature: `void (hkbKeyframeBonesModifier* this, void* collector)`
-    pub slot_3: *const c_void,
-    /// `hkbKeyframeBonesModifier::Activate` at 0xb16150 (semantic, high); signature (high): `undefined Activate(hkbKeyframeBonesModifier * this)`; `Activate`: resets runtime state when the node becomes active (high); semantic signature: `void (hkbKeyframeBonesModifier* this, const hkbContext* ctx)`
-    pub slot_4: *const c_void,
-    /// `hkbNode::vfunc_5` at 0xad21e0 (rtti, medium); signature (high): `undefined vfunc_5(hkbNode * this)`
-    pub slot_5: *const c_void,
-    /// `hkbNode::vfunc_6` at 0xad2150 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `hkbNode::vfunc_7` at 0xad20e0 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `hkbNode::vfunc_8` at 0xad2140 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `hkbNode::vfunc_9` at 0xad2110 (rtti, medium); signature (low): `undefined vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `hkbKeyframeBonesModifier::IsValid` at 0xb16180 (semantic, high); signature (low): `undefined8 IsValid(hkbKeyframeBonesModifier * this, ulonglong * param_1)`; `IsValid`: validates the node's data, writing an error string (high); semantic signature: `bool (hkbKeyframeBonesModifier* this, const hkbCharacter* character, hkStringPtr* errorString)`
-    pub slot_10: *const c_void,
-    /// `hkbNode::vfunc_11` at 0xad21a0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `hkbKeyframeBonesModifier::CloneNode` at 0xb16640 (semantic, high); signature (high): `hkbKeyframeBonesModifier * CloneNode(hkbKeyframeBonesModifier * this)`; `CloneNode`: allocates a copy of the node (size argument = object size) through the copy constructor (high); semantic signature: `hkbKeyframeBonesModifier* (hkbKeyframeBonesModifier* this)`
-    pub slot_12: *const c_void,
-    /// `hkbNode::vfunc_13` at 0xadbed0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `hkbNode::vfunc_14` at 0xad2120 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `hkbNode::vfunc_15` at 0xad2130 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `hkbNode::vfunc_16` at 0xad21b0 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `hkbNode::vfunc_17` at 0xad21c0 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `hkbNode::vfunc_18` at 0xad20f0 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `hkbNode::vfunc_19` at 0xadbee0 (rtti, medium); signature (low): `undefined1 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `hkbNode::vfunc_20` at 0xad2100 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `hkbNode::vfunc_21` at 0xad2190 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `hkbNode::vfunc_22` at 0xad2170 (rtti, medium); signature (low): `undefined1 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `hkbKeyframeBonesModifier::Modify` at 0xb166c0 (semantic, high); signature (low): `undefined Modify(hkbKeyframeBonesModifier * this, undefined8 param_1, undefined8 param_2)`; `Modify`: timer 'TthkbKeyframeBonesModifier' around ApplyKeyframes 0xb28c00 (this, output): the keyframed bones go into tracks 8/9 for the ragdoll, not into the pose track (high); semantic signature: `void (hkbKeyframeBonesModifier* this, hkbContext* ctx, hkbGeneratorOutput* output)`
-    pub slot_23: *const c_void,
-    /// `hkbModifier::vfunc_24` at 0xae7000 (rtti, medium); signature (low): `undefined vfunc_24(void)`
-    pub slot_24: *const c_void,
-}
-impl hkbKeyframeBonesModifier_vtable {
-    pub const ID: u64 = 226578;
-    pub const SLOT_vdtor: usize = 0;
-    /// Slot 0 as `hkbKeyframeBonesModifier_vtable_vdtor`, `None` when the slot is null.
-    #[must_use]
-    pub fn vdtor(&self) -> Option<hkbKeyframeBonesModifier_vtable_vdtor> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbKeyframeBonesModifier_vtable_vdtor>>(self.slot_0) }
-    }
-    pub const SLOT_VisitMembers: usize = 2;
-    pub const SLOT_CollectBindables: usize = 3;
-    pub const SLOT_Activate: usize = 4;
-    /// Slot 4 as `hkbKeyframeBonesModifier_vtable_Activate`, `None` when the slot is null.
-    #[must_use]
-    pub fn Activate(&self) -> Option<hkbKeyframeBonesModifier_vtable_Activate> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbKeyframeBonesModifier_vtable_Activate>>(self.slot_4) }
-    }
-    pub const SLOT_IsValid: usize = 10;
-    /// Slot 10 as `hkbKeyframeBonesModifier_vtable_IsValid`, `None` when the slot is null.
-    #[must_use]
-    pub fn IsValid(&self) -> Option<hkbKeyframeBonesModifier_vtable_IsValid> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbKeyframeBonesModifier_vtable_IsValid>>(self.slot_10) }
-    }
-    pub const SLOT_CloneNode: usize = 12;
-    /// Slot 12 as `hkbKeyframeBonesModifier_vtable_CloneNode`, `None` when the slot is null.
-    #[must_use]
-    pub fn CloneNode(&self) -> Option<hkbKeyframeBonesModifier_vtable_CloneNode> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbKeyframeBonesModifier_vtable_CloneNode>>(self.slot_12) }
-    }
-    pub const SLOT_Modify: usize = 23;
-    /// Slot 23 as `hkbKeyframeBonesModifier_vtable_Modify`, `None` when the slot is null.
-    #[must_use]
-    pub fn Modify(&self) -> Option<hkbKeyframeBonesModifier_vtable_Modify> {
-        unsafe { core::mem::transmute::<*const c_void, Option<hkbKeyframeBonesModifier_vtable_Modify>>(self.slot_23) }
-    }
-}
-/// `hkbKeyframeBonesModifier::vdtor`, slot 0: scalar deleting destructor; frees through the Havok memory router with the object size (high).
-pub type hkbKeyframeBonesModifier_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, flags: u32) -> *mut crate::hkbKeyframeBonesModifier;
-/// `hkbKeyframeBonesModifier::Activate`, slot 4: resets runtime state when the node becomes active (high).
-pub type hkbKeyframeBonesModifier_vtable_Activate = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, ctx: *const c_void);
-/// `hkbKeyframeBonesModifier::IsValid`, slot 10: validates the node's data, writing an error string (high).
-pub type hkbKeyframeBonesModifier_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, character: *const crate::hkbCharacter, errorString: *mut c_void) -> bool;
-/// `hkbKeyframeBonesModifier::CloneNode`, slot 12: allocates a copy of the node (size argument = object size) through the copy constructor (high).
-pub type hkbKeyframeBonesModifier_vtable_CloneNode = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier) -> *mut crate::hkbKeyframeBonesModifier;
-/// `hkbKeyframeBonesModifier::Modify`, slot 23: timer 'TthkbKeyframeBonesModifier' around ApplyKeyframes 0xb28c00 (this, output): the keyframed bones go into tracks 8/9 for the ragdoll, not into the pose track (high).
-pub type hkbKeyframeBonesModifier_vtable_Modify = unsafe extern "C" fn(this: *mut crate::hkbKeyframeBonesModifier, ctx: *mut c_void, output: *mut crate::hkbGeneratorOutput);
 

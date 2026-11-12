@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RunCrtCommonMain` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109636, rva 0x15a8338).
-/// `ulonglong RunCrtCommonMain(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn run_crt_common_main() -> u64 { unsafe { function!(109636, () -> u64)() } }
-/// `RunNextQueuedTasklet` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69609, rva 0xec5340).
-/// `undefined RunNextQueuedTasklet(longlong param_1, longlong param_2, char param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn run_next_queued_tasklet(param_1: i64, param_2: i64, param_3: c_char) -> u64 { unsafe { function!(69609, (i64, i64, c_char) -> u64)(param_1, param_2, param_3) } }
 /// `SampleWeighted3x3Kernel` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 16634, rva 0x256010).
 /// `float SampleWeighted3x3Kernel(int param_1, int param_2, undefined * param_3)`
 ///

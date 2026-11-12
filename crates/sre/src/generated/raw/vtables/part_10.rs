@@ -7,6 +7,160 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vftable` at 0x1969418, id 214573 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vdtor` at 0x8e91c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_1` at 0x8e90f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_2` at 0x8e91a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    pub const ID: u64 = 214573;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x19697b8, id 214658 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e9de0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e9cd0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9dc0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestOrbit,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214658;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x1969638, id 214622 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e9860 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e9770 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9840 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestRotatePath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214622;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x1969298, id 214536 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e8cd0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e8be0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e8cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214536;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vftable` at 0x1969318, id 214549 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vdtor` at 0x8e8e80 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vfunc_1` at 0x8e8d90 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject>::vfunc_2` at 0x8e8e60 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStandard,CombatPathDestinationRef>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef_CombatObject_vtable {
+    pub const ID: u64 = 214549;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vftable` at 0x19695b8, id 214610 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vdtor` at 0x8e96b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vfunc_1` at 0x8e95c0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject>::vfunc_2` at 0x8e9690 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestStraightPath,CombatPathDestinationLocation>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation_CombatObject_vtable {
+    pub const ID: u64 = 214610;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vftable` at 0x1969498, id 214585 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vdtor` at 0x8e9370 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_1` at 0x8e9280 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject>::vfunc_2` at 0x8e9350 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationLocations>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations_CombatObject_vtable {
+    pub const ID: u64 = 214585;
+}
+
+/// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vftable` at 0x1969538, id 214597 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vdtor` at 0x8e9500 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * vdtor(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_1` at 0x8e9430 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject>::vfunc_2` at 0x8e94e0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathT<CombatPathRequestWeightedMultiGoal,CombatPathDestinationRefs>,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs_CombatObject_vtable {
+    pub const ID: u64 = 214597;
+}
+
+/// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vftable` at 0x19688e8, id 214502 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingDebugData_CombatObject_vtable {
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vdtor` at 0x8e6910 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingDebugData,CombatObject> * vdtor(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vfunc_1` at 0x8e67f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingDebugData,CombatObject>::vfunc_2` at 0x8e68f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingDebugData,CombatObject> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingDebugData_CombatObject_vtable {
+    pub const ID: u64 = 214502;
+}
+
+/// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vftable` at 0x19686d8, id 214470 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingRequestAdapter_BSPathingRequest_vtable {
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vdtor` at 0x8e48c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vfunc_1` at 0x8e4800 (rtti, medium); signature (low): `PathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest>::vfunc_2` at 0x8e48a0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestAdapter,BSPathingRequest> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingRequestAdapter_BSPathingRequest_vtable {
+    pub const ID: u64 = 214470;
+}
+
+/// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x19628f0, id 213840 (rtti, high); 3 slots.
+#[repr(C)]
+pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSear_2f4a6bce3959_vtable {
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vdtor` at 0x8bdc30 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * vdtor(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_1` at 0x8bdb40 (rtti, medium); signature (low): `CombatPathingRequest * vfunc_1(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_1: *const c_void,
+    /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vfunc_2` at 0x8bdc10 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>,BSPathingRequest> * this, undefined8 * param_1)`
+    pub slot_2: *const c_void,
+}
+impl BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSear_2f4a6bce3959_vtable {
+    pub const ID: u64 = 213840;
+}
+
 /// `BSTDerivedCreator<CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>,BSPathingRequest>::vftable` at 0x195b760, id 212828 (rtti, high); 3 slots.
 #[repr(C)]
 pub struct BSTDerivedCreator_CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPa_94555caadc8d_vtable {
@@ -12754,145 +12908,5 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
 }
 impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_544a8403a2cd_vtable {
     pub const ID: u64 = 212548;
-}
-
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vftable` at 0x195db88, id 213137 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2fb82517e770_vtable {
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vdtor` at 0x89ca50 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vfunc_2` at 0x89ce80 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vfunc_8` at 0x89e8d0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vfunc_9` at 0x89daa0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2fb82517e770_vtable {
-    pub const ID: u64 = 213137;
-}
-
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vftable` at 0x195f9e8, id 213407 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_604a93390606_vtable {
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vdtor` at 0x8a6770 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8a6fe0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_8` at 0x8a92f0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8a7eb0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_604a93390606_vtable {
-    pub const ID: u64 = 213407;
-}
-
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vftable` at 0x1959120, id 212509 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054_vtable {
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x87bfb0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c7e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_8` at 0x87daa0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_9` at 0x87cd80 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054_vtable {
-    pub const ID: u64 = 212509;
-}
-
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_>::vftable` at 0x1961078, id 213616 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorUnaryExpression_CombatB_e5fe12a9a83b_vtable {
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_>::vdtor` at 0x8af440 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_>::vfunc_2` at 0x8b0160 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_> * this, longlong param_1)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_>::vfunc_8` at 0x8b2bd0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorUnaryExpression<CombatBehaviorFunc2<bool_(__cdecl*)(Actor*___ptr64,Actor*___ptr64),CombatBehaviorTree::CombatBehaviorAttacker,CombatBehaviorTree::CombatBehaviorTarget>,OpNot>_>_>::vfunc_9` at 0x8b0f00 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorUnaryExpression_CombatB_e5fe12a9a83b_vtable {
-    pub const ID: u64 = 213616;
-}
-
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vftable` at 0x1961b70, id 213692 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_CombatBehaviorExpression_CombatB_106cafc696bb_vtable {
-    /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8b67f0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8b6c10 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextMagic,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_3` at 0x8b6e50 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_6` at 0x8b74b0 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_7` at 0x8b7300 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_8` at 0x8b7870 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextMagic>::vfunc_9` at 0x8b7050 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_CombatBehaviorExpression_CombatB_106cafc696bb_vtable {
-    pub const ID: u64 = 213692;
 }
 

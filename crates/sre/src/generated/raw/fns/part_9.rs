@@ -7,6 +7,30 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateNoRTTI_1AFD3E0Handle` at 0x13e55a0 (decompiler, medium); signature (low): `undefined CreateNoRTTI_1AFD3E0Handle(undefined8 * param_1, longlong * param_2, undefined8 param_3)`
+pub const CreateNoRTTI_1AFD3E0Handle: u64 = 449508;
+/// `CreateNodeIndexedByKey` at 0xab87a0 (decompiler, medium); signature (low): `undefined8 * CreateNodeIndexedByKey(longlong param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
+pub const CreateNodeIndexedByKey: u64 = 57867;
+/// `CreateNumberedObjectAndRegister` at 0x854230 (decompiler, medium); signature (low): `undefined4 * CreateNumberedObjectAndRegister(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNumberedObjectAndRegister: u64 = 46899;
+/// `CreateObject1AB7618` at 0x1189a80 (decompiler, medium); signature (low): `undefined8 * CreateObject1AB7618(longlong param_1)`
+pub const CreateObject1AB7618: u64 = 84953;
+/// `CreateObject1AB7728` at 0x11899b0 (decompiler, medium); signature (low): `undefined8 * CreateObject1AB7728(longlong param_1)`
+pub const CreateObject1AB7728: u64 = 84951;
+/// `CreateObject70WithCachedEntry9` at 0xdd7000 (decompiler, medium); signature (low): `undefined8 * CreateObject70WithCachedEntry9(undefined8 param_1, longlong param_2)`
+pub const CreateObject70WithCachedEntry9: u64 = 86872;
+/// `CreateObjectFromColonSeparatedSpec` at 0xbdcdb0 (decompiler, medium); signature (low): `longlong * CreateObjectFromColonSeparatedSpec(ulonglong * param_1, undefined4 param_2, undefined8 param_3)`
+pub const CreateObjectFromColonSeparatedSpec: u64 = 63816;
+/// `CreateObjectResourceFromGlobal408436` at 0xc65e60 (decompiler, medium); signature (low): `undefined CreateObjectResourceFromGlobal408436(undefined8 param_1)`
+pub const CreateObjectResourceFromGlobal408436: u64 = 66244;
+/// `CreateObjectVtable242329` at 0xd121c0 (decompiler, medium); signature (low): `undefined CreateObjectVtable242329(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable242329: u64 = 82991;
+/// `CreateObjectVtable243445` at 0xd907d0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable243445(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable243445: u64 = 85610;
+/// `CreateObjectVtable244620` at 0xdde9f0 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244620(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244620: u64 = 86992;
+/// `CreateObjectVtable244638` at 0xde0840 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244638(undefined8 param_1, longlong param_2)`
+pub const CreateObjectVtable244638: u64 = 87023;
 /// `CreateObjectVtable244650` at 0xde2200 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244650(undefined8 param_1, longlong param_2)`
 pub const CreateObjectVtable244650: u64 = 87054;
 /// `CreateObjectVtable244662` at 0xde3520 (decompiler, medium); signature (low): `undefined8 * CreateObjectVtable244662(undefined8 param_1, longlong param_2)`
@@ -7265,8 +7289,6 @@ pub const FindEntryByKeyOrName: u64 = 524070;
 pub const FindEntryByName: u64 = 59472;
 /// `FindEntryByNameAndIdAndFreeKey` at 0xa76d00 (decompiler, medium); signature (low): `undefined8 FindEntryByNameAndIdAndFreeKey(int * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const FindEntryByNameAndIdAndFreeKey: u64 = 524100;
-/// `FindEntryByNameCaseInsensitive` at 0x14966d0 (decompiler, medium); signature (medium): `undefined8 * FindEntryByNameCaseInsensitive(longlong param_1, char * param_2)`
-pub const FindEntryByNameCaseInsensitive: u64 = 104354;
 /// `FindEntryByNameCaseInsensitive_2` at 0x1496840 (decompiler, medium); signature (low): `ulonglong * FindEntryByNameCaseInsensitive_2(longlong param_1, char * param_2)`
 pub const FindEntryByNameCaseInsensitive_2: u64 = 104356;
 /// `FindEntryByNameCaseInsensitive_3` at 0x583f40 (decompiler, medium); signature (medium): `longlong * FindEntryByNameCaseInsensitive_3(longlong param_1, char * param_2)`
@@ -7407,8 +7429,6 @@ pub const FindField18ForKeyUnderReadLock: u64 = 12735;
 pub const FindField24EntryByNameCaseless: u64 = 104353;
 /// `FindField28ElementByName` at 0xab1ba0 (decompiler, medium); signature (low): `undefined8 * FindField28ElementByName(longlong param_1, longlong param_2)`
 pub const FindField28ElementByName: u64 = 57642;
-/// `FindField28EntryByNameCaseless` at 0x1496580 (decompiler, medium); signature (low): `undefined FindField28EntryByNameCaseless(longlong param_1, char * param_2)`
-pub const FindField28EntryByNameCaseless: u64 = 104352;
 /// `FindField50EntryByByte7F` at 0x38b740 (decompiler, medium); signature (low): `longlong FindField50EntryByByte7F(longlong param_1, int param_2)`
 pub const FindField50EntryByByte7F: u64 = 23474;
 /// `FindField70InParentChain` at 0xd922c0 (decompiler, medium); signature (low): `undefined8 FindField70InParentChain(longlong param_1)`
@@ -8789,21 +8809,3 @@ pub const FocusNextListEntry: u64 = 454941;
 pub const FocusPreviousListEntry: u64 = 454942;
 /// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (low): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ForEachActorInHandleArray: u64 = 41326;
-/// `ForEachAliasInstanceOfRef` at 0x2e6a70 (semantic, high); signature (low): `undefined ForEachAliasInstanceOfRef(longlong param_1, longlong * param_2)`; semantic: the reference's ExtraAliasInstanceArray (extra 0x88), or, when the reference carries an ExtraReferenceHandle (0x1c) whose target has form flag bit 5 set, that target's array; each alias goes to functor slot 1 (high); signature `void (TESObjectREFR* ref, void* functor)`
-pub const ForEachAliasInstanceOfRef: u64 = 19656;
-/// `ForEachAliasInstanceOfRef` as a function pointer type (high).
-pub type ForEachAliasInstanceOfRef_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, functor: *mut c_void);
-/// `ForEachArrayEmitterInTree` at 0x1f7720 (decompiler, medium); signature (low): `ulonglong ForEachArrayEmitterInTree(longlong * param_1, undefined8 * param_2)`
-pub const ForEachArrayEmitterInTree: u64 = 15054;
-/// `ForEachArrayEntryLocked` at 0x9723f0 (decompiler, medium); signature (medium): `undefined ForEachArrayEntryLocked(longlong param_1, undefined * param_2)`
-pub const ForEachArrayEntryLocked: u64 = 52423;
-/// `ForEachCommaSeparatedToken` at 0xecfec0 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedToken(char * param_1, undefined8 * param_2)`
-pub const ForEachCommaSeparatedToken: u64 = 69870;
-/// `ForEachCommaSeparatedTokenWithContext` at 0xecf510 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedTokenWithContext(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const ForEachCommaSeparatedTokenWithContext: u64 = 69853;
-/// `ForEachElementInBlockList` at 0xabc410 (decompiler, medium); signature (low): `undefined ForEachElementInBlockList(longlong param_1, longlong * param_2, undefined * param_3, undefined4 param_4, undefined8 param_5)`
-pub const ForEachElementInBlockList: u64 = 57955;
-/// `ForEachEntryCallVfunc41` at 0x1059330 (decompiler, medium); signature (low): `undefined ForEachEntryCallVfunc41(longlong param_1, undefined8 param_2)`
-pub const ForEachEntryCallVfunc41: u64 = 78098;
-/// `ForEachEntryWithQualifyingExtraList` at 0x237410 (decompiler, medium); signature (low): `undefined ForEachEntryWithQualifyingExtraList(undefined8 * param_1, longlong * param_2, uint param_3)`
-pub const ForEachEntryWithQualifyingExtraList: u64 = 16097;

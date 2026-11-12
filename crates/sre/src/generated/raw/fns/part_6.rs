@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildAndDispatchEventToHandlers` at 0x3d8ee0 (decompiler, medium); signature (low): `undefined1 BuildAndDispatchEventToHandlers(longlong param_1, int param_2, undefined4 param_3, longlong param_4, longlong param_5, longlong * param_6, undefined1 param_7, undefined8 param_8, ulonglong param_9)`
+pub const BuildAndDispatchEventToHandlers: u64 = 25081;
+/// `BuildAndMergeSymbolIdMaps` at 0xb2ace0 (semantic, medium); signature (low): `undefined BuildAndMergeSymbolIdMaps(longlong * param_1, longlong param_2, longlong param_3, longlong param_4, longlong param_5)`; semantic: links every referenced behaviour graph's variables, events, attributes and character properties to the root graph by name (medium); signature `void (hkArray<hkbBehaviorGraph*>* graphs, void* attributeNameMap, void* variableNameMap, void* eventNameMap, void* characterPropertyNameMap)`
+pub const BuildAndMergeSymbolIdMaps: u64 = 60090;
+/// `BuildAngularJacobianSchema` at 0xc23a40 (decompiler, medium); signature (low): `undefined BuildAngularJacobianSchema(float * param_1, longlong param_2, longlong * param_3)`
+pub const BuildAngularJacobianSchema: u64 = 64779;
+/// `BuildAngularJacobianSchemas` at 0xc23d10 (decompiler, medium); signature (low): `undefined BuildAngularJacobianSchemas(undefined8 * param_1, longlong param_2, undefined8 * param_3)`
+pub const BuildAngularJacobianSchemas: u64 = 64781;
+/// `BuildAnimationGraphManager` at 0x5537e0 (semantic, high); signature (low): `undefined8 BuildAnimationGraphManager(longlong * param_1, longlong param_2)`; semantic: per project: slot 5 create, 0xbcd240 load (flag slot 6), slot 7 variables, slot 8 sinks (slot 9 on failure); then BSAnimationGraphManager (0xb8, cache size slot 15), slot 10 channels, slot 11, install 0x554060, activate 0xbc0480 (high); signature `bool (IAnimationGraphManagerHolder* holder, BSScrapArray<ProjectPath>& projects)`
+pub const BuildAnimationGraphManager: u64 = 32893;
+/// `BuildAnimationGraphManager` as a function pointer type (high).
+pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut crate::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool;
+/// `BuildAnimationGraphManagerFromPath` at 0x553620 (decompiler, medium); signature (low): `undefined1 BuildAnimationGraphManagerFromPath(undefined8 param_1, undefined1 * param_2)`
+pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
 /// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (low): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
 pub const BuildAnimationGraphManagerOnce: u64 = 32919;
 /// `BuildAudioCommandNode` at 0xcd0040 (decompiler, medium); signature (low): `undefined4 * BuildAudioCommandNode(undefined8 param_1, undefined4 param_2, undefined4 param_3, undefined4 param_4, undefined8 param_5, longlong * param_6, undefined4 * param_7)`
@@ -8019,11 +8033,3 @@ pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehav
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_219b84ab0a0c: u64 = 48803;
 /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8a7eb0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_4bb899fdc03f: u64 = 48754;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x87bfb0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2ac6eeb2ea1f: u64 = 47691;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c7e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_db2191c4793e: u64 = 47726;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_8` at 0x87daa0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_f63897c763bf: u64 = 47791;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_9` at 0x87cd80 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_82ad657b99bd: u64 = 47747;

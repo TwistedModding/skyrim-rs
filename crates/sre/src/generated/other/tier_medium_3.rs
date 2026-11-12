@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54581, rva 0x9fbd50).
-/// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_single_los_gain(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54581, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSLost` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54582, rva 0x9fbde0).
 /// `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
@@ -13510,3 +13503,17 @@ pub unsafe fn round_up_to_power_of_two(param_1: u32) -> u32 { unsafe { function!
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn run_check_sphere_visitor(param_1: u64, param_2: *mut u32, param_3: u32) -> u8 { unsafe { function!(90425, (u64, *mut u32, u32) -> u8)(param_1, param_2, param_3) } }
+/// `RunCrtCommonMain` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109636, rva 0x15a8338).
+/// `ulonglong RunCrtCommonMain(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn run_crt_common_main() -> u64 { unsafe { function!(109636, () -> u64)() } }
+/// `RunNextQueuedTasklet` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69609, rva 0xec5340).
+/// `undefined RunNextQueuedTasklet(longlong param_1, longlong param_2, char param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn run_next_queued_tasklet(param_1: i64, param_2: i64, param_3: c_char) -> u64 { unsafe { function!(69609, (i64, i64, c_char) -> u64)(param_1, param_2, param_3) } }

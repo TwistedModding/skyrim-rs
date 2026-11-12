@@ -7,6 +7,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (low): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; semantic: count of an item in the base container (high); signature `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
+pub const TESContainer__CountObjectsInContainer: u64 = 14529;
+/// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
+pub type TESContainer__CountObjectsInContainer_fn = unsafe extern "C" fn(this: *mut crate::TESContainer, item: *mut crate::TESForm) -> i32;
+/// `TESContainer::ctor` at 0x1dffe0 (layout_inference, medium); signature (high): `TESContainer * ctor(TESContainer * this)`
+pub const TESContainer__ctor: u64 = 14510;
+/// `TESContainer::dtor` at 0x1e0000 (layout_inference, high); signature (high): `undefined dtor(TESContainer * this)`
+pub const TESContainer__dtor: u64 = 14511;
+/// `TESContainer::vdtor` at 0x1e1160 (layout_inference, medium); signature (low): `TESContainer * vdtor(TESContainer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESContainer__vdtor: u64 = 14545;
+/// `TESContainer::vfunc_1` at 0x1e0040 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const TESContainer__vfunc_1: u64 = 14512;
+/// `TESContainer::vfunc_2` at 0x1e0050 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESContainer__vfunc_2: u64 = 14513;
+/// `TESContainer::vfunc_3` at 0x1e0060 (rtti, medium); signature (low): `undefined vfunc_3(TESContainer * this, undefined8 param_1)`
+pub const TESContainer__vfunc_3: u64 = 14514;
+/// `TESCustomPackageData::ctor` at 0x49ecc0 (layout_inference, medium); signature (high): `TESCustomPackageData * ctor(TESCustomPackageData * this)`
+pub const TESCustomPackageData__ctor: u64 = 29654;
+/// `TESCustomPackageData::ctor` at 0x49ed10 (layout_inference, medium); signature (low): `TESCustomPackageData * ctor(TESCustomPackageData * this, longlong param_1, uint * param_2, undefined8 param_3)`
+pub const TESCustomPackageData__ctor_2: u64 = 29655;
+/// `TESCustomPackageData::dtor` at 0x49ee70 (layout_inference, high); signature (low): `undefined dtor(TESCustomPackageData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCustomPackageData__dtor: u64 = 29656;
 /// `TESCustomPackageData::vdtor` at 0x49fec0 (layout_inference, medium); signature (low): `TESCustomPackageData * vdtor(TESCustomPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESCustomPackageData__vdtor: u64 = 29676;
 /// `TESCustomPackageData::vfunc_1` at 0x49ef00 (rtti, high); signature (low): `undefined vfunc_1(TESCustomPackageData * this, longlong param_1, longlong param_2)`
@@ -9011,21 +9033,3 @@ pub const _anon_025735F6__SpellCastArguments__vfunc_1: u64 = 54253;
 pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_0: u64 = 54396;
 /// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_1` at 0x9e87a0 (rtti, high); signature (low): `undefined8 vfunc_1(TrackedStatsEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_1: u64 = 54077;
-/// `_anon_025735F6::TrapHitArguments::vfunc_0` at 0x9f0ed0 (rtti, high); signature (low): `TrapHitArguments * vfunc_0(TrapHitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__TrapHitArguments__vfunc_0: u64 = 54397;
-/// `_anon_025735F6::TrapHitArguments::vfunc_1` at 0x9ef3d0 (rtti, high); signature (low): `undefined8 vfunc_1(TrapHitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__TrapHitArguments__vfunc_1: u64 = 54254;
-/// `_anon_03AF8C4C::AttachLightHitEffectVisitor::vdtor` at 0x5c9c10 (layout_inference, medium); signature (low): `AttachLightHitEffectVisitor * vdtor(AttachLightHitEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_03AF8C4C__AttachLightHitEffectVisitor__vdtor: u64 = 34390;
-/// `_anon_03AF8C4C::AttachLightHitEffectVisitor::vfunc_1` at 0x5c9af0 (rtti, high); signature (low): `bool vfunc_1(AttachLightHitEffectVisitor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_03AF8C4C__AttachLightHitEffectVisitor__vfunc_1: u64 = 34388;
-/// `_anon_11669552::InitItemPerkRankDataVisitor::vfunc_0` at 0x1db5e0 (rtti, high); signature (low): `undefined8 vfunc_0(InitItemPerkRankDataVisitor * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_11669552__InitItemPerkRankDataVisitor__vfunc_0: u64 = 14326;
-/// `_anon_11B7475C::PlayerParentCellListener::vdtor` at 0x527e10 (layout_inference, medium); signature (low): `PlayerParentCellListener * vdtor(PlayerParentCellListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_11B7475C__PlayerParentCellListener__vdtor: u64 = 32155;
-/// `_anon_11B7475C::PlayerParentCellListener::vfunc_1` at 0x527da0 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerParentCellListener * this, longlong param_1, longlong param_2)`
-pub const _anon_11B7475C__PlayerParentCellListener__vfunc_1: u64 = 32154;
-/// `_anon_14F04957::Win32FileType::GetSize` at 0x159d440 (semantic, medium); signature (high): `undefined4 GetSize(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__GetSize: u64 = 109368;
-/// `_anon_14F04957::Win32FileType::Open` at 0x159d770 (semantic, medium); signature (high): `bool Open(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__Open: u64 = 109370;

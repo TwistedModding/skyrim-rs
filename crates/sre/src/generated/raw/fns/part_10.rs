@@ -7,6 +7,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ForEachAliasInstanceOfRef` at 0x2e6a70 (semantic, high); signature (low): `undefined ForEachAliasInstanceOfRef(longlong param_1, longlong * param_2)`; semantic: the reference's ExtraAliasInstanceArray (extra 0x88), or, when the reference carries an ExtraReferenceHandle (0x1c) whose target has form flag bit 5 set, that target's array; each alias goes to functor slot 1 (high); signature `void (TESObjectREFR* ref, void* functor)`
+pub const ForEachAliasInstanceOfRef: u64 = 19656;
+/// `ForEachAliasInstanceOfRef` as a function pointer type (high).
+pub type ForEachAliasInstanceOfRef_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, functor: *mut c_void);
+/// `ForEachArrayEmitterInTree` at 0x1f7720 (decompiler, medium); signature (low): `ulonglong ForEachArrayEmitterInTree(longlong * param_1, undefined8 * param_2)`
+pub const ForEachArrayEmitterInTree: u64 = 15054;
+/// `ForEachArrayEntryLocked` at 0x9723f0 (decompiler, medium); signature (medium): `undefined ForEachArrayEntryLocked(longlong param_1, undefined * param_2)`
+pub const ForEachArrayEntryLocked: u64 = 52423;
+/// `ForEachCommaSeparatedToken` at 0xecfec0 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedToken(char * param_1, undefined8 * param_2)`
+pub const ForEachCommaSeparatedToken: u64 = 69870;
+/// `ForEachCommaSeparatedTokenWithContext` at 0xecf510 (decompiler, medium); signature (low): `undefined ForEachCommaSeparatedTokenWithContext(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const ForEachCommaSeparatedTokenWithContext: u64 = 69853;
+/// `ForEachElementInBlockList` at 0xabc410 (decompiler, medium); signature (low): `undefined ForEachElementInBlockList(longlong param_1, longlong * param_2, undefined * param_3, undefined4 param_4, undefined8 param_5)`
+pub const ForEachElementInBlockList: u64 = 57955;
+/// `ForEachEntryCallVfunc41` at 0x1059330 (decompiler, medium); signature (low): `undefined ForEachEntryCallVfunc41(longlong param_1, undefined8 param_2)`
+pub const ForEachEntryCallVfunc41: u64 = 78098;
+/// `ForEachEntryWithQualifyingExtraList` at 0x237410 (decompiler, medium); signature (low): `undefined ForEachEntryWithQualifyingExtraList(undefined8 * param_1, longlong * param_2, uint param_3)`
+pub const ForEachEntryWithQualifyingExtraList: u64 = 16097;
 /// `ForEachField60EntryCallVfunc58` at 0x397810 (decompiler, medium); signature (low): `undefined ForEachField60EntryCallVfunc58(longlong param_1, undefined8 param_2)`
 pub const ForEachField60EntryCallVfunc58: u64 = 23824;
 /// `ForEachHashEntryLocked` at 0x2c3060 (decompiler, medium); signature (low): `undefined ForEachHashEntryLocked(longlong param_1, undefined8 param_2)`
@@ -8553,25 +8571,3 @@ pub const GameSetting_fIntimidateConfidenceMultFoolhardy__init: u64 = 1855;
 pub const GameSetting_fIntimidateSpeechcraftCurve__atexit: u64 = 167066;
 /// `GameSetting_fIntimidateSpeechcraftCurve__init` at 0x2cd40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__init(void)`
 pub const GameSetting_fIntimidateSpeechcraftCurve__init: u64 = 1856;
-/// `GameSetting_fInvisibilityMaxRefraction__atexit` at 0x173ca10 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__atexit(void)`
-pub const GameSetting_fInvisibilityMaxRefraction__atexit: u64 = 165337;
-/// `GameSetting_fInvisibilityMaxRefraction__init` at 0x87a0 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMaxRefraction__init(void)`
-pub const GameSetting_fInvisibilityMaxRefraction__init: u64 = 147;
-/// `GameSetting_fInvisibilityMinRefraction__atexit` at 0x173ca60 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__atexit(void)`
-pub const GameSetting_fInvisibilityMinRefraction__atexit: u64 = 165338;
-/// `GameSetting_fInvisibilityMinRefraction__init` at 0x8820 (crt_init, medium); signature (high): `void GameSetting_fInvisibilityMinRefraction__init(void)`
-pub const GameSetting_fInvisibilityMinRefraction__init: u64 = 148;
-/// `GameSetting_fIronSightsDOFDistance__atexit` at 0x17679b0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__atexit(void)`
-pub const GameSetting_fIronSightsDOFDistance__atexit: u64 = 168093;
-/// `GameSetting_fIronSightsDOFDistance__init` at 0x4c9e0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFDistance__init(void)`
-pub const GameSetting_fIronSightsDOFDistance__init: u64 = 2883;
-/// `GameSetting_fIronSightsDOFRange__atexit` at 0x1767a00 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__atexit(void)`
-pub const GameSetting_fIronSightsDOFRange__atexit: u64 = 168094;
-/// `GameSetting_fIronSightsDOFRange__init` at 0x4ca60 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFRange__init(void)`
-pub const GameSetting_fIronSightsDOFRange__init: u64 = 2884;
-/// `GameSetting_fIronSightsDOFStrengthCap__atexit` at 0x1767a50 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__atexit(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__atexit: u64 = 168095;
-/// `GameSetting_fIronSightsDOFStrengthCap__init` at 0x4cae0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFStrengthCap__init(void)`
-pub const GameSetting_fIronSightsDOFStrengthCap__init: u64 = 2885;
-/// `GameSetting_fIronSightsDOFSwitchSeconds__atexit` at 0x1767aa0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsDOFSwitchSeconds__atexit(void)`
-pub const GameSetting_fIronSightsDOFSwitchSeconds__atexit: u64 = 168096;

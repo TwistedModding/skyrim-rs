@@ -37,16 +37,6 @@ impl crate::BSScript__IFindBoundObjectFunctor {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BSScript__IFunction {
-    /// `BSScript::IFunction::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 104657, rva 0x14aa3a0).
-    /// `IFunction * vdtor(IFunction * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BSScript__ILoader {
     /// `BSScript::ILoader::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 54372, rva 0x9f0840).
     /// `ILoader * vdtor(ILoader * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`

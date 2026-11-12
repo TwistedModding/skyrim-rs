@@ -11,6 +11,8 @@ pub use types::*;
 mod api;
 #[cfg(feature = "vmstack")]
 pub use api::*;
+#[cfg(all(feature = "vmstack", feature = "tier-high"))]
+mod tier_high;
 #[cfg(all(feature = "vmstack", feature = "tier-low"))]
 mod tier_low;
 #[cfg(all(feature = "vmstack", feature = "untiered"))]

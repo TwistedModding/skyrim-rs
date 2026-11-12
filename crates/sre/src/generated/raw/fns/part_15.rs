@@ -7,6 +7,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAdditionalGeometryData::vfunc_24` at 0xf1b910 (rtti, high); signature (low): `undefined vfunc_24(NiAdditionalGeometryData * this, longlong param_1)`
+pub const NiAdditionalGeometryData__vfunc_24: u64 = 71719;
+/// `NiAdditionalGeometryData::vfunc_24_sub0` at 0xf1cba0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, ushort param_5)`
+pub const NiAdditionalGeometryData__vfunc_24_sub0: u64 = 71757;
+/// `NiAdditionalGeometryData::vfunc_25` at 0xf1bc60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiAdditionalGeometryData__vfunc_25: u64 = 71720;
+/// `NiAdditionalGeometryData::vfunc_26` at 0xf1bc70 (rtti, high); signature (untiered): `undefined vfunc_26(NiAdditionalGeometryData * this, longlong * param_1)`
+pub const NiAdditionalGeometryData__vfunc_26: u64 = 71721;
+/// `NiAdditionalGeometryData::vfunc_27` at 0xf1bc80 (rtti, high); signature (low): `undefined vfunc_27(NiAdditionalGeometryData * this, longlong param_1)`
+pub const NiAdditionalGeometryData__vfunc_27: u64 = 71722;
+/// `NiAdditionalGeometryData::vfunc_27_sub0` at 0xf1ce40 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2, longlong param_3, uint param_4, ushort param_5)`
+pub const NiAdditionalGeometryData__vfunc_27_sub0: u64 = 71758;
+/// `NiAdditionalGeometryData::vfunc_28` at 0xf1bf50 (rtti, high); signature (low): `ulonglong vfunc_28(NiAdditionalGeometryData * this, longlong * param_1)`
+pub const NiAdditionalGeometryData__vfunc_28: u64 = 71723;
+/// `NiAllocator::vdtor` at 0xeae960 (layout_inference, medium); signature (low): `NiAllocator * vdtor(NiAllocator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAllocator__vdtor: u64 = 69055;
+/// `NiAlphaAccumulator::Create` at 0xf0f2b0 (string, high); signature (low): `NiBackToFrontAccumulator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAlphaAccumulator__Create: u64 = 71319;
+/// `NiAlphaAccumulator::ctor` at 0xf0f370 (layout_inference, high); signature (high): `NiAlphaAccumulator * ctor(NiAlphaAccumulator * this)`
+pub const NiAlphaAccumulator__ctor: u64 = 71320;
+/// `NiAlphaAccumulator::dtor` at 0xf0f3b0 (layout_inference, high); signature (high): `undefined dtor(NiAlphaAccumulator * this)`
+pub const NiAlphaAccumulator__dtor: u64 = 71321;
 /// `NiAlphaAccumulator::vdtor` at 0xf0f4a0 (layout_inference, medium); signature (low): `NiAlphaAccumulator * vdtor(NiAlphaAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiAlphaAccumulator__vdtor: u64 = 71324;
 /// `NiAlphaAccumulator::vfunc_2` at 0xf0f4e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -8709,19 +8731,3 @@ pub const Papyrus__Cell__SetFogPlanes_sub0: u64 = 18945;
 pub const Papyrus__Cell__SetFogPlanes_sub1: u64 = 18947;
 /// `Papyrus::Cell::SetFogPower` at 0xa3ffa0 (papyrus_native, high); signature (medium): `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
 pub const Papyrus__Cell__SetFogPower: u64 = 56059;
-/// `Papyrus::Cell::SetPublic` at 0xa3ffb0 (papyrus_native, high); signature (medium): `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
-pub const Papyrus__Cell__SetPublic: u64 = 56060;
-/// `Papyrus::Debug::CenterOnCell` at 0xa1eee0 (papyrus_native, high); signature (medium): `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CenterOnCell: u64 = 55367;
-/// `Papyrus::Debug::CenterOnCellAndWait` at 0xa1ef60 (papyrus_native, high); signature (medium): `bool CenterOnCellAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CenterOnCellAndWait: u64 = 55368;
-/// `Papyrus::Debug::CloseUserLog` at 0xa1f0a0 (papyrus_native, high); signature (medium): `void CloseUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__CloseUserLog: u64 = 55370;
-/// `Papyrus::Debug::CloseUserLog_sub0` at 0x9d8b30 (callgraph, medium); signature (untiered): `ulonglong * CloseUserLog_sub0(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Debug__CloseUserLog_sub0: u64 = 53932;
-/// `Papyrus::Debug::DebugChannelNotify` at 0xa1f0f0 (papyrus_native, high); signature (medium): `void DebugChannelNotify(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1)`
-pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
-/// `Papyrus::Debug::DumpAliasData` at 0xa1f110 (papyrus_native, high); signature (medium): `void DumpAliasData(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESQuest * a0)`
-pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
-/// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
-pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;

@@ -98,20 +98,6 @@ pub struct BSScript__IFreezeQuery {
 const _: () = assert!(size_of::<BSScript__IFreezeQuery>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__IFreezeQuery, __vftable) == 0x0);
 
-/// `BSScript::IFunction`: size 0x8 (exact, low).
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of BSScript::Internal::ScriptFunction at 0x8 (soft).
-/// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
-pub struct BSScript__IFunction {
-    /// +0x0 `vtbl:BSScript::IFunction:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSScript__IFunction_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSScript__IFunction>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__IFunction, __vftable) == 0x0);
-
 /// `BSScript::IHandleReaderWriter`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
 #[repr(C)]

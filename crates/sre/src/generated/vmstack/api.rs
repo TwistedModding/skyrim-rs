@@ -75,33 +75,6 @@ impl crate::BSScript__CompiledScriptLoader {
 }
 
 impl crate::BSScript__Internal__AutoPropGetFunction {
-    /// `BSScript::Internal::AutoPropGetFunction::GetFunctionName`, vtable slot 1: &+0x18
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::AutoPropGetFunction* this)`
-    #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::AutoPropGetFunction::GetIsNative`, vtable slot 8: true
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::AutoPropGetFunction* this)`
-    #[inline]
-    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::AutoPropGetFunction::GetLineForIP`, vtable slot 17: false, *line = 0
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::AutoPropGetFunction* this, u32 ip, u32* line)`
-    ///
-    /// # Safety
-    /// `line` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ip, line) } }
-    /// `BSScript::Internal::AutoPropGetFunction::GetObjectTypeName`, vtable slot 2: &+0x10
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::AutoPropGetFunction* this)`
-    #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::Internal::AutoPropGetFunction.name", 0x18, crate::BSFixedString) } }
@@ -131,18 +104,6 @@ impl crate::BSScript__Internal__AutoPropGetFunction {
 }
 
 impl crate::BSScript__Internal__AutoPropSetFunction {
-    /// `BSScript::Internal::AutoPropSetFunction::GetFunctionName`, vtable slot 1: &+0x18
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::AutoPropSetFunction* this)`
-    #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::AutoPropSetFunction::GetObjectTypeName`, vtable slot 2: &+0x10
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::AutoPropSetFunction* this)`
-    #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSScript::Internal::AutoPropSetFunction.name", 0x18, crate::BSFixedString) } }
@@ -311,33 +272,6 @@ impl crate::BSScript__Internal__FunctionMessage {
 }
 
 impl crate::BSScript__Internal__NativeFunctionStub {
-    /// `BSScript::Internal::NativeFunctionStub::GetFunctionName`, vtable slot 1: &+0x10
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
-    #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::NativeFunctionStub::GetIsNative`, vtable slot 8: true (B0 01 C3)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::NativeFunctionStub* this)`
-    #[inline]
-    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::NativeFunctionStub::GetLineForIP`, vtable slot 17: false, *line = 0
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::NativeFunctionStub* this, u32 ip, u32* line)`
-    ///
-    /// # Safety
-    /// `line` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ip, line) } }
-    /// `BSScript::Internal::NativeFunctionStub::GetObjectTypeName`, vtable slot 2: &+0x18
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::NativeFunctionStub* this)`
-    #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
     /// `BSScript::Internal::NativeFunctionStub::GetSourceFileName`, vtable slot 16: static BSFixedString "native"
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
@@ -371,26 +305,6 @@ impl crate::BSScript__Internal__NativeFunctionStub {
 }
 
 impl crate::BSScript__Internal__ScriptFunction {
-    /// `BSScript::Internal::ScriptFunction::Call`, vtable slot 15: 4 when the stack is null or has no frames; 1 when called from the interpreter (the interpreter continues inline in the pushed frame); else QueueCodeTasklet and 2 (3 when queueing failed)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `u32 (BSScript::Internal::ScriptFunction* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool fromTasklet)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `stack` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, fromTasklet: bool) -> u32 { unsafe { virtual_function!(self, 15, (*const Self, *mut c_void, *mut crate::BSScript__ErrorLogger, *mut crate::BSScript__Internal__VirtualMachine, bool) -> u32)(core::ptr::from_ref(self), stack, logger, vm, fromTasklet) } }
-    /// `BSScript::Internal::ScriptFunction::CopyReturnType`, vtable slot 4: *out = +0x28
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `BSScript::TypeInfo* (BSScript::Internal::ScriptFunction* this, BSScript::TypeInfo* out)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn copy_return_type(&self, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo)(core::ptr::from_ref(self), out) } }
     /// `BSScript::Internal::ScriptFunction::Destroy`, vtable slot 0: releases the line table, the strings, the instruction buffer and the variables; frees 0x80 when flags & 1
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
@@ -400,119 +314,12 @@ impl crate::BSScript__Internal__ScriptFunction {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn destroy(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
-    /// `BSScript::Internal::ScriptFunction::GetDocString`, vtable slot 13: &docString (+0x60)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_doc_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 13, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetFunctionName`, vtable slot 1: &name (+0x10)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetFunctionType`, vtable slot 11: +0x58
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `u16 (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_function_type(&self) -> u16 { unsafe { virtual_function!(self, 11, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetIsCallableFromTasklet`, vtable slot 19: true
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetIsEmpty`, vtable slot 10: instructionBitCount (+0x48) == 0
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetIsNative`, vtable slot 8: false; code bytes 32 C0 C3
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetIsStatic`, vtable slot 9: +0x5a
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetLineForIP`, vtable slot 17: line table lookup: false and *line = 0 when lineNumbers/lineCount are 0; else index = InstructionIndexAtBit(&+0x48, ip), *line = lineNumbers[min(index, lineCount-1)], true
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `bool (BSScript::Internal::ScriptFunction* this, u32 ipBitOffset, u32* line)`
-    ///
-    /// # Safety
-    /// `line` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_line_for_ip(&self, ipBitOffset: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ipBitOffset, line) } }
-    /// `BSScript::Internal::ScriptFunction::GetObjectTypeName`, vtable slot 2: &objectTypeName (+0x18)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetParamCount`, vtable slot 5: +0x38
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `u16 (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_param_count(&self) -> u16 { unsafe { virtual_function!(self, 5, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetParamNameAndType`, vtable slot 6: variables[index] for index < paramCount, else a static empty pair
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `void (BSScript::Internal::ScriptFunction* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `name`, `type_` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (*const Self, u32, *mut crate::BSFixedString, *mut crate::BSScript__TypeInfo))(core::ptr::from_ref(self), index, name, type_) } }
     /// `BSScript::Internal::ScriptFunction::GetSourceFileName`, vtable slot 16: &sourceFileName (+0x68)
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.
     /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
     #[inline]
     pub fn get_source_file_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 16, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetStackFrameSize`, vtable slot 7: paramCount + locals = +0x3a
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `u32 (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_stack_frame_size(&self) -> u32 { unsafe { virtual_function!(self, 7, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetStateName`, vtable slot 3: &stateName (+0x20)
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `const BSFixedString* (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_state_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::GetUserFlags`, vtable slot 12: +0x40
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `u32 (BSScript::Internal::ScriptFunction* this)`
-    #[inline]
-    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-    /// `BSScript::Internal::ScriptFunction::InsertLocals`, vtable slot 14: sets frame variables paramCount..variableCount-1 to {type, 0} of their declared types
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `void (BSScript::Internal::ScriptFunction* this, BSScript::StackFrame* frame)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `frame` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn insert_locals(&self, frame: *mut crate::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (*const Self, *mut crate::BSScript__StackFrame))(core::ptr::from_ref(self), frame) } }
-    /// `BSScript::Internal::ScriptFunction::SetIsCallableFromTasklet`, vtable slot 20: no-op
-    ///
-    /// Semantic, vmstack pass, high; called through the object's vtable.
-    /// `void (BSScript::Internal::ScriptFunction* this, bool)`
-    #[inline]
-    pub fn set_is_callable_from_tasklet(&self, a1: bool) { unsafe { virtual_function!(self, 20, (*const Self, bool))(core::ptr::from_ref(self), a1) } }
     /// `BSScript::Internal::ScriptFunction::TryGetVariableName`, vtable slot 18: name of variable index (parameters and locals, index < +0x3a); false and the empty string otherwise
     ///
     /// Semantic, vmstack pass, high; called through the object's vtable.

@@ -7,6 +7,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `IntersectCapsuleTriangle` at 0xf39490 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleTriangle(float param_1, longlong param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, undefined4 * param_8, float * param_9, char param_10, float * param_11, float * param_12)`
+pub const IntersectCapsuleTriangle: u64 = 72148;
+/// `IntersectLineWithCircle2D` at 0x11fc480 (decompiler, medium); signature (medium): `undefined1 IntersectLineWithCircle2D(float * param_1, float * param_2, undefined4 * param_3)`
+pub const IntersectLineWithCircle2D: u64 = 91542;
+/// `IntersectLineWithSegmentOrNearestEndpointXY` at 0x11faea0 (decompiler, medium); signature (medium): `undefined IntersectLineWithSegmentOrNearestEndpointXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectLineWithSegmentOrNearestEndpointXY: u64 = 91520;
+/// `IntersectLineWithSegmentXY` at 0x11fb060 (decompiler, medium); signature (medium): `undefined8 IntersectLineWithSegmentXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectLineWithSegmentXY: u64 = 91521;
+/// `IntersectMatchingFieldsFlags1A` at 0xdff6f0 (decompiler, medium); signature (low): `undefined4 * IntersectMatchingFieldsFlags1A(longlong param_1, undefined4 * param_2, longlong param_3)`
+pub const IntersectMatchingFieldsFlags1A: u64 = 87443;
+/// `IntersectMatchingFieldsFlags42` at 0xdff1d0 (decompiler, medium); signature (low): `undefined4 * IntersectMatchingFieldsFlags42(longlong param_1, undefined4 * param_2, longlong param_3)`
+pub const IntersectMatchingFieldsFlags42: u64 = 87442;
+/// `IntersectRayTriangle` at 0xf25230 (decompiler, medium); signature (medium): `undefined8 IntersectRayTriangle(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5, char param_6, float * param_7, float * param_8, float * param_9, float * param_10)`
+pub const IntersectRayTriangle: u64 = 71983;
+/// `IntersectRayWithCircle2D` at 0x11fcfc0 (decompiler, medium); signature (medium): `undefined8 IntersectRayWithCircle2D(float * param_1, float * param_2, float * param_3, float param_4, float * param_5, float * param_6)`
+pub const IntersectRayWithCircle2D: u64 = 91555;
+/// `IntersectRayWithOrientedBox` at 0xf4e6a0 (decompiler, medium); signature (low): `undefined8 IntersectRayWithOrientedBox(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
+pub const IntersectRayWithOrientedBox: u64 = 72334;
 /// `IntersectRayWithTriangle` at 0xb3e720 (decompiler, medium); signature (low): `undefined1 * IntersectRayWithTriangle(undefined1 * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, float * param_8, float * param_9, char param_10)`
 pub const IntersectRayWithTriangle: u64 = 60577;
 /// `IntersectRectangleObject` at 0xda68b0 (decompiler, medium); signature (low): `undefined IntersectRectangleObject(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8455,25 +8473,3 @@ pub const NiAdditionalGeometryData__dtor: u64 = 71725;
 pub const NiAdditionalGeometryData__vdtor: u64 = 71765;
 /// `NiAdditionalGeometryData::vfunc_2` at 0xf1d6f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
 pub const NiAdditionalGeometryData__vfunc_2: u64 = 71766;
-/// `NiAdditionalGeometryData::vfunc_24` at 0xf1b910 (rtti, high); signature (low): `undefined vfunc_24(NiAdditionalGeometryData * this, longlong param_1)`
-pub const NiAdditionalGeometryData__vfunc_24: u64 = 71719;
-/// `NiAdditionalGeometryData::vfunc_24_sub0` at 0xf1cba0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, ushort param_5)`
-pub const NiAdditionalGeometryData__vfunc_24_sub0: u64 = 71757;
-/// `NiAdditionalGeometryData::vfunc_25` at 0xf1bc60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiAdditionalGeometryData__vfunc_25: u64 = 71720;
-/// `NiAdditionalGeometryData::vfunc_26` at 0xf1bc70 (rtti, high); signature (untiered): `undefined vfunc_26(NiAdditionalGeometryData * this, longlong * param_1)`
-pub const NiAdditionalGeometryData__vfunc_26: u64 = 71721;
-/// `NiAdditionalGeometryData::vfunc_27` at 0xf1bc80 (rtti, high); signature (low): `undefined vfunc_27(NiAdditionalGeometryData * this, longlong param_1)`
-pub const NiAdditionalGeometryData__vfunc_27: u64 = 71722;
-/// `NiAdditionalGeometryData::vfunc_27_sub0` at 0xf1ce40 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2, longlong param_3, uint param_4, ushort param_5)`
-pub const NiAdditionalGeometryData__vfunc_27_sub0: u64 = 71758;
-/// `NiAdditionalGeometryData::vfunc_28` at 0xf1bf50 (rtti, high); signature (low): `ulonglong vfunc_28(NiAdditionalGeometryData * this, longlong * param_1)`
-pub const NiAdditionalGeometryData__vfunc_28: u64 = 71723;
-/// `NiAllocator::vdtor` at 0xeae960 (layout_inference, medium); signature (low): `NiAllocator * vdtor(NiAllocator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAllocator__vdtor: u64 = 69055;
-/// `NiAlphaAccumulator::Create` at 0xf0f2b0 (string, high); signature (low): `NiBackToFrontAccumulator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiAlphaAccumulator__Create: u64 = 71319;
-/// `NiAlphaAccumulator::ctor` at 0xf0f370 (layout_inference, high); signature (high): `NiAlphaAccumulator * ctor(NiAlphaAccumulator * this)`
-pub const NiAlphaAccumulator__ctor: u64 = 71320;
-/// `NiAlphaAccumulator::dtor` at 0xf0f3b0 (layout_inference, high); signature (high): `undefined dtor(NiAlphaAccumulator * this)`
-pub const NiAlphaAccumulator__dtor: u64 = 71321;

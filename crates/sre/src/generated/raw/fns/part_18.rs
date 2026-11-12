@@ -7,6 +7,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetByte59ClearByte58Locked` at 0x9bc300 (decompiler, medium); signature (low): `undefined8 * SetByte59ClearByte58Locked(longlong param_1)`
+pub const SetByte59ClearByte58Locked: u64 = 53558;
+/// `SetByte84AndRetargetFloat70` at 0x15c40a0 (decompiler, medium); signature (medium): `undefined SetByte84AndRetargetFloat70(longlong param_1, byte param_2)`
+pub const SetByte84AndRetargetFloat70: u64 = 454323;
+/// `SetByte9True` at 0x4c9e40 (decompiler, high); signature (high): `undefined SetByte9True(longlong param_1)`
+pub const SetByte9True: u64 = 30449;
+/// `SetByteArray40Element` at 0xe8e180 (decompiler, medium); signature (medium): `undefined SetByteArray40Element(longlong param_1, uint param_2, undefined1 param_3)`
+pub const SetByteArray40Element: u64 = 89971;
+/// `SetByteArrayCapacity` at 0xe67eb0 (decompiler, medium); signature (low): `undefined SetByteArrayCapacity(longlong * param_1, undefined8 param_2, longlong param_3)`
+pub const SetByteArrayCapacity: u64 = 89267;
+/// `SetByteArrayCapacityRoundedTo4` at 0xd653a0 (decompiler, high); signature (high): `undefined SetByteArrayCapacityRoundedTo4(longlong * param_1, undefined8 param_2, longlong param_3)`
+pub const SetByteArrayCapacityRoundedTo4: u64 = 84283;
+/// `SetByteCAAndGetField90` at 0xac6cc0 (decompiler, high); signature (low): `undefined8 SetByteCAAndGetField90(longlong param_1)`
+pub const SetByteCAAndGetField90: u64 = 58287;
+/// `SetByteField10` at 0x1e88a0 (decompiler, high); signature (high): `undefined SetByteField10(longlong param_1, undefined1 param_2)`
+pub const SetByteField10: u64 = 14744;
+/// `SetByteField108` at 0x1149910 (decompiler, high); signature (high): `undefined SetByteField108(longlong param_1)`
+pub const SetByteField108: u64 = 81813;
+/// `SetByteField108_2` at 0x1149920 (decompiler, high); signature (high): `undefined SetByteField108_2(longlong param_1)`
+pub const SetByteField108_2: u64 = 81814;
+/// `SetByteField108_3` at 0x1149930 (decompiler, high); signature (high): `undefined SetByteField108_3(longlong param_1)`
+pub const SetByteField108_3: u64 = 81815;
 /// `SetByteField108_4` at 0x1149940 (decompiler, high); signature (high): `undefined SetByteField108_4(longlong param_1)`
 pub const SetByteField108_4: u64 = 81816;
 /// `SetByteField14AndPropagate` at 0x257c70 (decompiler, medium); signature (medium): `undefined1 SetByteField14AndPropagate(longlong param_1, byte param_2)`
@@ -8121,25 +8143,3 @@ pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
 pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
 /// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
 pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;
-/// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (low): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; semantic: count of an item in the base container (high); signature `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
-pub const TESContainer__CountObjectsInContainer: u64 = 14529;
-/// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
-pub type TESContainer__CountObjectsInContainer_fn = unsafe extern "C" fn(this: *mut crate::TESContainer, item: *mut crate::TESForm) -> i32;
-/// `TESContainer::ctor` at 0x1dffe0 (layout_inference, medium); signature (high): `TESContainer * ctor(TESContainer * this)`
-pub const TESContainer__ctor: u64 = 14510;
-/// `TESContainer::dtor` at 0x1e0000 (layout_inference, high); signature (high): `undefined dtor(TESContainer * this)`
-pub const TESContainer__dtor: u64 = 14511;
-/// `TESContainer::vdtor` at 0x1e1160 (layout_inference, medium); signature (low): `TESContainer * vdtor(TESContainer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESContainer__vdtor: u64 = 14545;
-/// `TESContainer::vfunc_1` at 0x1e0040 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const TESContainer__vfunc_1: u64 = 14512;
-/// `TESContainer::vfunc_2` at 0x1e0050 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const TESContainer__vfunc_2: u64 = 14513;
-/// `TESContainer::vfunc_3` at 0x1e0060 (rtti, medium); signature (low): `undefined vfunc_3(TESContainer * this, undefined8 param_1)`
-pub const TESContainer__vfunc_3: u64 = 14514;
-/// `TESCustomPackageData::ctor` at 0x49ecc0 (layout_inference, medium); signature (high): `TESCustomPackageData * ctor(TESCustomPackageData * this)`
-pub const TESCustomPackageData__ctor: u64 = 29654;
-/// `TESCustomPackageData::ctor` at 0x49ed10 (layout_inference, medium); signature (low): `TESCustomPackageData * ctor(TESCustomPackageData * this, longlong param_1, uint * param_2, undefined8 param_3)`
-pub const TESCustomPackageData__ctor_2: u64 = 29655;
-/// `TESCustomPackageData::dtor` at 0x49ee70 (layout_inference, high); signature (low): `undefined dtor(TESCustomPackageData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCustomPackageData__dtor: u64 = 29656;

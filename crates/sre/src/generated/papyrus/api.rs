@@ -107,6 +107,152 @@ impl crate::BSScript__Array {
     pub fn elementType_ptr(&self) -> *mut crate::BSScript__TypeInfo { Self::__member_elementType(core::ptr::from_ref(self)) }
 }
 
+impl crate::BSScript__IFunction {
+    /// `BSScript::IFunction::Call`, vtable slot 15: runs the function on the stack's top frame: 0 completed, 1 continue in the new frame (ScriptFunction), 2 latent, 4 failed
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `u32 (BSScript::IFunction* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool fromTasklet)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `stack` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, fromTasklet: bool) -> u32 { unsafe { virtual_function!(self, 15, (*const Self, *mut c_void, *mut crate::BSScript__ErrorLogger, *mut crate::BSScript__Internal__VirtualMachine, bool) -> u32)(core::ptr::from_ref(self), stack, logger, vm, fromTasklet) } }
+    /// `BSScript::IFunction::CopyReturnType`, vtable slot 4: copies the return type into out and returns out
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `BSScript::TypeInfo* (BSScript::IFunction* this, BSScript::TypeInfo* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn copy_return_type(&self, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo)(core::ptr::from_ref(self), out) } }
+    /// `BSScript::IFunction::GetDocString`, vtable slot 13: the documentation string
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_doc_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 13, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetFunctionName`, vtable slot 1: the function's name
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetFunctionType`, vtable slot 11: 0 normal (natives, stubs), 1 property getter (AutoPropGetFunction), 2 property setter (AutoPropSetFunction), ScriptFunction's +0x58
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `u32 (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_function_type(&self) -> u32 { unsafe { virtual_function!(self, 11, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetIsCallableFromTasklet`, vtable slot 19: true for ScriptFunction and the auto-property functions; NativeFunctionBase and NativeFunctionStub return +0x41 (set by slot 20)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetIsEmpty`, vtable slot 10: a function without code (ScriptFunction: instruction bit count +0x48 == 0; false for the others)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetIsNative`, vtable slot 8: true for NativeFunctionBase, NativeFunctionStub and both auto-property functions (mov al,1), false for ScriptFunction (xor al,al)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetIsStatic`, vtable slot 9: a global function (NativeFunctionBase/Stub +0x40, ScriptFunction +0x5a, false for the auto-property functions); ObjectTypeInfo::BindNativeFunction picks the global table by it
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetLineForIP`, vtable slot 17: the source line of an instruction offset; false for natives
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this, u32 ip, u32* line)`
+    ///
+    /// # Safety
+    /// `line` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ip, line) } }
+    /// `BSScript::IFunction::GetObjectTypeName`, vtable slot 2: the script class's name
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetParamCount`, vtable slot 5: the parameter count (NativeFunctionBase returns its +0x3a, which equals it for natives; AutoPropGet 0, AutoPropSet 1)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `u32 (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_param_count(&self) -> u32 { unsafe { virtual_function!(self, 5, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetParamNameAndType`, vtable slot 6: name and type of parameter index
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `void (BSScript::IFunction* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `name`, `type_` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (*const Self, u32, *mut crate::BSFixedString, *mut crate::BSScript__TypeInfo))(core::ptr::from_ref(self), index, name, type_) } }
+    /// `BSScript::IFunction::GetSourceFilename`, vtable slot 16: the source file name (a shared static string for NativeFunctionBase, "native" for the stub)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_source_filename(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 16, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetStackFrameSize`, vtable slot 7: the number of Variables a frame of this function holds (parameters plus locals)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `u32 (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_stack_frame_size(&self) -> u32 { unsafe { virtual_function!(self, 7, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetStateName`, vtable slot 3: the state's name, empty for the empty state
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `const BSFixedString* (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_state_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::GetUserFlags`, vtable slot 12: user flags (NativeFunctionBase/Stub +0x44, ScriptFunction +0x40, 0 for the auto-property functions)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `u32 (BSScript::IFunction* this)`
+    #[inline]
+    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `BSScript::IFunction::InsertLocals`, vtable slot 14: initialises the frame's locals (nothing for natives)
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `void (BSScript::IFunction* this, BSScript::StackFrame* frame)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `frame` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn insert_locals(&self, frame: *mut crate::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (*const Self, *mut crate::BSScript__StackFrame))(core::ptr::from_ref(self), frame) } }
+    /// `BSScript::IFunction::SetIsCallableFromTasklet`, vtable slot 20: NativeFunctionBase and NativeFunctionStub store it in +0x41 (mov [rcx+0x41],dl); a no-op (ret 0) for the others
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `void (BSScript::IFunction* this, bool callable)`
+    #[inline]
+    pub fn set_is_callable_from_tasklet(&self, callable: bool) { unsafe { virtual_function!(self, 20, (*const Self, bool))(core::ptr::from_ref(self), callable) } }
+    /// `BSScript::IFunction::TryGetParamName`, vtable slot 18: the name of variable index (parameters and locals), false and the empty string past the count
+    ///
+    /// Semantic, papyrus pass, high; called through the object's vtable.
+    /// `bool (BSScript::IFunction* this, u32 index, BSFixedString* out)`
+    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
+    ///
+    /// # Safety
+    /// `out` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn try_get_param_name(&self, index: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 18, (*const Self, u32, *mut crate::BSFixedString) -> bool)(core::ptr::from_ref(self), index, out) } }
+}
+
 impl crate::BSScript__IFunctionArguments {
     /// `BSScript::IFunctionArguments::operator()`, vtable slot 1: resize out to the argument count and assign the Variables; return true
     ///
@@ -671,16 +817,6 @@ impl crate::BSScript__Internal__VirtualMachine {
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
-    /// `BSScript::NF_util::NativeFunctionBase::Call`, vtable slot 15: the VM's entry into a native: copies the frame's self (frame+0x28) and stack id (stack+0x80), checks HasBinding (slot 21), calls CallBinding (slot 22) and stores the result in the stack's return Variable (stack+0x70); returns 0 completed, 2 latent, 4 failed, with the errors 'Cannot call native function %%s because the stack is NULL / the binding is NULL' and 'Unable to call %%s - no native object bound to the script object, or object is of incorrect type'; for a latent native (+0x42) it first registers the wait (0x14b9ee0), then calls CallBinding and expects the result Variable to be a true Bool; anything else logs 'Latent function %%s did not successfully start - aborting call' (or the no-native-object error) and calls ReturnFromLatent with None itself; either way it returns 2, and the executor (0x14ba380) does nothing further with the stack on 2
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `u32 (BSScript::NF_util::NativeFunctionBase* this, BSTSmartPointer<BSScript::Stack>* stack, BSScript::ErrorLogger* logger, BSScript::Internal::VirtualMachine* vm, bool)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `stack` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn call(&self, stack: *mut c_void, logger: *mut crate::BSScript__ErrorLogger, vm: *mut crate::BSScript__Internal__VirtualMachine, a4: bool) -> u32 { unsafe { virtual_function!(self, 15, (*const Self, *mut c_void, *mut crate::BSScript__ErrorLogger, *mut crate::BSScript__Internal__VirtualMachine, bool) -> u32)(core::ptr::from_ref(self), stack, logger, vm, a4) } }
     /// `BSScript::NF_util::NativeFunctionBase::CallBinding`, vtable slot 22: pure here; each NativeFunction<N> instantiation reads its arguments from the frame (Stack::GetStackFrameVariable(stack, frame, i, Stack::GetPageForFrame(stack, frame)) for i below frame+0x38), converts self through the handle policy, calls the C callback at +0x50 as callback(vm, stackId, self, args...) and writes the converted return value into result; false when self could not be converted
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
@@ -691,154 +827,12 @@ impl crate::BSScript__NF_util__NativeFunctionBase {
     /// `self_`, `result`, `frame` must point to what the engine expects.
     #[inline]
     pub unsafe fn call_binding(&self, self_: *mut crate::BSScript__Variable, vm: *mut crate::BSScript__Internal__VirtualMachine, stackId: u32, result: *mut crate::BSScript__Variable, frame: *mut crate::BSScript__StackFrame) -> bool { unsafe { virtual_function!(self, 22, (*const Self, *mut crate::BSScript__Variable, *mut crate::BSScript__Internal__VirtualMachine, u32, *mut crate::BSScript__Variable, *mut crate::BSScript__StackFrame) -> bool)(core::ptr::from_ref(self), self_, vm, stackId, result, frame) } }
-    /// `BSScript::NF_util::NativeFunctionBase::CopyReturnType`, vtable slot 4: copies +0x28 into out and returns out
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `BSScript::TypeInfo* (BSScript::NF_util::NativeFunctionBase* this, BSScript::TypeInfo* out)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn copy_return_type(&self, out: *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::BSScript__TypeInfo) -> *mut crate::BSScript__TypeInfo)(core::ptr::from_ref(self), out) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetDocString`, vtable slot 13: +0x48 (empty for natives)
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_doc_string(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 13, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionName`, vtable slot 1: the function name at +0x10
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_function_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 1, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetFunctionType`, vtable slot 11: 0 (a normal function, not a getter or setter)
-    ///
-    /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `u32 (BSScript::NF_util::NativeFunctionBase* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn get_function_type(&self) -> u32 { unsafe { virtual_function!(self, 11, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsCallableFromTasklet`, vtable slot 19: +0x41 (never set on a native: the VM keeps the flag in the type's function table)
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_is_callable_from_tasklet(&self) -> bool { unsafe { virtual_function!(self, 19, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsEmpty`, vtable slot 10: false
-    ///
-    /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn get_is_empty(&self) -> bool { unsafe { virtual_function!(self, 10, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsNative`, vtable slot 8: true
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_is_native(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetIsStatic`, vtable slot 9: +0x40, set from the ctor's isStatic argument
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_is_static(&self) -> bool { unsafe { virtual_function!(self, 9, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetLineForIP`, vtable slot 17: false, *line = 0: natives have no lines
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this, u32 ip, u32* line)`
-    ///
-    /// # Safety
-    /// `line` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_line_for_ip(&self, ip: u32, line: *mut u32) -> bool { unsafe { virtual_function!(self, 17, (*const Self, u32, *mut u32) -> bool)(core::ptr::from_ref(self), ip, line) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetObjectTypeName`, vtable slot 2: the script class name at +0x18; BindNativeMethod uses it to find or create the type
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_object_type_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamCount`, vtable slot 5: the total variable count at +0x3a (parameters plus locals, equal to the parameter count for natives)
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `u16 (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_param_count(&self) -> u16 { unsafe { virtual_function!(self, 5, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetParamNameAndType`, vtable slot 6: name and type of parameter index from the array at +0x30 (0x10 per entry); an index past +0x38 yields the empty name
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `void (BSScript::NF_util::NativeFunctionBase* this, u32 index, BSFixedString* name, BSScript::TypeInfo* type)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `name`, `type_` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn get_param_name_and_type(&self, index: u32, name: *mut crate::BSFixedString, type_: *mut crate::BSScript__TypeInfo) { unsafe { virtual_function!(self, 6, (*const Self, u32, *mut crate::BSFixedString, *mut crate::BSScript__TypeInfo))(core::ptr::from_ref(self), index, name, type_) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetSourceFilename`, vtable slot 16: a static string shared by every native
-    ///
-    /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn get_source_filename(&self) -> *mut crate::BSFixedString { unsafe { virtual_function!(self, 16, (*const Self) -> *mut crate::BSFixedString)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetStackFrameSize`, vtable slot 7: the variable count at +0x3a: the number of Variables the frame holds
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `u16 (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_stack_frame_size(&self) -> u16 { unsafe { virtual_function!(self, 7, (*const Self) -> u16)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetStateName`, vtable slot 3: the state name at +0x20 (empty for natives)
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `BSFixedString* (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_state_name(&self) -> Option<&'static crate::BSFixedString> { unsafe { virtual_function!(self, 3, (*const Self) -> Option<&'static crate::BSFixedString>)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::GetUserFlags`, vtable slot 12: +0x44 (0 for every native)
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `u32 (BSScript::NF_util::NativeFunctionBase* this)`
-    #[inline]
-    pub fn get_user_flags(&self) -> u32 { unsafe { virtual_function!(self, 12, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `BSScript::NF_util::NativeFunctionBase::HasBinding`, vtable slot 21: pure here; every NativeFunction<N> instantiation returns +0x50 != 0
     ///
     /// Semantic, papyrus pass, high; called through the object's vtable.
     /// `bool (BSScript::NF_util::NativeFunctionBase* this)`
     #[inline]
     pub fn has_binding(&self) -> bool { unsafe { virtual_function!(self, 21, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
-    /// `BSScript::NF_util::NativeFunctionBase::InsertLocals`, vtable slot 14: nothing: natives have no locals
-    ///
-    /// Semantic, papyrus pass, medium; called through the object's vtable.
-    /// `void (BSScript::NF_util::NativeFunctionBase* this, BSScript::StackFrame* frame)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// The pass rates the signature medium.
-    #[inline]
-    pub unsafe fn insert_locals(&self, frame: *mut crate::BSScript__StackFrame) { unsafe { virtual_function!(self, 14, (*const Self, *mut crate::BSScript__StackFrame))(core::ptr::from_ref(self), frame) } }
-    /// `BSScript::NF_util::NativeFunctionBase::SetIsCallableFromTasklet`, vtable slot 20: ignored by natives
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `void (BSScript::NF_util::NativeFunctionBase* this, bool)`
-    #[inline]
-    pub fn set_is_callable_from_tasklet(&self, a1: bool) { unsafe { virtual_function!(self, 20, (*const Self, bool))(core::ptr::from_ref(self), a1) } }
-    /// `BSScript::NF_util::NativeFunctionBase::TryGetParamName`, vtable slot 18: the name of parameter index, false (and the empty name) past the count
-    ///
-    /// Semantic, papyrus pass, high; called through the object's vtable.
-    /// `bool (BSScript::NF_util::NativeFunctionBase* this, u32 index, BSFixedString* out)`
-    /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
-    ///
-    /// # Safety
-    /// `out` must point to what the engine expects.
-    #[inline]
-    pub unsafe fn try_get_param_name(&self, index: u32, out: *mut crate::BSFixedString) -> bool { unsafe { virtual_function!(self, 18, (*const Self, u32, *mut crate::BSFixedString) -> bool)(core::ptr::from_ref(self), index, out) } }
     /// `BSScript::NF_util::NativeFunctionBase::ctor`: refCount 0, the base vtable, the three strings (state empty), returnType 0, the parameter array of paramCount entries named a0.., isStatic, +0x41/+0x44 0, empty doc string
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104653, rva 0x14aa0f0.
@@ -949,6 +943,33 @@ impl crate::BSScript__ObjectTypeInfo {
     /// May be null: `function`.
     #[inline]
     pub fn bind_native_function(&self, function: Option<&crate::BSScript__IFunction>, logger: &crate::BSScript__ErrorLogger) -> bool { unsafe { function!(104325, (*const Self, *const crate::BSScript__IFunction, *const crate::BSScript__ErrorLogger) -> bool)(core::ptr::from_ref(self), function.map_or(core::ptr::null(), core::ptr::from_ref), core::ptr::from_ref(logger)) } }
+    /// `BSScript::ObjectTypeInfo::FindGlobalFunction`: the global (static) function of that name on a linked type, or null; the table offset from the packed counts at +0x20/+0x24/+0x28 (see BSScript::ObjectTypeInfo.data)
+    ///
+    /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104355, rva 0x14967d0.
+    /// `BSTSmartPointer<BSScript::IFunction>* (BSScript::ObjectTypeInfo* this, const char* name)`
+    ///
+    /// # Safety
+    /// `name` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn find_global_function(&self, name: *const c_char) -> *mut c_void { unsafe { function!(104355, (*const Self, *const c_char) -> *mut c_void)(core::ptr::from_ref(self), name) } }
+    /// `BSScript::ObjectTypeInfo::FindMemberFunction`: the empty state's member function of that name on a linked type, or null; the table offset from the packed counts at +0x20/+0x24/+0x28 (see BSScript::ObjectTypeInfo.data)
+    ///
+    /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104352, rva 0x1496580.
+    /// `BSTSmartPointer<BSScript::IFunction>* (BSScript::ObjectTypeInfo* this, const char* name)`
+    ///
+    /// # Safety
+    /// `name` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn find_member_function(&self, name: *const c_char) -> *mut c_void { unsafe { function!(104352, (*const Self, *const c_char) -> *mut c_void)(core::ptr::from_ref(self), name) } }
+    /// `BSScript::ObjectTypeInfo::FindState`: the state record of that name (+0 the name, +8 packed: bits 0-8 the state's function count, bits 9 and up a byte offset from the record to its function table), or null
+    ///
+    /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104354, rva 0x14966d0.
+    /// `void* (BSScript::ObjectTypeInfo* this, const char* name)`
+    ///
+    /// # Safety
+    /// `name` must point to what the engine expects, and the result is an untyped pointer.
+    #[inline]
+    pub unsafe fn find_state(&self, name: *const c_char) -> *mut c_void { unsafe { function!(104354, (*const Self, *const c_char) -> *mut c_void)(core::ptr::from_ref(self), name) } }
     /// `BSScript::ObjectTypeInfo::GetFunction`: finds a static (global) function by name: on a type in link state 3 (or state 2 when linkedOnly is false) through ID_104355 (the skyrim-rs papyrus run got static natives for either flag value and no method on a linked type); on an unlinked type, only when linkedOnly is false, the pending native whose IFunction slot 9 (GetIsStatic) is true, so DispatchStaticCall needs the script loaded
     ///
     /// Semantic, papyrus pass, high; ledger semantic evidence, name high; id 104311, rva 0x1492470.

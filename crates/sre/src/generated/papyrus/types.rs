@@ -161,6 +161,21 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Array, refCount) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Array, __elementType) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScript__Array, size) == 0x10);
 
+/// `BSScript::IFunction`: size 0x8 (exact, low).
+/// Meaning: the interface of every Papyrus function (native, script, auto-property getter and setter) (high, papyrus pass).
+/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of BSScript::Internal::ScriptFunction at 0x8 (soft).
+/// Bases: `BSIntrusiveRefCounted`@0x8.
+#[repr(C)]
+pub struct BSScript__IFunction {
+    /// +0x0 `vtbl:BSScript::IFunction:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSScript__IFunction_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSScript__IFunction>() == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__IFunction, __vftable) == 0x0);
+
 /// `BSScript::IFunctionArguments`: size 0x8 (exact, low).
 /// Meaning: interface a caller implements to supply the Variables of a queued call (high, papyrus pass).
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::RefStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::LocationStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::FormStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> at 0x8 (soft).
@@ -589,16 +604,16 @@ pub struct BSScript__ObjectTypeInfo {
     pub parent: *mut crate::BSScript__ObjectTypeInfo,
     /// +0x18 `class:BSFixedString`, semantic; a string, empty for classes created by BindNativeMethod; its use was not traced (medium)
     pub string18: crate::BSFixedString,
-    /// +0x20 `undefined4`, semantic; bits 0-1 link state (0 unlinked: natives wait in the list at +0x30; 2 or 3 linked, 3 fully), bits 2-7 and 8-17 counts (8-17 the variable count) (bits 0-1: ObjectTypeLinkState) (high)
+    /// +0x20 `undefined4`, semantic; bits 0-1 link state (0 unlinked: natives wait in the list at +0x30; 2 or 3 linked, 3 fully), bits 2-7 and 8-17 counts (8-17 the variable count) (bits 0-1: ObjectTypeLinkState); bits 2-7 count block 1 of +0x30 (8-byte entries, role not determined), bits 8-17 block 2 (the variables, 0x10 each) (high)
     pub linkedAndVariables: u32,
-    /// +0x24 `undefined4`, semantic; packed table sizes used to locate the function tables at +0x30 (bits 0-9, 10-19, 20-28) (medium)
+    /// +0x24 `undefined4`, semantic; packed counts of +0x30's blocks: bits 0-9 block 3 (0x18-byte entries, role not determined), bits 10-19 block 4 (0x48-byte entries searched by the name at +0 by 0x1496600), bits 20-28 block 5 (the global functions, BSTSmartPointer<IFunction> each) (medium)
     #[doc(hidden)]
     pub __counts: [u8; 4],
-    /// +0x28 `undefined4`, semantic; bits 0-10 the number of empty-state functions (medium)
+    /// +0x28 `undefined4`, semantic; bits 0-10 block 6 of +0x30 (the empty state's member functions, BSTSmartPointer<IFunction> each), bits 11-17 block 7 (the states, 0x10 each) (medium)
     #[doc(hidden)]
     pub __counts2: [u8; 4],
     unknown_2C: [u8; 4],
-    /// +0x30 `pointer`, semantic; linked: the tables of variables, properties and per-state functions; unlinked: head of the singly linked list {next, IFunction*} of natives bound before the script loaded (high)
+    /// +0x30 `pointer`, semantic; linked: the tables of variables, properties and per-state functions; unlinked: head of the singly linked list {next, IFunction*} of natives bound before the script loaded; linked: seven consecutive blocks counted by the packed words, in 8-byte units: 1 ((+0x20 >> 2) & 0x3f, x1), 2 the variables ((+0x20 >> 8) & 0x3ff, x2), 3 (+0x24 & 0x3ff, x3), 4 ((+0x24 >> 10) & 0x3ff, x9), 5 the global functions ((+0x24 >> 20) & 0x1ff, x1), 6 the empty state's member functions (+0x28 & 0x7ff, x1), 7 the states ((+0x28 >> 11) & 0x7f, x2); each function table is sorted by name (case-insensitive) and holds BSTSmartPointer<IFunction> (high)
     #[doc(hidden)]
     pub __data: [u8; 8],
     #[doc(hidden)]

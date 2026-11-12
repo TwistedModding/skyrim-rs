@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `LoadFloatPairsAndSharedObjectRef` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 47911, rva 0x8842c0).
-/// `undefined LoadFloatPairsAndSharedObjectRef(longlong * param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn load_float_pairs_and_shared_object_ref(param_1: *mut i64, param_2: i64) -> u64 { unsafe { function!(47911, (*mut i64, i64) -> u64)(param_1, param_2) } }
 /// `LoadFormArrayFromFile` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 14255, rva 0x1d87b0).
 /// `undefined LoadFormArrayFromFile(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 ///
