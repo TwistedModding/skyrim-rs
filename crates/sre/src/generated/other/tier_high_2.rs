@@ -5369,13 +5369,6 @@ pub unsafe fn load_mesh_lod_fade_settings_from_ini() -> u64 { unsafe { function!
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn load_short_shifted_left16(param_1: *mut i16) -> i32 { unsafe { function!(62272, (*mut i16) -> i32)(param_1) } }
-/// `LockField168AndGetField160` (decompiler signature, tier high; ledger decompiler evidence, name high; id 70950, rva 0xefd6b0).
-/// `undefined8 LockField168AndGetField160(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn lock_field168_and_get_field160(param_1: i64) -> u64 { unsafe { function!(70950, (i64) -> u64)(param_1) } }
 /// `LockForReadGlobal411271` (decompiler signature, tier high; ledger decompiler evidence, name high; id 76599, rva 0xfefbc0).
 /// `undefined LockForReadGlobal411271(void)`
 ///
@@ -16345,3 +16338,10 @@ pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { uns
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }
+/// `SetThreeShorts` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68662, rva 0xcfac30).
+/// `undefined2 * SetThreeShorts(undefined2 * param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_three_shorts(param_1: *mut u16, param_2: u16, param_3: u16, param_4: u16) -> *mut u16 { unsafe { function!(68662, (*mut u16, u16, u16, u16) -> *mut u16)(param_1, param_2, param_3, param_4) } }

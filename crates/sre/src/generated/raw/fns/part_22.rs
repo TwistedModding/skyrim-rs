@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpConstraintListener::dtor` at 0xb516e0 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintListener * this)`
+pub const hkpConstraintListener__dtor: u64 = 61189;
+/// `hkpConstraintListener::dtor` at 0x1050f70 (layout_inference, high); signature (low): `undefined dtor(hkpConstraintListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__dtor_2: u64 = 77957;
+/// `hkpConstraintListener::vdtor` at 0xb51dd0 (layout_inference, medium); signature (low): `hkpConstraintListener * vdtor(hkpConstraintListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintListener__vdtor: u64 = 61210;
+/// `hkpConstraintListener::vfunc_1` at 0xb52bd0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const hkpConstraintListener__vfunc_1: u64 = 61238;
 /// `hkpConstraintListener::vfunc_2` at 0xb52c00 (rtti, medium); signature (low): `undefined vfunc_2(void)`
 pub const hkpConstraintListener__vfunc_2: u64 = 61241;
 /// `hkpConstraintListener::vfunc_3` at 0xb52bf0 (rtti, medium); signature (low): `undefined vfunc_3(void)`

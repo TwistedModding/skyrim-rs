@@ -2567,6 +2567,18 @@ pub const BSDynamicLines__vfunc_27: u64 = 108144;
 pub const BSDynamicLines__vfunc_28: u64 = 108145;
 /// `BSDynamicTriShape::Create` at 0xefd470 (string, high); signature (low): `BSTriShape * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BSDynamicTriShape__Create: u64 = 70946;
+/// `BSDynamicTriShape::LockDynamicVertices` at 0xefd6e0 (runtime, high); signature (untiered): `void * LockDynamicVertices(BSDynamicTriShape * this)`; semantic: takes the dynamic-block lock (+0x168, recursive) and returns dynamicVertices (+0x160); pair it with UnlockDynamicVertices (high); signature `void* (BSDynamicTriShape* this)`
+pub const BSDynamicTriShape__LockDynamicVertices: u64 = 70951;
+/// `BSDynamicTriShape::LockDynamicVertices` as a function pointer type (high).
+pub type BSDynamicTriShape__LockDynamicVertices_fn = unsafe extern "C" fn(this: *mut crate::BSDynamicTriShape) -> *mut c_void;
+/// `BSDynamicTriShape::LockDynamicVertices_2` at 0xefd6b0 (runtime, high); signature (untiered): `void * LockDynamicVertices_2(BSDynamicTriShape * this)`; semantic: the same as LockDynamicVertices (a second copy of the function); pair it with UnlockDynamicVertices (high); signature `void* (BSDynamicTriShape* this)`
+pub const BSDynamicTriShape__LockDynamicVertices_2: u64 = 70950;
+/// `BSDynamicTriShape::LockDynamicVertices_2` as a function pointer type (high).
+pub type BSDynamicTriShape__LockDynamicVertices_2_fn = unsafe extern "C" fn(this: *mut crate::BSDynamicTriShape) -> *mut c_void;
+/// `BSDynamicTriShape::UnlockDynamicVertices` at 0xefd710 (runtime, high); signature (untiered): `void UnlockDynamicVertices(BSDynamicTriShape * this)`; semantic: releases one level of the dynamic-block lock taken by LockDynamicVertices (or LockDynamicVertices_2) on the same thread (high); signature `void (BSDynamicTriShape* this)`
+pub const BSDynamicTriShape__UnlockDynamicVertices: u64 = 70952;
+/// `BSDynamicTriShape::UnlockDynamicVertices` as a function pointer type (high).
+pub type BSDynamicTriShape__UnlockDynamicVertices_fn = unsafe extern "C" fn(this: *mut crate::BSDynamicTriShape);
 /// `BSDynamicTriShape::ctor` at 0xefd540 (layout_inference, high); signature (low): `BSDynamicTriShape * ctor(BSDynamicTriShape * this, undefined8 param_1, undefined2 param_2, undefined2 param_3, uint param_4)`
 pub const BSDynamicTriShape__ctor: u64 = 70947;
 /// `BSDynamicTriShape::ctor` at 0xefd5f0 (layout_inference, high); signature (high): `BSDynamicTriShape * ctor(BSDynamicTriShape * this)`
@@ -7965,15 +7977,3 @@ pub const BSPlayerDistanceCheckController__vfunc_46: u64 = 40202;
 pub const BSPointerHandleManager__CreateHandle: u64 = 12326;
 /// `BSPointerHandleManager::CreateHandle` as a function pointer type (high).
 pub type BSPointerHandleManager__CreateHandle_fn = unsafe extern "C" fn(out: *mut u32, ref_: *mut crate::TESObjectREFR) -> *mut u32;
-/// `BSPointerHandleManager::CreateHandle_2` at 0x17e4b0 (runtime, medium); signature (low): `uint * CreateHandle_2(uint * param_1, longlong param_2)`; semantic: second copy of CreateHandle (medium); signature `uint* BSPointerHandleManager::CreateHandle_2(uint* out, TESObjectREFR* ref)`
-pub const BSPointerHandleManager__CreateHandle_2: u64 = 12325;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::dtor` at 0x4aad90 (layout_inference, high); signature (low): `undefined dtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__dtor: u64 = 30039;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vdtor` at 0x4aa1c0 (slot_propagation, medium); signature (low): `BSPointerListBase<BSTempEffectDebris*___ptr64> * vdtor(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vdtor: u64 = 30022;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_1` at 0x4aa160 (rtti, medium); signature (low): `undefined vfunc_1(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_1: u64 = 30020;
-/// `BSPointerListBase<BSTempEffectDebris*___ptr64>::vfunc_2` at 0x4aa1a0 (rtti, medium); signature (low): `undefined vfunc_2(BSPointerListBase<BSTempEffectDebris*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_BSTempEffectDebris____ptr64__vfunc_2: u64 = 30021;
-/// `BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64>::dtor` at 0x408470 (callgraph, high); signature (untiered): `undefined dtor(BSPointerListBase<TriggerEntry::TriggerEvent*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSPointerListBase_TriggerEntry__TriggerEvent____ptr64__dtor: u64 = 26070;

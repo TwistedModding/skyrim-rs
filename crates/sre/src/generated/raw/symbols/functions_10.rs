@@ -8,6 +8,17 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13a8df0, id: 450386, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_42" },
+    Function { rva: 0x13a8e20, id: 450391, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_43" },
+    Function { rva: 0x13a8e50, id: 450387, confidence: Confidence::High, name: "ScalarDeletingDestructor18_3" },
+    Function { rva: 0x13a8e80, id: 450388, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_44" },
+    Function { rva: 0x13a8eb0, id: 450390, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_45" },
+    Function { rva: 0x13a8ee0, id: 450389, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_46" },
+    Function { rva: 0x13a8f10, id: 450392, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_47" },
+    Function { rva: 0x13a9080, id: 450394, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_7" },
+    Function { rva: 0x13a90b0, id: 450395, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_8" },
+    Function { rva: 0x13a90e0, id: 450396, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_9" },
+    Function { rva: 0x13a9110, id: 450397, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_10" },
     Function { rva: 0x13a91c0, id: 450399, confidence: Confidence::High, name: "AppendBytesToFixedString2000" },
     Function { rva: 0x13aa010, id: 450413, confidence: Confidence::Medium, name: "IsReadyWithField1C8ClearAndField198Null" },
     Function { rva: 0x13aa4f0, id: 450423, confidence: Confidence::Medium, name: "GetField28ClampedToGlobal188204Locked" },
@@ -8214,13 +8225,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x176e350, id: 168431, confidence: Confidence::Medium, name: "GameSetting_fBribeBase__atexit" },
     Function { rva: 0x176e3a0, id: 168432, confidence: Confidence::Medium, name: "GameSetting_fBribeMult__atexit" },
     Function { rva: 0x176e3f0, id: 168433, confidence: Confidence::Medium, name: "GameSetting_fBuoyancyMultBody__atexit" },
-    Function { rva: 0x176e440, id: 168434, confidence: Confidence::Medium, name: "GameSetting_fBuoyancyMultExtremity__atexit" },
-    Function { rva: 0x176e490, id: 168435, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistFadeDelta__atexit" },
-    Function { rva: 0x176e4e0, id: 168436, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistFadeStart__atexit" },
-    Function { rva: 0x176e530, id: 168437, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistMin__atexit" },
-    Function { rva: 0x176e580, id: 168438, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeExplosionDistMult__atexit" },
-    Function { rva: 0x176e5d0, id: 168439, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeFadeTime__atexit" },
-    Function { rva: 0x176e620, id: 168440, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeMultMin__atexit" },
-    Function { rva: 0x176e670, id: 168441, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeTime__atexit" },
-    Function { rva: 0x176e6c0, id: 168442, confidence: Confidence::Medium, name: "GameSetting_fChaseDetectionTimerSetting__atexit" },
 ];

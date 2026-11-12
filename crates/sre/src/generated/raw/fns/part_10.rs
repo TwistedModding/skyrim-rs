@@ -7,6 +7,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FlushPendingOutput` at 0xa9a670 (decompiler, medium); signature (low): `undefined FlushPendingOutput(longlong param_1)`
+pub const FlushPendingOutput: u64 = 56936;
+/// `FlushQueuedBlocksAndClearTls` at 0xce6320 (decompiler, medium); signature (low): `undefined FlushQueuedBlocksAndClearTls(longlong param_1, longlong param_2)`
+pub const FlushQueuedBlocksAndClearTls: u64 = 68319;
+/// `FlushRingBufferToFile` at 0xffa5d0 (decompiler, medium); signature (medium): `ulonglong FlushRingBufferToFile(longlong param_1, uint param_2, char param_3)`
+pub const FlushRingBufferToFile: u64 = 76859;
+/// `FlushStreamWriteBuffer` at 0xaaccf0 (decompiler, medium); signature (medium): `int FlushStreamWriteBuffer(longlong param_1)`
+pub const FlushStreamWriteBuffer: u64 = 57428;
+/// `FmtExtraType88QuestAliasPackageList` at 0x172b40 (decompiler, medium); signature (low): `undefined FmtExtraType88QuestAliasPackageList(longlong param_1, undefined8 param_2)`
+pub const FmtExtraType88QuestAliasPackageList: u64 = 12049;
+/// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (low): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
+pub const FocusListAndSelectIndex: u64 = 454102;
+/// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (low): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FocusNextListEntry: u64 = 454941;
+/// `FocusPreviousListEntry` at 0x1602f10 (decompiler, medium); signature (low): `undefined FocusPreviousListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FocusPreviousListEntry: u64 = 454942;
+/// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (low): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForEachActorInHandleArray: u64 = 41326;
 /// `ForEachAliasInstanceOfRef` at 0x2e6a70 (semantic, high); signature (low): `undefined ForEachAliasInstanceOfRef(longlong param_1, longlong * param_2)`; semantic: the reference's ExtraAliasInstanceArray (extra 0x88), or, when the reference carries an ExtraReferenceHandle (0x1c) whose target has form flag bit 5 set, that target's array; each alias goes to functor slot 1 (high); signature `void (TESObjectREFR* ref, void* functor)`
 pub const ForEachAliasInstanceOfRef: u64 = 19656;
 /// `ForEachAliasInstanceOfRef` as a function pointer type (high).
@@ -8555,19 +8573,3 @@ pub const GameSetting_fIntimidateConfidenceMultAverage__init: u64 = 1851;
 pub const GameSetting_fIntimidateConfidenceMultBrave__atexit: u64 = 167062;
 /// `GameSetting_fIntimidateConfidenceMultBrave__init` at 0x2cb40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultBrave__init(void)`
 pub const GameSetting_fIntimidateConfidenceMultBrave__init: u64 = 1852;
-/// `GameSetting_fIntimidateConfidenceMultCautious__atexit` at 0x17537d0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCautious__atexit(void)`
-pub const GameSetting_fIntimidateConfidenceMultCautious__atexit: u64 = 167063;
-/// `GameSetting_fIntimidateConfidenceMultCautious__init` at 0x2cbc0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCautious__init(void)`
-pub const GameSetting_fIntimidateConfidenceMultCautious__init: u64 = 1853;
-/// `GameSetting_fIntimidateConfidenceMultCowardly__atexit` at 0x1753820 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCowardly__atexit(void)`
-pub const GameSetting_fIntimidateConfidenceMultCowardly__atexit: u64 = 167064;
-/// `GameSetting_fIntimidateConfidenceMultCowardly__init` at 0x2cc40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCowardly__init(void)`
-pub const GameSetting_fIntimidateConfidenceMultCowardly__init: u64 = 1854;
-/// `GameSetting_fIntimidateConfidenceMultFoolhardy__atexit` at 0x1753870 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultFoolhardy__atexit(void)`
-pub const GameSetting_fIntimidateConfidenceMultFoolhardy__atexit: u64 = 167065;
-/// `GameSetting_fIntimidateConfidenceMultFoolhardy__init` at 0x2ccc0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultFoolhardy__init(void)`
-pub const GameSetting_fIntimidateConfidenceMultFoolhardy__init: u64 = 1855;
-/// `GameSetting_fIntimidateSpeechcraftCurve__atexit` at 0x17538c0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__atexit(void)`
-pub const GameSetting_fIntimidateSpeechcraftCurve__atexit: u64 = 167066;
-/// `GameSetting_fIntimidateSpeechcraftCurve__init` at 0x2cd40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__init(void)`
-pub const GameSetting_fIntimidateSpeechcraftCurve__init: u64 = 1856;

@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESCombatStyle::vdtor` at 0x26a890 (layout_inference, medium); signature (low): `TESCombatStyle * vdtor(TESCombatStyle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCombatStyle__vdtor: u64 = 17307;
+/// `TESCombatStyle::vfunc_19` at 0x26a160 (rtti, high); signature (high): `undefined vfunc_19(TESCombatStyle * this)`
+pub const TESCombatStyle__vfunc_19: u64 = 17299;
+/// `TESCombatStyle::vfunc_4` at 0x269df0 (rtti, high); signature (high): `undefined vfunc_4(TESCombatStyle * this)`
+pub const TESCombatStyle__vfunc_4: u64 = 17297;
+/// `TESCombatStyle::vfunc_6` at 0x269e90 (rtti, high); signature (low): `undefined8 vfunc_6(TESCombatStyle * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCombatStyle__vfunc_6: u64 = 17298;
+/// `TESCombatStyle::vfunc_6_sub0` at 0x26a570 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
+/// `TESCombatStyle::vfunc_6_sub1` at 0x26a640 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub1(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
+/// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;
 /// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (low): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; semantic: count of an item in the base container (high); signature `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
 pub const TESContainer__CountObjectsInContainer: u64 = 14529;
 /// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
@@ -9023,13 +9037,3 @@ pub const _anon_025735F6__SingleSimpleArgument_bool__vfunc_0: u64 = 54356;
 pub const _anon_025735F6__SingleSimpleArgument_bool__vfunc_1: u64 = 54232;
 /// `_anon_025735F6::SingleSimpleArgument<float>::vfunc_0` at 0x9f0360 (rtti, high); signature (low): `SingleSimpleArgument<float> * vfunc_0(SingleSimpleArgument<float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_025735F6__SingleSimpleArgument_float__vfunc_0: u64 = 54355;
-/// `_anon_025735F6::SingleSimpleArgument<float>::vfunc_1` at 0x9edaa0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleSimpleArgument<float> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleSimpleArgument_float__vfunc_1: u64 = 54231;
-/// `_anon_025735F6::SpellCastArguments::vfunc_0` at 0x9f0e50 (rtti, high); signature (low): `SpellCastArguments * vfunc_0(SpellCastArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SpellCastArguments__vfunc_0: u64 = 54395;
-/// `_anon_025735F6::SpellCastArguments::vfunc_1` at 0x9ef300 (rtti, high); signature (low): `undefined8 vfunc_1(SpellCastArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SpellCastArguments__vfunc_1: u64 = 54253;
-/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_0` at 0x9f0e90 (rtti, high); signature (low): `TrackedStatsEventFunctor * vfunc_0(TrackedStatsEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_0: u64 = 54396;
-/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_1` at 0x9e87a0 (rtti, high); signature (low): `undefined8 vfunc_1(TrackedStatsEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_1: u64 = 54077;

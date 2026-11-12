@@ -7,6 +7,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_1` at 0x12b00b0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_722773e48170: u64 = 445622;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_0` at 0x12ad2d0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_68083378dcaf: u64 = 445516;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>::vfunc_1` at 0x12b0190 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
@@ -8061,11 +8063,3 @@ pub const hkpConstraintInstance__vfunc_4: u64 = 61584;
 pub const hkpConstraintInstance__vfunc_5: u64 = 61585;
 /// `hkpConstraintInstance::vfunc_6` at 0xb52c60 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
 pub const hkpConstraintInstance__vfunc_6: u64 = 61247;
-/// `hkpConstraintListener::dtor` at 0xb516e0 (layout_inference, high); signature (high): `undefined dtor(hkpConstraintListener * this)`
-pub const hkpConstraintListener__dtor: u64 = 61189;
-/// `hkpConstraintListener::dtor` at 0x1050f70 (layout_inference, high); signature (low): `undefined dtor(hkpConstraintListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpConstraintListener__dtor_2: u64 = 77957;
-/// `hkpConstraintListener::vdtor` at 0xb51dd0 (layout_inference, medium); signature (low): `hkpConstraintListener * vdtor(hkpConstraintListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpConstraintListener__vdtor: u64 = 61210;
-/// `hkpConstraintListener::vfunc_1` at 0xb52bd0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const hkpConstraintListener__vfunc_1: u64 = 61238;

@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `_anon_025735F6::SingleSimpleArgument<float>::vfunc_1` at 0x9edaa0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleSimpleArgument<float> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__SingleSimpleArgument_float__vfunc_1: u64 = 54231;
+/// `_anon_025735F6::SpellCastArguments::vfunc_0` at 0x9f0e50 (rtti, high); signature (low): `SpellCastArguments * vfunc_0(SpellCastArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__SpellCastArguments__vfunc_0: u64 = 54395;
+/// `_anon_025735F6::SpellCastArguments::vfunc_1` at 0x9ef300 (rtti, high); signature (low): `undefined8 vfunc_1(SpellCastArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__SpellCastArguments__vfunc_1: u64 = 54253;
+/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_0` at 0x9f0e90 (rtti, high); signature (low): `TrackedStatsEventFunctor * vfunc_0(TrackedStatsEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_0: u64 = 54396;
+/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_1` at 0x9e87a0 (rtti, high); signature (low): `undefined8 vfunc_1(TrackedStatsEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
+pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_1: u64 = 54077;
 /// `_anon_025735F6::TrapHitArguments::vfunc_0` at 0x9f0ed0 (rtti, high); signature (low): `TrapHitArguments * vfunc_0(TrapHitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const _anon_025735F6__TrapHitArguments__vfunc_0: u64 = 54397;
 /// `_anon_025735F6::TrapHitArguments::vfunc_1` at 0x9ef3d0 (rtti, high); signature (low): `undefined8 vfunc_1(TrapHitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
@@ -5777,5 +5787,3 @@ pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7b8fb69f9a67: u64 = 444377;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_0` at 0x12ad2a0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ccf56988b66: u64 = 445515;
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>::vfunc_1` at 0x12b00b0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_722773e48170: u64 = 445622;

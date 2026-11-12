@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vdtor` at 0x458780 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vdtor: u64 = 27983;
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_1` at 0x459b80 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_1: u64 = 28056;
+/// `BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a830 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHoldPositionExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureHoldPositionExecState_IProcedureTreeExecState__vfunc_2: u64 = 28096;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vdtor` at 0x475af0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHover,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vdtor: u64 = 28793;
+/// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_1` at 0x475c30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_1: u64 = 28796;
 /// `BSTDerivedCreator<BGSProcedureHover,IProcedure>::vfunc_2` at 0x475cb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureHover,IProcedure> * this, undefined8 * param_1)`
 pub const BSTDerivedCreator_BGSProcedureHover_IProcedure__vfunc_2: u64 = 28797;
 /// `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState>::vdtor` at 0x4587b0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureHoverExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5555,17 +5565,3 @@ pub type BowZoomStopHandler__Handle_fn = unsafe extern "C" fn(this: *mut crate::
 pub const BroadcastCrimeAlarmInRange: u64 = 39361;
 /// `BubbleSortIndicesByFloatField40` at 0xb02d20 (decompiler, high); signature (high): `undefined BubbleSortIndicesByFloatField40(longlong param_1, int param_2, longlong param_3)`
 pub const BubbleSortIndicesByFloatField40: u64 = 59537;
-/// `BuildAabbTreeF16` at 0x1132fc0 (decompiler, medium); signature (low): `undefined BuildAabbTreeF16(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
-pub const BuildAabbTreeF16: u64 = 81561;
-/// `BuildAabbTreeNodesF16` at 0x1133ed0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesF16(longlong param_1, float * param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesF16: u64 = 81565;
-/// `BuildAabbTreeNodesF32` at 0x11343e0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesF32(longlong param_1, float * param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesF32: u64 = 81566;
-/// `BuildAabbTreeNodesQ16` at 0x11333d0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesQ16(longlong param_1, longlong param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesQ16: u64 = 81563;
-/// `BuildAabbTreeNodesQ32` at 0x1133940 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesQ32(longlong param_1, longlong param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
-pub const BuildAabbTreeNodesQ32: u64 = 81564;
-/// `BuildAabbTreeQ16` at 0x1132a90 (decompiler, medium); signature (low): `undefined BuildAabbTreeQ16(longlong param_1, float * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
-pub const BuildAabbTreeQ16: u64 = 81559;
-/// `BuildAabbTreeQ32` at 0x1132d30 (decompiler, medium); signature (low): `undefined BuildAabbTreeQ32(longlong param_1, float * param_2, undefined8 * param_3, int param_4, undefined8 * param_5)`
-pub const BuildAabbTreeQ32: u64 = 81560;

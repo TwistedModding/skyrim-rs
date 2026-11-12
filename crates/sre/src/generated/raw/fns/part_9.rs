@@ -7,6 +7,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateNiTriShape` at 0xf18420 (decompiler, high); signature (high): `NiTriBasedGeom * CreateNiTriShape(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiTriShape: u64 = 71614;
+/// `CreateNiTriShapeData` at 0xf17950 (decompiler, high); signature (high): `NiTriBasedGeomData * CreateNiTriShapeData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiTriShapeData: u64 = 71588;
+/// `CreateNiTriStrips` at 0xf19d90 (decompiler, high); signature (high): `NiTriBasedGeom * CreateNiTriStrips(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiTriStrips: u64 = 71663;
+/// `CreateNiTriStripsData` at 0xf191c0 (decompiler, high); signature (high): `NiTriBasedGeomData * CreateNiTriStripsData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiTriStripsData: u64 = 71641;
+/// `CreateNiUVData` at 0xf89950 (decompiler, high); signature (high): `NiObject * CreateNiUVData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiUVData: u64 = 73970;
+/// `CreateNiVectorExtraData` at 0xf1a400 (decompiler, high); signature (high): `NiExtraData * CreateNiVectorExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiVectorExtraData: u64 = 71679;
+/// `CreateNiVertWeightsExtraData` at 0xf09390 (decompiler, high); signature (high): `NiExtraData * CreateNiVertWeightsExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiVertWeightsExtraData: u64 = 71197;
+/// `CreateNiVisController` at 0xf8a260 (decompiler, high); signature (high): `NiBoolInterpController * CreateNiVisController(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateNiVisController: u64 = 73994;
+/// `CreateNoRTTI_1AB76A0` at 0x1189b30 (decompiler, medium); signature (low): `undefined8 * CreateNoRTTI_1AB76A0(longlong param_1)`
+pub const CreateNoRTTI_1AB76A0: u64 = 84954;
 /// `CreateNoRTTI_1AFD3E0Handle` at 0x13e55a0 (decompiler, medium); signature (low): `undefined CreateNoRTTI_1AFD3E0Handle(undefined8 * param_1, longlong * param_2, undefined8 param_3)`
 pub const CreateNoRTTI_1AFD3E0Handle: u64 = 449508;
 /// `CreateNodeIndexedByKey` at 0xab87a0 (decompiler, medium); signature (low): `undefined8 * CreateNodeIndexedByKey(longlong param_1, undefined8 param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
@@ -8791,21 +8809,3 @@ pub const FlushPendingEntriesToQueues: u64 = 59443;
 pub const FlushPendingEntriesUnderWorldLock: u64 = 77916;
 /// `FlushPendingGlobal411247Entries` at 0xfe3b80 (decompiler, medium); signature (medium): `undefined FlushPendingGlobal411247Entries(void)`
 pub const FlushPendingGlobal411247Entries: u64 = 76335;
-/// `FlushPendingOutput` at 0xa9a670 (decompiler, medium); signature (low): `undefined FlushPendingOutput(longlong param_1)`
-pub const FlushPendingOutput: u64 = 56936;
-/// `FlushQueuedBlocksAndClearTls` at 0xce6320 (decompiler, medium); signature (low): `undefined FlushQueuedBlocksAndClearTls(longlong param_1, longlong param_2)`
-pub const FlushQueuedBlocksAndClearTls: u64 = 68319;
-/// `FlushRingBufferToFile` at 0xffa5d0 (decompiler, medium); signature (medium): `ulonglong FlushRingBufferToFile(longlong param_1, uint param_2, char param_3)`
-pub const FlushRingBufferToFile: u64 = 76859;
-/// `FlushStreamWriteBuffer` at 0xaaccf0 (decompiler, medium); signature (medium): `int FlushStreamWriteBuffer(longlong param_1)`
-pub const FlushStreamWriteBuffer: u64 = 57428;
-/// `FmtExtraType88QuestAliasPackageList` at 0x172b40 (decompiler, medium); signature (low): `undefined FmtExtraType88QuestAliasPackageList(longlong param_1, undefined8 param_2)`
-pub const FmtExtraType88QuestAliasPackageList: u64 = 12049;
-/// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (low): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
-pub const FocusListAndSelectIndex: u64 = 454102;
-/// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (low): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FocusNextListEntry: u64 = 454941;
-/// `FocusPreviousListEntry` at 0x1602f10 (decompiler, medium); signature (low): `undefined FocusPreviousListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FocusPreviousListEntry: u64 = 454942;
-/// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (low): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ForEachActorInHandleArray: u64 = 41326;

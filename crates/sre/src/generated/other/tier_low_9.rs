@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ReleaseArrayStorage_11` (decompiler signature, tier low; ledger decompiler evidence, name high; id 50206, rva 0x8e7360).
-/// `undefined ReleaseArrayStorage_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn release_array_storage_11(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(50206, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `ReleaseArrayStorage_12` (decompiler signature, tier low; ledger decompiler evidence, name high; id 93384, rva 0x1250d40).
 /// `undefined ReleaseArrayStorage_12(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14742,3 +14735,10 @@ pub unsafe fn resize_pair_key_hash_map0x20(param_1: *mut i64, param_2: *mut i64,
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resize_pair_key_hash_map0x28(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66314, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }
+/// `ResizePairKeyHashMap_2` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 66482, rva 0xc717b0).
+/// `undefined ResizePairKeyHashMap_2(longlong * param_1, longlong * param_2, int param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resize_pair_key_hash_map_2(param_1: *mut i64, param_2: *mut i64, param_3: i32) -> u64 { unsafe { function!(66482, (*mut i64, *mut i64, i32) -> u64)(param_1, param_2, param_3) } }

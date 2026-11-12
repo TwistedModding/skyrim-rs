@@ -8,6 +8,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x176e440, id: 168434, confidence: Confidence::Medium, name: "GameSetting_fBuoyancyMultExtremity__atexit" },
+    Function { rva: 0x176e490, id: 168435, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistFadeDelta__atexit" },
+    Function { rva: 0x176e4e0, id: 168436, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistFadeStart__atexit" },
+    Function { rva: 0x176e530, id: 168437, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeDistMin__atexit" },
+    Function { rva: 0x176e580, id: 168438, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeExplosionDistMult__atexit" },
+    Function { rva: 0x176e5d0, id: 168439, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeFadeTime__atexit" },
+    Function { rva: 0x176e620, id: 168440, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeMultMin__atexit" },
+    Function { rva: 0x176e670, id: 168441, confidence: Confidence::Medium, name: "GameSetting_fCameraShakeTime__atexit" },
+    Function { rva: 0x176e6c0, id: 168442, confidence: Confidence::Medium, name: "GameSetting_fChaseDetectionTimerSetting__atexit" },
     Function { rva: 0x176e710, id: 168443, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorBase__atexit" },
     Function { rva: 0x176e760, id: 168444, confidence: Confidence::Medium, name: "GameSetting_fClothingArmorScale__atexit" },
     Function { rva: 0x176e7b0, id: 168445, confidence: Confidence::Medium, name: "GameSetting_fClothingBase__atexit" },

@@ -8,6 +8,7 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x11582a0, id: 81934, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vfunc_3" },
     Function { rva: 0x11582c0, id: 81935, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpMeshBase::Edge,hkgpMeshBase::Vertex,hkgpMeshBase::Triangle,hkContainerHeapAllocator>::vfunc_3" },
     Function { rva: 0x11582e0, id: 81936, confidence: Confidence::Medium, name: "ResetAndCreateBoundingTriangles" },
     Function { rva: 0x1158720, id: 81937, confidence: Confidence::High, name: "hkgpJobQueue::Box<hkgpMeshInternals::ConcaveEdgeJob::Handle>::vfunc_1" },
@@ -6640,15 +6641,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13a8c70, id: 450382, confidence: Confidence::Medium, name: "ReleaseCallbacksAndDelete4D0_3" },
     Function { rva: 0x13a8cf0, id: 450383, confidence: Confidence::Medium, name: "ScalarDeletingDtorCB0_2" },
     Function { rva: 0x13a8d30, id: 450384, confidence: Confidence::Medium, name: "ReleaseCallbacksAndDelete4D0_4" },
-    Function { rva: 0x13a8df0, id: 450386, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_42" },
-    Function { rva: 0x13a8e20, id: 450391, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_43" },
-    Function { rva: 0x13a8e50, id: 450387, confidence: Confidence::High, name: "ScalarDeletingDestructor18_3" },
-    Function { rva: 0x13a8e80, id: 450388, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_44" },
-    Function { rva: 0x13a8eb0, id: 450390, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_45" },
-    Function { rva: 0x13a8ee0, id: 450389, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_46" },
-    Function { rva: 0x13a8f10, id: 450392, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_47" },
-    Function { rva: 0x13a9080, id: 450394, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_7" },
-    Function { rva: 0x13a90b0, id: 450395, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_8" },
-    Function { rva: 0x13a90e0, id: 450396, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_9" },
-    Function { rva: 0x13a9110, id: 450397, confidence: Confidence::High, name: "ScalarDeletingDtorSize8_10" },
 ];

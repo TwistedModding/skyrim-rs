@@ -7,6 +7,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAngleMax_LookIK__init` at 0xeb8a0 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__init(void)`
+pub const INISetting_fAngleMax_LookIK__init: u64 = 9635;
+/// `INISetting_fAnimInterpFarDist_Animation__atexit` at 0x17b0870 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__atexit: u64 = 173614;
+/// `INISetting_fAnimInterpFarDist_Animation__init` at 0xddfe0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__init(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__init: u64 = 8856;
+/// `INISetting_fAnimInterpMaxTime_Animation__atexit` at 0x17b08c0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__atexit: u64 = 173615;
+/// `INISetting_fAnimInterpMaxTime_Animation__init` at 0xde060 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMaxTime_Animation__init: u64 = 8857;
+/// `INISetting_fAnimInterpMinTime_Animation__atexit` at 0x17b0910 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__atexit(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__atexit: u64 = 173616;
+/// `INISetting_fAnimInterpMinTime_Animation__init` at 0xde0e0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMinTime_Animation__init(void)`
+pub const INISetting_fAnimInterpMinTime_Animation__init: u64 = 8858;
+/// `INISetting_fAnimInterpNearDist_Animation__atexit` at 0x17b0960 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpNearDist_Animation__atexit: u64 = 173617;
 /// `INISetting_fAnimInterpNearDist_Animation__init` at 0xde160 (crt_init, medium); signature (high): `void INISetting_fAnimInterpNearDist_Animation__init(void)`
 pub const INISetting_fAnimInterpNearDist_Animation__init: u64 = 8859;
 /// `INISetting_fAnimInterpSlop_Animation__atexit` at 0x17b09b0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpSlop_Animation__atexit(void)`
@@ -8417,17 +8433,3 @@ pub const InterruptCastAndExitNodeIfActorFieldF8Field10Zero: u64 = 49765;
 pub const InterruptCastHandler__vdtor: u64 = 43340;
 /// `InterruptCastHandler::vfunc_1` at 0x7ce0e0 (rtti, high); signature (low): `undefined1 vfunc_1(InterruptCastHandler * this, longlong param_1)`
 pub const InterruptCastHandler__vfunc_1: u64 = 42862;
-/// `InterruptCastingAndReset` at 0x5cd2f0 (decompiler, medium); signature (low): `undefined InterruptCastingAndReset(longlong * param_1)`
-pub const InterruptCastingAndReset: u64 = 34427;
-/// `InterruptContextCastIfActive` at 0x8b53a0 (decompiler, medium); signature (low): `undefined InterruptContextCastIfActive(void)`
-pub const InterruptContextCastIfActive: u64 = 49102;
-/// `InterruptContextCastIfActive_2` at 0x8b5680 (decompiler, medium); signature (low): `undefined InterruptContextCastIfActive_2(void)`
-pub const InterruptContextCastIfActive_2: u64 = 49107;
-/// `IntersectBoxCapsule` at 0xf34510 (decompiler, medium); signature (low): `undefined8 IntersectBoxCapsule(undefined4 param_1, undefined8 param_2, undefined8 param_3, longlong param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectBoxCapsule: u64 = 72120;
-/// `IntersectBoxSphere` at 0xf30ba0 (decompiler, medium); signature (low): `undefined8 IntersectBoxSphere(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectBoxSphere: u64 = 72118;
-/// `IntersectCapsuleCapsule` at 0xf39350 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleCapsule(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectCapsuleCapsule: u64 = 72147;
-/// `IntersectCapsuleSphere` at 0xf39210 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleSphere(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
-pub const IntersectCapsuleSphere: u64 = 72146;

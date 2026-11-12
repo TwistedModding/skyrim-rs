@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::vfunc_2` at 0x888cc0 (rtti, high); signature (low): `undefined vfunc_2(CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard__vfunc_2: u64 = 47995;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::vfunc_7` at 0x88c5d0 (rtti, high); signature (low): `char vfunc_7(CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard> * this, longlong * param_1)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard__vfunc_7: u64 = 48088;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vdtor` at 0x8c0b10 (slot_propagation, medium); signature (low): `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard> * vdtor(CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard__vdtor: u64 = 49367;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vfunc_1` at 0x8c0a60 (rtti, high); signature (untiered): `uint vfunc_1(void)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard__vfunc_1: u64 = 49364;
+/// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vfunc_10` at 0x8c0a00 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard__vfunc_10: u64 = 49362;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vfunc_11` at 0x8c0a70 (rtti, high); signature (low): `undefined vfunc_11(CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard__vfunc_11: u64 = 49365;
 /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::vfunc_12` at 0x8c0ad0 (rtti, high); signature (low): `undefined vfunc_12(CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -7815,21 +7825,3 @@ pub const CreateNiTransformController: u64 = 72932;
 pub const CreateNiTransformData: u64 = 73131;
 /// `CreateNiTransformInterpolator` at 0xf63620 (decompiler, high); signature (high): `NiKeyBasedInterpolator * CreateNiTransformInterpolator(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreateNiTransformInterpolator: u64 = 72780;
-/// `CreateNiTriShape` at 0xf18420 (decompiler, high); signature (high): `NiTriBasedGeom * CreateNiTriShape(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiTriShape: u64 = 71614;
-/// `CreateNiTriShapeData` at 0xf17950 (decompiler, high); signature (high): `NiTriBasedGeomData * CreateNiTriShapeData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiTriShapeData: u64 = 71588;
-/// `CreateNiTriStrips` at 0xf19d90 (decompiler, high); signature (high): `NiTriBasedGeom * CreateNiTriStrips(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiTriStrips: u64 = 71663;
-/// `CreateNiTriStripsData` at 0xf191c0 (decompiler, high); signature (high): `NiTriBasedGeomData * CreateNiTriStripsData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiTriStripsData: u64 = 71641;
-/// `CreateNiUVData` at 0xf89950 (decompiler, high); signature (high): `NiObject * CreateNiUVData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiUVData: u64 = 73970;
-/// `CreateNiVectorExtraData` at 0xf1a400 (decompiler, high); signature (high): `NiExtraData * CreateNiVectorExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiVectorExtraData: u64 = 71679;
-/// `CreateNiVertWeightsExtraData` at 0xf09390 (decompiler, high); signature (high): `NiExtraData * CreateNiVertWeightsExtraData(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiVertWeightsExtraData: u64 = 71197;
-/// `CreateNiVisController` at 0xf8a260 (decompiler, high); signature (high): `NiBoolInterpController * CreateNiVisController(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateNiVisController: u64 = 73994;
-/// `CreateNoRTTI_1AB76A0` at 0x1189b30 (decompiler, medium); signature (low): `undefined8 * CreateNoRTTI_1AB76A0(longlong param_1)`
-pub const CreateNoRTTI_1AB76A0: u64 = 84954;

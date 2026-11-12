@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SubmitUserContentListMemberFnRequest` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442264, rva 0x5f50c0).
-/// `longlong SubmitUserContentListMemberFnRequest(longlong param_1, undefined4 param_2, undefined8 * param_3, undefined4 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn submit_user_content_list_member_fn_request(param_1: i64, param_2: u32, param_3: *mut u64, param_4: u32) -> i64 { unsafe { function!(442264, (i64, u32, *mut u64, u32) -> i64)(param_1, param_2, param_3, param_4) } }
 /// `SubmitUserContentListMemberFnRequestWithArg` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442261, rva 0x5f4d20).
 /// `longlong SubmitUserContentListMemberFnRequestWithArg(longlong param_1, undefined4 param_2, undefined4 param_3, undefined8 param_4, undefined8 * param_5)`
 ///

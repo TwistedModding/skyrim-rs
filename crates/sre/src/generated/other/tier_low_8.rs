@@ -938,13 +938,6 @@ pub unsafe fn load_world_map_cloud_bank_model(param_1: i64) -> u64 { unsafe { fu
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn load_xml_tagfile_and_version(param_1: u64, param_2: *mut i64, param_3: *mut u32, param_4: *mut i64) -> u64 { unsafe { function!(64872, (u64, *mut i64, *mut u32, *mut i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `LockAndGetField160` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 70951, rva 0xefd6e0).
-/// `undefined8 LockAndGetField160(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn lock_and_get_field160(param_1: i64) -> u64 { unsafe { function!(70951, (i64) -> u64)(param_1) } }
 /// `LockFreeQueueEnqueue` (decompiler signature, tier low; ledger decompiler evidence, name medium; id 442059, rva 0x59e9c0).
 /// `undefined LockFreeQueueEnqueue(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13076,3 +13069,10 @@ pub unsafe fn release_array_storage(param_1: *mut i64) -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn release_array_storage_10(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(50205, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReleaseArrayStorage_11` (decompiler signature, tier low; ledger decompiler evidence, name high; id 50206, rva 0x8e7360).
+/// `undefined ReleaseArrayStorage_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn release_array_storage_11(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(50206, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -7,6 +7,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAccumulator::vfunc_37` at 0xf1edd0 (rtti, medium); signature (low): `undefined vfunc_37(NiAccumulator * this, undefined8 param_1)`
+pub const NiAccumulator__vfunc_37: u64 = 71826;
+/// `NiAccumulator::vfunc_38` at 0xf1ede0 (rtti, high); signature (high): `undefined vfunc_38(NiAccumulator * this)`
+pub const NiAccumulator__vfunc_38: u64 = 71827;
+/// `NiAccumulator::vfunc_40` at 0xf0f4f0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
+pub const NiAccumulator__vfunc_40: u64 = 71326;
+/// `NiAccumulator::vfunc_41` at 0xf0f500 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+pub const NiAccumulator__vfunc_41: u64 = 71327;
+/// `NiAdditionalGeometryData::Create` at 0xf1c040 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAdditionalGeometryData__Create: u64 = 71724;
+/// `NiAdditionalGeometryData::dtor` at 0xf1c110 (layout_inference, high); signature (low): `undefined dtor(NiAdditionalGeometryData * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const NiAdditionalGeometryData__dtor: u64 = 71725;
+/// `NiAdditionalGeometryData::vdtor` at 0xf1d5e0 (slot_propagation, medium); signature (low): `NiAdditionalGeometryData * vdtor(NiAdditionalGeometryData * this, uint param_1, undefined8 param_2, longlong param_3)`
+pub const NiAdditionalGeometryData__vdtor: u64 = 71765;
+/// `NiAdditionalGeometryData::vfunc_2` at 0xf1d6f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAdditionalGeometryData__vfunc_2: u64 = 71766;
 /// `NiAdditionalGeometryData::vfunc_24` at 0xf1b910 (rtti, high); signature (low): `undefined vfunc_24(NiAdditionalGeometryData * this, longlong param_1)`
 pub const NiAdditionalGeometryData__vfunc_24: u64 = 71719;
 /// `NiAdditionalGeometryData::vfunc_24_sub0` at 0xf1cba0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(uint * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, ushort param_5)`
@@ -8717,17 +8733,3 @@ pub const Papyrus__Cell__Reset: u64 = 56038;
 pub const Papyrus__Cell__SetActorOwner: u64 = 56057;
 /// `Papyrus::Cell::SetFactionOwner` at 0xa3ff90 (papyrus_native, high); signature (medium): `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESFaction * a0)`
 pub const Papyrus__Cell__SetFactionOwner: u64 = 56058;
-/// `Papyrus::Cell::SetFogColor` at 0xa3ee00 (papyrus_native, high); signature (medium): `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
-pub const Papyrus__Cell__SetFogColor: u64 = 56039;
-/// `Papyrus::Cell::SetFogColor_sub0` at 0x2bc2d0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogColor_sub0: u64 = 18942;
-/// `Papyrus::Cell::SetFogColor_sub1` at 0x2bc2f0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogColor_sub1: u64 = 18943;
-/// `Papyrus::Cell::SetFogPlanes` at 0xa3eea0 (papyrus_native, high); signature (medium): `void SetFogPlanes(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0, float a1)`
-pub const Papyrus__Cell__SetFogPlanes: u64 = 56040;
-/// `Papyrus::Cell::SetFogPlanes_sub0` at 0x2bc350 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogPlanes_sub0: u64 = 18945;
-/// `Papyrus::Cell::SetFogPlanes_sub1` at 0x2bc3c0 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub1(longlong param_1, undefined4 param_2)`
-pub const Papyrus__Cell__SetFogPlanes_sub1: u64 = 18947;
-/// `Papyrus::Cell::SetFogPower` at 0xa3ffa0 (papyrus_native, high); signature (medium): `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
-pub const Papyrus__Cell__SetFogPower: u64 = 56059;

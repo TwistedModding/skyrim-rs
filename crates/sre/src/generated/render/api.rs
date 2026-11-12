@@ -387,6 +387,30 @@ impl crate::BSCullingProcess {
 }
 
 impl crate::BSDynamicTriShape {
+    /// `BSDynamicTriShape::LockDynamicVertices`: takes the dynamic-block lock (+0x168, recursive) and returns dynamicVertices (+0x160); pair it with UnlockDynamicVertices
+    ///
+    /// Semantic, render pass, high; ledger runtime evidence, name high; id 70951, rva 0xefd6e0.
+    /// `void* (BSDynamicTriShape* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn lock_dynamic_vertices(&self) -> *mut c_void { unsafe { function!(70951, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    /// `BSDynamicTriShape::LockDynamicVertices_2`: the same as LockDynamicVertices (a second copy of the function); pair it with UnlockDynamicVertices
+    ///
+    /// Semantic, render pass, high; ledger runtime evidence, name high; id 70950, rva 0xefd6b0.
+    /// `void* (BSDynamicTriShape* this)`
+    ///
+    /// # Safety
+    /// The result is an untyped pointer.
+    #[inline]
+    pub unsafe fn lock_dynamic_vertices_2(&self) -> *mut c_void { unsafe { function!(70950, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    /// `BSDynamicTriShape::UnlockDynamicVertices`: releases one level of the dynamic-block lock taken by LockDynamicVertices (or LockDynamicVertices_2) on the same thread
+    ///
+    /// Semantic, render pass, high; ledger runtime evidence, name high; id 70952, rva 0xefd710.
+    /// `void (BSDynamicTriShape* this)`
+    #[inline]
+    pub fn unlock_dynamic_vertices(&self) { unsafe { function!(70952, (*const Self))(core::ptr::from_ref(self)) } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSDynamicTriShape.extraDataCapacity", 0x2A, u16) } }

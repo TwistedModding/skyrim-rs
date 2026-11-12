@@ -7,6 +7,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetByte45FOfField10` at 0x6f6400 (decompiler, high); signature (high): `undefined SetByte45FOfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte45FOfField10: u64 = 39383;
+/// `SetByte461OfField10` at 0x703340 (decompiler, high); signature (low): `undefined SetByte461OfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte461OfField10: u64 = 39624;
+/// `SetByte462OfField10` at 0x6fdd60 (decompiler, high); signature (high): `undefined SetByte462OfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte462OfField10: u64 = 39444;
+/// `SetByte468OfField10` at 0x701e20 (decompiler, high); signature (high): `undefined SetByte468OfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte468OfField10: u64 = 39582;
+/// `SetByte469OfField10` at 0x700dc0 (decompiler, high); signature (high): `undefined SetByte469OfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte469OfField10: u64 = 39546;
+/// `SetByte46COfField10` at 0x6f22d0 (decompiler, high); signature (high): `undefined SetByte46COfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte46COfField10: u64 = 39280;
+/// `SetByte46DOfField0xF8Sub10` at 0x6aded0 (decompiler, high); signature (low): `undefined SetByte46DOfField0xF8Sub10(longlong param_1, undefined1 param_2)`
+pub const SetByte46DOfField0xF8Sub10: u64 = 37934;
+/// `SetByte46FOfField10` at 0x701400 (decompiler, high); signature (low): `undefined SetByte46FOfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte46FOfField10: u64 = 39564;
+/// `SetByte49` at 0x57f9f0 (decompiler, high); signature (high): `undefined SetByte49(longlong param_1)`
+pub const SetByte49: u64 = 441717;
 /// `SetByte59ClearByte58Locked` at 0x9bc300 (decompiler, medium); signature (low): `undefined8 * SetByte59ClearByte58Locked(longlong param_1)`
 pub const SetByte59ClearByte58Locked: u64 = 53558;
 /// `SetByte84AndRetargetFloat70` at 0x15c40a0 (decompiler, medium); signature (medium): `undefined SetByte84AndRetargetFloat70(longlong param_1, byte param_2)`
@@ -8129,17 +8147,3 @@ pub const TESClimate__vfunc_4: u64 = 18617;
 pub const TESClimate__vfunc_6: u64 = 18616;
 /// `TESCombatStyle::ctor` at 0x269bd0 (layout_inference, high); signature (low): `TESCombatStyle * ctor(TESCombatStyle * this, undefined8 param_1, uint * param_2, longlong * param_3)`
 pub const TESCombatStyle__ctor: u64 = 523532;
-/// `TESCombatStyle::vdtor` at 0x26a890 (layout_inference, medium); signature (low): `TESCombatStyle * vdtor(TESCombatStyle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCombatStyle__vdtor: u64 = 17307;
-/// `TESCombatStyle::vfunc_19` at 0x26a160 (rtti, high); signature (high): `undefined vfunc_19(TESCombatStyle * this)`
-pub const TESCombatStyle__vfunc_19: u64 = 17299;
-/// `TESCombatStyle::vfunc_4` at 0x269df0 (rtti, high); signature (high): `undefined vfunc_4(TESCombatStyle * this)`
-pub const TESCombatStyle__vfunc_4: u64 = 17297;
-/// `TESCombatStyle::vfunc_6` at 0x269e90 (rtti, high); signature (low): `undefined8 vfunc_6(TESCombatStyle * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCombatStyle__vfunc_6: u64 = 17298;
-/// `TESCombatStyle::vfunc_6_sub0` at 0x26a570 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
-/// `TESCombatStyle::vfunc_6_sub1` at 0x26a640 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub1(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
-/// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;

@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Cell::SetFogColor` at 0xa3ee00 (papyrus_native, high); signature (medium): `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
+pub const Papyrus__Cell__SetFogColor: u64 = 56039;
+/// `Papyrus::Cell::SetFogColor_sub0` at 0x2bc2d0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub0(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogColor_sub0: u64 = 18942;
+/// `Papyrus::Cell::SetFogColor_sub1` at 0x2bc2f0 (callgraph, medium); signature (untiered): `undefined SetFogColor_sub1(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogColor_sub1: u64 = 18943;
+/// `Papyrus::Cell::SetFogPlanes` at 0xa3eea0 (papyrus_native, high); signature (medium): `void SetFogPlanes(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0, float a1)`
+pub const Papyrus__Cell__SetFogPlanes: u64 = 56040;
+/// `Papyrus::Cell::SetFogPlanes_sub0` at 0x2bc350 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub0(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogPlanes_sub0: u64 = 18945;
+/// `Papyrus::Cell::SetFogPlanes_sub1` at 0x2bc3c0 (callgraph, medium); signature (untiered): `undefined SetFogPlanes_sub1(longlong param_1, undefined4 param_2)`
+pub const Papyrus__Cell__SetFogPlanes_sub1: u64 = 18947;
+/// `Papyrus::Cell::SetFogPower` at 0xa3ffa0 (papyrus_native, high); signature (medium): `void SetFogPower(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, float a0)`
+pub const Papyrus__Cell__SetFogPower: u64 = 56059;
 /// `Papyrus::Cell::SetPublic` at 0xa3ffb0 (papyrus_native, high); signature (medium): `void SetPublic(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, bool a0)`
 pub const Papyrus__Cell__SetPublic: u64 = 56060;
 /// `Papyrus::Debug::CenterOnCell` at 0xa1eee0 (papyrus_native, high); signature (medium): `void CenterOnCell(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
@@ -8297,19 +8311,3 @@ pub const ReleaseRefArray118: u64 = 70295;
 pub const ReleaseRefArray280: u64 = 26286;
 /// `ReleaseRefArrayAndFree` at 0x82b3e0 (decompiler, high); signature (low): `undefined ReleaseRefArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseRefArrayAndFree: u64 = 44930;
-/// `ReleaseRefArrayAndFreeThunk` at 0x82b760 (decompiler, high); signature (untiered): `undefined ReleaseRefArrayAndFreeThunk(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefArrayAndFreeThunk: u64 = 44939;
-/// `ReleaseRefArrayAndFree_2` at 0x857e10 (decompiler, high); signature (low): `undefined ReleaseRefArrayAndFree_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefArrayAndFree_2: u64 = 46970;
-/// `ReleaseRefArrayAndFree_3` at 0x9ec2a0 (decompiler, medium); signature (low): `undefined ReleaseRefArrayAndFree_3(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefArrayAndFree_3: u64 = 54113;
-/// `ReleaseRefArraysUnderLock` at 0x64eb80 (decompiler, medium); signature (low): `DWORD ReleaseRefArraysUnderLock(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefArraysUnderLock: u64 = 36470;
-/// `ReleaseRefAt28` at 0x7ef9e0 (decompiler, medium); signature (medium): `undefined ReleaseRefAt28(longlong param_1)`
-pub const ReleaseRefAt28: u64 = 43997;
-/// `ReleaseRefAt28OfField18` at 0x805aa0 (decompiler, high); signature (low): `undefined ReleaseRefAt28OfField18(longlong param_1)`
-pub const ReleaseRefAt28OfField18: u64 = 44278;
-/// `ReleaseRefAtField20` at 0x3de8d0 (decompiler, medium); signature (medium): `undefined ReleaseRefAtField20(longlong param_1)`
-pub const ReleaseRefAtField20: u64 = 25157;
-/// `ReleaseRefAtField8` at 0x227dc0 (decompiler, medium); signature (low): `undefined ReleaseRefAtField8(longlong param_1)`
-pub const ReleaseRefAtField8: u64 = 15977;

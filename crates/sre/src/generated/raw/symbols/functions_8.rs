@@ -617,8 +617,9 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xefd540, id: 70947, confidence: Confidence::High, name: "BSDynamicTriShape::ctor" },
     Function { rva: 0xefd5f0, id: 70948, confidence: Confidence::High, name: "BSDynamicTriShape::ctor" },
     Function { rva: 0xefd640, id: 70949, confidence: Confidence::Medium, name: "BSDynamicTriShape::ctor" },
-    Function { rva: 0xefd6b0, id: 70950, confidence: Confidence::High, name: "LockField168AndGetField160" },
-    Function { rva: 0xefd6e0, id: 70951, confidence: Confidence::Medium, name: "LockAndGetField160" },
+    Function { rva: 0xefd6b0, id: 70950, confidence: Confidence::High, name: "BSDynamicTriShape::LockDynamicVertices_2" },
+    Function { rva: 0xefd6e0, id: 70951, confidence: Confidence::High, name: "BSDynamicTriShape::LockDynamicVertices" },
+    Function { rva: 0xefd710, id: 70952, confidence: Confidence::High, name: "BSDynamicTriShape::UnlockDynamicVertices" },
     Function { rva: 0xefd8e0, id: 70955, confidence: Confidence::Medium, name: "PackVertexAttributesIntoField160" },
     Function { rva: 0xefdd10, id: 70956, confidence: Confidence::Medium, name: "PackVec4PairIntoField160" },
     Function { rva: 0xefdf30, id: 70957, confidence: Confidence::High, name: "CreateBSDynamicTriShape" },
@@ -8711,5 +8712,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x11580d0, id: 81931, confidence: Confidence::Medium, name: "hkContainerHeapAllocator::Allocator::vfunc_2_caller_17" },
     Function { rva: 0x1158160, id: 81932, confidence: Confidence::Medium, name: "hkContainerHeapAllocator::Allocator::vfunc_2_caller_18" },
     Function { rva: 0x11581f0, id: 81933, confidence: Confidence::Medium, name: "hkContainerHeapAllocator::Allocator::vfunc_2_caller_19" },
-    Function { rva: 0x11582a0, id: 81934, confidence: Confidence::High, name: "hkgpAbstractMesh<hkgpTriangulatorType<hkContainerHeapAllocator,hkgpTriangulatorBase::VertexBase,hkgpTriangulatorBase::TriangleBase,hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkgpTriangulatorBase::SparseEdgeDataPolicy<hkgpTriangulatorBase::DefaultEdgeData<hkContainerHeapAllocator>,hkContainerHeapAllocator>,-1,4,15,0>::Edge,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Vertex,hkgpTriangulatorType<struct_hkContainerHeapAllocator,struct_hkgpTriangulatorBase::VertexBase,struct_hkgpTriangulatorBase::TriangleBase,struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkgpTriangulatorBase::SparseEdgeDataPolicy<struct_hkgpTriangulatorBase::DefaultEdgeData<struct_hkContainerHeapAllocator>,struct_hkContainerHeapAllocator>,-1,4,15,0>::Triangle,hkContainerHeapAllocator>::vfunc_3" },
 ];

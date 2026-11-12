@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetThreeShorts` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68662, rva 0xcfac30).
-/// `undefined2 * SetThreeShorts(undefined2 * param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_three_shorts(param_1: *mut u16, param_2: u16, param_3: u16, param_4: u16) -> *mut u16 { unsafe { function!(68662, (*mut u16, u16, u16, u16) -> *mut u16)(param_1, param_2, param_3, param_4) } }
 /// `SetValueAtIndex_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 71412, rva 0xf11850).
 /// `ulonglong SetValueAtIndex_2(longlong param_1, uint param_2, undefined4 param_3)`
 ///

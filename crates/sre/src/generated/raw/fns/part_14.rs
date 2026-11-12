@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InterruptCastingAndReset` at 0x5cd2f0 (decompiler, medium); signature (low): `undefined InterruptCastingAndReset(longlong * param_1)`
+pub const InterruptCastingAndReset: u64 = 34427;
+/// `InterruptContextCastIfActive` at 0x8b53a0 (decompiler, medium); signature (low): `undefined InterruptContextCastIfActive(void)`
+pub const InterruptContextCastIfActive: u64 = 49102;
+/// `InterruptContextCastIfActive_2` at 0x8b5680 (decompiler, medium); signature (low): `undefined InterruptContextCastIfActive_2(void)`
+pub const InterruptContextCastIfActive_2: u64 = 49107;
+/// `IntersectBoxCapsule` at 0xf34510 (decompiler, medium); signature (low): `undefined8 IntersectBoxCapsule(undefined4 param_1, undefined8 param_2, undefined8 param_3, longlong param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
+pub const IntersectBoxCapsule: u64 = 72120;
+/// `IntersectBoxSphere` at 0xf30ba0 (decompiler, medium); signature (low): `undefined8 IntersectBoxSphere(undefined4 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
+pub const IntersectBoxSphere: u64 = 72118;
+/// `IntersectCapsuleCapsule` at 0xf39350 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleCapsule(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
+pub const IntersectCapsuleCapsule: u64 = 72147;
+/// `IntersectCapsuleSphere` at 0xf39210 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleSphere(undefined4 param_1, undefined8 param_2, float * param_3, undefined8 param_4, float * param_5, undefined4 * param_6, undefined4 * param_7, char param_8, uint * param_9, uint * param_10)`
+pub const IntersectCapsuleSphere: u64 = 72146;
 /// `IntersectCapsuleTriangle` at 0xf39490 (decompiler, medium); signature (low): `undefined8 IntersectCapsuleTriangle(float param_1, longlong param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, undefined4 * param_8, float * param_9, char param_10, float * param_11, float * param_12)`
 pub const IntersectCapsuleTriangle: u64 = 72148;
 /// `IntersectLineWithCircle2D` at 0x11fc480 (decompiler, medium); signature (medium): `undefined1 IntersectLineWithCircle2D(float * param_1, float * param_2, undefined4 * param_3)`
@@ -3249,16 +3263,12 @@ pub const LocationDiscovery__RegisterSink: u64 = 40377;
 pub const LocationDiscovery__UnregisterSink: u64 = 40378;
 /// `LockAndCoalesceFreeBlocks` at 0xce57b0 (decompiler, medium); signature (medium): `undefined LockAndCoalesceFreeBlocks(longlong param_1)`
 pub const LockAndCoalesceFreeBlocks: u64 = 68303;
-/// `LockAndGetField160` at 0xefd6e0 (decompiler, medium); signature (low): `undefined8 LockAndGetField160(longlong param_1)`
-pub const LockAndGetField160: u64 = 70951;
 /// `LockEffect::ctor` at 0x5c9d00 (layout_inference, high); signature (low): `LockEffect * ctor(LockEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
 pub const LockEffect__ctor: u64 = 34393;
 /// `LockEffect::vdtor` at 0x5c9f10 (slot_propagation, medium); signature (low): `LockEffect * vdtor(LockEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const LockEffect__vdtor: u64 = 34397;
 /// `LockEffect::vfunc_20` at 0x5c9e10 (rtti, high); signature (low): `undefined vfunc_20(LockEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const LockEffect__vfunc_20: u64 = 34395;
-/// `LockField168AndGetField160` at 0xefd6b0 (decompiler, high); signature (high): `undefined8 LockField168AndGetField160(longlong param_1)`
-pub const LockField168AndGetField160: u64 = 70950;
 /// `LockForReadGlobal411271` at 0xfefbc0 (decompiler, high); signature (high): `undefined LockForReadGlobal411271(void)`
 pub const LockForReadGlobal411271: u64 = 76599;
 /// `LockFreeQueueEnqueue` at 0x59e9c0 (decompiler, medium); signature (low): `undefined LockFreeQueueEnqueue(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
@@ -8457,19 +8467,3 @@ pub const NiAccumulator__vfunc_26: u64 = 71822;
 pub const NiAccumulator__vfunc_27: u64 = 71823;
 /// `NiAccumulator::vfunc_28` at 0xf1ed90 (rtti, high); signature (untiered): `ulonglong vfunc_28(NiAccumulator * this, longlong * param_1)`
 pub const NiAccumulator__vfunc_28: u64 = 71824;
-/// `NiAccumulator::vfunc_37` at 0xf1edd0 (rtti, medium); signature (low): `undefined vfunc_37(NiAccumulator * this, undefined8 param_1)`
-pub const NiAccumulator__vfunc_37: u64 = 71826;
-/// `NiAccumulator::vfunc_38` at 0xf1ede0 (rtti, high); signature (high): `undefined vfunc_38(NiAccumulator * this)`
-pub const NiAccumulator__vfunc_38: u64 = 71827;
-/// `NiAccumulator::vfunc_40` at 0xf0f4f0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
-pub const NiAccumulator__vfunc_40: u64 = 71326;
-/// `NiAccumulator::vfunc_41` at 0xf0f500 (rtti, medium); signature (low): `undefined vfunc_41(void)`
-pub const NiAccumulator__vfunc_41: u64 = 71327;
-/// `NiAdditionalGeometryData::Create` at 0xf1c040 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiAdditionalGeometryData__Create: u64 = 71724;
-/// `NiAdditionalGeometryData::dtor` at 0xf1c110 (layout_inference, high); signature (low): `undefined dtor(NiAdditionalGeometryData * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-pub const NiAdditionalGeometryData__dtor: u64 = 71725;
-/// `NiAdditionalGeometryData::vdtor` at 0xf1d5e0 (slot_propagation, medium); signature (low): `NiAdditionalGeometryData * vdtor(NiAdditionalGeometryData * this, uint param_1, undefined8 param_2, longlong param_3)`
-pub const NiAdditionalGeometryData__vdtor: u64 = 71765;
-/// `NiAdditionalGeometryData::vfunc_2` at 0xf1d6f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiAdditionalGeometryData__vfunc_2: u64 = 71766;

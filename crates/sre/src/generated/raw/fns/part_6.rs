@@ -7,6 +7,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildAabbTreeF16` at 0x1132fc0 (decompiler, medium); signature (low): `undefined BuildAabbTreeF16(longlong param_1, undefined8 * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
+pub const BuildAabbTreeF16: u64 = 81561;
+/// `BuildAabbTreeNodesF16` at 0x1133ed0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesF16(longlong param_1, float * param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesF16: u64 = 81565;
+/// `BuildAabbTreeNodesF32` at 0x11343e0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesF32(longlong param_1, float * param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesF32: u64 = 81566;
+/// `BuildAabbTreeNodesQ16` at 0x11333d0 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesQ16(longlong param_1, longlong param_2, longlong param_3, int param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesQ16: u64 = 81563;
+/// `BuildAabbTreeNodesQ32` at 0x1133940 (decompiler, medium); signature (low): `undefined BuildAabbTreeNodesQ32(longlong param_1, longlong param_2, longlong param_3, uint param_4, undefined8 param_5, longlong * param_6, char param_7)`
+pub const BuildAabbTreeNodesQ32: u64 = 81564;
+/// `BuildAabbTreeQ16` at 0x1132a90 (decompiler, medium); signature (low): `undefined BuildAabbTreeQ16(longlong param_1, float * param_2, undefined8 * param_3, uint param_4, undefined8 * param_5)`
+pub const BuildAabbTreeQ16: u64 = 81559;
+/// `BuildAabbTreeQ32` at 0x1132d30 (decompiler, medium); signature (low): `undefined BuildAabbTreeQ32(longlong param_1, float * param_2, undefined8 * param_3, int param_4, undefined8 * param_5)`
+pub const BuildAabbTreeQ32: u64 = 81560;
 /// `BuildAndDispatchEventToHandlers` at 0x3d8ee0 (decompiler, medium); signature (low): `undefined1 BuildAndDispatchEventToHandlers(longlong param_1, int param_2, undefined4 param_3, longlong param_4, longlong param_5, longlong * param_6, undefined1 param_7, undefined8 param_8, ulonglong param_9)`
 pub const BuildAndDispatchEventToHandlers: u64 = 25081;
 /// `BuildAndMergeSymbolIdMaps` at 0xb2ace0 (semantic, medium); signature (low): `undefined BuildAndMergeSymbolIdMaps(longlong * param_1, longlong param_2, longlong param_3, longlong param_4, longlong param_5)`; semantic: links every referenced behaviour graph's variables, events, attributes and character properties to the root graph by name (medium); signature `void (hkArray<hkbBehaviorGraph*>* graphs, void* attributeNameMap, void* variableNameMap, void* eventNameMap, void* characterPropertyNameMap)`
@@ -8025,11 +8039,3 @@ pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehav
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2f1a2cd4505b: u64 = 48515;
 /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlankingMovement,bool_(__cdecl_CombatBehaviorContextFlankingMovement::*)(void)const___ptr64>_>_>::vfunc_9` at 0x89daa0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
 pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_ef0fbaaaebb2: u64 = 48487;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vdtor` at 0x8a6770 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_564711205d7e: u64 = 48686;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8a6fe0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_2a2b22f28614: u64 = 48722;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_8` at 0x8a92f0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_219b84ab0a0c: u64 = 48803;
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorContextFlee,bool_(__cdecl_CombatBehaviorContextFlee::*)(void)const___ptr64>_>_>::vfunc_9` at 0x8a7eb0 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-pub const CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_4bb899fdc03f: u64 = 48754;
