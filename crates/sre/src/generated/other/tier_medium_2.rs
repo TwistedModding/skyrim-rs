@@ -13986,13 +13986,6 @@ pub unsafe fn open_text_gap_and_shift_runs(param_1: *mut i64, param_2: i64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn open_wide_char_gap_at(param_1: *mut i64, param_2: i64, param_3: i64, param_4: i64) -> i64 { unsafe { function!(88413, (*mut i64, i64, i64, i64) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `OperatorDelete` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109588, rva 0x15a743c).
-/// `undefined OperatorDelete(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn operator_delete(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(109588, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `OrthonormalizeMatrix3x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70226, rva 0xede960).
 /// `undefined1 OrthonormalizeMatrix3x3(float * param_1)`
 ///
@@ -14133,3 +14126,10 @@ pub unsafe fn papyrus__active_magic_effect__get_target_actor(vm: *mut c_void, st
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__active_magic_effect__register_for_animation_event(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) -> u8 { unsafe { function!(54579, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESObjectREFR, *mut crate::BSFixedString) -> u8)(vm, stackId, self_, a0, a1) } }
+/// `Papyrus::ActiveMagicEffect::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54580, rva 0x9fbcc0).
+/// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54580, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }

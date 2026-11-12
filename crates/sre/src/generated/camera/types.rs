@@ -614,8 +614,8 @@ pub struct BSFlattenedBoneTree {
     /// +0x0 `vtbl:BSFlattenedBoneTree:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFlattenedBoneTree_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -675,7 +675,7 @@ pub struct BSFlattenedBoneTree {
 }
 const _: () = assert!(size_of::<BSFlattenedBoneTree>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFlattenedBoneTree, extraData) == 0x20);
@@ -709,8 +709,8 @@ pub struct BSFrustumFOVController {
     /// +0x0 `vtbl:BSFrustumFOVController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFrustumFOVController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -743,7 +743,7 @@ pub struct BSFrustumFOVController {
 }
 const _: () = assert!(size_of::<BSFrustumFOVController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSFrustumFOVController, field_1C) == 0x1C);
@@ -765,8 +765,8 @@ pub struct BSFurnitureMarkerNode {
     /// +0x0 `vtbl:BSFurnitureMarkerNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFurnitureMarkerNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -781,7 +781,7 @@ pub struct BSFurnitureMarkerNode {
 }
 const _: () = assert!(size_of::<BSFurnitureMarkerNode>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, markers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFurnitureMarkerNode, markerCount) == 0x28);
@@ -1095,8 +1095,7 @@ pub struct BipedAnim {
     #[doc(hidden)]
     pub __bufferedObjects: [u8; 5040],
     /// +0x2770 `u32`, semantic; the owner reference's handle (high)
-    #[doc(hidden)]
-    pub __ownerHandle: [u8; 4],
+    pub ownerHandle: u32,
     unknown_2774: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1106,19 +1105,17 @@ const _: () = assert!(core::mem::offset_of!(BipedAnim, __refCount) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BipedAnim, __root) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BipedAnim, objects) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BipedAnim, __bufferedObjects) == 0x13C0);
-const _: () = assert!(core::mem::offset_of!(BipedAnim, __ownerHandle) == 0x2770);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, ownerHandle) == 0x2770);
 
 /// `BipedObject`: size 0x78 (exact).
 /// Meaning: one biped slot: the item, its addon and model, and the attached part clone (high, camera pass).
 /// Evidence: one biped slot: the item, its addon and model, and the attached part clone; IC8 I (static-Z). Layout from ResetSlotEntry 0x2178d0, CopyAssignRefCountedRecord 0x217a50 and the Add* functions.; size: stride 0x78 in the ctor loop 0x217c10 and every indexed access (imul 0x78 at 0x21a3ec).
 #[repr(C, align(8))]
 pub struct BipedObject {
-    /// +0x0 `ptr:TESForm`, semantic; the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon) (high)
-    #[doc(hidden)]
-    pub __item: [u8; 8],
+    /// +0x0 `ptr:TESForm`, semantic; the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon); set before BindSkinBonesToSkeleton is entered for the slot; slot 2 holds the skin armour on a naked body (high)
+    pub item: *mut crate::TESForm,
     /// +0x8 `ptr:TESObjectARMA`, semantic; the armor addon (form type 0x66 'f') (high)
-    #[doc(hidden)]
-    pub __addon: [u8; 8],
+    pub addon: *mut crate::TESObjectARMA,
     /// +0x10 `ptr:TESModel`, semantic; the model component used to load the part (slot 4 = path) (high)
     #[doc(hidden)]
     pub __model: [u8; 8],
@@ -1136,8 +1133,8 @@ pub struct BipedObject {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BipedObject>() == 0x78);
-const _: () = assert!(core::mem::offset_of!(BipedObject, __item) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BipedObject, __addon) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BipedObject, item) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BipedObject, addon) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BipedObject, __model) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BipedObject, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BipedObject, partClone) == 0x20);
@@ -2971,8 +2968,8 @@ pub struct ModelReferenceEffect {
     /// +0x0 `vtbl:ModelReferenceEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ModelReferenceEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
@@ -3046,7 +3043,7 @@ pub struct ModelReferenceEffect {
 }
 const _: () = assert!(size_of::<ModelReferenceEffect>() == 0xD8);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_20) == 0x20);
@@ -3201,8 +3198,8 @@ pub struct NiLight {
     /// +0x0 `vtbl:NiLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLight_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -3262,7 +3259,7 @@ pub struct NiLight {
 }
 const _: () = assert!(size_of::<NiLight>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiLight, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLight, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiLight, extraData) == 0x20);
@@ -3296,8 +3293,8 @@ pub struct NiPointLight {
     /// +0x0 `vtbl:NiPointLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPointLight_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -3365,7 +3362,7 @@ pub struct NiPointLight {
 }
 const _: () = assert!(size_of::<NiPointLight>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPointLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPointLight, extraData) == 0x20);
@@ -3955,8 +3952,8 @@ pub struct ReferenceEffect {
     /// +0x0 `vtbl:ReferenceEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ReferenceEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base BSTempEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
@@ -3988,7 +3985,7 @@ pub struct ReferenceEffect {
 }
 const _: () = assert!(size_of::<ReferenceEffect>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_20) == 0x20);
@@ -4009,8 +4006,8 @@ pub struct ShaderReferenceEffect {
     /// +0x0 `vtbl:ShaderReferenceEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ShaderReferenceEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
@@ -4081,7 +4078,7 @@ pub struct ShaderReferenceEffect {
 }
 const _: () = assert!(size_of::<ShaderReferenceEffect>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_20) == 0x20);
@@ -5467,8 +5464,8 @@ pub struct TESRace {
     /// +0x50 `vtbl:TESRace:50`, rtti
     #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::TESRace_vtable_50,
-    /// +0x58 `undefined8`, base BGSSkinForm
-    pub field_58: u64,
+    /// +0x58 `ptr:TESObjectARMO`, base BGSSkinForm, semantic; the skin armour; an actor wears its NPC's, else its race's, and a naked body is BipedAnim.objects[2].item being that armour (high)
+    pub skin: *mut crate::TESObjectARMO,
     /// +0x60 `vtbl:TESRace:60`, rtti
     #[doc(hidden)]
     pub __vftable_60: *const crate::raw::vtables::TESRace_vtable_60,
@@ -5539,7 +5536,7 @@ const _: () = assert!(core::mem::offset_of!(TESRace, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(TESRace, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(TESRace, skin) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESRace, __vftable_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESRace, slotMask) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESRace, field_C) == 0x6C);
@@ -6128,8 +6125,8 @@ pub struct bhkBvTreeShape {
     /// +0x0 `vtbl:bhkBvTreeShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBvTreeShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -6139,7 +6136,7 @@ pub struct bhkBvTreeShape {
 }
 const _: () = assert!(size_of::<bhkBvTreeShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkBvTreeShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBvTreeShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBvTreeShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBvTreeShape, field_10) == 0x10);
 
 /// `bhkCharProxyController`: size 0x5B0 (exact, medium); primary base `hkpCharacterProxyListener`.
@@ -6455,8 +6452,8 @@ pub struct bhkConvexShape {
     /// +0x0 `vtbl:bhkConvexShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConvexShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -6466,7 +6463,7 @@ pub struct bhkConvexShape {
 }
 const _: () = assert!(size_of::<bhkConvexShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkConvexShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConvexShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConvexShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConvexShape, field_10) == 0x10);
 
 /// `bhkPickData`: size 0xD0 (exact).
@@ -6553,7 +6550,7 @@ pub struct bhkShape {
     /// +0x0 `vtbl:bhkShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkShape_vtable,
-    /// +0x8 `u32`, base NiObject, semantic; NiRefObject count (lock inc/xadd) (high)
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:hkpShape`, base bhkRefObject, semantic, runtime; the referenced hkpShape; set through slot 37 (high)
@@ -6580,8 +6577,8 @@ pub struct bhkShapeCollection {
     /// +0x0 `vtbl:bhkShapeCollection:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkShapeCollection_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -6591,7 +6588,7 @@ pub struct bhkShapeCollection {
 }
 const _: () = assert!(size_of::<bhkShapeCollection>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkShapeCollection, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkShapeCollection, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkShapeCollection, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkShapeCollection, field_10) == 0x10);
 
 /// `bhkSphereRepShape`: size 0x28 (exact, high); primary base `bhkShape`.
@@ -6603,8 +6600,8 @@ pub struct bhkSphereRepShape {
     /// +0x0 `vtbl:bhkSphereRepShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSphereRepShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -6614,7 +6611,7 @@ pub struct bhkSphereRepShape {
 }
 const _: () = assert!(size_of::<bhkSphereRepShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkSphereRepShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSphereRepShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSphereRepShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSphereRepShape, field_10) == 0x10);
 
 /// `bhkWorld`: size 0xC710 (exact, medium); primary base `bhkSerializable`.
@@ -6626,8 +6623,8 @@ pub struct bhkWorld {
     /// +0x0 `vtbl:bhkWorld:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkWorld_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkpWorld`, base bhkRefObject, semantic; the Havok world; slots 39 and 40 return it (high)
     pub world: *mut crate::hkpWorld,
@@ -6700,7 +6697,7 @@ pub struct bhkWorld {
 }
 const _: () = assert!(size_of::<bhkWorld>() == 0xC710);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkWorld, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, world) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C558) == 0xC558);
@@ -8347,6 +8344,8 @@ impl TESObjectLIGH_flags {
 pub struct TESRace_dataFlags(pub u32);
 
 impl TESRace_dataFlags {
+    /// child race (high)
+    pub const CHILD: Self = Self(0x4);
     /// alwaysAnimateVisible (medium)
     pub const ALWAYS_ANIMATE_VISIBLE: Self = Self(0x80);
     /// neverPushed (medium)

@@ -1587,16 +1587,6 @@ impl crate::BGSSceneActionTimer {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(24267, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BGSSkinForm {
-    /// `BGSSkinForm::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 14337, rva 0x1db8b0).
-    /// `BGSSkinForm * ctor(BGSSkinForm * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14337, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BGSStaticCollection {
     /// `BGSStaticCollection::TESModelTextureSwap_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 17168, rva 0x266e24).
     /// `undefined TESModelTextureSwap_vdtor(BGSStaticCollection * this)`

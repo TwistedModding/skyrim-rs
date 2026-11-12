@@ -413,8 +413,8 @@ pub struct BSGrabIKNote {
     /// +0x0 `vtbl:BSGrabIKNote:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSGrabIKNote_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `u32`, semantic; 1 = grab IK (BSAnimNote type tag) (high)
     pub noteType: u32,
@@ -432,7 +432,7 @@ pub struct BSGrabIKNote {
 }
 const _: () = assert!(size_of::<BSGrabIKNote>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, noteType) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, time) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSGrabIKNote, hand) == 0x18);
@@ -901,8 +901,8 @@ pub struct BSLookIKNote {
     /// +0x0 `vtbl:BSLookIKNote:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLookIKNote_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `u32`, semantic; 2 = look IK (high)
     pub noteType: u32,
@@ -917,7 +917,7 @@ pub struct BSLookIKNote {
 }
 const _: () = assert!(size_of::<BSLookIKNote>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLookIKNote, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLookIKNote, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, noteType) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, time) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSLookIKNote, value) == 0x18);
@@ -1162,8 +1162,8 @@ pub struct NiLookAtController {
     /// +0x0 `vtbl:NiLookAtController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLookAtController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -1195,7 +1195,7 @@ pub struct NiLookAtController {
 }
 const _: () = assert!(size_of::<NiLookAtController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLookAtController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_1C) == 0x1C);
@@ -1216,8 +1216,8 @@ pub struct NiLookAtInterpolator {
     /// +0x0 `vtbl:NiLookAtInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLookAtInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1250,7 +1250,7 @@ pub struct NiLookAtInterpolator {
 }
 const _: () = assert!(size_of::<NiLookAtInterpolator>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiLookAtInterpolator, field_20) == 0x20);

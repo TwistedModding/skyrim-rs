@@ -91,6 +91,12 @@ impl core::ops::Deref for crate::NiIntegerExtraData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `NiObject` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::NiObject {
+    type Target = crate::NiRefObject;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `NiObjectNET` is laid out from its primary base `NiObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiObjectNET {
     type Target = crate::NiObject;
@@ -822,16 +828,6 @@ impl crate::DepthStencilProperties {
 impl crate::DepthStencilRecord {
     #[doc(hidden)]
     #[inline]
-    pub fn __member_readOnlyDsv(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "DepthStencilRecord.readOnlyDsv", 0x48, [u8; 64]) } }
-    /// `DepthStencilRecord::readOnlyDsv`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn readOnlyDsv(&self) -> [u8; 64] { unsafe { Self::__member_readOnlyDsv(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_readOnlyDsv(&mut self, value: [u8; 64]) { unsafe { Self::__member_readOnlyDsv(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn readOnlyDsv_ptr(&self) -> *mut [u8; 64] { Self::__member_readOnlyDsv(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_srv(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "DepthStencilRecord.srv", 0x88, *mut c_void) } }
     /// `DepthStencilRecord::srv`, at +0x88 on 1.7.104.
     #[inline]
@@ -1090,26 +1086,6 @@ impl crate::FrameState {
     pub fn set_ratioIncreaseCounter(&mut self, value: u32) { unsafe { Self::__member_ratioIncreaseCounter(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn ratioIncreaseCounter_ptr(&self) -> *mut u32 { Self::__member_ratioIncreaseCounter(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_screenHeight(this: *const Self) -> *mut u32 { unsafe { member!(this, "FrameState.screenHeight", 0x28, u32) } }
-    /// `FrameState::screenHeight`, at +0x28 on 1.7.104.
-    #[inline]
-    pub fn screenHeight(&self) -> u32 { unsafe { Self::__member_screenHeight(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_screenHeight(&mut self, value: u32) { unsafe { Self::__member_screenHeight(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn screenHeight_ptr(&self) -> *mut u32 { Self::__member_screenHeight(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_screenWidth(this: *const Self) -> *mut u32 { unsafe { member!(this, "FrameState.screenWidth", 0x24, u32) } }
-    /// `FrameState::screenWidth`, at +0x24 on 1.7.104.
-    #[inline]
-    pub fn screenWidth(&self) -> u32 { unsafe { Self::__member_screenWidth(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_screenWidth(&mut self, value: u32) { unsafe { Self::__member_screenWidth(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn screenWidth_ptr(&self) -> *mut u32 { Self::__member_screenWidth(core::ptr::from_ref(self)) }
 }
 
 impl crate::ImageSpaceEffectDepthOfField {
@@ -1686,6 +1662,18 @@ impl crate::NiObjectNET {
     pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
 }
 
+impl crate::NiStringExtraData {
+    /// `NiStringExtraData::ctor`: constructs a string extra data with its value (no name)
+    ///
+    /// Semantic, frame pass, high; ledger layout_inference evidence, name high; id 70796, rva 0xef72a0.
+    /// `NiStringExtraData* (NiStringExtraData* this, const BSFixedString* value)`
+    ///
+    /// # Safety
+    /// It constructs or destroys an object in place.
+    #[inline]
+    pub unsafe fn ctor(&self, value: *const crate::BSFixedString) -> *mut Self { unsafe { function!(70796, (*const Self, *const crate::BSFixedString) -> *mut Self)(core::ptr::from_ref(self), value) } }
+}
+
 impl crate::PlayerInputHandler {
     /// `PlayerInputHandler::Destroy`, vtable slot 0: destructor
     ///
@@ -2258,16 +2246,6 @@ impl crate::RenderTargetRecord {
     pub fn copyTexture_ptr(&self) -> *mut *mut c_void { Self::__member_copyTexture(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_rtv(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "RenderTargetRecord.rtv", 0x10, *mut c_void) } }
-    /// `RenderTargetRecord::rtv`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn rtv(&self) -> *mut c_void { unsafe { Self::__member_rtv(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_rtv(&mut self, value: *mut c_void) { unsafe { Self::__member_rtv(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn rtv_ptr(&self) -> *mut *mut c_void { Self::__member_rtv(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_srv(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "RenderTargetRecord.srv", 0x18, *mut c_void) } }
     /// `RenderTargetRecord::srv`, at +0x18 on 1.7.104.
     #[inline]
@@ -2629,16 +2607,6 @@ impl crate::Renderer {
     pub fn set_refreshRate(&mut self, value: u64) { unsafe { Self::__member_refreshRate(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn refreshRate_ptr(&self) -> *mut u64 { Self::__member_refreshRate(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_renderTargets(this: *const Self) -> *mut [u8; 5568] { unsafe { member!(this, "Renderer.renderTargets", 0xA58, [u8; 5568]) } }
-    /// `Renderer::renderTargets`, at +0xA58 on 1.7.104.
-    #[inline]
-    pub fn renderTargets(&self) -> [u8; 5568] { unsafe { Self::__member_renderTargets(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_renderTargets(&mut self, value: [u8; 5568]) { unsafe { Self::__member_renderTargets(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn renderTargets_ptr(&self) -> *mut [u8; 5568] { Self::__member_renderTargets(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_requestedRefreshRate(this: *const Self) -> *mut u32 { unsafe { member!(this, "Renderer.requestedRefreshRate", 0x14, u32) } }
@@ -3465,6 +3433,15 @@ impl crate::TypeNode {
     pub fn name_ptr(&self) -> *mut *mut c_void { Self::__member_name(core::ptr::from_ref(self)) }
 }
 
+/// `AllocateMemory`: allocates from the engine's global heap; manager is g_MemoryManager
+///
+/// Semantic, frame pass, high; ledger semantic evidence, name high; id 68115, rva 0xcde250.
+/// `void* (void* manager, u64 size, u32 alignment, bool aligned)`
+///
+/// # Safety
+/// `manager` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn allocate_memory(manager: *mut c_void, size: u64, alignment: u32, aligned: bool) -> *mut c_void { unsafe { function!(68115, (*mut c_void, u64, u32, bool) -> *mut c_void)(manager, size, alignment, aligned) } }
 /// `AppendRenderPass`: allocates a pass and appends it to a property's pass list (+0x28 chain)
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 105528, rva 0x14e78e0.
@@ -3632,6 +3609,15 @@ pub fn get_main_camera() -> Option<&'static crate::NiCamera> { unsafe { function
 /// It constructs or destroys an object in place.
 #[inline]
 pub unsafe fn image_space_manager__ctor(this: *mut c_void) -> *mut c_void { unsafe { function!(105666, (*mut c_void) -> *mut c_void)(this) } }
+/// `InitMemoryManagerOnce`: initialises the global memory manager once
+///
+/// Semantic, frame pass, high; ledger semantic evidence, name high; id 68121, rva 0xcde810.
+/// `void (void* manager, i32* state)`
+///
+/// # Safety
+/// `manager`, `state` must point to what the engine expects.
+#[inline]
+pub unsafe fn init_memory_manager_once(manager: *mut c_void, state: *mut i32) { unsafe { function!(68121, (*mut c_void, *mut i32))(manager, state) } }
 /// `InitRenderPassPools`: allocates the two render-pass pools (0xffff passes of 0x48 and 16 light slots each)
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 107500, rva 0x1555a10.
@@ -3666,6 +3652,15 @@ pub unsafe fn is_another_thread_in_update_phase() -> bool { unsafe { function!(3
 /// The pass rates the signature medium.
 #[inline]
 pub unsafe fn lookup_named_object(root: *mut crate::NiAVObject, name: *const crate::BSFixedString, searchTree: bool) -> *mut crate::NiAVObject { unsafe { function!(76207, (*mut crate::NiAVObject, *const crate::BSFixedString, bool) -> *mut crate::NiAVObject)(root, name, searchTree) } }
+/// `OperatorDelete`: frees a global-heap block
+///
+/// Semantic, frame pass, high; ledger semantic evidence, name high; id 109588, rva 0x15a743c.
+/// `void (void* ptr, u64 size)`
+///
+/// # Safety
+/// `ptr` must point to what the engine expects.
+#[inline]
+pub unsafe fn operator_delete(ptr: *mut c_void, size: u64) { unsafe { function!(109588, (*mut c_void, u64))(ptr, size) } }
 /// `RenderAccumulator`: BeginAccumulatorDraw plus RenderTransparent (slot 43): the whole draw
 ///
 /// Semantic, frame pass, high; ledger semantic evidence, name high; id 106436, rva 0x1515230.

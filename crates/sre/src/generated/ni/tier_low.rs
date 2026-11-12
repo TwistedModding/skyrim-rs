@@ -1786,16 +1786,6 @@ impl crate::NiOBBRoot {
     pub unsafe fn ctor(&self, param_1: u16, param_2: u64, param_3: u64, param_4: u64, param_5: u32) -> *mut Self { unsafe { function!(71999, (*const Self, u16, u64, u64, u64, u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4, param_5) } }
 }
 
-impl crate::NiObject {
-    /// `NiObject::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70207, rva 0xedd080).
-    /// `NiObject * vdtor(NiObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70207, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::NiPSysAgeDeathModifier {
     /// `NiPSysAgeDeathModifier::Create` (decompiler signature, tier low; ledger string evidence, name high; id 74825, rva 0xfa6a70).
     /// `NiPSysModifier * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`

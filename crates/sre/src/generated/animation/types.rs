@@ -66,8 +66,8 @@ pub struct BSDismemberSkinInstance {
     /// +0x0 `vtbl:BSDismemberSkinInstance:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSDismemberSkinInstance_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `ptr:NiSkinData`, base NiSkinInstance, semantic; bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each) (high)
     pub skinData: *mut crate::NiSkinData,
@@ -75,7 +75,7 @@ pub struct BSDismemberSkinInstance {
     pub skinPartition: *mut crate::NiSkinPartition,
     /// +0x20 `ptr:NiAVObject`, base NiSkinInstance, semantic; the node the skin is bound to (the actor's root BSFadeNode for body parts) (high)
     pub rootParent: *mut crate::NiAVObject,
-    /// +0x28 `pointer`, base NiSkinInstance, semantic; bone node array, count = skinData+0x58 (high)
+    /// +0x28 `pointer`, base NiSkinInstance, semantic; bone node array, count = skinData+0x58; a vertex's byte bone indices name entries of this array directly (high)
     pub boneNodes: *mut c_void,
     /// +0x30 `pointer`, base NiSkinInstance, semantic; array of pointers to each bone's world transform (bone node + 0x7c); the bone nodes themselves are at +0x28 (high)
     pub boneWorldTransforms: *mut c_void,
@@ -110,7 +110,7 @@ pub struct BSDismemberSkinInstance {
 }
 const _: () = assert!(size_of::<BSDismemberSkinInstance>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, skinData) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, skinPartition) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSDismemberSkinInstance, rootParent) == 0x20);
@@ -138,8 +138,8 @@ pub struct BSFaceGenAnimationData {
     /// +0x0 `vtbl:BSFaceGenAnimationData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFaceGenAnimationData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -257,7 +257,7 @@ pub struct BSFaceGenAnimationData {
 }
 const _: () = assert!(size_of::<BSFaceGenAnimationData>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expressionTarget) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expression) == 0x20);
@@ -310,8 +310,8 @@ pub struct BSFaceGenNiNode {
     /// +0x0 `vtbl:BSFaceGenNiNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFaceGenNiNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -375,7 +375,7 @@ pub struct BSFaceGenNiNode {
 }
 const _: () = assert!(size_of::<BSFaceGenNiNode>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenNiNode, extraData) == 0x20);
@@ -546,8 +546,8 @@ pub struct NiSkinData {
     /// +0x0 `vtbl:NiSkinData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `ptr:NiObject`, semantic; refcounted object released by the dtor; not set by LoadBinary (slot 25 is a 5-byte thunk) (low)
     #[doc(hidden)]
@@ -566,7 +566,7 @@ pub struct NiSkinData {
 }
 const _: () = assert!(size_of::<NiSkinData>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSkinData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSkinData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __field10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, __skinTransform) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSkinData, boneData) == 0x50);
@@ -578,11 +578,9 @@ const _: () = assert!(core::mem::offset_of!(NiSkinData, boneCount) == 0x58);
 #[repr(C, align(8))]
 pub struct NiSkinData__BoneData {
     /// +0x0 `class:NiTransform`, semantic; bind-pose inverse: skin space to the bone's space (rotation, translation, scale) (high)
-    #[doc(hidden)]
-    pub __skinToBone: [u8; 52],
+    pub skinToBone: crate::NiTransform,
     /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
-    #[doc(hidden)]
-    pub __boundSphere: [u8; 16],
+    pub boundSphere: crate::NiBound,
     unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)
     #[doc(hidden)]
@@ -595,8 +593,8 @@ pub struct NiSkinData__BoneData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiSkinData__BoneData>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __skinToBone) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __boundSphere) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, skinToBone) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, boundSphere) == 0x34);
 const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __weights) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSkinData__BoneData, __weightCount) == 0x50);
 
@@ -609,15 +607,15 @@ pub struct NiSkinPartition {
     /// +0x0 `vtbl:NiSkinPartition:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSkinPartition_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, semantic; number of partitions (high)
     pub partitionCount: u32,
     pub unknown_14: [u8; 4],
     /// +0x18 `pointer`, semantic; partition records, 0x50 each, element count stored at -8 (high)
     pub partitions: *mut c_void,
-    /// +0x20 `undefined4`, semantic; shared vertex block size / vertex stride (medium)
+    /// +0x20 `u32`, semantic; vertex count of the block every partition shares (data size / stride) (high)
     pub vertexCount: u32,
     pub unknown_24: [u8; 4],
     #[doc(hidden)]
@@ -625,7 +623,7 @@ pub struct NiSkinPartition {
 }
 const _: () = assert!(size_of::<NiSkinPartition>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, partitionCount) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, partitions) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition, vertexCount) == 0x20);
@@ -635,9 +633,9 @@ const _: () = assert!(core::mem::offset_of!(NiSkinPartition, vertexCount) == 0x2
 /// Evidence: one draw partition; field order from the stream reads in 0xf075f0 (+0x38, +0x3a, +0x3c, +0x3e, +0x40, bones, ..., +0x42, +0x43) and the memcmp sizes in IsEqual 0xf07200; size: stride 0x50 in NiSkinPartition LoadBinary, IsEqual and vdtor.
 #[repr(C, align(8))]
 pub struct NiSkinPartition__Partition {
-    /// +0x0 `undefined8`, semantic; vertex descriptor (low nibble * 4 = stride) (medium)
+    /// +0x0 `u64`, semantic; vertex descriptor: nibble k times 4 is the byte offset VertexDescriptorNibble names (nibble 0 the stride); bits 44-53 the attributes of stream 0, bits 54-63 of stream 1; see the flag rows (high)
     pub vertexDesc: u64,
-    /// +0x8 `pointer`, semantic; bone palette: indices into the skin instance's bones, count +0x3c (medium)
+    /// +0x8 `pointer`, semantic; the partition's bone list, count +0x3c; the draw does not use it: vertex bone indices name NiSkinInstance.boneNodes directly (high)
     #[doc(hidden)]
     pub __bones: [u8; 8],
     /// +0x10 `pointer`, semantic; vertexCount*weightsPerVertex weights (medium)
@@ -646,7 +644,7 @@ pub struct NiSkinPartition__Partition {
     /// +0x18 `pointer`, semantic; partition vertex -> skin vertex, count +0x38 (medium)
     #[doc(hidden)]
     pub __vertexMap: [u8; 8],
-    /// +0x20 `pointer`, semantic; per vertex weightsPerVertex palette indices (optional) (medium)
+    /// +0x20 `pointer`, semantic; per vertex weightsPerVertex bone indices of the stream data (optional, only when the file has them) (medium)
     #[doc(hidden)]
     pub __boneIndices: [u8; 8],
     /// +0x28 `pointer`, semantic; triangle indices (triangleCount*3) or strip indices (medium)
@@ -658,9 +656,8 @@ pub struct NiSkinPartition__Partition {
     /// +0x38 `undefined2`, semantic; vertices in the partition (medium)
     #[doc(hidden)]
     pub __vertexCount: [u8; 2],
-    /// +0x3A `undefined2`, semantic; triangles (medium)
-    #[doc(hidden)]
-    pub __triangleCount: [u8; 2],
+    /// +0x3A `u16`, semantic; triangles; SkinPartitionBuffers.indexData holds three u16 indices per triangle (high)
+    pub triangleCount: u16,
     /// +0x3C `undefined2`, semantic; bones in the palette (high)
     pub boneCount: u16,
     /// +0x3E `undefined2`, semantic; strips (0 = triangle list) (medium)
@@ -676,9 +673,8 @@ pub struct NiSkinPartition__Partition {
     #[doc(hidden)]
     pub __field43: [u8; 1],
     unknown_44: [u8; 4],
-    /// +0x48 `pointer`, semantic; renderer index buffer built from the triangles (low)
-    #[doc(hidden)]
-    pub __triangleBuffer: [u8; 8],
+    /// +0x48 `ptr:SkinPartitionBuffers`, semantic; the partition's renderer record: the shared vertex buffer, its index buffer and CPU copies of both (high)
+    pub triangleBuffer: *mut crate::SkinPartitionBuffers,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -691,13 +687,71 @@ const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __boneIn
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangles) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __stripLengths) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __vertexCount) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangleCount) == 0x3A);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, boneCount) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __stripCount) == 0x3E);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __weightsPerVertex) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __lodLevel) == 0x42);
 const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __field43) == 0x43);
-const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, __triangleBuffer) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiSkinPartition__Partition, triangleBuffer) == 0x48);
+
+/// `SharedVertexBuffer`: size 0x18 (exact).
+/// Meaning: the renderer record of a skin's shared vertex block (high, animation pass).
+/// Evidence: the renderer record of a skin's shared vertex block; request PE1b: no RTTI, descriptive name. CreateVertexBufferRecord 0x100d6f0 (BSShaderResourceManager slot 30, called by NiSkinPartition::LoadBinary 0xf06bd0 with the shared vertex block) allocates 0x18 bytes, creates the D3D buffer into +0x0, copies the data into a global-heap block at +0x8 and stores the size at +0x10.
+#[repr(C, align(4))]
+pub struct SharedVertexBuffer {
+    /// +0x0 `ptr`, semantic; ID3D11Buffer of the vertex block (high)
+    #[doc(hidden)]
+    pub __buffer: [u8; 8],
+    /// +0x8 `ptr`, semantic; CPU copy of the vertex block (high)
+    #[doc(hidden)]
+    pub __data: [u8; 8],
+    /// +0x10 `u32`, semantic; byte size of the vertex block (high)
+    #[doc(hidden)]
+    pub __size: [u8; 4],
+    unknown_14: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<SharedVertexBuffer>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __buffer) == 0x0);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __data) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SharedVertexBuffer, __size) == 0x10);
+
+/// `SkinPartitionBuffers`: size 0x30 (exact).
+/// Meaning: the renderer record of one skin partition: the shared vertex buffer, its own index buffer and CPU copies of both (high, animation pass).
+/// Evidence: the renderer record of one skin partition: the shared vertex buffer, its own index buffer and CPU copies of both; request PE1b: no RTTI, descriptive name. CreateIndexBufferRecord 0x100bac0 (BSShaderResourceManager slot 3, called by NiSkinPartition's partition loader 0xf075f0 with the shared record) allocates 0x30 bytes; run-pe1 captured its descriptors (0x7b0008765040b and others) with float positions in the copies.
+#[repr(C, align(8))]
+pub struct SkinPartitionBuffers {
+    /// +0x0 `ptr`, semantic; the shared ID3D11Buffer of vertices (high)
+    #[doc(hidden)]
+    pub __vertexBuffer: [u8; 8],
+    /// +0x8 `ptr`, semantic; the partition's ID3D11Buffer of u16 indices (high)
+    #[doc(hidden)]
+    pub __indexBuffer: [u8; 8],
+    /// +0x10 `u64`, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (high)
+    #[doc(hidden)]
+    pub __vertexDesc: [u8; 8],
+    /// +0x18 `u32`, semantic; reference count (high)
+    #[doc(hidden)]
+    pub __refCount: [u8; 4],
+    unknown_1C: [u8; 4],
+    /// +0x20 `ptr`, semantic; CPU copy of the whole shared vertex block (NiSkinPartition.vertexCount vertices of the descriptor's stride) (high)
+    #[doc(hidden)]
+    pub __vertexData: [u8; 8],
+    /// +0x28 `ptr`, semantic; CPU copy of the partition's u16 indices, three per triangle, into the shared vertex block (high)
+    #[doc(hidden)]
+    pub __indexData: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<SkinPartitionBuffers>() == 0x30);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexBuffer) == 0x0);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __indexBuffer) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexDesc) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __refCount) == 0x18);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __vertexData) == 0x20);
+const _: () = assert!(core::mem::offset_of!(SkinPartitionBuffers, __indexData) == 0x28);
 
 /// `hkaSkeleton`: size 0x78 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: Havok skeleton: parent indices, bones (name + lock-translation flag), reference pose (high, animation pass).
@@ -1184,6 +1238,54 @@ const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, wordValueCount)
 const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, quadValues) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkbVariableValueSet, variantValues) == 0x30);
 
+/// values in data/vertexdescriptornibbles.json: which nibble of a vertex descriptor holds which offset (in units of 4 bytes) (animation pass).
+#[repr(u8)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum VertexDescriptorNibble {
+    /// `stride`
+    stride = 0,
+    /// `stream1Stride`
+    stream1Stride = 1,
+    /// `uv`
+    uv = 2,
+    /// `uv2`
+    uv2 = 3,
+    /// `normal`
+    normal = 4,
+    /// `tangent`
+    tangent = 5,
+    /// `color`
+    color = 6,
+    /// `skinning`
+    skinning = 7,
+    /// `landData`
+    landData = 8,
+    /// `eyeData`
+    eyeData = 9,
+    /// `instanceData`
+    instanceData = 10,
+}
+
+impl VertexDescriptorNibble {
+    #[must_use]
+    pub const fn from_u8(value: u8) -> Option<Self> {
+        match value {
+            0 => Some(Self::stride),
+            1 => Some(Self::stream1Stride),
+            2 => Some(Self::uv),
+            3 => Some(Self::uv2),
+            4 => Some(Self::normal),
+            5 => Some(Self::tangent),
+            6 => Some(Self::color),
+            7 => Some(Self::skinning),
+            8 => Some(Self::landData),
+            9 => Some(Self::eyeData),
+            10 => Some(Self::instanceData),
+            _ => None,
+        }
+    }
+}
+
 /// Named bits of `BSFaceGenNiNode.faceFlags` (animation pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -1207,6 +1309,64 @@ impl BSFaceGenNiNode_faceFlags {
 
     #[must_use]
     pub const fn bits(self) -> u16 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `NiSkinPartition::Partition.vertexDesc` (animation pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct NiSkinPartition__Partition_vertexDesc(pub u64);
+
+impl NiSkinPartition__Partition_vertexDesc {
+    /// stream 0 has the position (float4 at offset 0) (high)
+    pub const POSITION: Self = Self(0x100000000000);
+    /// stream 0 has UV (2 halfs at nibble 2) (high)
+    pub const UV: Self = Self(0x200000000000);
+    /// stream 0 has a second UV set (4 halfs at nibble 3) (high)
+    pub const UV2: Self = Self(0x400000000000);
+    /// stream 0 has the normal (4 unorm bytes at nibble 4) (high)
+    pub const NORMAL: Self = Self(0x800000000000);
+    /// stream 0 has the tangent (4 unorm bytes at nibble 5) (high)
+    pub const TANGENT: Self = Self(0x1000000000000);
+    /// stream 0 has the vertex colour (4 unorm bytes at nibble 6) (high)
+    pub const COLOR: Self = Self(0x2000000000000);
+    /// stream 0 has skinning: four half weights at nibble 7, four byte bone indices at +8 (12 bytes); the indices name NiSkinInstance.boneNodes directly (high)
+    pub const SKINNING: Self = Self(0x4000000000000);
+    /// stream 0 has two packed 4-byte attributes at nibble 8 (land data) (medium)
+    pub const LAND_DATA: Self = Self(0x8000000000000);
+    /// stream 0 has one float at nibble 9 (eye data) (medium)
+    pub const EYE_DATA: Self = Self(0x10000000000000);
+    /// per-instance data (four half4 rows at nibble 10) (medium)
+    pub const INSTANCE_DATA: Self = Self(0x20000000000000);
+    /// the position is in stream 1 (float4; nibble 1 the stream-1 stride) (high)
+    pub const POSITION_STREAM1: Self = Self(0x40000000000000);
+    /// UV in stream 1 (high)
+    pub const UV_STREAM1: Self = Self(0x80000000000000);
+    /// second UV set in stream 1 (high)
+    pub const UV2_STREAM1: Self = Self(0x100000000000000);
+    /// normal in stream 1 (high)
+    pub const NORMAL_STREAM1: Self = Self(0x200000000000000);
+    /// tangent in stream 1 (high)
+    pub const TANGENT_STREAM1: Self = Self(0x400000000000000);
+    /// vertex colour in stream 1 (high)
+    pub const COLOR_STREAM1: Self = Self(0x800000000000000);
+    /// skinning in stream 1 (high)
+    pub const SKINNING_STREAM1: Self = Self(0x1000000000000000);
+    /// land data in stream 1 (medium)
+    pub const LAND_DATA_STREAM1: Self = Self(0x2000000000000000);
+    /// eye data in stream 1 (medium)
+    pub const EYE_DATA_STREAM1: Self = Self(0x4000000000000000);
+    /// per-instance data in stream 1 (medium)
+    pub const INSTANCE_DATA_STREAM1: Self = Self(0x8000000000000000);
+
+    #[must_use]
+    pub const fn bits(self) -> u64 {
         self.0
     }
 

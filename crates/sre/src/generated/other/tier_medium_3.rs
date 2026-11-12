@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::ActiveMagicEffect::RegisterForLOS` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54580, rva 0x9fbcc0).
-/// `void RegisterForLOS(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__register_for_los(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::Actor, a1: *mut crate::TESObjectREFR) { unsafe { function!(54580, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::Actor, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::ActiveMagicEffect::RegisterForSingleLOSGain` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54581, rva 0x9fbd50).
 /// `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, ActiveEffect * self, Actor * a0, TESObjectREFR * a1)`
 ///
@@ -13510,3 +13503,10 @@ pub unsafe fn rotate_vectors_by_ni_transform(param_1: u16, param_2: *mut f32, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn round_up_to_power_of_two(param_1: u32) -> u32 { unsafe { function!(90284, (u32) -> u32)(param_1) } }
+/// `RunCheckSphereVisitor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90425, rva 0x11be010).
+/// `undefined1 RunCheckSphereVisitor(undefined8 param_1, undefined4 * param_2, undefined4 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn run_check_sphere_visitor(param_1: u64, param_2: *mut u32, param_3: u32) -> u8 { unsafe { function!(90425, (u64, *mut u32, u32) -> u8)(param_1, param_2, param_3) } }

@@ -7,6 +7,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESCustomPackageData::vdtor` at 0x49fec0 (layout_inference, medium); signature (low): `TESCustomPackageData * vdtor(TESCustomPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCustomPackageData__vdtor: u64 = 29676;
+/// `TESCustomPackageData::vfunc_1` at 0x49ef00 (rtti, high); signature (low): `undefined vfunc_1(TESCustomPackageData * this, longlong param_1, longlong param_2)`
+pub const TESCustomPackageData__vfunc_1: u64 = 29657;
+/// `TESCustomPackageData::vfunc_1_sub0` at 0x44cc70 (callgraph, medium); signature (untiered): `undefined vfunc_1_sub0(longlong param_1, longlong param_2)`
+pub const TESCustomPackageData__vfunc_1_sub0: u64 = 27450;
+/// `TESCustomPackageData::vfunc_1_sub1` at 0x49fe00 (callgraph, medium); signature (untiered): `undefined8 * vfunc_1_sub1(undefined8 * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESCustomPackageData__vfunc_1_sub1: u64 = 29674;
 /// `TESCustomPackageData::vfunc_1_sub2` at 0x49fe60 (callgraph, medium); signature (untiered): `undefined8 * vfunc_1_sub2(undefined8 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 pub const TESCustomPackageData__vfunc_1_sub2: u64 = 29675;
 /// `TESCustomPackageData::vfunc_3` at 0x49f0d0 (rtti, high); signature (low): `undefined vfunc_3(TESCustomPackageData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -9021,11 +9029,3 @@ pub const _anon_11B7475C__PlayerParentCellListener__vfunc_1: u64 = 32154;
 pub const _anon_14F04957__Win32FileType__GetSize: u64 = 109368;
 /// `_anon_14F04957::Win32FileType::Open` at 0x159d770 (semantic, medium); signature (high): `bool Open(Win32FileType * this)`
 pub const _anon_14F04957__Win32FileType__Open: u64 = 109370;
-/// `_anon_14F04957::Win32FileType::Seek` at 0x159d8c0 (semantic, medium); signature (low): `int Seek(Win32FileType * this, int param_1, int param_2)`
-pub const _anon_14F04957__Win32FileType__Seek: u64 = 109375;
-/// `_anon_14F04957::Win32FileType::ctor` at 0x159d320 (layout_inference, medium); signature (high): `undefined ctor(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__ctor: u64 = 109362;
-/// `_anon_14F04957::Win32FileType::vdtor` at 0x159d3e0 (layout_inference, medium); signature (low): `Win32FileType * vdtor(Win32FileType * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_14F04957__Win32FileType__vdtor: u64 = 109365;
-/// `_anon_14F04957::Win32FileType::vfunc_17` at 0x159d800 (rtti, high); signature (low): `uint vfunc_17(Win32FileType * this, void * param_1, uint param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_17: u64 = 109373;

@@ -24,6 +24,30 @@ impl crate::BSCullingProcess {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut u64, param_3: u64) -> *mut Self { unsafe { function!(76576, (*const Self, u64, *mut u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::BSDynamicTriShape {
+    /// `BSDynamicTriShape::Create` (decompiler signature, tier low; ledger string evidence, name high; id 70946, rva 0xefd470).
+    /// `BSTriShape * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSTriShape { unsafe { function!(70946, (u64, u64, u64, u64) -> *mut crate::BSTriShape)(param_1, param_2, param_3, param_4) } }
+    /// `BSDynamicTriShape::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70947, rva 0xefd540).
+    /// `BSDynamicTriShape * ctor(BSDynamicTriShape * this, undefined8 param_1, undefined2 param_2, undefined2 param_3, uint param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_3(&self, param_1: u64, param_2: u16, param_3: u16, param_4: u32) -> *mut Self { unsafe { function!(70947, (*const Self, u64, u16, u16, u32) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
+    /// `BSDynamicTriShape::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70958, rva 0xefe000).
+    /// `BSDynamicTriShape * vdtor(BSDynamicTriShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70958, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BSGeometry {
     /// `BSGeometry::OnVisible`, vtable slot 52, through the object's vtable (decompiler signature, tier low; ledger semantic evidence, name high; id 70926, rva 0xefc980).
     /// `undefined OnVisible(BSGeometry * this, longlong * param_1, undefined8 param_2)`
@@ -287,6 +311,37 @@ impl crate::BSShadowParabolicLight {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(108631, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTriShape {
+    /// `BSTriShape::Create` (decompiler signature, tier low; ledger string evidence, name high; id 70655, rva 0xef2130).
+    /// `BSGeometry * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::BSGeometry { unsafe { function!(70655, (u64, u64, u64, u64) -> *mut crate::BSGeometry)(param_1, param_2, param_3, param_4) } }
+    /// `BSTriShape::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70656, rva 0xef2200).
+    /// `BSTriShape * ctor(BSTriShape * this, undefined8 param_1, undefined8 param_2, undefined2 param_3, undefined2 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_2(&self, param_1: u64, param_2: u64, param_3: u16, param_4: u16) -> *mut Self { unsafe { function!(70656, (*const Self, u64, u64, u16, u16) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3, param_4) } }
+    /// `BSTriShape::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70664, rva 0xef24d0).
+    /// `undefined dtor(BSTriShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_2(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(70664, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `BSTriShape::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70666, rva 0xef25a0).
+    /// `BSTriShape * vdtor(BSTriShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70666, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::NiAVObject {

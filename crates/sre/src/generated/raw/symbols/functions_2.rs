@@ -3410,7 +3410,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x21cc10, id: 15708, confidence: Confidence::Medium, name: "GetLightingShaderPropertyWithFlag400Or200000" },
     Function { rva: 0x21cc90, id: 15709, confidence: Confidence::Medium, name: "GetLightingShaderFlagMaskRecursive" },
     Function { rva: 0x21cd70, id: 15710, confidence: Confidence::Medium, name: "SubtreeHasField130Set" },
-    Function { rva: 0x21d170, id: 15712, confidence: Confidence::Medium, name: "BindSkinBonesToSkeleton" },
+    Function { rva: 0x21d170, id: 15712, confidence: Confidence::High, name: "BindSkinBonesToSkeleton" },
     Function { rva: 0x21de50, id: 15716, confidence: Confidence::Medium, name: "HideDismemberSlotForRefAt2770" },
     Function { rva: 0x21df20, id: 15717, confidence: Confidence::Medium, name: "HideDismemberSlotRecursive" },
     Function { rva: 0x21e080, id: 15718, confidence: Confidence::Medium, name: "CreateAnimationGraphHolderForSlot" },

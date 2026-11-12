@@ -8450,8 +8450,8 @@ pub struct PArrayPoint {
     /// +0x0 `vtbl:PArrayPoint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::PArrayPoint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -8459,7 +8459,7 @@ pub struct PArrayPoint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(PArrayPoint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(PArrayPoint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(PArrayPoint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(PArrayPoint, name) == 0x10);
 
 /// `PackageList::IPackageVisitor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
@@ -11177,8 +11177,8 @@ pub struct SceneGraph {
     /// +0x0 `vtbl:SceneGraph:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SceneGraph_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -11243,7 +11243,7 @@ pub struct SceneGraph {
 }
 const _: () = assert!(size_of::<SceneGraph>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SceneGraph, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SceneGraph, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(SceneGraph, extraData) == 0x20);
@@ -13737,8 +13737,8 @@ pub struct SummonPlacementEffect {
     /// +0x0 `vtbl:SummonPlacementEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SummonPlacementEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
@@ -13800,7 +13800,7 @@ pub struct SummonPlacementEffect {
 }
 const _: () = assert!(size_of::<SummonPlacementEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_20) == 0x20);
@@ -19781,8 +19781,8 @@ pub struct WeaponObject {
     /// +0x0 `vtbl:WeaponObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::WeaponObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -19807,7 +19807,7 @@ pub struct WeaponObject {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(WeaponObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(WeaponObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(WeaponObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(WeaponObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(WeaponObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(WeaponObject, field_20) == 0x20);

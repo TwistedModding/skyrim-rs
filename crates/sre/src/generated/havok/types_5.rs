@@ -7,6 +7,180 @@
 
 use core::ffi::c_void;
 
+/// `hkpThinBoxMotion`: size >= 0x138 (lower bound); partial, the struct stops at the lower bound; primary base `hkpBoxMotion`.
+/// Evidence: base hkpMotion at 0x0.
+/// Bases: `hkpBoxMotion`@0x0, `hkpMotion`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
+#[repr(C, align(8))]
+pub struct hkpThinBoxMotion {
+    /// +0x0 `vtbl:hkpThinBoxMotion:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::hkpThinBoxMotion_vtable,
+    /// +0x8 `undefined4`, base hkpMotion
+    pub field_8: u32,
+    unknown_C: [u8; 4],
+    /// +0x10 `undefined8`, base hkBaseObject
+    pub m_hkpCollidableCollidableFilter_10: u64,
+    /// +0x18 `undefined8`, base hkBaseObject
+    pub m_hkpShapeCollectionFilter_18: u64,
+    /// +0x20 `undefined8`, base hkBaseObject
+    pub m_hkpRayShapeCollectionFilter_20: u64,
+    /// +0x28 `undefined8`, base hkBaseObject
+    pub m_hkpRayCollidableFilter_28: u64,
+    /// +0x30 `undefined4`, base hkBaseObject
+    pub field_30: u32,
+    /// +0x34 `undefined4`, base hkBaseObject
+    pub field_34: u32,
+    /// +0x38 `undefined4`, base hkBaseObject
+    pub field_38: u32,
+    /// +0x3C `undefined4`, base hkBaseObject
+    pub field_3C: u32,
+    /// +0x40 `undefined4`, base hkBaseObject
+    pub field_40: u32,
+    /// +0x44 `undefined4`, base hkBaseObject
+    pub field_44: u32,
+    /// +0x48 `undefined4`, base hkBaseObject
+    pub field_48: u32,
+    /// +0x4C `undefined4`, base hkBaseObject
+    pub field_4C: u32,
+    /// +0x50 `undefined4`, base hkBaseObject
+    pub field_50: u32,
+    /// +0x54 `undefined4`, base hkBaseObject
+    pub field_54: u32,
+    /// +0x58 `undefined4`, base hkBaseObject
+    pub field_58: u32,
+    /// +0x5C `undefined4`, base hkBaseObject
+    pub field_5C: u32,
+    /// +0x60 `undefined4`, base hkBaseObject
+    pub field_60: u32,
+    /// +0x64 `undefined4`, base hkBaseObject
+    pub field_64: u32,
+    /// +0x68 `undefined4`, base hkBaseObject
+    pub field_68: u32,
+    /// +0x6C `undefined4`, base hkBaseObject
+    pub field_6C: u32,
+    /// +0x70 `undefined4`, base hkBaseObject
+    pub field_70: u32,
+    /// +0x74 `undefined4`, base hkBaseObject
+    pub field_74: u32,
+    /// +0x78 `undefined4`, base hkBaseObject
+    pub field_78: u32,
+    /// +0x7C `undefined4`, base hkBaseObject
+    pub field_7C: u32,
+    /// +0x80 `undefined4`, base hkBaseObject
+    pub field_80: u32,
+    /// +0x84 `undefined4`, base hkBaseObject
+    pub field_84: u32,
+    /// +0x88 `undefined4`, base hkBaseObject
+    pub field_88: u32,
+    /// +0x8C `undefined4`, base hkBaseObject
+    pub field_8C: u32,
+    /// +0x90 `undefined4`, base hkBaseObject
+    pub field_90: u32,
+    /// +0x94 `undefined4`, base hkBaseObject
+    pub field_94: u32,
+    /// +0x98 `undefined4`, base hkBaseObject
+    pub field_98: u32,
+    /// +0x9C `undefined4`, base hkBaseObject
+    pub field_9C: u32,
+    /// +0xA0 `undefined4`, base hkBaseObject
+    pub field_A0: u32,
+    /// +0xA4 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
+    /// +0xA8 `undefined8`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
+    /// +0xB0 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
+    /// +0xB4 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
+    /// +0xB8 `undefined8`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
+    /// +0xC0 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
+    /// +0xC4 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
+    unknown_C8: [u8; 8],
+    /// +0xD0 `undefined1[16]`, base hkpBoxMotion
+    pub field_D0: [u8; 16],
+    /// +0xE0 `undefined1[16]`, base hkpMotion
+    pub field_E0: [u8; 16],
+    /// +0xF0 `undefined1[16]`, base hkpMotion
+    pub field_F0: [u8; 16],
+    /// +0x100 `undefined1[16]`, base hkpMotion
+    pub field_100: [u8; 16],
+    /// +0x110 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
+    /// +0x114 `undefined4`, base hkBaseObject
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
+    unknown_118: [u8; 8],
+    /// +0x120 `undefined8`, base hkpMotion
+    pub field_120: u64,
+    unknown_128: [u8; 10],
+    /// +0x132 `undefined2`, base hkpMotion
+    pub field_132: u16,
+    unknown_134: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, m_hkpCollidableCollidableFilter_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, m_hkpShapeCollectionFilter_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, m_hkpRayShapeCollectionFilter_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, m_hkpRayCollidableFilter_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, __field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(hkpThinBoxMotion, field_132) == 0x132);
+
 /// `hkpToiResourceMgr`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
 /// Evidence: field field_114.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.

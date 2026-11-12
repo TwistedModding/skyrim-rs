@@ -597,6 +597,24 @@ const _: () = assert!(core::mem::offset_of!(BGSActionData, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSActionData, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 
+/// `BGSSkinForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
+/// Meaning: a form's skin armour (high, actors pass).
+/// Evidence: lower bound field field_8 meets upper bound next base of TESActorBase at 0x110.
+/// Bases: `BaseFormComponent`@0x0.
+#[repr(C)]
+pub struct BGSSkinForm {
+    /// +0x0 `vtbl:BGSSkinForm:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSSkinForm_vtable,
+    /// +0x8 `ptr:TESObjectARMO`, semantic; the skin armour; an actor wears its NPC's, else its race's, and a naked body is BipedAnim.objects[2].item being that armour (high)
+    pub skin: *mut crate::TESObjectARMO,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSSkinForm>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSSkinForm, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSSkinForm, skin) == 0x8);
+
 /// `BSExtraData`: size 0x10 (exact, high).
 /// Meaning: base of every extra data node (high, actors pass).
 /// Evidence: actors pass (runtime): singly linked node: vtable, next at +8; slot 1 returns the type code (0x17e840 compares it with the requested type); derived data starts at +0x10; live nodes read in run-actors (extra-head.bin, extra1.bin).
@@ -2628,8 +2646,8 @@ pub struct TESNPC {
     /// +0x100 `vtbl:TESNPC:100`, rtti
     #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::TESNPC_vtable_100,
-    /// +0x108 `undefined8`, base BGSSkinForm
-    pub field_108: u64,
+    /// +0x108 `ptr:TESObjectARMO`, base BGSSkinForm, semantic; the skin armour; an actor wears its NPC's, else its race's, and a naked body is BipedAnim.objects[2].item being that armour (high)
+    pub skin: *mut crate::TESObjectARMO,
     /// +0x110 `vtbl:TESNPC:110`, rtti
     #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESNPC_vtable_110,
@@ -2723,7 +2741,7 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESNPC, skin) == 0x108);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESNPC, keywords) == 0x118);
 const _: () = assert!(core::mem::offset_of!(TESNPC, numKeywords) == 0x120);

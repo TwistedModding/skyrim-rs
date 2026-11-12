@@ -344,8 +344,8 @@ pub struct TESActorBase {
     /// +0x100 `vtbl:TESActorBase:100`, rtti
     #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::TESActorBase_vtable_100,
-    /// +0x108 `undefined8`, base BGSSkinForm
-    pub field_108: u64,
+    /// +0x108 `ptr:TESObjectARMO`, base BGSSkinForm, semantic; the skin armour; an actor wears its NPC's, else its race's, and a naked body is BipedAnim.objects[2].item being that armour (high)
+    pub skin: *mut crate::TESObjectARMO,
     /// +0x110 `vtbl:TESActorBase:110`, rtti
     #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESActorBase_vtable_110,
@@ -407,7 +407,7 @@ const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_E8) == 0xE8)
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(TESActorBase, field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESActorBase, skin) == 0x108);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, __vftable_110) == 0x110);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, keywords) == 0x118);
 const _: () = assert!(core::mem::offset_of!(TESActorBase, numKeywords) == 0x120);
@@ -3544,8 +3544,8 @@ pub struct TESObjectREFRSync__REFRSyncController {
     /// +0x0 `vtbl:TESObjectREFRSync::REFRSyncController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::TESObjectREFRSync__REFRSyncController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3599,7 +3599,7 @@ pub struct TESObjectREFRSync__REFRSyncController {
 }
 const _: () = assert!(size_of::<TESObjectREFRSync__REFRSyncController>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFRSync__REFRSyncController, field_1C) == 0x1C);

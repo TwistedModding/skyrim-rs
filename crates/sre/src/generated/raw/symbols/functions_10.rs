@@ -4772,7 +4772,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x15a6fa8, id: 453589, confidence: Confidence::Medium, name: "ReverseByteRange" },
     Function { rva: 0x15a7318, id: 453609, confidence: Confidence::Medium, name: "SwapByteRanges" },
     Function { rva: 0x15a7410, id: 109587, confidence: Confidence::Medium, name: "type_info::vdtor" },
-    Function { rva: 0x15a743c, id: 109588, confidence: Confidence::Medium, name: "OperatorDelete" },
+    Function { rva: 0x15a743c, id: 109588, confidence: Confidence::High, name: "OperatorDelete" },
     Function { rva: 0x15a752c, id: 109592, confidence: Confidence::Medium, name: "AcquireGlobal415530ThreadLock" },
     Function { rva: 0x15a76e4, id: 109601, confidence: Confidence::Medium, name: "InitOnexitTablesOnce" },
     Function { rva: 0x15a77bc, id: 109602, confidence: Confidence::Medium, name: "IsAddressInNonWritableImageSection" },

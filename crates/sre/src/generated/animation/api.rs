@@ -1156,22 +1156,6 @@ impl crate::NiSkinData {
 impl crate::NiSkinData__BoneData {
     #[doc(hidden)]
     #[inline]
-    pub fn __member_boundSphere(this: *const Self) -> *mut crate::NiBound { unsafe { member!(this, "NiSkinData::BoneData.boundSphere", 0x34, crate::NiBound) } }
-    /// `NiSkinData::BoneData::boundSphere`, at +0x34 on 1.7.104.
-    #[inline]
-    pub fn boundSphere(&self) -> &crate::NiBound { unsafe { &*Self::__member_boundSphere(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn boundSphere_ptr(&self) -> *mut crate::NiBound { Self::__member_boundSphere(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_skinToBone(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "NiSkinData::BoneData.skinToBone", 0x0, crate::NiTransform) } }
-    /// `NiSkinData::BoneData::skinToBone`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn skinToBone(&self) -> &crate::NiTransform { unsafe { &*Self::__member_skinToBone(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn skinToBone_ptr(&self) -> *mut crate::NiTransform { Self::__member_skinToBone(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_weightCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiSkinData::BoneData.weightCount", 0x50, u16) } }
     /// `NiSkinData::BoneData::weightCount`, at +0x50 on 1.7.104.
     #[inline]
@@ -1235,6 +1219,11 @@ impl crate::NiSkinPartition {
 }
 
 impl crate::NiSkinPartition__Partition {
+    /// `NiSkinPartition::Partition::triangleBuffer` at +0x48: the partition's renderer record: the shared vertex buffer, its index buffer and CPU copies of both
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn triangle_buffer(&self) -> Option<&crate::SkinPartitionBuffers> { unsafe { { self.triangleBuffer }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_boneIndices(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "NiSkinPartition::Partition.boneIndices", 0x20, *mut c_void) } }
@@ -1297,26 +1286,6 @@ impl crate::NiSkinPartition__Partition {
     pub fn stripLengths_ptr(&self) -> *mut *mut c_void { Self::__member_stripLengths(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_triangleBuffer(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "NiSkinPartition::Partition.triangleBuffer", 0x48, *mut c_void) } }
-    /// `NiSkinPartition::Partition::triangleBuffer`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn triangleBuffer(&self) -> *mut c_void { unsafe { Self::__member_triangleBuffer(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_triangleBuffer(&mut self, value: *mut c_void) { unsafe { Self::__member_triangleBuffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn triangleBuffer_ptr(&self) -> *mut *mut c_void { Self::__member_triangleBuffer(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_triangleCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiSkinPartition::Partition.triangleCount", 0x3A, u16) } }
-    /// `NiSkinPartition::Partition::triangleCount`, at +0x3A on 1.7.104.
-    #[inline]
-    pub fn triangleCount(&self) -> u16 { unsafe { Self::__member_triangleCount(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_triangleCount(&mut self, value: u16) { unsafe { Self::__member_triangleCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn triangleCount_ptr(&self) -> *mut u16 { Self::__member_triangleCount(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_triangles(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "NiSkinPartition::Partition.triangles", 0x28, *mut c_void) } }
     /// `NiSkinPartition::Partition::triangles`, at +0x28 on 1.7.104.
     #[inline]
@@ -1365,6 +1334,102 @@ impl crate::NiSkinPartition__Partition {
     pub fn set_weightsPerVertex(&mut self, value: u16) { unsafe { Self::__member_weightsPerVertex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn weightsPerVertex_ptr(&self) -> *mut u16 { Self::__member_weightsPerVertex(core::ptr::from_ref(self)) }
+}
+
+impl crate::SharedVertexBuffer {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_buffer(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SharedVertexBuffer.buffer", 0x0, [u8; 8]) } }
+    /// `SharedVertexBuffer::buffer`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn buffer(&self) -> [u8; 8] { unsafe { Self::__member_buffer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_buffer(&mut self, value: [u8; 8]) { unsafe { Self::__member_buffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn buffer_ptr(&self) -> *mut [u8; 8] { Self::__member_buffer(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_data(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SharedVertexBuffer.data", 0x8, [u8; 8]) } }
+    /// `SharedVertexBuffer::data`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn data(&self) -> [u8; 8] { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_data(&mut self, value: [u8; 8]) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn data_ptr(&self) -> *mut [u8; 8] { Self::__member_data(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "SharedVertexBuffer.size", 0x10, u32) } }
+    /// `SharedVertexBuffer::size`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
+}
+
+impl crate::SkinPartitionBuffers {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_indexBuffer(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SkinPartitionBuffers.indexBuffer", 0x8, [u8; 8]) } }
+    /// `SkinPartitionBuffers::indexBuffer`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn indexBuffer(&self) -> [u8; 8] { unsafe { Self::__member_indexBuffer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_indexBuffer(&mut self, value: [u8; 8]) { unsafe { Self::__member_indexBuffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn indexBuffer_ptr(&self) -> *mut [u8; 8] { Self::__member_indexBuffer(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_indexData(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SkinPartitionBuffers.indexData", 0x28, [u8; 8]) } }
+    /// `SkinPartitionBuffers::indexData`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn indexData(&self) -> [u8; 8] { unsafe { Self::__member_indexData(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_indexData(&mut self, value: [u8; 8]) { unsafe { Self::__member_indexData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn indexData_ptr(&self) -> *mut [u8; 8] { Self::__member_indexData(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "SkinPartitionBuffers.refCount", 0x18, u32) } }
+    /// `SkinPartitionBuffers::refCount`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn refCount(&self) -> u32 { unsafe { Self::__member_refCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_vertexBuffer(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SkinPartitionBuffers.vertexBuffer", 0x0, [u8; 8]) } }
+    /// `SkinPartitionBuffers::vertexBuffer`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn vertexBuffer(&self) -> [u8; 8] { unsafe { Self::__member_vertexBuffer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_vertexBuffer(&mut self, value: [u8; 8]) { unsafe { Self::__member_vertexBuffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn vertexBuffer_ptr(&self) -> *mut [u8; 8] { Self::__member_vertexBuffer(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_vertexData(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SkinPartitionBuffers.vertexData", 0x20, [u8; 8]) } }
+    /// `SkinPartitionBuffers::vertexData`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn vertexData(&self) -> [u8; 8] { unsafe { Self::__member_vertexData(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_vertexData(&mut self, value: [u8; 8]) { unsafe { Self::__member_vertexData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn vertexData_ptr(&self) -> *mut [u8; 8] { Self::__member_vertexData(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_vertexDesc(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkinPartitionBuffers.vertexDesc", 0x10, u64) } }
+    /// `SkinPartitionBuffers::vertexDesc`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn vertexDesc(&self) -> u64 { unsafe { Self::__member_vertexDesc(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_vertexDesc(&mut self, value: u64) { unsafe { Self::__member_vertexDesc(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn vertexDesc_ptr(&self) -> *mut u64 { Self::__member_vertexDesc(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkaSkeleton {

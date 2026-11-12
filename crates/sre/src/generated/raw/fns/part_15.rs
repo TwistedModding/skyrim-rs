@@ -7,6 +7,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAlphaAccumulator::vdtor` at 0xf0f4a0 (layout_inference, medium); signature (low): `NiAlphaAccumulator * vdtor(NiAlphaAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaAccumulator__vdtor: u64 = 71324;
+/// `NiAlphaAccumulator::vfunc_2` at 0xf0f4e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAlphaAccumulator__vfunc_2: u64 = 71325;
 /// `NiAlphaAccumulator::vfunc_23` at 0xf0f120 (rtti, medium); signature (low): `NiBackToFrontAccumulator * vfunc_23(NiAlphaAccumulator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiAlphaAccumulator__vfunc_23: u64 = 71312;
 /// `NiAlphaAccumulator::vfunc_24` at 0xf0f250 (rtti, medium); signature (untiered): `undefined vfunc_24(void)`
@@ -5379,8 +5383,10 @@ pub const NiStream__vfunc_8: u64 = 70355;
 pub const NiStream__vfunc_9: u64 = 70356;
 /// `NiStringExtraData::Create` at 0xef71e0 (string, high); signature (low): `NiExtraData * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiStringExtraData__Create: u64 = 70795;
-/// `NiStringExtraData::ctor` at 0xef72a0 (layout_inference, high); signature (low): `NiStringExtraData * ctor(NiStringExtraData * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+/// `NiStringExtraData::ctor` at 0xef72a0 (layout_inference, high); signature (low): `NiStringExtraData * ctor(NiStringExtraData * this, BSFixedString * value)`; semantic: constructs a string extra data with its value (no name) (high); signature `NiStringExtraData* (NiStringExtraData* this, const BSFixedString* value)`
 pub const NiStringExtraData__ctor: u64 = 70796;
+/// `NiStringExtraData::ctor` as a function pointer type (high).
+pub type NiStringExtraData__ctor_fn = unsafe extern "C" fn(this: *mut crate::NiStringExtraData, value: *const crate::BSFixedString) -> *mut crate::NiStringExtraData;
 /// `NiStringExtraData::vdtor` at 0xef73d0 (layout_inference, medium); signature (low): `NiStringExtraData * vdtor(NiStringExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiStringExtraData__vdtor: u64 = 70799;
 /// `NiStringExtraData::vfunc_2` at 0xef7420 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -7941,8 +7947,10 @@ pub const OpenTextGapAndShiftRuns: u64 = 88412;
 pub const OpenWideCharGapAt: u64 = 88413;
 /// `OpenWinHttpRequest` at 0x13de1f0 (decompiler, medium); signature (low): `undefined OpenWinHttpRequest(longlong * param_1, longlong param_2, undefined8 param_3, uint param_4, longlong * param_5)`
 pub const OpenWinHttpRequest: u64 = 527208;
-/// `OperatorDelete` at 0x15a743c (decompiler, medium); signature (medium): `undefined OperatorDelete(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `OperatorDelete` at 0x15a743c (semantic, high); signature (medium): `void OperatorDelete(void * ptr, ulonglong size)`; semantic: frees a global-heap block (high); signature `void (void* ptr, u64 size)`
 pub const OperatorDelete: u64 = 109588;
+/// `OperatorDelete` as a function pointer type (high).
+pub type OperatorDelete_fn = unsafe extern "C" fn(ptr: *mut c_void, size: u64);
 /// `Options::ctor` at 0x16053c0 (layout_inference, medium); signature (low): `undefined ctor(Options * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
 pub const Options__ctor: u64 = 454666;
 /// `Options::ctor` at 0x1606c50 (layout_inference, high); signature (high): `Options * ctor(Options * this)`
@@ -8717,13 +8725,3 @@ pub const Papyrus__Debug__DebugChannelNotify: u64 = 55371;
 pub const Papyrus__Debug__DumpAliasData: u64 = 55372;
 /// `Papyrus::Debug::DumpAliasData_sub0` at 0xa213a0 (callgraph, medium); signature (untiered): `undefined8 DumpAliasData_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, longlong param_4)`
 pub const Papyrus__Debug__DumpAliasData_sub0: u64 = 55396;
-/// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (medium): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); signature `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
-pub const Papyrus__Debug__GetConfigName: u64 = 55373;
-/// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
-pub type Papyrus__Debug__GetConfigName_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void) -> bool;
-/// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
-/// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
-pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
-/// `Papyrus::Debug::GetVersionNumber` at 0xa1f470 (papyrus_native, high); signature (medium): `bool GetVersionNumber(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;

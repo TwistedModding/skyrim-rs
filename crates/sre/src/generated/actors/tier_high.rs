@@ -256,6 +256,16 @@ impl crate::BGSActionData {
     pub unsafe fn dtor_2(&self) -> u64 { unsafe { function!(16176, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BGSSkinForm {
+    /// `BGSSkinForm::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 14337, rva 0x1db8b0).
+    /// `BGSSkinForm * ctor(BGSSkinForm * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14337, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::BSExtraData {
     /// `BSExtraData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 11559, rva 0x1563f0).
     /// `undefined dtor(BSExtraData * this)`

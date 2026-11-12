@@ -3229,8 +3229,10 @@ pub const AllocateInterpolatorAndTargetArrays: u64 = 72625;
 pub const AllocateLambdaFuncImplCopy: u64 = 448634;
 /// `AllocateLinkedBlock` at 0xd7dba0 (decompiler, medium); signature (low): `undefined8 * AllocateLinkedBlock(longlong param_1, longlong param_2)`
 pub const AllocateLinkedBlock: u64 = 85292;
-/// `AllocateMemory` at 0xcde250 (decompiler, high); signature (high): `void * AllocateMemory(longlong param_1, ulonglong param_2, uint param_3, char param_4)`
+/// `AllocateMemory` at 0xcde250 (semantic, high); signature (high): `void * AllocateMemory(void * manager, ulonglong size, uint alignment, bool aligned)`; semantic: allocates from the engine's global heap; manager is g_MemoryManager (high); signature `void* (void* manager, u64 size, u32 alignment, bool aligned)`
 pub const AllocateMemory: u64 = 68115;
+/// `AllocateMemory` as a function pointer type (high).
+pub type AllocateMemory_fn = unsafe extern "C" fn(manager: *mut c_void, size: u64, alignment: u32, aligned: bool) -> *mut c_void;
 /// `AllocateMemory0x18` at 0xcd2ea0 (decompiler, medium); signature (low): `undefined AllocateMemory0x18(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const AllocateMemory0x18: u64 = 67788;
 /// `AllocateMemory0x18_2` at 0x1081f80 (decompiler, medium); signature (low): `undefined AllocateMemory0x18_2(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`

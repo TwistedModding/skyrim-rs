@@ -363,6 +363,16 @@ impl crate::NiIntegerExtraData {
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(75986, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::NiObject {
+    /// `NiObject::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70207, rva 0xedd080).
+    /// `NiObject * vdtor(NiObject * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70207, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::NiObjectNET {
     /// `NiObjectNET::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 70532, rva 0xeebba0).
     /// `NiObjectNET * vdtor(NiObjectNET * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -381,13 +391,6 @@ impl crate::NiStringExtraData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiExtraData { unsafe { function!(70795, (u64, u64, u64, u64) -> *mut crate::NiExtraData)(param_1, param_2, param_3, param_4) } }
-    /// `NiStringExtraData::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70796, rva 0xef72a0).
-    /// `NiStringExtraData * ctor(NiStringExtraData * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70796, (*const Self, *mut i64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `NiStringExtraData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70799, rva 0xef73d0).
     /// `NiStringExtraData * vdtor(NiStringExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     ///

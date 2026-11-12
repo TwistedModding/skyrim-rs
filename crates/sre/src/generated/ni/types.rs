@@ -15,15 +15,15 @@ pub struct NiAVObjectPalette {
     /// +0x0 `vtbl:NiAVObjectPalette:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAVObjectPalette_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 60],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiAVObjectPalette>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiAVObjectPalette, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAVObjectPalette, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAVObjectPalette, refCount) == 0x8);
 
 /// `NiAccumulator`: size 0x18 (exact, low); primary base `NiObject`.
 /// Evidence: lower bound field field_10 meets upper bound first own field of NiBackToFrontAccumulator at 0x18 (soft).
@@ -33,8 +33,8 @@ pub struct NiAccumulator {
     /// +0x0 `vtbl:NiAccumulator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAccumulator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -43,7 +43,7 @@ pub struct NiAccumulator {
 }
 const _: () = assert!(size_of::<NiAccumulator>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAccumulator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAccumulator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAccumulator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiAccumulator, field_10) == 0x10);
 
 /// `NiAdditionalGeometryData`: size >= 0x10 (lower bound); partial, the struct stops at the lower bound; primary base `NiObject`.
@@ -54,14 +54,14 @@ pub struct NiAdditionalGeometryData {
     /// +0x0 `vtbl:NiAdditionalGeometryData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAdditionalGeometryData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiAdditionalGeometryData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAdditionalGeometryData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAdditionalGeometryData, refCount) == 0x8);
 
 /// `NiAllocator`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
@@ -83,8 +83,8 @@ pub struct NiAlphaAccumulator {
     /// +0x0 `vtbl:NiAlphaAccumulator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAlphaAccumulator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiAccumulator
     pub field_10: u64,
@@ -113,7 +113,7 @@ pub struct NiAlphaAccumulator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAlphaAccumulator, field_20) == 0x20);
@@ -133,8 +133,8 @@ pub struct NiAmbientLight {
     /// +0x0 `vtbl:NiAmbientLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAmbientLight_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -194,7 +194,7 @@ pub struct NiAmbientLight {
 }
 const _: () = assert!(size_of::<NiAmbientLight>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAmbientLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAmbientLight, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAmbientLight, extraData) == 0x20);
@@ -228,8 +228,8 @@ pub struct NiBSBoneLODController {
     /// +0x0 `vtbl:NiBSBoneLODController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSBoneLODController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -274,7 +274,7 @@ pub struct NiBSBoneLODController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_1C) == 0x1C);
@@ -300,8 +300,8 @@ pub struct NiBSPNode {
     /// +0x0 `vtbl:NiBSPNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSPNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -354,7 +354,7 @@ pub struct NiBSPNode {
 }
 const _: () = assert!(size_of::<NiBSPNode>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSPNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSPNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSPNode, extraData) == 0x20);
@@ -383,8 +383,8 @@ pub struct NiBSplineBasisData {
     /// +0x0 `vtbl:NiBSplineBasisData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineBasisData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -399,7 +399,7 @@ pub struct NiBSplineBasisData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiBSplineBasisData, field_28) == 0x28);
@@ -413,8 +413,8 @@ pub struct NiBSplineColorInterpolator {
     /// +0x0 `vtbl:NiBSplineColorInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineColorInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -439,7 +439,7 @@ pub struct NiBSplineColorInterpolator {
 }
 const _: () = assert!(size_of::<NiBSplineColorInterpolator>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineColorInterpolator, field_1C) == 0x1C);
@@ -457,8 +457,8 @@ pub struct NiBSplineCompColorInterpolator {
     /// +0x0 `vtbl:NiBSplineCompColorInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompColorInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -486,7 +486,7 @@ pub struct NiBSplineCompColorInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompColorInterpolator, field_1C) == 0x1C);
@@ -506,8 +506,8 @@ pub struct NiBSplineCompFloatInterpolator {
     /// +0x0 `vtbl:NiBSplineCompFloatInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompFloatInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -532,7 +532,7 @@ pub struct NiBSplineCompFloatInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompFloatInterpolator, field_1C) == 0x1C);
@@ -551,8 +551,8 @@ pub struct NiBSplineCompPoint3Interpolator {
     /// +0x0 `vtbl:NiBSplineCompPoint3Interpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompPoint3Interpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -581,7 +581,7 @@ pub struct NiBSplineCompPoint3Interpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompPoint3Interpolator, field_1C) == 0x1C);
@@ -602,8 +602,8 @@ pub struct NiBSplineCompTransformInterpolator {
     /// +0x0 `vtbl:NiBSplineCompTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineCompTransformInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -653,7 +653,7 @@ pub struct NiBSplineCompTransformInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineCompTransformInterpolator, field_1C) == 0x1C);
@@ -682,8 +682,8 @@ pub struct NiBSplineData {
     /// +0x0 `vtbl:NiBSplineData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -695,7 +695,7 @@ pub struct NiBSplineData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBSplineData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineData, field_20) == 0x20);
@@ -708,8 +708,8 @@ pub struct NiBSplineFloatInterpolator {
     /// +0x0 `vtbl:NiBSplineFloatInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineFloatInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -731,7 +731,7 @@ pub struct NiBSplineFloatInterpolator {
 }
 const _: () = assert!(size_of::<NiBSplineFloatInterpolator>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineFloatInterpolator, field_1C) == 0x1C);
@@ -748,8 +748,8 @@ pub struct NiBSplineInterpolator {
     /// +0x0 `vtbl:NiBSplineInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -767,7 +767,7 @@ pub struct NiBSplineInterpolator {
 }
 const _: () = assert!(size_of::<NiBSplineInterpolator>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineInterpolator, field_1C) == 0x1C);
@@ -782,8 +782,8 @@ pub struct NiBSplinePoint3Interpolator {
     /// +0x0 `vtbl:NiBSplinePoint3Interpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplinePoint3Interpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -809,7 +809,7 @@ pub struct NiBSplinePoint3Interpolator {
 }
 const _: () = assert!(size_of::<NiBSplinePoint3Interpolator>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplinePoint3Interpolator, field_1C) == 0x1C);
@@ -828,8 +828,8 @@ pub struct NiBSplineTransformInterpolator {
     /// +0x0 `vtbl:NiBSplineTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBSplineTransformInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -864,7 +864,7 @@ pub struct NiBSplineTransformInterpolator {
 }
 const _: () = assert!(size_of::<NiBSplineTransformInterpolator>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBSplineTransformInterpolator, field_1C) == 0x1C);
@@ -887,8 +887,8 @@ pub struct NiBackToFrontAccumulator {
     /// +0x0 `vtbl:NiBackToFrontAccumulator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBackToFrontAccumulator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiAccumulator
     pub field_10: u64,
@@ -913,7 +913,7 @@ pub struct NiBackToFrontAccumulator {
 }
 const _: () = assert!(size_of::<NiBackToFrontAccumulator>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBackToFrontAccumulator, field_20) == 0x20);
@@ -931,8 +931,8 @@ pub struct NiBillboardNode {
     /// +0x0 `vtbl:NiBillboardNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBillboardNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -985,7 +985,7 @@ pub struct NiBillboardNode {
 }
 const _: () = assert!(size_of::<NiBillboardNode>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBillboardNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBillboardNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBillboardNode, extraData) == 0x20);
@@ -1014,8 +1014,8 @@ pub struct NiBinaryExtraData {
     /// +0x0 `vtbl:NiBinaryExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBinaryExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -1025,7 +1025,7 @@ pub struct NiBinaryExtraData {
 }
 const _: () = assert!(size_of::<NiBinaryExtraData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBinaryExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBinaryExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBinaryExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBinaryExtraData, name) == 0x10);
 
 /// `NiBinaryStream`: size 0x20 (exact, low).
@@ -1060,8 +1060,8 @@ pub struct NiBlendAccumTransformInterpolator {
     /// +0x0 `vtbl:NiBlendAccumTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendAccumTransformInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1108,7 +1108,7 @@ pub struct NiBlendAccumTransformInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_19) == 0x19);
@@ -1137,8 +1137,8 @@ pub struct NiBlendBoolInterpolator {
     /// +0x0 `vtbl:NiBlendBoolInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendBoolInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1174,7 +1174,7 @@ pub struct NiBlendBoolInterpolator {
 }
 const _: () = assert!(size_of::<NiBlendBoolInterpolator>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_19) == 0x19);
@@ -1197,8 +1197,8 @@ pub struct NiBlendColorInterpolator {
     /// +0x0 `vtbl:NiBlendColorInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendColorInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1235,7 +1235,7 @@ pub struct NiBlendColorInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_19) == 0x19);
@@ -1259,8 +1259,8 @@ pub struct NiBlendFloatInterpolator {
     /// +0x0 `vtbl:NiBlendFloatInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendFloatInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1297,7 +1297,7 @@ pub struct NiBlendFloatInterpolator {
 }
 const _: () = assert!(size_of::<NiBlendFloatInterpolator>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_19) == 0x19);
@@ -1320,8 +1320,8 @@ pub struct NiBlendInterpolator {
     /// +0x0 `vtbl:NiBlendInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1354,7 +1354,7 @@ pub struct NiBlendInterpolator {
 }
 const _: () = assert!(size_of::<NiBlendInterpolator>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_19) == 0x19);
@@ -1376,8 +1376,8 @@ pub struct NiBlendPoint3Interpolator {
     /// +0x0 `vtbl:NiBlendPoint3Interpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendPoint3Interpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1419,7 +1419,7 @@ pub struct NiBlendPoint3Interpolator {
 }
 const _: () = assert!(size_of::<NiBlendPoint3Interpolator>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_19) == 0x19);
@@ -1445,8 +1445,8 @@ pub struct NiBlendQuaternionInterpolator {
     /// +0x0 `vtbl:NiBlendQuaternionInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendQuaternionInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1480,7 +1480,7 @@ pub struct NiBlendQuaternionInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_19) == 0x19);
@@ -1503,8 +1503,8 @@ pub struct NiBlendTransformInterpolator {
     /// +0x0 `vtbl:NiBlendTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBlendTransformInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1536,7 +1536,7 @@ pub struct NiBlendTransformInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_19) == 0x19);
@@ -1570,15 +1570,15 @@ pub struct NiBoolData {
     /// +0x0 `vtbl:NiBoolData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiBoolData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBoolData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBoolData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBoolData, refCount) == 0x8);
 
 /// `NiBoolInterpController`: size 0x50 (exact, medium); primary base `NiSingleInterpController`.
 /// Evidence: lower bound NiVisController (size 0x50 at 0x0) adds no fields or bases meets upper bound derived NiVisController size 0x50 at 0x0.
@@ -1589,8 +1589,8 @@ pub struct NiBoolInterpController {
     /// +0x0 `vtbl:NiBoolInterpController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolInterpController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -1623,7 +1623,7 @@ pub struct NiBoolInterpController {
 }
 const _: () = assert!(size_of::<NiBoolInterpController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_1C) == 0x1C);
@@ -1644,8 +1644,8 @@ pub struct NiBoolInterpolator {
     /// +0x0 `vtbl:NiBoolInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1663,7 +1663,7 @@ pub struct NiBoolInterpolator {
 }
 const _: () = assert!(size_of::<NiBoolInterpolator>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpolator, field_20) == 0x20);
@@ -1677,8 +1677,8 @@ pub struct NiBoolTimelineInterpolator {
     /// +0x0 `vtbl:NiBoolTimelineInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBoolTimelineInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -1701,7 +1701,7 @@ pub struct NiBoolTimelineInterpolator {
 }
 const _: () = assert!(size_of::<NiBoolTimelineInterpolator>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBoolTimelineInterpolator, field_20) == 0x20);
@@ -1717,8 +1717,8 @@ pub struct NiBooleanExtraData {
     /// +0x0 `vtbl:NiBooleanExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiBooleanExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -1728,7 +1728,7 @@ pub struct NiBooleanExtraData {
 }
 const _: () = assert!(size_of::<NiBooleanExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBooleanExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiBooleanExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiBooleanExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBooleanExtraData, name) == 0x10);
 
 /// `NiBoundingVolume`: size 0x8 (exact, low).
@@ -2250,8 +2250,8 @@ pub struct NiCollisionData {
     /// +0x0 `vtbl:NiCollisionData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCollisionData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -2299,7 +2299,7 @@ pub struct NiCollisionData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiCollisionData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_1C) == 0x1C);
@@ -2328,8 +2328,8 @@ pub struct NiCollisionObject {
     /// +0x0 `vtbl:NiCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -2338,7 +2338,7 @@ pub struct NiCollisionObject {
 }
 const _: () = assert!(size_of::<NiCollisionObject>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiCollisionObject, field_10) == 0x10);
 
 /// `NiCollisionTraversals::IFindIntersections`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
@@ -2362,8 +2362,8 @@ pub struct NiColorData {
     /// +0x0 `vtbl:NiColorData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -2380,7 +2380,7 @@ pub struct NiColorData {
 }
 const _: () = assert!(size_of::<NiColorData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiColorData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColorData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColorData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiColorData, field_20) == 0x20);
@@ -2394,8 +2394,8 @@ pub struct NiColorExtraData {
     /// +0x0 `vtbl:NiColorExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -2415,7 +2415,7 @@ pub struct NiColorExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_1C) == 0x1C);
@@ -2431,8 +2431,8 @@ pub struct NiColorExtraDataController {
     /// +0x0 `vtbl:NiColorExtraDataController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorExtraDataController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -2468,7 +2468,7 @@ pub struct NiColorExtraDataController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_1C) == 0x1C);
@@ -2491,8 +2491,8 @@ pub struct NiColorInterpolator {
     /// +0x0 `vtbl:NiColorInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiColorInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -2509,7 +2509,7 @@ pub struct NiColorInterpolator {
 }
 const _: () = assert!(size_of::<NiColorInterpolator>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiColorInterpolator, field_28) == 0x28);
@@ -2524,8 +2524,8 @@ pub struct NiControllerManager {
     /// +0x0 `vtbl:NiControllerManager:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiControllerManager_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -2589,7 +2589,7 @@ pub struct NiControllerManager {
 }
 const _: () = assert!(size_of::<NiControllerManager>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiControllerManager, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_1C) == 0x1C);
@@ -2624,8 +2624,8 @@ pub struct NiControllerSequence {
     /// +0x0 `vtbl:NiControllerSequence:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiControllerSequence_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -2693,7 +2693,7 @@ pub struct NiControllerSequence {
 }
 const _: () = assert!(size_of::<NiControllerSequence>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(NiControllerSequence, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiControllerSequence, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiControllerSequence, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiControllerSequence, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiControllerSequence, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiControllerSequence, field_1C) == 0x1C);
@@ -2776,15 +2776,15 @@ pub struct NiDefaultAVObjectPalette {
     /// +0x0 `vtbl:NiDefaultAVObjectPalette:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiDefaultAVObjectPalette_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 60],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiDefaultAVObjectPalette>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiDefaultAVObjectPalette, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiDefaultAVObjectPalette, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiDefaultAVObjectPalette, refCount) == 0x8);
 
 /// `NiDirectionalLight`: size 0x158 (exact, high); primary base `NiLight`.
 /// Evidence: runtime: 0x158 at 3 allocation sites; agrees with the static allocation sites.
@@ -2795,8 +2795,8 @@ pub struct NiDirectionalLight {
     /// +0x0 `vtbl:NiDirectionalLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiDirectionalLight_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -2864,7 +2864,7 @@ pub struct NiDirectionalLight {
 }
 const _: () = assert!(size_of::<NiDirectionalLight>() == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiDirectionalLight, extraData) == 0x20);
@@ -2902,8 +2902,8 @@ pub struct NiExtraDataController {
     /// +0x0 `vtbl:NiExtraDataController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiExtraDataController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -2940,7 +2940,7 @@ pub struct NiExtraDataController {
 }
 const _: () = assert!(size_of::<NiExtraDataController>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiExtraDataController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_1C) == 0x1C);
@@ -3011,8 +3011,8 @@ pub struct NiFloatController {
     /// +0x0 `vtbl:NiFloatController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3045,7 +3045,7 @@ pub struct NiFloatController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_1C) == 0x1C);
@@ -3066,8 +3066,8 @@ pub struct NiFloatData {
     /// +0x0 `vtbl:NiFloatData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -3084,7 +3084,7 @@ pub struct NiFloatData {
 }
 const _: () = assert!(size_of::<NiFloatData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiFloatData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFloatData, field_20) == 0x20);
@@ -3098,8 +3098,8 @@ pub struct NiFloatExtraData {
     /// +0x0 `vtbl:NiFloatExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -3109,7 +3109,7 @@ pub struct NiFloatExtraData {
 }
 const _: () = assert!(size_of::<NiFloatExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraData, name) == 0x10);
 
 /// `NiFloatExtraDataController`: size 0x60 (exact, high); primary base `NiExtraDataController`.
@@ -3121,8 +3121,8 @@ pub struct NiFloatExtraDataController {
     /// +0x0 `vtbl:NiFloatExtraDataController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatExtraDataController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3159,7 +3159,7 @@ pub struct NiFloatExtraDataController {
 }
 const _: () = assert!(size_of::<NiFloatExtraDataController>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_1C) == 0x1C);
@@ -3183,8 +3183,8 @@ pub struct NiFloatInterpController {
     /// +0x0 `vtbl:NiFloatInterpController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatInterpController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3217,7 +3217,7 @@ pub struct NiFloatInterpController {
 }
 const _: () = assert!(size_of::<NiFloatInterpController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_1C) == 0x1C);
@@ -3238,8 +3238,8 @@ pub struct NiFloatInterpolator {
     /// +0x0 `vtbl:NiFloatInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -3257,7 +3257,7 @@ pub struct NiFloatInterpolator {
 }
 const _: () = assert!(size_of::<NiFloatInterpolator>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpolator, field_20) == 0x20);
@@ -3271,8 +3271,8 @@ pub struct NiFloatsExtraData {
     /// +0x0 `vtbl:NiFloatsExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -3285,7 +3285,7 @@ pub struct NiFloatsExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraData, field_20) == 0x20);
@@ -3299,8 +3299,8 @@ pub struct NiFloatsExtraDataController {
     /// +0x0 `vtbl:NiFloatsExtraDataController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3339,7 +3339,7 @@ pub struct NiFloatsExtraDataController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_1C) == 0x1C);
@@ -3364,8 +3364,8 @@ pub struct NiFloatsExtraDataPoint3Controller {
     /// +0x0 `vtbl:NiFloatsExtraDataPoint3Controller:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataPoint3Controller_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3406,7 +3406,7 @@ pub struct NiFloatsExtraDataPoint3Controller {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_1C) == 0x1C);
@@ -3432,8 +3432,8 @@ pub struct NiFogProperty {
     /// +0x0 `vtbl:NiFogProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiFogProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -3465,7 +3465,7 @@ pub struct NiFogProperty {
 }
 const _: () = assert!(size_of::<NiFogProperty>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiFogProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiFogProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiFogProperty, extraData) == 0x20);
@@ -3529,8 +3529,8 @@ pub struct NiGeometry {
     /// +0x0 `vtbl:NiGeometry:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiGeometry_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -3590,7 +3590,7 @@ pub struct NiGeometry {
 }
 const _: () = assert!(size_of::<NiGeometry>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiGeometry, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiGeometry, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiGeometry, extraData) == 0x20);
@@ -3623,8 +3623,8 @@ pub struct NiGeometryData {
     /// +0x0 `vtbl:NiGeometryData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiGeometryData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined2`, ctor store (widths [2, 8])
     pub field_10: u16,
@@ -3662,7 +3662,7 @@ pub struct NiGeometryData {
 }
 const _: () = assert!(size_of::<NiGeometryData>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiGeometryData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiGeometryData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiGeometryData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiGeometryData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiGeometryData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiGeometryData, field_14) == 0x14);
@@ -3721,8 +3721,8 @@ pub struct NiIntegersExtraData {
     /// +0x0 `vtbl:NiIntegersExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiIntegersExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -3735,7 +3735,7 @@ pub struct NiIntegersExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiIntegersExtraData, field_20) == 0x20);
@@ -3749,8 +3749,8 @@ pub struct NiInterpController {
     /// +0x0 `vtbl:NiInterpController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiInterpController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3781,7 +3781,7 @@ pub struct NiInterpController {
 }
 const _: () = assert!(size_of::<NiInterpController>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiInterpController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiInterpController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_1C) == 0x1C);
@@ -3801,8 +3801,8 @@ pub struct NiInterpolator {
     /// +0x0 `vtbl:NiInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -3812,7 +3812,7 @@ pub struct NiInterpolator {
 }
 const _: () = assert!(size_of::<NiInterpolator>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiInterpolator, field_10) == 0x10);
 
 /// `NiIntersector`: size 0x40 (exact, low).
@@ -3876,8 +3876,8 @@ pub struct NiKeyBasedInterpolator {
     /// +0x0 `vtbl:NiKeyBasedInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiKeyBasedInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -3887,7 +3887,7 @@ pub struct NiKeyBasedInterpolator {
 }
 const _: () = assert!(size_of::<NiKeyBasedInterpolator>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiKeyBasedInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiKeyBasedInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiKeyBasedInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiKeyBasedInterpolator, field_10) == 0x10);
 
 /// `NiKeyframeManager`: size >= 0x70 (lower bound); partial, the struct stops at the lower bound; primary base `NiTimeController`.
@@ -3899,8 +3899,8 @@ pub struct NiKeyframeManager {
     /// +0x0 `vtbl:NiKeyframeManager:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiKeyframeManager_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -3943,7 +3943,7 @@ pub struct NiKeyframeManager {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_1C) == 0x1C);
@@ -3969,8 +3969,8 @@ pub struct NiLightColorController {
     /// +0x0 `vtbl:NiLightColorController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLightColorController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -4005,7 +4005,7 @@ pub struct NiLightColorController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLightColorController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_1C) == 0x1C);
@@ -4028,8 +4028,8 @@ pub struct NiLightDimmerController {
     /// +0x0 `vtbl:NiLightDimmerController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiLightDimmerController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -4061,7 +4061,7 @@ pub struct NiLightDimmerController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_1C) == 0x1C);
@@ -4121,8 +4121,8 @@ pub struct NiMeshPSysData {
     /// +0x0 `vtbl:NiMeshPSysData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMeshPSysData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
@@ -4200,7 +4200,7 @@ pub struct NiMeshPSysData {
 }
 const _: () = assert!(size_of::<NiMeshPSysData>() == 0xD0);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_14) == 0x14);
@@ -4242,8 +4242,8 @@ pub struct NiMeshParticleSystem {
     /// +0x0 `vtbl:NiMeshParticleSystem:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMeshParticleSystem_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -4306,8 +4306,8 @@ pub struct NiMeshParticleSystem {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
@@ -4345,7 +4345,7 @@ pub struct NiMeshParticleSystem {
 }
 const _: () = assert!(size_of::<NiMeshParticleSystem>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, extraData) == 0x20);
@@ -4373,7 +4373,7 @@ const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, shaderProperty
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, type_) == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiMeshParticleSystem, field_160) == 0x160);
@@ -4397,8 +4397,8 @@ pub struct NiMorphData {
     /// +0x0 `vtbl:NiMorphData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMorphData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -4411,7 +4411,7 @@ pub struct NiMorphData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiMorphData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiMorphData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiMorphData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiMorphData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiMorphData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiMorphData, field_20) == 0x20);
@@ -4425,8 +4425,8 @@ pub struct NiMultiTargetTransformController {
     /// +0x0 `vtbl:NiMultiTargetTransformController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiMultiTargetTransformController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -4458,7 +4458,7 @@ pub struct NiMultiTargetTransformController {
 }
 const _: () = assert!(size_of::<NiMultiTargetTransformController>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_1C) == 0x1C);
@@ -4731,24 +4731,6 @@ const _: () = assert!(core::mem::offset_of!(NiOBBRoot, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_5C) == 0x5C);
 
-/// `NiObject`: size 0x10 (exact, low); primary base `NiRefObject`.
-/// Evidence: lower bound field field_8 meets upper bound first own field of BSAnimNotes at 0x10 (soft).
-/// Bases: `NiRefObject`@0x0.
-#[repr(C)]
-pub struct NiObject {
-    /// +0x0 `vtbl:NiObject:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::NiObject_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<NiObject>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiObject, field_8) == 0x8);
-
 /// `NiPSysAgeDeathModifier`: size 0x40 (exact, high); primary base `NiPSysModifier`.
 /// Evidence: runtime: 0x40 at 2 allocation sites.
 /// Bases: `NiPSysModifier`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
@@ -4757,8 +4739,8 @@ pub struct NiPSysAgeDeathModifier {
     /// +0x0 `vtbl:NiPSysAgeDeathModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAgeDeathModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -4780,7 +4762,7 @@ pub struct NiPSysAgeDeathModifier {
 }
 const _: () = assert!(size_of::<NiPSysAgeDeathModifier>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysAgeDeathModifier, field_20) == 0x20);
@@ -4797,8 +4779,8 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldAirFrictionCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldAirFrictionCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -4834,7 +4816,7 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_1C) == 0x1C);
@@ -4858,8 +4840,8 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldInheritVelocityCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldInheritVelocityCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -4895,7 +4877,7 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_1C) == 0x1C);
@@ -4918,8 +4900,8 @@ pub struct NiPSysAirFieldModifier {
     /// +0x0 `vtbl:NiPSysAirFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -4985,7 +4967,7 @@ pub struct NiPSysAirFieldModifier {
 }
 const _: () = assert!(size_of::<NiPSysAirFieldModifier>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_20) == 0x20);
@@ -5022,8 +5004,8 @@ pub struct NiPSysAirFieldSpreadCtlr {
     /// +0x0 `vtbl:NiPSysAirFieldSpreadCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldSpreadCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -5059,7 +5041,7 @@ pub struct NiPSysAirFieldSpreadCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_1C) == 0x1C);
@@ -5082,8 +5064,8 @@ pub struct NiPSysBombModifier {
     /// +0x0 `vtbl:NiPSysBombModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBombModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5120,7 +5102,7 @@ pub struct NiPSysBombModifier {
 }
 const _: () = assert!(size_of::<NiPSysBombModifier>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_20) == 0x20);
@@ -5142,8 +5124,8 @@ pub struct NiPSysBoundUpdateModifier {
     /// +0x0 `vtbl:NiPSysBoundUpdateModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBoundUpdateModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5167,7 +5149,7 @@ pub struct NiPSysBoundUpdateModifier {
 }
 const _: () = assert!(size_of::<NiPSysBoundUpdateModifier>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoundUpdateModifier, field_20) == 0x20);
@@ -5184,8 +5166,8 @@ pub struct NiPSysBoxEmitter {
     /// +0x0 `vtbl:NiPSysBoxEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysBoxEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5237,7 +5219,7 @@ pub struct NiPSysBoxEmitter {
 }
 const _: () = assert!(size_of::<NiPSysBoxEmitter>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysBoxEmitter, field_20) == 0x20);
@@ -5268,8 +5250,8 @@ pub struct NiPSysCollider {
     /// +0x0 `vtbl:NiPSysCollider:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysCollider_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `float`, ctor store (widths [4, 4])
     pub field_10: f32,
@@ -5297,7 +5279,7 @@ pub struct NiPSysCollider {
 }
 const _: () = assert!(size_of::<NiPSysCollider>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysCollider, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysCollider, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysCollider, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysCollider, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysCollider, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysCollider, field_15) == 0x15);
@@ -5317,8 +5299,8 @@ pub struct NiPSysColliderManager {
     /// +0x0 `vtbl:NiPSysColliderManager:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysColliderManager_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5337,7 +5319,7 @@ pub struct NiPSysColliderManager {
 }
 const _: () = assert!(size_of::<NiPSysColliderManager>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysColliderManager, field_20) == 0x20);
@@ -5352,8 +5334,8 @@ pub struct NiPSysColorModifier {
     /// +0x0 `vtbl:NiPSysColorModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysColorModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5373,7 +5355,7 @@ pub struct NiPSysColorModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysColorModifier, field_20) == 0x20);
@@ -5389,8 +5371,8 @@ pub struct NiPSysCylinderEmitter {
     /// +0x0 `vtbl:NiPSysCylinderEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysCylinderEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5439,7 +5421,7 @@ pub struct NiPSysCylinderEmitter {
 }
 const _: () = assert!(size_of::<NiPSysCylinderEmitter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_20) == 0x20);
@@ -5469,8 +5451,8 @@ pub struct NiPSysData {
     /// +0x0 `vtbl:NiPSysData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
@@ -5533,7 +5515,7 @@ pub struct NiPSysData {
 }
 const _: () = assert!(size_of::<NiPSysData>() == 0xA8);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_14) == 0x14);
@@ -5568,8 +5550,8 @@ pub struct NiPSysDragFieldModifier {
     /// +0x0 `vtbl:NiPSysDragFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysDragFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5608,7 +5590,7 @@ pub struct NiPSysDragFieldModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragFieldModifier, field_20) == 0x20);
@@ -5632,8 +5614,8 @@ pub struct NiPSysDragModifier {
     /// +0x0 `vtbl:NiPSysDragModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysDragModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5664,7 +5646,7 @@ pub struct NiPSysDragModifier {
 }
 const _: () = assert!(size_of::<NiPSysDragModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysDragModifier, field_20) == 0x20);
@@ -5685,8 +5667,8 @@ pub struct NiPSysEmitter {
     /// +0x0 `vtbl:NiPSysEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -5729,7 +5711,7 @@ pub struct NiPSysEmitter {
 }
 const _: () = assert!(size_of::<NiPSysEmitter>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitter, field_20) == 0x20);
@@ -5757,8 +5739,8 @@ pub struct NiPSysEmitterCtlr {
     /// +0x0 `vtbl:NiPSysEmitterCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -5811,7 +5793,7 @@ pub struct NiPSysEmitterCtlr {
 }
 const _: () = assert!(size_of::<NiPSysEmitterCtlr>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_1C) == 0x1C);
@@ -5841,8 +5823,8 @@ pub struct NiPSysEmitterCtlrData {
     /// +0x0 `vtbl:NiPSysEmitterCtlrData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterCtlrData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -5868,7 +5850,7 @@ pub struct NiPSysEmitterCtlrData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlrData, field_20) == 0x20);
@@ -5887,8 +5869,8 @@ pub struct NiPSysEmitterDeclinationCtlr {
     /// +0x0 `vtbl:NiPSysEmitterDeclinationCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -5924,7 +5906,7 @@ pub struct NiPSysEmitterDeclinationCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_1C) == 0x1C);
@@ -5948,8 +5930,8 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     /// +0x0 `vtbl:NiPSysEmitterDeclinationVarCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationVarCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -5985,7 +5967,7 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_1C) == 0x1C);
@@ -6009,8 +5991,8 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
     /// +0x0 `vtbl:NiPSysEmitterInitialRadiusCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterInitialRadiusCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6047,7 +6029,7 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
 }
 const _: () = assert!(size_of::<NiPSysEmitterInitialRadiusCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_1C) == 0x1C);
@@ -6071,8 +6053,8 @@ pub struct NiPSysEmitterLifeSpanCtlr {
     /// +0x0 `vtbl:NiPSysEmitterLifeSpanCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterLifeSpanCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6109,7 +6091,7 @@ pub struct NiPSysEmitterLifeSpanCtlr {
 }
 const _: () = assert!(size_of::<NiPSysEmitterLifeSpanCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_1C) == 0x1C);
@@ -6133,8 +6115,8 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     /// +0x0 `vtbl:NiPSysEmitterPlanarAngleCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6170,7 +6152,7 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_1C) == 0x1C);
@@ -6194,8 +6176,8 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     /// +0x0 `vtbl:NiPSysEmitterPlanarAngleVarCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleVarCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6231,7 +6213,7 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_1C) == 0x1C);
@@ -6255,8 +6237,8 @@ pub struct NiPSysEmitterSpeedCtlr {
     /// +0x0 `vtbl:NiPSysEmitterSpeedCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterSpeedCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6293,7 +6275,7 @@ pub struct NiPSysEmitterSpeedCtlr {
 }
 const _: () = assert!(size_of::<NiPSysEmitterSpeedCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_1C) == 0x1C);
@@ -6317,8 +6299,8 @@ pub struct NiPSysFieldAttenuationCtlr {
     /// +0x0 `vtbl:NiPSysFieldAttenuationCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldAttenuationCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6354,7 +6336,7 @@ pub struct NiPSysFieldAttenuationCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_1C) == 0x1C);
@@ -6378,8 +6360,8 @@ pub struct NiPSysFieldMagnitudeCtlr {
     /// +0x0 `vtbl:NiPSysFieldMagnitudeCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMagnitudeCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6415,7 +6397,7 @@ pub struct NiPSysFieldMagnitudeCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_1C) == 0x1C);
@@ -6439,8 +6421,8 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     /// +0x0 `vtbl:NiPSysFieldMaxDistanceCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMaxDistanceCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6476,7 +6458,7 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_1C) == 0x1C);
@@ -6499,8 +6481,8 @@ pub struct NiPSysFieldModifier {
     /// +0x0 `vtbl:NiPSysFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -6531,7 +6513,7 @@ pub struct NiPSysFieldModifier {
 }
 const _: () = assert!(size_of::<NiPSysFieldModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_20) == 0x20);
@@ -6551,8 +6533,8 @@ pub struct NiPSysGravityFieldModifier {
     /// +0x0 `vtbl:NiPSysGravityFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -6599,7 +6581,7 @@ pub struct NiPSysGravityFieldModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_20) == 0x20);
@@ -6625,8 +6607,8 @@ pub struct NiPSysGravityModifier {
     /// +0x0 `vtbl:NiPSysGravityModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -6664,7 +6646,7 @@ pub struct NiPSysGravityModifier {
 }
 const _: () = assert!(size_of::<NiPSysGravityModifier>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityModifier, field_20) == 0x20);
@@ -6689,8 +6671,8 @@ pub struct NiPSysGravityStrengthCtlr {
     /// +0x0 `vtbl:NiPSysGravityStrengthCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGravityStrengthCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6727,7 +6709,7 @@ pub struct NiPSysGravityStrengthCtlr {
 }
 const _: () = assert!(size_of::<NiPSysGravityStrengthCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_1C) == 0x1C);
@@ -6750,8 +6732,8 @@ pub struct NiPSysGrowFadeModifier {
     /// +0x0 `vtbl:NiPSysGrowFadeModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysGrowFadeModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -6780,7 +6762,7 @@ pub struct NiPSysGrowFadeModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysGrowFadeModifier, field_20) == 0x20);
@@ -6800,8 +6782,8 @@ pub struct NiPSysInitialRotAngleCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotAngleCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6837,7 +6819,7 @@ pub struct NiPSysInitialRotAngleCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_1C) == 0x1C);
@@ -6861,8 +6843,8 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotAngleVarCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleVarCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6898,7 +6880,7 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_1C) == 0x1C);
@@ -6922,8 +6904,8 @@ pub struct NiPSysInitialRotSpeedCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotSpeedCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -6959,7 +6941,7 @@ pub struct NiPSysInitialRotSpeedCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_1C) == 0x1C);
@@ -6983,8 +6965,8 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     /// +0x0 `vtbl:NiPSysInitialRotSpeedVarCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedVarCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7020,7 +7002,7 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_1C) == 0x1C);
@@ -7043,8 +7025,8 @@ pub struct NiPSysMeshEmitter {
     /// +0x0 `vtbl:NiPSysMeshEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysMeshEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7114,7 +7096,7 @@ pub struct NiPSysMeshEmitter {
 }
 const _: () = assert!(size_of::<NiPSysMeshEmitter>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshEmitter, field_20) == 0x20);
@@ -7154,8 +7136,8 @@ pub struct NiPSysMeshUpdateModifier {
     /// +0x0 `vtbl:NiPSysMeshUpdateModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysMeshUpdateModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7180,7 +7162,7 @@ pub struct NiPSysMeshUpdateModifier {
 }
 const _: () = assert!(size_of::<NiPSysMeshUpdateModifier>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysMeshUpdateModifier, field_20) == 0x20);
@@ -7198,8 +7180,8 @@ pub struct NiPSysModifier {
     /// +0x0 `vtbl:NiPSysModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -7216,7 +7198,7 @@ pub struct NiPSysModifier {
 }
 const _: () = assert!(size_of::<NiPSysModifier>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifier, field_20) == 0x20);
@@ -7231,8 +7213,8 @@ pub struct NiPSysModifierActiveCtlr {
     /// +0x0 `vtbl:NiPSysModifierActiveCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierActiveCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7269,7 +7251,7 @@ pub struct NiPSysModifierActiveCtlr {
 }
 const _: () = assert!(size_of::<NiPSysModifierActiveCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_1C) == 0x1C);
@@ -7293,8 +7275,8 @@ pub struct NiPSysModifierBoolCtlr {
     /// +0x0 `vtbl:NiPSysModifierBoolCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierBoolCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7331,7 +7313,7 @@ pub struct NiPSysModifierBoolCtlr {
 }
 const _: () = assert!(size_of::<NiPSysModifierBoolCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_1C) == 0x1C);
@@ -7355,8 +7337,8 @@ pub struct NiPSysModifierCtlr {
     /// +0x0 `vtbl:NiPSysModifierCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7393,7 +7375,7 @@ pub struct NiPSysModifierCtlr {
 }
 const _: () = assert!(size_of::<NiPSysModifierCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_1C) == 0x1C);
@@ -7417,8 +7399,8 @@ pub struct NiPSysModifierFloatCtlr {
     /// +0x0 `vtbl:NiPSysModifierFloatCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysModifierFloatCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7455,7 +7437,7 @@ pub struct NiPSysModifierFloatCtlr {
 }
 const _: () = assert!(size_of::<NiPSysModifierFloatCtlr>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_1C) == 0x1C);
@@ -7479,8 +7461,8 @@ pub struct NiPSysPlanarCollider {
     /// +0x0 `vtbl:NiPSysPlanarCollider:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysPlanarCollider_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base NiPSysCollider
     pub field_10: f32,
@@ -7561,7 +7543,7 @@ pub struct NiPSysPlanarCollider {
 }
 const _: () = assert!(size_of::<NiPSysPlanarCollider>() == 0x118);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_15) == 0x15);
@@ -7602,8 +7584,8 @@ pub struct NiPSysPositionModifier {
     /// +0x0 `vtbl:NiPSysPositionModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysPositionModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7620,7 +7602,7 @@ pub struct NiPSysPositionModifier {
 }
 const _: () = assert!(size_of::<NiPSysPositionModifier>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysPositionModifier, field_20) == 0x20);
@@ -7634,8 +7616,8 @@ pub struct NiPSysRadialFieldModifier {
     /// +0x0 `vtbl:NiPSysRadialFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysRadialFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7668,7 +7650,7 @@ pub struct NiPSysRadialFieldModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysRadialFieldModifier, field_20) == 0x20);
@@ -7690,8 +7672,8 @@ pub struct NiPSysResetOnLoopCtlr {
     /// +0x0 `vtbl:NiPSysResetOnLoopCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysResetOnLoopCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -7725,7 +7707,7 @@ pub struct NiPSysResetOnLoopCtlr {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_1C) == 0x1C);
@@ -7746,8 +7728,8 @@ pub struct NiPSysRotationModifier {
     /// +0x0 `vtbl:NiPSysRotationModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysRotationModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7783,7 +7765,7 @@ pub struct NiPSysRotationModifier {
 }
 const _: () = assert!(size_of::<NiPSysRotationModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysRotationModifier, field_20) == 0x20);
@@ -7806,8 +7788,8 @@ pub struct NiPSysSpawnModifier {
     /// +0x0 `vtbl:NiPSysSpawnModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSpawnModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7842,7 +7824,7 @@ pub struct NiPSysSpawnModifier {
 }
 const _: () = assert!(size_of::<NiPSysSpawnModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysSpawnModifier, field_20) == 0x20);
@@ -7864,8 +7846,8 @@ pub struct NiPSysSphereEmitter {
     /// +0x0 `vtbl:NiPSysSphereEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSphereEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -7913,7 +7895,7 @@ pub struct NiPSysSphereEmitter {
 }
 const _: () = assert!(size_of::<NiPSysSphereEmitter>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_20) == 0x20);
@@ -7942,8 +7924,8 @@ pub struct NiPSysSphericalCollider {
     /// +0x0 `vtbl:NiPSysSphericalCollider:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysSphericalCollider_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base NiPSysCollider
     pub field_10: f32,
@@ -8018,7 +8000,7 @@ pub struct NiPSysSphericalCollider {
 }
 const _: () = assert!(size_of::<NiPSysSphericalCollider>() == 0xC8);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_15) == 0x15);
@@ -8058,8 +8040,8 @@ pub struct NiPSysTurbulenceFieldModifier {
     /// +0x0 `vtbl:NiPSysTurbulenceFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysTurbulenceFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -8096,7 +8078,7 @@ pub struct NiPSysTurbulenceFieldModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysTurbulenceFieldModifier, field_20) == 0x20);
@@ -8120,8 +8102,8 @@ pub struct NiPSysUpdateCtlr {
     /// +0x0 `vtbl:NiPSysUpdateCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysUpdateCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -8152,7 +8134,7 @@ pub struct NiPSysUpdateCtlr {
 }
 const _: () = assert!(size_of::<NiPSysUpdateCtlr>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_1C) == 0x1C);
@@ -8172,8 +8154,8 @@ pub struct NiPSysVolumeEmitter {
     /// +0x0 `vtbl:NiPSysVolumeEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysVolumeEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -8218,7 +8200,7 @@ pub struct NiPSysVolumeEmitter {
 }
 const _: () = assert!(size_of::<NiPSysVolumeEmitter>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysVolumeEmitter, field_20) == 0x20);
@@ -8246,8 +8228,8 @@ pub struct NiPSysVortexFieldModifier {
     /// +0x0 `vtbl:NiPSysVortexFieldModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPSysVortexFieldModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -8284,7 +8266,7 @@ pub struct NiPSysVortexFieldModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPSysVortexFieldModifier, field_20) == 0x20);
@@ -8307,8 +8289,8 @@ pub struct NiParticleMeshes {
     /// +0x0 `vtbl:NiParticleMeshes:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleMeshes_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -8371,8 +8353,8 @@ pub struct NiParticleMeshes {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
@@ -8390,7 +8372,7 @@ pub struct NiParticleMeshes {
 }
 const _: () = assert!(size_of::<NiParticleMeshes>() == 0x170);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, extraData) == 0x20);
@@ -8418,7 +8400,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, shaderProperty) ==
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, type_) == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshes, field_160) == 0x160);
@@ -8433,8 +8415,8 @@ pub struct NiParticleMeshesData {
     /// +0x0 `vtbl:NiParticleMeshesData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleMeshesData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
@@ -8491,7 +8473,7 @@ pub struct NiParticleMeshesData {
 }
 const _: () = assert!(size_of::<NiParticleMeshesData>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiParticleMeshesData, field_14) == 0x14);
@@ -8524,8 +8506,8 @@ pub struct NiParticleSystem {
     /// +0x0 `vtbl:NiParticleSystem:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticleSystem_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -8588,8 +8570,8 @@ pub struct NiParticleSystem {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
@@ -8622,7 +8604,7 @@ pub struct NiParticleSystem {
 }
 const _: () = assert!(size_of::<NiParticleSystem>() == 0x198);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, extraData) == 0x20);
@@ -8650,7 +8632,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticleSystem, shaderProperty) ==
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiParticleSystem, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, type_) == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiParticleSystem, field_160) == 0x160);
@@ -8672,8 +8654,8 @@ pub struct NiParticles {
     /// +0x0 `vtbl:NiParticles:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticles_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -8736,8 +8718,8 @@ pub struct NiParticles {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
@@ -8750,7 +8732,7 @@ pub struct NiParticles {
 }
 const _: () = assert!(size_of::<NiParticles>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(NiParticles, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiParticles, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiParticles, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiParticles, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticles, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiParticles, extraData) == 0x20);
@@ -8778,7 +8760,7 @@ const _: () = assert!(core::mem::offset_of!(NiParticles, shaderProperty) == 0x12
 const _: () = assert!(core::mem::offset_of!(NiParticles, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(NiParticles, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(NiParticles, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiParticles, type_) == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(NiParticles, field_160) == 0x160);
@@ -8791,8 +8773,8 @@ pub struct NiParticlesData {
     /// +0x0 `vtbl:NiParticlesData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiParticlesData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
@@ -8847,7 +8829,7 @@ pub struct NiParticlesData {
 }
 const _: () = assert!(size_of::<NiParticlesData>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiParticlesData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiParticlesData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiParticlesData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiParticlesData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiParticlesData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiParticlesData, field_14) == 0x14);
@@ -8880,8 +8862,8 @@ pub struct NiPathController {
     /// +0x0 `vtbl:NiPathController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPathController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -8937,7 +8919,7 @@ pub struct NiPathController {
 }
 const _: () = assert!(size_of::<NiPathController>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiPathController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPathController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPathController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_1C) == 0x1C);
@@ -8968,8 +8950,8 @@ pub struct NiPathInterpolator {
     /// +0x0 `vtbl:NiPathInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPathInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -9013,7 +8995,7 @@ pub struct NiPathInterpolator {
 }
 const _: () = assert!(size_of::<NiPathInterpolator>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_1C) == 0x1C);
@@ -9053,8 +9035,8 @@ pub struct NiPoint3InterpController {
     /// +0x0 `vtbl:NiPoint3InterpController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPoint3InterpController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -9087,7 +9069,7 @@ pub struct NiPoint3InterpController {
 }
 const _: () = assert!(size_of::<NiPoint3InterpController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_1C) == 0x1C);
@@ -9108,8 +9090,8 @@ pub struct NiPoint3Interpolator {
     /// +0x0 `vtbl:NiPoint3Interpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPoint3Interpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -9131,7 +9113,7 @@ pub struct NiPoint3Interpolator {
 }
 const _: () = assert!(size_of::<NiPoint3Interpolator>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiPoint3Interpolator, field_1C) == 0x1C);
@@ -9147,15 +9129,15 @@ pub struct NiPosData {
     /// +0x0 `vtbl:NiPosData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiPosData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPosData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiPosData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiPosData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPosData, refCount) == 0x8);
 
 /// `NiProperty`: size 0x30 (exact, medium); primary base `NiObjectNET`.
 /// Evidence: lower bound NiShadeProperty (size 0x30 at 0x0) adds no fields or bases meets upper bound derived NiShadeProperty size 0x30 at 0x0.
@@ -9165,8 +9147,8 @@ pub struct NiProperty {
     /// +0x0 `vtbl:NiProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -9185,7 +9167,7 @@ pub struct NiProperty {
 }
 const _: () = assert!(size_of::<NiProperty>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiProperty, extraData) == 0x20);
@@ -9200,8 +9182,8 @@ pub struct NiQuaternionInterpolator {
     /// +0x0 `vtbl:NiQuaternionInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiQuaternionInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -9217,7 +9199,7 @@ pub struct NiQuaternionInterpolator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiQuaternionInterpolator, field_28) == 0x28);
@@ -9245,8 +9227,8 @@ pub struct NiRollController {
     /// +0x0 `vtbl:NiRollController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiRollController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -9279,7 +9261,7 @@ pub struct NiRollController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiRollController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiRollController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiRollController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_1C) == 0x1C);
@@ -9300,8 +9282,8 @@ pub struct NiRotData {
     /// +0x0 `vtbl:NiRotData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiRotData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -9317,7 +9299,7 @@ pub struct NiRotData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiRotData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiRotData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiRotData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiRotData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiRotData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiRotData, field_20) == 0x20);
@@ -9355,8 +9337,8 @@ pub struct NiSequence {
     /// +0x0 `vtbl:NiSequence:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSequence_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -9385,7 +9367,7 @@ pub struct NiSequence {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSequence, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSequence, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSequence, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSequence, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSequence, m_NiTPrimitiveArray_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSequence, field_20) == 0x20);
@@ -9406,8 +9388,8 @@ pub struct NiSequenceStreamHelper {
     /// +0x0 `vtbl:NiSequenceStreamHelper:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSequenceStreamHelper_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -9425,7 +9407,7 @@ pub struct NiSequenceStreamHelper {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSequenceStreamHelper, extraData) == 0x20);
@@ -9440,8 +9422,8 @@ pub struct NiShadeProperty {
     /// +0x0 `vtbl:NiShadeProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiShadeProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -9460,7 +9442,7 @@ pub struct NiShadeProperty {
 }
 const _: () = assert!(size_of::<NiShadeProperty>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiShadeProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiShadeProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiShadeProperty, extraData) == 0x20);
@@ -9476,8 +9458,8 @@ pub struct NiSingleInterpController {
     /// +0x0 `vtbl:NiSingleInterpController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSingleInterpController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -9510,7 +9492,7 @@ pub struct NiSingleInterpController {
 }
 const _: () = assert!(size_of::<NiSingleInterpController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_1C) == 0x1C);
@@ -9531,8 +9513,8 @@ pub struct NiSourceTexture {
     /// +0x0 `vtbl:NiSourceTexture:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSourceTexture_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -9566,7 +9548,7 @@ pub struct NiSourceTexture {
 }
 const _: () = assert!(size_of::<NiSourceTexture>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSourceTexture, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_18) == 0x18);
@@ -9707,8 +9689,8 @@ pub struct NiSpotLight {
     /// +0x0 `vtbl:NiSpotLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSpotLight_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -9784,7 +9766,7 @@ pub struct NiSpotLight {
 }
 const _: () = assert!(size_of::<NiSpotLight>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSpotLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSpotLight, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSpotLight, extraData) == 0x20);
@@ -10024,14 +10006,14 @@ pub struct NiStringPalette {
     /// +0x0 `vtbl:NiStringPalette:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringPalette_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiStringPalette, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiStringPalette, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiStringPalette, refCount) == 0x8);
 
 /// `NiStringsExtraData`: size 0x28 (exact, medium); primary base `NiExtraData`.
 /// Evidence: runtime: 0x28 at 1 allocation sites.
@@ -10041,8 +10023,8 @@ pub struct NiStringsExtraData {
     /// +0x0 `vtbl:NiStringsExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringsExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -10056,7 +10038,7 @@ pub struct NiStringsExtraData {
 }
 const _: () = assert!(size_of::<NiStringsExtraData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_20) == 0x20);
@@ -10069,8 +10051,8 @@ pub struct NiSwitchNode {
     /// +0x0 `vtbl:NiSwitchNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -10139,7 +10121,7 @@ pub struct NiSwitchNode {
 }
 const _: () = assert!(size_of::<NiSwitchNode>() == 0x150);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, extraData) == 0x20);
@@ -10176,8 +10158,8 @@ pub struct NiSwitchStringExtraData {
     /// +0x0 `vtbl:NiSwitchStringExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchStringExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -10194,7 +10176,7 @@ pub struct NiSwitchStringExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_20) == 0x20);
@@ -11979,8 +11961,8 @@ pub struct NiTextKeyExtraData {
     /// +0x0 `vtbl:NiTextKeyExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTextKeyExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -11990,7 +11972,7 @@ pub struct NiTextKeyExtraData {
 }
 const _: () = assert!(size_of::<NiTextKeyExtraData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiTextKeyExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTextKeyExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTextKeyExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTextKeyExtraData, name) == 0x10);
 
 /// `NiTextKeyMatch`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `NiRefObject`.
@@ -12014,15 +11996,15 @@ pub struct NiTexture {
     /// +0x0 `vtbl:NiTexture:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTexture_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiTexture>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTexture, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTexture, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTexture, refCount) == 0x8);
 
 /// `NiThread`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_30.
@@ -12068,8 +12050,8 @@ pub struct NiTimeController {
     /// +0x0 `vtbl:NiTimeController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTimeController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, ctor store
     pub field_10: u16,
@@ -12100,7 +12082,7 @@ pub struct NiTimeController {
 }
 const _: () = assert!(size_of::<NiTimeController>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTimeController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTimeController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_1C) == 0x1C);
@@ -12121,8 +12103,8 @@ pub struct NiTransformController {
     /// +0x0 `vtbl:NiTransformController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -12155,7 +12137,7 @@ pub struct NiTransformController {
 }
 const _: () = assert!(size_of::<NiTransformController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTransformController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTransformController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_1C) == 0x1C);
@@ -12176,8 +12158,8 @@ pub struct NiTransformData {
     /// +0x0 `vtbl:NiTransformData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -12204,7 +12186,7 @@ pub struct NiTransformData {
 }
 const _: () = assert!(size_of::<NiTransformData>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiTransformData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTransformData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTransformData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTransformData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTransformData, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiTransformData, field_18) == 0x18);
@@ -12223,8 +12205,8 @@ pub struct NiTransformInterpolator {
     /// +0x0 `vtbl:NiTransformInterpolator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTransformInterpolator_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
@@ -12253,7 +12235,7 @@ pub struct NiTransformInterpolator {
 }
 const _: () = assert!(size_of::<NiTransformInterpolator>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTransformInterpolator, field_1C) == 0x1C);
@@ -12273,8 +12255,8 @@ pub struct NiTriBasedGeom {
     /// +0x0 `vtbl:NiTriBasedGeom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriBasedGeom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -12334,7 +12316,7 @@ pub struct NiTriBasedGeom {
 }
 const _: () = assert!(size_of::<NiTriBasedGeom>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeom, extraData) == 0x20);
@@ -12367,8 +12349,8 @@ pub struct NiTriBasedGeomData {
     /// +0x0 `vtbl:NiTriBasedGeomData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriBasedGeomData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiGeometryData
     pub field_10: u16,
@@ -12409,7 +12391,7 @@ pub struct NiTriBasedGeomData {
 }
 const _: () = assert!(size_of::<NiTriBasedGeomData>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiTriBasedGeomData, field_14) == 0x14);
@@ -12434,8 +12416,8 @@ pub struct NiTriShape {
     /// +0x0 `vtbl:NiTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -12495,7 +12477,7 @@ pub struct NiTriShape {
 }
 const _: () = assert!(size_of::<NiTriShape>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriShape, extraData) == 0x20);
@@ -12528,8 +12510,8 @@ pub struct NiTriShapeData {
     /// +0x0 `vtbl:NiTriShapeData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriShapeData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiGeometryData
     pub field_10: u16,
@@ -12575,7 +12557,7 @@ pub struct NiTriShapeData {
 }
 const _: () = assert!(size_of::<NiTriShapeData>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiTriShapeData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriShapeData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiTriShapeData, field_14) == 0x14);
@@ -12602,8 +12584,8 @@ pub struct NiTriStrips {
     /// +0x0 `vtbl:NiTriStrips:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriStrips_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -12663,7 +12645,7 @@ pub struct NiTriStrips {
 }
 const _: () = assert!(size_of::<NiTriStrips>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriStrips, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriStrips, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiTriStrips, extraData) == 0x20);
@@ -12696,8 +12678,8 @@ pub struct NiTriStripsData {
     /// +0x0 `vtbl:NiTriStripsData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiTriStripsData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiGeometryData
     pub field_10: u16,
@@ -12745,7 +12727,7 @@ pub struct NiTriStripsData {
 }
 const _: () = assert!(size_of::<NiTriStripsData>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiTriStripsData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiTriStripsData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiTriStripsData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTriStripsData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTriStripsData, field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(NiTriStripsData, field_14) == 0x14);
@@ -12773,8 +12755,8 @@ pub struct NiUVData {
     /// +0x0 `vtbl:NiUVData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiUVData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -12805,7 +12787,7 @@ pub struct NiUVData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiUVData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiUVData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiUVData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiUVData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiUVData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiUVData, field_20) == 0x20);
@@ -12856,8 +12838,8 @@ pub struct NiVectorExtraData {
     /// +0x0 `vtbl:NiVectorExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVectorExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -12873,7 +12855,7 @@ pub struct NiVectorExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiVectorExtraData, field_1C) == 0x1C);
@@ -12888,8 +12870,8 @@ pub struct NiVertWeightsExtraData {
     /// +0x0 `vtbl:NiVertWeightsExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVertWeightsExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -12897,7 +12879,7 @@ pub struct NiVertWeightsExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiVertWeightsExtraData, name) == 0x10);
 
 /// `NiVisController`: size 0x50 (exact, high); primary base `NiBoolInterpController`.
@@ -12909,8 +12891,8 @@ pub struct NiVisController {
     /// +0x0 `vtbl:NiVisController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiVisController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -12943,7 +12925,7 @@ pub struct NiVisController {
 }
 const _: () = assert!(size_of::<NiVisController>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiVisController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiVisController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiVisController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_1C) == 0x1C);

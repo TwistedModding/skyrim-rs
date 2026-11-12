@@ -5347,8 +5347,10 @@ pub const BindFormatArgToPlaceholders: u64 = 89061;
 pub const BindIntArgToMatchingPlaceholders: u64 = 86337;
 /// `BindMovieAndShowInitializing` at 0x56fe00 (decompiler, medium); signature (low): `undefined BindMovieAndShowInitializing(longlong param_1, longlong * param_2, undefined8 * param_3, undefined8 * param_4, undefined8 * param_5)`
 pub const BindMovieAndShowInitializing: u64 = 441617;
-/// `BindSkinBonesToSkeleton` at 0x21d170 (semantic, medium); signature (low): `NiNode * BindSkinBonesToSkeleton(longlong param_1, longlong * param_2, NiNode * param_3, ulonglong param_4, char param_5, undefined8 param_6, NiNode_vtbl * param_7)`; semantic: skin bone binding: real node -> bones[i] = node, worlds[i] = node+0x7c; flattened entry -> bones[i] = null, worlds[i] = entry node ? node+0x7c : entry+0x34 (medium); signature `void (...)`
+/// `BindSkinBonesToSkeleton` at 0x21d170 (semantic, high); signature (untiered): `NiAVObject * BindSkinBonesToSkeleton(BipedAnim * biped, NiNode * model, NiNode * attachNode, int slot, bool firstPerson, uchar unused, NiRefObject * slotObject)`; semantic: skin bone binding: real node -> bones[i] = node, worlds[i] = node+0x7c; flattened entry -> bones[i] = null, worlds[i] = entry node ? node+0x7c : entry+0x34 (high); signature `NiAVObject* (BipedAnim* biped, NiNode* model, NiNode* attachNode, i32 slot, bool firstPerson, u8 unused, NiRefObject* slotObject)`
 pub const BindSkinBonesToSkeleton: u64 = 15712;
+/// `BindSkinBonesToSkeleton` as a function pointer type (high).
+pub type BindSkinBonesToSkeleton_fn = unsafe extern "C" fn(biped: *mut crate::BipedAnim, model: *mut crate::NiNode, attachNode: *mut crate::NiNode, slot: i32, firstPerson: bool, unused: u8, slotObject: *mut crate::NiRefObject) -> *mut crate::NiAVObject;
 /// `BindUInt16FormatArgument` at 0xe16400 (decompiler, medium); signature (low): `undefined BindUInt16FormatArgument(longlong param_1, ushort * param_2)`
 pub const BindUInt16FormatArgument: u64 = 88730;
 /// `BipedAnim::AddAmmo` at 0x21ad20 (semantic, high); signature (low): `undefined AddAmmo(longlong param_1, longlong param_2, undefined8 param_3)`; semantic: ammo (form type 0x2a) into entry 41 (biped+0x1348), model = ammo+0x40; UpdateQuiverSlotModel 0x21ad80 attaches it as the 'Quiver' node in entry 41's clone (+0x1368) (high); signature `void (BipedAnim* this, TESAmmo* ammo)`
@@ -5569,5 +5571,3 @@ pub const BuildAnimationGraphManager: u64 = 32893;
 pub type BuildAnimationGraphManager_fn = unsafe extern "C" fn(holder: *mut crate::IAnimationGraphManagerHolder, projects: *mut c_void) -> bool;
 /// `BuildAnimationGraphManagerFromPath` at 0x553620 (decompiler, medium); signature (low): `undefined1 BuildAnimationGraphManagerFromPath(undefined8 param_1, undefined1 * param_2)`
 pub const BuildAnimationGraphManagerFromPath: u64 = 32892;
-/// `BuildAnimationGraphManagerOnce` at 0x554990 (decompiler, medium); signature (low): `undefined8 BuildAnimationGraphManagerOnce(longlong * param_1)`
-pub const BuildAnimationGraphManagerOnce: u64 = 32919;

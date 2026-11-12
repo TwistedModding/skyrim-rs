@@ -7,159 +7,6 @@
 
 use core::ffi::c_void;
 
-/// `BSImagespaceShaderISSILRawInd`: size 0x1A8 (exact, medium); primary base `BSImagespaceShader`.
-/// Evidence: runtime: 0x1A8 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `BSImagespaceShader`@0x0, `BSShader`@0x0, `NiRefObject`@0x0, `NiBoneMatrixSetterI`@0x10, `BSReloadShaderI`@0x18, `ImageSpaceEffect`@0x90.
-/// Packed: a field lies below its natural alignment.
-#[repr(C, packed)]
-pub struct BSImagespaceShaderISSILRawInd {
-    /// +0x0 `vtbl:BSImagespaceShaderISSILRawInd:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSImagespaceShaderISSILRawInd_vtable,
-    /// +0x8 `undefined4`, base BSShader
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `vtbl:BSImagespaceShaderISSILRawInd:10`, rtti
-    #[doc(hidden)]
-    pub __vftable_10: *const crate::raw::vtables::BSImagespaceShaderISSILRawInd_vtable_10,
-    /// +0x18 `vtbl:BSImagespaceShaderISSILRawInd:18`, rtti
-    #[doc(hidden)]
-    pub __vftable_18: *const crate::raw::vtables::BSImagespaceShaderISSILRawInd_vtable_18,
-    /// +0x20 `undefined4`, base BSImagespaceShader
-    pub field_20: u32,
-    pub unknown_24: [u8; 16],
-    /// +0x34 `undefined8`, base BSShader
-    pub field_34: u64,
-    /// +0x3C `undefined4`, base BSShader
-    pub field_3C: u32,
-    /// +0x40 `undefined8`, base BSShader
-    pub field_40: u64,
-    pub unknown_48: [u8; 8],
-    /// +0x50 `undefined8`, base BSShader
-    pub field_50: u64,
-    pub unknown_58: [u8; 12],
-    /// +0x64 `undefined8`, base BSShader
-    pub field_64: u64,
-    /// +0x6C `undefined4`, base BSShader
-    pub field_6C: u32,
-    /// +0x70 `undefined8`, base BSShader
-    pub field_70: u64,
-    pub unknown_78: [u8; 8],
-    /// +0x80 `undefined8`, base BSShader
-    pub field_80: u64,
-    /// +0x88 `undefined8`, base BSShader
-    pub field_88: u64,
-    /// +0x90 `vtbl:BSImagespaceShaderISSILRawInd:90`, rtti
-    #[doc(hidden)]
-    pub __vftable_90: *const crate::raw::vtables::BSImagespaceShaderISSILRawInd_vtable_90,
-    /// +0x98 `undefined2`, base ImageSpaceEffect
-    pub field_98: u16,
-    pub unknown_9A: [u8; 6],
-    /// +0xA0 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_A0: u64,
-    /// +0xA8 `undefined8`, base ImageSpaceEffect
-    pub field_A8: u64,
-    /// +0xB0 `undefined4`, base ImageSpaceEffect
-    pub field_B0: u32,
-    /// +0xB4 `undefined4`, base ImageSpaceEffect
-    pub field_B4: u32,
-    /// +0xB8 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_B8: u64,
-    /// +0xC0 `undefined8`, base ImageSpaceEffect
-    pub field_C0: u64,
-    /// +0xC8 `undefined4`, base ImageSpaceEffect
-    pub field_C8: u32,
-    /// +0xCC `undefined4`, base ImageSpaceEffect
-    pub field_CC: u32,
-    /// +0xD0 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_D0: u64,
-    /// +0xD8 `undefined8`, base ImageSpaceEffect
-    pub field_D8: u64,
-    /// +0xE0 `undefined4`, base ImageSpaceEffect
-    pub field_E0: u32,
-    /// +0xE4 `undefined4`, base ImageSpaceEffect
-    pub field_E4: u32,
-    /// +0xE8 `undefined8`, base ImageSpaceEffect
-    pub m_EffectInput____ptr64__E8: u64,
-    /// +0xF0 `undefined8`, base ImageSpaceEffect
-    pub field_F0: u64,
-    /// +0xF8 `undefined4`, base ImageSpaceEffect
-    pub field_F8: u32,
-    /// +0xFC `undefined4`, base ImageSpaceEffect
-    pub field_FC: u32,
-    /// +0x100 `undefined8`, base ImageSpaceEffect
-    pub m_NiTPrimitiveArray_100: u64,
-    /// +0x108 `undefined8`, base ImageSpaceEffect
-    pub field_108: u64,
-    /// +0x110 `undefined4`, base ImageSpaceEffect
-    pub field_110: u32,
-    /// +0x114 `undefined4`, base ImageSpaceEffect
-    pub field_114: u32,
-    /// +0x118 `undefined1`, base ImageSpaceEffect
-    pub field_118: u8,
-    pub unknown_119: [u8; 7],
-    /// +0x120 `undefined8`, base BSImagespaceShader
-    pub field_120: u64,
-    /// +0x128 `undefined8`, ctor store
-    pub field_128: u64,
-    /// +0x130 `undefined4`, base BSImagespaceShader
-    pub field_130: u32,
-    /// +0x134 `undefined1`, base BSImagespaceShader
-    pub field_134: u8,
-    pub unknown_135: [u8; 99],
-    /// +0x198 `undefined8`, base BSImagespaceShader
-    pub field_198: u64,
-    /// +0x1A0 `undefined2`, base BSImagespaceShader
-    pub field_1A0: u16,
-    pub unknown_1A2: [u8; 6],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSImagespaceShaderISSILRawInd>() == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, __vftable_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, __vftable_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, __vftable_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, m_NiTPrimitiveArray_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, m_NiTPrimitiveArray_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_CC) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, m_NiTPrimitiveArray_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, m_EffectInput____ptr64__E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_FC) == 0xFC);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, m_NiTPrimitiveArray_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_134) == 0x134);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(BSImagespaceShaderISSILRawInd, field_1A0) == 0x1A0);
-
 /// `BSImagespaceShaderISSimpleColor`: size 0x1A8 (exact, medium); primary base `BSImagespaceShader`.
 /// Evidence: runtime: 0x1A8 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSImagespaceShader`@0x0, `BSShader`@0x0, `NiRefObject`@0x0, `NiBoneMatrixSetterI`@0x10, `BSReloadShaderI`@0x18, `ImageSpaceEffect`@0x90.
@@ -7125,8 +6972,8 @@ pub struct BSInstanceTriShape {
     /// +0x0 `vtbl:BSInstanceTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSInstanceTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -7189,21 +7036,21 @@ pub struct BSInstanceTriShape {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, extraData) == 0x20);
@@ -7231,10 +7078,10 @@ const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, shaderProperty) 
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, field_15A) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSInstanceTriShape, vertexCount) == 0x15A);
 
 /// `BSInterpValueModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbModifier`.
 /// Evidence: field field_114.
@@ -7401,8 +7248,8 @@ pub struct BSInvMarker {
     /// +0x0 `vtbl:BSInvMarker:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSInvMarker_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -7416,7 +7263,7 @@ pub struct BSInvMarker {
 }
 const _: () = assert!(size_of::<BSInvMarker>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSInvMarker, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSInvMarker, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSInvMarker, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSInvMarker, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSInvMarker, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSInvMarker, field_20) == 0x20);
@@ -8666,8 +8513,8 @@ pub struct BSLODMultiIndexTriShape {
     /// +0x0 `vtbl:BSLODMultiIndexTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLODMultiIndexTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -8730,15 +8577,15 @@ pub struct BSLODMultiIndexTriShape {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, base BSMultiIndexTriShape
     pub field_160: u64,
@@ -8770,7 +8617,7 @@ pub struct BSLODMultiIndexTriShape {
 }
 const _: () = assert!(size_of::<BSLODMultiIndexTriShape>() == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, extraData) == 0x20);
@@ -8798,10 +8645,10 @@ const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, shaderPrope
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_15A) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, vertexCount) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(BSLODMultiIndexTriShape, field_1B8) == 0x1B8);
@@ -8822,8 +8669,8 @@ pub struct BSLODTriShape {
     /// +0x0 `vtbl:BSLODTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLODTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -8890,7 +8737,7 @@ pub struct BSLODTriShape {
 }
 const _: () = assert!(size_of::<BSLODTriShape>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSLODTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLODTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLODTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLODTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLODTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLODTriShape, extraData) == 0x20);
@@ -8927,8 +8774,8 @@ pub struct BSLagBoneController {
     /// +0x0 `vtbl:BSLagBoneController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLagBoneController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -8973,7 +8820,7 @@ pub struct BSLagBoneController {
 }
 const _: () = assert!(size_of::<BSLagBoneController>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSLagBoneController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLagBoneController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLagBoneController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLagBoneController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLagBoneController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSLagBoneController, field_1C) == 0x1C);
@@ -9000,8 +8847,8 @@ pub struct BSLeafAnimNode {
     /// +0x0 `vtbl:BSLeafAnimNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLeafAnimNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -9063,7 +8910,7 @@ pub struct BSLeafAnimNode {
 }
 const _: () = assert!(size_of::<BSLeafAnimNode>() == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLeafAnimNode, extraData) == 0x20);
@@ -10390,8 +10237,8 @@ pub struct BSLightingShaderPropertyColorController {
     /// +0x0 `vtbl:BSLightingShaderPropertyColorController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyColorController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -10425,7 +10272,7 @@ pub struct BSLightingShaderPropertyColorController {
 }
 const _: () = assert!(size_of::<BSLightingShaderPropertyColorController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyColorController, field_1C) == 0x1C);
@@ -10447,8 +10294,8 @@ pub struct BSLightingShaderPropertyFloatController {
     /// +0x0 `vtbl:BSLightingShaderPropertyFloatController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyFloatController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -10482,7 +10329,7 @@ pub struct BSLightingShaderPropertyFloatController {
 }
 const _: () = assert!(size_of::<BSLightingShaderPropertyFloatController>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyFloatController, field_1C) == 0x1C);
@@ -10504,8 +10351,8 @@ pub struct BSLightingShaderPropertyUShortController {
     /// +0x0 `vtbl:BSLightingShaderPropertyUShortController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyUShortController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -10537,7 +10384,7 @@ pub struct BSLightingShaderPropertyUShortController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderPropertyUShortController, field_1C) == 0x1C);
@@ -10571,8 +10418,8 @@ pub struct BSLines {
     /// +0x0 `vtbl:BSLines:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSLines_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -10635,8 +10482,8 @@ pub struct BSLines {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
@@ -10650,7 +10497,7 @@ pub struct BSLines {
 }
 const _: () = assert!(size_of::<BSLines>() == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSLines, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSLines, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSLines, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLines, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSLines, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLines, extraData) == 0x20);
@@ -10678,7 +10525,7 @@ const _: () = assert!(core::mem::offset_of!(BSLines, shaderProperty) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSLines, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSLines, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSLines, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSLines, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSLines, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSLines, type_) == 0x150);
 const _: () = assert!(core::mem::offset_of!(BSLines, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSLines, field_15A) == 0x15A);
@@ -10874,8 +10721,8 @@ pub struct BSMasterParticleSystem {
     /// +0x0 `vtbl:BSMasterParticleSystem:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMasterParticleSystem_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -10942,7 +10789,7 @@ pub struct BSMasterParticleSystem {
 }
 const _: () = assert!(size_of::<BSMasterParticleSystem>() == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMasterParticleSystem, extraData) == 0x20);
@@ -11016,8 +10863,8 @@ pub struct BSMeshLODTriShape {
     /// +0x0 `vtbl:BSMeshLODTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMeshLODTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -11080,22 +10927,22 @@ pub struct BSMeshLODTriShape {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 20],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSMeshLODTriShape>() == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, extraData) == 0x20);
@@ -11123,10 +10970,10 @@ const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, shaderProperty) =
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, field_15A) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSMeshLODTriShape, vertexCount) == 0x15A);
 
 /// `BSModelDB::BSModelProcessor`: size 0x8 (exact, medium).
 /// Evidence: lower bound TESModelDB::_anon_42B16DF0::TESProcessor (size 0x8 at 0x0) adds no fields or bases meets upper bound derived TESModelDB::_anon_42B16DF0::TESProcessor size 0x8 at 0x0.
@@ -11385,8 +11232,8 @@ pub struct BSMultiBound {
     /// +0x0 `vtbl:BSMultiBound:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBound_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -11398,7 +11245,7 @@ pub struct BSMultiBound {
 }
 const _: () = assert!(size_of::<BSMultiBound>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSMultiBound, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBound, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBound, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBound, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBound, field_18) == 0x18);
 
@@ -11410,8 +11257,8 @@ pub struct BSMultiBoundAABB {
     /// +0x0 `vtbl:BSMultiBoundAABB:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundAABB_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base BSMultiBoundShape
     pub field_10: u32,
@@ -11443,7 +11290,7 @@ pub struct BSMultiBoundAABB {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundAABB, field_20) == 0x20);
@@ -11464,8 +11311,8 @@ pub struct BSMultiBoundCapsule {
     /// +0x0 `vtbl:BSMultiBoundCapsule:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundCapsule_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base BSMultiBoundShape
     pub field_10: u32,
@@ -11483,7 +11330,7 @@ pub struct BSMultiBoundCapsule {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundCapsule, __field_20) == 0x20);
@@ -11497,8 +11344,8 @@ pub struct BSMultiBoundNode {
     /// +0x0 `vtbl:BSMultiBoundNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -11554,7 +11401,7 @@ pub struct BSMultiBoundNode {
 }
 const _: () = assert!(size_of::<BSMultiBoundNode>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundNode, extraData) == 0x20);
@@ -11585,8 +11432,8 @@ pub struct BSMultiBoundOBB {
     /// +0x0 `vtbl:BSMultiBoundOBB:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundOBB_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base BSMultiBoundShape
     pub field_10: u32,
@@ -11622,7 +11469,7 @@ pub struct BSMultiBoundOBB {
 }
 const _: () = assert!(size_of::<BSMultiBoundOBB>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundOBB, field_20) == 0x20);
@@ -11644,8 +11491,8 @@ pub struct BSMultiBoundRoom {
     /// +0x0 `vtbl:BSMultiBoundRoom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundRoom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -11725,7 +11572,7 @@ pub struct BSMultiBoundRoom {
 }
 const _: () = assert!(size_of::<BSMultiBoundRoom>() == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundRoom, extraData) == 0x20);
@@ -11766,8 +11613,8 @@ pub struct BSMultiBoundShape {
     /// +0x0 `vtbl:BSMultiBoundShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -11777,7 +11624,7 @@ pub struct BSMultiBoundShape {
 }
 const _: () = assert!(size_of::<BSMultiBoundShape>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundShape, field_10) == 0x10);
 
 /// `BSMultiBoundSphere`: size 0x28 (exact, medium); primary base `BSMultiBoundShape`.
@@ -11788,8 +11635,8 @@ pub struct BSMultiBoundSphere {
     /// +0x0 `vtbl:BSMultiBoundSphere:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiBoundSphere_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base BSMultiBoundShape
     pub field_10: u32,
@@ -11804,7 +11651,7 @@ pub struct BSMultiBoundSphere {
 }
 const _: () = assert!(size_of::<BSMultiBoundSphere>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiBoundSphere, field_20) == 0x20);
@@ -11818,8 +11665,8 @@ pub struct BSMultiIndexTriShape {
     /// +0x0 `vtbl:BSMultiIndexTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiIndexTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -11882,15 +11729,15 @@ pub struct BSMultiIndexTriShape {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
@@ -11910,7 +11757,7 @@ pub struct BSMultiIndexTriShape {
 }
 const _: () = assert!(size_of::<BSMultiIndexTriShape>() == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, extraData) == 0x20);
@@ -11938,10 +11785,10 @@ const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, shaderProperty
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_15A) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, vertexCount) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_1B0) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(BSMultiIndexTriShape, field_1B8) == 0x1B8);
@@ -11956,8 +11803,8 @@ pub struct BSMultiStreamInstanceTriShape {
     /// +0x0 `vtbl:BSMultiStreamInstanceTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiStreamInstanceTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -12020,15 +11867,15 @@ pub struct BSMultiStreamInstanceTriShape {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 20],
     /// +0x170 `undefined4`, ctor store
     pub field_170: u32,
@@ -12050,7 +11897,7 @@ pub struct BSMultiStreamInstanceTriShape {
 }
 const _: () = assert!(size_of::<BSMultiStreamInstanceTriShape>() == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, extraData) == 0x20);
@@ -12078,10 +11925,10 @@ const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, shade
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_15A) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, vertexCount) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_178) == 0x178);
 const _: () = assert!(core::mem::offset_of!(BSMultiStreamInstanceTriShape, field_180) == 0x180);
@@ -12098,8 +11945,8 @@ pub struct BSMultiTargetTreadTransfController {
     /// +0x0 `vtbl:BSMultiTargetTreadTransfController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSMultiTargetTreadTransfController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -12139,7 +11986,7 @@ pub struct BSMultiTargetTreadTransfController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSMultiTargetTreadTransfController, field_1C) == 0x1C);
@@ -12706,8 +12553,8 @@ pub struct BSNiAlphaPropertyTestRefController {
     /// +0x0 `vtbl:BSNiAlphaPropertyTestRefController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNiAlphaPropertyTestRefController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -12739,7 +12586,7 @@ pub struct BSNiAlphaPropertyTestRefController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSNiAlphaPropertyTestRefController, field_1C) == 0x1C);
@@ -12760,8 +12607,8 @@ pub struct BSNiNode {
     /// +0x0 `vtbl:BSNiNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNiNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -12813,7 +12660,7 @@ pub struct BSNiNode {
 }
 const _: () = assert!(size_of::<BSNiNode>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSNiNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNiNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNiNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSNiNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSNiNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSNiNode, extraData) == 0x20);
@@ -12842,14 +12689,14 @@ pub struct BSNodeReferences {
     /// +0x0 `vtbl:BSNodeReferences:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNodeReferences_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSNodeReferences, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNodeReferences, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNodeReferences, refCount) == 0x8);
 
 /// `BSNonUniformScaleExtraData`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `NiExtraData`.
 /// Evidence: field field_10.
@@ -12859,8 +12706,8 @@ pub struct BSNonUniformScaleExtraData {
     /// +0x0 `vtbl:BSNonUniformScaleExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNonUniformScaleExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -12868,7 +12715,7 @@ pub struct BSNonUniformScaleExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSNonUniformScaleExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSNonUniformScaleExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSNonUniformScaleExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSNonUniformScaleExtraData, name) == 0x10);
 
 /// `BSNullImplAudio`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `BSAudio`.
@@ -13100,8 +12947,8 @@ pub struct BSOcclusionBox {
     /// +0x0 `vtbl:BSOcclusionBox:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSOcclusionBox_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base BSOcclusionShape
     pub field_10: f32,
@@ -13186,7 +13033,7 @@ pub struct BSOcclusionBox {
 }
 const _: () = assert!(size_of::<BSOcclusionBox>() == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_18) == 0x18);
@@ -13226,8 +13073,8 @@ pub struct BSOcclusionPlane {
     /// +0x0 `vtbl:BSOcclusionPlane:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSOcclusionPlane_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `float`, base BSOcclusionShape
     pub field_10: f32,
@@ -13292,7 +13139,7 @@ pub struct BSOcclusionPlane {
 }
 const _: () = assert!(size_of::<BSOcclusionPlane>() == 0x118);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionPlane, field_18) == 0x18);
@@ -13325,8 +13172,8 @@ pub struct BSOcclusionShape {
     /// +0x0 `vtbl:BSOcclusionShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSOcclusionShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `float`, ctor store (widths [4, 8])
     pub field_10: f32,
@@ -13350,7 +13197,7 @@ pub struct BSOcclusionShape {
 }
 const _: () = assert!(size_of::<BSOcclusionShape>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionShape, field_18) == 0x18);
@@ -13525,8 +13372,8 @@ pub struct BSOrderedNode {
     /// +0x0 `vtbl:BSOrderedNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSOrderedNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -13589,7 +13436,7 @@ pub struct BSOrderedNode {
 }
 const _: () = assert!(size_of::<BSOrderedNode>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSOrderedNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSOrderedNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSOrderedNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSOrderedNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSOrderedNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSOrderedNode, extraData) == 0x20);
@@ -13693,8 +13540,8 @@ pub struct BSPSysArrayEmitter {
     /// +0x0 `vtbl:BSPSysArrayEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysArrayEmitter_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -13750,7 +13597,7 @@ pub struct BSPSysArrayEmitter {
 }
 const _: () = assert!(size_of::<BSPSysArrayEmitter>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_20) == 0x20);
@@ -13783,8 +13630,8 @@ pub struct BSPSysHavokUpdateModifier {
     /// +0x0 `vtbl:BSPSysHavokUpdateModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysHavokUpdateModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -13812,7 +13659,7 @@ pub struct BSPSysHavokUpdateModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysHavokUpdateModifier, field_20) == 0x20);
@@ -13846,8 +13693,8 @@ pub struct BSPSysInheritVelocityModifier {
     /// +0x0 `vtbl:BSPSysInheritVelocityModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysInheritVelocityModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -13884,7 +13731,7 @@ pub struct BSPSysInheritVelocityModifier {
 }
 const _: () = assert!(size_of::<BSPSysInheritVelocityModifier>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysInheritVelocityModifier, field_20) == 0x20);
@@ -13908,8 +13755,8 @@ pub struct BSPSysLODModifier {
     /// +0x0 `vtbl:BSPSysLODModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysLODModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -13934,7 +13781,7 @@ pub struct BSPSysLODModifier {
 }
 const _: () = assert!(size_of::<BSPSysLODModifier>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysLODModifier, field_20) == 0x20);
@@ -13953,8 +13800,8 @@ pub struct BSPSysMultiTargetEmitterCtlr {
     /// +0x0 `vtbl:BSPSysMultiTargetEmitterCtlr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysMultiTargetEmitterCtlr_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -14012,7 +13859,7 @@ pub struct BSPSysMultiTargetEmitterCtlr {
 }
 const _: () = assert!(size_of::<BSPSysMultiTargetEmitterCtlr>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSPSysMultiTargetEmitterCtlr, field_1C) == 0x1C);
@@ -14044,8 +13891,8 @@ pub struct BSPSysRecycleBoundModifier {
     /// +0x0 `vtbl:BSPSysRecycleBoundModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysRecycleBoundModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14076,7 +13923,7 @@ pub struct BSPSysRecycleBoundModifier {
 }
 const _: () = assert!(size_of::<BSPSysRecycleBoundModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysRecycleBoundModifier, field_20) == 0x20);
@@ -14097,8 +13944,8 @@ pub struct BSPSysScaleModifier {
     /// +0x0 `vtbl:BSPSysScaleModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysScaleModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14117,7 +13964,7 @@ pub struct BSPSysScaleModifier {
 }
 const _: () = assert!(size_of::<BSPSysScaleModifier>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysScaleModifier, field_20) == 0x20);
@@ -14132,8 +13979,8 @@ pub struct BSPSysSimpleColorModifier {
     /// +0x0 `vtbl:BSPSysSimpleColorModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysSimpleColorModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14179,7 +14026,7 @@ pub struct BSPSysSimpleColorModifier {
 }
 const _: () = assert!(size_of::<BSPSysSimpleColorModifier>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysSimpleColorModifier, field_20) == 0x20);
@@ -14206,8 +14053,8 @@ pub struct BSPSysStripUpdateModifier {
     /// +0x0 `vtbl:BSPSysStripUpdateModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysStripUpdateModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14227,7 +14074,7 @@ pub struct BSPSysStripUpdateModifier {
 }
 const _: () = assert!(size_of::<BSPSysStripUpdateModifier>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysStripUpdateModifier, field_20) == 0x20);
@@ -14242,8 +14089,8 @@ pub struct BSPSysSubTexModifier {
     /// +0x0 `vtbl:BSPSysSubTexModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysSubTexModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14275,7 +14122,7 @@ pub struct BSPSysSubTexModifier {
 }
 const _: () = assert!(size_of::<BSPSysSubTexModifier>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSPSysSubTexModifier, field_20) == 0x20);
@@ -14450,8 +14297,8 @@ pub struct BSParentVelocityModifier {
     /// +0x0 `vtbl:BSParentVelocityModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSParentVelocityModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -14485,7 +14332,7 @@ pub struct BSParentVelocityModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSParentVelocityModifier, field_20) == 0x20);
@@ -14755,8 +14602,8 @@ pub struct BSParticleShaderGeometry {
     /// +0x0 `vtbl:BSParticleShaderGeometry:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSParticleShaderGeometry_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -14819,22 +14666,22 @@ pub struct BSParticleShaderGeometry {
     pub field_138: u64,
     /// +0x140 `undefined8`, base BSGeometry
     pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
+    /// +0x148 `u64`, base BSGeometry, semantic; vertex descriptor, the layout of NiSkinPartition::Partition.vertexDesc (VertexDescriptorNibble offsets, attribute bits in its flag rows) (high)
+    pub vertexDesc: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
     unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, base BSTriShape
-    pub field_158: u16,
-    /// +0x15A `undefined2`, base BSTriShape
-    pub field_15A: u16,
+    /// +0x158 `u16`, base BSTriShape, semantic; triangle count (high)
+    pub triangleCount: u16,
+    /// +0x15A `u16`, base BSTriShape, semantic; vertex count (high)
+    pub vertexCount: u16,
     unknown_15C: [u8; 4],
-    /// +0x160 `undefined8`, base BSDynamicTriShape
-    pub field_160: u64,
-    /// +0x168 `undefined8`, base BSDynamicTriShape
-    pub field_168: u64,
-    /// +0x170 `undefined4`, base BSDynamicTriShape
-    pub field_170: u32,
+    /// +0x160 `ptr`, base BSDynamicTriShape, semantic; the dynamic vertex block (high)
+    pub dynamicVertices: [u8; 8],
+    /// +0x168 `u64`, base BSDynamicTriShape, semantic; BSSpinLock guarding the dynamic block (high)
+    pub dynamicVerticesLock: u64,
+    /// +0x170 `u32`, base BSDynamicTriShape, semantic; byte size of the dynamic block (high)
+    pub dynamicVerticesSize: u32,
     /// +0x174 `undefined4`, base BSDynamicTriShape
     pub field_174: u32,
     unknown_178: [u8; 8],
@@ -14843,7 +14690,7 @@ pub struct BSParticleShaderGeometry {
 }
 const _: () = assert!(size_of::<BSParticleShaderGeometry>() == 0x180);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, extraData) == 0x20);
@@ -14871,13 +14718,13 @@ const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, shaderProp
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, skinInstance) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, vertexDesc) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_15A) == 0x15A);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, triangleCount) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, vertexCount) == 0x15A);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, dynamicVertices) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, dynamicVerticesLock) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, dynamicVerticesSize) == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderGeometry, field_174) == 0x174);
 
 /// `BSParticleShaderGeometryEmitter`: size 0xF00 (exact, high); primary base `BSParticleShaderObjectEmitter`.
@@ -14944,8 +14791,8 @@ pub struct BSParticleShaderProperty {
     /// +0x0 `vtbl:BSParticleShaderProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSParticleShaderProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -15065,7 +14912,7 @@ pub struct BSParticleShaderProperty {
 }
 const _: () = assert!(size_of::<BSParticleShaderProperty>() == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSParticleShaderProperty, extraData) == 0x20);
@@ -15459,8 +15306,8 @@ pub struct BSParticleSystemManager {
     /// +0x0 `vtbl:BSParticleSystemManager:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSParticleSystemManager_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -15518,7 +15365,7 @@ pub struct BSParticleSystemManager {
 }
 const _: () = assert!(size_of::<BSParticleSystemManager>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSParticleSystemManager, extraData) == 0x20);
@@ -17263,4 +17110,70 @@ const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__func
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_40) == 0x40);
+
+/// `BSPlatform::BSAsyncRequestBase`: size >= 0x48 (lower bound, upper bound 0x80); partial, the struct stops at the lower bound.
+/// Evidence: lower field field_40; upper first own field of BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> at 0x80 (soft).
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequestBase {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequestBase:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequestBase_vtable,
+    unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, ctor store
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    unknown_44: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_40) == 0x40);
+
+/// `BSPlatform::BSBNETFile::download`: size 0x80 (exact, low).
+/// Evidence: lower bound field field_78 meets upper bound first own field of BSPlatform::BSBNETFile::marketplaceDownload at 0x80 (soft).
+#[repr(C, align(8))]
+pub struct BSPlatform__BSBNETFile__download {
+    /// +0x0 `vtbl:BSPlatform::BSBNETFile::download:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    /// +0x8 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
+    /// +0x10 `undefined4`, ctor store
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
+    unknown_14: [u8; 68],
+    /// +0x58 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
+    /// +0x60 `undefined4`, ctor store
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
+    unknown_64: [u8; 12],
+    /// +0x70 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_70: [u8; 8],
+    /// +0x78 `undefined4`, ctor store
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
+    unknown_7C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSBNETFile__download>() == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_78) == 0x78);
 

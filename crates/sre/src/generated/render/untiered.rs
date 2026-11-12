@@ -129,6 +129,16 @@ impl crate::BSShadowLight {
     pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(107609, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::BSTriShape {
+    /// `BSTriShape::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 76342, rva 0xfe4230).
+    /// `undefined dtor(BSTriShape * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(76342, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::NiAVObject {
     /// `NiAVObject::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 70274, rva 0xee1220).
     /// `undefined ctor_sub0(longlong * param_1)`

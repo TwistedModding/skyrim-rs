@@ -7,20 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
-/// `undefined SetStringField8(longlong param_1, char * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
-/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
-/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }
 /// `SetThreeShorts` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68662, rva 0xcfac30).
 /// `undefined2 * SetThreeShorts(undefined2 * param_1, undefined2 param_2, undefined2 param_3, undefined2 param_4)`
 ///

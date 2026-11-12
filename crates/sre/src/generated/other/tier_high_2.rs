@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `GetColorField20AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18288, rva 0x295610).
-/// `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_color_field20_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18288, (i64, *mut f32) -> u64)(param_1, param_2) } }
 /// `GetColorField24AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18290, rva 0x295690).
 /// `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
 ///
@@ -3514,13 +3507,6 @@ pub unsafe fn init_identity_matrix4x4(param_1: *mut u32) -> u64 { unsafe { funct
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_invalid_qword_and_dword8(param_1: *mut u64, param_2: u32) -> *mut u64 { unsafe { function!(524520, (*mut u64, u32) -> *mut u64)(param_1, param_2) } }
-/// `InitMemoryManagerOnce` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68121, rva 0xcde810).
-/// `undefined InitMemoryManagerOnce(undefined1 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_memory_manager_once(param_1: *mut u8, param_2: *mut i32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(68121, (*mut u8, *mut i32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `InitMessageRecordDefault` (decompiler signature, tier high; ledger decompiler evidence, name high; id 524361, rva 0x125b000).
 /// `undefined InitMessageRecordDefault(int * param_1)`
 ///
@@ -5629,12 +5615,12 @@ pub unsafe fn memcpy_s_7_2(param_1: *mut c_void, param_2: u64, param_3: *mut c_v
 #[inline]
 pub unsafe fn memcpy_s_8_2(param_1: *mut c_void, param_2: u64, param_3: *mut c_void, param_4: u64) -> u64 { unsafe { function!(449544, (*mut c_void, u64, *mut c_void, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `MemoryManagerFree` (decompiler signature, tier high; ledger decompiler evidence, name high; id 36098, rva 0x10ba70).
-/// `undefined MemoryManagerFree(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `void MemoryManagerFree(void * ptr, ulonglong size)`
 ///
 /// # Safety
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
-pub unsafe fn memory_manager_free(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(36098, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+pub unsafe fn memory_manager_free(ptr: *mut c_void, size: u64) { unsafe { function!(36098, (*mut c_void, u64))(ptr, size) } }
 /// `MersenneTwisterNextUInt32` (decompiler signature, tier high; ledger decompiler evidence, name high; id 96150, rva 0x12fa610).
 /// `uint MersenneTwisterNextUInt32(uint * param_1)`
 ///
@@ -16345,3 +16331,17 @@ pub unsafe fn set_slot_pointers(param_1: i64, param_2: u8, param_3: i64) -> u64 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_stagger_time_to_max_duration(param_1: i64) -> u64 { unsafe { function!(40040, (i64) -> u64)(param_1) } }
+/// `SetStringField8` (decompiler signature, tier high; ledger decompiler evidence, name high; id 12951, rva 0x190aa0).
+/// `undefined SetStringField8(longlong param_1, char * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_string_field8(param_1: i64, param_2: *mut c_char) -> u64 { unsafe { function!(12951, (i64, *mut c_char) -> u64)(param_1, param_2) } }
+/// `SetThreadPriorityLevel_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 69068, rva 0xeaedf0).
+/// `undefined8 SetThreadPriorityLevel_2(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_thread_priority_level_2(param_1: i64, param_2: i32) -> u64 { unsafe { function!(69068, (i64, i32) -> u64)(param_1, param_2) } }

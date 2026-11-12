@@ -414,23 +414,6 @@ impl crate::BSDoorHavokController {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(40186, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BSDynamicTriShape {
-    /// `BSDynamicTriShape::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70948, rva 0xefd5f0).
-    /// `BSDynamicTriShape * ctor(BSDynamicTriShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70948, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSDynamicTriShape::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 70949, rva 0xefd640).
-    /// `undefined ctor(BSDynamicTriShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self) -> u64 { unsafe { function!(70949, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSEffectShader {
     /// `BSEffectShader::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 107520, rva 0x1556690).
     /// `BSEffectShader * ctor(BSEffectShader * this)`
@@ -6861,23 +6844,6 @@ impl crate::BSTreeNode {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(105602, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::BSTriShape {
-    /// `BSTriShape::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70657, rva 0xef2250).
-    /// `BSTriShape * ctor(BSTriShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70657, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    /// `BSTriShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70658, rva 0xef2290).
-    /// `undefined dtor(BSTriShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(70658, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::BSTweenerModifier {

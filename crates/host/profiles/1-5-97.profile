@@ -71115,7 +71115,7 @@ id 105666 99016
 id-unverified 105668
 id 105672 99021
 id-unverified 105673
-id 105674 99023
+id-unverified 105674
 id-unverified 105675
 id-unverified 105677
 id 105683 99032
@@ -112500,13 +112500,10 @@ member-unverified BeamProjectile.field_FC
 member BeamProjectile.refScale 90
 member-unverified BeamProjectile.source_BeamProjectileImpactEvent
 member-unverified BipedAnim.bufferedObjects
-member-unverified BipedAnim.ownerHandle
 member-unverified BipedAnim.refCount
 member-unverified BipedAnim.root
-member-unverified BipedObject.addon
 member-unverified BipedObject.field_18
 member-unverified BipedObject.graphHolder
-member-unverified BipedObject.item
 member-unverified BipedObject.model
 member-unverified BleedoutCameraState.applyThirdPerson
 member-unverified BleedoutCameraState.followHeading
@@ -112548,10 +112545,8 @@ member-unverified Calendar.gameMonth
 member-unverified Calendar.timeScale
 member-unverified CameraCasterHolder.castPhantom
 member-unverified CameraCasterHolder.overlapPhantom
-member-unverified CameraMatrixEntry.eyePosition
 member-unverified CameraMatrixEntry.previousViewProjection
 member-unverified CameraMatrixEntry.view
-member-unverified CameraMatrixEntry.viewProjection
 member-unverified CameraMatrixEntry.viewProjectionUnjittered
 member-unverified CameraOverrideStartHandler.pad0C
 member-unverified CameraOverrideStartHandler.refCount
@@ -113008,7 +113003,6 @@ member-unverified DepthStencilProperties.stencil
 member-unverified DepthStencilProperties.unknownC
 member-unverified DepthStencilProperties.use16BitDepth
 member-unverified DepthStencilProperties.width
-member-unverified DepthStencilRecord.readOnlyDsv
 member-unverified DepthStencilRecord.srv
 member-unverified DepthStencilRecord.stencilSRV
 member-missing DescriptionBox.__vftable
@@ -113348,9 +113342,9 @@ member-unverified FrameState.backBufferHeight
 member-unverified FrameState.backBufferWidth
 member FrameState.cameraMatrices a0
 member-unverified FrameState.decreaseRequested
-member-unverified FrameState.dynamicHeightRatio
-member-unverified FrameState.dynamicResolutionLock
-member-unverified FrameState.dynamicWidthRatio
+member FrameState.dynamicHeightRatio 100
+member FrameState.dynamicResolutionLock 110
+member FrameState.dynamicWidthRatio fc
 member FrameState.frameCounter 4c
 member FrameState.frameStarted 50
 member-unverified FrameState.increaseRequested
@@ -113360,8 +113354,6 @@ member-unverified FrameState.manualRatio
 member-unverified FrameState.previousHeightRatio
 member-unverified FrameState.previousWidthRatio
 member-unverified FrameState.ratioIncreaseCounter
-member-unverified FrameState.screenHeight
-member-unverified FrameState.screenWidth
 member-unverified FreeCameraState.camera
 member-unverified FreeCameraState.forwardInputA
 member-unverified FreeCameraState.forwardInputB
@@ -114906,8 +114898,6 @@ member-unverified NiSingleInterpController.field_20
 member-unverified NiSingleInterpController.field_2C
 member-unverified NiSkinData.field10
 member-unverified NiSkinData.skinTransform
-member-unverified NiSkinData::BoneData.boundSphere
-member-unverified NiSkinData::BoneData.skinToBone
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
 member-unverified NiSkinInstance.paletteRowsPerBone
@@ -114917,8 +114907,6 @@ member-unverified NiSkinPartition::Partition.field43
 member-unverified NiSkinPartition::Partition.lodLevel
 member-unverified NiSkinPartition::Partition.stripCount
 member-unverified NiSkinPartition::Partition.stripLengths
-member-unverified NiSkinPartition::Partition.triangleBuffer
-member-unverified NiSkinPartition::Partition.triangleCount
 member-unverified NiSkinPartition::Partition.triangles
 member-unverified NiSkinPartition::Partition.vertexCount
 member-unverified NiSkinPartition::Partition.vertexMap
@@ -115450,7 +115438,6 @@ member-unverified RenderTargetProperties.unknown18
 member-unverified RenderTargetProperties.width
 member-unverified RenderTargetRecord.copySRV
 member-unverified RenderTargetRecord.copyTexture
-member-unverified RenderTargetRecord.rtv
 member-unverified RenderTargetRecord.srv
 member-unverified RenderTargetRecord.texture
 member-unverified RenderTargetRecord.uav
@@ -115475,7 +115462,6 @@ member-unverified Renderer.onResizeCallback
 member-unverified Renderer.pendingHeight
 member-unverified Renderer.pendingWidth
 member-unverified Renderer.refreshRate
-member-unverified Renderer.renderTargets
 member-unverified Renderer.requestedRefreshRate
 member-unverified Renderer.requestedRefreshRateDenominator
 member-unverified Renderer.resizePending
@@ -115605,6 +115591,9 @@ member-unverified ShadowSceneNode.pendingGeometryRelight
 member-unverified ShadowSceneNode.pendingGeometryRelightActive
 member-unverified ShadowSceneNode.pendingLightAdds
 member-unverified ShadowSceneNode.previousWorldFrame
+member-unverified SharedVertexBuffer.buffer
+member-unverified SharedVertexBuffer.data
+member-unverified SharedVertexBuffer.size
 member-missing SideBar.__vftable
 member-missing SideBar.field_10
 member-missing SideBar.field_14
@@ -115690,6 +115679,12 @@ member-missing Sizing::mpSizer.field_8
 member-missing Sizing::mpSizer.field_9
 member-missing Sizing::mpSizer.field_A
 member-missing Sizing::mpSizer.field_C
+member-unverified SkinPartitionBuffers.indexBuffer
+member-unverified SkinPartitionBuffers.indexData
+member-unverified SkinPartitionBuffers.refCount
+member-unverified SkinPartitionBuffers.vertexBuffer
+member-unverified SkinPartitionBuffers.vertexData
+member-unverified SkinPartitionBuffers.vertexDesc
 member-unverified Sky.defaultWeather
 member-unverified Sky.field_104
 member-unverified Sky.field_108
@@ -136382,9 +136377,7 @@ size-unverified NiSequenceStreamHelper
 size-unverified NiShadeProperty
 size-unverified NiSingleInterpController
 size-unverified NiSkinData
-size-unverified NiSkinData::BoneData
 size-unverified NiSkinPartition
-size-unverified NiSkinPartition::Partition
 size-unverified NiSourceTexture
 size-unverified NiSphereBV
 size-unverified NiSphereTriIntersector
@@ -136635,7 +136628,6 @@ size-unverified RenderPass
 size-unverified RenderStateCache
 size-unverified RenderTargetManager
 size-unverified RenderTargetProperties
-size-unverified RenderTargetRecord
 size-unverified RenderWindow
 size-unverified Renderer
 size-unverified Reset3DMobIterator
@@ -136670,6 +136662,7 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
+size-unverified SharedVertexBuffer
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-missing SideBar
@@ -136677,6 +136670,7 @@ size-unverified SimpleAnimationGraphManagerHolder
 size-missing SixaxisEvent
 size-missing Sizing::mpBoxSizer
 size-missing Sizing::mpSizer
+size-unverified SkinPartitionBuffers
 size-unverified SkyEffectController
 size-unverified SkyObject
 size-unverified SkyStaticFindFunctor

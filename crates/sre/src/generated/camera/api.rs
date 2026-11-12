@@ -2065,16 +2065,6 @@ impl crate::BipedAnim {
     pub fn bufferedObjects_ptr(&self) -> *mut [u8; 5040] { Self::__member_bufferedObjects(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_ownerHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "BipedAnim.ownerHandle", 0x2770, u32) } }
-    /// `BipedAnim::ownerHandle`, at +0x2770 on 1.7.104.
-    #[inline]
-    pub fn ownerHandle(&self) -> u32 { unsafe { Self::__member_ownerHandle(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_ownerHandle(&mut self, value: u32) { unsafe { Self::__member_ownerHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn ownerHandle_ptr(&self) -> *mut u32 { Self::__member_ownerHandle(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_refCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BipedAnim.refCount", 0x0, u32) } }
     /// `BipedAnim::refCount`, at +0x0 on 1.7.104.
     #[inline]
@@ -2100,12 +2090,12 @@ impl crate::BipedObject {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn addon(&self) -> Option<&crate::TESObjectARMA> { unsafe { Self::__member_addon(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    /// `BipedObject::item` at +0x0: the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon)
+    pub fn addon(&self) -> Option<&crate::TESObjectARMA> { unsafe { { self.addon }.as_ref() } }
+    /// `BipedObject::item` at +0x0: the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon); set before BindSkinBonesToSkeleton is entered for the slot; slot 2 holds the skin armour on a naked body
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn item(&self) -> Option<&crate::TESForm> { unsafe { Self::__member_item(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn item(&self) -> Option<&crate::TESForm> { unsafe { { self.item }.as_ref() } }
     /// `BipedObject::model` at +0x10: the model component used to load the part (slot 4 = path)
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -2116,16 +2106,6 @@ impl crate::BipedObject {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn part_clone(&self) -> Option<&crate::NiAVObject> { unsafe { { self.partClone }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_addon(this: *const Self) -> *mut *mut crate::TESObjectARMA { unsafe { member!(this, "BipedObject.addon", 0x8, *mut crate::TESObjectARMA) } }
-    /// `BipedObject::addon`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn addon_field(&self) -> *mut crate::TESObjectARMA { unsafe { Self::__member_addon(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_addon(&mut self, value: *mut crate::TESObjectARMA) { unsafe { Self::__member_addon(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn addon_ptr(&self) -> *mut *mut crate::TESObjectARMA { Self::__member_addon(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_field_18(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BipedObject.field_18", 0x18, *mut c_void) } }
@@ -2146,16 +2126,6 @@ impl crate::BipedObject {
     pub fn set_graphHolder(&mut self, value: *mut c_void) { unsafe { Self::__member_graphHolder(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn graphHolder_ptr(&self) -> *mut *mut c_void { Self::__member_graphHolder(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_item(this: *const Self) -> *mut *mut crate::TESForm { unsafe { member!(this, "BipedObject.item", 0x0, *mut crate::TESForm) } }
-    /// `BipedObject::item`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn item_field(&self) -> *mut crate::TESForm { unsafe { Self::__member_item(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_item(&mut self, value: *mut crate::TESForm) { unsafe { Self::__member_item(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn item_ptr(&self) -> *mut *mut crate::TESForm { Self::__member_item(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_model(this: *const Self) -> *mut *mut crate::TESModel { unsafe { member!(this, "BipedObject.model", 0x10, *mut crate::TESModel) } }

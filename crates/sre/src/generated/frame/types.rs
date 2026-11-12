@@ -135,8 +135,8 @@ pub struct BSEffectShaderProperty {
     /// +0x0 `vtbl:BSEffectShaderProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSEffectShaderProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -184,7 +184,7 @@ pub struct BSEffectShaderProperty {
 }
 const _: () = assert!(size_of::<BSEffectShaderProperty>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderProperty, extraData) == 0x20);
@@ -214,8 +214,8 @@ pub struct BSFadeNode {
     /// +0x0 `vtbl:BSFadeNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSFadeNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -304,7 +304,7 @@ pub struct BSFadeNode {
 }
 const _: () = assert!(size_of::<BSFadeNode>() == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSFadeNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSFadeNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFadeNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFadeNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSFadeNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFadeNode, extraData) == 0x20);
@@ -630,8 +630,8 @@ pub struct BSShaderTextureSet {
     /// +0x0 `vtbl:BSShaderTextureSet:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSShaderTextureSet_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic, runtime; BSFixedString[9]; slot i at +0x10 + 8*i: 0 diffuse, 1 normal, 2 glow/rim/soft, 3 height, 4 environment (cube), 5 environment mask, 6 multilayer inner / facegen extra, 7 specular / back lighting, 8 not read by the lighting materials (high)
     #[doc(hidden)]
@@ -641,7 +641,7 @@ pub struct BSShaderTextureSet {
 }
 const _: () = assert!(size_of::<BSShaderTextureSet>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShaderTextureSet, __texturePaths) == 0x10);
 
 /// `BSXFlags`: size 0x20 (exact, high); primary base `NiIntegerExtraData`.
@@ -653,8 +653,8 @@ pub struct BSXFlags {
     /// +0x0 `vtbl:BSXFlags:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSXFlags_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -666,7 +666,7 @@ pub struct BSXFlags {
 }
 const _: () = assert!(size_of::<BSXFlags>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSXFlags, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSXFlags, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSXFlags, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSXFlags, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSXFlags, flags) == 0x18);
 
@@ -737,8 +737,7 @@ pub struct DepthStencilRecord {
     /// +0x8 `pointer`, semantic; 8 writable DSVs, one per slice (high)
     pub dsv: [u8; 64],
     /// +0x48 `pointer`, semantic; 8 read-only DSVs (high)
-    #[doc(hidden)]
-    pub __readOnlyDsv: [u8; 64],
+    pub readOnlyDsv: [u8; 64],
     /// +0x88 `pointer`, semantic; depth SRV (Texture2D or Texture2DArray) (high)
     #[doc(hidden)]
     pub __srv: [u8; 8],
@@ -751,7 +750,7 @@ pub struct DepthStencilRecord {
 const _: () = assert!(size_of::<DepthStencilRecord>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, texture) == 0x0);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, dsv) == 0x8);
-const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __readOnlyDsv) == 0x48);
+const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, readOnlyDsv) == 0x48);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __srv) == 0x88);
 const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __stencilSRV) == 0x90);
 
@@ -762,11 +761,9 @@ const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __stencilSRV) ==
 pub struct FrameState {
     unknown_0: [u8; 36],
     /// +0x24 `undefined4`, semantic; render width: the back buffer width of windows 0/1, the max over further windows; the size of every full-screen target (high)
-    #[doc(hidden)]
-    pub __screenWidth: [u8; 4],
+    pub screenWidth: u32,
     /// +0x28 `undefined4`, semantic; render height (high)
-    #[doc(hidden)]
-    pub __screenHeight: [u8; 4],
+    pub screenHeight: u32,
     /// +0x2C `undefined4`, semantic; swap chain width (iSize W:Display at init, the buffer desc afterwards) (high)
     #[doc(hidden)]
     pub __backBufferWidth: [u8; 4],
@@ -825,8 +822,8 @@ pub struct FrameState {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FrameState>() == 0x130);
-const _: () = assert!(core::mem::offset_of!(FrameState, __screenWidth) == 0x24);
-const _: () = assert!(core::mem::offset_of!(FrameState, __screenHeight) == 0x28);
+const _: () = assert!(core::mem::offset_of!(FrameState, screenWidth) == 0x24);
+const _: () = assert!(core::mem::offset_of!(FrameState, screenHeight) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FrameState, __backBufferWidth) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(FrameState, __backBufferHeight) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FrameState, __jitter) == 0x44);
@@ -1095,8 +1092,8 @@ pub struct NiAlphaProperty {
     /// +0x0 `vtbl:NiAlphaProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiAlphaProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -1122,7 +1119,7 @@ pub struct NiAlphaProperty {
 }
 const _: () = assert!(size_of::<NiAlphaProperty>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiAlphaProperty, extraData) == 0x20);
@@ -1140,7 +1137,7 @@ pub struct NiCamera {
     /// +0x0 `vtbl:NiCamera:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiCamera_vtable,
-    /// +0x8 `u32`, base NiObject, semantic; NiRefObject reference count (high)
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
     pub refCount: u32,
     /// +0xC `undefined4`, semantic; alignment padding before the name pointer (high)
     #[doc(hidden)]
@@ -1282,8 +1279,8 @@ pub struct NiExtraData {
     /// +0x0 `vtbl:NiExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -1292,7 +1289,7 @@ pub struct NiExtraData {
 }
 const _: () = assert!(size_of::<NiExtraData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiExtraData, name) == 0x10);
 
 /// `NiIntegerExtraData`: size 0x20 (exact, high); primary base `NiExtraData`.
@@ -1304,8 +1301,8 @@ pub struct NiIntegerExtraData {
     /// +0x0 `vtbl:NiIntegerExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiIntegerExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -1318,9 +1315,28 @@ pub struct NiIntegerExtraData {
 }
 const _: () = assert!(size_of::<NiIntegerExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiIntegerExtraData, __value) == 0x18);
+
+/// `NiObject`: size 0x10 (exact, low); primary base `NiRefObject`.
+/// Meaning: base of every Gamebryo object (high, frame pass).
+/// Evidence: lower bound field field_8 meets upper bound first own field of BSAnimNotes at 0x10 (soft).
+/// Bases: `NiRefObject`@0x0.
+#[repr(C)]
+pub struct NiObject {
+    /// +0x0 `vtbl:NiObject:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::NiObject_vtable,
+    /// +0x8 `u32`, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
+    pub unknown_C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<NiObject>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiObject, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiObject, refCount) == 0x8);
 
 /// `NiObjectNET`: size 0x30 (exact, medium); primary base `NiObject`.
 /// Meaning: named NiObject: name, controller list, sorted extra data array (high, frame pass).
@@ -1331,8 +1347,8 @@ pub struct NiObjectNET {
     /// +0x0 `vtbl:NiObjectNET:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiObjectNET_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, ctor store, semantic, runtime; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -1351,7 +1367,7 @@ pub struct NiObjectNET {
 }
 const _: () = assert!(size_of::<NiObjectNET>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiObjectNET, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiObjectNET, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiObjectNET, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiObjectNET, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiObjectNET, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiObjectNET, extraData) == 0x20);
@@ -1367,8 +1383,8 @@ pub struct NiStringExtraData {
     /// +0x0 `vtbl:NiStringExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiStringExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -1379,7 +1395,7 @@ pub struct NiStringExtraData {
 }
 const _: () = assert!(size_of::<NiStringExtraData>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiStringExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiStringExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiStringExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiStringExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiStringExtraData, value) == 0x18);
 
@@ -1467,7 +1483,7 @@ const _: () = assert!(core::mem::offset_of!(RenderPass, __poolIndex) == 0x40);
 /// Evidence: pending pipeline state bound lazily: dirty bits, colour target ids and load modes, depth-stencil id/slice/mode, cube target, viewport, state indices, shader resource and sampler slots. This is the part of what the request calls BSGraphics::State that holds the current targets and viewport (no name in the binary); FlushDirtyRenderState 0x100a050 applies it; 0x10155b0, 0x1015670, 0x100a050; 0x10149f0 resets with dirty = 0xffffffff; size: static .data block at 0x20cfc00; ResetRenderStateDefaults 0x10149f0 writes up to +0x33c.
 #[repr(C, align(4))]
 pub struct RenderStateCache {
-    /// +0x0 `undefined4`, semantic; dirty bits: 1 targets, 2 viewport, 0xc depth-stencil state, 0x1070 rasterizer, 0x80 blend (high)
+    /// +0x0 `undefined4`, semantic; dirty bits, applied by the next flush; see the flag rows (high)
     pub dirty: u32,
     /// +0x4 `undefined4`, semantic; 16-bit per-slot dirty mask (medium)
     #[doc(hidden)]
@@ -1603,8 +1619,7 @@ pub struct RenderTargetRecord {
     #[doc(hidden)]
     pub __copyTexture: [u8; 8],
     /// +0x10 `pointer`, semantic; RTV bound by FlushDirtyRenderState (high)
-    #[doc(hidden)]
-    pub __rtv: [u8; 8],
+    pub rtv: *mut c_void,
     /// +0x18 `pointer`, semantic; SRV (high)
     #[doc(hidden)]
     pub __srv: [u8; 8],
@@ -1620,7 +1635,7 @@ pub struct RenderTargetRecord {
 const _: () = assert!(size_of::<RenderTargetRecord>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __texture) == 0x0);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __copyTexture) == 0x8);
-const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __rtv) == 0x10);
+const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, rtv) == 0x10);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __srv) == 0x18);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __copySRV) == 0x20);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __uav) == 0x28);
@@ -1737,8 +1752,7 @@ pub struct Renderer {
     /// +0x58 `class:RenderWindow`, semantic; 32 RenderWindow records of 0x50; record 0 is the game window: hwnd R+0x58, swap chain R+0x70, back buffer RTV R+0x88, SRV R+0x90 (high)
     pub windows: [u8; 2560],
     /// +0xA58 `class:RenderTargetRecord`, semantic; 0x74 colour target records of 0x30 indexed by RenderTargetId; id 0 is the back buffer, its RTV/SRV copied from the current window record every frame (high)
-    #[doc(hidden)]
-    pub __renderTargets: [u8; 5568],
+    pub renderTargets: [u8; 5568],
     /// +0x2018 `class:DepthStencilRecord`, semantic; 12 depth-stencil records of 0x98 (high)
     #[doc(hidden)]
     pub __depthStencilTargets: [u8; 1824],
@@ -1782,7 +1796,7 @@ const _: () = assert!(core::mem::offset_of!(Renderer, presentInterval) == 0x40);
 const _: () = assert!(core::mem::offset_of!(Renderer, __device) == 0x48);
 const _: () = assert!(core::mem::offset_of!(Renderer, __immediateContext) == 0x50);
 const _: () = assert!(core::mem::offset_of!(Renderer, windows) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Renderer, __renderTargets) == 0xA58);
+const _: () = assert!(core::mem::offset_of!(Renderer, renderTargets) == 0xA58);
 const _: () = assert!(core::mem::offset_of!(Renderer, __depthStencilTargets) == 0x2018);
 const _: () = assert!(core::mem::offset_of!(Renderer, __cubeMapTargets) == 0x2738);
 const _: () = assert!(core::mem::offset_of!(Renderer, __clearColor) == 0x27D8);
@@ -2795,6 +2809,48 @@ impl NiAlphaProperty_flags {
 
     #[must_use]
     pub const fn bits(self) -> u16 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `RenderStateCache.dirty` (frame pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct RenderStateCache_dirty(pub u32);
+
+impl RenderStateCache_dirty {
+    /// render targets and depth view (+0x18..+0x6c) (high)
+    pub const RENDER_TARGETS: Self = Self(0x1);
+    /// viewport (+0x70) (high)
+    pub const VIEWPORT: Self = Self(0x2);
+    /// depth-stencil state, depth mode (+0x88) (high)
+    pub const DEPTH_MODE: Self = Self(0x4);
+    /// depth-stencil state, stencil mode and reference (+0x90/+0x94) (high)
+    pub const STENCIL_MODE: Self = Self(0x8);
+    /// rasterizer state, the member at +0x98 (high)
+    pub const RASTERIZER98: Self = Self(0x10);
+    /// rasterizer state, the member at +0x9c (high)
+    pub const RASTERIZER9_C: Self = Self(0x20);
+    /// depth-bias mode (+0xa0) and its viewport pull (high)
+    pub const DEPTH_BIAS: Self = Self(0x40);
+    /// blend state (+0xa8..+0xb8) (high)
+    pub const BLEND: Self = Self(0x80);
+    /// not determined (the 0x300 block) (low)
+    pub const STATE100: Self = Self(0x100);
+    /// the member at +0xb4 (the 0x300 block) (low)
+    pub const STATE_B4: Self = Self(0x200);
+    /// input layout (+0x358) (high)
+    pub const INPUT_LAYOUT: Self = Self(0x400);
+    /// rasterizer state, the member at +0xa4 (high)
+    pub const RASTERIZER_A4: Self = Self(0x1000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
         self.0
     }
 

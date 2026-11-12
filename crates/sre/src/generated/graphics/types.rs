@@ -23,8 +23,7 @@ pub struct CameraMatrixEntry {
     /// +0x80 `undefined1`, semantic; projection (jittered when TAA is on and the entry's jitter flag is set) (high)
     pub projection: [u8; 64],
     /// +0xC0 `undefined1`, semantic; view * projection (jittered) (medium)
-    #[doc(hidden)]
-    pub __viewProjection: [u8; 64],
+    pub viewProjection: [u8; 64],
     /// +0x100 `undefined1`, semantic; unjittered view-projection of the previous update (low)
     #[doc(hidden)]
     pub __previousViewProjection: [u8; 64],
@@ -36,12 +35,10 @@ pub struct CameraMatrixEntry {
     pub projectionUnjittered: [u8; 64],
     unknown_200: [u8; 96],
     /// +0x260 `class:NiPoint3`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium); retyped float -> class:NiPoint3: UpdateCameraMatricesWithJitter 0x101e4e0 copies camera +0xa0..+0xa8
-    #[doc(hidden)]
-    pub __eyePosition: [u8; 12],
+    pub eyePosition: crate::NiPoint3,
     unknown_26C: [u8; 24],
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
-    #[doc(hidden)]
-    pub __jittered: [u8; 1],
+    pub jittered: u8,
     unknown_285: [u8; 11],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -51,12 +48,12 @@ const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, camera) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, worldRotation) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __view) == 0x40);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projection) == 0x80);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjection) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, viewProjection) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __previousViewProjection) == 0x100);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjectionUnjittered) == 0x140);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projectionUnjittered) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __eyePosition) == 0x260);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __jittered) == 0x284);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, eyePosition) == 0x260);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, jittered) == 0x284);
 
 /// `CurrentCameraState`: size 0x250 (exact).
 /// Meaning: the bound camera's matrices, viewport and depth range, uploaded by UploadPerFrameConstants (high, graphics pass).
@@ -90,7 +87,7 @@ pub struct ImageSpaceModifierInstanceForm {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceForm:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceForm_vtable,
-    /// +0x8 `i32`, base NiObject, semantic; NiObject refcount (high)
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
     pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `u8`, semantic; flag cleared by ctor; printed as one of two words by slot 40 (medium)

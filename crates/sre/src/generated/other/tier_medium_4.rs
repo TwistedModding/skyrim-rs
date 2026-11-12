@@ -7,13 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RunCheckSphereVisitor` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 90425, rva 0x11be010).
-/// `undefined1 RunCheckSphereVisitor(undefined8 param_1, undefined4 * param_2, undefined4 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn run_check_sphere_visitor(param_1: u64, param_2: *mut u32, param_3: u32) -> u8 { unsafe { function!(90425, (u64, *mut u32, u32) -> u8)(param_1, param_2, param_3) } }
 /// `RunCrtCommonMain` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 109636, rva 0x15a8338).
 /// `ulonglong RunCrtCommonMain(void)`
 ///

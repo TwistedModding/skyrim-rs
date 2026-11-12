@@ -13,6 +13,12 @@ impl core::ops::Deref for crate::BSCullingProcess {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BSDynamicTriShape` is laid out from its primary base `BSTriShape`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSDynamicTriShape {
+    type Target = crate::BSTriShape;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSGeometry` is laid out from its primary base `NiAVObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSGeometry {
     type Target = crate::NiAVObject;
@@ -64,6 +70,12 @@ impl core::ops::Deref for crate::BSShadowLight {
 /// `BSShadowParabolicLight` is laid out from its primary base `BSShadowLight`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSShadowParabolicLight {
     type Target = crate::BSShadowLight;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
+/// `BSTriShape` is laid out from its primary base `BSGeometry`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BSTriShape {
+    type Target = crate::BSGeometry;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -372,6 +384,47 @@ impl crate::BSCullingProcess {
     pub fn visibleGeometry(&self) -> &crate::BSTArray { unsafe { &*Self::__member_visibleGeometry(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn visibleGeometry_ptr(&self) -> *mut crate::BSTArray { Self::__member_visibleGeometry(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSDynamicTriShape {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSDynamicTriShape.extraDataCapacity", 0x2A, u16) } }
+    /// `BSDynamicTriShape::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSDynamicTriShape.flags2", 0x109, u8) } }
+    /// `BSDynamicTriShape::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSDynamicTriShape.local", 0x48, crate::NiTransform) } }
+    /// `BSDynamicTriShape::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSDynamicTriShape.previousWorldFrame", 0x104, u32) } }
+    /// `BSDynamicTriShape::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSGeometry {
@@ -1784,6 +1837,47 @@ impl crate::BSShadowParabolicLight {
     pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSTriShape {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSTriShape.extraDataCapacity", 0x2A, u16) } }
+    /// `BSTriShape::extraDataCapacity`, at +0x2A on 1.7.104.
+    #[inline]
+    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSTriShape.flags2", 0x109, u8) } }
+    /// `BSTriShape::flags2`, at +0x109 on 1.7.104.
+    #[inline]
+    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSTriShape.local", 0x48, crate::NiTransform) } }
+    /// `BSTriShape::local`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTriShape.previousWorldFrame", 0x104, u32) } }
+    /// `BSTriShape::previousWorldFrame`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiAVObject {

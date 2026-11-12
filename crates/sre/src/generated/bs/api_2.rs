@@ -7,59 +7,6 @@
 
 use core::ffi::{c_char, c_void};
 
-impl crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable(this: *const Self) -> *mut *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.__vftable", 0x0, *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable) } }
-    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::__vftable`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn __vftable(&self) -> *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable { unsafe { Self::__member___vftable(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable(&mut self, value: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable) { unsafe { Self::__member___vftable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_ptr(&self) -> *mut *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable { Self::__member___vftable(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_30", 0x30, u64) } }
-    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::field_30`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_38", 0x38, u64) } }
-    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::field_38`, at +0x38 on 1.7.104.
-    #[inline]
-    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_40", 0x40, u32) } }
-    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::field_40`, at +0x40 on 1.7.104.
-    #[inline]
-    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>.field_80", 0x80, u64) } }
-    /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::field_80`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
-}
-
 impl crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b {
     #[doc(hidden)]
     #[inline]
@@ -5900,47 +5847,6 @@ impl crate::BSTreeNode {
     #[inline]
     pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTreeNode.previousWorldFrame", 0x104, u32) } }
     /// `BSTreeNode::previousWorldFrame`, at +0x104 on 1.7.104.
-    #[inline]
-    pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_previousWorldFrame(&mut self, value: u32) { unsafe { Self::__member_previousWorldFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn previousWorldFrame_ptr(&self) -> *mut u32 { Self::__member_previousWorldFrame(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSTriShape {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_extraDataCapacity(this: *const Self) -> *mut u16 { unsafe { member!(this, "BSTriShape.extraDataCapacity", 0x2A, u16) } }
-    /// `BSTriShape::extraDataCapacity`, at +0x2A on 1.7.104.
-    #[inline]
-    pub fn extraDataCapacity(&self) -> u16 { unsafe { Self::__member_extraDataCapacity(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_extraDataCapacity(&mut self, value: u16) { unsafe { Self::__member_extraDataCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn extraDataCapacity_ptr(&self) -> *mut u16 { Self::__member_extraDataCapacity(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_flags2(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSTriShape.flags2", 0x109, u8) } }
-    /// `BSTriShape::flags2`, at +0x109 on 1.7.104.
-    #[inline]
-    pub fn flags2(&self) -> u8 { unsafe { Self::__member_flags2(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_flags2(&mut self, value: u8) { unsafe { Self::__member_flags2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn flags2_ptr(&self) -> *mut u8 { Self::__member_flags2(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "BSTriShape.local", 0x48, crate::NiTransform) } }
-    /// `BSTriShape::local`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_previousWorldFrame(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTriShape.previousWorldFrame", 0x104, u32) } }
-    /// `BSTriShape::previousWorldFrame`, at +0x104 on 1.7.104.
     #[inline]
     pub fn previousWorldFrame(&self) -> u32 { unsafe { Self::__member_previousWorldFrame(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]

@@ -6451,8 +6451,10 @@ pub const InitMemberRef: u64 = 57578;
 pub const InitMemberRefByName: u64 = 57579;
 /// `InitMemoryLevelSettings` at 0x664910 (decompiler, high); signature (low): `undefined4 * InitMemoryLevelSettings(undefined4 * param_1)`
 pub const InitMemoryLevelSettings: u64 = 36811;
-/// `InitMemoryManagerOnce` at 0xcde810 (decompiler, high); signature (high): `undefined InitMemoryManagerOnce(undefined1 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
+/// `InitMemoryManagerOnce` at 0xcde810 (semantic, high); signature (high): `void InitMemoryManagerOnce(void * manager, int * state)`; semantic: initialises the global memory manager once (high); signature `void (void* manager, i32* state)`
 pub const InitMemoryManagerOnce: u64 = 68121;
+/// `InitMemoryManagerOnce` as a function pointer type (high).
+pub type InitMemoryManagerOnce_fn = unsafe extern "C" fn(manager: *mut c_void, state: *mut i32);
 /// `InitMessageRecordDefault` at 0x125b000 (decompiler, high); signature (high): `undefined InitMessageRecordDefault(int * param_1)`
 pub const InitMessageRecordDefault: u64 = 524361;
 /// `InitMessageRecordFromFirstPath` at 0x588f30 (decompiler, medium); signature (medium): `undefined8 InitMessageRecordFromFirstPath(longlong * param_1, int * param_2)`
@@ -8423,5 +8425,3 @@ pub const IntersectRayTriangle: u64 = 71983;
 pub const IntersectRayWithCircle2D: u64 = 91555;
 /// `IntersectRayWithOrientedBox` at 0xf4e6a0 (decompiler, medium); signature (low): `undefined8 IntersectRayWithOrientedBox(longlong param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
 pub const IntersectRayWithOrientedBox: u64 = 72334;
-/// `IntersectRayWithTriangle` at 0xb3e720 (decompiler, medium); signature (low): `undefined1 * IntersectRayWithTriangle(undefined1 * param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, float * param_8, float * param_9, char param_10)`
-pub const IntersectRayWithTriangle: u64 = 60577;

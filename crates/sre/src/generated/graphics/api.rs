@@ -21,24 +21,6 @@ impl crate::CameraMatrixEntry {
     pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_eyePosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "CameraMatrixEntry.eyePosition", 0x260, crate::NiPoint3) } }
-    /// `CameraMatrixEntry::eyePosition`, at +0x260 on 1.7.104.
-    #[inline]
-    pub fn eyePosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_eyePosition(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn eyePosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_eyePosition(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_jittered(this: *const Self) -> *mut u8 { unsafe { member!(this, "CameraMatrixEntry.jittered", 0x284, u8) } }
-    /// `CameraMatrixEntry::jittered`, at +0x284 on 1.7.104.
-    #[inline]
-    pub fn jittered(&self) -> u8 { unsafe { Self::__member_jittered(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_jittered(&mut self, value: u8) { unsafe { Self::__member_jittered(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn jittered_ptr(&self) -> *mut u8 { Self::__member_jittered(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_previousViewProjection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.previousViewProjection", 0x100, [u8; 64]) } }
     /// `CameraMatrixEntry::previousViewProjection`, at +0x100 on 1.7.104.
     #[inline]
@@ -57,16 +39,6 @@ impl crate::CameraMatrixEntry {
     pub fn set_view(&mut self, value: [u8; 64]) { unsafe { Self::__member_view(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn view_ptr(&self) -> *mut [u8; 64] { Self::__member_view(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_viewProjection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.viewProjection", 0xC0, [u8; 64]) } }
-    /// `CameraMatrixEntry::viewProjection`, at +0xC0 on 1.7.104.
-    #[inline]
-    pub fn viewProjection(&self) -> [u8; 64] { unsafe { Self::__member_viewProjection(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_viewProjection(&mut self, value: [u8; 64]) { unsafe { Self::__member_viewProjection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn viewProjection_ptr(&self) -> *mut [u8; 64] { Self::__member_viewProjection(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_viewProjectionUnjittered(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.viewProjectionUnjittered", 0x140, [u8; 64]) } }

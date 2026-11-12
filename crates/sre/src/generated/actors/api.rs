@@ -31,6 +31,12 @@ impl core::ops::Deref for crate::BGSActionData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+/// `BGSSkinForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
+impl core::ops::Deref for crate::BGSSkinForm {
+    type Target = crate::BaseFormComponent;
+    #[inline]
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
+}
 /// `BSHandleRefObject` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSHandleRefObject {
     type Target = crate::NiRefObject;
@@ -1824,6 +1830,14 @@ impl crate::ActorValueStorage {
     /// The result is an untyped pointer.
     #[inline]
     pub unsafe fn find_modifiers(&self, value: crate::ActorValue) -> *mut f32 { unsafe { function!(39020, (*const Self, crate::ActorValue) -> *mut f32)(core::ptr::from_ref(self), value) } }
+}
+
+impl crate::BGSSkinForm {
+    /// `BGSSkinForm::skin` at +0x8: the skin armour; an actor wears its NPC's, else its race's, and a naked body is BipedAnim.objects[2].item being that armour
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn skin(&self) -> Option<&crate::TESObjectARMO> { unsafe { { self.skin }.as_ref() } }
 }
 
 impl crate::BSExtraData {

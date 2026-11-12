@@ -589,7 +589,7 @@ pub struct BSScript__ObjectTypeInfo {
     pub parent: *mut crate::BSScript__ObjectTypeInfo,
     /// +0x18 `class:BSFixedString`, semantic; a string, empty for classes created by BindNativeMethod; its use was not traced (medium)
     pub string18: crate::BSFixedString,
-    /// +0x20 `undefined4`, semantic; bits 0-1 link state (0 unlinked: natives wait in the list at +0x30; 2 or 3 linked, 3 fully), bits 2-7 and 8-17 counts (8-17 the variable count) (high)
+    /// +0x20 `undefined4`, semantic; bits 0-1 link state (0 unlinked: natives wait in the list at +0x30; 2 or 3 linked, 3 fully), bits 2-7 and 8-17 counts (8-17 the variable count) (bits 0-1: ObjectTypeLinkState) (high)
     pub linkedAndVariables: u32,
     /// +0x24 `undefined4`, semantic; packed table sizes used to locate the function tables at +0x30 (bits 0-9, 10-19, 20-28) (medium)
     #[doc(hidden)]
@@ -1142,6 +1142,33 @@ impl VMTypeID {
             140 => Some(Self::ReferenceAlias),
             141 => Some(Self::LocationAlias),
             142 => Some(Self::ActiveMagicEffect),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/objecttypelinkstates.json: ObjectTypeInfo.linkedAndVariables & 3 (papyrus pass).
+#[repr(u8)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ObjectTypeLinkState {
+    /// `unlinked`
+    unlinked = 0,
+    /// `unseen`
+    unseen = 1,
+    /// `linked`
+    linked = 2,
+    /// `fullyLinked`
+    fullyLinked = 3,
+}
+
+impl ObjectTypeLinkState {
+    #[must_use]
+    pub const fn from_u8(value: u8) -> Option<Self> {
+        match value {
+            0 => Some(Self::unlinked),
+            1 => Some(Self::unseen),
+            2 => Some(Self::linked),
+            3 => Some(Self::fullyLinked),
             _ => None,
         }
     }

@@ -18565,15 +18565,15 @@ pub struct ImageSpaceModifierInstance {
     /// +0x0 `vtbl:ImageSpaceModifierInstance:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstance_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstance>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstance, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstance, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstance, refCount) == 0x8);
 
 /// `ImageSpaceModifierInstanceDOF`: size 0x78 (exact, medium); primary base `ImageSpaceModifierInstanceTemp`.
 /// Evidence: runtime: 0x78 at 1 allocation sites.
@@ -18583,8 +18583,8 @@ pub struct ImageSpaceModifierInstanceDOF {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceDOF:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceDOF_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base ImageSpaceModifierInstanceTemp
     pub field_10: u8,
@@ -18626,7 +18626,7 @@ pub struct ImageSpaceModifierInstanceDOF {
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstanceDOF>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceDOF, field_18) == 0x18);
@@ -18652,8 +18652,8 @@ pub struct ImageSpaceModifierInstanceRB {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceRB:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceRB_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base ImageSpaceModifierInstanceTemp
     pub field_10: u8,
@@ -18701,7 +18701,7 @@ pub struct ImageSpaceModifierInstanceRB {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceRB, field_18) == 0x18);
@@ -18729,8 +18729,8 @@ pub struct ImageSpaceModifierInstanceTemp {
     /// +0x0 `vtbl:ImageSpaceModifierInstanceTemp:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceTemp_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, ctor store
     pub field_10: u8,
@@ -18751,7 +18751,7 @@ pub struct ImageSpaceModifierInstanceTemp {
 }
 const _: () = assert!(size_of::<ImageSpaceModifierInstanceTemp>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ImageSpaceModifierInstanceTemp, field_18) == 0x18);

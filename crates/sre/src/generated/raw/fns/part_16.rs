@@ -7,6 +7,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Debug::GetConfigName` at 0xa1f310 (runtime, high); signature (medium): `bool GetConfigName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the latent GetConfigName native of Debug (returns its string through ReturnFromLatent) (high); signature `bool (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
+pub const Papyrus__Debug__GetConfigName: u64 = 55373;
+/// `Papyrus::Debug::GetConfigName` as a function pointer type (high).
+pub type Papyrus__Debug__GetConfigName_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void) -> bool;
+/// `Papyrus::Debug::GetPlatformName` at 0xa1f3c0 (papyrus_native, high); signature (medium): `bool GetPlatformName(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
+/// `Papyrus::Debug::GetPlatformName_sub0` at 0xeac650 (callgraph, medium); signature (untiered): `char * GetPlatformName_sub0(void)`
+pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
+/// `Papyrus::Debug::GetVersionNumber` at 0xa1f470 (papyrus_native, high); signature (medium): `bool GetVersionNumber(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;
 /// `Papyrus::Debug::MessageBox` at 0xa1f520 (papyrus_native, high); signature (medium): `void MessageBox(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; semantic: ShowMessageBox(text, null, 0, 4, 10, "OK", null) (high); signature `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
 pub const Papyrus__Debug__MessageBox: u64 = 55376;
 /// `Papyrus::Debug::MessageBox` as a function pointer type (high).
@@ -8309,15 +8319,3 @@ pub const ReleaseRefCountAt08: u64 = 446743;
 pub const ReleaseRefCountAt10: u64 = 446758;
 /// `ReleaseRefCountAt18` at 0xe2b2b0 (decompiler, high); signature (high): `undefined ReleaseRefCountAt18(undefined8 * param_1)`
 pub const ReleaseRefCountAt18: u64 = 88276;
-/// `ReleaseRefCountField14AndDelete` at 0x441f30 (decompiler, medium); signature (medium): `undefined ReleaseRefCountField14AndDelete(longlong param_1)`
-pub const ReleaseRefCountField14AndDelete: u64 = 418626;
-/// `ReleaseRefCountField14Ptr` at 0x666d10 (decompiler, high); signature (high): `undefined ReleaseRefCountField14Ptr(longlong * param_1)`
-pub const ReleaseRefCountField14Ptr: u64 = 36883;
-/// `ReleaseRefCounted16AndClear` at 0xc47320 (decompiler, high); signature (low): `undefined ReleaseRefCounted16AndClear(undefined8 * param_1)`
-pub const ReleaseRefCounted16AndClear: u64 = 65364;
-/// `ReleaseRefCounted16ArrayAndClearGlobal401100` at 0x54f700 (decompiler, medium); signature (low): `undefined ReleaseRefCounted16ArrayAndClearGlobal401100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCounted16ArrayAndClearGlobal401100: u64 = 32800;
-/// `ReleaseRefCounted16PtrAndClear` at 0x17bce0 (decompiler, high); signature (high): `undefined ReleaseRefCounted16PtrAndClear(undefined8 * param_1)`
-pub const ReleaseRefCounted16PtrAndClear: u64 = 12175;
-/// `ReleaseRefCounted16PtrAndClear_2` at 0x527970 (decompiler, high); signature (low): `undefined ReleaseRefCounted16PtrAndClear_2(undefined8 * param_1)`
-pub const ReleaseRefCounted16PtrAndClear_2: u64 = 32135;

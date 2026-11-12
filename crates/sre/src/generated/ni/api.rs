@@ -487,12 +487,6 @@ impl core::ops::Deref for crate::NiOBBLeaf {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `NiObject` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::NiObject {
-    type Target = crate::NiRefObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `NiPSysAgeDeathModifier` is laid out from its primary base `NiPSysModifier`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiPSysAgeDeathModifier {
     type Target = crate::NiPSysModifier;

@@ -201,8 +201,8 @@ pub struct _anon_57720BD5__bhkTiltPreventAction {
     /// +0x0 `vtbl:_anon_57720BD5::bhkTiltPreventAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_57720BD5__bhkTiltPreventAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -210,7 +210,7 @@ pub struct _anon_57720BD5__bhkTiltPreventAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkTiltPreventAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkTiltPreventAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkTiltPreventAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkTiltPreventAction, field_10) == 0x10);
 
 /// `_anon_57720BD5::bhkWheelAction`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkUnaryAction`.
@@ -221,8 +221,8 @@ pub struct _anon_57720BD5__bhkWheelAction {
     /// +0x0 `vtbl:_anon_57720BD5::bhkWheelAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_57720BD5__bhkWheelAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -230,7 +230,7 @@ pub struct _anon_57720BD5__bhkWheelAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkWheelAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkWheelAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkWheelAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(_anon_57720BD5__bhkWheelAction, field_10) == 0x10);
 
 /// `_anon_57720BD5::hkpTiltPreventAction`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpUnaryAction`.
@@ -658,8 +658,8 @@ pub struct bhkAabbPhantom {
     /// +0x0 `vtbl:bhkAabbPhantom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkAabbPhantom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -673,7 +673,7 @@ pub struct bhkAabbPhantom {
 }
 const _: () = assert!(size_of::<bhkAabbPhantom>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkAabbPhantom, field_20) == 0x20);
@@ -840,8 +840,8 @@ pub struct bhkAction {
     /// +0x0 `vtbl:bhkAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -850,7 +850,7 @@ pub struct bhkAction {
 }
 const _: () = assert!(size_of::<bhkAction>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkAction, field_10) == 0x10);
 
 /// `bhkAngularDashpotAction`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkBinaryAction`.
@@ -861,8 +861,8 @@ pub struct bhkAngularDashpotAction {
     /// +0x0 `vtbl:bhkAngularDashpotAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkAngularDashpotAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -870,7 +870,7 @@ pub struct bhkAngularDashpotAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkAngularDashpotAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkAngularDashpotAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkAngularDashpotAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkAngularDashpotAction, field_10) == 0x10);
 
 /// `bhkAttachmentCollisionObject`: size 0x48 (exact, medium); primary base `bhkBlendCollisionObject`.
@@ -881,8 +881,8 @@ pub struct bhkAttachmentCollisionObject {
     /// +0x0 `vtbl:bhkAttachmentCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkAttachmentCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -908,7 +908,7 @@ pub struct bhkAttachmentCollisionObject {
 }
 const _: () = assert!(size_of::<bhkAttachmentCollisionObject>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkAttachmentCollisionObject, field_20) == 0x20);
@@ -926,8 +926,8 @@ pub struct bhkAvoidBox {
     /// +0x0 `vtbl:bhkAvoidBox:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkAvoidBox_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -939,7 +939,7 @@ pub struct bhkAvoidBox {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkAvoidBox, field_20) == 0x20);
@@ -966,8 +966,8 @@ pub struct bhkBallAndSocketConstraint {
     /// +0x0 `vtbl:bhkBallAndSocketConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBallAndSocketConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -975,7 +975,7 @@ pub struct bhkBallAndSocketConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkBallAndSocketConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBallAndSocketConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBallAndSocketConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBallAndSocketConstraint, field_10) == 0x10);
 
 /// `bhkBallSocketConstraintChain`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraintChain`.
@@ -986,8 +986,8 @@ pub struct bhkBallSocketConstraintChain {
     /// +0x0 `vtbl:bhkBallSocketConstraintChain:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBallSocketConstraintChain_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -995,7 +995,7 @@ pub struct bhkBallSocketConstraintChain {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkBallSocketConstraintChain, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBallSocketConstraintChain, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBallSocketConstraintChain, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBallSocketConstraintChain, field_10) == 0x10);
 
 /// `bhkBinaryAction`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkAction`.
@@ -1006,8 +1006,8 @@ pub struct bhkBinaryAction {
     /// +0x0 `vtbl:bhkBinaryAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBinaryAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1015,7 +1015,7 @@ pub struct bhkBinaryAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkBinaryAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBinaryAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBinaryAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBinaryAction, field_10) == 0x10);
 
 /// `bhkBipedOrientationController`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `bhkICharOrientationController`.
@@ -1039,8 +1039,8 @@ pub struct bhkBlendCollisionObject {
     /// +0x0 `vtbl:bhkBlendCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBlendCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -1066,7 +1066,7 @@ pub struct bhkBlendCollisionObject {
 }
 const _: () = assert!(size_of::<bhkBlendCollisionObject>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkBlendCollisionObject, field_20) == 0x20);
@@ -1085,8 +1085,8 @@ pub struct bhkBlendController {
     /// +0x0 `vtbl:bhkBlendController:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBlendController_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
@@ -1116,7 +1116,7 @@ pub struct bhkBlendController {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkBlendController, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBlendController, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBlendController, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBlendController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkBlendController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(bhkBlendController, field_1C) == 0x1C);
@@ -1136,8 +1136,8 @@ pub struct bhkBoxShape {
     /// +0x0 `vtbl:bhkBoxShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBoxShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1151,7 +1151,7 @@ pub struct bhkBoxShape {
 }
 const _: () = assert!(size_of::<bhkBoxShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkBoxShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBoxShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBoxShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBoxShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkBoxShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkBoxShape, field_20) == 0x20);
@@ -1164,8 +1164,8 @@ pub struct bhkBreakableConstraint {
     /// +0x0 `vtbl:bhkBreakableConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkBreakableConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1175,7 +1175,7 @@ pub struct bhkBreakableConstraint {
 }
 const _: () = assert!(size_of::<bhkBreakableConstraint>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bhkBreakableConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkBreakableConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkBreakableConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkBreakableConstraint, field_10) == 0x10);
 
 /// `bhkCachingShapePhantom`: size 0x30 (exact, medium); primary base `bhkShapePhantom`.
@@ -1186,8 +1186,8 @@ pub struct bhkCachingShapePhantom {
     /// +0x0 `vtbl:bhkCachingShapePhantom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCachingShapePhantom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1201,7 +1201,7 @@ pub struct bhkCachingShapePhantom {
 }
 const _: () = assert!(size_of::<bhkCachingShapePhantom>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCachingShapePhantom, field_20) == 0x20);
@@ -1214,8 +1214,8 @@ pub struct bhkCapsuleShape {
     /// +0x0 `vtbl:bhkCapsuleShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCapsuleShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1229,7 +1229,7 @@ pub struct bhkCapsuleShape {
 }
 const _: () = assert!(size_of::<bhkCapsuleShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCapsuleShape, field_20) == 0x20);
@@ -1242,8 +1242,8 @@ pub struct bhkCartTether {
     /// +0x0 `vtbl:bhkCartTether:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCartTether_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -1262,7 +1262,7 @@ pub struct bhkCartTether {
 }
 const _: () = assert!(size_of::<bhkCartTether>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(bhkCartTether, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCartTether, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCartTether, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCartTether, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCartTether, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCartTether, field_20) == 0x20);
@@ -1277,8 +1277,8 @@ pub struct bhkCharControllerShape {
     /// +0x0 `vtbl:bhkCharControllerShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCharControllerShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1292,7 +1292,7 @@ pub struct bhkCharControllerShape {
 }
 const _: () = assert!(size_of::<bhkCharControllerShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCharControllerShape, field_20) == 0x20);
@@ -1604,8 +1604,8 @@ pub struct bhkCharacterProxy {
     /// +0x0 `vtbl:bhkCharacterProxy:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCharacterProxy_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1613,7 +1613,7 @@ pub struct bhkCharacterProxy {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkCharacterProxy, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterProxy, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterProxy, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterProxy, field_10) == 0x10);
 
 /// `bhkCharacterProxyCinfo`: size 0x90 (exact, medium); primary base `hkpCharacterProxyCinfo`.
@@ -1723,8 +1723,8 @@ pub struct bhkCharacterRigidBody {
     /// +0x0 `vtbl:bhkCharacterRigidBody:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCharacterRigidBody_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -1732,7 +1732,7 @@ pub struct bhkCharacterRigidBody {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkCharacterRigidBody, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCharacterRigidBody, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCharacterRigidBody, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCharacterRigidBody, field_10) == 0x10);
 
 /// `bhkCharacterRigidBodyCinfo`: size 0x80 (exact, medium); primary base `hkpCharacterRigidBodyCinfo`.
@@ -2920,8 +2920,8 @@ pub struct bhkCollisionBox {
     /// +0x0 `vtbl:bhkCollisionBox:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCollisionBox_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -2933,7 +2933,7 @@ pub struct bhkCollisionBox {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionBox, field_20) == 0x20);
@@ -3114,8 +3114,8 @@ pub struct bhkCollisionObject {
     /// +0x0 `vtbl:bhkCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -3129,7 +3129,7 @@ pub struct bhkCollisionObject {
 }
 const _: () = assert!(size_of::<bhkCollisionObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCollisionObject, field_20) == 0x20);
@@ -3142,8 +3142,8 @@ pub struct bhkCompressedMeshShape {
     /// +0x0 `vtbl:bhkCompressedMeshShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCompressedMeshShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3153,7 +3153,7 @@ pub struct bhkCompressedMeshShape {
 }
 const _: () = assert!(size_of::<bhkCompressedMeshShape>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShape, field_10) == 0x10);
 
 /// `bhkCompressedMeshShapeData`: size 0x100 (exact, medium); primary base `NiObject`.
@@ -3164,8 +3164,8 @@ pub struct bhkCompressedMeshShapeData {
     /// +0x0 `vtbl:bhkCompressedMeshShapeData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCompressedMeshShapeData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 68],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
@@ -3236,7 +3236,7 @@ pub struct bhkCompressedMeshShapeData {
 }
 const _: () = assert!(size_of::<bhkCompressedMeshShapeData>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(bhkCompressedMeshShapeData, field_5C) == 0x5C);
@@ -3276,8 +3276,8 @@ pub struct bhkConstraint {
     /// +0x0 `vtbl:bhkConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3286,7 +3286,7 @@ pub struct bhkConstraint {
 }
 const _: () = assert!(size_of::<bhkConstraint>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConstraint, field_10) == 0x10);
 
 /// `bhkConstraintChain`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraint`.
@@ -3297,8 +3297,8 @@ pub struct bhkConstraintChain {
     /// +0x0 `vtbl:bhkConstraintChain:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConstraintChain_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3306,7 +3306,7 @@ pub struct bhkConstraintChain {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkConstraintChain, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConstraintChain, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConstraintChain, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConstraintChain, field_10) == 0x10);
 
 /// `bhkContactListener`: size 0x8 (exact, medium); primary base `hkpContactListener`.
@@ -3331,8 +3331,8 @@ pub struct bhkConvexSweepShape {
     /// +0x0 `vtbl:bhkConvexSweepShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConvexSweepShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3340,7 +3340,7 @@ pub struct bhkConvexSweepShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkConvexSweepShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConvexSweepShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConvexSweepShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConvexSweepShape, field_10) == 0x10);
 
 /// `bhkConvexTransformShape`: size 0x28 (exact, high); primary base `bhkConvexShape`.
@@ -3351,8 +3351,8 @@ pub struct bhkConvexTransformShape {
     /// +0x0 `vtbl:bhkConvexTransformShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConvexTransformShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3366,7 +3366,7 @@ pub struct bhkConvexTransformShape {
 }
 const _: () = assert!(size_of::<bhkConvexTransformShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTransformShape, field_20) == 0x20);
@@ -3379,8 +3379,8 @@ pub struct bhkConvexTranslateShape {
     /// +0x0 `vtbl:bhkConvexTranslateShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConvexTranslateShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3393,7 +3393,7 @@ pub struct bhkConvexTranslateShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkConvexTranslateShape, field_20) == 0x20);
@@ -3406,8 +3406,8 @@ pub struct bhkConvexVerticesShape {
     /// +0x0 `vtbl:bhkConvexVerticesShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkConvexVerticesShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3421,7 +3421,7 @@ pub struct bhkConvexVerticesShape {
 }
 const _: () = assert!(size_of::<bhkConvexVerticesShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkConvexVerticesShape, field_20) == 0x20);
@@ -3434,8 +3434,8 @@ pub struct bhkCylinderShape {
     /// +0x0 `vtbl:bhkCylinderShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkCylinderShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3448,7 +3448,7 @@ pub struct bhkCylinderShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkCylinderShape, field_20) == 0x20);
@@ -3461,8 +3461,8 @@ pub struct bhkDashpotAction {
     /// +0x0 `vtbl:bhkDashpotAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkDashpotAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3470,7 +3470,7 @@ pub struct bhkDashpotAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkDashpotAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkDashpotAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkDashpotAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkDashpotAction, field_10) == 0x10);
 
 /// `bhkEntity`: size 0x40 (exact, medium); primary base `bhkWorldObject`.
@@ -3481,8 +3481,8 @@ pub struct bhkEntity {
     /// +0x0 `vtbl:bhkEntity:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkEntity_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3496,7 +3496,7 @@ pub struct bhkEntity {
 }
 const _: () = assert!(size_of::<bhkEntity>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(bhkEntity, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkEntity, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkEntity, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkEntity, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkEntity, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkEntity, field_20) == 0x20);
@@ -3527,8 +3527,8 @@ pub struct bhkExtraData {
     /// +0x0 `vtbl:bhkExtraData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkExtraData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -3540,7 +3540,7 @@ pub struct bhkExtraData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkExtraData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkExtraData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkExtraData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkExtraData, field_28) == 0x28);
 
@@ -3565,8 +3565,8 @@ pub struct bhkFixedConstraint {
     /// +0x0 `vtbl:bhkFixedConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkFixedConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3574,7 +3574,7 @@ pub struct bhkFixedConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkFixedConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkFixedConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkFixedConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkFixedConstraint, field_10) == 0x10);
 
 /// `bhkGenericConstraint`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraint`.
@@ -3585,8 +3585,8 @@ pub struct bhkGenericConstraint {
     /// +0x0 `vtbl:bhkGenericConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkGenericConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3594,7 +3594,7 @@ pub struct bhkGenericConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkGenericConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkGenericConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkGenericConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkGenericConstraint, field_10) == 0x10);
 
 /// `bhkGroupConstraint`: size 0x28 (exact, high); primary base `bhkConstraint`.
@@ -3605,8 +3605,8 @@ pub struct bhkGroupConstraint {
     /// +0x0 `vtbl:bhkGroupConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkGroupConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3620,7 +3620,7 @@ pub struct bhkGroupConstraint {
 }
 const _: () = assert!(size_of::<bhkGroupConstraint>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkGroupConstraint, field_20) == 0x20);
@@ -3633,8 +3633,8 @@ pub struct bhkHeightFieldShape {
     /// +0x0 `vtbl:bhkHeightFieldShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkHeightFieldShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3642,7 +3642,7 @@ pub struct bhkHeightFieldShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkHeightFieldShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkHeightFieldShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkHeightFieldShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkHeightFieldShape, field_10) == 0x10);
 
 /// `bhkHingeConstraint`: size 0x20 (exact, high); primary base `bhkConstraint`.
@@ -3653,8 +3653,8 @@ pub struct bhkHingeConstraint {
     /// +0x0 `vtbl:bhkHingeConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkHingeConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3664,7 +3664,7 @@ pub struct bhkHingeConstraint {
 }
 const _: () = assert!(size_of::<bhkHingeConstraint>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bhkHingeConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkHingeConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkHingeConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkHingeConstraint, field_10) == 0x10);
 
 /// `bhkHingeLimitsConstraint`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraint`.
@@ -3675,8 +3675,8 @@ pub struct bhkHingeLimitsConstraint {
     /// +0x0 `vtbl:bhkHingeLimitsConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkHingeLimitsConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3684,7 +3684,7 @@ pub struct bhkHingeLimitsConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkHingeLimitsConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkHingeLimitsConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkHingeLimitsConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkHingeLimitsConstraint, field_10) == 0x10);
 
 /// `bhkICharOrientationController`: size 0x8 (exact, medium).
@@ -3720,8 +3720,8 @@ pub struct bhkLimitedHingeConstraint {
     /// +0x0 `vtbl:bhkLimitedHingeConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkLimitedHingeConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3731,7 +3731,7 @@ pub struct bhkLimitedHingeConstraint {
 }
 const _: () = assert!(size_of::<bhkLimitedHingeConstraint>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bhkLimitedHingeConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkLimitedHingeConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkLimitedHingeConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkLimitedHingeConstraint, field_10) == 0x10);
 
 /// `bhkLiquidAction`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `bhkUnaryAction`.
@@ -3742,8 +3742,8 @@ pub struct bhkLiquidAction {
     /// +0x0 `vtbl:bhkLiquidAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkLiquidAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3778,7 +3778,7 @@ pub struct bhkLiquidAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkLiquidAction, field_20) == 0x20);
@@ -3800,8 +3800,8 @@ pub struct bhkListShape {
     /// +0x0 `vtbl:bhkListShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkListShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3818,7 +3818,7 @@ pub struct bhkListShape {
 }
 const _: () = assert!(size_of::<bhkListShape>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkListShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkListShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkListShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkListShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkListShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkListShape, field_20) == 0x20);
@@ -3832,8 +3832,8 @@ pub struct bhkMalleableConstraint {
     /// +0x0 `vtbl:bhkMalleableConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkMalleableConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3841,7 +3841,7 @@ pub struct bhkMalleableConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkMalleableConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkMalleableConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkMalleableConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkMalleableConstraint, field_10) == 0x10);
 
 /// `bhkMemorySystem`: size >= 0x550 (lower bound); partial, the struct stops at the lower bound; primary base `hkMemorySystem`.
@@ -3873,8 +3873,8 @@ pub struct bhkMoppBvTreeShape {
     /// +0x0 `vtbl:bhkMoppBvTreeShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkMoppBvTreeShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3889,7 +3889,7 @@ pub struct bhkMoppBvTreeShape {
 }
 const _: () = assert!(size_of::<bhkMoppBvTreeShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkMoppBvTreeShape, __field_20) == 0x20);
@@ -3902,8 +3902,8 @@ pub struct bhkMotorAction {
     /// +0x0 `vtbl:bhkMotorAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkMotorAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3911,7 +3911,7 @@ pub struct bhkMotorAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkMotorAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkMotorAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkMotorAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkMotorAction, field_10) == 0x10);
 
 /// `bhkMouseSpringAction`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkUnaryAction`.
@@ -3922,8 +3922,8 @@ pub struct bhkMouseSpringAction {
     /// +0x0 `vtbl:bhkMouseSpringAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkMouseSpringAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3931,7 +3931,7 @@ pub struct bhkMouseSpringAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkMouseSpringAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkMouseSpringAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkMouseSpringAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkMouseSpringAction, field_10) == 0x10);
 
 /// `bhkMultiSphereShape`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkSphereRepShape`.
@@ -3942,8 +3942,8 @@ pub struct bhkMultiSphereShape {
     /// +0x0 `vtbl:bhkMultiSphereShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkMultiSphereShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -3951,7 +3951,7 @@ pub struct bhkMultiSphereShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkMultiSphereShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkMultiSphereShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkMultiSphereShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkMultiSphereShape, field_10) == 0x10);
 
 /// `bhkNiCollisionObject`: size 0x28 (exact, medium); primary base `NiCollisionObject`.
@@ -3962,8 +3962,8 @@ pub struct bhkNiCollisionObject {
     /// +0x0 `vtbl:bhkNiCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkNiCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -3977,7 +3977,7 @@ pub struct bhkNiCollisionObject {
 }
 const _: () = assert!(size_of::<bhkNiCollisionObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkNiCollisionObject, field_20) == 0x20);
@@ -3990,8 +3990,8 @@ pub struct bhkNiTriStripsShape {
     /// +0x0 `vtbl:bhkNiTriStripsShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkNiTriStripsShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4001,7 +4001,7 @@ pub struct bhkNiTriStripsShape {
 }
 const _: () = assert!(size_of::<bhkNiTriStripsShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkNiTriStripsShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkNiTriStripsShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkNiTriStripsShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkNiTriStripsShape, field_10) == 0x10);
 
 /// `bhkObstacleDeactivationListener`: size 0x8 (exact, medium); primary base `hkpEntityActivationListener`.
@@ -4069,8 +4069,8 @@ pub struct bhkOrientHingedBodyAction {
     /// +0x0 `vtbl:bhkOrientHingedBodyAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkOrientHingedBodyAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4080,7 +4080,7 @@ pub struct bhkOrientHingedBodyAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkOrientHingedBodyAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkOrientHingedBodyAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkOrientHingedBodyAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkOrientHingedBodyAction, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkOrientHingedBodyAction, field_18) == 0x18);
 
@@ -4092,8 +4092,8 @@ pub struct bhkPCollisionObject {
     /// +0x0 `vtbl:bhkPCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -4107,7 +4107,7 @@ pub struct bhkPCollisionObject {
 }
 const _: () = assert!(size_of::<bhkPCollisionObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkPCollisionObject, field_20) == 0x20);
@@ -4120,8 +4120,8 @@ pub struct bhkPackedNiTriStripsShape {
     /// +0x0 `vtbl:bhkPackedNiTriStripsShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPackedNiTriStripsShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4129,7 +4129,7 @@ pub struct bhkPackedNiTriStripsShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkPackedNiTriStripsShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPackedNiTriStripsShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPackedNiTriStripsShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPackedNiTriStripsShape, field_10) == 0x10);
 
 /// `bhkPhantom`: size 0x28 (exact, low); primary base `bhkWorldObject`.
@@ -4140,8 +4140,8 @@ pub struct bhkPhantom {
     /// +0x0 `vtbl:bhkPhantom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPhantom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4154,7 +4154,7 @@ pub struct bhkPhantom {
 }
 const _: () = assert!(size_of::<bhkPhantom>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkPhantom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPhantom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPhantom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPhantom, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkPhantom, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkPhantom, field_20) == 0x20);
@@ -4167,8 +4167,8 @@ pub struct bhkPlaneShape {
     /// +0x0 `vtbl:bhkPlaneShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPlaneShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4176,7 +4176,7 @@ pub struct bhkPlaneShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkPlaneShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPlaneShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPlaneShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPlaneShape, field_10) == 0x10);
 
 /// `bhkPointToPathConstraint`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraint`.
@@ -4187,8 +4187,8 @@ pub struct bhkPointToPathConstraint {
     /// +0x0 `vtbl:bhkPointToPathConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPointToPathConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4196,7 +4196,7 @@ pub struct bhkPointToPathConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkPointToPathConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPointToPathConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPointToPathConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPointToPathConstraint, field_10) == 0x10);
 
 /// `bhkPoseArray`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `NiObject`.
@@ -4207,8 +4207,8 @@ pub struct bhkPoseArray {
     /// +0x0 `vtbl:bhkPoseArray:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPoseArray_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
@@ -4224,7 +4224,7 @@ pub struct bhkPoseArray {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkPoseArray, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPoseArray, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPoseArray, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPoseArray, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkPoseArray, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkPoseArray, field_20) == 0x20);
@@ -4268,8 +4268,8 @@ pub struct bhkPrismaticConstraint {
     /// +0x0 `vtbl:bhkPrismaticConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkPrismaticConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4277,7 +4277,7 @@ pub struct bhkPrismaticConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkPrismaticConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkPrismaticConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkPrismaticConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkPrismaticConstraint, field_10) == 0x10);
 
 /// `bhkQuadOrientationController`: size 0x60 (exact, medium); primary base `bhkICharOrientationController`.
@@ -4306,8 +4306,8 @@ pub struct bhkRagdollConstraint {
     /// +0x0 `vtbl:bhkRagdollConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRagdollConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4317,7 +4317,7 @@ pub struct bhkRagdollConstraint {
 }
 const _: () = assert!(size_of::<bhkRagdollConstraint>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollConstraint, field_10) == 0x10);
 
 /// `bhkRagdollLimitsConstraint`: size >= 0x18 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConstraint`.
@@ -4328,8 +4328,8 @@ pub struct bhkRagdollLimitsConstraint {
     /// +0x0 `vtbl:bhkRagdollLimitsConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRagdollLimitsConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4337,7 +4337,7 @@ pub struct bhkRagdollLimitsConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkRagdollLimitsConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollLimitsConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollLimitsConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollLimitsConstraint, field_10) == 0x10);
 
 /// `bhkRagdollPenetrationUtil`: size 0x48 (exact, medium); primary base `hkaRagdollRaycastInterface`.
@@ -4384,8 +4384,8 @@ pub struct bhkRagdollShareData {
     /// +0x0 `vtbl:bhkRagdollShareData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRagdollShareData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -4403,7 +4403,7 @@ pub struct bhkRagdollShareData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollShareData, field_20) == 0x20);
@@ -4419,8 +4419,8 @@ pub struct bhkRagdollTemplate {
     /// +0x0 `vtbl:bhkRagdollTemplate:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRagdollTemplate_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -4432,7 +4432,7 @@ pub struct bhkRagdollTemplate {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplate, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplate, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplate, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplate, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplate, field_28) == 0x28);
 
@@ -4444,8 +4444,8 @@ pub struct bhkRagdollTemplateData {
     /// +0x0 `vtbl:bhkRagdollTemplateData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRagdollTemplateData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -4453,7 +4453,7 @@ pub struct bhkRagdollTemplateData {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplateData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplateData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplateData, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRagdollTemplateData, field_10) == 0x10);
 
 /// `bhkRefObject`: size 0x18 (exact, low); primary base `NiObject`.
@@ -4464,8 +4464,8 @@ pub struct bhkRefObject {
     /// +0x0 `vtbl:bhkRefObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRefObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
@@ -4474,7 +4474,7 @@ pub struct bhkRefObject {
 }
 const _: () = assert!(size_of::<bhkRefObject>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkRefObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRefObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRefObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRefObject, field_10) == 0x10);
 
 /// `bhkRigidBody`: size 0x40 (exact, high); primary base `bhkEntity`.
@@ -4485,8 +4485,8 @@ pub struct bhkRigidBody {
     /// +0x0 `vtbl:bhkRigidBody:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRigidBody_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4500,7 +4500,7 @@ pub struct bhkRigidBody {
 }
 const _: () = assert!(size_of::<bhkRigidBody>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBody, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRigidBody, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRigidBody, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBody, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBody, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBody, field_20) == 0x20);
@@ -4513,8 +4513,8 @@ pub struct bhkRigidBodyT {
     /// +0x0 `vtbl:bhkRigidBodyT:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkRigidBodyT_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4528,7 +4528,7 @@ pub struct bhkRigidBodyT {
 }
 const _: () = assert!(size_of::<bhkRigidBodyT>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkRigidBodyT, field_20) == 0x20);
@@ -4541,8 +4541,8 @@ pub struct bhkSPCollisionObject {
     /// +0x0 `vtbl:bhkSPCollisionObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSPCollisionObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
@@ -4556,7 +4556,7 @@ pub struct bhkSPCollisionObject {
 }
 const _: () = assert!(size_of::<bhkSPCollisionObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkSPCollisionObject, field_20) == 0x20);
@@ -4569,8 +4569,8 @@ pub struct bhkSerializable {
     /// +0x0 `vtbl:bhkSerializable:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSerializable_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4579,7 +4579,7 @@ pub struct bhkSerializable {
 }
 const _: () = assert!(size_of::<bhkSerializable>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkSerializable, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSerializable, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSerializable, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSerializable, field_10) == 0x10);
 
 /// `bhkShapePhantom`: size 0x30 (exact, medium); primary base `bhkPhantom`.
@@ -4590,8 +4590,8 @@ pub struct bhkShapePhantom {
     /// +0x0 `vtbl:bhkShapePhantom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkShapePhantom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4605,7 +4605,7 @@ pub struct bhkShapePhantom {
 }
 const _: () = assert!(size_of::<bhkShapePhantom>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkShapePhantom, field_20) == 0x20);
@@ -4618,8 +4618,8 @@ pub struct bhkSimpleShapePhantom {
     /// +0x0 `vtbl:bhkSimpleShapePhantom:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSimpleShapePhantom_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4633,7 +4633,7 @@ pub struct bhkSimpleShapePhantom {
 }
 const _: () = assert!(size_of::<bhkSimpleShapePhantom>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkSimpleShapePhantom, field_20) == 0x20);
@@ -4646,8 +4646,8 @@ pub struct bhkSphereShape {
     /// +0x0 `vtbl:bhkSphereShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSphereShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4661,7 +4661,7 @@ pub struct bhkSphereShape {
 }
 const _: () = assert!(size_of::<bhkSphereShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkSphereShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSphereShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSphereShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSphereShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkSphereShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkSphereShape, field_20) == 0x20);
@@ -4674,8 +4674,8 @@ pub struct bhkSpringAction {
     /// +0x0 `vtbl:bhkSpringAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkSpringAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4683,7 +4683,7 @@ pub struct bhkSpringAction {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkSpringAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkSpringAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkSpringAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkSpringAction, field_10) == 0x10);
 
 /// `bhkSpringDamperConstraintMotor`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpSpringDamperConstraintMotor`.
@@ -4721,8 +4721,8 @@ pub struct bhkStiffSpringConstraint {
     /// +0x0 `vtbl:bhkStiffSpringConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkStiffSpringConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4732,7 +4732,7 @@ pub struct bhkStiffSpringConstraint {
 }
 const _: () = assert!(size_of::<bhkStiffSpringConstraint>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(bhkStiffSpringConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkStiffSpringConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkStiffSpringConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkStiffSpringConstraint, field_10) == 0x10);
 
 /// `bhkTTNode<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>`: size 0x8 (exact, low).
@@ -4865,8 +4865,8 @@ pub struct bhkTransformShape {
     /// +0x0 `vtbl:bhkTransformShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkTransformShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4876,7 +4876,7 @@ pub struct bhkTransformShape {
 }
 const _: () = assert!(size_of::<bhkTransformShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkTransformShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkTransformShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkTransformShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkTransformShape, field_10) == 0x10);
 
 /// `bhkTrapListener`: size 0x20 (exact, low); primary base `bhkEntityListener`.
@@ -4909,8 +4909,8 @@ pub struct bhkTriSampledHeightFieldBvTreeShape {
     /// +0x0 `vtbl:bhkTriSampledHeightFieldBvTreeShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkTriSampledHeightFieldBvTreeShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4920,7 +4920,7 @@ pub struct bhkTriSampledHeightFieldBvTreeShape {
 }
 const _: () = assert!(size_of::<bhkTriSampledHeightFieldBvTreeShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkTriSampledHeightFieldBvTreeShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkTriSampledHeightFieldBvTreeShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkTriSampledHeightFieldBvTreeShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkTriSampledHeightFieldBvTreeShape, field_10) == 0x10);
 
 /// `bhkTriangleShape`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `bhkConvexShape`.
@@ -4931,8 +4931,8 @@ pub struct bhkTriangleShape {
     /// +0x0 `vtbl:bhkTriangleShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkTriangleShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4945,7 +4945,7 @@ pub struct bhkTriangleShape {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkTriangleShape, field_20) == 0x20);
@@ -4958,8 +4958,8 @@ pub struct bhkUnaryAction {
     /// +0x0 `vtbl:bhkUnaryAction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkUnaryAction_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -4968,7 +4968,7 @@ pub struct bhkUnaryAction {
 }
 const _: () = assert!(size_of::<bhkUnaryAction>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkUnaryAction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkUnaryAction, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkUnaryAction, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkUnaryAction, field_10) == 0x10);
 
 /// `bhkVelocityConstraintMotor`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpVelocityConstraintMotor`.
@@ -5006,8 +5006,8 @@ pub struct bhkWheelConstraint {
     /// +0x0 `vtbl:bhkWheelConstraint:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkWheelConstraint_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -5015,7 +5015,7 @@ pub struct bhkWheelConstraint {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(bhkWheelConstraint, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkWheelConstraint, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkWheelConstraint, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkWheelConstraint, field_10) == 0x10);
 
 /// `bhkWindListener`: size 0x18 (exact, medium); primary base `bhkEntityListener`.
@@ -5260,8 +5260,8 @@ pub struct bhkWorldM {
     /// +0x0 `vtbl:bhkWorldM:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkWorldM_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `ptr:hkpWorld`, base bhkWorld, semantic; the Havok world; slots 39 and 40 return it (high)
     pub world: *mut crate::hkpWorld,
@@ -5344,7 +5344,7 @@ pub struct bhkWorldM {
 }
 const _: () = assert!(size_of::<bhkWorldM>() == 0xC740);
 const _: () = assert!(core::mem::offset_of!(bhkWorldM, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkWorldM, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkWorldM, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkWorldM, world) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkWorldM, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkWorldM, field_C558) == 0xC558);
@@ -5382,8 +5382,8 @@ pub struct bhkWorldObject {
     /// +0x0 `vtbl:bhkWorldObject:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::bhkWorldObject_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -5396,7 +5396,7 @@ pub struct bhkWorldObject {
 }
 const _: () = assert!(size_of::<bhkWorldObject>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkWorldObject, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(bhkWorldObject, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(bhkWorldObject, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkWorldObject, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bhkWorldObject, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bhkWorldObject, field_20) == 0x20);
@@ -14223,14 +14223,14 @@ pub struct hkPackedNiTriStripsData {
     /// +0x0 `vtbl:hkPackedNiTriStripsData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkPackedNiTriStripsData_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(hkPackedNiTriStripsData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkPackedNiTriStripsData, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkPackedNiTriStripsData, refCount) == 0x8);
 
 /// `hkPackedNiTriStripsShape`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpShapeCollection`.
 /// Evidence: field field_114.
@@ -19697,34 +19697,4 @@ const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpCollidableCollid
 const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpShapeCollectionFilter_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpRayShapeCollectionFilter_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(hkTraceStream, m_hkpRayCollidableFilter_28) == 0x28);
-
-/// `hkTrackerArrayLayoutHandler`: size 0x10 (exact, medium); primary base `hkTrackerLayoutHandler`.
-/// Evidence: conflict, allocation size kept: allocation size 0x10 below lower bound 0x118 (base hkTrackerLayoutHandler at 0x0).
-/// Bases: `hkTrackerLayoutHandler`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTrackerArrayLayoutHandler {
-    /// +0x0 `vtbl:hkTrackerArrayLayoutHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTrackerArrayLayoutHandler_vtable,
-    pub unknown_8: [u8; 8],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<hkTrackerArrayLayoutHandler>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTrackerArrayLayoutHandler, __vftable) == 0x0);
-
-/// `hkTrackerCachedHashMapLayoutHandler`: size 0x10 (exact, medium); primary base `hkTrackerLayoutHandler`.
-/// Evidence: conflict, allocation size kept: allocation size 0x10 below lower bound 0x118 (base hkTrackerLayoutHandler at 0x0).
-/// Bases: `hkTrackerLayoutHandler`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
-pub struct hkTrackerCachedHashMapLayoutHandler {
-    /// +0x0 `vtbl:hkTrackerCachedHashMapLayoutHandler:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::hkTrackerCachedHashMapLayoutHandler_vtable,
-    pub unknown_8: [u8; 8],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<hkTrackerCachedHashMapLayoutHandler>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkTrackerCachedHashMapLayoutHandler, __vftable) == 0x0);
 

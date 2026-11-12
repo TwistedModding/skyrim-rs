@@ -4664,6 +4664,15 @@ pub unsafe fn apply_magic_explosion_push_to_actor(caster: *mut crate::MagicCaste
 /// `process` must point to what the engine expects.
 #[inline]
 pub unsafe fn apply_paralysis_state_to_actor(process: *mut crate::AIProcess, actor: *mut crate::Actor) { unsafe { function!(39894, (*mut crate::AIProcess, *mut crate::Actor))(process, actor) } }
+/// `BindSkinBonesToSkeleton`: skin bone binding: real node -> bones[i] = node, worlds[i] = node+0x7c; flattened entry -> bones[i] = null, worlds[i] = entry node ? node+0x7c : entry+0x34
+///
+/// Semantic, ik pass, high; ledger semantic evidence, name high; id 15712, rva 0x21d170.
+/// `NiAVObject* (BipedAnim* biped, NiNode* model, NiNode* attachNode, i32 slot, bool firstPerson, u8 unused, NiRefObject* slotObject)`
+///
+/// # Safety
+/// `biped` must point to what the engine expects.
+#[inline]
+pub unsafe fn bind_skin_bones_to_skeleton(biped: *mut crate::BipedAnim, model: *mut crate::NiNode, attachNode: *mut crate::NiNode, slot: i32, firstPerson: bool, unused: u8, slotObject: *mut crate::NiRefObject) -> *mut crate::NiAVObject { unsafe { function!(15712, (*mut crate::BipedAnim, *mut crate::NiNode, *mut crate::NiNode, i32, bool, u8, *mut crate::NiRefObject) -> *mut crate::NiAVObject)(biped, model, attachNode, slot, firstPerson, unused, slotObject) } }
 /// `BuildAndMergeSymbolIdMaps`: links every referenced behaviour graph's variables, events, attributes and character properties to the root graph by name
 ///
 /// Semantic, ik pass, medium; ledger semantic evidence, name medium; id 60090, rva 0xb2ace0.

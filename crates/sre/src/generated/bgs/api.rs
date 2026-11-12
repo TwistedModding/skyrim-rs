@@ -1561,12 +1561,6 @@ impl core::ops::Deref for crate::BGSShaderParticleGeometryData {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BGSSkinForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSSkinForm {
-    type Target = crate::BaseFormComponent;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BGSStaticCollection` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSStaticCollection {
     type Target = crate::TESBoundObject;

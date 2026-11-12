@@ -2110,16 +2110,6 @@ impl crate::BSTreadTransfInterpolator {
     pub unsafe fn vfunc_23_sub0(param_1: i64, param_2: i64, param_3: i64, param_4: *mut u8) -> u64 { unsafe { function!(74098, (i64, i64, i64, *mut u8) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::BSTriShape {
-    /// `BSTriShape::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 76342, rva 0xfe4230).
-    /// `undefined dtor(BSTriShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor_3(&self) -> u64 { unsafe { function!(76342, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BSTweenerModifier {
     /// `BSTweenerModifier::vfunc_23_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 63326, rva 0xbbc2e0).
     /// `undefined vfunc_23_sub0(undefined8 param_1, float * param_2, float * param_3, undefined8 param_4, float * param_5)`

@@ -169,6 +169,16 @@ impl crate::NiIntegerExtraData {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(75985, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::NiObject {
+    /// `NiObject::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70199, rva 0xedcbc0).
+    /// `NiObject * ctor(NiObject * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70199, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+}
+
 impl crate::NiObjectNET {
     /// `NiObjectNET::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70524, rva 0xeeb940).
     /// `NiObjectNET * ctor(NiObjectNET * this)`

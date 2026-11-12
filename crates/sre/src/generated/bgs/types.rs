@@ -319,8 +319,8 @@ pub struct BGSAddonNodeSoundHandleExtra {
     /// +0x0 `vtbl:BGSAddonNodeSoundHandleExtra:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAddonNodeSoundHandleExtra_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -336,7 +336,7 @@ pub struct BGSAddonNodeSoundHandleExtra {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNodeSoundHandleExtra, field_1C) == 0x1C);
@@ -946,8 +946,8 @@ pub struct BGSDecalNode {
     /// +0x0 `vtbl:BGSDecalNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSDecalNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -1003,7 +1003,7 @@ pub struct BGSDecalNode {
 }
 const _: () = assert!(size_of::<BGSDecalNode>() == 0x148);
 const _: () = assert!(core::mem::offset_of!(BGSDecalNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSDecalNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSDecalNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSDecalNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSDecalNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSDecalNode, extraData) == 0x20);
@@ -8150,23 +8150,6 @@ const _: () = assert!(core::mem::offset_of!(BGSSkillPerkTreeNode, field_50) == 0
 const _: () = assert!(core::mem::offset_of!(BGSSkillPerkTreeNode, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSSkillPerkTreeNode, field_60) == 0x60);
 
-/// `BGSSkinForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
-/// Evidence: lower bound field field_8 meets upper bound next base of TESActorBase at 0x110.
-/// Bases: `BaseFormComponent`@0x0.
-#[repr(C)]
-pub struct BGSSkinForm {
-    /// +0x0 `vtbl:BGSSkinForm:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSSkinForm_vtable,
-    /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BGSSkinForm>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSkinForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSSkinForm, field_8) == 0x8);
-
 /// `BGSStaticCollection`: size >= 0x68 (lower bound); partial, the struct stops at the lower bound; primary base `TESBoundObject`.
 /// Evidence: base TESModelTextureSwap at 0x30.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.
@@ -9707,8 +9690,8 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkAutoWater:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkAutoWater_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
@@ -9725,7 +9708,7 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__bhkAutoWater>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_20) == 0x20);

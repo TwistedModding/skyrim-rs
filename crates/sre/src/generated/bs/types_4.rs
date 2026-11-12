@@ -16,8 +16,8 @@ pub struct BSTreeNode {
     /// +0x0 `vtbl:BSTreeNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSTreeNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -91,7 +91,7 @@ pub struct BSTreeNode {
 }
 const _: () = assert!(size_of::<BSTreeNode>() == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTreeNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTreeNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, extraData) == 0x20);
@@ -119,126 +119,6 @@ const _: () = assert!(core::mem::offset_of!(BSTreeNode, field_174) == 0x174);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, field_180) == 0x180);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, field_198) == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSTreeNode, field_1B0) == 0x1B0);
-
-/// `BSTriShape`: size 0x160 (exact, low); primary base `BSGeometry`.
-/// Evidence: runtime: 0x160 at 5 allocation sites; agrees with the static allocation sites.
-/// Bases: `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
-pub struct BSTriShape {
-    /// +0x0 `vtbl:BSTriShape:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTriShape_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
-    pub controllers: *mut crate::NiTimeController,
-    /// +0x20 `ptr:NiExtraData`, base NiObjectNET, semantic; heap array of NiExtraData*, sorted ascending by name pointer (high)
-    pub extraData: *mut crate::NiExtraData,
-    /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
-    pub extraDataCount: u16,
-    /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    #[doc(hidden)]
-    pub __extraDataCapacity: [u8; 2],
-    unknown_2C: [u8; 4],
-    /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
-    pub parent: *mut crate::NiNode,
-    /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
-    pub parentIndex: u32,
-    unknown_3C: [u8; 4],
-    /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
-    pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    #[doc(hidden)]
-    pub __local: [u8; 52],
-    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
-    pub world: crate::NiTransform,
-    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
-    pub previousWorld: crate::NiTransform,
-    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
-    pub worldBound: crate::NiBound,
-    /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
-    pub flags: u32,
-    /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
-    pub unknownF8: u64,
-    /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
-    pub fadeAmount: f32,
-    /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    #[doc(hidden)]
-    pub __previousWorldFrame: [u8; 4],
-    /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
-    pub unknown108: u8,
-    /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    #[doc(hidden)]
-    pub __flags2: [u8; 1],
-    unknown_10A: [u8; 6],
-    /// +0x110 `float`, base BSGeometry
-    pub field_110: f32,
-    /// +0x114 `float`, base BSGeometry
-    pub field_114: f32,
-    /// +0x118 `float`, base BSGeometry
-    pub field_118: f32,
-    /// +0x11C `undefined4`, base BSGeometry
-    pub field_11C: u32,
-    /// +0x120 `ptr:NiAlphaProperty`, base BSGeometry, semantic; alpha property; bit 0 of its +0x30 flags (blending) keeps a geometry out of the shadow passes (medium)
-    pub alphaProperty: *mut crate::NiAlphaProperty,
-    /// +0x128 `ptr:BSShaderProperty`, base BSGeometry, semantic; shader property that produces the geometry's render passes (medium)
-    pub shaderProperty: *mut crate::BSShaderProperty,
-    /// +0x130 `ptr:NiSkinInstance`, base BSGeometry, semantic; skin instance of a skinned geometry, null otherwise (high)
-    pub skinInstance: *mut crate::NiSkinInstance,
-    /// +0x138 `undefined8`, base BSGeometry
-    pub field_138: u64,
-    /// +0x140 `undefined8`, base BSGeometry
-    pub field_140: u64,
-    /// +0x148 `undefined8`, base BSGeometry
-    pub field_148: u64,
-    /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
-    pub type_: u8,
-    unknown_151: [u8; 7],
-    /// +0x158 `undefined2`, ctor store (widths [2, 4])
-    pub field_158: u16,
-    /// +0x15A `undefined2`, ctor store
-    pub field_15A: u16,
-    unknown_15C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTriShape>() == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, controllers) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, extraData) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, __extraDataCapacity) == 0x2A);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, parent) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, parentIndex) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, __local) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, world) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, previousWorld) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, worldBound) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, flags) == 0xF4);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, unknownF8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, __previousWorldFrame) == 0x104);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, __flags2) == 0x109);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_11C) == 0x11C);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, alphaProperty) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, shaderProperty) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, skinInstance) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, type_) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSTriShape, field_15A) == 0x15A);
 
 /// `BSTweenerModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbModifier`.
 /// Evidence: field field_114.
@@ -480,8 +360,8 @@ pub struct BSValueNode {
     /// +0x0 `vtbl:BSValueNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSValueNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -540,7 +420,7 @@ pub struct BSValueNode {
 }
 const _: () = assert!(size_of::<BSValueNode>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSValueNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSValueNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSValueNode, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSValueNode, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSValueNode, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSValueNode, extraData) == 0x20);
@@ -618,8 +498,8 @@ pub struct BSWArray {
     /// +0x0 `vtbl:BSWArray:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSWArray_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
@@ -632,7 +512,7 @@ pub struct BSWArray {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSWArray, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSWArray, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSWArray, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSWArray, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSWArray, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSWArray, field_20) == 0x20);
@@ -869,8 +749,8 @@ pub struct BSWaterShaderProperty {
     /// +0x0 `vtbl:BSWaterShaderProperty:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSWaterShaderProperty_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
@@ -940,7 +820,7 @@ pub struct BSWaterShaderProperty {
 }
 const _: () = assert!(size_of::<BSWaterShaderProperty>() == 0x100);
 const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, controllers) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSWaterShaderProperty, extraData) == 0x20);
@@ -1808,8 +1688,8 @@ pub struct BSWindModifier {
     /// +0x0 `vtbl:BSWindModifier:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSWindModifier_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
+    /// +0x8 `u32`, base NiObject, semantic; reference count (the object deletes itself through slot 1 when it drops to 0) (high)
+    pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
@@ -1828,7 +1708,7 @@ pub struct BSWindModifier {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSWindModifier, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSWindModifier, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSWindModifier, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSWindModifier, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSWindModifier, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSWindModifier, field_20) == 0x20);

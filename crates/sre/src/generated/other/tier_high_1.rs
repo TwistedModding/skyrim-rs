@@ -5552,13 +5552,6 @@ pub unsafe fn allocate_from_global_heap(param_1: u64, param_2: u64, param_3: u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn allocate_heap_memory(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(10959, (u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `AllocateMemory` (decompiler signature, tier high; ledger decompiler evidence, name high; id 68115, rva 0xcde250).
-/// `void * AllocateMemory(longlong param_1, ulonglong param_2, uint param_3, char param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn allocate_memory(param_1: i64, param_2: u64, param_3: u32, param_4: c_char) -> *mut c_void { unsafe { function!(68115, (i64, u64, u32, c_char) -> *mut c_void)(param_1, param_2, param_3, param_4) } }
 /// `AllocateZeroedBlockByKindDefault` (decompiler signature, tier high; ledger decompiler evidence, name high; id 90106, rva 0x11a6db0).
 /// `undefined AllocateZeroedBlockByKindDefault(int param_1)`
 ///
@@ -15296,3 +15289,10 @@ pub unsafe fn get_check_for_missing_content_on_startup() -> u8 { unsafe { functi
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_client_or_server_string(param_1: i64) -> *mut c_char { unsafe { function!(449894, (i64) -> *mut c_char)(param_1) } }
+/// `GetColorField20AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18288, rva 0x295610).
+/// `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_color_field20_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18288, (i64, *mut f32) -> u64)(param_1, param_2) } }
