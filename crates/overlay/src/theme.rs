@@ -10,7 +10,7 @@
 //! pointer is over its widget, at rest or not. A window may change any of it through
 //! `egui`'s own style API (`ui.style_mut()`, `egui::Window::frame`).
 
-use egui::{Color32, Context, CornerRadius, FontFamily, FontId, Margin, Shadow, Stroke, TextStyle, Theme, vec2};
+use egui::{Color32, Context, CornerRadius, FontFamily, FontId, Margin, Response, RichText, Shadow, Stroke, TextStyle, Theme, Ui, WidgetText, vec2};
 
 /// The menus' text colour.
 pub const TEXT: Color32 = Color32::WHITE;
@@ -26,6 +26,11 @@ pub const RULE: Color32 = Color32::from_rgba_premultiplied(147, 148, 150, 200);
 pub const HIGHLIGHT: Color32 = Color32::from_rgba_premultiplied(51, 51, 51, 51);
 /// The family window titles and headings use.
 pub const HEADING: &str = "heading";
+
+/// A dim `(?)` that shows `text` while the pointer is over it: the help of the control beside it.
+pub fn help(ui: &mut Ui, text: impl Into<WidgetText>) -> Response {
+    ui.label(RichText::new("(?)").color(DIM)).on_hover_text(text)
+}
 
 /// Applies the theme to every style of `ctx`.
 pub fn apply(ctx: &Context) {

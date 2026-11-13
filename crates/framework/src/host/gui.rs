@@ -757,7 +757,7 @@ mod tests {
         let marker = Arc::new(Mutex::new(egui::Rect::NOTHING));
         let drawn_at = marker.clone();
         assert!(ui::add_section(Api(super::super::api::build("gui-test-hover", core::ptr::null())), "Main", move |ui| {
-            *drawn_at.lock().unwrap() = ui.label("(?)").on_hover_text("What this setting does").rect;
+            *drawn_at.lock().unwrap() = crate::theme::help(ui, "What this setting does").rect;
         }));
         // The section holds the marker alone, so whatever is drawn under it is its hover text.
         let hover_text = |events: &[egui::Event], time: f64| {
