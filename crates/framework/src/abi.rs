@@ -18,11 +18,11 @@ use sre::{BSEventNotifyControl, TESForm, VMTypeID};
 
 use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, RawValidation, ReplaceCallback};
 use crate::settings::Setting;
-use crate::ui::{RawFamily, RawFont, UiCallback};
+use crate::ui::{RawFamily, RawFont, RawTheme, UiCallback};
 use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The host API revision, including its table and record semantics; entries are only ever appended.
-pub const API: u32 = 7;
+pub const API: u32 = 8;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -823,6 +823,8 @@ pub struct HostApi {
     pub verbose_log: Option<unsafe extern "C" fn(*const Self) -> *const AtomicBool>,
     /// The plugin's debug section, drawn on the Debug tab; false when the plugin has one.
     pub add_debug: Option<unsafe extern "C" fn(*const Self, UiCallback) -> bool>,
+    /// Puts the theme the overlay draws with.
+    pub theme: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawTheme>)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.

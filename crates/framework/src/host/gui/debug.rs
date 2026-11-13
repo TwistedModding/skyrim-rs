@@ -479,7 +479,7 @@ mod tests {
         }
 
         // A frame of the host's window with the Debug tab in it, then the overlay's guest.
-        let host = overlay::themed_context(overlay::font_definitions().expect("the overlay's fonts").clone());
+        let host = overlay::themed_context(overlay::font_definitions().expect("the overlay's fonts").clone(), &theme::Values::default());
         let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1920.0, 1080.0));
         let mut time = 0.0;
         let mut frame = |events: Vec<egui::Event>| {

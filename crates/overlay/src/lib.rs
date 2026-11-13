@@ -139,7 +139,7 @@ static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 /// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
 pub fn install() -> Result<Placement, Error> {
-    let ctx = themed_context(font_definitions().ok_or(Error::NoFont)?.clone());
+    let ctx = themed_context(font_definitions().ok_or(Error::NoFont)?.clone(), &theme::Values::default());
     let reloc = skyrim::reloc();
     let render_frame = reloc.address(sre::id!(fns::RenderFrame))?;
     let present = reloc.address(sre::id!(fns::PresentFrame))?;
@@ -402,13 +402,13 @@ fn draw(rtv: *mut core::ffi::c_void) {
     frame::after_draw(rtv);
 }
 
-/// A context with `fonts` and the framework [`theme`]: the overlay's own, and a framework plugin's
-/// with the fonts its loader handed over.
+/// A context with `fonts` and the [`theme`] `values`: the overlay's own, and a framework plugin's
+/// with the fonts and the values its loader handed over.
 #[must_use]
-pub fn themed_context(fonts: egui::FontDefinitions) -> Context {
+pub fn themed_context(fonts: egui::FontDefinitions, values: &theme::Values) -> Context {
     let ctx = Context::default();
     ctx.set_fonts(fonts);
-    theme::apply(&ctx);
+    theme::apply(&ctx, values);
     ctx
 }
 

@@ -3,7 +3,7 @@
 // distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 //! Tab sections, debug sections and HUD painters by data (`docs/subsystems/abi.md`, "UI"): a
-//! plugin draws with `egui` contexts of its own, in the loader's fonts and the framework theme, and
+//! plugin draws with `egui` contexts of its own, in the loader's fonts and theme, and
 //! hands the host meshes, texture changes and what it wants of the input. The host never runs
 //! plugin code on its own context, so nothing of a plugin's `egui` outlives its DLL.
 
@@ -11,7 +11,7 @@ use core::ffi::c_void;
 use core::mem::offset_of;
 use std::sync::{Arc, Mutex, PoisonError, Weak};
 
-use overlay::View;
+use overlay::{View, theme};
 use overlay::egui::epaint::{ImageDelta, Primitive, Vertex};
 use overlay::egui::{
     self, AreaState, ClippedPrimitive, Context, CursorIcon, Event, FontData, FontDefinitions, FontFamily, ImageData, Key, LayerId, Modifiers, MouseWheelSource, MouseWheelUnit, Order, OutputCommand, PointerButton, Pos2, RawInput, Rect,
@@ -332,6 +332,20 @@ impl RawFamily {
     }
 }
 
+/// The theme the loader draws with.
+#[repr(C)]
+pub struct RawTheme {
+    pub size: u32,
+    pub values: theme::Values,
+}
+
+impl Record for RawTheme {
+    /// This build's own theme, which a value the writer lacks keeps.
+    fn base() -> Self {
+        Self { size: size::<Self>(), values: theme::Values::default() }
+    }
+}
+
 pub(crate) fn corners(r: Rect) -> [f32; 4] {
     [r.min.x, r.min.y, r.max.x, r.max.y]
 }
@@ -363,6 +377,18 @@ fn fonts(api: Api) -> Option<FontDefinitions> {
     fonts.families.contains_key(&FontFamily::Proportional).then_some(fonts)
 }
 
+/// The loader's theme; this build's own on a loader that hands none over.
+pub(crate) fn theme(api: Api) -> theme::Values {
+    let mut record = RawTheme::base();
+    let mut keep = |t: *const RawTheme| {
+        if let Some(theme) = unsafe { read_sized(t) } {
+            record = theme;
+        }
+    };
+    call!(api, theme(Sink::new(&mut keep)));
+    record.values
+}
+
 /// One of a plugin's two contexts, alive while a callback holds it: the sections' (one runs a
 /// frame, of its tab or its debug section) and the HUD painters' (each runs a pass a frame). `layer` keeps their texture ids apart.
 struct Surface {
@@ -374,13 +400,13 @@ static SECTIONS: Surface = Surface { context: Mutex::new(Weak::new()), layer: 0 
 static HUDS: Surface = Surface { context: Mutex::new(Weak::new()), layer: 1 };
 
 impl Surface {
-    /// The context in the loader's fonts and the framework theme; `None` when the loader hands over no fonts.
+    /// The context in the loader's fonts and theme; `None` when the loader hands over no fonts.
     fn context(&self, api: Api) -> Option<Arc<Context>> {
         let mut slot = self.context.lock().unwrap_or_else(PoisonError::into_inner);
         if let Some(ctx) = slot.upgrade() {
             return Some(ctx);
         }
-        let ctx = Arc::new(overlay::themed_context(fonts(api)?));
+        let ctx = Arc::new(overlay::themed_context(fonts(api)?, &theme(api)));
         *slot = Arc::downgrade(&ctx);
         Some(ctx)
     }

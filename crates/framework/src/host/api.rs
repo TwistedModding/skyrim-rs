@@ -19,7 +19,7 @@ use super::{FRAMES, alias, filters, gui, interface, keys};
 use crate::abi::{self, API, Alloc, CommandCallback, Crossing, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Record, Sink, SinkCallback, Status, Str, c_str, read_sized, slice};
 use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, ReplaceCallback, put_site};
 use crate::hooks::{self, PatchId, Subscriber, SubscriptionId, registry};
-use crate::ui::{RawFamily, RawFont, UiCallback};
+use crate::ui::{RawFamily, RawFont, RawTheme, UiCallback};
 use crate::{Error, Method, settings};
 
 /// The table for the plugin `name`, made once and kept for every generation of it.
@@ -86,6 +86,7 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         key_message: Some(key_message),
         verbose_log: Some(verbose_log),
         add_debug: Some(add_debug),
+        theme: Some(theme),
     }))
 }
 
@@ -416,6 +417,10 @@ unsafe extern "C" fn add_debug(api: *const HostApi, f: UiCallback) -> bool {
     gui::add_debug(owner(api), f)
 }
 
+unsafe extern "C" fn theme(_: *const HostApi, out: Sink<'_, *const RawTheme>) {
+    out.put(&RawTheme::base());
+}
+
 unsafe extern "C" fn fonts(_: *const HostApi, files: Sink<'_, *const RawFont>, families: Sink<'_, *const RawFamily>) {
     let Some(fonts) = overlay::font_definitions() else { return };
     for (name, data) in &fonts.font_data {
@@ -528,13 +533,32 @@ mod tests {
         assert_eq!(*RESTORED.lock().unwrap(), [1, 2, 3]);
     }
 
-    /// The first entry and the last of api 1 to 4, 6 and 7: a plugin built against any of them finds
+    /// The first entry and the last of api 1 to 4 and 6 to 8: a plugin built against any of them finds
     /// its entries at the offsets it was built with on every later loader.
     #[test]
     fn the_table_keeps_every_versions_offsets() {
         use core::mem::offset_of;
-        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), size_of::<HostApi>()];
-        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488]);
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), offset_of!(HostApi, theme), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488, 496]);
+    }
+
+    #[test]
+    fn a_plugin_draws_in_the_loaders_theme_and_in_its_own_where_the_loader_has_none() {
+        use core::mem::offset_of;
+        unsafe extern "C" fn larger_text(_: *const HostApi, out: Sink<'_, *const RawTheme>) {
+            let mut theme = RawTheme::base();
+            (theme.values.body, theme.values.indent_line) = (30.0, false);
+            theme.size = u32::try_from(offset_of!(RawTheme, values) + offset_of!(overlay::theme::Values, button)).unwrap();
+            out.put(&raw const theme);
+        }
+        let own = overlay::theme::Values::default();
+        let full = build("abi-test-theme", &raw const SKSE);
+        assert_eq!(crate::ui::theme(abi::Api(full)), own);
+        let api_7 = HostApi { version: 7, size: u32::try_from(offset_of!(HostApi, theme)).unwrap(), ..*full };
+        assert_eq!(crate::ui::theme(abi::Api(&raw const api_7)), own);
+        let other = HostApi { theme: Some(larger_text), ..*full };
+        let theme = crate::ui::theme(abi::Api(&raw const other));
+        assert_eq!(theme, overlay::theme::Values { body: 30.0, ..own }, "the values the loader wrote, its own for the rest");
     }
 
     #[test]

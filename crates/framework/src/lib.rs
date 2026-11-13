@@ -372,7 +372,7 @@ impl Host {
     /// in the sidebar of the window's Mods page, in load order, shown once it has a section; with
     /// two or more, the sections are listed under it while it is selected. While the overlay is
     /// open, the selected section's `draw` runs every frame on the main thread, in a scroll area
-    /// beside the sidebar, in the framework theme, with an `egui` context of the plugin's own that
+    /// beside the sidebar, in the loader's theme, with an `egui` context of the plugin's own that
     /// receives the input over the section, its popups and drags, and over no window of the host:
     ///
     /// ```ignore
