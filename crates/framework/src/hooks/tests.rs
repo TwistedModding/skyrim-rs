@@ -159,6 +159,20 @@ fn raw_shape_is_fixed_per_address() {
     assert!(matches!(hooks.before(other, Options::new("s"), |_| {}), Err(Error::Raw { .. })));
 }
 
+struct Present;
+
+impl ops::OpVisitor<()> for Present {
+    fn visit<O: Op>(self) {}
+}
+
+#[test]
+fn every_raw_slot_has_a_dispatcher() {
+    for shape in 0..ops::SHAPES.len() {
+        assert!((0..ops::RAW_SLOTS).all(|slot| ops::with_raw(shape, slot, Present).is_some()));
+        assert!(ops::with_raw(shape, ops::RAW_SLOTS, Present).is_none());
+    }
+}
+
 fn exe_name() -> String {
     std::env::current_exe().unwrap().file_name().unwrap().to_string_lossy().into_owned()
 }
