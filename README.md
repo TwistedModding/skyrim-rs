@@ -11,7 +11,7 @@ powershell -File scripts\package.ps1
 
 The package script writes the loader to `dist\skyrim-runtime-extender-<version>.zip`. The example mod is not packaged. The version is `<major.minor>.<commits since major.minor was set>`, with `-dirty` when the tree has uncommitted changes; the loader reports it in its log and on its Plugins tab. Major.minor is set at the top of the script.
 
-Cross-compiling on macOS (Apple Silicon): install `rustup` and LLVM (Homebrew), point `WINSYSROOT` at an xwin-style Windows SDK/CRT sysroot (`crt/`, `sdk/`), then run `scripts/build-macos.sh` or `scripts/package-macos.sh`. The notices check (`notices.ps1 -Check`) is not run there.
+Cross-compiling on macOS (Apple Silicon): install `rustup` and LLVM (Homebrew), set `WINSYSROOT` to an xwin-style Windows SDK/CRT sysroot (`crt/`, `sdk/`), then run `scripts/build-macos.sh` or `scripts/package-macos.sh`. The notices check (`notices.ps1 -Check`) is not run there.
 
 To package every commit and merge on `master` in the background, with the output in `dist\package.log`, enable the hooks once per clone:
 

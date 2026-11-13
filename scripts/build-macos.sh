@@ -4,9 +4,10 @@
 #   scripts/build-macos.sh [cargo build args...]     default: --release (whole workspace)
 set -euo pipefail
 
-WINSYSROOT="${WINSYSROOT:-/Volumes/S512/Windows/Build-Tools/winsdk}"
-LLVM="${LLVM:-/opt/homebrew/opt/llvm/bin}"
-RUSTUP_BIN="${RUSTUP_BIN:-/opt/homebrew/opt/rustup/bin}"
+BREW="$(command -v brew >/dev/null && brew --prefix || echo /opt/homebrew)"
+WINSYSROOT="${WINSYSROOT:?set WINSYSROOT to an xwin-style splat (cargo install xwin; xwin --accept-license splat --output <dir>)}"
+LLVM="${LLVM:-$BREW/opt/llvm/bin}"
+RUSTUP_BIN="${RUSTUP_BIN:-$BREW/opt/rustup/bin}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 die() { echo "build-macos.sh: $*" >&2; exit 1; }
