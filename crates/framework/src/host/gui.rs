@@ -8,7 +8,7 @@
 //! set by capturing the next key pressed or unbound, and the capture rule) and Debug (`debug`: load times, the data files, the logs,
 //! the machine and the plugins' debug items). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), each one's sections under it when
-//! it has two or more, collapsible for the game session, and the selected section beside it. A plugin's sections and HUD
+//! it has two or more once the mod is clicked, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
 //! selected section's rect empty and the overlay draws the plugin's meshes over it as its guest,
 //! with the plugin's textures under overlay ids of their own. A plugin's debug section
@@ -147,16 +147,16 @@ enum Tab {
 const TABS: [(Tab, &str); 5] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings"), (Tab::Debug, "Debug")];
 
 /// The selected tab, the selected mod (the first while `None`), each mod's selected section, by
-/// name, so a reloaded generation finds its own again, the mods collapsed in the sidebar and the window's size.
+/// name, so a reloaded generation finds its own again, the mods expanded in the sidebar and the window's size.
 struct Shown {
     tab: Tab,
     plugin: Option<String>,
     sections: Vec<(String, String)>,
-    collapsed: Vec<String>,
+    expanded: Vec<String>,
     size: egui::Vec2,
 }
 
-static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new(), collapsed: Vec::new(), size: DEFAULT_SIZE });
+static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new(), expanded: Vec::new(), size: DEFAULT_SIZE });
 
 /// A plugin's tab as the sidebar lists it.
 struct Mod {
@@ -352,7 +352,9 @@ fn select(tab: Tab, plugin: Option<String>, section: Option<String>) {
         shown.sections.push((owner.clone(), section));
     }
     if let Some(owner) = plugin {
-        shown.collapsed.retain(|o| *o != owner);
+        if !shown.expanded.contains(&owner) {
+            shown.expanded.push(owner.clone());
+        }
         shown.plugin = Some(owner);
     }
     shown.tab = tab;
@@ -526,23 +528,23 @@ fn sidebar_row(ui: &mut egui::Ui, text: &str, selected: bool, marked: bool, inde
     response.clicked()
 }
 
-/// The Mods page: the sidebar of mods with their sections, and the selected section. A click on
-/// the selected mod collapses or expands it, a click on another selects it.
+/// The Mods page: the sidebar of mods, the sections of each one clicked under it, and the selected
+/// section. A click on the selected mod collapses or expands it, a click on another selects it.
 fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
     let Some((index, section)) = selected else {
         ui.label(dim("No mod has added a tab. A framework plugin adds one with Host::add_tab."));
         return;
     };
-    let collapsed = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).collapsed.clone();
+    let expanded = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).expanded.clone();
     egui::Panel::left("mods").resizable(false).exact_size(260.0).frame(egui::Frame::NONE.inner_margin(egui::Margin { right: 16, ..egui::Margin::ZERO })).show(ui, |ui| {
         egui::ScrollArea::vertical().id_salt("mod list").auto_shrink(false).show(ui, |ui| {
             ui.spacing_mut().item_spacing.y = 2.0;
             for (i, m) in mods.iter().enumerate() {
                 let has_list = m.sections.len() > 1;
-                let open = has_list && !collapsed.contains(&m.owner);
+                let open = has_list && expanded.contains(&m.owner);
                 if sidebar_row(ui, &m.title, i == index, i == index && !open, 16.0, has_list.then_some(open)) {
                     if i == index && open {
-                        SHOWN.lock().unwrap_or_else(PoisonError::into_inner).collapsed.push(m.owner.clone());
+                        SHOWN.lock().unwrap_or_else(PoisonError::into_inner).expanded.retain(|o| *o != m.owner);
                     } else {
                         select(Tab::Mods, Some(m.owner.clone()), None);
                     }
