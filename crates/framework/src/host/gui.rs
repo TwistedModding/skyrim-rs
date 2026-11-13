@@ -740,7 +740,7 @@ fn draw(ctx: &egui::Context) {
     let mods = mods();
     let (tab, selected) = selection(&mods);
     let size = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).size;
-    let frame = egui::Frame::window(&ctx.global_style()).inner_margin(MARGIN);
+    let frame = theme::window(&ctx.global_style()).inner_margin(MARGIN);
     let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).frame(frame).default_pos(ctx.content_rect().center() - DEFAULT_SIZE / 2.0).fixed_size(size);
     let shown = window.show(ctx, |ui| {
         ui.spacing_mut().item_spacing = vec2(12.0, 9.0);

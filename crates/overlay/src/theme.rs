@@ -7,10 +7,11 @@
 //! translucent black panels framed by thin grey-white rules, white text dimmed for what is not
 //! selected, a faint white highlight, square corners, generous spacing, and Futura Condensed when
 //! the game's font file could be read (`crate::font_source`). Hover text shows as soon as the
-//! pointer is over its widget, at rest or not. A window may change any of it through
+//! pointer is over its widget, at rest or not, on an opaque fill like every list and menu that
+//! opens over a window; a window takes the translucent one with [`window`]. A window may change any of it through
 //! `egui`'s own style API (`ui.style_mut()`, `egui::Window::frame`).
 
-use egui::{Color32, Context, CornerRadius, FontFamily, FontId, Margin, Response, RichText, Shadow, Stroke, TextStyle, Theme, Ui, WidgetText, vec2};
+use egui::{Color32, Context, CornerRadius, FontFamily, FontId, Frame, Margin, Response, RichText, Shadow, Stroke, Style, TextStyle, Theme, Ui, WidgetText, vec2};
 
 /// The menus' text colour.
 pub const TEXT: Color32 = Color32::WHITE;
@@ -20,6 +21,8 @@ pub const DIM: Color32 = Color32::from_rgb(0xAA, 0xAA, 0xAA);
 pub const DISABLED: Color32 = Color32::from_rgba_premultiplied(76, 76, 76, 76);
 /// The panels' fill: black at 60 % (`#000000` alpha 153), a little darker to stay readable over the world.
 pub const PANEL: Color32 = Color32::from_rgba_premultiplied(0, 0, 0, 180);
+/// The fill of hover text, drop-down lists and menus: opaque, so what is under them does not show through their text.
+pub const POPUP: Color32 = Color32::from_gray(14);
 /// The rules framing panels and lists (`#bbbdbf`, a little more opaque than the files' 60 % to read as the journal's frame does).
 pub const RULE: Color32 = Color32::from_rgba_premultiplied(147, 148, 150, 200);
 /// The selection and hover highlight: white at 20 % (`#ffffff` alpha 51).
@@ -30,6 +33,11 @@ pub const HEADING: &str = "heading";
 /// A dim `(?)` that shows `text` while the pointer is over it: the help of the control beside it.
 pub fn help(ui: &mut Ui, text: impl Into<WidgetText>) -> Response {
     ui.label(RichText::new("(?)").color(DIM)).on_hover_text(text)
+}
+
+/// A window's frame on the translucent [`PANEL`]; `egui`'s own has the fill of hover text and lists.
+pub fn window(style: &Style) -> Frame {
+    Frame::window(style).fill(PANEL)
 }
 
 /// Applies the theme to every style of `ctx`.
@@ -58,7 +66,7 @@ pub fn apply(ctx: &Context) {
         style.interaction.show_tooltips_only_when_still = false;
         let v = &mut style.visuals;
         v.dark_mode = true;
-        v.window_fill = PANEL;
+        v.window_fill = POPUP;
         v.panel_fill = PANEL;
         v.window_stroke = Stroke::new(1.0, RULE);
         v.window_corner_radius = CornerRadius::ZERO;
@@ -98,4 +106,18 @@ pub fn apply(ctx: &Context) {
             visuals.corner_radius = CornerRadius::ZERO;
         }
     });
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn hover_text_is_opaque_and_a_window_is_not() {
+        let ctx = Context::default();
+        apply(&ctx);
+        let style = ctx.global_style();
+        assert!(Frame::popup(&style).fill.is_opaque());
+        assert_eq!(window(&style).fill, PANEL);
+    }
 }

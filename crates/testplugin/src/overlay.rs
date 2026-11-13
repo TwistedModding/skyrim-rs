@@ -111,7 +111,7 @@ pub fn register() -> Result<String, String> {
 
 fn window(ctx: &egui::Context) {
     DRAW_THREAD.store(unsafe { GetCurrentThreadId() }, Ordering::Relaxed);
-    egui::Window::new("skyrim-rs test").anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0]).collapsible(false).show(ctx, |ui| {
+    egui::Window::new("skyrim-rs test").anchor(egui::Align2::CENTER_CENTER, [0.0, 0.0]).collapsible(false).frame(overlay::theme::window(&ctx.global_style())).show(ctx, |ui| {
         if ui.add_sized([320.0, 160.0], egui::Button::new("Count")).clicked() {
             CLICKS.fetch_add(1, Ordering::Relaxed);
         }
