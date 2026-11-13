@@ -159,17 +159,22 @@ fn raw_shape_is_fixed_per_address() {
     assert!(matches!(hooks.before(other, Options::new("s"), |_| {}), Err(Error::Raw { .. })));
 }
 
-struct Present;
+struct Identity;
 
-impl ops::OpVisitor<()> for Present {
-    fn visit<F: Signature>(self, _: &'static Site, _: F) {}
+impl ops::OpVisitor<(usize, usize)> for Identity {
+    fn visit<F: Signature>(self, site: &'static Site, detour: F) -> (usize, usize) {
+        (core::ptr::from_ref(site).addr(), unsafe { core::mem::transmute_copy(&detour) })
+    }
 }
 
 #[test]
-fn every_raw_slot_has_a_dispatcher() {
+fn every_raw_slot_has_its_own_site_and_detour() {
     for shape in 0..ops::SHAPES.len() {
-        assert!((0..ops::RAW_SLOTS).all(|slot| ops::with_raw(shape, slot, Present).is_some()));
-        assert!(ops::with_raw(shape, ops::RAW_SLOTS, Present).is_none());
+        let slots: Vec<_> = (0..ops::RAW_SLOTS).map(|slot| ops::with_raw(shape, slot, Identity).unwrap()).collect();
+        let sites: std::collections::BTreeSet<_> = slots.iter().map(|s| s.0).collect();
+        let detours: std::collections::BTreeSet<_> = slots.iter().map(|s| s.1).collect();
+        assert_eq!((sites.len(), detours.len()), (ops::RAW_SLOTS, ops::RAW_SLOTS));
+        assert!(ops::with_raw(shape, ops::RAW_SLOTS, Identity).is_none());
     }
 }
 
