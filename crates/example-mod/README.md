@@ -13,6 +13,7 @@ This mod is a template and is not packaged for release. Build it from this repos
 ## What to try
 
 - Open the skyrim-rs menu (F11). Under Mods, the tab "Example mod" has two sections. Damage has the "damage scale" slider (0 to 3): set it, take a hit, and the "Last hit" line shows the damage before and after scaling. About says what the example does.
+- Under Debug, Plugins, "Example mod" has a "Verbose log" checkbox, the number of hits scaled and a "Reset count" button. Tick the checkbox and every scaled hit adds a line `hit scaled: -10 became -5` to `skyrim-rs-example.log`; the checkbox stays as you left it the next time you start the game.
 - In the game (menu closed), Shift+K opens the menu straight on the example's tab (`skyrim-rs-example.log` reads `open-tab fired on Shift+K: tab shown`). The menu's Settings tab lists the key as "Example mod: open-tab", where you can bind another.
 - `SkyrimRs hooks` in the console lists the example's hook on `Actor::ModActorValueImpl` with its call count; `SkyrimRs toggle <n>` on it switches the scaling off and on again.
 - The Papyrus native `SkyrimRsExample.SetDamageScale(float)` sets the factor and returns the value in effect. Any script can call it with `SkyrimRsExample.pex` in `Data\Scripts`, for example `SkyrimRsExample.SetDamageScale(1.5)`.

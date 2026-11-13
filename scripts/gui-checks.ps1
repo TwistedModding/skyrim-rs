@@ -4,8 +4,9 @@
 # This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 # DevBench comparisons for the gui suite (step indices of gui-steps.json, two parts merged: 56 steps, then 70); dot-sourced
 # by verify.ps1. The host runs the example mod (first in load order, so its Before on Actor::ModActorValueImpl is
-# subscription #1; its tab "Example mod" has the sections Damage and About) and the hooks suite's plugins a and b, which
-# add no tab. Part 1: "SkyrimRs gui" opens the overlay on its first page and lists the pages (the example's two sections,
+# subscription #1; its tab "Example mod" has the sections Damage and About, and it has a verbose-log switch and a debug
+# section on the Debug tab) and the hooks suite's plugins a and b, which add no tab. Part 1: "SkyrimRs gui" opens the
+# overlay on its first page and lists the pages (the example's two sections,
 # Plugins, Legacy plugins, Settings, Debug), the framework plugins and the SKSE plugins; "SkyrimRs capture 0" writes that frame,
 # W is held for 2 s with nothing focused (focus capture: the player moves), then pages 1 to 4 are shown and captured in
 # turn, page 1 (About) is selected again and F11 closes the overlay. "SkyrimRs hooks" lists the sites, the example's
@@ -32,7 +33,7 @@ $font = HostLines '^overlay font: Futura CondensedLight from .*fonts_en\.swf$'
 $cursorLine = HostLines "^overlay cursor: the game's, from .*cursormenu\.swf$"
 $command = HostLines '^command SkyrimRs took over console opcode 0x[0-9a-f]+'
 $reloading = HostLines '^skyrim-rs-example: skyrim_rs_example_mod\.dll changed, reloading as generation 2$'
-$detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 0 engine commands restored, 2 tab sections, 0 HUD painters, 0 message handlers, 0 interfaces parked, 1 Papyrus callbacks, 1 frame callbacks detached$'
+$detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 0 engine commands restored, 2 tab sections, 0 HUD painters, 0 message handlers, 0 interfaces parked, 1 Papyrus callbacks, 1 frame callbacks, 2 debug items detached$'
 $reloaded = HostLines '^skyrim-rs-example: generation 2 loaded, image at 0x[0-9a-f]+$'
 $settingsWritten = HostLines '^settings written to .*skyrim-rs-example\.settings\.json$'
 $framesWritten = HostLines '^overlay frame written to .*skyrim-runtime-extender-overlay-[0-4]\.bmp$'

@@ -6,7 +6,8 @@
 //! takes. The factor is a setting that persists, shown as a slider in the plugin's tab of the
 //! host's window, applied by a hook on `Actor::ModActorValueImpl` and settable from Papyrus through
 //! the native `SkyrimRsExample.SetDamageScale`. A hotkey, Shift+K unless the player binds another,
-//! opens the window on the tab from the game.
+//! opens the window on the tab from the game. Its debug items are on the window's Debug tab: a
+//! verbose-log switch for a log line per scaled hit, and the count of hits scaled.
 
 use core::ffi::c_void;
 use std::io::Write as _;
@@ -15,7 +16,7 @@ use std::sync::atomic::{AtomicU32, Ordering};
 
 use framework::hooks::Options;
 use framework::hooks::ops::Actor__ModActorValueImpl;
-use framework::{Action, Host, Scope, egui, theme};
+use framework::{Action, Host, Scope, VerboseLog, egui, theme};
 use skyrim::actors::Modifier;
 use skyrim::papyrus::VirtualMachine;
 
@@ -29,6 +30,9 @@ const SCALE: &str = "damage_scale";
 
 static HOST: OnceLock<&'static Host> = OnceLock::new();
 static OPEN_TAB: OnceLock<Action> = OnceLock::new();
+static VERBOSE: OnceLock<VerboseLog> = OnceLock::new();
+/// The hits scaled since the plugin loaded.
+static HITS: AtomicU32 = AtomicU32::new(0);
 /// The factor as `f32` bits: the hook reads it on every call without a lock.
 static SCALE_BITS: AtomicU32 = AtomicU32::new(0x3F80_0000);
 /// The last damage scaled, before and after, as `f32` bits.
@@ -71,6 +75,10 @@ fn load(host: &'static Host) -> bool {
             let scaled = args.3 * scale();
             LAST[0].store(args.3.to_bits(), Ordering::Relaxed);
             LAST[1].store(scaled.to_bits(), Ordering::Relaxed);
+            HITS.fetch_add(1, Ordering::Relaxed);
+            if VERBOSE.get().is_some_and(VerboseLog::on) {
+                log(&format!("hit scaled: {} became {scaled}", args.3));
+            }
             args.3 = scaled;
         }
     });
@@ -87,6 +95,8 @@ fn load(host: &'static Host) -> bool {
     });
 
     host.add_tab("Example mod").section("Damage", damage).section("About", about);
+    let _ = VERBOSE.set(host.verbose_log());
+    host.add_debug(debug);
     let _ = OPEN_TAB.set(host.action("open-tab", "Shift+K", Scope::Game));
     host.on_frame(open_tab);
     true
@@ -107,6 +117,14 @@ fn about(ui: &mut egui::Ui) {
     ui.label(egui::RichText::new("Papyrus: SkyrimRsExample.SetDamageScale(float) sets the factor and returns it.").color(theme::DIM));
     if let Some(key) = OPEN_TAB.get().and_then(Action::key) {
         ui.label(egui::RichText::new(format!("{key} in the game opens this tab.")).color(theme::DIM));
+    }
+}
+
+/// The plugin's page on the host window's Debug tab, under the "Verbose log" switch the host draws.
+fn debug(ui: &mut egui::Ui) {
+    ui.label(format!("{} hits scaled since the plugin loaded", HITS.load(Ordering::Relaxed)));
+    if ui.button("Reset count").clicked() {
+        HITS.store(0, Ordering::Relaxed);
     }
 }
 
