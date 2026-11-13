@@ -162,7 +162,7 @@ fn raw_shape_is_fixed_per_address() {
 struct Present;
 
 impl ops::OpVisitor<()> for Present {
-    fn visit<O: Op>(self) {}
+    fn visit<F: Signature>(self, _: &'static Site, _: F) {}
 }
 
 #[test]

@@ -16,9 +16,13 @@ use sre::raw::fns;
 use super::site::{Op, Signature, Site};
 use super::{Hookable, Location, Register, Target};
 
-/// Visits the `Op` type behind an index or a raw slot.
+/// Visits the site and the detour behind an index or a raw slot.
 pub(crate) trait OpVisitor<R> {
-    fn visit<O: Op>(self) -> R;
+    fn visit<F: Signature>(self, site: &'static Site, detour: F) -> R;
+}
+
+fn detour<O: Op>() -> O::Fn {
+    <O::Fn as Signature>::detour::<O>()
 }
 
 macro_rules! ops {
@@ -58,7 +62,7 @@ macro_rules! ops {
         pub(crate) fn with_op<R>(index: usize, visitor: impl OpVisitor<R>) -> Option<R> {
             $(
                 if index == Index::$id as usize {
-                    return Some(visitor.visit::<$id>());
+                    return Some(visitor.visit($id::site(), detour::<$id>()));
                 }
             )*
             None
@@ -91,7 +95,7 @@ ops! {
 
 /// How many raw addresses, call sites and vtable slots a process can hook together. A slot stays
 /// bound to its address for the session, so a reloaded plugin finds its own again.
-pub const RAW_SLOTS: usize = 128;
+pub const RAW_SLOTS: usize = 1024;
 
 /// The most integer-class arguments a raw hook can carry.
 pub const RAW_MAX_ARITY: usize = 8;
@@ -186,17 +190,22 @@ pub trait RawShape: Signature {
 
 pub(crate) struct RawSlot<const N: usize, const K: usize>;
 
-macro_rules! raw_slots {
-    ($n:literal, $slot:expr, $visitor:expr) => {
-        raw_slots!(@ $n, $slot, $visitor,
-            0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
-            32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
-            64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95
-            96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127)
+// The detour of slot `$slot` for shape `$n`; the slots are 32 rows of 32.
+macro_rules! raw_detour {
+    ($n:literal, $slot:expr) => {
+        raw_detour!(@rows $n, $slot,
+            (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31),
+            0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
     };
-    (@ $n:literal, $slot:expr, $visitor:expr, $($k:literal)*) => {
-        match $slot {
-            $($k => Some($visitor.visit::<RawSlot<$n, $k>>()),)*
+    (@rows $n:literal, $slot:expr, $columns:tt, $($row:literal)*) => {
+        match $slot / 32 {
+            $($row => raw_detour!(@row $n, $slot, $row, $columns),)*
+            _ => None,
+        }
+    };
+    (@row $n:literal, $slot:expr, $row:literal, ($($column:literal)*)) => {
+        match $slot % 32 {
+            $($column => Some(detour::<RawSlot<$n, { $row * 32 + $column }>>()),)*
             _ => None,
         }
     };
@@ -222,8 +231,12 @@ macro_rules! shapes {
         pub const SHAPES: &[&str] = &[$($label),*];
 
         pub(crate) fn with_raw<R>(shape: usize, slot: usize, visitor: impl OpVisitor<R>) -> Option<R> {
+            let site = RAW_SITES.get(slot)?;
             match shape {
-                $($n => raw_slots!($n, slot, visitor),)*
+                $($n => {
+                    let detour: $fn = raw_detour!($n, slot)?;
+                    Some(visitor.visit(site, detour))
+                })*
                 _ => None,
             }
         }

@@ -9,7 +9,7 @@ use std::collections::{BTreeMap, VecDeque};
 use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use super::ops::{self, OpVisitor, RAW_SLOTS, SHAPES};
-use super::site::{self, Callee, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
+use super::site::{self, Callee, Chain, Entry, Kind, Meta, Ranks, Signature, Site, SiteMeta, Stats, Timing};
 use super::validate::{Validation, branch_kind, hex, read_bytes, validate};
 use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Register, Request, SiteReport, SubscriptionId, Target};
 
@@ -296,13 +296,12 @@ struct Subscribe<'a> {
 }
 
 impl OpVisitor<Result<SubscriptionId, Error>> for Subscribe<'_> {
-    fn visit<O: Op>(self) -> Result<SubscriptionId, Error> {
-        let Self { reg, req, name, kind, address, pass } = self;
-        if req.signature != <O::Fn as Signature>::SLOTS {
-            return Err(Error::Callback { site: name, owner: req.owner });
+    fn visit<F: Signature>(mut self, site: &'static Site, detour: F) -> Result<SubscriptionId, Error> {
+        if self.req.signature != F::SLOTS {
+            return Err(Error::Callback { site: self.name, owner: self.req.owner });
         }
-        let site = O::site();
-        install::<O>(reg, site, &name, kind, address, pass, &req)?;
+        self.install(site, detour)?;
+        let Self { reg, req, name, .. } = self;
         let id = reg.next_id;
         reg.next_id += 1;
         let meta = Arc::new(Meta { id, owner: req.owner, phase: req.subscriber.phase(), constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true), exclusive: req.exclusive, blocked: AtomicBool::new(false) });
@@ -321,72 +320,75 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscribe<'_> {
     }
 }
 
+impl Subscribe<'_> {
+    /// Validates the site and puts the one detour in, with an empty chain published first.
+    fn install<F: Signature>(&mut self, site: &'static Site, detour: F) -> Result<(), Error> {
+        let Self { reg, req: request, name, kind, address, pass } = self;
+        let (reg, name, kind, address, pass) = (&mut **reg, name.as_str(), *kind, *address, *pass);
+        let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
+        let owner = &request.owner;
+        let refuse = request.exclusive || reg.compat == Compat::Refuse;
+        if let Some(meta) = guard.as_ref() {
+            if refuse {
+                let current = kind.validate(address, Some(meta.detour));
+                let validation = if current.accepted() { meta.validation } else { current };
+                if !validation.accepted() {
+                    return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
+                }
+            }
+            return Ok(());
+        }
+        let span = kind.span(address);
+        if let Some(with) = reg.holder(address, span, false) {
+            return Err(Error::Overlap { site: name.to_owned(), owner: owner.to_owned(), with });
+        }
+        let detour_address: usize = unsafe { core::mem::transmute_copy(&detour) };
+        let validation = kind.validate(address, (kind == Kind::Entry).then_some(detour_address));
+        let patched_by = validation.patched_by();
+        if !validation.accepted() {
+            // Stacking calls the patch as the original, which needs a jump to call; other edits are always refused.
+            let Some(by) = patched_by.as_ref().filter(|_| !refuse) else {
+                return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
+            };
+            reg.log(&format!("{name} at {address:#x}: stacking on the patch by {by}: {validation}"));
+        }
+        let failed = |e: hook::Error| Error::Install { site: name.to_owned(), owner: owner.to_owned(), detail: e.to_string() };
+        let mut entry = detour_address;
+        let (original, enable): (F, Enable) = match kind {
+            Kind::Entry => {
+                let hook = unsafe { hook::Hook::create(address, detour) }.map_err(failed)?;
+                (hook.original(), Box::new(move || hook.enable()))
+            }
+            Kind::Call => {
+                let mut call = unsafe { hook::CallSite::create(address, detour) }.map_err(failed)?;
+                if let Some((from, to)) = pass {
+                    call = unsafe { call.passing(from, to) }.map_err(failed)?;
+                }
+                entry = call.entry();
+                (call.original(), Box::new(move || unsafe { call.enable() }))
+            }
+            Kind::Slot => {
+                if !address.is_multiple_of(size_of::<usize>()) {
+                    return Err(Error::Raw { address, detail: "a vtable slot must be pointer-aligned".to_owned() });
+                }
+                let previous = unsafe { (address as *const usize).read() };
+                (unsafe { core::mem::transmute_copy(&previous) }, Box::new(move || unsafe { hook::write_pointer(address, detour_address) }.map(drop)))
+            }
+        };
+        let original = unsafe { core::mem::transmute_copy::<F, usize>(&original) };
+        let chain = Chain::build(Callee::new::<F>(original), Vec::new(), &reg.ranks, name).expect("an empty chain has no conflicts");
+        unsafe { site.publish(chain) };
+        enable().map_err(failed)?;
+        site.broken.store(false, Relaxed);
+        *guard = Some(SiteMeta { name: name.to_owned(), kind, address, span, detour: entry, original, validation, patched_by, order: Vec::new() });
+        reg.sites.push(site);
+        reg.log(&format!("{name} at {address:#x}: detour installed, entry {validation}"));
+        Ok(())
+    }
+}
+
 /// Puts a created detour in.
 type Enable = Box<dyn FnOnce() -> Result<(), hook::Error>>;
-
-/// Validates the site and puts the one detour in, with an empty chain published first.
-fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kind, address: usize, pass: Option<(u8, u8)>, request: &Request) -> Result<(), Error> {
-    let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
-    let owner = &request.owner;
-    let refuse = request.exclusive || reg.compat == Compat::Refuse;
-    if let Some(meta) = guard.as_ref() {
-        if refuse {
-            let current = kind.validate(address, Some(meta.detour));
-            let validation = if current.accepted() { meta.validation } else { current };
-            if !validation.accepted() {
-                return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
-            }
-        }
-        return Ok(());
-    }
-    let span = kind.span(address);
-    if let Some(with) = reg.holder(address, span, false) {
-        return Err(Error::Overlap { site: name.to_owned(), owner: owner.to_owned(), with });
-    }
-    let detour = <O::Fn as Signature>::detour::<O>();
-    let detour_address: usize = unsafe { core::mem::transmute_copy(&detour) };
-    let validation = kind.validate(address, (kind == Kind::Entry).then_some(detour_address));
-    let patched_by = validation.patched_by();
-    if !validation.accepted() {
-        // Stacking calls the patch as the original, which needs a jump to call; other edits are always refused.
-        let Some(by) = patched_by.as_ref().filter(|_| !refuse) else {
-            return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
-        };
-        reg.log(&format!("{name} at {address:#x}: stacking on the patch by {by}: {validation}"));
-    }
-    let failed = |e: hook::Error| Error::Install { site: name.to_owned(), owner: owner.to_owned(), detail: e.to_string() };
-    let mut entry = detour_address;
-    let (original, enable): (O::Fn, Enable) = match kind {
-        Kind::Entry => {
-            let hook = unsafe { hook::Hook::create(address, detour) }.map_err(failed)?;
-            (hook.original(), Box::new(move || hook.enable()))
-        }
-        Kind::Call => {
-            let mut call = unsafe { hook::CallSite::create(address, detour) }.map_err(failed)?;
-            if let Some((from, to)) = pass {
-                call = unsafe { call.passing(from, to) }.map_err(failed)?;
-            }
-            entry = call.entry();
-            (call.original(), Box::new(move || unsafe { call.enable() }))
-        }
-        Kind::Slot => {
-            if !address.is_multiple_of(size_of::<usize>()) {
-                return Err(Error::Raw { address, detail: "a vtable slot must be pointer-aligned".to_owned() });
-            }
-            let previous = unsafe { (address as *const usize).read() };
-            (unsafe { core::mem::transmute_copy(&previous) }, Box::new(move || unsafe { hook::write_pointer(address, detour_address) }.map(drop)))
-        }
-    };
-    let original = unsafe { core::mem::transmute_copy::<O::Fn, usize>(&original) };
-    let chain = Chain::build(Callee::new::<O::Fn>(original), Vec::new(), &reg.ranks, name).expect("an empty chain has no conflicts");
-    unsafe { site.publish(chain) };
-    enable().map_err(failed)?;
-    site.broken.store(false, Relaxed);
-    *guard = Some(SiteMeta { name: name.to_owned(), kind, address, span, detour: entry, original, validation, patched_by, order: Vec::new() });
-    reg.sites.push(site);
-    reg.log(&format!("{name} at {address:#x}: detour installed, entry {validation}"));
-    Ok(())
-}
 
 /// Rebuilds every site that holds an entry `keep` rejects, draining each, and restores each call
 /// or slot site left without subscribers; returns how many entries went.
