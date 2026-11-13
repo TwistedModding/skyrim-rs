@@ -9,10 +9,19 @@ LLVM="${LLVM:-/opt/homebrew/opt/llvm/bin}"
 RUSTUP_BIN="${RUSTUP_BIN:-/opt/homebrew/opt/rustup/bin}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-[ -d "$WINSYSROOT/crt/include" ] || { echo "WINSYSROOT '$WINSYSROOT' has no crt/include" >&2; exit 1; }
-[ -x "$LLVM/clang-cl" ] || { echo "clang-cl not found in $LLVM" >&2; exit 1; }
-
+die() { echo "build-macos.sh: $*" >&2; exit 1; }
 export PATH="$RUSTUP_BIN:$LLVM:$PATH"
+
+command -v rustup >/dev/null || die "rustup not found (brew install rustup; Homebrew's rust has no Windows rust-std). Set RUSTUP_BIN if it is elsewhere."
+[ -x "$LLVM/clang-cl" ] || die "clang-cl not found in $LLVM (brew install llvm, or set LLVM=<bin dir>)"
+for f in crt/include/vcruntime.h sdk/include/um/windows.h sdk/lib/um/x86_64/kernel32.Lib crt/lib/x86_64/msvcrt.lib; do
+  [ -e "$WINSYSROOT/$f" ] || [ -e "$WINSYSROOT/$(echo "$f" | sed 's/\.Lib$/.lib/')" ] \
+    || die "WINSYSROOT '$WINSYSROOT' lacks $f (need an xwin-style splat: cargo install xwin; xwin --accept-license splat --output <dir>)"
+done
+# rust-toolchain.toml lists the target, but rustup installs it only when it first runs a toolchain command; make it explicit.
+rustup target list --installed --toolchain stable 2>/dev/null | grep -qx x86_64-pc-windows-msvc \
+  || rustup target add x86_64-pc-windows-msvc >&2
+
 export CARGO_BUILD_TARGET=x86_64-pc-windows-msvc
 # cc-rs (minhook builds C): clang-cl with the sysroot headers.
 export CC_x86_64_pc_windows_msvc="$LLVM/clang-cl"
