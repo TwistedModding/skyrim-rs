@@ -8,6 +8,7 @@
 
 use core::ffi::{CStr, c_char, c_void};
 use core::marker::PhantomData;
+use core::sync::atomic::AtomicBool;
 
 use overlay::Hotkey;
 use skyrim::events::ErasedSource;
@@ -21,7 +22,7 @@ use crate::ui::{RawFamily, RawFont, UiCallback};
 use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The host API revision, including its table and record semantics; entries are only ever appended.
-pub const API: u32 = 6;
+pub const API: u32 = 7;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -817,6 +818,11 @@ pub struct HostApi {
     pub unbind_key: Option<unsafe extern "C" fn(*const Self, usize) -> bool>,
     /// Puts the last assignment, refusal or unbinding when it was about the action.
     pub key_message: Option<unsafe extern "C" fn(*const Self, usize, Sink<'_, Str>)>,
+    /// The plugin's verbose-log flag, one byte the host writes 0 or 1 to and keeps for the life of
+    /// the game, read atomically; asking for it puts its switch on the Debug tab.
+    pub verbose_log: Option<unsafe extern "C" fn(*const Self) -> *const AtomicBool>,
+    /// The plugin's debug section, drawn on the Debug tab; false when the plugin has one.
+    pub add_debug: Option<unsafe extern "C" fn(*const Self, UiCallback) -> bool>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.

@@ -7,6 +7,7 @@
 
 use core::ffi::{c_char, c_void};
 use core::mem::ManuallyDrop;
+use core::sync::atomic::AtomicBool;
 
 use overlay::{Hotkey, Scope};
 use skyrim::events::ErasedSource;
@@ -83,6 +84,8 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         capturing_key: Some(capturing_key),
         unbind_key: Some(unbind_key),
         key_message: Some(key_message),
+        verbose_log: Some(verbose_log),
+        add_debug: Some(add_debug),
     }))
 }
 
@@ -405,6 +408,14 @@ unsafe extern "C" fn add_hud(api: *const HostApi, f: UiCallback) {
     gui::add_hud(owner(api), f);
 }
 
+unsafe extern "C" fn verbose_log(api: *const HostApi) -> *const AtomicBool {
+    gui::verbose(owner(api))
+}
+
+unsafe extern "C" fn add_debug(api: *const HostApi, f: UiCallback) -> bool {
+    gui::add_debug(owner(api), f)
+}
+
 unsafe extern "C" fn fonts(_: *const HostApi, files: Sink<'_, *const RawFont>, families: Sink<'_, *const RawFamily>) {
     let Some(fonts) = overlay::font_definitions() else { return };
     for (name, data) in &fonts.font_data {
@@ -517,13 +528,42 @@ mod tests {
         assert_eq!(*RESTORED.lock().unwrap(), [1, 2, 3]);
     }
 
-    /// The first entry and the last of api 1 to 4 and 6: a plugin built against any of them finds its
-    /// entries at the offsets it was built with on every later loader.
+    /// The first entry and the last of api 1 to 4, 6 and 7: a plugin built against any of them finds
+    /// its entries at the offsets it was built with on every later loader.
     #[test]
     fn the_table_keeps_every_versions_offsets() {
         use core::mem::offset_of;
-        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), size_of::<HostApi>()];
-        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 472]);
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488]);
+    }
+
+    #[test]
+    fn debug_items_go_through_the_plugins_table_and_a_loader_before_them_shows_none() {
+        static DROPS: AtomicU32 = AtomicU32::new(0);
+        static KEPT: AtomicU32 = AtomicU32::new(0);
+        let full = build("abi-test-debug", &raw const SKSE);
+        let api_6 = HostApi { version: 6, size: u32::try_from(core::mem::offset_of!(HostApi, verbose_log)).unwrap(), ..*full };
+        let older = Host::new(&raw const api_6).expect("an api 6 loader");
+        let counted = Counted(&DROPS);
+        assert!(!older.add_debug(move |_| _ = counted.alive()));
+        assert_eq!(DROPS.load(Ordering::Relaxed), 1, "the closure a loader without the entry never saw is dropped");
+        assert!(!older.verbose_log().on(), "no switch reads as off");
+        assert_eq!(gui::remove("abi-test-debug"), (0, 0, 0), "nothing reached the host");
+
+        let host = Host::new(full).expect("this loader");
+        let log = host.verbose_log();
+        assert!(!log.on(), "off until the player ticks it");
+        gui::set_verbose("abi-test-debug", true);
+        assert!(std::thread::spawn(move || log.on()).join().unwrap(), "read on another thread");
+        let _turn = gui::DRAWING.lock().unwrap_or_else(std::sync::PoisonError::into_inner);
+        let (counted, again) = (Counted(&KEPT), Counted(&DROPS));
+        assert!(host.add_debug(move |_| _ = counted.alive()));
+        assert!(!host.add_debug(move |_| _ = again.alive()), "a plugin has one debug section");
+        assert_eq!((KEPT.load(Ordering::Relaxed), DROPS.load(Ordering::Relaxed)), (0, 2), "the second is dropped, the first kept");
+        assert!(super::super::detach("abi-test-debug").ends_with(", 2 debug items"));
+        assert_eq!(KEPT.load(Ordering::Relaxed), 1, "detach drops the section once");
+        assert!(log.on() && host.verbose_log().on(), "the flag outlives the generation that asked");
+        assert_eq!(gui::remove("abi-test-debug"), (0, 0, 1));
     }
 
     #[test]

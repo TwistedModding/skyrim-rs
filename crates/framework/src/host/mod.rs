@@ -7,7 +7,7 @@
 //! the plugins' tabs in its window, one sink per event source, the native function objects, the
 //! console entries and the hook sites) and tags each registration with its plugin, so `reload`
 //! can detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
-//! `skyrim-runtime-extender.settings.json` (the capture rule and every hotkey of the binding table `keys`),
+//! `skyrim-runtime-extender.settings.json` (the capture rule, every hotkey of the binding table `keys` and every plugin's verbose-log switch),
 //! draws the overlay's one window (`gui`) and answers the console command `SkyrimRs` (`console`).
 //! It times the startup for the window's Debug tab (`profile`).
 
@@ -644,7 +644,7 @@ fn detach(owner: &str) -> String {
     let restored: Vec<ReplacedCommand> = REPLACED.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|c| c.owner == owner).map(|c| c.replaced).collect();
     restored.iter().for_each(ReplacedCommand::restore);
     let (natives, commands, restored) = (natives.len(), commands.len(), restored.len());
-    let (sections, huds) = gui::remove(owner);
+    let (sections, huds, debug) = gui::remove(owner);
     let messages = MESSAGES.remove_owner(owner) + PLUGIN_MESSAGES.remove_owner(owner) + alias::remove_owner(owner);
     let interfaces = interface::remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
@@ -653,7 +653,8 @@ fn detach(owner: &str) -> String {
         0 => String::new(),
         n => format!(", {n} active input filters"),
     };
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {restored} engine commands restored, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {interfaces} interfaces parked, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
+    let debug = if debug == 0 { String::new() } else { format!(", {debug} debug items") };
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {restored} engine commands restored, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {interfaces} interfaces parked, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}{debug}")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {

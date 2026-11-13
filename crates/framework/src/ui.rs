@@ -2,10 +2,10 @@
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
 // distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
-//! Tab sections and HUD painters by data (`docs/subsystems/abi.md`, "UI"): a plugin draws with
-//! `egui` contexts of its own, in the loader's fonts and the framework theme, and hands the host
-//! meshes, texture changes and what it wants of the input. The host never runs plugin code on its
-//! own context, so nothing of a plugin's `egui` outlives its DLL.
+//! Tab sections, debug sections and HUD painters by data (`docs/subsystems/abi.md`, "UI"): a
+//! plugin draws with `egui` contexts of its own, in the loader's fonts and the framework theme, and
+//! hands the host meshes, texture changes and what it wants of the input. The host never runs
+//! plugin code on its own context, so nothing of a plugin's `egui` outlives its DLL.
 
 use core::ffi::c_void;
 use core::mem::offset_of;
@@ -18,7 +18,7 @@ use overlay::egui::{
     TextureFilter, TextureId, TextureOptions, TouchPhase, ViewportId, ViewportInfo, pos2, vec2,
 };
 
-use crate::abi::{Api, Callback, Record, Sink, Str, call, read_array, read_sized, size, slice};
+use crate::abi::{Api, Callback, Record, Sink, Str, call, entry, read_array, read_sized, size, slice};
 
 /// A tab section or a HUD painter: called once a frame it is drawn, with the frame's input and the
 /// sinks its drawing goes through, during the call.
@@ -364,7 +364,7 @@ fn fonts(api: Api) -> Option<FontDefinitions> {
 }
 
 /// One of a plugin's two contexts, alive while a callback holds it: the sections' (one runs a
-/// frame) and the HUD painters' (each runs a pass a frame). `layer` keeps their texture ids apart.
+/// frame, of its tab or its debug section) and the HUD painters' (each runs a pass a frame). `layer` keeps their texture ids apart.
 struct Surface {
     context: Mutex<Weak<Context>>,
     layer: u64,
@@ -438,12 +438,11 @@ fn callback<C: FnMut(&RawFrameInput, &RawFrameOutput<'_>) + Send + 'static>(f: C
     UiCallback::boxed(Mutex::new(f), call::<C>)
 }
 
-/// Adds the section `name` of the plugin's tab: `draw` fills the rect the host leaves for it, in a
-/// scroll area of its own. False when the loader lacks the entries.
-pub(crate) fn add_section(api: Api, name: &str, mut draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> bool {
-    let Some(ctx) = SECTIONS.context(api) else { return false };
-    let id = egui::Id::unique(("section", name));
-    let f = callback(move |input, output| {
+/// `draw` as the callback of a section with the area `id`: it fills the rect the host leaves for
+/// it, in a scroll area of its own. `None` when the loader hands over no fonts.
+fn section(api: Api, id: egui::Id, mut draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> Option<UiCallback> {
+    let ctx = SECTIONS.context(api)?;
+    Some(callback(move |input, output| {
         let rect = rect(input.rect);
         SECTIONS.run(&ctx, input, output, |ctx| {
             // A fixed area of a known size: no sizing pass, which would hide the first frame.
@@ -456,8 +455,19 @@ pub(crate) fn add_section(api: Api, name: &str, mut draw: impl FnMut(&mut egui::
                 egui::ScrollArea::vertical().id_salt(id).auto_shrink(false).show(ui, &mut draw);
             });
         });
-    });
-    call!(api, add_section(Str::from(name), f)).is_some()
+    }))
+}
+
+/// Adds the section `name` of the plugin's tab. False when the loader lacks the entries.
+pub(crate) fn add_section(api: Api, name: &str, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> bool {
+    section(api, egui::Id::unique(("section", name)), draw).is_some_and(|f| call!(api, add_section(Str::from(name), f)).is_some())
+}
+
+/// Adds the plugin's debug section, drawn on the host's Debug tab. False when the loader lacks the
+/// entries or the plugin has one.
+pub(crate) fn add_debug(api: Api, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> bool {
+    let Some(add) = entry!(api, add_debug) else { return false };
+    section(api, egui::Id::unique("debug section"), draw).is_some_and(|f| unsafe { add(api.0, f) })
 }
 
 /// Adds a HUD painter: `draw` paints on the background layer of the whole screen. False when the

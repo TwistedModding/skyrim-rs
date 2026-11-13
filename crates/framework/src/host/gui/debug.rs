@@ -2,12 +2,15 @@
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not
 // distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/.
 // This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
-//! The Debug tab: a sidebar of four pages. Load times (the startup steps, each SKSE plugin's Load and
+//! The Debug tab: a sidebar of pages. Load times (the startup steps, each SKSE plugin's Load and
 //! listeners, each framework plugin's load), Data files (every loaded plugin file with its type and
 //! read time, and the counts against the engine's limits), Logs (the files of the SKSE log folder,
-//! filtered and followed) and System (Windows, the processor, memory, the graphics adapter and driver,
-//! and what the game uses of them).
+//! filtered and followed), System (Windows, the processor, memory, the graphics adapter and driver,
+//! and what the game uses of them) and, while a plugin has debug items, Plugins: a page for each
+//! such plugin with its verbose-log switch ([`crate::Host::verbose_log`]) and its debug section
+//! ([`crate::Host::add_debug`]).
 
+use core::sync::atomic::Ordering;
 use std::path::PathBuf;
 use std::sync::{Mutex, PoisonError};
 use std::time::{Duration, Instant, SystemTime};
@@ -17,7 +20,7 @@ use overlay::theme;
 
 use super::super::profile::time;
 use super::super::{LOG_DIR, SKSE, message_name, plugins, profile, skse_plugins, system};
-use super::{RULE_SPACE, dim, heading, hosted_by, sidebar_row, table, version_text, warn};
+use super::{DebugItems, RESERVED, RULE_SPACE, debug_items, dim, heading, hosted_by, set_verbose, sidebar_row, table, version_text, warn};
 
 #[derive(Clone, Copy, PartialEq, Eq)]
 enum Page {
@@ -25,8 +28,10 @@ enum Page {
     Files,
     Logs,
     System,
+    Plugins,
 }
 
+/// The pages that are always there; Plugins follows them while a plugin has debug items.
 const PAGES: [(Page, &str); 4] = [(Page::Loads, "Load times"), (Page::Files, "Data files"), (Page::Logs, "Logs"), (Page::System, "System")];
 
 /// The log file shown and what was read of it.
@@ -40,29 +45,48 @@ struct LogView {
     error: Option<String>,
 }
 
+/// The page shown, and the plugin whose debug items the Plugins page shows (the first while
+/// `None`), by name, so a reloaded generation finds its own again.
 struct Shown {
     page: Page,
+    plugin: Option<String>,
     by_time: bool,
     log: LogView,
 }
 
-static SHOWN: Mutex<Shown> = Mutex::new(Shown { page: Page::Loads, by_time: false, log: LogView { file: None, filter: String::new(), follow: true, lines: Vec::new(), read: None, error: None } });
+static SHOWN: Mutex<Shown> = Mutex::new(Shown { page: Page::Loads, plugin: None, by_time: false, log: LogView { file: None, filter: String::new(), follow: true, lines: Vec::new(), read: None, error: None } });
 
 /// How much of a log's end is read.
 const LOG_TAIL: u64 = 1024 * 1024;
 const ROW: f32 = 22.0;
 
 pub(super) fn tab(ui: &mut egui::Ui) {
+    let plugins = debug_items();
     let mut shown = SHOWN.lock().unwrap_or_else(PoisonError::into_inner);
+    // The Plugins page goes with the last plugin that had debug items, and comes back with one.
+    let page = |shown: &Shown| if shown.page == Page::Plugins && plugins.is_empty() { Page::Loads } else { shown.page };
+    let selected = |shown: &Shown| shown.plugin.as_ref().and_then(|owner| plugins.iter().position(|p| p.owner == *owner)).unwrap_or(0);
     egui::Panel::left("debug pages").resizable(false).exact_size(200.0).frame(egui::Frame::NONE.inner_margin(egui::Margin { right: 16, ..egui::Margin::ZERO })).show(ui, |ui| {
-        ui.spacing_mut().item_spacing.y = 2.0;
-        for (page, name) in PAGES {
-            if sidebar_row(ui, name, shown.page == page, shown.page == page, 16.0, None) {
-                shown.page = page;
+        egui::ScrollArea::vertical().id_salt("debug pages").auto_shrink(false).show(ui, |ui| {
+            ui.spacing_mut().item_spacing.y = 2.0;
+            for (fixed, name) in PAGES {
+                if sidebar_row(ui, name, page(&shown) == fixed, page(&shown) == fixed, 16.0, None) {
+                    shown.page = fixed;
+                }
             }
-        }
+            if !plugins.is_empty() && sidebar_row(ui, "Plugins", page(&shown) == Page::Plugins, false, 16.0, None) {
+                shown.page = Page::Plugins;
+            }
+            for (i, plugin) in plugins.iter().enumerate() {
+                let on = page(&shown) == Page::Plugins && i == selected(&shown);
+                if sidebar_row(ui, &plugin.title, on, on, 34.0, None) {
+                    shown.page = Page::Plugins;
+                    shown.plugin = Some(plugin.owner.to_owned());
+                }
+            }
+        });
     });
-    egui::CentralPanel::no_frame().frame(egui::Frame::NONE.inner_margin(egui::Margin { left: 28, right: 8, top: 4, bottom: 0 })).show(ui, |ui| match shown.page {
+    egui::CentralPanel::no_frame().frame(egui::Frame::NONE.inner_margin(egui::Margin { left: 28, right: 8, top: 4, bottom: 0 })).show(ui, |ui| match page(&shown) {
         Page::Loads => {
             egui::ScrollArea::vertical().id_salt("load times").auto_shrink(false).show(ui, loads);
         }
@@ -71,7 +95,24 @@ pub(super) fn tab(ui: &mut egui::Ui) {
         Page::System => {
             egui::ScrollArea::vertical().id_salt("system").auto_shrink(false).show(ui, system_page);
         }
+        Page::Plugins => plugin_page(ui, &plugins[selected(&shown)]),
     });
+}
+
+/// A plugin's debug items: the host's verbose-log switch when the plugin asked for one, and the
+/// plugin's own section in the rest of the page, which the overlay draws as its guest.
+fn plugin_page(ui: &mut egui::Ui, plugin: &DebugItems) {
+    heading(ui, &plugin.title);
+    if let Some(flag) = plugin.verbose {
+        let mut on = flag.load(Ordering::Relaxed);
+        if ui.checkbox(&mut on, "Verbose log").on_hover_text(format!("{} writes more to its log while this is ticked. Kept for later game sessions.", plugin.title)).changed() {
+            set_verbose(plugin.owner, on);
+        }
+    }
+    if plugin.section {
+        let (rect, _) = ui.allocate_exact_size(ui.available_size(), Sense::hover());
+        *RESERVED.lock().unwrap_or_else(PoisonError::into_inner) = Some((plugin.owner.to_owned(), None, rect));
+    }
 }
 
 fn cell(text: impl Into<RichText>) -> (RichText, String) {
@@ -400,5 +441,86 @@ mod tests {
         std::fs::write(&path, "a\nb\n").unwrap();
         assert_eq!(read_tail(&path).unwrap(), "a\nb\n");
         let _ = std::fs::remove_file(&path);
+    }
+
+    #[test]
+    fn a_plugins_page_draws_its_debug_section_through_the_c_path_and_comes_back_with_a_reload() {
+        use core::sync::atomic::AtomicU32;
+
+        use egui::epaint::Primitive;
+
+        use super::super::{DRAWING, draw_section, remove};
+        use crate::abi::Api;
+
+        static CLICKS: AtomicU32 = AtomicU32::new(0);
+        static BUTTON: Mutex<egui::Rect> = Mutex::new(egui::Rect::NOTHING);
+        let _turn = DRAWING.lock().unwrap_or_else(PoisonError::into_inner);
+        let owner = "debug-test-page";
+        let api = Api(super::super::super::api::build(owner, core::ptr::null()));
+        let add = || {
+            crate::ui::add_debug(api, |ui| {
+                ui.label("3 actors fitted");
+                let button = ui.button("Reload files");
+                *BUTTON.lock().unwrap() = button.rect;
+                if button.clicked() {
+                    CLICKS.fetch_add(1, Ordering::Relaxed);
+                }
+            })
+        };
+        let listed = || debug_items().into_iter().find(|p| p.owner == owner).map(|p| (p.verbose.is_some(), p.section));
+        assert_eq!(listed(), None, "a plugin without debug items is not listed");
+        assert!(add());
+        assert_eq!(listed(), Some((false, true)));
+        let _log = crate::VerboseLog::new(api);
+        assert_eq!(listed(), Some((true, true)));
+        {
+            let mut shown = SHOWN.lock().unwrap();
+            (shown.page, shown.plugin) = (Page::Plugins, Some(owner.to_owned()));
+        }
+
+        // A frame of the host's window with the Debug tab in it, then the overlay's guest.
+        let host = overlay::themed_context(overlay::font_definitions().expect("the overlay's fonts").clone());
+        let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1920.0, 1080.0));
+        let mut time = 0.0;
+        let mut frame = |events: Vec<egui::Event>| {
+            time += 1.0 / 60.0;
+            let mut window = host.run_pass(egui::RawInput { screen_rect: Some(screen), time: Some(time), ..egui::RawInput::default() }, |ctx| {
+                egui::Window::new("debug page").fixed_size(vec2(1000.0, 600.0)).show(ctx, tab);
+            });
+            window.textures_delta.clear();
+            let mut guest = draw_section(&overlay::GuestInput { events, modifiers: egui::Modifiers::NONE, time, screen, pixels_per_point: 1.0, focused: true });
+            if let Some(guest) = &mut guest {
+                guest.painted.textures.clear();
+            }
+            guest
+        };
+        frame(Vec::new());
+        let drawn = frame(Vec::new()).expect("the page left the section its rect");
+        let page = drawn.rect;
+        assert!(page.width() > 300.0 && page.height() > 200.0, "{page:?}");
+        let meshes: Vec<_> = drawn.painted.primitives.iter().filter_map(|p| if let Primitive::Mesh(m) = &p.primitive { Some(m) } else { None }).collect();
+        assert!(!meshes.is_empty() && meshes.iter().all(|m| m.vertices.iter().all(|v| page.expand(1.0).contains(v.pos))), "the section is drawn in the page's rect");
+
+        let click = |at, pressed| egui::Event::PointerButton { pos: at, button: egui::PointerButton::Primary, pressed, modifiers: egui::Modifiers::NONE };
+        let at = BUTTON.lock().unwrap().center();
+        assert!(page.contains(at));
+        frame(vec![egui::Event::PointerMoved(at)]);
+        frame(vec![click(at, true), click(at, false)]);
+        assert_eq!(CLICKS.load(Ordering::Relaxed), 1, "a click reaches the plugin's button");
+
+        assert_eq!(remove(owner), (0, 0, 2));
+        assert_eq!(listed(), None, "the items go with the plugin");
+        frame(vec![click(at, true), click(at, false)]);
+        assert_eq!(CLICKS.load(Ordering::Relaxed), 1, "and its section is not drawn");
+
+        assert!(add());
+        frame(Vec::new());
+        let again = frame(Vec::new()).expect("a reloaded generation finds its page selected").rect;
+        assert!(again.top() < page.top(), "without the switch, which this generation did not ask for, the section starts higher");
+        let at = BUTTON.lock().unwrap().center();
+        frame(vec![egui::Event::PointerMoved(at)]);
+        frame(vec![click(at, true), click(at, false)]);
+        assert_eq!(CLICKS.load(Ordering::Relaxed), 2);
+        assert_eq!(remove(owner), (0, 0, 1));
     }
 }

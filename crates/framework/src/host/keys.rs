@@ -285,6 +285,24 @@ pub(super) fn describe_game_uses() {
     }
 }
 
+/// The host's settings for the tests that read them, opened once from a file of six values; the
+/// result of that reading.
+#[cfg(test)]
+pub(super) fn open_test_settings() -> Result<usize, String> {
+    static OPENED: std::sync::OnceLock<Result<usize, String>> = std::sync::OnceLock::new();
+    OPENED
+        .get_or_init(|| {
+            let dir = std::env::temp_dir().join(format!("skyrim-rs-keys-{}", std::process::id()));
+            std::fs::create_dir_all(&dir).unwrap();
+            let text = "{\"key.skyrim-runtime-extender.toggle\": 68, \"key.skyrim-runtime-extender.close\": \"F10\", \"key.test.a\": \"shift+k\", \"key.test.d\": \"\", \"by.hand\": \"kept\", \"verbose.gui-test-session\": true}";
+            std::fs::write(settings::file(&dir, NAME), text).unwrap();
+            let read = settings::open(NAME, &dir);
+            let _ = std::fs::remove_dir_all(&dir);
+            read
+        })
+        .clone()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -300,11 +318,7 @@ mod tests {
 
     #[test]
     fn resolves_the_file_and_refuses_conflicts() {
-        let dir = std::env::temp_dir().join(format!("skyrim-rs-keys-{}", std::process::id()));
-        std::fs::create_dir_all(&dir).unwrap();
-        let text = "{\"key.skyrim-runtime-extender.toggle\": 68, \"key.skyrim-runtime-extender.close\": \"F10\", \"key.test.a\": \"shift+k\", \"key.test.d\": \"\", \"by.hand\": \"kept\"}";
-        std::fs::write(settings::file(&dir, NAME), text).unwrap();
-        assert_eq!(settings::open(NAME, &dir), Ok(5));
+        assert_eq!(open_test_settings(), Ok(6));
         declare_host();
         let f10: Hotkey = "F10".parse().unwrap();
         let shift_k: Hotkey = "Shift+K".parse().unwrap();
@@ -343,6 +357,5 @@ mod tests {
         assert!(owned_by(d, "test") && !owned_by(d, "other") && !owned_by(usize::MAX, "test"));
         assert!(bind_in_tab(d, "test") && !bind_in_tab(c, "other"));
         assert!(list()[d].in_tab && !list()[c].in_tab);
-        let _ = std::fs::remove_dir_all(&dir);
     }
 }

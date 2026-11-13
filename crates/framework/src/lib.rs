@@ -22,8 +22,10 @@
 //! (`QueryInterface` answers as for the host, and the plugin handle is the host's, valid only while
 //! `load` runs), its [`settings`], its hotkeys ([`Host::action`]), and every registration it makes
 //! in the game: loader messages, a per-frame callback, the Papyrus registration pass, a tab in the
-//! host's window ([`Host::add_tab`]), HUD painters drawn into the game ([`Host::add_hud`]), event sinks, Papyrus natives, console commands and hook
-//! subscriptions ([`Host::hooks`]). The host owns the object the engine keeps for each of
+//! host's window ([`Host::add_tab`]), its debug items on the window's Debug tab
+//! ([`Host::verbose_log`], [`Host::add_debug`]), HUD painters drawn into the game
+//! ([`Host::add_hud`]), event sinks, Papyrus natives, console commands and hook subscriptions
+//! ([`Host::hooks`]). The host owns the object the engine keeps for each of
 //! them and knows which plugin it belongs to, so the plugin's DLL can be unloaded and replaced
 //! while the game runs: the host loads every plugin from a shadow copy, watches the author's file
 //! and swaps generations at a frame boundary (`docs/subsystems/reload.md`). A plugin calls
@@ -32,6 +34,7 @@
 
 use core::cell::RefCell;
 use core::ffi::{CStr, c_char, c_void};
+use core::sync::atomic::{AtomicBool, Ordering};
 use std::fmt;
 use std::sync::{Mutex, PoisonError};
 
@@ -407,6 +410,52 @@ impl Host {
         ui::add_hud(self.api, draw);
     }
 
+    /// This plugin's verbose-log switch: a "Verbose log" checkbox under the plugin's name on the
+    /// Plugins page of the host window's Debug tab, off until the player ticks it. The host keeps
+    /// the choice in its own settings file, across game sessions and reloads of the plugin, so the
+    /// plugin stores nothing and draws nothing for it. Ask once in `load` and keep the handle;
+    /// [`VerboseLog::on`] is then one atomic read, cheap enough for a hook on any thread:
+    ///
+    /// ```ignore
+    /// static VERBOSE: OnceLock<framework::VerboseLog> = OnceLock::new();
+    /// fn load(host: &'static framework::Host) -> bool {
+    ///     let _ = VERBOSE.set(host.verbose_log());
+    ///     true
+    /// }
+    /// fn verbose(line: &str) {
+    ///     if VERBOSE.get().is_some_and(framework::VerboseLog::on) { log(line) }
+    /// }
+    /// ```
+    ///
+    /// The switch goes with the plugin's generation, so a reloaded one asks again and finds it as
+    /// the player left it. On a loader without it there is no switch and the handle reads off.
+    #[must_use]
+    pub fn verbose_log(&self) -> VerboseLog {
+        VerboseLog::new(self.api)
+    }
+
+    /// Adds this plugin's debug section: what a player needs only when something is wrong or an
+    /// author while developing (status lines, counters, a "Reload files" button, a switch that
+    /// draws collision shapes), kept out of the plugin's own tab. The host lists the plugin by
+    /// its tab's title on the Plugins page of its window's Debug tab, with the
+    /// [`verbose_log`](Self::verbose_log) switch first when the plugin asked for one, and `draw`
+    /// fills the rest of the page while it is shown, as a section of [`add_tab`](Self::add_tab)
+    /// does: on the main thread, in the plugin's own `egui` context and a scroll area of its own.
+    ///
+    /// ```ignore
+    /// if !host.add_debug(|ui| {
+    ///     ui.label(format!("{} actors fitted", fitted()));
+    ///     if ui.button("Reload files").clicked() { reload_files() }
+    /// }) { /* an older loader: keep the items in the tab */ }
+    /// ```
+    ///
+    /// A plugin has one debug section, dropped with its generation; a reloaded generation adds it
+    /// again. False when the plugin already added one, and on a loader without the Plugins page,
+    /// where nothing is shown: a plugin that must keep an item reachable there adds it to its tab.
+    pub fn add_debug(&self, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> bool {
+        ui::add_debug(self.api, draw)
+    }
+
     /// Opens the overlay on this plugin's tab.
     pub fn show_tab(&self) {
         call!(self.api, show_tab());
@@ -576,6 +625,28 @@ impl Tab {
     pub fn section(&self, name: &str, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> &Self {
         ui::add_section(self.api, name, draw);
         self
+    }
+}
+
+/// A plugin's verbose-log switch from [`Host::verbose_log`].
+#[derive(Clone, Copy)]
+pub struct VerboseLog {
+    on: &'static AtomicBool,
+}
+
+impl VerboseLog {
+    /// The host's flag for the plugin, which outlives every generation of it; one that stays off
+    /// when the loader has none.
+    pub(crate) fn new(api: Api) -> Self {
+        static OFF: AtomicBool = AtomicBool::new(false);
+        Self { on: call!(api, verbose_log()).and_then(|flag| unsafe { flag.as_ref() }).unwrap_or(&OFF) }
+    }
+
+    /// Whether the player has the switch on now, from any thread. The plugin is not told of a
+    /// change: it asks where it would log.
+    #[must_use]
+    pub fn on(&self) -> bool {
+        self.on.load(Ordering::Relaxed)
     }
 }
 

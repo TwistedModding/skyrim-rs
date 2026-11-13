@@ -5,15 +5,17 @@
 //! The overlay's one window, in the look of the game's journal: a row of tabs across the top, Mods,
 //! Plugins (the framework plugins with their version, file and state, buttons that reload, unload
 //! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
-//! set by capturing the next key pressed or unbound, and the capture rule) and Debug (`debug`: load times, the data files, the logs
-//! and the machine). Mods has a sidebar of every plugin
+//! set by capturing the next key pressed or unbound, and the capture rule) and Debug (`debug`: load times, the data files, the logs,
+//! the machine and the plugins' debug items). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), each one's sections under it when
 //! it has two or more, collapsible for the game session, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
 //! selected section's rect empty and the overlay draws the plugin's meshes over it as its guest,
-//! with the plugin's textures under overlay ids of their own.
+//! with the plugin's textures under overlay ids of their own. A plugin's debug section
+//! ([`crate::Host::add_debug`]) is drawn the same way on the Debug tab's page for the plugin.
 
 use core::cell::RefCell;
+use core::sync::atomic::{AtomicBool, Ordering};
 use std::sync::{Mutex, PoisonError};
 
 use overlay::egui::{self, Align, Layout, RichText, Sense, TextStyle, TextWrapMode, WidgetText, vec2};
@@ -46,15 +48,31 @@ struct Section {
 
 static SECTIONS: Owned<Section> = Owned::new();
 
-/// A plugin's HUD painter.
-struct Hud {
+/// A plugin's HUD painter, or its debug section.
+struct Drawn {
     owner: &'static str,
     draw: UiCallback,
 }
 
-static HUDS: Owned<Hud> = Owned::new();
-/// The rect this frame's window left for the selected section, and whose section it is.
-static RESERVED: Mutex<Option<(String, String, egui::Rect)>> = Mutex::new(None);
+static HUDS: Owned<Drawn> = Owned::new();
+static DEBUG: Owned<Drawn> = Owned::new();
+
+/// A plugin's verbose-log flag, kept for the life of the game, and whether its running generation
+/// asked for the switch.
+struct Verbose {
+    owner: &'static str,
+    on: &'static AtomicBool,
+    shown: bool,
+}
+
+static VERBOSE: Mutex<Vec<Verbose>> = Mutex::new(Vec::new());
+/// The rect this frame's window left for a plugin to draw in, the plugin, and the section of its
+/// tab that goes there (its debug section for `None`).
+static RESERVED: Mutex<Option<(String, Option<String>, egui::Rect)>> = Mutex::new(None);
+/// The sections of one process draw in one `egui` context, alive while one of them is, so the
+/// tests that add one take turns.
+#[cfg(test)]
+pub(super) static DRAWING: Mutex<()> = Mutex::new(());
 static TEXTURES: Mutex<Textures> = Mutex::new(Textures { ids: Vec::new(), next: 0 });
 
 /// The plugins' textures under overlay ids of their own (`TextureId::User`, never reused).
@@ -160,7 +178,67 @@ pub(super) fn add_section(owner: &'static str, name: &str, draw: UiCallback) {
 }
 
 pub(super) fn add_hud(owner: &'static str, draw: UiCallback) {
-    HUDS.add(owner, Hud { owner, draw });
+    HUDS.add(owner, Drawn { owner, draw });
+}
+
+/// Adds the plugin's debug section; false, with `draw` dropped, when it has one.
+pub(super) fn add_debug(owner: &'static str, draw: UiCallback) -> bool {
+    let first = !DEBUG.owners().contains(&owner);
+    if first {
+        DEBUG.add(owner, Drawn { owner, draw });
+    }
+    first
+}
+
+/// The host setting holding a plugin's verbose-log switch.
+fn verbose_key(owner: &str) -> String {
+    format!("verbose.{owner}")
+}
+
+/// The plugin's verbose-log flag, with its switch on the Debug tab from now on. The flag starts
+/// as the host's settings hold it, off when they hold none.
+pub(super) fn verbose(owner: &'static str) -> &'static AtomicBool {
+    let mut all = VERBOSE.lock().unwrap_or_else(PoisonError::into_inner);
+    if let Some(v) = all.iter_mut().find(|v| v.owner == owner) {
+        v.shown = true;
+        return v.on;
+    }
+    let stored = settings::get(NAME, &verbose_key(owner)).and_then(|s| bool::from_setting(&s)).unwrap_or(false);
+    let on: &'static AtomicBool = Box::leak(Box::new(AtomicBool::new(stored)));
+    all.push(Verbose { owner, on, shown: true });
+    on
+}
+
+/// Switches a plugin's verbose log and keeps the choice in the host's settings.
+pub(super) fn set_verbose(owner: &str, on: bool) {
+    if let Some(v) = VERBOSE.lock().unwrap_or_else(PoisonError::into_inner).iter().find(|v| v.owner == owner) {
+        v.on.store(on, Ordering::Relaxed);
+    }
+    settings::set(NAME, &verbose_key(owner), Setting::Bool(on));
+}
+
+/// A plugin with debug items, as the Debug tab lists it.
+struct DebugItems {
+    owner: &'static str,
+    title: String,
+    verbose: Option<&'static AtomicBool>,
+    section: bool,
+}
+
+/// Every plugin whose running generation asked for a verbose-log switch or added a debug section,
+/// in load order.
+fn debug_items() -> Vec<DebugItems> {
+    let sections = DEBUG.owners();
+    let switches: Vec<(&'static str, &'static AtomicBool)> = VERBOSE.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|v| v.shown).map(|v| (v.owner, v.on)).collect();
+    let mut owners: Vec<&'static str> = Vec::new();
+    for owner in switches.iter().map(|(o, _)| *o).chain(sections.iter().copied()) {
+        if !owners.contains(&owner) {
+            owners.push(owner);
+        }
+    }
+    let loaded = plugins();
+    owners.sort_by_key(|o| loaded.iter().position(|p| p.name == *o));
+    owners.into_iter().map(|owner| DebugItems { owner, title: title_of(owner), verbose: switches.iter().find(|(o, _)| *o == owner).map(|(_, on)| *on), section: sections.contains(&owner) }).collect()
 }
 
 /// Puts the window, the selected section and every plugin's HUD painters on the overlay.
@@ -184,9 +262,9 @@ fn draw_hud(input: &overlay::HudInput) -> overlay::Painted {
     all
 }
 
-/// The overlay's guest: the selected section in the rect the window left for it this frame.
+/// The overlay's guest: the plugin's section in the rect the window left for it this frame.
 fn draw_section(input: &overlay::GuestInput) -> Option<overlay::GuestOutput> {
-    let (owner, name, rect) = RESERVED.lock().unwrap_or_else(PoisonError::into_inner).take()?;
+    let (owner, section, rect) = RESERVED.lock().unwrap_or_else(PoisonError::into_inner).take()?;
     let events: Vec<RawEvent> = input.events.iter().filter_map(RawEvent::new).collect();
     let raw = RawFrameInput {
         rect: corners(rect),
@@ -201,11 +279,19 @@ fn draw_section(input: &overlay::GuestInput) -> Option<overlay::GuestOutput> {
         ..RawFrameInput::base()
     };
     let mut drawn = None;
-    SECTIONS.each_mut(|s| {
-        if drawn.is_none() && s.owner == owner && s.name == name {
-            drawn = Some(paint(s.owner, &s.draw, &raw));
+    let mut draw = |of: &'static str, f: &UiCallback| {
+        if drawn.is_none() && of == owner {
+            drawn = Some(paint(of, f, &raw));
         }
-    });
+    };
+    match &section {
+        Some(name) => SECTIONS.each_mut(|s| {
+            if s.name == *name {
+                draw(s.owner, &s.draw);
+            }
+        }),
+        None => DEBUG.each_mut(|d| draw(d.owner, &d.draw)),
+    }
     let (painted, platform) = drawn?;
     let (wants_pointer, wants_keyboard) = platform.map_or((false, false), |p| (p.wants_pointer, p.wants_keyboard));
     Some(overlay::GuestOutput { rect, painted, wants_pointer, wants_keyboard })
@@ -221,12 +307,14 @@ pub(super) fn show_section(owner: &'static str, section: &str) {
     overlay::set_open(true);
 }
 
-/// Drops a plugin's tab and HUD painters, frees its textures after the next frame, and returns
-/// how many sections and painters it had.
-pub(super) fn remove(owner: &str) -> (usize, usize) {
+/// Drops a plugin's tab, HUD painters and debug items, frees its textures after the next frame,
+/// and returns how many sections, painters and debug items (the section and the verbose-log
+/// switch, whose flag stays as it is for the next generation) it had.
+pub(super) fn remove(owner: &str) -> (usize, usize, usize) {
     TITLES.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _)| *o != owner);
     overlay::free_textures(TEXTURES.lock().unwrap_or_else(PoisonError::into_inner).remove_owner(owner));
-    (SECTIONS.remove_owner(owner), HUDS.remove_owner(owner))
+    let switch = VERBOSE.lock().unwrap_or_else(PoisonError::into_inner).iter_mut().find(|v| v.owner == owner).is_some_and(|v| core::mem::take(&mut v.shown));
+    (SECTIONS.remove_owner(owner), HUDS.remove_owner(owner), DEBUG.remove_owner(owner) + usize::from(switch))
 }
 
 fn title_of(owner: &str) -> String {
@@ -473,7 +561,7 @@ fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
     let (owner, name) = (&mods[index].owner, &mods[index].sections[section]);
     egui::CentralPanel::no_frame().frame(egui::Frame::NONE.inner_margin(egui::Margin { left: 28, right: 8, top: 4, bottom: 0 })).show(ui, |ui| {
         let (rect, _) = ui.allocate_exact_size(ui.available_size(), Sense::hover());
-        *RESERVED.lock().unwrap_or_else(PoisonError::into_inner) = Some((owner.clone(), name.clone(), rect));
+        *RESERVED.lock().unwrap_or_else(PoisonError::into_inner) = Some((owner.clone(), Some(name.clone()), rect));
     });
 }
 
@@ -692,9 +780,6 @@ mod tests {
     use crate::abi::Api;
     use crate::ui::{self, RawFrameInput};
 
-    /// The sections of one process draw in one `egui` context, so the tests that draw take turns.
-    static DRAWING: Mutex<()> = Mutex::new(());
-
     /// A frame of the section in `rect` on a 1920 by 1080 screen, the events crossing as the host
     /// sends them: the primitives, the textures uploaded whole, and the platform output.
     fn frame(owner: &str, rect: egui::Rect, events: &[egui::Event], focused: bool, time: f64) -> (Vec<egui::ClippedPrimitive>, Vec<egui::TextureId>, Option<RawPlatformOutput>) {
@@ -750,9 +835,9 @@ mod tests {
         assert!(released.is_some_and(|p| !p.wants_keyboard), "a press on the host's widgets takes the focus away");
 
         let owned = TEXTURES.lock().unwrap().ids.iter().filter(|(o, _, _)| *o == "gui-test-a").count();
-        assert_eq!(remove("gui-test-a"), (1, 0));
+        assert_eq!(remove("gui-test-a"), (1, 0, 0));
         assert!(owned > 0 && !TEXTURES.lock().unwrap().ids.iter().any(|(o, _, _)| *o == "gui-test-a"), "the plugin's textures go with it");
-        assert_eq!(remove("gui-test-b"), (1, 0));
+        assert_eq!(remove("gui-test-b"), (1, 0, 0));
     }
 
     #[test]
@@ -779,7 +864,33 @@ mod tests {
         assert!(hover_text(&[], 7.0 / 60.0), "and with the pointer at rest");
         let away = egui::Event::PointerMoved(over + vec2(200.0, 100.0));
         assert!(!hover_text(&[away], 8.0 / 60.0) && !hover_text(&[], 9.0 / 60.0), "gone when the pointer leaves the marker");
-        assert_eq!(remove("gui-test-hover"), (1, 0));
+        assert_eq!(remove("gui-test-hover"), (1, 0, 0));
+    }
+
+    #[test]
+    fn a_verbose_switch_starts_off_is_kept_in_the_hosts_settings_and_outlives_its_generation() {
+        assert!(super::super::keys::open_test_settings().is_ok());
+        let (owner, key) = ("gui-test-verbose", "verbose.gui-test-verbose");
+        let listed = || debug_items().into_iter().find(|d| d.owner == owner).map(|d| (d.verbose.is_some(), d.section));
+        assert_eq!(listed(), None, "a plugin that asked for nothing is not listed");
+        let log = crate::VerboseLog::new(Api(super::super::api::build(owner, core::ptr::null())));
+        assert!(!log.on() && settings::get(NAME, key).is_none(), "off until the player ticks it");
+        assert_eq!(listed(), Some((true, false)));
+        set_verbose(owner, true);
+        assert_eq!(settings::get(NAME, key), Some(Setting::Bool(true)));
+        assert!(std::thread::spawn(move || log.on()).join().unwrap(), "read on another thread");
+
+        assert_eq!(remove(owner), (0, 0, 1));
+        assert_eq!(listed(), None, "the switch goes with the generation that asked for it");
+        assert!(core::ptr::eq(verbose(owner), log.on) && log.on(), "the next generation finds the flag as the player left it");
+        assert_eq!(listed(), Some((true, false)));
+        set_verbose(owner, false);
+        assert!(!log.on());
+        assert_eq!(settings::get(NAME, key), Some(Setting::Bool(false)));
+        assert_eq!(remove(owner), (0, 0, 1));
+
+        assert!(verbose("gui-test-session").load(Ordering::Relaxed), "a later game session starts from the settings file");
+        assert_eq!(remove("gui-test-session"), (0, 0, 1));
     }
 
     #[test]
