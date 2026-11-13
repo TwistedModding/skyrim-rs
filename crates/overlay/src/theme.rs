@@ -6,7 +6,8 @@
 //! inventory and the message box: their SWF files' text and fill colours, read at tag level):
 //! translucent black panels framed by thin grey-white rules, white text dimmed for what is not
 //! selected, a faint white highlight, square corners, generous spacing, and Futura Condensed when
-//! the game's font file could be read (`crate::font_source`). A window may change any of it through
+//! the game's font file could be read (`crate::font_source`). Hover text shows as soon as the
+//! pointer is over its widget, at rest or not. A window may change any of it through
 //! `egui`'s own style API (`ui.style_mut()`, `egui::Window::frame`).
 
 use egui::{Color32, Context, CornerRadius, FontFamily, FontId, Margin, Shadow, Stroke, TextStyle, Theme, vec2};
@@ -48,6 +49,8 @@ pub fn apply(ctx: &Context) {
         s.icon_width = 16.0;
         s.icon_width_inner = 10.0;
         s.icon_spacing = 8.0;
+        style.interaction.tooltip_delay = 0.0;
+        style.interaction.show_tooltips_only_when_still = false;
         let v = &mut style.visuals;
         v.dark_mode = true;
         v.window_fill = PANEL;

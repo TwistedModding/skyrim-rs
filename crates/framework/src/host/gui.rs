@@ -684,6 +684,8 @@ fn draw(ctx: &egui::Context) {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Arc;
+
     use egui::epaint::Primitive;
 
     use super::*;
@@ -747,6 +749,32 @@ mod tests {
         assert_eq!(remove("gui-test-a"), (1, 0));
         assert!(owned > 0 && !TEXTURES.lock().unwrap().ids.iter().any(|(o, _, _)| *o == "gui-test-a"), "the plugin's textures go with it");
         assert_eq!(remove("gui-test-b"), (1, 0));
+    }
+
+    #[test]
+    fn hover_text_is_drawn_at_once_and_while_the_pointer_moves() {
+        let rect = egui::Rect::from_min_size(egui::pos2(400.0, 200.0), vec2(600.0, 400.0));
+        let marker = Arc::new(Mutex::new(egui::Rect::NOTHING));
+        let drawn_at = marker.clone();
+        assert!(ui::add_section(Api(super::super::api::build("gui-test-hover", core::ptr::null())), "Main", move |ui| {
+            *drawn_at.lock().unwrap() = ui.label("(?)").on_hover_text("What this setting does").rect;
+        }));
+        // The section holds the marker alone, so whatever is drawn under it is its hover text.
+        let hover_text = |events: &[egui::Event], time: f64| {
+            let (primitives, _, _) = frame("gui-test-hover", rect, events, true, time);
+            let under = marker.lock().unwrap().bottom() + 2.0;
+            primitives.iter().filter_map(|p| if let Primitive::Mesh(m) = &p.primitive { Some(m) } else { None }).any(|m| m.vertices.iter().any(|v| v.pos.y > under))
+        };
+        assert!(!hover_text(&[], 0.0), "nothing while the pointer is elsewhere");
+        let over = marker.lock().unwrap().center();
+        assert!(rect.contains(over));
+        // The game reports every count of the mouse as a move, and a mouse in a hand sends one now and then.
+        let shown: Vec<bool> = (1..=6).map(|i| hover_text(&[egui::Event::PointerMoved(over + vec2(0.02 * f32::from(i % 2 == 0), 0.0))], f64::from(i) / 60.0)).collect();
+        assert!(shown[1..].iter().all(|shown| *shown), "from the frame after the pointer arrives, with a move in every frame");
+        assert!(hover_text(&[], 7.0 / 60.0), "and with the pointer at rest");
+        let away = egui::Event::PointerMoved(over + vec2(200.0, 100.0));
+        assert!(!hover_text(&[away], 8.0 / 60.0) && !hover_text(&[], 9.0 / 60.0), "gone when the pointer leaves the marker");
+        assert_eq!(remove("gui-test-hover"), (1, 0));
     }
 
     #[test]
