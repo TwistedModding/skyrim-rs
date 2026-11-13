@@ -692,6 +692,9 @@ mod tests {
     use crate::abi::Api;
     use crate::ui::{self, RawFrameInput};
 
+    /// The sections of one process draw in one `egui` context, so the tests that draw take turns.
+    static DRAWING: Mutex<()> = Mutex::new(());
+
     /// A frame of the section in `rect` on a 1920 by 1080 screen, the events crossing as the host
     /// sends them: the primitives, the textures uploaded whole, and the platform output.
     fn frame(owner: &str, rect: egui::Rect, events: &[egui::Event], focused: bool, time: f64) -> (Vec<egui::ClippedPrimitive>, Vec<egui::TextureId>, Option<RawPlatformOutput>) {
@@ -712,6 +715,7 @@ mod tests {
 
     #[test]
     fn a_section_draws_through_the_c_path_with_its_own_textures() {
+        let _turn = DRAWING.lock().unwrap_or_else(PoisonError::into_inner);
         let rect = egui::Rect::from_min_size(egui::pos2(400.0, 200.0), vec2(600.0, 400.0));
         for owner in ["gui-test-a", "gui-test-b"] {
             let mut text = String::new();
@@ -753,6 +757,7 @@ mod tests {
 
     #[test]
     fn hover_text_is_drawn_at_once_and_while_the_pointer_moves() {
+        let _turn = DRAWING.lock().unwrap_or_else(PoisonError::into_inner);
         let rect = egui::Rect::from_min_size(egui::pos2(400.0, 200.0), vec2(600.0, 400.0));
         let marker = Arc::new(Mutex::new(egui::Rect::NOTHING));
         let drawn_at = marker.clone();
