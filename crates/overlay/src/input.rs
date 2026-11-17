@@ -485,6 +485,12 @@ impl Router {
     }
 }
 
+/// Whether one of the overlay's windows or popups is at `p`. The background layer `egui` keeps for
+/// the whole screen does not count.
+pub(crate) fn window_at(ctx: &egui::Context, p: Pos2) -> bool {
+    ctx.layer_id_at(p).is_some_and(|layer| layer.order != egui::Order::Background)
+}
+
 struct Gate;
 
 /// Sends `PlayerControls` an empty list for a list the overlay stopped. It zeroes its look and move
@@ -777,6 +783,21 @@ mod tests {
         m.button(8, 1.0, 0.0);
         m.button(0, 0.0, 0.2);
         assert_eq!(m, GameMouse { dx: 7, dy: 3, buttons: vec![(0, true), (8, true), (0, false)] });
+    }
+
+    #[test]
+    fn only_a_window_is_at_a_point_not_the_screen_around_it() {
+        let ctx = egui::Context::default();
+        let screen = egui::Rect::from_min_size(Pos2::ZERO, egui::vec2(1920.0, 1080.0));
+        for frame in 0..3 {
+            let mut output = ctx.run_pass(egui::RawInput { screen_rect: Some(screen), time: Some(f64::from(frame) / 60.0), ..egui::RawInput::default() }, |ctx| {
+                egui::Window::new("window").title_bar(false).fixed_pos(egui::pos2(400.0, 200.0)).fixed_size(egui::vec2(1120.0, 680.0)).show(ctx, |ui| ui.label("menu"));
+            });
+            output.textures_delta.clear();
+        }
+        assert!(window_at(&ctx, egui::pos2(410.0, 210.0)), "inside the window");
+        assert!(!window_at(&ctx, egui::pos2(100.0, 100.0)), "the screen beside the window");
+        assert!(!window_at(&ctx, egui::pos2(1800.0, 1000.0)));
     }
 
     #[test]

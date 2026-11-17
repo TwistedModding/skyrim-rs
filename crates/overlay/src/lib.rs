@@ -354,7 +354,7 @@ fn draw(rtv: *mut core::ffi::c_void) {
         events.clear();
     }
     let host = &state.ctx;
-    let routed = state.router.route(events, state.claim.filter(|_| open), |p| host.layer_id_at(p).is_some());
+    let routed = state.router.route(events, state.claim.filter(|_| open), |p| input::window_at(host, p));
     if routed.guest_pressed {
         host.memory_mut(egui::Memory::stop_text_input);
     }
