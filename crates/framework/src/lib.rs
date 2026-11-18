@@ -324,6 +324,15 @@ impl Host {
         GamePad { buttons, held: pad.held, triggers: pad.triggers, sticks: pad.sticks }
     }
 
+    /// Whether the overlay is open and its window has the focus: it takes it when it opens and with
+    /// a press on one of its windows or a mod's tab, and gives it up with a press on the open screen
+    /// beside them. For keys a mod reads from the game that should be left alone while the player
+    /// works in the menu. False on a loader without it.
+    #[must_use]
+    pub fn overlay_focused(&self) -> bool {
+        call!(self.api, window_focus()).unwrap_or(false)
+    }
+
     /// Whether the keyboard key with this `DirectInput` scan code is down in the game (its press
     /// reached the game and its release has not yet): for a modifier a mod's own keys combine with.
     #[must_use]

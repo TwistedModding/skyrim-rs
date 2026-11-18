@@ -126,6 +126,7 @@ thread_local! {
 static STATE: Mutex<Option<State>> = Mutex::new(None);
 static WINDOWS: Mutex<Vec<Window>> = Mutex::new(Vec::new());
 static OPEN: AtomicBool = AtomicBool::new(false);
+static WINDOW_FOCUS: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
 static HUD: OnceLock<HudFn> = OnceLock::new();
@@ -274,9 +275,18 @@ pub fn is_open() -> bool {
     OPEN.load(Ordering::Relaxed)
 }
 
-/// Opens or closes the overlay, as the toggle key does.
+/// Opens or closes the overlay, as the toggle key does. Opening it gives its window the focus.
 pub fn set_open(open: bool) {
     OPEN.store(open, Ordering::Relaxed);
+    WINDOW_FOCUS.store(open, Ordering::Relaxed);
+}
+
+/// Whether the overlay is open and its window has the focus: it takes it when it opens and with a
+/// press on one of its windows or the guest's widgets, and gives it up with a press on the open
+/// screen beside them.
+#[must_use]
+pub fn window_focus() -> bool {
+    is_open() && WINDOW_FOCUS.load(Ordering::Relaxed)
 }
 
 /// Why the overlay stopped drawing (its Direct3D objects could not be created), `None` while it works.
@@ -357,6 +367,9 @@ fn draw(rtv: *mut core::ffi::c_void) {
     let routed = state.router.route(events, state.claim.filter(|_| open), |p| input::window_at(host, p));
     if routed.guest_pressed {
         host.memory_mut(egui::Memory::stop_text_input);
+    }
+    if let Some(on_window) = routed.window_press {
+        WINDOW_FOCUS.store(on_window, Ordering::Relaxed);
     }
     let mut drawn = HUD.get().zip(View::current(screen)).map(|(hud, view)| hud(&HudInput { view, time, pixels_per_point: ppp })).unwrap_or_default();
     if state.cursor.is_none()

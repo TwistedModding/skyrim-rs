@@ -87,6 +87,7 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         verbose_log: Some(verbose_log),
         add_debug: Some(add_debug),
         theme: Some(theme),
+        window_focus: Some(window_focus),
     }))
 }
 
@@ -201,6 +202,10 @@ unsafe extern "C" fn key_message(_: *const HostApi, index: usize, message: Sink<
     if let Some(line) = keys::message(index) {
         message.put(Str::from(line.as_str()));
     }
+}
+
+unsafe extern "C" fn window_focus(_: *const HostApi) -> bool {
+    overlay::window_focus()
 }
 
 unsafe extern "C" fn key_held(_: *const HostApi, scan_code: u32) -> bool {
@@ -533,13 +538,13 @@ mod tests {
         assert_eq!(*RESTORED.lock().unwrap(), [1, 2, 3]);
     }
 
-    /// The first entry and the last of api 1 to 4 and 6 to 8: a plugin built against any of them finds
+    /// The first entry and the last of api 1 to 4 and 6 to 9: a plugin built against any of them finds
     /// its entries at the offsets it was built with on every later loader.
     #[test]
     fn the_table_keeps_every_versions_offsets() {
         use core::mem::offset_of;
-        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), offset_of!(HostApi, theme), size_of::<HostApi>()];
-        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488, 496]);
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), offset_of!(HostApi, theme), offset_of!(HostApi, window_focus), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488, 496, 504]);
     }
 
     #[test]

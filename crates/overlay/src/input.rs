@@ -431,13 +431,20 @@ pub(crate) struct Routed {
     pub guest: Vec<Event>,
     pub host_pressed: bool,
     pub guest_pressed: bool,
+    /// Whether the frame's last press landed on one of the overlay's windows or the guest's widgets
+    /// rather than on the open screen beside them; `None` without a press.
+    pub window_press: Option<bool>,
 }
 
 impl Router {
     /// Splits `events` by the guest's last frame; `host_at` says whether one of the overlay's own
     /// areas is at a point. Without a guest everything is the overlay's.
     pub(crate) fn route(&mut self, events: Vec<Event>, claim: Option<Claim>, host_at: impl Fn(Pos2) -> bool) -> Routed {
-        let mut routed = Routed::default();
+        let window_press = events.iter().rev().find_map(|e| match e {
+            Event::PointerButton { pos, pressed: true, .. } => Some(host_at(*pos) || claim.is_some_and(|c| c.pointer || c.rect.contains(*pos))),
+            _ => None,
+        });
+        let mut routed = Routed { window_press, ..Routed::default() };
         let Some(claim) = claim else {
             self.guest_has = None;
             routed.host = events;
@@ -863,6 +870,18 @@ mod tests {
         let drag = router.route(vec![button(150.0, true), Event::PointerMoved(egui::pos2(50.0, 10.0)), button(50.0, false), button(50.0, true)], Some(claim(false, false)), window);
         assert_eq!(drag.guest.len(), 3, "a drag begun in the rect stays the guest's until released");
         assert_eq!(drag.host, [Event::PointerGone, button(50.0, true)]);
+    }
+
+    #[test]
+    fn a_press_is_on_a_window_over_the_overlays_window_or_the_guests_widgets() {
+        let mut router = Router::default();
+        let press = |router: &mut Router, x: f32, claim: Option<Claim>| router.route(vec![button(x, true), button(x, false)], claim, window).window_press;
+        assert_eq!(press(&mut router, 50.0, None), Some(true));
+        assert_eq!(press(&mut router, 400.0, None), Some(false));
+        assert_eq!(press(&mut router, 150.0, Some(claim(false, false))), Some(true));
+        assert_eq!(press(&mut router, 400.0, Some(claim(false, false))), Some(false), "the open screen, which the guest gets");
+        assert_eq!(press(&mut router, 400.0, Some(claim(true, false))), Some(true), "the guest's popup");
+        assert_eq!(router.route(vec![Event::PointerMoved(egui::pos2(400.0, 10.0)), key(true)], Some(claim(false, false)), window).window_press, None);
     }
 
     #[test]
