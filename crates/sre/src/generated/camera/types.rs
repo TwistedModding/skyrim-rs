@@ -2176,7 +2176,7 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, __field_1E0) == 0x1
 /// `FlatBone`: size 0x80 (exact).
 /// Meaning: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name) (high, camera pass).
 /// Evidence: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name); item 9 (request V). UpdateBoneWorldTransforms 0xef4f50 steps 0x80 over BSFlattenedBoneTree+0x130 (count +0x128): 0xef4f87 mov rcx,[rdi+rdx+0x70] (node), 0xef4f95 movzx eax,word [rbx+0x68] (parent), 0xef4fa2 lea rcx,[rdx+0x34] (the parent's world); world = node world, else parent world * local. GetOrCreateNodeForIndex 0xef4af0 names the new node from +0x78 and copies local +0..+0x33 and world +0x34..+0x67 into it.; size: the 0x80 stride.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct FlatBone {
     /// +0x0 `class:NiTransform`, semantic; local transform (high)
     pub local: crate::NiTransform,
@@ -2184,12 +2184,11 @@ pub struct FlatBone {
     pub world: crate::NiTransform,
     /// +0x68 `i16`, semantic; parent entry index; < 0: the tree node itself (high)
     pub parentIndex: u16,
-    unknown_6A: [u8; 6],
+    pub unknown_6A: [u8; 6],
     /// +0x70 `ptr:NiNode`, semantic; NiNode materialised for the bone, or null (high)
     pub node: *mut crate::NiNode,
     /// +0x78 `class:BSFixedString`, semantic; bone name (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: crate::BSFixedString,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2198,7 +2197,7 @@ const _: () = assert!(core::mem::offset_of!(FlatBone, local) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FlatBone, world) == 0x34);
 const _: () = assert!(core::mem::offset_of!(FlatBone, parentIndex) == 0x68);
 const _: () = assert!(core::mem::offset_of!(FlatBone, node) == 0x70);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __name) == 0x78);
+const _: () = assert!(core::mem::offset_of!(FlatBone, name) == 0x78);
 
 /// `FreeCameraState`: size 0x50 (exact, medium); primary base `TESCameraState`.
 /// Meaning: free fly camera (tfc) (high, frame pass).

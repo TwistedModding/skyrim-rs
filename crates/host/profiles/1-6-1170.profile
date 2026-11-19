@@ -25720,7 +25720,6 @@ member FirstPersonState.togglePOVPressed 88
 member FirstPersonState.useAltEuler 87
 member-unverified FlameProjectile.field_D4
 member-unverified FlameProjectile.field_DC
-member-unverified FlatBone.name
 member-unverified FrameState.backBufferHeight
 member FrameState.cameraMatrices a8
 member-unverified FrameState.decreaseRequested

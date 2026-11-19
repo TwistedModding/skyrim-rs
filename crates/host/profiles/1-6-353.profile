@@ -42988,7 +42988,6 @@ member-unverified FlameProjectile.field_F0
 member-unverified FlameProjectile.field_F8
 member-unverified FlameProjectile.field_FC
 member FlameProjectile.refScale 90
-member-unverified FlatBone.name
 member-unverified FrameState.backBufferHeight
 member-unverified FrameState.backBufferWidth
 member FrameState.cameraMatrices a8

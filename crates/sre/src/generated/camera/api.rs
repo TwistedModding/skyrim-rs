@@ -3806,14 +3806,6 @@ impl crate::FlatBone {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn node(&self) -> Option<&crate::NiNode> { unsafe { { self.node }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "FlatBone.name", 0x78, crate::BSFixedString) } }
-    /// `FlatBone::name`, at +0x78 on 1.7.104.
-    #[inline]
-    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
 }
 
 impl crate::FreeCameraState {
