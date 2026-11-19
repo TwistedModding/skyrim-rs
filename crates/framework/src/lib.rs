@@ -635,6 +635,28 @@ impl Tab {
         ui::add_section(self.api, name, draw);
         self
     }
+
+    /// Adds a section named `name` that is drawn on the whole screen: while it is the one shown,
+    /// the host's window is not, and `draw` lays out its own areas (`egui::Area`, `egui::Window`)
+    /// wherever it wants them, for a menu that must leave the view of the game free. The pointer
+    /// is the plugin's over its areas and over the open screen beside them. The section is listed
+    /// and selected like any other, so the plugin gives the player the way back to the window
+    /// ([`Host::show_section`] with another section's name):
+    ///
+    /// ```ignore
+    /// host.add_tab("My mod").section("General", general).screen("Photo mode", |ctx| {
+    ///     egui::Area::new(egui::Id::unique("photo mode")).anchor(egui::Align2::RIGHT_CENTER, [-40.0, 0.0]).show(ctx, |ui| {
+    ///         if ui.button("Settings").clicked() { HOST.get().unwrap().show_section("General") }
+    ///     });
+    /// });
+    /// ```
+    ///
+    /// On a loader without screen sections the window stays, the section's page in it empty, and
+    /// `draw` runs over the screen as it does here.
+    pub fn screen(&self, name: &str, draw: impl FnMut(&egui::Context) + Send + 'static) -> &Self {
+        ui::add_screen(self.api, name, draw);
+        self
+    }
 }
 
 /// A plugin's verbose-log switch from [`Host::verbose_log`].

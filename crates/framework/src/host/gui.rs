@@ -11,7 +11,8 @@
 //! it has two or more once the mod is clicked, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
 //! selected section's rect empty and the overlay draws the plugin's meshes over it as its guest,
-//! with the plugin's textures under overlay ids of their own. A plugin's debug section
+//! with the plugin's textures under overlay ids of their own. While a screen section
+//! ([`crate::Tab::screen`]) is the selected one the window is not drawn. A plugin's debug section
 //! ([`crate::Host::add_debug`]) is drawn the same way on the Debug tab's page for the plugin.
 
 use core::cell::RefCell;
@@ -39,10 +40,11 @@ const MIN_SIZE: egui::Vec2 = vec2(820.0, 500.0);
 const MARGIN: egui::Margin = egui::Margin { left: 36, right: 36, top: 22, bottom: 18 };
 const RULE_SPACE: f32 = 12.0;
 
-/// One section of a plugin's tab.
+/// One section of a plugin's tab; a `screen` one is drawn on the whole screen, without the window.
 struct Section {
     owner: &'static str,
     name: String,
+    screen: bool,
     draw: UiCallback,
 }
 
@@ -66,8 +68,8 @@ struct Verbose {
 }
 
 static VERBOSE: Mutex<Vec<Verbose>> = Mutex::new(Vec::new());
-/// The rect this frame's window left for a plugin to draw in, the plugin, and the section of its
-/// tab that goes there (its debug section for `None`).
+/// The rect this frame's window left for a plugin to draw in (none for a screen section, which has
+/// no window), the plugin, and the section of its tab that goes there (its debug section for `None`).
 static RESERVED: Mutex<Option<(String, Option<String>, egui::Rect)>> = Mutex::new(None);
 /// The sections of one process draw in one `egui` context, alive while one of them is, so the
 /// tests that add one take turns.
@@ -174,7 +176,11 @@ pub(super) fn set_title(owner: &'static str, title: &str) {
 }
 
 pub(super) fn add_section(owner: &'static str, name: &str, draw: UiCallback) {
-    SECTIONS.add(owner, Section { owner, name: name.to_owned(), draw });
+    SECTIONS.add(owner, Section { owner, name: name.to_owned(), screen: false, draw });
+}
+
+pub(super) fn add_screen(owner: &'static str, name: &str, draw: UiCallback) {
+    SECTIONS.add(owner, Section { owner, name: name.to_owned(), screen: true, draw });
 }
 
 pub(super) fn add_hud(owner: &'static str, draw: UiCallback) {
@@ -342,6 +348,17 @@ fn selection(mods: &[Mod]) -> (Tab, Option<(usize, usize)>) {
     let index = shown.plugin.as_ref().and_then(|p| mods.iter().position(|m| m.owner == *p)).unwrap_or(0);
     let selected = mods.get(index).map(|m| (index, shown.sections.iter().find(|(o, _)| *o == m.owner).and_then(|(_, name)| m.sections.iter().position(|n| n == name)).unwrap_or(0)));
     (shown.tab, selected)
+}
+
+/// Whether the plugin `owner`'s section `name` is a screen section.
+fn is_screen(owner: &str, name: &str) -> bool {
+    let mut screen = false;
+    SECTIONS.each(|s| {
+        let found = s.owner == owner && s.name == name;
+        screen = found && s.screen;
+        !found
+    });
+    screen
 }
 
 /// Selects `tab` and, when given, the mod `plugin`, shown expanded, and its `section` (the one selected before when `None`).
@@ -737,10 +754,18 @@ fn resize_grip(ctx: &egui::Context, window: egui::Rect) {
 }
 
 /// Draws the window; the overlay's one window callback. The window's size is the host's (the grip
-/// sets it), so its contents fill it and never grow it.
+/// sets it), so its contents fill it and never grow it. While a screen section is shown there is
+/// no window: the plugin draws on the whole screen.
 fn draw(ctx: &egui::Context) {
     let mods = mods();
     let (tab, selected) = selection(&mods);
+    if tab == Tab::Mods
+        && let Some((index, section)) = selected
+        && is_screen(&mods[index].owner, &mods[index].sections[section])
+    {
+        *RESERVED.lock().unwrap_or_else(PoisonError::into_inner) = Some((mods[index].owner.clone(), Some(mods[index].sections[section].clone()), egui::Rect::NOTHING));
+        return;
+    }
     let size = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).size;
     let frame = theme::window(&ctx.global_style()).inner_margin(MARGIN);
     let window = egui::Window::new(NAME).id(egui::Id::unique((NAME, "gui"))).title_bar(false).frame(frame).default_pos(ctx.content_rect().center() - DEFAULT_SIZE / 2.0).fixed_size(size);
@@ -840,6 +865,29 @@ mod tests {
         assert_eq!(remove("gui-test-a"), (1, 0, 0));
         assert!(owned > 0 && !TEXTURES.lock().unwrap().ids.iter().any(|(o, _, _)| *o == "gui-test-a"), "the plugin's textures go with it");
         assert_eq!(remove("gui-test-b"), (1, 0, 0));
+    }
+
+    #[test]
+    fn a_screen_section_draws_on_the_whole_screen_and_is_a_section_on_an_older_loader() {
+        let _turn = DRAWING.lock().unwrap_or_else(PoisonError::into_inner);
+        let corner = egui::pos2(1700.0, 900.0);
+        let api = Api(super::super::api::build("gui-test-screen", core::ptr::null()));
+        assert!(ui::add_screen(api, "Photo", move |ctx| {
+            egui::Area::new(egui::Id::unique("corner")).fixed_pos(corner).show(ctx, |ui| ui.label("panel"));
+        }));
+        assert!(is_screen("gui-test-screen", "Photo") && !is_screen("gui-test-screen", "Other"));
+        frame("gui-test-screen", egui::Rect::NOTHING, &[], true, 0.0);
+        let (drawn, _, _) = frame("gui-test-screen", egui::Rect::NOTHING, &[], true, 0.1);
+        let meshes: Vec<_> = drawn.iter().filter_map(|p| if let Primitive::Mesh(m) = &p.primitive { Some(m) } else { None }).collect();
+        assert!(!meshes.is_empty() && meshes.iter().all(|m| m.vertices.iter().all(|v| v.pos.x >= corner.x && v.pos.y >= corner.y)), "where the plugin put its area");
+        let (_, _, over) = frame("gui-test-screen", egui::Rect::NOTHING, &[egui::Event::PointerMoved(corner + vec2(4.0, 4.0))], true, 0.2);
+        let (_, _, beside) = frame("gui-test-screen", egui::Rect::NOTHING, &[egui::Event::PointerMoved(egui::pos2(200.0, 200.0))], true, 0.3);
+        assert!(over.is_some_and(|p| p.wants_pointer) && beside.is_some_and(|p| !p.wants_pointer), "the open screen beside the area is not claimed");
+
+        let older = unsafe { crate::abi::HostApi { size: u32::try_from(core::mem::offset_of!(crate::abi::HostApi, add_screen)).unwrap(), name: crate::abi::Str::from("gui-test-screen-old"), ..*api.0 } };
+        assert!(ui::add_screen(Api(&raw const older), "Photo", |_| {}));
+        assert!(!is_screen("gui-test-screen-old", "Photo"), "the window stays on a loader without screen sections");
+        assert_eq!((remove("gui-test-screen"), remove("gui-test-screen-old")), ((1, 0, 0), (1, 0, 0)));
     }
 
     #[test]

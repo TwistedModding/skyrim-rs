@@ -489,6 +489,21 @@ pub(crate) fn add_section(api: Api, name: &str, draw: impl FnMut(&mut egui::Ui) 
     section(api, egui::Id::unique(("section", name)), draw).is_some_and(|f| call!(api, add_section(Str::from(name), f)).is_some())
 }
 
+/// Adds the screen section `name` of the plugin's tab: `draw` lays out the whole screen while the
+/// section is shown, without the host's window; on a loader without screen sections it is a
+/// section whose page in the window stays empty. False when the loader takes no sections.
+pub(crate) fn add_screen(api: Api, name: &str, mut draw: impl FnMut(&Context) + Send + 'static) -> bool {
+    let Some(ctx) = SECTIONS.context(api) else { return false };
+    let f = callback(move |input, output| SECTIONS.run(&ctx, input, output, &mut draw));
+    match entry!(api, add_screen) {
+        Some(add) => {
+            unsafe { add(api.0, Str::from(name), f) };
+            true
+        }
+        None => call!(api, add_section(Str::from(name), f)).is_some(),
+    }
+}
+
 /// Adds the plugin's debug section, drawn on the host's Debug tab. False when the loader lacks the
 /// entries or the plugin has one.
 pub(crate) fn add_debug(api: Api, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> bool {

@@ -22,7 +22,7 @@ use crate::ui::{RawFamily, RawFont, RawTheme, UiCallback};
 use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The host API revision, including its table and record semantics; entries are only ever appended.
-pub const API: u32 = 9;
+pub const API: u32 = 10;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -827,6 +827,8 @@ pub struct HostApi {
     pub theme: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawTheme>)>,
     /// Whether the overlay is open and its window has the focus.
     pub window_focus: Option<unsafe extern "C" fn(*const Self) -> bool>,
+    /// A section of the plugin's tab drawn on the whole screen: while it is shown the window is not.
+    pub add_screen: Option<unsafe extern "C" fn(*const Self, Str, UiCallback)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.

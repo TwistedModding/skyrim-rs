@@ -88,6 +88,7 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         add_debug: Some(add_debug),
         theme: Some(theme),
         window_focus: Some(window_focus),
+        add_screen: Some(add_screen),
     }))
 }
 
@@ -410,6 +411,10 @@ unsafe extern "C" fn add_section(api: *const HostApi, name: Str, f: UiCallback) 
     gui::add_section(owner(api), unsafe { name.as_str() }, f);
 }
 
+unsafe extern "C" fn add_screen(api: *const HostApi, name: Str, f: UiCallback) {
+    gui::add_screen(owner(api), unsafe { name.as_str() }, f);
+}
+
 unsafe extern "C" fn add_hud(api: *const HostApi, f: UiCallback) {
     gui::add_hud(owner(api), f);
 }
@@ -543,8 +548,8 @@ mod tests {
     #[test]
     fn the_table_keeps_every_versions_offsets() {
         use core::mem::offset_of;
-        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), offset_of!(HostApi, theme), offset_of!(HostApi, window_focus), size_of::<HostApi>()];
-        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488, 496, 504]);
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), offset_of!(HostApi, key_message), offset_of!(HostApi, add_debug), offset_of!(HostApi, theme), offset_of!(HostApi, window_focus), offset_of!(HostApi, add_screen), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 464, 480, 488, 496, 504, 512]);
     }
 
     #[test]
