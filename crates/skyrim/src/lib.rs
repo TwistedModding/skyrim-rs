@@ -21,6 +21,8 @@ pub mod actors;
 pub mod animation;
 #[cfg(feature = "audio")]
 pub mod audio;
+#[cfg(all(feature = "animation", feature = "render"))]
+pub mod bones;
 #[cfg(feature = "camera")]
 pub mod camera;
 #[cfg(feature = "events")]
@@ -29,6 +31,8 @@ pub mod events;
 pub mod forms;
 #[cfg(feature = "input")]
 pub mod input;
+#[cfg(feature = "render")]
+pub mod limb;
 #[cfg(feature = "papyrus")]
 pub mod papyrus;
 #[cfg(feature = "physics")]
